@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <title>Loogiset virhepäätelmät</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+  <script>mermaid.initialize({ startOnLoad: true, themeVariables: { fontSize: '12px' } });</script>
+  <style>
+    .mermaid svg text { font-size: 12px !important; }
+    body {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+    .kategoria {
+      margin-bottom: 3rem;
+    }
+    .kategoria > h2 {
+      border-bottom: 3px solid #2c3e50;
+      padding-bottom: 0.4rem;
+      margin-bottom: 1.5rem;
+    }
+    /* Virhepäätelmäkortti */
+    .virhe {
+      margin-bottom: 1.2rem;
+      border-radius: 8px;
+      border: 1px solid #e0e4e8;
+      border-top: 4px solid #7f8c8d;
+      padding: 1.1rem 1.4rem 1.2rem;
+      background: #fff;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.06);
+    }
+    .virhe h3 {
+      margin: 0 0 0.3rem;
+      font-size: 1.05em;
+    }
+    .virhe h3 .alkupera {
+      font-weight: normal;
+      font-style: italic;
+      color: #666;
+      font-size: 0.9em;
+    }
+    .virhe > p {
+      margin: 0.3rem 0 0.8rem;
+      font-size: 0.95em;
+    }
+    .virhe-nro {
+      display: inline-block;
+      font-size: 0.72em;
+      background: #7f8c8d;
+      color: #fff;
+      border-radius: 3px;
+      padding: 0.15em 0.55em;
+      margin-bottom: 0.45rem;
+      letter-spacing: 0.04em;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    /* Kategoriavärit korteille */
+    #henkilohyokkaykset     .virhe        { border-top-color: #c0392b; }
+    #henkilohyokkaykset     .virhe-nro    { background: #c0392b; }
+    #argumentin-vaaristely  .virhe        { border-top-color: #e67e22; }
+    #argumentin-vaaristely  .virhe-nro    { background: #e67e22; }
+    #harhaanjohtavat-vetoamiset .virhe    { border-top-color: #d4ac0d; }
+    #harhaanjohtavat-vetoamiset .virhe-nro { background: #d4ac0d; }
+    #kausaalivirheet        .virhe        { border-top-color: #2980b9; }
+    #kausaalivirheet        .virhe-nro    { background: #2980b9; }
+    #yleistysvirheet        .virhe        { border-top-color: #27ae60; }
+    #yleistysvirheet        .virhe-nro    { background: #27ae60; }
+    #retoriset-harhapolut   .virhe        { border-top-color: #8e44ad; }
+    #retoriset-harhapolut   .virhe-nro    { background: #8e44ad; }
+
+    .dialogi {
+      background: #f5f5f5;
+      border-left: 3px solid #95a5a6;
+      padding: 0.7em 1em;
+      margin: 0.5rem 0 0.7rem;
+      font-size: 0.9em;
+      font-style: italic;
+    }
+    .dialogi p {
+      margin: 0.2em 0;
+    }
+    .dialogi .virheellinen {
+      color: #c0392b;
+      font-weight: bold;
+      font-style: normal;
+    }
+    .tunnistus {
+      background: #fdf6ec;
+      border-left: 3px solid #e67e22;
+      padding: 0.5em 0.9em;
+      font-size: 0.85em;
+      color: #555;
+    }
+    .infolaatikko {
+      background: #f0f6fd;
+      border-left: 4px solid #2980b9;
+      padding: 1em 1.2em;
+      margin: 1.5rem 0;
+      font-size: 0.95em;
+    }
+    .vaaralatikko {
+      background: #fdf0f0;
+      border-left: 4px solid #c0392b;
+      padding: 1em 1.2em;
+      margin: 1.5rem 0;
+      font-size: 0.95em;
+    }
+    .tag {
+      display: inline-block;
+      font-size: 0.72em;
+      background: #7f8c8d;
+      color: #fff;
+      border-radius: 3px;
+      padding: 0.15em 0.5em;
+      margin-right: 0.4em;
+      vertical-align: middle;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .tag.punainen { background: #c0392b; }
+    .tag.sininen  { background: #2980b9; }
+    .tag.vihrea   { background: #27ae60; }
+    .kaavio-selitys {
+      font-size: 0.82em;
+      color: #666;
+      text-align: center;
+      margin-top: 0.3rem;
+      margin-bottom: 1rem;
+    }
+    /* Kirsikanpoiminta-visuaali */
+    .cherry-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1rem 0 0.4rem;
+      align-items: center;
+    }
+    .cherry-dot {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75em;
+      font-weight: bold;
+    }
+    .cherry-dot.valittu  { background: #27ae60; color: #fff; }
+    .cherry-dot.ohitettu { background: #ecf0f1; color: #aaa; border: 1px solid #ddd; }
+    /* Gish gallop -visuaali */
+    .gallop-visual {
+      display: flex;
+      gap: 1.5rem;
+      margin: 1rem 0 0.4rem;
+      font-size: 0.85em;
+      flex-wrap: wrap;
+    }
+    .gallop-puoli { flex: 1 1 200px; }
+    .gallop-puoli strong {
+      display: block;
+      margin-bottom: 0.5rem;
+      padding: 0.3em 0.6em;
+      border-radius: 3px;
+    }
+    .gallop-puoli.esittaja strong { background: #fdf0f0; color: #c0392b; }
+    .gallop-puoli.vastaaja strong { background: #f0f6fd; color: #2980b9; }
+    .gallop-rivi {
+      padding: 0.25em 0.6em;
+      margin-bottom: 0.3rem;
+      border-radius: 3px;
+      font-size: 0.9em;
+    }
+    .gallop-puoli.esittaja .gallop-rivi { background: #fff3f3; border-left: 3px solid #e74c3c; }
+    .gallop-puoli.vastaaja .gallop-rivi { background: #f0f6fd; border-left: 3px solid #2980b9; }
+    .gallop-puoli.vastaaja .gallop-rivi.odottaa { opacity: 0.4; border-left-color: #bdc3c7; }
+    /* Väärä dilemma -spektri */
+    .spektri-visual { margin: 1rem 0 0.4rem; text-align: center; }
+    .spektri-jana {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.85em;
+    }
+    .spektri-jana .jana {
+      flex: 1;
+      height: 18px;
+      background: linear-gradient(to right, #3498db, #9b59b6, #e74c3c);
+      border-radius: 9px;
+    }
+    .spektri-jana span { white-space: nowrap; color: #555; }
+    .spektri-nuoli { font-size: 1.1em; color: #888; margin: 0.2rem 0; }
+    .spektri-binary { display: flex; gap: 1rem; justify-content: center; margin-top: 0.3rem; }
+    .spektri-binary .vaihtoehto {
+      padding: 0.4em 1.2em;
+      border-radius: 4px;
+      font-weight: bold;
+      font-size: 0.9em;
+    }
+    .spektri-binary .vaihtoehto.a { background: #fdf0f0; color: #c0392b; border: 2px solid #c0392b; }
+    .spektri-binary .vaihtoehto.b { background: #fdf0f0; color: #c0392b; border: 2px solid #c0392b; }
+  </style>
+</head>
+<body>
+
+  <nav class="simple-nav">
+    <a href="ilmiot.html">Ilmiöitä</a>
+    <a href="virhepaatelmat.html" class="nav-aktiv">Loogiset virhepäätelmät</a>
+    <a href="kognitiiviset-vinoumat.html">Kognitiiviset vinoumat</a>
+  </nav>
+
+  <h1>Loogiset virhepäätelmät</h1>
+  <p>Kokoelma argumentaation sudenkuopista: päättelyvirheitä, retorisia harhautuksia ja vakuuttamisen keinoja, jotka näyttävät loogisilta mutta eivät ole. Tunnistaminen on puolustuksen ensimmäinen askel.</p>
+
+  <div class="infolaatikko">
+    <strong>Huomio:</strong> Virhepäätelmä ei tarkoita, että johtopäätös on automaattisesti väärä — se tarkoittaa, että <em>esitetty perustelu ei tue johtopäätöstä</em>. Voit olla oikeassa väärällä argumentilla.
+  </div>
+
+  <div class="mermaid">
+graph LR
+  V["Loogiset virhepäätelmät"]
+  V --> H["Henkilöhyökkäykset\n7 tyyppiä"]
+  V --> A["Argumentin\nvääristely\n6 tyyppiä"]
+  V --> Ve["Harhaanjohtavat\nvetoamiset\n8 tyyppiä"]
+  V --> K["Kausaali- &\ntodistusvirheet\n4 tyyppiä"]
+  V --> Y["Yleistys- &\nvalikointivirheet\n4 tyyppiä"]
+  V --> R["Retoriset\nharhapolut\n6 tyyppiä"]
+  style H fill:#fdf0f0,stroke:#c0392b
+  style A fill:#fff8ec,stroke:#e67e22
+  style Ve fill:#fef9ec,stroke:#f39c12
+  style K fill:#f0f6fd,stroke:#2980b9
+  style Y fill:#f0fdf4,stroke:#27ae60
+  style R fill:#f5f0fd,stroke:#8e44ad
+  </div>
+  <p class="kaavio-selitys">35 virhepäätelmää kuudessa kategoriassa.</p>
+
+  <div class="hakemisto">
+    <strong>Kategoriat</strong>
+    <div class="hakemisto-grid">
+      <a href="#henkilohyokkaykset">Henkilöhyökkäykset (1–7)</a>
+      <a href="#argumentin-vaaristely">Argumentin vääristely (8–13)</a>
+      <a href="#harhaanjohtavat-vetoamiset">Harhaanjohtavat vetoamiset (14–21)</a>
+      <a href="#kausaalivirheet">Kausaali- ja todistusvirheet (22–25)</a>
+      <a href="#yleistysvirheet">Yleistys- ja valikointivirheet (26–29)</a>
+      <a href="#retoriset-harhapolut">Retoriset harhapolut (30–35)</a>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="kategoria" id="henkilohyokkaykset">
+    <h2>Henkilöhyökkäykset <span class="tag punainen">ad hominem -perhe</span></h2>
+    <p>Yhteinen piirre: vastustajan argumenttia ei kumota — sen sijaan hyökätään <em>vastustajaa itseään</em> vastaan. Vastustaja tehdään epäuskottavaksi, jolloin hänen väitteensä voidaan sivuuttaa ilman että niihin tarvitsee vastata.</p>
+
+    <div class="mermaid">
+flowchart LR
+  Arg["A esittää\nargumentin"] -->|"pitäisi"| Kasittele["B käsittelee\nargumentin perusteita"]
+  Arg -->|"ad hominem"| Hyokkays["B hyökkää\nA:ta vastaan\nhenkilönä"]
+  Hyokkays --> Sivuutetaan["A:n argumentti\nsivuutetaan\nkumomatta sitä"]
+  Kasittele -. "näin ei\ntapahdu" .-> Vastaus["Aito vastaus\nargumenttiin"]
+  style Hyokkays fill:#fdf0f0,stroke:#c0392b
+  style Sivuutetaan fill:#fdf0f0,stroke:#c0392b
+  style Vastaus fill:#f0fdf4,stroke:#27ae60
+  style Kasittele fill:#f0fdf4,stroke:#27ae60
+    </div>
+    <p class="kaavio-selitys">Ad hominem ohjaa keskustelun argumentista puhujaan — ja jättää alkuperäisen väitteen käsittelemättä.</p>
+
+    <div class="virhe" id="ad-hominem-suora">
+      <div class="virhe-nro">1</div>
+      <h3>Suora henkilöhyökkäys <span class="alkupera">— ad hominem (abusive)</span></h3>
+      <p>Vastustajan argumentti sivuutetaan häneen henkilökohtaisesti kohdistuvalla loukkauksella tai alentamisella.</p>
+      <div class="dialogi">
+        <p>A: "Tutkimusten mukaan ydinvoima tuottaa vähiten kasvihuonekaasuja sähköntuotantomenetelmistä."</p>
+        <p><span class="virheellinen">B: "Mitä sinä energiapolitiikasta tiedät, olet vain insinööri."</span></p>
+      </div>
+      <div class="tunnistus">Tunnistus: Vastauksen sisältö koskee puhujaa, ei puhuttua asiaa.</div>
+    </div>
+
+    <div class="virhe" id="ad-hominem-intressi">
+      <div class="virhe-nro">2</div>
+      <h3>Intressiharha <span class="alkupera">— circumstantial ad hominem</span></h3>
+      <p>Väitetään, että henkilöllä on henkilökohtainen motiivi tai taloudellinen intressi, minkä takia hänen näkemystään ei pidä kuunnella — vaikka argumentin sisältö olisi pätevä.</p>
+      <div class="dialogi">
+        <p>A: "Liikunta parantaa mielenterveyttä — tässä on kymmeniä tutkimuksia."</p>
+        <p><span class="virheellinen">B: "Olet personal trainer, tietenkin sanot niin."</span></p>
+      </div>
+      <div class="tunnistus">Tunnistus: Intressi voi olla syy suhtautua kriittisesti, mutta se ei automaattisesti kumoa argumenttia. Vastaus pitäisi koskea tutkimuksia, ei puhujaa.</div>
+    </div>
+
+    <div class="virhe" id="tu-quoque">
+      <div class="virhe-nro">3</div>
+      <h3>Sinäkin teet niin <span class="alkupera">— tu quoque / whataboutism</span></h3>
+      <p>Kritiikkiin vastataan osoittamalla, että kritisoija tekee tai on tehnyt saman. Tämä ei kumoa kritiikkiä — tekopyhyys ei tee väärästä oikeaa.</p>
+      <div class="dialogi">
+        <p>A: "Venäjän hyökkäys Ukrainaan on kansainvälisen oikeuden vastainen."</p>
+        <p><span class="virheellinen">B: "Entä Yhdysvallat Irakissa?"</span></p>
+      </div>
+      <div class="tunnistus">Tunnistus: Vastaus vaihtaa aihetta. Vaikka vertaus olisi oikeutettu, se ei vastaa alkuperäiseen väitteeseen.</div>
+    </div>
+
+    <div class="virhe" id="syyllisyys-assosinaatiolla">
+      <div class="virhe-nro">4</div>
+      <h3>Syyllisyys assosiaatiolla <span class="alkupera">— guilt by association</span></h3>
+      <p>Väite tai henkilö diskreditoidaan yhdistämällä se johonkin epäsuosittuun, pelottavaan tai epäilyttävään tahoon — vaikka yhteys on pinnallinen tai kuviteltu.</p>
+      <div class="dialogi">
+        <p>A: "Olisi hyvä, jos vanhemmat saisivat enemmän aikaa lastensa kanssa."</p>
+        <p><span class="virheellinen">B: "Kuulostaa samalta mitä natsit sanoivat perhearvoista."</span></p>
+      </div>
+      <div class="tunnistus">Tunnistus: Erityisesti natsien tai Hitlerin tuominen esiin millä tahansa perusteella on niin yleistä, että sillä on oma nimensä: Godwinin laki.</div>
+    </div>
+
+    <div class="virhe" id="kaivon-myrkyttaminen">
+      <div class="virhe-nro">5</div>
+      <h3>Kaivon myrkyttäminen <span class="alkupera">— poisoning the well</span></h3>
+      <p>Ennen kuin vastustaja puhuu, hänen uskottavuutensa murennetaan etukäteen — niin että kaikki mitä hän sanoo kuullaan valmiiksi epäuskottavana.</p>
+      <div class="dialogi">
+        <p><span class="virheellinen">Puheenjohtaja: "Seuraavaksi puheenvuoro asiantuntijalle, joka on tunnetusti lobbaajien palveluksessa."</span></p>
+        <p>Asiantuntija: "Tutkimusdatan mukaan…"</p>
+      </div>
+      <div class="tunnistus">Tunnistus: Kehystys tapahtuu ennen argumenttia. Kuulija on jo valmiiksi torjuvassa tilassa.</div>
+    </div>
+
+    <div class="virhe" id="geneettinen-harha">
+      <div class="virhe-nro">6</div>
+      <h3>Geneettinen harha <span class="alkupera">— genetic fallacy</span></h3>
+      <p>Argumentti tai idea hylätään sen alkuperän perusteella, ei sisällön perusteella. Mistä idea tulee ei kerro onko se totta.</p>
+      <div class="dialogi">
+        <p>A: "Meditaatio voi vähentää stressiä."</p>
+        <p><span class="virheellinen">B: "Se on vain buddhalaista mystiikkaa, ei tieteellistä."</span></p>
+      </div>
+      <div class="tunnistus">Tunnistus: Alkuperä on erillinen kysymys kuin totuusarvo. Idea voi olla oikea tai väärä riippumatta siitä, mistä se on peräisin.</div>
+    </div>
+
+    <div class="virhe" id="portinvartija">
+      <div class="virhe-nro">7</div>
+      <h3>Portinvartijaharha <span class="alkupera">— appeal to irrelevant credentials / no right to speak</span></h3>
+      <p>Vastustajalle sanotaan, että hänellä ei ole oikeutta tai pätevyyttä kommentoida aihetta — huomio siirretään pätevyyskysymykseen itse asiasta.</p>
+      <div class="dialogi">
+        <p>A: "Mielestäni kouluruoka on liian suolaista."</p>
+        <p><span class="virheellinen">B: "Sinulla ei ole ravitsemustieteen tutkintoa, joten mielipiteesi ei ole relevantti."</span></p>
+      </div>
+      <div class="tunnistus">Tunnistus: Asiantuntemus on arvokas, mutta se ei ole ainoa peruste kommentoida. Argumentti pitää kumota, ei puhujaa hiljentää.</div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="kategoria" id="argumentin-vaaristely">
+    <h2>Argumentin vääristely</h2>
+    <p>Yhteinen piirre: vastustajan oikea kanta korvataan helpommin kumottavalla versiolla, tai oma kanta esitetään muodossa jota on mahdoton kiistää.</p>
+
+    <div class="virhe" id="olkinukke">
+      <div class="virhe-nro">8</div>
+      <h3>Olkinukke <span class="alkupera">— straw man</span></h3>
+      <p>Vastustajan argumentti muunnetaan heikommaksi, äärimmäisemmäksi tai naurettavammaksi versioksi — ja tämä muunnettu versio kumotaan alkuperäisen sijaan.</p>
+      <div class="dialogi">
+        <p>A: "Ehkä poliisien koulutusta pitäisi lisätä kriisitilanteita varten."</p>
+        <p><span class="virheellinen">B: "Joten haluat siis, että poliisit eivät saa puolustaa itseään?"</span></p>
+      </div>
+      <div class="tunnistus">Tunnistus: Kysy itseltäsi: vastaako vastapuoli siihen mitä <em>oikeasti</em> sanoin, vai johonkin muuhun?</div>
+    </div>
+
+    <div class="mermaid">
+flowchart LR
+  Orig["Alkuperäinen\nargumentti"] -->|"vääristetään"| Nukke["Olkinukke:\nheikempi, äärimmäinen\ntai naurettava versio"]
+  Nukke -->|"kumotaan helposti"| Voitto["'Olen kumonnut\nsinun kantasi'"]
+  Orig -. "ei koskaan\nkäsitelty" .-> Oikea["Vastaus\nalkuperäiseen"]
+  style Nukke fill:#fff3cd,stroke:#f39c12
+  style Voitto fill:#fdf0f0,stroke:#c0392b
+  style Oikea fill:#f0fdf4,stroke:#27ae60
+    </div>
+    <p class="kaavio-selitys">Olkinukke: vääristelty versio on helppo lyödä, mutta alkuperäinen argumentti jää koskematta.</p>
+
+    <div class="virhe" id="valedilemma">
+      <div class="virhe-nro">9</div>
+      <h3>Väärä dilemma <span class="alkupera">— false dichotomy / false dilemma</span></h3>
+      <p>Tilanne esitetään kahden vaihtoehdon väliseksi valinnaksi, vaikka vaihtoehtoja on enemmän.</p>
+      <div class="dialogi">
+        <p><span class="virheellinen">"Joko tuet tämän lain, tai et välitä lasten turvallisuudesta."</span></p>
+      </div>
+      <div class="tunnistus">Tunnistus: Laskekaa ääneen muut mahdolliset kannat. Usein on olemassa kolmas, neljäs tai viides vaihtoehto.</div>
+    </div>
+
+    <div class="spektri-visual">
+      <p style="font-size:0.82em;color:#666;margin:0 0 0.5rem;">Todellisuus — jatkumo:</p>
+      <div class="spektri-jana">
+        <span>Vaihtoehto A</span>
+        <div class="jana"></div>
+        <span>Vaihtoehto B</span>
+      </div>
+      <div class="spektri-nuoli">↓ väärä dilemma ↓</div>
+      <div class="spektri-binary">
+        <div class="vaihtoehto a">Vaihtoehto A</div>
+        <div class="vaihtoehto b">Vaihtoehto B</div>
+      </div>
+    </div>
+    <p class="kaavio-selitys">Väärä dilemma pakkaa laajan jatkumon kahteen lokeroon ja jättää kaikki välivaihtoehdot näkymättömiksi.</p>
+
+    <div class="virhe" id="motte-and-bailey">
+      <div class="virhe-nro">10</div>
+      <h3>Varustus ja palatsi <span class="alkupera">— motte and bailey</span></h3>
+      <p>Puolustetaan kahta eri väitettä vuorotellen: kun kiistaton mutta tylsä väite (varustus) on turvassa, hypätään rohkeampaan ja kiistanalaiseen väitteeseen (palatsi). Kun palatsia hyökätään, palataan varustukseen.</p>
+      <div class="dialogi">
+        <p>A: "Onko väitteesi siis, että kaikki kulttuuri on yhtä arvokasta?"</p>
+        <p><span class="virheellinen">B: "En sanonut niin — sanoin vain, että meidän pitää kunnioittaa eri kulttuureita."</span> <em>[palataa varustukseen — mutta palatsi on se, mitä lobataan]</em></p>
+      </div>
+      <div class="tunnistus">Tunnistus: Pyydä täsmentämään, mitä väitettä puolustetaan juuri nyt. Kirjoita se muistiin.</div>
+    </div>
+
+    <div class="virhe" id="maalitolppien-siirto">
+      <div class="virhe-nro">11</div>
+      <h3>Maalitolppien siirtäminen <span class="alkupera">— moving the goalposts</span></h3>
+      <p>Kun alkuperäinen vaatimus täytetään, esitetään uusi vaatimus sen sijaan että myönnettäisiin piste.</p>
+      <div class="dialogi">
+        <p>B: "Näytä minulle yksi tutkimus, joka tukee rokotteiden turvallisuutta."</p>
+        <p>A: "Tässä kymmenen tutkimusta."</p>
+        <p><span class="virheellinen">B: "Ne ovat kaikki lääkeyhtiöiden rahoittamia. Tarvitaan riippumattomia tutkimuksia."</span></p>
+        <p>A: "Tässä WHO:n ja yliopistojen tutkimuksia."</p>
+        <p><span class="virheellinen">B: "WHO on korruptoitunut."</span></p>
+      </div>
+      <div class="tunnistus">Tunnistus: Kirjaa vaatimus ylös ennen kuin ryhdyt täyttämään sitä. Jos vaatimus muuttuu täyttämisen jälkeen, nimeä se ääneen.</div>
+    </div>
+
+    <div class="virhe" id="kehapaamelma">
+      <div class="virhe-nro">12</div>
+      <h3>Kehäpäätelmä <span class="alkupera">— circular reasoning / begging the question</span></h3>
+      <p>Johtopäätös on piilevänä jo lähtöoletuksessa. Väite todistaa itsensä.</p>
+      <div class="dialogi">
+        <p><span class="virheellinen">"Raamattu on totta, koska Raamatussa sanotaan, että se on Jumalan sanaa — ja Jumalan sana on totta."</span></p>
+      </div>
+      <div class="tunnistus">Tunnistus: Voisiko premissit olla totta jos johtopäätös olisi epätosi? Jos ei, rakenne on kehä.</div>
+    </div>
+
+    <div class="mermaid">
+flowchart LR
+  A["Premissi:\nRaamattu on totta"] --> B["koska:\nse on Jumalan sanaa"]
+  B --> C["Jumalan sana\non totta"]
+  C --> A
+  style A fill:#fff3cd,stroke:#f39c12
+  style B fill:#fff3cd,stroke:#f39c12
+  style C fill:#fff3cd,stroke:#f39c12
+    </div>
+    <p class="kaavio-selitys">Kehäpäätelmä: argumentti tukeutuu omaan johtopäätökseensä — ulos ei pääse.</p>
+
+    <div class="virhe" id="ekvivokaalinen">
+      <div class="virhe-nro">13</div>
+      <h3>Merkityksen vaihtaminen <span class="alkupera">— equivocation</span></h3>
+      <p>Sama sana käytetään kahdessa eri merkityksessä saman argumentin sisällä, niin että päätelmä kuulostaa loogiselta vaikka ei ole.</p>
+      <div class="dialogi">
+        <p><span class="virheellinen">"Laki on laki. Murhamies rikkoi lain. Siis murhamies rikkoi fysiikan lakeja."</span></p>
+      </div>
+      <div class="tunnistus">Tunnistus: Kysy jokaisen avainsanan kohdalla: tarkoitetaanko tässä kohdassa täsmälleen samaa kuin edellisessä lauseessa?</div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="kategoria" id="harhaanjohtavat-vetoamiset">
+    <h2>Harhaanjohtavat vetoamiset</h2>
+    <p>Perustellaan väitettä vetoamalla asiaan, joka ei loogisesti tue johtopäätöstä — vaikka vetoaminen tuntuu intuitiivisesti vakuuttavalta.</p>
+
+    <div class="virhe" id="auktoriteettiharha">
+      <div class="virhe-nro">14</div>
+      <h3>Auktoriteettiharha <span class="alkupera">— argumentum ad verecundiam</span></h3>
+      <p>Väitteen totuusarvoa perustellaan pelkästään sillä, että joku arvostettu henkilö tai instituutio on niin sanonut — ilman että itse argumentti arvioidaan.</p>
+      <div class="dialogi">
+        <p><span class="virheellinen">"Elon Musk sanoo, että tekoäly on eksistentiaalinen uhka, joten se on fakta."</span></p>
+      </div>
+      <div class="tunnistus">Tunnistus: Auktoriteetti voi olla pätevä peruste heuristisesti (epävarmuuden tilanteessa), mutta ei looginen todiste. Auktoriteetilla voi myös olla intressi tai rajoitettu asiantuntemus.</div>
+    </div>
+
+    <div class="virhe" id="enemmistoharha">
+      <div class="virhe-nro">15</div>
+      <h3>Enemmistöharha <span class="alkupera">— ad populum / argumentum ad numerum</span></h3>
+      <p>Väitteen totuusarvoa perustellaan sen suosiolla: koska moni uskoo niin, se on totta.</p>
+      <div class="dialogi">
+        <p><span class="virheellinen">"Miljoona ihmistä ei voi olla väärässä."</span></p>
+      </div>
+      <div class="tunnistus">Tunnistus: Historia on täynnä asioita, joihin miljardit ihmiset uskoivat ja jotka olivat väärin. Suosio ja totuus ovat eri asioita.</div>
+    </div>
+
+    <div class="virhe" id="luonnollisuusharha">
+      <div class="virhe-nro">16</div>
+      <h3>Luonnollisuusharha <span class="alkupera">— appeal to nature</span></h3>
+      <p>Luonnollinen = hyvä. Keinotekoinen = huono. Mutta luonnollisuus ei kerro mitään turvallisuudesta tai hyödyllisyydestä.</p>
+      <div class="dialogi">
+        <p><span class="virheellinen">"Homeopatia on 100 % luonnollista — se on paljon parempi kuin kemialliset lääkkeet."</span></p>
+      </div>
+      <div class="tunnistus">Tunnistus: Arseeni on luonnollista. Syöpä on luonnollista. Monet tehokkaat lääkkeet ovat synteettisiä. Luonnollisuus on erillinen kysymys kuin hyöty tai haitta.</div>
+    </div>
+
+    <div class="virhe" id="perinneharha">
+      <div class="virhe-nro">17</div>
+      <h3>Perinneharha <span class="alkupera">— appeal to tradition</span></h3>
+      <p>Koska jokin on ollut tapana pitkään, se on oikein tai parasta.</p>
+      <div class="dialogi">
+        <p><span class="virheellinen">"Olemme aina tehneet rekrytoinnin tällä tavalla — ei ole syytä muuttaa."</span></p>
+      </div>
+      <div class="tunnistus">Tunnistus: Ikä ei ole laatu. Perinteen olemassaolo on historiallinen fakta, ei arvoarvostelma.</div>
+    </div>
+
+    <div class="virhe" id="tunnevetoaminen">
+      <div class="virhe-nro">18</div>
+      <h3>Tunnevetoaminen <span class="alkupera">— appeal to emotion</span></h3>
+      <p>Argumentin sijaan herätellään voimakkaita tunteita — sääliä, vihaa, ylpeyttä, toivoa — jotta kuulija hyväksyy väitteen tunnetilansa perusteella.</p>
+      <div class="dialogi">
+        <p><span class="virheellinen">"Ajatelkaa lapsia, jotka joutuvat kasvamaan tämän lain varjossa. Emmekö me aikuiset ole vastuussa heistä?"</span></p>
+      </div>
+      <div class="tunnistus">Tunnistus: Tunteet voivat olla relevantteja (moraalikysymykset koskevat usein tunteita), mutta ne eivät korvaa argumenttia. Kysy: mikä on väite ja mitkä ovat perustelut?</div>
+    </div>
+
+    <div class="virhe" id="pelotteluharha">
+      <div class="virhe-nro">19</div>
+      <h3>Pelotteluharha <span class="alkupera">— appeal to fear / ad metum</span></h3>
+      <p>Väitettä tuetaan maalaamalla kauhistuttava kuva siitä, mitä tapahtuu jos ei toimi esitetyllä tavalla — riippumatta siitä onko uhka realistinen.</p>
+      <div class="dialogi">
+        <p><span class="virheellinen">"Jos emme hyväksy tätä valvontalakia, terroristit voittavat ja kaupunkimme räjähtävät."</span></p>
+      </div>
+      <div class="tunnistus">Tunnistus: Kysy, onko uhka todellinen, todennäköinen ja suoraan yhteydessä ehdotettuun toimenpiteeseen. Pelko on keino ohittaa kriittinen ajattelu.</div>
+    </div>
+
+    <div class="virhe" id="tietamattomyysharha">
+      <div class="virhe-nro">20</div>
+      <h3>Tietämättömyysharha <span class="alkupera">— argumentum ad ignorantiam</span></h3>
+      <p>Koska jotain ei ole todistettu vääräksi, se on totta. Tai koska jotain ei ole todistettu todeksi, se on väärää.</p>
+      <div class="dialogi">
+        <p><span class="virheellinen">"Kukaan ei ole todistanut, että haamuja ei ole olemassa — siis haamut ovat olemassa."</span></p>
+      </div>
+      <div class="tunnistus">Tunnistus: Todistustaakka on väittäjällä. Todistamaton ei ole sama kuin kumottu eikä sama kuin todistettu.</div>
+    </div>
+
+    <div class="virhe" id="seurausharha">
+      <div class="virhe-nro">21</div>
+      <h3>Seurausharha <span class="alkupera">— appeal to consequences / argumentum ad consequentiam</span></h3>
+      <p>Väitetään, että koska jokin uskomus johtaisi huonoihin (tai hyviin) seurauksiin, uskomus on väärä (tai totta). Todellisuus ei seuraa toiveita.</p>
+      <div class="dialogi">
+        <p><span class="virheellinen">"Evoluutioteoria ei voi olla totta, koska jos se olisi totta, elämällä ei olisi tarkoitusta."</span></p>
+      </div>
+      <div class="tunnistus">Tunnistus: Uskomuksen seuraukset eivät muuta sen totuusarvoa. Epämiellyttävä totuus on silti totuus.</div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="kategoria" id="kausaalivirheet">
+    <h2>Kausaali- ja todistusvirheet</h2>
+
+    <div class="virhe" id="post-hoc">
+      <div class="virhe-nro">22</div>
+      <h3>Jälkeen siis takia <span class="alkupera">— post hoc ergo propter hoc</span></h3>
+      <p>Koska B tapahtui A:n jälkeen, A aiheutti B:n. Mutta ajallinen järjestys ei tarkoita syy-seuraussuhdetta.</p>
+      <div class="dialogi">
+        <p><span class="virheellinen">"Rokottamisen jälkeen lapseni sai nuhan — rokote aiheutti nuhan."</span></p>
+      </div>
+      <div class="tunnistus">Tunnistus: Montako muuta asiaa tapahtui samaan aikaan? Onko kontrolliryhmää? Korrelaatio ei ole kausaliteetti.</div>
+    </div>
+
+    <div class="virhe" id="liukumaki">
+      <div class="virhe-nro">23</div>
+      <h3>Liukumäkiharha <span class="alkupera">— slippery slope</span></h3>
+      <p>Väitetään, että yksi askel johtaa väistämättä katastrofaaliseen ketjureaktioon — ilman perustelua sille, miksi jokainen väliaskel on väistämätön.</p>
+      <div class="dialogi">
+        <p><span class="virheellinen">"Jos sallimme kahden miehen avioliiton, seuraavaksi sallitaan avioliitto eläinten kanssa."</span></p>
+      </div>
+      <div class="tunnistus">Tunnistus: Pyydä perustelua sille, miksi juuri tämä askel johtaa juuri seuraavaan. Ketjun jokainen lenkki pitää perustella erikseen.</div>
+    </div>
+
+    <div class="mermaid">
+flowchart TD
+  S1["Ehdotus A\n(kohtuullinen)"] -->|"'johtaa väistämättä'"| S2["Seuraus B"]
+  S2 -->|"'johtaa väistämättä'"| S3["Seuraus C"]
+  S3 -->|"'johtaa väistämättä'"| S4["KATASTROFI"]
+  S1 -. "Todellisuus:\njokainen nuoli on\nerillinen poliittinen\npäätös" .-> Huom["Kukin askel\nvaatii oman\nperustelunsa"]
+  style S4 fill:#c0392b,color:#fff,stroke:#922b21
+  style Huom fill:#f0f6fd,stroke:#2980b9
+    </div>
+    <p class="kaavio-selitys">Liukumäki: ketjun lenkit esitetään väistämättöminä — vaikka jokainen on erillinen valinta.</p>
+
+    <div class="virhe" id="todistustaakka">
+      <div class="virhe-nro">24</div>
+      <h3>Todistustaakan siirto <span class="alkupera">— shifting the burden of proof</span></h3>
+      <p>Väittäjä edellyttää, että vastapuoli todistaa väitteen vääräksi sen sijaan, että väittäjä itse todistaa väitteensä oikeaksi.</p>
+      <div class="dialogi">
+        <p>A: "Marjat parantavat syövän."</p>
+        <p>B: "Minkä todistusaineiston perusteella?"</p>
+        <p><span class="virheellinen">A: "Todista sinä, että ne EIVÄT paranna."</span></p>
+      </div>
+      <div class="tunnistus">Tunnistus: Perussääntö: todistustaakka on sillä, joka tekee väitteen — erityisesti poikkeuksellisen väitteen.</div>
+    </div>
+
+    <div class="virhe" id="uponneet-kustannukset">
+      <div class="virhe-nro">25</div>
+      <h3>Uponneiden kustannusten harha <span class="alkupera">— sunk cost fallacy</span></h3>
+      <p>Jatketaan huonoa sijoitusta, projektia tai suhdetta koska siihen on jo panostettu paljon — vaikka jatkaminen ei ole järkevää nykyhetkestä eteenpäin laskettuna.</p>
+      <div class="dialogi">
+        <p><span class="virheellinen">"Olemme käyttäneet tähän IT-projektiin jo viisi miljoonaa — ei voida lopettaa nyt."</span></p>
+      </div>
+      <div class="tunnistus">Tunnistus: Menneisyys on mennyt riippumatta päätöksestä. Relevantti kysymys on: onko jatkaminen järkevää <em>nyt</em>, tästä hetkestä eteenpäin?</div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="kategoria" id="yleistysvirheet">
+    <h2>Yleistys- ja valikointivirheet</h2>
+
+    <div class="virhe" id="hatikoity-yleistys">
+      <div class="virhe-nro">26</div>
+      <h3>Hätiköity yleistys <span class="alkupera">— hasty generalization</span></h3>
+      <p>Yleistys tehdään liian pienestä tai epäedustavasta otoksesta.</p>
+      <div class="dialogi">
+        <p><span class="virheellinen">"Tapasin kaksi ranskalaista jotka olivat epäkohteliaat — ranskalaiset ovat epäkohteliasta väkeä."</span></p>
+      </div>
+      <div class="tunnistus">Tunnistus: Kuinka suuri otos? Onko se edustava? Voisiko valikoitumisharha selittää tuloksen?</div>
+    </div>
+
+    <div class="virhe" id="kirsikanpoiminta">
+      <div class="virhe-nro">27</div>
+      <h3>Kirsikanpoiminta <span class="alkupera">— cherry picking / confirmation bias in action</span></h3>
+      <p>Esitetään vain omaa kantaa tukeva todistusaineisto ja jätetään mainitsematta se osa aineistosta, joka puhuu sitä vastaan.</p>
+      <div class="dialogi">
+        <p><span class="virheellinen">"Katsokaa tätä yhtä tutkimusta — se todistaa, että kahvi aiheuttaa syöpää."</span> <em>[ei mainita sataa muuta tutkimusta, jotka osoittavat päinvastaista]</em></p>
+      </div>
+      <div class="tunnistus">Tunnistus: Kysy: mitä <em>kaikkea</em> tutkimusta aiheesta on? Mikä on tieteellinen konsensus kokonaisuudessaan?</div>
+    </div>
+
+    <div class="cherry-grid">
+      <div class="cherry-dot ohitettu">✗</div>
+      <div class="cherry-dot ohitettu">✗</div>
+      <div class="cherry-dot valittu">✓</div>
+      <div class="cherry-dot ohitettu">✗</div>
+      <div class="cherry-dot ohitettu">✗</div>
+      <div class="cherry-dot ohitettu">✗</div>
+      <div class="cherry-dot valittu">✓</div>
+      <div class="cherry-dot ohitettu">✗</div>
+      <div class="cherry-dot ohitettu">✗</div>
+      <div class="cherry-dot ohitettu">✗</div>
+      <div class="cherry-dot ohitettu">✗</div>
+      <div class="cherry-dot valittu">✓</div>
+      <div class="cherry-dot ohitettu">✗</div>
+      <div class="cherry-dot ohitettu">✗</div>
+      <div class="cherry-dot ohitettu">✗</div>
+    </div>
+    <p class="kaavio-selitys">15 tutkimuksesta 3 tukee väitettä — ja niistä kerrotaan. Muista vaietaan.</p>
+
+    <div class="virhe" id="anekdootti">
+      <div class="virhe-nro">28</div>
+      <h3>Anekdoottiharha <span class="alkupera">— anecdotal evidence</span></h3>
+      <p>Yhden henkilön kokemus tai tarina nostetaan yleiseksi totuudeksi tilastollisen aineiston sijaan.</p>
+      <div class="dialogi">
+        <p><span class="virheellinen">"Isoisäni tupakoi 80-vuotiaaksi eikä sairastunut keuhkosyöpään — tupakointi ei siis ole niin vaarallista."</span></p>
+      </div>
+      <div class="tunnistus">Tunnistus: Anekdootti voi olla kiinnostava hypoteesi, mutta ei todiste. Yksittäistapaukset eivät kerro todennäköisyyksistä.</div>
+    </div>
+
+    <div class="virhe" id="ei-oikea-skotlantilainen">
+      <div class="virhe-nro">29</div>
+      <h3>Ei oikea skotlantilainen <span class="alkupera">— no true Scotsman</span></h3>
+      <p>Kun oma ryhmä tai ideologia tekee jotain hävettävää, todetaan ettei kyseinen henkilö ole "oikea" edustaja — suojelemalla ideaalia versiota todellisilta esimerkeiltä.</p>
+      <div class="dialogi">
+        <p>A: "Tuo kristitty teki jotain pahaa."</p>
+        <p><span class="virheellinen">B: "Se ei ole oikea kristitty. Oikea kristitty ei tekisi niin."</span></p>
+      </div>
+      <div class="tunnistus">Tunnistus: Määritelläänkö "oikea" sen mukaan, toimiiko henkilö halutulla tavalla? Jos kriteeri on "ei tee pahaa", argumentti on kehä.</div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="kategoria" id="retoriset-harhapolut">
+    <h2>Retoriset harhapolut</h2>
+
+    <div class="virhe" id="punainen-silli">
+      <div class="virhe-nro">30</div>
+      <h3>Punainen silli <span class="alkupera">— red herring</span></h3>
+      <p>Keskustelun suunta muutetaan sivuaiheeseen, joka tuntuu relevantilta mutta ei vastaa alkuperäiseen kysymykseen.</p>
+      <div class="dialogi">
+        <p>A: "Miksi hallituksenne ei reagoinut tulviin ajoissa?"</p>
+        <p><span class="virheellinen">B: "Haluaisin muistuttaa, kuinka paljon olemme investoineet ilmastotoimiin viime vuosina."</span></p>
+      </div>
+      <div class="tunnistus">Tunnistus: Palataan alkuperäiseen kysymykseen: "Se on kiinnostavaa, mutta vastattiinko kysymykseeni?"</div>
+    </div>
+
+    <div class="virhe" id="gish-gallop">
+      <div class="virhe-nro">31</div>
+      <h3>Gish gallop</h3>
+      <p>Tulvitetaan vastustaja suurella määrällä heikkoja, puolittain perusteltuja tai nopeasti esitettyjä väitteitä. Jokaisen kumoaminen vie paljon aikaa — enemmän kuin niiden esittäminen. Tässäkin voittaa vaikka olisi väärässä.</p>
+      <div class="dialogi">
+        <p><span class="virheellinen">"Evoluutio on väärässä koska: 1) toinen laki termodynaamikasta, 2) puuttuvat välimuodot, 3) silmän monimutkaisuus, 4) DNA:n informaatio, 5) Cambrianin räjähdys, 6) nopeus geologisessa asteikossa, 7)…"</span></p>
+      </div>
+      <div class="tunnistus">Tunnistus: Nimeä taktiikka ääneen. Valitse yksi väite ja käy se kunnolla läpi sen sijaan, että yrittää vastata kaikkeen. Gallop-taktikka nojaa siihen, ettei kukaan ehdi vastata.</div>
+    </div>
+
+    <div class="gallop-visual">
+      <div class="gallop-puoli esittaja">
+        <strong>Väittäjä — ~10 sekuntia yhteensä</strong>
+        <div class="gallop-rivi">Väite 1 — esitetty 1 s</div>
+        <div class="gallop-rivi">Väite 2 — esitetty 1 s</div>
+        <div class="gallop-rivi">Väite 3 — esitetty 1 s</div>
+        <div class="gallop-rivi">Väite 4 — esitetty 1 s</div>
+        <div class="gallop-rivi">Väite 5 — esitetty 1 s</div>
+        <div class="gallop-rivi">Väite 6 — esitetty 1 s</div>
+        <div class="gallop-rivi">Väite 7 — esitetty 1 s</div>
+        <div class="gallop-rivi">Väite 8 — esitetty 1 s</div>
+      </div>
+      <div class="gallop-puoli vastaaja">
+        <strong>Vastustaja — ~16 minuuttia vaaditaan</strong>
+        <div class="gallop-rivi">Väite 1: perusteellinen vastaus ≈ 2 min</div>
+        <div class="gallop-rivi">Väite 2: perusteellinen vastaus ≈ 2 min</div>
+        <div class="gallop-rivi odottaa">Väite 3: odottaa...</div>
+        <div class="gallop-rivi odottaa">Väite 4: odottaa...</div>
+        <div class="gallop-rivi odottaa">Väite 5: odottaa...</div>
+        <div class="gallop-rivi odottaa">Väite 6: odottaa...</div>
+        <div class="gallop-rivi odottaa">Väite 7: odottaa...</div>
+        <div class="gallop-rivi odottaa">Väite 8: odottaa...</div>
+      </div>
+    </div>
+    <p class="kaavio-selitys">Gish gallop hyödyntää epäsymmetriaa: heittäminen on nopeaa, kumoaminen hidasta. Aika loppuu ennen kuin puolustus edes pääsee alkuun.</p>
+
+    <div class="virhe" id="sealioning">
+      <div class="virhe-nro">32</div>
+      <h3>Merileijonoilu <span class="alkupera">— sealioning</span></h3>
+      <p>Esitetään loputon sarja näennäisen vilpittömiä kysymyksiä ja vaatimuksia todistusaineistosta — ei oppimistarkoituksessa vaan kuluttamaan vastustajan aikaa ja energiaa.</p>
+      <div class="dialogi">
+        <p>A: "Ilmastonmuutos on ihmisen aiheuttamaa."</p>
+        <p><span class="virheellinen">B: "Voitko lähettää lähteen? Entä tälle? Ja tälle? Oletko lukenut tämän vastakkaisen näkemyksen? Mikset vastaa kysymykseeni? Miks olet niin aggressiivinen?"</span></p>
+      </div>
+      <div class="tunnistus">Tunnistus: Vilpitön uteliaisuus vs. huono usko eroaa siitä, hyväksytäänkö koskaan mitään vastaukseksi. Jos jokainen vastaus synnyttää uuden vaatimuksen, kyseessä ei ole aito dialogi.</div>
+    </div>
+
+    <div class="virhe" id="naturalistinen-harha">
+      <div class="virhe-nro">33</div>
+      <h3>Naturalistinen harha <span class="alkupera">— is-ought fallacy / naturalistic fallacy</span></h3>
+      <p>Siirretään suoraan kuvauksesta (miten asiat ovat) normatiiviseen väitteeseen (miten asioiden pitäisi olla) — ilman perustetta siirrolle.</p>
+      <div class="dialogi">
+        <p><span class="virheellinen">"Evoluutiossa vahvemmat selviävät — joten on luonnollista ja oikein, että vahvat menestyvät ja heikot kärsivät."</span></p>
+      </div>
+      <div class="tunnistus">Tunnistus: "On"-lauseesta ei seuraa "pitäisi"-lause ilman lisäpremissiä. David Hume kuvasi tätä siirtymää jo 1700-luvulla.</div>
+    </div>
+
+    <div class="virhe" id="kaksoisstandardi">
+      <div class="virhe-nro">34</div>
+      <h3>Kaksoismittastandardi <span class="alkupera">— double standard</span></h3>
+      <p>Sovelletaan eri kriteerejä samanlaisiin tilanteisiin riippuen siitä, kuka tai mikä ryhmä on kyseessä.</p>
+      <div class="dialogi">
+        <p><span class="virheellinen">"Kun meidän joukkuemme pelaaja tekee saman siirron, se on taitoa. Kun vastustaja tekee sen, se on huijaamista."</span></p>
+      </div>
+      <div class="tunnistus">Tunnistus: Kysy: käyttäisinkö samaa arviointikriteeriä, jos roolit olisivat päinvastaiset?</div>
+    </div>
+
+    <div class="virhe" id="scotch-verdict">
+      <div class="virhe-nro">35</div>
+      <h3>Epäsymmetrinen todistustaakka <span class="alkupera">— asymmetric skepticism</span></h3>
+      <p>Vaaditaan omaa kantaa tukevalta aineistolta löyhät todistusstandardit, mutta vastakkaiselta aineistolta täydellistä varmuutta.</p>
+      <div class="dialogi">
+        <p><span class="virheellinen">"Yksi tutkimus riittää todistamaan lisäravinteiden hyödyt. Mutta sadasta tutkimuksesta, jotka osoittavat rokotteiden turvallisuuden, pitää jokainen kyseenalaistaa."</span></p>
+      </div>
+      <div class="tunnistus">Tunnistus: Sovella samaa skeptisyyden tasoa kaikkeen aineistoon suunnasta riippumatta.</div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+
+
+  <div class="vaaralatikko">
+    <strong>Viimeinen muistutus:</strong> Virhepäätelmien tunnistaminen ei tarkoita, että voit sivuuttaa argumentin toteamalla "tuo on virhepäätelmä". Se tarkoittaa, että sinun pitää osoittaa <em>miksi</em> argumentti epäonnistuu — ja usein silti vastata itse asiaan. Virhepäätelmäkortti on diagnostinen työkalu, ei debatin voittamiskeino.
+  </div>
+
+  <footer class="sivusto-footer">
+    <strong>Kriittisen ajattelun opas</strong><br>
+    <span class="footer-linkit">
+      <a href="ilmiot.html">Ilmiöitä</a> ·
+      <a href="virhepaatelmat.html">Loogiset virhepäätelmät</a> ·
+      <a href="kognitiiviset-vinoumat.html">Kognitiiviset vinoumat</a>
+    </span>
+  </footer>
+
+</body>
+</html>

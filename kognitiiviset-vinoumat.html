@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <title>Kognitiiviset vinoumat</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+  <script>mermaid.initialize({ startOnLoad: true, themeVariables: { fontSize: '12px' } });</script>
+  <style>
+    .mermaid svg text { font-size: 12px !important; }
+    body {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+    .vino-kategoria {
+      margin-bottom: 3rem;
+    }
+    .vino-kategoria > h2 {
+      border-bottom: 3px solid #2c3e50;
+      padding-bottom: 0.4rem;
+      margin-bottom: 1.5rem;
+    }
+    .termi h3 {
+      margin: 0 0 0.3rem;
+      font-size: 1.05em;
+    }
+    .termi h3 .alkupera {
+      font-weight: normal;
+      font-style: italic;
+      color: #666;
+      font-size: 0.9em;
+    }
+    .termi > p {
+      margin: 0.3rem 0 0.8rem;
+      font-size: 0.95em;
+    }
+    .vino-nro {
+      display: inline-block;
+      font-size: 0.72em;
+      background: #7f8c8d;
+      color: #fff;
+      border-radius: 3px;
+      padding: 0.15em 0.55em;
+      margin-bottom: 0.45rem;
+      letter-spacing: 0.04em;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    .esimerkki {
+      background: #f5f5f5;
+      border-left: 3px solid #95a5a6;
+      padding: 0.7em 1em;
+      margin: 0.5rem 0 0.7rem;
+      font-size: 0.9em;
+      font-style: italic;
+    }
+    .tunnistus {
+      background: #fdf6ec;
+      border-left: 3px solid #e67e22;
+      padding: 0.5em 0.9em;
+      font-size: 0.85em;
+      color: #555;
+    }
+    .huomiolaatikko {
+      background: #fdf6ec;
+      border-left: 4px solid #e67e22;
+      padding: 1em 1.2em;
+      margin: 1.5rem 0;
+      font-size: 0.95em;
+    }
+    .infolaatikko {
+      background: #f0f6fd;
+      border-left: 4px solid #2980b9;
+      padding: 1em 1.2em;
+      margin: 1.5rem 0;
+      font-size: 0.95em;
+    }
+    .kaavio-selitys {
+      font-size: 0.85em;
+      color: #666;
+      text-align: center;
+      margin-top: 0.3rem;
+      margin-bottom: 0.8rem;
+    }
+    .termi-lahde {
+      font-size: 0.84em;
+      color: #888;
+      margin-top: 0.8rem;
+      margin-bottom: 0;
+    }
+    /* Kategoriavärit */
+    #itsearviointi .termi      { border-top-color: #8e44ad; }
+    #itsearviointi .vino-nro   { background: #8e44ad; }
+    #tiedonkasittely .termi    { border-top-color: #2980b9; }
+    #tiedonkasittely .vino-nro { background: #2980b9; }
+    #paatoksenteko .termi      { border-top-color: #27ae60; }
+    #paatoksenteko .vino-nro   { background: #27ae60; }
+    #attribuutio .termi        { border-top-color: #e67e22; }
+    #attribuutio .vino-nro     { background: #e67e22; }
+  </style>
+</head>
+<body>
+
+  <nav class="simple-nav">
+    <a href="ilmiot.html">Ilmiöitä</a>
+    <a href="virhepaatelmat.html">Loogiset virhepäätelmät</a>
+    <a href="kognitiiviset-vinoumat.html" class="nav-aktiv">Kognitiiviset vinoumat</a>
+  </nav>
+
+  <h1>Kognitiiviset vinoumat</h1>
+  <p>Kognitiivinen vinouma on systemaattinen poikkeama rationaalisesta päättelystä — ei satunnainen virhe vaan ennustettava, toistuva harhautus, joka johtuu aivojen tavasta käsitellä tietoa nopeasti. Nämä vinoumat eivät johdu tyhmyydestä: ne ovat evolutiivisesti edullisten heuristiikkojen sivuvaikutuksia.</p>
+
+  <div class="infolaatikko">
+    <strong>Vinouma ≠ virhe automaattisesti:</strong> Heuristiikat — nopeat päättelyoikotiet — ovat useimmiten riittävän hyviä. Ongelma syntyy kun niitä sovelletaan konteksteihin joihin ne eivät sovi. Vinouman tunnistaminen ei tarkoita, ettei sitä koe — se tarkoittaa, että voit tunnistaa tilanteen jossa se todennäköisesti vaikuttaa.
+  </div>
+
+  <div class="hakemisto">
+    <strong>Sisällys</strong>
+    <div class="hakemisto-grid">
+      <a href="#dunning-kruger">1. Dunning-Kruger-efekti</a>
+      <a href="#paremmuusharha">2. Paremmuusharha</a>
+      <a href="#ikea-efekti">3. Ikea-efekti</a>
+      <a href="#vahvistusharha">4. Vahvistusharha</a>
+      <a href="#saatavuusheuristiikka">5. Saatavuusheuristiikka</a>
+      <a href="#ankkurointiharha">6. Ankkurointiharha</a>
+      <a href="#kehystysvaikutus">7. Kehystysvaikutus</a>
+      <a href="#status-quo-harha">8. Status quo -harha</a>
+      <a href="#omissioharha">9. Omissioharha</a>
+      <a href="#ryhmaajattelu">10. Ryhmäajattelu</a>
+      <a href="#perusattribuutiovirhe">11. Perusattribuutiovirhe</a>
+      <a href="#hindsight-bias">12. Taaksepäinviisauden harha</a>
+      <a href="#selviytymisharha">13. Selviytymisharha</a>
+      <a href="#sisaryhmasuosinta">14. Sisäryhmäsuosinta</a>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="vino-kategoria" id="itsearviointi">
+    <h2>Itsearviointivääristymät</h2>
+
+    <div class="termi" id="dunning-kruger">
+      <div class="vino-nro">1</div>
+      <h3>Dunning-Kruger-efekti</h3>
+      <p>Henkilöt, joilla on vähän tietoa tai taitoa jollain alalla, arvioivat osaamisensa systemaattisesti liian korkeaksi — koska heillä ei ole riittävästi tietoa tunnistaakseen omia puutteitaan. Samaan aikaan todellinen asiantuntija aliarvioi osaamisensa, koska hänellä on riittävästi tietoa nähdä kuinka paljon häneltä vielä puuttuu.</p>
+
+      <div class="mermaid">
+xychart-beta
+  title "Koettu pätevyys eri kehitysvaiheissa"
+  x-axis ["Ei tietoa", "Pintaraapaisu", "Oivallushetki", "Syvenevä osaaminen", "Asiantuntija"]
+  y-axis "Koettu pätevyys %" 0 --> 100
+  line [15, 95, 35, 58, 78]
+      </div>
+      <p class="kaavio-selitys">"Mount Stupid" on piikki vasemmalla — sieltä käsin ei vielä näe, mitä ei tiedä.</p>
+
+      <div class="esimerkki">
+        Aloitteleva ohjelmoija vakuuttaa ratkaisevansa järjestelmäarkkitehtuurin viikonlopussa. Kymmenenvuotinen ammattilainen epäilee, osataanko se lainkaan kolmessa kuukaudessa.
+      </div>
+      <div class="tunnistus">Tunnistus: Jos et tiedä mitä et tiedä, olet altis efektille. Kysy: mitä osaajat kokevat tässä vaikeaksi, josta minulla ei ole käsitystä?</div>
+      <p class="termi-lahde">Kruger &amp; Dunning, 1999. Huom: alkuperäinen tutkimus on replikoitu vaihtelevasti — efekti on todellinen mutta sen muoto kiistelty.</p>
+    </div>
+
+    <div class="termi" id="paremmuusharha">
+      <div class="vino-nro">2</div>
+      <h3>Paremmuusharha <span class="alkupera">— above-average effect / Lake Wobegon -efekti</span></h3>
+      <p>Valtaosa ihmisistä arvioi itsensä keskimääräistä paremmaksi useimmilla positiivisesti arvostetuilla ominaisuuksilla — ajamisessa, huumorintajussa, johtamisessa, eettisyydessä. Matemaattisesti on mahdotonta, että 80 % on keskimääräistä parempia kuljettajia.</p>
+
+      <div class="mermaid">
+flowchart LR
+  K["Kysymys: Oletko\nparempi kuin\nkeskimääräinen?"] --> I["Itsearviointi:\nvertaa omiin\nparhaisiin hetkiin"]
+  I --> V["Vastaus: 'Kyllä'\n(80–90 % vastaajista)"]
+  V --> M["Matematiikka:\nmahdotonta"]
+  style V fill:#fdf0f0,stroke:#c0392b
+  style M fill:#fff3cd,stroke:#f39c12
+      </div>
+      <p class="kaavio-selitys">Itsearviointi on systemaattisesti positiivinen — ei satunnaisesti vääristynyt.</p>
+
+      <div class="esimerkki">
+        Tutkimuksissa 90 % autoilijoista arvioi ajotaitonsa paremmaksi kuin mediaanikuski. 85 % yliopisto-opettajista piti itseään alan parhaimpaan kvartaaliin kuuluvana.
+      </div>
+      <div class="tunnistus">Tunnistus: Erityisen voimakas ominaisuuksissa, joita on vaikea objektiivisesti mitata. Pyydä ulkopuolinen palaute tai vertaa konkreettisiin mittareihin.</div>
+    </div>
+
+    <div class="termi" id="ikea-efekti">
+      <div class="vino-nro">3</div>
+      <h3>Ikea-efekti</h3>
+      <p>Ihmiset arvioivat itse rakentamansa tai tekemänsä tuotteet, suunnitelmat ja ideat arvokkaammiksi kuin vastaavat valmiit tai toisen tekemät versiot — pelkästään oman työn takia.</p>
+
+      <div class="mermaid">
+flowchart LR
+  OT["Oma työ\n(sama lopputulos)"] --> A["Arviointi"]
+  VV["Vastaava valmis\nversio"] --> A
+  OT -->|"+ ylimääräinen arvo\ntyöstä itsestään"| A
+  VV -->|"neutraali arviointi"| A
+  A --> E["Oma kohde\nvoittaa arvioinnissa"]
+  style OT fill:#f0f6fd,stroke:#2980b9
+  style E fill:#fdf0f0,stroke:#c0392b
+      </div>
+      <p class="kaavio-selitys">Oma työ saa lisäarvon jota ei lasketa mukaan — lopputulos on sama, mutta arvo eri.</p>
+
+      <div class="esimerkki">
+        Tuotepäällikkö puolustaa omaa ratkaisuehdostaan sitten, kun tiimi on esittänyt yksinkertaisemman vaihtoehdon. "Kyllä minun ratkaisuni on parempi — ymmärtäkää kokonaiskuva."
+      </div>
+      <div class="tunnistus">Tunnistus: Kysy itseltäsi — arvioisitko tämän ratkaisun yhtä korkealle jos joku muu olisi sen tehnyt? Jos et, Ikea-efekti on todennäköisesti paikalla.</div>
+      <p class="termi-lahde">Norton, Mochon &amp; Ariely, 2012. Kytkeytyy omistusefektiin (endowment effect).</p>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="vino-kategoria" id="tiedonkasittely">
+    <h2>Tiedonhaku ja -käsittely</h2>
+
+    <div class="termi" id="vahvistusharha">
+      <div class="vino-nro">4</div>
+      <h3>Vahvistusharha <span class="alkupera">— confirmation bias</span></h3>
+      <p>Ihmiset etsivät, tulkitsevat, suosivat ja muistavat tietoa tavalla, joka vahvistaa heidän olemassaolevia uskomuksiaan — ja jättävät huomiotta vastakkaisen evidenssin. Kyse ei ole pelkästään passiivisesta suodattumisesta: vahvistusharhaan kuuluu aktiivinen tiedonhaku, joka suuntautuu vahvistaviin lähteisiin.</p>
+
+      <div class="mermaid">
+flowchart TD
+  U["Olemassaoleva uskomus"] --> E["Tiedonhaku"]
+  E --> L["Vahvistava tieto\nlöydetään"]
+  E --> V["Vastakkainen tieto\nlöydetään"]
+  L --> VS["Uskomus vahvistuu"]
+  V --> H["Hylätään tai\ntrivialisoidaan"]
+  VS --> U
+  H --> U
+  style V fill:#fdf0f0,stroke:#c0392b
+  style H fill:#fdf0f0,stroke:#c0392b
+  style VS fill:#f0f6fd,stroke:#2980b9
+      </div>
+      <p class="kaavio-selitys">Kierre: uskomus ohjaa hakua, haku vahvistaa uskoa — vastakkainen tieto ei pääse sisään.</p>
+
+      <div class="esimerkki">
+        Sijoittaja, joka uskoo yrityksen olevan yliarvostettu, hakee analyysejä jotka tukevat näkemystä — ja ohittaa positiiviset raportit "biased" tai "ei ymmärrä kokonaiskuvaa" -perusteella.
+      </div>
+      <div class="tunnistus">Tunnistus: Etsi aktiivisesti vastaesimerkkejä omille uskomuksillesi. Kysy: mikä olisi se evidenssi joka muuttaisi mieltäni — ja onko sellaista olemassa?</div>
+      <p class="termi-lahde">Ks. myös <a href="virhepaatelmat.html#kirsikanpoiminta">Kirsikanpoiminta</a> — vahvistusharhan toiminnallinen vastine argumentaatiossa.</p>
+    </div>
+
+    <div class="termi" id="saatavuusheuristiikka">
+      <div class="vino-nro">5</div>
+      <h3>Saatavuusheuristiikka <span class="alkupera">— availability heuristic</span></h3>
+      <p>Arvioimme tapahtuman todennäköisyyttä sen perusteella, kuinka helposti mieleen tulee esimerkkejä siitä. Helposti mieleen tulevat tapahtumat — dramaattiset, äskettäiset, henkilökohtaisesti koetut — arvioidaan todennäköisemmiksi kuin tilastot osoittavat.</p>
+
+      <div class="mermaid">
+flowchart LR
+  TR["Todellinen riski:\nlentokuolema 1:11 000 000\nautokuolema 1:100"] --> P["Rationaalinen\npäätös"]
+  MU["Uutinen: lento-\nonnettomuus esillä\n2 viikkoa mediassa"] --> KR["Koettu riski:\nlentäminen tuntuu\nvaarallisemmalta"]
+  KR -->|"ohjaa enemmän"| P
+  TR -->|"ohjaa vähemmän\nkuin pitäisi"| P
+  style MU fill:#fdf0f0,stroke:#c0392b
+  style KR fill:#fff3cd,stroke:#f39c12
+      </div>
+      <p class="kaavio-selitys">Mediakattavuus ja todellinen riski ovat eri asioita — mutta aivot käyttävät ensimmäistä toisen sijasta.</p>
+
+      <div class="esimerkki">
+        Lento-onnettomuuden jälkeisellä viikolla lentomatkustamisen koettu riski kasvaa merkittävästi — vaikka tilastot eivät muutu. Samaan aikaan sydänsairaudet, jotka tappavat miljoonikertaisesti enemmän, tuntuvat etäisiltä.
+      </div>
+      <div class="tunnistus">Tunnistus: Kysy onko mielipiteesi muuttunut median kattavuuden vai uuden tiedon takia. Jos dramaattinen yksittäistapaus on muuttanut käsitystäsi kokonaisriskistä — tarkista tilastot.</div>
+      <p class="termi-lahde">Tversky &amp; Kahneman, 1973.</p>
+    </div>
+
+    <div class="termi" id="ankkurointiharha">
+      <div class="vino-nro">6</div>
+      <h3>Ankkurointiharha <span class="alkupera">— anchoring bias</span></h3>
+      <p>Ensimmäinen saatu numero tai tieto toimii ankkurina, johon kaikki myöhemmät arviot suhteutuvat — vaikka alkuperäinen luku olisi täysin mielivaltainen. Päätös tai arvio ei koskaan irtoa ankkurista täysin.</p>
+
+      <div class="mermaid">
+flowchart LR
+  AN["Ankkuri:\nensimmäinen luku\n(vaikka satunnainen)"] --> S["Säätö\nankkurista poispäin"]
+  OV["Oikea arvo"] -.->|"ei pääse\nmäärittelemään"| L
+  S -->|"säätö jää\naina vajaaksi"| L["Lopullinen arvio:\nlähellä ankkuria"]
+  style AN fill:#fdf0f0,stroke:#c0392b
+  style L fill:#fff3cd,stroke:#f39c12
+  style OV fill:#f0fdf4,stroke:#27ae60
+      </div>
+      <p class="kaavio-selitys">Ankkuri vetää puoleensa — vaikka tiedät sen olevan väärä, irrottautuminen on epätäydellistä.</p>
+
+      <div class="esimerkki">
+        Neuvottelussa ensimmäisenä esitetty hinta määrittää lopputuloksen alueen — myös silloin kun toinen osapuoli tietää alkuperäisen olevan epärealistinen. Listahinnan "alennus" tuntuu hyvältä, vaikka listahinta oli keksitty.
+      </div>
+      <div class="tunnistus">Tunnistus: Mieti mistä ensimmäinen lukusi tuli. Jos se tuli ulkopuolelta — myyjältä, mediasta, satunnaisesta lähteestä — se on ankkuri, ei neutraali lähtöpiste.</div>
+      <p class="termi-lahde">Tversky &amp; Kahneman, 1974. Vahvistuu erityisesti epävarmuuden tilanteissa.</p>
+    </div>
+
+    <div class="termi" id="kehystysvaikutus">
+      <div class="vino-nro">7</div>
+      <h3>Kehystysvaikutus <span class="alkupera">— framing effect</span></h3>
+      <p>Sama informaatio esitettynä eri tavalla — eri "kehyksessä" — johtaa eri päätöksiin. Rationaalisen toimijan pitäisi tehdä sama päätös riippumatta esitystavasta, mutta ihminen reagoi muotoon yhtä paljon kuin sisältöön.</p>
+
+      <div class="mermaid">
+flowchart TD
+  T["Sama tieto:\nleikkauksen kuolleisuus 10 %"] --> P["Positiivinen kehys:\n'90 % potilaista selviää'"]
+  T --> N["Negatiivinen kehys:\n'10 % kuolee leikkaukseen'"]
+  P --> HK["Useimmat valitsevat\nleikkauksen"]
+  N --> KA["Useimmat karttavat\nleikkausta"]
+  style T fill:#f0f6fd,stroke:#2980b9
+  style HK fill:#f0fdf4,stroke:#27ae60
+  style KA fill:#fdf0f0,stroke:#c0392b
+      </div>
+      <p class="kaavio-selitys">Sama luku, eri reaktio — kehys määrittää päätöksen enemmän kuin sisältö.</p>
+
+      <div class="esimerkki">
+        "Tässä lihassa on 20 % rasvaa" vs. "Tämä liha on 80 % rasvaton." Sama tuote — mutta jälkimmäinen arvioidaan terveellisemmäksi ja ostetaan useammin.
+      </div>
+      <div class="tunnistus">Tunnistus: Muuta kehys — käännä positiivinen negatiiviseksi ja toisin päin. Jos päätöksesi muuttuu, teit päätöksen esitystavan perusteella. Arvioi uudelleen neutraalisti.</div>
+      <p class="termi-lahde">Tversky &amp; Kahneman, 1981. Ks. myös <a href="ilmiot.html#tilastoilla-valehtelu">Tilastoilla valehtelu</a>.</p>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="vino-kategoria" id="paatoksenteko">
+    <h2>Päätöksenteko ja toiminta</h2>
+
+    <div class="termi" id="status-quo-harha">
+      <div class="vino-nro">8</div>
+      <h3>Status quo -harha <span class="alkupera">— status quo bias</span></h3>
+      <p>Nykytilanteen muuttaminen tuntuu tappiolta, vaikka muutos olisi rationaalisesti parempi vaihtoehto. Inertia ei johdu pelkästä laiskuudesta — se on aktiivinen preferenssi nykytilaa kohtaan, jonka taustalla on tappioiden suurempi paino kuin vastaavien voittojen.</p>
+
+      <div class="mermaid">
+flowchart LR
+  NY["Nykytila"] --> A["Arviointi"]
+  UU["Uusi vaihtoehto"] --> A
+  NY -->|"mahdollinen tappio\ntuntuu suurelta"| A
+  UU -->|"mahdollinen hyöty\ntuntuu pieneltä"| A
+  A --> P["Nykytila valitaan\nvaikka uusi olisi\nobjektiivisesti parempi"]
+  style NY fill:#f0fdf4,stroke:#27ae60
+  style P fill:#fdf0f0,stroke:#c0392b
+      </div>
+      <p class="kaavio-selitys">Tappio nykytilasta painaa enemmän kuin vastaava hyöty — epäsymmetria ohjaa valintaa.</p>
+
+      <div class="esimerkki">
+        Organisaatio jatkaa vanhan järjestelmän käyttöä, vaikka uusi olisi selvästi parempi — koska muutos "tuntuu riskiltä" vaikka nykyinen aiheuttaa jatkuvaa kitkaa.
+      </div>
+      <div class="tunnistus">Tunnistus: Kysy — jos alkaisit nyt alusta, valitsisitko nykytilan? Jos et, arvioit muutosta epäsymmetrisesti. Vertaa muutoksen hyötyjä sen kustannuksiin, älä pelkkään epämukavuuteen.</div>
+      <p class="termi-lahde">Samuelson &amp; Zeckhauser, 1988. Kytkeytyy tappiokarttamiseen (loss aversion).</p>
+    </div>
+
+    <div class="termi" id="omissioharha">
+      <div class="vino-nro">9</div>
+      <h3>Omissioharha <span class="alkupera">— omission bias</span></h3>
+      <p>Tekemättä jättäminen (omissio) arvioidaan moraalisesti vähemmän pahaksi kuin vastaava aktiivinen teko (komissio) — vaikka lopputulos olisi sama. "En tehnyt mitään" tuntuu vähemmän vastuulliselta kuin "tein jotain joka johti samaan tulokseen".</p>
+
+      <div class="mermaid">
+flowchart TD
+  T["Sama lopputulos\n(esim. potilas kuolee)"] --> A["Lääkäri antaa\nriskialttiit lääkkeet\n→ kuolema"]
+  T --> B["Lääkäri jättää\nantamatta lääkkeet\n→ kuolema"]
+  A --> VA["Arvioidaan:\nvakavasti vastuullinen"]
+  B --> VB["Arvioidaan:\nvähemmän vastuullinen"]
+  style A fill:#fff3cd,stroke:#f39c12
+  style B fill:#f0f6fd,stroke:#2980b9
+  style VA fill:#fdf0f0,stroke:#c0392b
+  style VB fill:#f0fdf4,stroke:#27ae60
+      </div>
+      <p class="kaavio-selitys">Sama seuraus — eri moraalinen tuomio. Passiivisuudella on myös odotusarvo.</p>
+
+      <div class="esimerkki">
+        Lääkäri, joka päättää olla antamatta riskialtista hoitoa jolla olisi todennäköisesti pelastettu potilaan henki, arvioidaan vähemmän vastuulliseksi kuin lääkäri joka antaa saman riskitason hoidon ja potilas kuolee.
+      </div>
+      <div class="tunnistus">Tunnistus: Kohtele passiivisuus ja toiminta samoin kriteerein — molemmilla on seuraukset. "En tehnyt mitään" on myös valinta. Kysy: mitä tapahtuu jos en toimi?</div>
+    </div>
+
+    <div class="termi" id="ryhmaajattelu">
+      <div class="vino-nro">10</div>
+      <h3>Ryhmäajattelu <span class="alkupera">— groupthink</span></h3>
+      <p>Tiiviissä, yhtenäisissä ryhmissä halu säilyttää harmonia ja yksimielisyys alkaa syrjäyttää realistisen arvioinnin. Ryhmä päätyy huonompaan päätökseen kuin kukaan jäsenistä olisi päätynyt yksin — koska eriävät mielipiteet vaiennetaan epäsuorasti sosiaalisen paineen kautta.</p>
+
+      <div class="mermaid">
+flowchart TD
+  E["Jäsenellä eriävä\nmielipide"] --> S["Sosiaalinen paine:\n'et usko tiimiin'\n'jarruttelet'"]
+  S --> V["Mielipide vaiennetaan\ntai ei sanota ääneen"]
+  V --> Y["Näennäinen\nyksimielisyys"]
+  Y --> H["Huono päätös\nhyväksytään"]
+  H --> JA["Jälkikäteen:\n'kukaan ei uskonut\nsiihen oikeasti'"]
+  style S fill:#fff3cd,stroke:#f39c12
+  style V fill:#fdf0f0,stroke:#c0392b
+  style H fill:#fdf0f0,stroke:#c0392b
+      </div>
+      <p class="kaavio-selitys">Sosiaalinen paine hiljentää kritiikin ennen kuin se ehtii vaikuttaa päätökseen.</p>
+
+      <div class="esimerkki">
+        Projektitiimi hyväksyy epärealistisen aikataulun, vaikka jokainen epäilee itsekseen sen olevan mahdoton — koska kukaan ei halua olla se joka "jarruttaa" tai "ei usko tiimiin".
+      </div>
+      <div class="tunnistus">Tunnistus: Jos kokouksessa ei ole erimielisyyttä vaikeista päätöksistä, se on varoitusmerkki — ei merkki laadusta. Ks. myös <a href="ilmiot.html#hippo-efekti">HIPPO-efekti</a>.</div>
+      <p class="termi-lahde">Irving Janis, 1972. Dokumentoitu mm. Cuban ohjuskriisin ja Challengerin päätöksentekoprosesseissa.</p>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="vino-kategoria" id="attribuutio">
+    <h2>Attribuutio ja muisti</h2>
+
+    <div class="termi" id="perusattribuutiovirhe">
+      <div class="vino-nro">11</div>
+      <h3>Perusattribuutiovirhe <span class="alkupera">— fundamental attribution error</span></h3>
+      <p>Muiden ihmisten käyttäytymistä selitetään heidän luonteensa ja persoonallisuutensa perusteella — ja tilannetekijöiden vaikutus aliarvioidaan. Oman käyttäytymisen selittämisessä tilanne on päinvastainen: omia toimia selitetään tilannetekijöillä.</p>
+
+      <div class="mermaid">
+flowchart LR
+  KK["Kollegan myöhästyminen"] --> LA["'Hän on epäluotettava'\n→ luonne-attribuutio"]
+  OM["Oma myöhästyminen"] --> TA["'Metro myöhässä,\nviestit kasautuivat'\n→ tilanne-attribuutio"]
+  LA --> EP["Epäsymmetrinen\narviointi"]
+  TA --> EP
+  style LA fill:#fdf0f0,stroke:#c0392b
+  style TA fill:#f0fdf4,stroke:#27ae60
+  style EP fill:#fff3cd,stroke:#f39c12
+      </div>
+      <p class="kaavio-selitys">Muilla on luonne — itsellä on tilanne. Sama käyttäytyminen, eri selitys.</p>
+
+      <div class="esimerkki">
+        Kollega myöhästyy kokouksesta → "hän on epäkunnioittava ja epäammattimainen". Itse myöhästyy kokouksesta → "metro oli myöhässä ja sähköpostit kasautuivat".
+      </div>
+      <div class="tunnistus">Tunnistus: Ennen luonnetta koskevaa johtopäätöstä, mieti mitä tilannetekijöitä et näe. Kysy: tekisinkö saman omassa tilanteessani?</div>
+      <p class="termi-lahde">Lee Ross, 1977. Myös "korrespondenssiharha" (correspondence bias).</p>
+    </div>
+
+    <div class="termi" id="hindsight-bias">
+      <div class="vino-nro">12</div>
+      <h3>Taaksepäinviisauden harha <span class="alkupera">— hindsight bias</span></h3>
+      <p>Tapahtuman jälkeen ihminen kokee, että olisi osannut ennustaa lopputuloksen — vaikka ennen tapahtumaa epävarmuus oli todellista. Muisto alkuperäisestä epävarmuudesta korvautuu retrospektiivisellä varmuudella.</p>
+
+      <div class="mermaid">
+flowchart LR
+  EN["Ennen tapahtumaa:\nepävarmuus todellista\nMonet skenaariot mahdollisia"] --> T["Tapahtuma X"]
+  T --> JA["Jälkeen:\n'Tiesiinhän sen'\nmuisto korjautuu"]
+  JA --> K["Kirjataan ylös:\n'Oli selvää alusta asti'"]
+  EN2["Alkuperäinen\nmuisti häviää"] -.->|"korvautuu"| JA
+  style EN fill:#f0f6fd,stroke:#2980b9
+  style JA fill:#fff3cd,stroke:#f39c12
+  style K fill:#fdf0f0,stroke:#c0392b
+      </div>
+      <p class="kaavio-selitys">Lopputulos kirjoittaa muiston — epävarmuus häviää taaksepäin katsottaessa.</p>
+
+      <div class="esimerkki">
+        Projektin epäonnistuttua johto muistaa "tienneensä koko ajan, että tämä ei tule toimimaan" — vaikka samat henkilöt hyväksyivät projektin yksimielisesti.
+      </div>
+      <div class="tunnistus">Tunnistus: Kirjaa päätöksiä ja ennusteita ylös ennen kuin tulos on tiedossa. Post-mortem-analyysit ovat hyödyllisiä vain jos niissä rekonstruoidaan mitä tiedettiin silloin — ei mitä tiedetään nyt.</div>
+      <p class="termi-lahde">Fischhoff &amp; Beyth, 1975.</p>
+    </div>
+
+    <div class="termi" id="selviytymisharha">
+      <div class="vino-nro">13</div>
+      <h3>Selviytymisharha <span class="alkupera">— survivorship bias</span></h3>
+      <p>Analyysissa huomioidaan vain "selviytyneet" tapaukset — ne jotka onnistuivat, kestivät tai päätyivät näkyviksi — ja epäonnistuneet jäävät piiloon. Tuloksena on vääristynyt kuva siitä, mikä toimii.</p>
+
+      <div class="mermaid">
+flowchart TD
+  K["Kaikki tapaukset"] --> S["Selviytyneet\n(näkyvät, puhuvat,\nkirjoittavat kirjoja)"]
+  K --> E["Epäonnistuneet\n(hiljaa, ei tutkita,\nei tilastoida)"]
+  S --> O["Opimme:\n'Tee näin — tämä toimii'"]
+  E -. "ei analysoida" .-> O
+  style E fill:#e0e0e0,stroke:#aaa
+  style O fill:#fdf0f0,stroke:#c0392b
+      </div>
+      <p class="kaavio-selitys">Näkymättömät tapaukset ovat usein tärkeämmät kuin näkyvät — mutta ne eivät osaa kertoa tarinaansa.</p>
+
+      <div class="esimerkki">
+        "Kaikki menestyneet yrittäjät ovat jättäneet yliopiston kesken" — koska epäonnistuneista yrittäjistä jotka myös jättivät yliopiston ei puhuta. Toisen maailmansodan lentokoneissa tutkittiin palaavien koneiden kuulumajälkiä — kunnes Abraham Wald huomautti: pitäisi tutkia niitä kohtia joihin ei ollut osunut, koska ne koneet eivät palanneet.
+      </div>
+      <div class="tunnistus">Tunnistus: Kysy aina — mitä emme näe? Ketkä epäonnistuivat saman strategian kanssa? Näkymättömät tapaukset ovat usein tärkeämmät kuin näkyvät.</div>
+      <p class="termi-lahde">Wald, 1943. Yksi käytännöllisimmistä vinoumista tunnistaa arjessa.</p>
+    </div>
+
+    <div class="termi" id="sisaryhmasuosinta">
+      <div class="vino-nro">14</div>
+      <h3>Sisäryhmäsuosinta <span class="alkupera">— in-group bias</span></h3>
+      <p>Ihmiset suosivat oman ryhmänsä jäseniä — arvioimalla heidät positiivisemmin, luottamalla heihin enemmän ja jakamalla resursseja heidän hyväkseen — ulkoryhmän kustannuksella. Ryhmä voi olla mikä tahansa: kansallisuus, ura, politiikka, urheilujoukkue tai jopa satunnaisesti muodostettu ryhmä.</p>
+
+      <div class="mermaid">
+flowchart LR
+  SI["Sisäryhmän jäsen\n(sama tausta, koulu,\ntoimiala)"] --> A["Arviointi"]
+  UL["Ulkoryhmän jäsen\n(eri tausta)"] --> A
+  SI -->|"+ automaattinen\nluottamusbonus"| A
+  UL -->|"ei bonusta,\nmahdollinen epäily"| A
+  A --> P["Sisäryhmä suositaan\nvaikka pätevyys sama"]
+  style SI fill:#f0f6fd,stroke:#2980b9
+  style P fill:#fdf0f0,stroke:#c0392b
+      </div>
+      <p class="kaavio-selitys">Luottamusbonus on automaattinen — ei tarkoituksellinen syrjintä vaan rakenteellinen suosinta.</p>
+
+      <div class="esimerkki">
+        Rekrytoinnissa saman yliopiston tai toimialan taustan omaava kandidaatti arvioidaan "sopivammaksi" kuin yhtä pätevä ulkopuolinen — ilman eksplisiittistä syrjintäpäätöstä. Sisäryhmäsuosinta toimii usein täysin tiedostamatta.
+      </div>
+      <div class="tunnistus">Tunnistus: Kysy — tekisinkö saman päätöksen jos oma ryhmäni ei olisi osapuolena? Anonymisointi, standardoidut kriteerit ja monimuotoiset päätöksentekoryhmät vähentävät sisäryhmäsuosintaa rakenteellisesti.</div>
+      <p class="termi-lahde">Tajfel &amp; Turner, 1979.</p>
+    </div>
+  </div>
+
+  <footer class="sivusto-footer">
+    <strong>Kriittisen ajattelun opas</strong><br>
+    <span class="footer-linkit">
+      <a href="ilmiot.html">Ilmiöitä</a> ·
+      <a href="virhepaatelmat.html">Loogiset virhepäätelmät</a> ·
+      <a href="kognitiiviset-vinoumat.html">Kognitiiviset vinoumat</a>
+    </span>
+  </footer>
+
+</body>
+</html>

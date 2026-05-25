@@ -1,0 +1,249 @@
+/* Yleiset tyylit */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1, h2 {
+  color: #005a9e;
+}
+
+/* Navigaatio */
+.simple-nav {
+  background-color: #f4f4f4;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.simple-nav a {
+  text-decoration: none;
+  color: #005a9e;
+  margin: 0 5px;
+}
+
+.simple-nav a:hover {
+  text-decoration: underline;
+}
+
+.simple-nav a.nav-kesken {
+  color: #999;
+}
+
+.simple-nav a.nav-kesken::after {
+  content: " 🚧";
+  font-size: 0.8em;
+}
+
+/* Erikoisluokat */
+.fakta-laatikko {
+  background-color: #f9f9f9;
+  border-left: 5px solid #005a9e;
+  padding: 15px;
+  margin: 20px 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+caption {
+  caption-side: bottom;
+  text-align: left;
+  font-size: 0.85em;
+  color: #666;
+  padding: 6px 0 0 0;
+  font-style: italic;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.saasto {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 20px 0;
+}
+
+.dataneuvos-opinion {
+  margin-top: 16px;
+  padding: 14px 18px;
+  background-color: #fdfbf0;
+  border: 2px solid #C9A84C;
+  border-radius: 4px;
+}
+
+.dataneuvos-opinion .opinion-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  color: #8B6914;
+  margin-bottom: 6px;
+  font-size: 0.95em;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.dataneuvos-opinion .opinion-label::before {
+  content: "💬";
+  font-size: 1em;
+}
+
+.dataneuvos-opinion p {
+  margin: 0;
+  color: #3d2e00;
+  font-size: 0.95em;
+  line-height: 1.6;
+}
+
+/* Footer */
+.sivusto-footer {
+  margin-top: 56px;
+  padding: 20px 0 12px 0;
+  border-top: 1px solid #ddd;
+  font-size: 0.86em;
+  color: #777;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.sivusto-footer strong {
+  color: #555;
+}
+
+.sivusto-footer a {
+  color: #005a9e;
+  text-decoration: none;
+}
+
+.sivusto-footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-linkit {
+  margin-top: 4px;
+}
+
+/* Termistö: kortti-pohja */
+.termi {
+  margin-bottom: 1.2rem;
+  border-radius: 8px;
+  border: 1px solid #e0e4e8;
+  border-top: 4px solid #7f8c8d;
+  padding: 1.1rem 1.4rem 1.2rem;
+  background: #fff;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.06);
+  transition: background-color 0.3s ease;
+}
+
+/* Highlight kun navigoidaan ankkerilla */
+.termi:target,
+.termi.highlighted {
+  background-color: #fffbe6;
+  border-left: 4px solid #e6ac00;
+  scroll-margin-top: 80px;
+}
+
+.termi[id] {
+  cursor: pointer;
+}
+
+/* Hakemisto / Sisällysluettelo */
+.hakemisto {
+  background: #f8f9fa;
+  border: 1px solid #e0e4e8;
+  border-radius: 8px;
+  padding: 1.2rem 1.5rem 1rem;
+  margin-bottom: 2rem;
+}
+.hakemisto > strong {
+  display: block;
+  font-size: 0.8em;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.8rem;
+}
+.hakemisto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.25rem 1.5rem;
+}
+.hakemisto-grid a {
+  font-size: 0.88em;
+  color: #2c3e50;
+  text-decoration: none;
+  line-height: 1.6;
+}
+.hakemisto-grid a:hover {
+  color: #2980b9;
+  text-decoration: underline;
+}
+
+/* Kategoroitu hakemisto */
+.hakemisto-kategoriat {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+  gap: 1.2rem 1.5rem;
+}
+.hak-kategoria .hak-otsikko {
+  font-size: 0.72em;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #888;
+  font-weight: bold;
+  margin-bottom: 0.45rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid #e0e4e8;
+}
+.hak-kategoria a {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.87em;
+  color: #2c3e50;
+  text-decoration: none;
+  line-height: 1.75;
+}
+.hak-kategoria a:hover {
+  color: #2980b9;
+  text-decoration: underline;
+}
+.hak-piste {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
+/* Aktiivinen nav-linkki */
+.simple-nav a.nav-aktiv {
+  font-weight: bold;
+  color: #003d6e;
+}

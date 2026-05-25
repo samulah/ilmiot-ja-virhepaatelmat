@@ -1,0 +1,2092 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <title>Ilmiöitä — Miten valta toimii</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+  <script>mermaid.initialize({ startOnLoad: true, themeVariables: { fontSize: '12px' } });</script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+  <style>
+    .mermaid svg text { font-size: 12px !important; }
+    body {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+    .ilmio {
+      margin-bottom: 2.5rem;
+      border-radius: 10px;
+      border: 1px solid #e0e4e8;
+      border-top: 5px solid #2c3e50;
+      padding: 1.8rem 2rem 2rem;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+    .ilmio h2 {
+      margin-top: 0;
+    }
+    .ilmio-tag {
+      display: inline-block;
+      font-size: 0.75em;
+      background: #2c3e50;
+      color: #fff;
+      border-radius: 3px;
+      padding: 0.2em 0.6em;
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    /* Jokaiselle ilmiölle oma väri */
+    #paskuuttaminen            { border-top-color: #e74c3c; }
+    #paskuuttaminen            .ilmio-tag { background: #e74c3c; }
+    #starve-the-beast          { border-top-color: #e67e22; }
+    #starve-the-beast          .ilmio-tag { background: #e67e22; }
+    #simple-sabotage           { border-top-color: #c0a000; }
+    #simple-sabotage           .ilmio-tag { background: #c0a000; }
+    #tilastoilla-valehtelu     { border-top-color: #27ae60; }
+    #tilastoilla-valehtelu     .ilmio-tag { background: #27ae60; }
+    #bkt-harha                 { border-top-color: #16a085; }
+    #bkt-harha                 .ilmio-tag { background: #16a085; }
+    #overton-ikkuna            { border-top-color: #2980b9; }
+    #overton-ikkuna            .ilmio-tag { background: #2980b9; }
+    #saantelijan-kaappaus      { border-top-color: #8e44ad; }
+    #saantelijan-kaappaus      .ilmio-tag { background: #8e44ad; }
+    #rautainen-laki            { border-top-color: #4e342e; }
+    #rautainen-laki            .ilmio-tag { background: #4e342e; }
+    #astroturf                 { border-top-color: #1abc9c; }
+    #astroturf                 .ilmio-tag { background: #1abc9c; }
+    #firehose-of-falsehood     { border-top-color: #c0392b; }
+    #firehose-of-falsehood     .ilmio-tag { background: #c0392b; }
+    #valta-suojelee-valtaa     { border-top-color: #2c3e50; }
+    #valta-suojelee-valtaa     .ilmio-tag { background: #2c3e50; }
+    #backfire-effect           { border-top-color: #d35400; }
+    #backfire-effect           .ilmio-tag { background: #d35400; }
+    #kafka-ilmio               { border-top-color: #7f8c8d; }
+    #kafka-ilmio               .ilmio-tag { background: #7f8c8d; }
+    #catch-22                  { border-top-color: #6c3483; }
+    #catch-22                  .ilmio-tag { background: #6c3483; }
+    #goodhartin-laki           { border-top-color: #148f77; }
+    #goodhartin-laki           .ilmio-tag { background: #148f77; }
+    #darvo                     { border-top-color: #922b21; }
+    #darvo                     .ilmio-tag { background: #922b21; }
+    #manufactured-consent      { border-top-color: #1a5276; }
+    #manufactured-consent      .ilmio-tag { background: #1a5276; }
+    #halo-efekti               { border-top-color: #f9a825; }
+    #halo-efekti               .ilmio-tag { background: #f9a825; color: #333; }
+    #brooksin-laki             { border-top-color: #34495e; }
+    #brooksin-laki             .ilmio-tag { background: #34495e; }
+    #yhdeksanyhdeksan          { border-top-color: #117a65; }
+    #yhdeksanyhdeksan          .ilmio-tag { background: #117a65; }
+    #hofstadterin-laki         { border-top-color: #7d6608; }
+    #hofstadterin-laki         .ilmio-tag { background: #7d6608; }
+    #kuolonmarssi              { border-top-color: #78281f; }
+    #kuolonmarssi              .ilmio-tag { background: #78281f; }
+    #tekninen-velka            { border-top-color: #1b4f72; }
+    #tekninen-velka            .ilmio-tag { background: #1b4f72; }
+    #conways-laki              { border-top-color: #154360; }
+    #conways-laki              .ilmio-tag { background: #154360; }
+    #bikeshedding              { border-top-color: #4a235a; }
+    #bikeshedding              .ilmio-tag { background: #4a235a; }
+    #scope-creep               { border-top-color: #145a32; }
+    #scope-creep               .ilmio-tag { background: #145a32; }
+    #hippo-efekti              { border-top-color: #5d4037; }
+    #hippo-efekti              .ilmio-tag { background: #5d4037; }
+    #performatiivinen-lasnaolo { border-top-color: #00695c; }
+    #performatiivinen-lasnaolo .ilmio-tag { background: #00695c; }
+    #rituaalinen-raportointi   { border-top-color: #37474f; }
+    #rituaalinen-raportointi   .ilmio-tag { background: #37474f; }
+    #initiointirituaalit       { border-top-color: #4a148c; }
+    #initiointirituaalit       .ilmio-tag { background: #4a148c; }
+    #betteridgen-laki          { border-top-color: #006064; }
+    #betteridgen-laki          .ilmio-tag { background: #006064; }
+    #inokulointiteoria         { border-top-color: #00838f; }
+    #inokulointiteoria         .ilmio-tag { background: #00838f; }
+    #korkoa-korolle            { border-top-color: #2e86ab; }
+    #korkoa-korolle            .ilmio-tag { background: #2e86ab; }
+    #negatiivinen-korkoa       { border-top-color: #a23b72; }
+    #negatiivinen-korkoa       .ilmio-tag { background: #a23b72; }
+    #hajota-hallitse           { border-top-color: #b71c1c; }
+    #hajota-hallitse           .ilmio-tag { background: #b71c1c; }
+    #konsensus-fetissi         { border-top-color: #01579b; }
+    #konsensus-fetissi         .ilmio-tag { background: #01579b; }
+    #korkokierre               { border-top-color: #1a237e; }
+    #korkokierre               .ilmio-tag { background: #1a237e; }
+    #korkokierre               { border-top-width: 6px; background: linear-gradient(160deg,#f0f0ff 0%,#fff 60%); }
+    #korkokierre               .graafi-wrapper { background: #f4f4fd; border-color: #c0c0e8; }
+    #korkokierre               .graafi-otsikko { color: #1a237e; }
+    #korkokierre               .avainluku { border-color: #c0c0e8; }
+    #korkokierre               .avainluku .luku { color: #b71c1c; }
+
+    .kkk-taulukko td:nth-child(2) { color: #888; }
+    .kkk-taulukko td:nth-child(3) { color: #2e86ab; font-weight: bold; }
+    .kkk-taulukko td:nth-child(4) { color: #1a7044; font-weight: bold; }
+    .kkk-taulukko tr:last-child td { background: #f0f6fd; }
+
+    .huomiolaatikko {
+      background: #fdf6ec;
+      border-left: 4px solid #e67e22;
+      padding: 1em 1.2em;
+      margin: 1.5rem 0;
+      font-size: 0.95em;
+    }
+    .vaaralatikko {
+      background: #fdf0f0;
+      border-left: 4px solid #c0392b;
+      padding: 1em 1.2em;
+      margin: 1.5rem 0;
+      font-size: 0.95em;
+    }
+    .infolaatikko {
+      background: #f0f6fd;
+      border-left: 4px solid #2980b9;
+      padding: 1em 1.2em;
+      margin: 1.5rem 0;
+      font-size: 0.95em;
+    }
+    .sabotaasi-lista {
+      background: #1e1e1e;
+      color: #d4d4d4;
+      padding: 1.2em 1.5em;
+      border-radius: 6px;
+      font-family: monospace;
+      font-size: 0.88em;
+      line-height: 1.8;
+    }
+    .sabotaasi-lista .kommentti {
+      color: #6a9955;
+    }
+    .kaavio-selitys {
+      font-size: 0.85em;
+      color: #666;
+      text-align: center;
+      margin-top: 0.4rem;
+    }
+    .tilasto-grid {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin: 1.5rem 0;
+      align-items: flex-end;
+    }
+    .tilasto-esimerkki {
+      flex: 1 1 200px;
+      text-align: center;
+    }
+    .tilasto-esimerkki h4 {
+      margin: 0 0 0.5rem;
+      font-size: 0.9em;
+    }
+    .pylvas-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 0.6rem;
+      height: 120px;
+      border-bottom: 2px solid #333;
+      padding: 0 0.5rem;
+    }
+    .pylvas {
+      width: 36px;
+      background: #2980b9;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      font-size: 0.75em;
+      color: #fff;
+      padding-top: 4px;
+    }
+    .pylvas-label {
+      font-size: 0.78em;
+      color: #555;
+      margin-top: 0.3rem;
+    }
+    code {
+      background: #eee;
+      padding: 0.1em 0.4em;
+      border-radius: 3px;
+      font-size: 0.9em;
+    }
+    .halo-grid {
+      display: flex;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+      flex-wrap: wrap;
+    }
+    .halo-puoli {
+      flex: 1 1 220px;
+      border-radius: 8px;
+      padding: 1.2rem 1.4rem;
+    }
+    .halo-puoli.halo-side {
+      background: #fffde7;
+      border: 2px solid #f9a825;
+    }
+    .halo-puoli.stigma-side {
+      background: #f3f0f8;
+      border: 2px solid #7b1fa2;
+    }
+    .halo-puoli h4 {
+      margin: 0 0 0.8rem;
+      font-size: 1em;
+    }
+    .halo-puoli ul {
+      margin: 0 0 0.8rem;
+      padding-left: 1.2rem;
+      font-size: 0.88em;
+    }
+    .halo-puoli li {
+      margin-bottom: 0.25rem;
+    }
+    .halo-signaali {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
+    .halo-signaali span {
+      font-size: 0.78em;
+      padding: 0.2em 0.6em;
+      border-radius: 3px;
+    }
+    .halo-side .halo-signaali span { background: #fff8e1; border: 1px solid #f9a825; }
+    .stigma-side .halo-signaali span { background: #ede7f6; border: 1px solid #9c27b0; }
+
+    /* Graafikortit (ilmiöt 33 & 34) */
+    #korkoa-korolle  { border-top-width: 6px; background: linear-gradient(160deg,#f0f8ff 0%,#fff 60%); }
+    #negatiivinen-korkoa { border-top-width: 6px; background: linear-gradient(160deg,#fff0f5 0%,#fff 60%); }
+    .graafi-badge {
+      display: inline-block;
+      font-size: 0.72em;
+      font-weight: bold;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: #2e86ab;
+      color: #fff;
+      border-radius: 3px;
+      padding: 0.2em 0.7em;
+      margin-bottom: 1rem;
+    }
+    #negatiivinen-korkoa .graafi-badge { background: #a23b72; }
+    .graafi-wrapper {
+      background: #f4fafd;
+      border: 1px solid #c8e0ef;
+      border-radius: 8px;
+      padding: 1.2rem 1rem 0.6rem;
+      margin: 1.5rem 0;
+      position: relative;
+    }
+    #negatiivinen-korkoa .graafi-wrapper {
+      background: #fdf4f8;
+      border-color: #e8c0d4;
+    }
+    .graafi-otsikko {
+      font-size: 0.8em;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #2e86ab;
+      margin-bottom: 0.6rem;
+    }
+    #negatiivinen-korkoa .graafi-otsikko { color: #a23b72; }
+    .graafi-kaksois {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+    .graafi-kaksois .graafi-wrapper { flex: 1 1 260px; margin: 0; }
+    .avainluku-rivi {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin: 1.2rem 0;
+    }
+    .avainluku {
+      flex: 1 1 120px;
+      background: #fff;
+      border: 1px solid #c8e0ef;
+      border-radius: 6px;
+      padding: 0.8rem 1rem;
+      text-align: center;
+    }
+    #negatiivinen-korkoa .avainluku { border-color: #e8c0d4; }
+    .avainluku .luku { font-size: 1.6em; font-weight: bold; color: #2e86ab; }
+    #negatiivinen-korkoa .avainluku .luku { color: #a23b72; }
+    .avainluku .selite { font-size: 0.75em; color: #666; margin-top: 0.2rem; }
+
+    /* Sivupalkki-asettelu */
+    body { max-width: none; padding: 0; }
+    .sivu-layout {
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+      max-width: 1260px;
+      margin: 0 auto;
+      padding: 0 1.5rem 4rem;
+    }
+    .sivupalkki {
+      flex: 0 0 230px;
+      position: sticky;
+      top: 54px;
+      max-height: calc(100vh - 70px);
+      overflow-y: auto;
+      padding-bottom: 1rem;
+    }
+    .sivupalkki .hakemisto {
+      margin-bottom: 0;
+      font-size: 0.88em;
+    }
+    .paasisu {
+      flex: 1;
+      min-width: 0;
+      padding-top: 0.5rem;
+    }
+    /* Sivupalkin scrollbar häivytys */
+    .sivupalkki::-webkit-scrollbar { width: 4px; }
+    .sivupalkki::-webkit-scrollbar-thumb { background: #ddd; border-radius: 2px; }
+    @media (max-width: 820px) {
+      .sivu-layout { flex-direction: column; padding: 0 1rem 3rem; }
+      .sivupalkki  { position: static; max-height: none; flex: none; width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="simple-nav">
+    <a href="ilmiot.html" class="nav-aktiv">Ilmiöitä</a>
+    <a href="virhepaatelmat.html">Loogiset virhepäätelmät</a>
+    <a href="kognitiiviset-vinoumat.html">Kognitiiviset vinoumat</a>
+  </nav>
+
+  <div class="sivu-layout">
+    <aside class="sivupalkki">
+      <div class="hakemisto">
+        <strong>Sisällys</strong>
+        <div class="hakemisto-kategoriat">
+
+      <div class="hak-kategoria">
+        <div class="hak-otsikko">Vallan rakenteet</div>
+        <a href="#paskuuttaminen"><span class="hak-piste" style="background:#e74c3c"></span>1. Paskuuttaminen</a>
+        <a href="#starve-the-beast"><span class="hak-piste" style="background:#e67e22"></span>2. Starve the beast</a>
+        <a href="#overton-ikkuna"><span class="hak-piste" style="background:#2980b9"></span>6. Overton-ikkuna</a>
+        <a href="#saantelijan-kaappaus"><span class="hak-piste" style="background:#8e44ad"></span>7. Sääntelijän kaappaus</a>
+        <a href="#rautainen-laki"><span class="hak-piste" style="background:#4e342e"></span>8. Rautainen laki oligarkiasta</a>
+        <a href="#valta-suojelee-valtaa"><span class="hak-piste" style="background:#2c3e50"></span>12. Valta suojelee valtaa</a>
+        <a href="#hajota-hallitse"><span class="hak-piste" style="background:#b71c1c"></span>35. Hajota ja hallitse</a>
+      </div>
+
+      <div class="hak-kategoria">
+        <div class="hak-otsikko">Informaatio ja propaganda</div>
+        <a href="#tilastoilla-valehtelu"><span class="hak-piste" style="background:#27ae60"></span>4. Tilastoilla valehtelu</a>
+        <a href="#bkt-harha"><span class="hak-piste" style="background:#16a085"></span>5. BKT-harha</a>
+        <a href="#astroturf"><span class="hak-piste" style="background:#1abc9c"></span>9. Astroturf</a>
+        <a href="#firehose-of-falsehood"><span class="hak-piste" style="background:#c0392b"></span>10. Firehose of falsehood</a>
+        <a href="#manufactured-consent"><span class="hak-piste" style="background:#1a5276"></span>17. Manufactured consent</a>
+        <a href="#betteridgen-laki"><span class="hak-piste" style="background:#006064"></span>31. Betteridgen laki</a>
+        <a href="#inokulointiteoria"><span class="hak-piste" style="background:#00838f"></span>32. Inokulointiteoria</a>
+      </div>
+
+      <div class="hak-kategoria">
+        <div class="hak-otsikko">Psykologia ja kognitio</div>
+        <a href="#backfire-effect"><span class="hak-piste" style="background:#d35400"></span>11. Backfire effect</a>
+        <a href="#darvo"><span class="hak-piste" style="background:#922b21"></span>16. DARVO</a>
+        <a href="#halo-efekti"><span class="hak-piste" style="background:#f9a825"></span>18. Halo-efekti ja stigma</a>
+        <a href="#konsensus-fetissi"><span class="hak-piste" style="background:#01579b"></span>37. Konsensus fetissi</a>
+      </div>
+
+      <div class="hak-kategoria">
+        <div class="hak-otsikko">Byrokratia ja organisaatio</div>
+        <a href="#simple-sabotage"><span class="hak-piste" style="background:#c0a000"></span>3. Simple Sabotage Field Manual (1944)</a>
+        <a href="#kafka-ilmio"><span class="hak-piste" style="background:#7f8c8d"></span>13. Kafka-ilmiö</a>
+        <a href="#catch-22"><span class="hak-piste" style="background:#6c3483"></span>14. Catch-22</a>
+        <a href="#goodhartin-laki"><span class="hak-piste" style="background:#148f77"></span>15. Goodhartin laki</a>
+        <a href="#hippo-efekti"><span class="hak-piste" style="background:#5d4037"></span>27. HIPPO-efekti</a>
+        <a href="#performatiivinen-lasnaolo"><span class="hak-piste" style="background:#00695c"></span>28. Performatiivinen läsnäolo</a>
+        <a href="#rituaalinen-raportointi"><span class="hak-piste" style="background:#37474f"></span>29. Rituaalinen raportointi</a>
+        <a href="#initiointirituaalit"><span class="hak-piste" style="background:#4a148c"></span>30. Initiointirituaalit</a>
+      </div>
+
+      <div class="hak-kategoria">
+        <div class="hak-otsikko">Projekti- ja ohjelmistokehitys</div>
+        <a href="#brooksin-laki"><span class="hak-piste" style="background:#34495e"></span>19. Brooksin laki</a>
+        <a href="#yhdeksanyhdeksan"><span class="hak-piste" style="background:#117a65"></span>20. Yhdeksän-yhdeksän-sääntö</a>
+        <a href="#hofstadterin-laki"><span class="hak-piste" style="background:#7d6608"></span>21. Hofstadterin laki</a>
+        <a href="#kuolonmarssi"><span class="hak-piste" style="background:#78281f"></span>22. Kuolonmarssi</a>
+        <a href="#tekninen-velka"><span class="hak-piste" style="background:#1b4f72"></span>23. Tekninen velka</a>
+        <a href="#conways-laki"><span class="hak-piste" style="background:#154360"></span>24. Conwayn laki</a>
+        <a href="#bikeshedding"><span class="hak-piste" style="background:#4a235a"></span>25. Bikeshedding</a>
+        <a href="#scope-creep"><span class="hak-piste" style="background:#145a32"></span>26. Scope creep</a>
+      </div>
+
+      <div class="hak-kategoria">
+        <div class="hak-otsikko">Kasvun dynamiikka</div>
+        <a href="#korkoa-korolle"><span class="hak-piste" style="background:#2e86ab"></span>33. Korkoa korolle -efekti</a>
+        <a href="#negatiivinen-korkoa"><span class="hak-piste" style="background:#a23b72"></span>34. Negatiivinen korkoa korolle</a>
+        <a href="#korkokierre"><span class="hak-piste" style="background:#1a237e"></span>36. Negatiivinen korkokierre</a>
+      </div>
+
+        </div>
+      </div>
+    </aside>
+    <main class="paasisu">
+
+      <h1>Ilmiöitä — Miten valta toimii</h1>
+      <p>Kokoelma dokumentoituja poliittisia ja yhteiskunnallisia ilmiöitä: strategioita, käsikirjoja ja mekanismeja, joilla valtaa käytetään, ylläpidetään ja legitimoidaan.</p>
+
+
+  <!-- ============================================================ -->
+  <div class="ilmio" id="paskuuttaminen">
+    <div class="ilmio-tag">Ilmiö 1</div>
+    <h2>Paskuuttaminen</h2>
+    <p>Paskuuttaminen tarkoittaa julkisen palvelun tai instituution <strong>tietoista, asteittaista heikentämistä</strong> niin, että ihmiset alkavat vaatia sen yksityistämistä tai lakkauttamista. Laatu heikkenee ei vahingossa vaan suunnitelmallisesti — budjettileikkauksilla, resurssivajeella tai poliittisella laiminlyönnillä.</p>
+
+    <div class="mermaid">
+flowchart LR
+  A["Julkinen palvelu\ntoimii kohtuullisesti"] --> B["Budjettileikkaukset\nresurssivaje\npoliittinen laiminlyönti"]
+  B --> C["Laatu heikkenee\njonot kasvavat\nhenkilöstö vähenee"]
+  C --> D["Kansalaiset\nturhautuvat\nluottamus laskee"]
+  D --> E["Poliittinen narratiivi:\n'julkinen ei toimi'\n'tarvitaan muutosta'"]
+  E --> F["Yksityistäminen\ntai lakkauttaminen"]
+  F --> G["Verorahat siirtyvät\nyksityisille toimijoille"]
+  style B fill:#fdf0f0,stroke:#e74c3c
+  style E fill:#fff3cd,stroke:#f39c12
+  style G fill:#fdf0f0,stroke:#e74c3c
+    </div>
+    <p class="kaavio-selitys">Paskuuttamisen prosessimalli: heikentäminen luo oman oikeutuksensa.</p>
+
+    <div class="huomiolaatikko">
+      <strong>Tunnistaminen:</strong> Kysy aina — heikkenikö tämä palvelu siksi, että se on <em>rakenteellisesti mahdoton</em> toteuttaa julkisesti, vai siksi, että se <em>tehtiin mahdottomaksi</em> riittämättömällä rahoituksella?
+    </div>
+
+    <p>Paskuuttaminen eroaa tavallisesta säästöpolitiikasta siinä, että tavoitteena ei ole tasapainottaa taloutta — tavoitteena on <em>luoda poliittinen valmius</em> rakennemuutokselle, johon muuten ei olisi kannatusta. Palvelun on ensin täytynyt "epäonnistua" ennen kuin sen korvaaminen on poliittisesti mahdollista.</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="ilmio" id="starve-the-beast">
+    <div class="ilmio-tag">Ilmiö 2</div>
+    <h2>Starve the beast</h2>
+    <p><em>Starve the beast</em> (suom. "nälkiinnytä peto") on Yhdysvalloissa 1980-luvulla popularisoitu poliittinen strategia. "Peto" on hallitus — erityisesti julkiset palvelut ja tulonsiirrot. "Nälkiinnyttäminen" tapahtuu leikkaamalla veroja niin, että valtion tulopohja supistuu.</p>
+
+    <div class="mermaid">
+flowchart TD
+  A["Veronkevennykset\n(erityisesti varakkaille)"] --> B["Valtion tulot pienenevät\nbudjettivaje kasvaa"]
+  B --> C["'Emme enää pysty\nmaksamaan kaikkea'"]
+  C --> D["Sosiaaliohjelmien leikkaukset\npalvelujen supistaminen"]
+  D --> E["Julkinen sektori pienenee\nYksityinen sektori kasvaa"]
+  E --> F["Enemmän veronkevennyspaineita\n→ kierre jatkuu"]
+  F --> A
+    </div>
+    <p class="kaavio-selitys">Starve the beast -kierre: veronalennus luo perustelun leikkauksille.</p>
+
+    <div class="infolaatikko">
+      <strong>Historia:</strong> Termi on yleisesti liitetty Ronald Reaganin talouspolitiikkaan 1980-luvulla. Reagan itse totesi: <em>"Government is not the solution to our problem; government is the problem."</em> Strategian logiikan dokumentoi mm. ekonomisti Milton Friedman.
+    </div>
+
+    <p>Strategian viehätys on sen <strong>poliittinen vastustamisen vaikeus</strong>: veronalennuksia on helppo myydä äänestäjille, ja syntynyt vaje esitetään pakottavana ulkoisena todellisuutena — ei poliittisena valintana. Leikkaukset seuraavat "väistämättä", vaikka ne olivatkin alusta asti tavoite.</p>
+
+    <div class="vaaralatikko">
+      <strong>Tunnusmerkki:</strong> Kun veronalennusta perustellaan "talouden piristämisellä" mutta budjettivajetta samaan aikaan käytetään perusteena leikata koulutuksesta, terveydenhuollosta tai eläkkeistä — strategia saattaa olla käynnissä.
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="ilmio" id="simple-sabotage">
+    <div class="ilmio-tag">Ilmiö 3</div>
+    <h2>Simple Sabotage Field Manual (1944)</h2>
+    <p>Yhdysvaltain tiedusteluvirasto OSS (Office of Strategic Services, nykyisen CIA:n edeltäjä) julkaisi vuonna 1944 käsikirjan, joka opetti siviileitä sabotoimaan vihollisen organisaatioita sisältäpäin. Asiakirja on nyt CIA:n toimesta julkisesti saatavilla.</p>
+    <p>Käsikirjan byrokratiasabotaasin ohjeet ovat silmiinpistävän tuttuja:</p>
+
+    <div class="sabotaasi-lista">
+      <span class="kommentti">// OSS Simple Sabotage Field Manual, 1944 — Byrokratiaosio (suomennettu)</span><br><br>
+      → Vaadi kirjallisia ohjeita ja määräyksiä kaikkeen.<br>
+      → Tee pitkiä puheita kokouksissa. Puhu henkilökohtaisista kokemuksista.<br>
+      → Tuo esille kaikki asiat "asianmukaisen menettelyn" nimissä.<br>
+      → Vie kaikki päätökset komitean käsittelyyn. Pidä komitea mahdollisimman suurena.<br>
+      → Kyseenalaista kaikkien päätösten laillisuus. Nosta esiin tulkinnanvaraisia kohtia.<br>
+      → Huolehdi, että kokouksissa käydään läpi kaikki edellisen kokouksen pöytäkirjat.<br>
+      → Älä koskaan jätä väliin mahdollisuutta lähettää asia "lisäselvitykseen".<br>
+      → Sovella sääntöjä orjallisesti — älä käytä harkintaa tai poikkeuksia.<br>
+    </div>
+
+    <div class="huomiolaatikko">
+      <strong>Huomio:</strong> Käsikirja oli tarkoitettu sabotoimaan <em>vihollisen</em> organisaatioita. Mutta samat tekniikat toimivat missä tahansa hierarkkisessa organisaatiossa — ja monet niistä esiintyvät täysin luonnollisina prosesseina täysin normaalisti toimivissa instituutioissa.
+    </div>
+
+    <p>Käsikirja on kiinnostava siksi, että se kuvaa, miten tehokasta sabotaasia ei tarvitse tehdä dramaattisesti. Riittää, että noudattaa sääntöjä <em>liian tarkasti</em>, puhuu <em>liian paljon</em> ja päättää <em>liian hitaasti</em>. Tehoton organisaatio näyttää päällepäin täysin normaalilta.</p>
+
+    <p>Alkuperäinen asiakirja: <em>Simple Sabotage Field Manual</em>, OSS, 1944. Declassifioitu ja julkaistu CIA:n toimesta.</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="ilmio" id="tilastoilla-valehtelu">
+    <div class="ilmio-tag">Ilmiö 4</div>
+    <h2>Tilastoilla valehtelu — visuaaliset ansat</h2>
+    <p>Darrell Huff dokumentoi kirjassaan <em>How to Lie with Statistics</em> (1954) tekniikat, joilla tilastoja voidaan esittää harhaanjohtavasti — teknisesti valheettomasti. Visuaaliset esitykset ovat erityisen tehokkaita, koska ihminen rekisteröi kuvan ennen lukuja.</p>
+
+    <h3>Katkaisttu y-akseli</h3>
+    <p>Yleisin temppu: akseli alkaa nollasta poikkeavasta arvosta, jolloin pienikin muutos näyttää dramaattiselta.</p>
+
+    <div class="tilasto-grid">
+      <div class="tilasto-esimerkki">
+        <h4>Harhaanjohtava (akseli alkaa 97:stä)</h4>
+        <div class="pylvas-wrapper">
+          <div style="display:flex;flex-direction:column;justify-content:flex-end;height:100%;width:36px;">
+            <div class="pylvas" style="height:20%;background:#c0392b;">99</div>
+          </div>
+          <div style="display:flex;flex-direction:column;justify-content:flex-end;height:100%;width:36px;">
+            <div class="pylvas" style="height:60%;background:#c0392b;">100</div>
+          </div>
+          <div style="display:flex;flex-direction:column;justify-content:flex-end;height:100%;width:36px;">
+            <div class="pylvas" style="height:100%;background:#c0392b;">101</div>
+          </div>
+        </div>
+        <div class="pylvas-label">Vuosi A &nbsp;&nbsp; Vuosi B &nbsp;&nbsp; Vuosi C</div>
+        <p style="font-size:0.8em;color:#c0392b;margin-top:0.5rem;">Näyttää: +400 % kasvu!</p>
+      </div>
+      <div class="tilasto-esimerkki">
+        <h4>Rehellinen (akseli alkaa nollasta)</h4>
+        <div class="pylvas-wrapper">
+          <div style="display:flex;flex-direction:column;justify-content:flex-end;height:100%;width:36px;">
+            <div class="pylvas" style="height:97.8%;background:#27ae60;">99</div>
+          </div>
+          <div style="display:flex;flex-direction:column;justify-content:flex-end;height:100%;width:36px;">
+            <div class="pylvas" style="height:98.8%;background:#27ae60;">100</div>
+          </div>
+          <div style="display:flex;flex-direction:column;justify-content:flex-end;height:100%;width:36px;">
+            <div class="pylvas" style="height:100%;background:#27ae60;">101</div>
+          </div>
+        </div>
+        <div class="pylvas-label">Vuosi A &nbsp;&nbsp; Vuosi B &nbsp;&nbsp; Vuosi C</div>
+        <p style="font-size:0.8em;color:#27ae60;margin-top:0.5rem;">Todellinen muutos: +2 %</p>
+      </div>
+    </div>
+
+    <h3>Muita yleisiä tekniikoita</h3>
+    <ul>
+      <li><strong>Cherry-picking aikaväli:</strong> Valitaan tarkastelujaksoksi ajanjakso, jossa trendi näyttää halutulta. "Vuodesta 2020 lähtien kasvu on ollut 40 %" — mutta siitä ei kerrota, että vuosi 2020 oli poikkeuksellinen pohja.</li>
+      <li><strong>Absoluuttiset vs. suhteelliset luvut:</strong> "Rikollisuus kaksinkertaistui!" — kahdesta tapauksesta neljään, sadantuhannen asukkaan kaupungissa.</li>
+      <li><strong>Korrelaatio kausaliteettina:</strong> "Maissa joissa on enemmän jäätelönmyyntiä on enemmän hukkumiskuolemia" — kolmas tekijä on kesä.</li>
+      <li><strong>Keskiarvo ilman hajontaa:</strong> "Keskipalkka nousi 5 %." — jos miljardöörien palkat nousivat, mediaanipalkka saattoi laskea.</li>
+      <li><strong>Värien ja kokojen manipulointi:</strong> Piirakkakaaviossa lohko, joka on vinossa katsojaan päin, näyttää suuremmalta kuin se on.</li>
+    </ul>
+
+    <div class="infolaatikko">
+      <strong>Perussääntö:</strong> Kun näet vakuuttavan kaavion, katso ensimmäisenä y-akselin nollapiste, aikavälin rajat ja se mitä kaaviosta <em>puuttuu</em>.
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="ilmio" id="bkt-harha">
+    <div class="ilmio-tag">Ilmiö 5</div>
+    <h2>BKT-harha — Irlannin paradoksi</h2>
+    <p>Bruttokansantuote (BKT) on maailman käytetyin taloudellisen hyvinvoinnin mittari. Se mittaa kaiken maassa tuotetun tavaran ja palvelun arvon — mutta ei sitä, <strong>kenen taskuihin tuotettu arvo päätyy</strong>. Irlanti on tästä oppikirjaesimerkki.</p>
+
+    <h3>Mitä tapahtui Irlannissa?</h3>
+    <p>Irlannin BKT kasvoi vuosien 2012–2022 välillä yli kaksinkertaiseksi. Vuonna 2015 BKT hyppäsi yhdessä vuodessa <strong>26 %</strong> — luku, jota ekonomisti Paul Krugman kutsui nimellä <em>leprechaun economics</em> (leprekaunitaloustiede).</p>
+
+    <p>Kasvun syy ei ollut irlantilaisten tuottavuuden nousu. Syy oli, että suuret monikansalliset yhtiöt — Apple, Google, Meta ja muut — siirsivät immateriaalioikeuksiaan (patentit, tavaramerkit, ohjelmistokoodit) kirjanpidollisesti Irlantiin matalan yhteisöveron takia. Kun Apple kirjaa iPhone-patenttien tuoton Irlannin kautta, se nostaa Irlannin BKT:tä — vaikka irlantilaiset eivät siitä juuri mitään hyötyisi.</p>
+
+    <div class="mermaid">
+flowchart TD
+  A["Apple, Google, Meta…\nsiirtävät IP-oikeuksia\nIrlantiin verosuunnittelun takia"] --> B["Irlannin BKT kasvaa\n— mutta tuotot virtaavat\nulkomaisille omistajille"]
+  B --> C["Tilastoissa:\nBKT per asukas ~100 000 $\n(yksi maailman korkein)"]
+  B --> D["Todellisuudessa:\nirlantilaisten kotitalouksien\ntulot huomattavasti alemmat"]
+  D --> E["Asuntohinnat\n+90 % (2012–2022)"]
+  D --> F["Dublinin vuokrat\nEuroopan kalleimpia"]
+  D --> G["Palkansaajat eivät\npysty ostamaan asuntoa\nomasta kaupungistaan"]
+    </div>
+    <p class="kaavio-selitys">BKT kasvaa — mutta kasvu hyödyttää ensisijaisesti monikansallisten yritysten osakkeenomistajia, ei irlantilaisia palkansaajia.</p>
+
+    <div class="infolaatikko">
+      <strong>Luku ei valehtele — mutta harhauttaa:</strong> Irlannin BKT per asukas on paperilla noin 100 000 dollaria, yksi maailman korkeimmista. Mutta irlantilaisten kotitalouksien <em>todellinen käytettävissä oleva tulo</em> on huomattavasti pienempi. Irlannin virallinen tilastolaitos on itsekin todennut BKT:n olevan liian harhaanjohtava mittari oman maansa tarpeisiin.
+    </div>
+
+    <h3>Irlanti keksi oman mittarin</h3>
+    <p>Irlanti on yksi harvoista maista, joka on <strong>virallisesti myöntänyt BKT:n olevan liian harhaanjohtava</strong> oman taloutensa kuvaamiseen. Vuodesta 2017 lähtien Irlanti on julkaissut <em>muokattua bruttokansantuloa</em> (GNI*, <em>modified gross national income</em>), joka poistaa monikansallisten yritysten kirjanpidolliset vaikutukset.</p>
+    <p>GNI* on noin 40–45 % Irlannin BKT:tä pienempi. Se kuvaa paremmin irlantilaisten kotitalouksien ja kotimaisten yritysten todellista taloudellista tilannetta.</p>
+
+    <div class="huomiolaatikko">
+      <strong>Sama ilmiö muualla:</strong> Luxemburgin BKT per asukas on maailman korkein — mutta noin 45 % maan BKT:stä tuottavat ulkomaalaiset rajan yli pendelöivät työntekijät, jotka eivät laske Luxemburgin väestöön. Singaporessa ja Sveitsissä tilanne on samansuuntainen: rahoitussektori kasvattaa BKT:tä tavalla, joka ei suoraan heijasta tavallisten asukkaiden elintasoa.
+    </div>
+
+    <div class="vaaralatikko">
+      <strong>Käytännön johtopäätös:</strong> Kun poliitikko kertoo BKT:n kasvaneen X prosenttia, se ei kerro mitään siitä, paraniko tavallisten ihmisten elintaso. Oleellisempaa on katsoa mediaanipalkan ostovoima, asumisen hintakehitys suhteessa palkkoihin ja julkisten palvelujen taso — luvut, joita ei yleensä mainita samassa lauseessa BKT-kasvun kanssa.
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="ilmio" id="overton-ikkuna">
+    <div class="ilmio-tag">Ilmiö 6</div>
+    <h2>Overton-ikkuna</h2>
+    <p>Overton-ikkuna kuvaa sitä kaistaa poliittisia ideoita, joita pidetään yhteiskunnallisesti hyväksyttävinä tietyllä hetkellä. Ikkunan ulkopuolella olevat ideat ovat "radikaaleja", "hulluja" tai "ajattelemattomia" — ei siksi, että ne ovat huonoja, vaan siksi, että ne ovat vielä normin ulkopuolella.</p>
+
+    <p>Keskeinen havainto: ikkunaa voidaan <strong>tietoisesti siirtää</strong>. Edistämällä äärimmäisiä kantoja — vaikka ne eivät koskaan tulisi politiikaksi — voidaan tehdä aiemmin radikaalista näkemyksestä "kohtuullinen kompromissi".</p>
+
+    <div class="mermaid">
+flowchart TD
+  U["Ajattelematon\n(unthinkable)"]
+  R["Radikaali"]
+  A["Hyväksyttävä"]
+  J["Järkevä"]
+  P["Suosittu"]
+  Po["Politiikka"]
+  U --> R --> A --> J --> P --> Po
+  style U fill:#fdf0f0,stroke:#c0392b
+  style R fill:#fef5ec,stroke:#e67e22
+  style A fill:#fefced,stroke:#f1c40f
+  style J fill:#f0fdf4,stroke:#27ae60
+  style P fill:#eaf4fb,stroke:#2980b9
+  style Po fill:#eaf4fb,stroke:#1a5276
+    </div>
+    <p class="kaavio-selitys">Overton-ikkuna: ideat liukuvat tasolta toiselle — ja ikkunan sijaintia voidaan manipuloida.</p>
+
+    <div class="huomiolaatikko">
+      <strong>Siirtämisen mekaniikka:</strong> Ääriliike ei tarvitse voittaa vaaleja ollakseen tehokas. Riittää, että se tekee aiemmin radikaalista kannasta "maltillisen" vaihtoehdon äärimmäisyyteen verrattuna. Maltillinen oikeisto näyttää hyväksyttävältä, kun sen rinnalla on vielä äärimmäisempi vaihtoehto.
+    </div>
+
+    <p>Joseph Overton kehitti käsitteen 1990-luvulla Mackinac Center for Public Policy -ajatushautomossa. Alun perin neutraali analyysityökalu — mutta myöhemmin myös strategiseksi ohjenuoraksi tunnustettu: jos haluat siirtää politiikkaa tiettyyn suuntaan, tue myös sen suunnan äärimmäisempiä kantoja, vaikka et niistä itse pitäisikään.</p>
+
+    <div class="vaaralatikko">
+      <strong>Käytännön seuraus:</strong> Mediahuomio ääriliikkeille — myös kriittinen — voi siirtää ikkunaa heidän suuntaansa. Äärikannan raportointi normalisoi sen osana poliittista kenttää, vaikka tarkoitus olisi ollut tuomita se.
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="ilmio" id="saantelijan-kaappaus">
+    <div class="ilmio-tag">Ilmiö 7</div>
+    <h2>Sääntelijän kaappaus</h2>
+    <p><em>Regulatory capture</em> tarkoittaa ilmiötä, jossa säännelty teollisuudenala ottaa ajan myötä haltuunsa sen valvontaan tarkoitetun viranomaisen. Valvoja, jonka piti suojella yleistä etua, alkaakin palvella valvottavan etuja.</p>
+
+    <div class="mermaid">
+flowchart TD
+  V["Viranomainen perustetaan\nsuojelemaan yleistä etua"]
+  V --> R["Pyöröovi:\nvirkamiehiä siirtyy\nteollisuuteen ja takaisin"]
+  V --> T["Tietovaje:\nviranomainen riippuu\nteollisuuden asiantuntemuksesta"]
+  V --> L["Lobbaus:\nteollisuus rahoittaa\npäätöksentekijöitä"]
+  R --> K["Viranomainen alkaa\nedistää valvottavansa etuja"]
+  T --> K
+  L --> K
+  K --> Y["Yleinen etu\njää toissijaiseksi"]
+  style K fill:#fdf0f0,stroke:#c0392b
+  style Y fill:#fdf0f0,stroke:#c0392b
+    </div>
+    <p class="kaavio-selitys">Sääntelijän kaappauksen kolme mekanismia toimivat samanaikaisesti.</p>
+
+    <div class="infolaatikko">
+      <strong>Dokumentoituja tapauksia:</strong>
+      <ul style="margin:0.5em 0 0;">
+        <li><strong>FAA ja Boeing (737 MAX):</strong> Ilmailuviranomaiset ulkoistivat sertifioinnin käytännössä Boeingille itselleen. Tuloksena kaksi tuhoisaa onnettomuutta.</li>
+        <li><strong>Finanssisektori 2008:</strong> Yhdysvaltojen finanssivalvojat olivat omaksuneet Wall Streetin näkemyksen, että markkinat säätelevät itse itsensä.</li>
+        <li><strong>Tupakkateollisuus:</strong> Vuosikymmeniä onnistui viivästyttämään sääntelyä asiantuntijajärjestöjen ja viranomaisten kautta.</li>
+      </ul>
+    </div>
+
+    <p>George Stigler kuvasi ilmiön taloustieteellisesti 1971: sääntely ei päädy yleisen edun palvelukseen, koska organisoidut erityisintressit ovat tehokkaampia lobbaamaan kuin hajanainen suuri yleisö. Pitkällä aikavälillä viranomainen muistuttaa enemmän toimialayhdistystä kuin valvojaa.</p>
+
+    <div class="vaaralatikko">
+      <strong>Tunnistaminen:</strong> Kun viranomainen vastustaa tiukempaa sääntelyä samoin argumentein kuin toimiala itse — tai kun virastojen johtajat kiertävät säännöllisesti teollisuuden palveluksessa — kaappaus on todennäköisesti tapahtunut.
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="ilmio" id="rautainen-laki">
+    <div class="ilmio-tag">Ilmiö 8</div>
+    <h2>Rautainen laki oligarkiasta — organisaatioiden väistämätön mätäneminen</h2>
+    <p>Robert Michels havaitsi vuonna 1911 tutkiessaan saksalaisia ammattiliittoja ja osuuskuntia ilmiön, jota hän kutsui organisaatioiden rautaiseksi laiksi: <strong>kaikki organisaatiot ajautuvat ajan myötä oligarkiaan</strong> riippumatta siitä, miten demokraattisesti tai tasa-arvoisesti ne aloittavat. Johtoryhmät alkavat suojella omaa valtaansa — ensin tiedostamattomasti, lopulta rakenteellisesti.</p>
+
+    <p>Michels tiivisti löydöksensä lauseeseen: <em>„Wer Organisation sagt, sagt Oligarchie"</em> — kuka sanoo organisaatio, sanoo oligarkia.</p>
+
+    <div class="mermaid">
+flowchart TD
+  A["Organisaatio perustetaan\ndemokraattisesti\n(puolue, liitto, osuuskunta, yritys)"]
+  A --> B["Koordinaatio vaatii johtoa\n— johto on välttämätöntä"]
+  B --> C["Johto kerää asiantuntemuksen,\nverkostot ja tietovirrat\nomiin käsiinsä"]
+  C --> D["Johto alkaa nähdä\noman asemansa turvaamisen\nyhtä tärkeäksi kuin mission"]
+  D --> E["Rakenteet, valinnat ja\nnimitysprosessit muokkautuvat\nsuojelemaan nykyistä johtoa"]
+  E --> F["Alkuperäinen missio\nkorvautuu itsensä\nylläpitämisellä"]
+  F --> G["Oligarkia:\nharvojen valta riippumatta\nmuodollisesta rakenteesta"]
+  style A fill:#f5f0eb,stroke:#4e342e
+  style D fill:#fff3e0,stroke:#e65100
+  style E fill:#fdf0f0,stroke:#c0392b
+  style G fill:#efebe9,stroke:#4e342e,font-weight:bold
+    </div>
+    <p class="kaavio-selitys">Prosessi ei vaadi pahantahtoisuutta — riittää, että johto toimii rationaalisesti omien etujensa mukaan.</p>
+
+    <div class="infolaatikko">
+      <strong>Missä ilmiö näkyy:</strong>
+      <ul style="margin:0.5em 0 0;">
+        <li><strong>Osuuskunnat:</strong> Perustettu jäsenten yhteiseksi eduksi — ajan myötä hallintoneuvosto ja toimiva johto voivat muodostaa itsensä uudelleen valitsevan eliitin. Jäsenten äänestysosallistuminen laskee, jolloin johdon oma ehdokasasettelu dominoi.</li>
+        <li><strong>Ammattiliitot:</strong> Michels havaitsi tämän ensimmäisenä — liittojen byrokraatit alkoivat vastustaa lakkoja, koska lakot uhkasivat liiton rahoituspohjaa ja siten heidän omaa asemaansa.</li>
+        <li><strong>Poliittiset puolueet:</strong> Puolueiden jäsenpohja laajenee, mutta todellinen päätösvalta tiivistyy sisäpiiriin. Muodolliset äänestykset ratkaistaan jo ennen kokousta epävirallisissa verkostoissa.</li>
+        <li><strong>NGO:t ja säätiöt:</strong> Hyväntekeväisyysjärjestöt kehittävät ajan myötä hallinnollisen kerroksen, jonka budjettiosuus kasvaa suhteessa varsinaiseen missioon.</li>
+        <li><strong>Yritykset:</strong> Johtoryhmien omien palkkioiden hyväksyminen, hallitusten ristikkäisjäsenyydet ja "vanha pojat" -verkostot ovat rautaisen lain ilmentymiä.</li>
+      </ul>
+    </div>
+
+    <div class="huomiolaatikko">
+      <strong>Varoitusmerkit organisaatiossa:</strong>
+      <ul style="margin:0.5em 0 0;">
+        <li>Johdon palkitseminen kasvaa selvästi nopeammin kuin organisaation suorituskyky tai jäsenten/omistajien saama hyöty</li>
+        <li>Hallituksen tai johdon vaihtuvuus on poikkeuksellisen alhainen — samat henkilöt jatkavat vuosikymmenestä toiseen</li>
+        <li>Sisäinen kritiikki johtaa marginalisointiin eikä keskusteluun</li>
+        <li>Strategiset päätökset tehdään ennen muodollisia kokouksia epävirallisissa verkostoissa</li>
+        <li>Organisaatio alkaa puolustaa johtoryhmänsä etuja sen sijaan, että puolustaa perustehtävänsä kohderyhmiä</li>
+      </ul>
+    </div>
+
+    <div class="vaaralatikko">
+      <strong>Miksi rakenne ei suojele:</strong> Demokraattiset muodot — äänestykset, valinnat, hallintoneuvostot — eivät estä lakia toteutumasta. Johto kontrolloi informaatiota, asialistan muodostamista, ehdokasasettelua ja tulkintaa. Muodollinen demokratia voi toimia legitimaation tuottajana valtarakenteen ylläpitämiseen. Suoja ei löydy sääntökirjasta vaan aktiivisesta, informoidusta jäsen- tai omistajapohjan osallistumisesta — ja tämän ylläpitäminen on kallis, jatkuva ponnistus. Vertaa: <a href="#saantelijan-kaappaus">Sääntelijän kaappaus</a> on saman logiikan erikoistapaus viranomaistasolla.
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="ilmio" id="astroturf">
+    <div class="ilmio-tag">Ilmiö 9</div>
+    <h2>Astroturf — keinotekoinen kansanliike</h2>
+    <p>Astroturfing tarkoittaa korporaation, poliittisen toimijan tai muun organisoidun tahon rahoittamaa kampanjaa, joka naamioituu spontaaniksi kansanliikkeeksi. Nimi tulee AstroTurf-keinotekonurmesta: näyttää ruoholta mutta ei ole.</p>
+
+    <p>Tavoite on luoda vaikutelma laajasta kansalaishuolesta tai -tuesta — ilman että todelliset rahoittajat näkyvät. Päätöksentekijä, joka näkee "tuhansia huolestuneita kansalaisia", toimii eri tavalla kuin nähdessään yhden teollisuuslobbarin.</p>
+
+    <div class="mermaid">
+flowchart LR
+  R["Korporaatio tai\npoliittinen toimija\nrahoittaa salaa"] --> J["Julkiset\n'kansalaisjärjestöt'\nja 'asiantuntijat'"]
+  R --> K["Kirjekampanjat,\npetitiot,\nsometilit"]
+  R --> M["Mediajulkaisut\n'riippumattomilta'\najatushaudoista"]
+  J --> V["Vaikutelma:\nlaaja kansalaistuki\ntai -vastustus"]
+  K --> V
+  M --> V
+  V --> P["Poliitikko\ntoimii 'kansan\ntahdon' mukaan"]
+  style R fill:#fdf0f0,stroke:#c0392b
+  style V fill:#fff3cd,stroke:#f39c12
+    </div>
+    <p class="kaavio-selitys">Astroturfing: rahoittaja pysyy piilossa — näkyviin tulee vain "kansa".</p>
+
+    <div class="infolaatikko">
+      <strong>Historiallisia esimerkkejä:</strong>
+      <ul style="margin:0.5em 0 0;">
+        <li><strong>Tobacco Institute (1958–):</strong> Tupakkateollisuus perusti "tutkimuslaitoksia" ja "terveysjärjestöjä" epäilyn kylvämiseksi tupakan vaarallisuudesta.</li>
+        <li><strong>Global Climate Coalition (1989–2002):</strong> Fossiiliteollisuuden rahoittama järjestö, joka kampanjoi ilmastonmuutostutkimusta vastaan "tieteellisten epävarmuuksien" nimissä.</li>
+        <li><strong>"Harry and Louise" -mainoskampanja (1993):</strong> Vakuutusteollisuuden rahoittama kampanja, joka torpedoi Clintonin terveydenhuoltouudistuksen esittämällä sen "tavalliset amerikkalaiset" -hahmot huolissaan.</li>
+      </ul>
+    </div>
+
+    <div class="huomiolaatikko">
+      <strong>Tunnistaminen:</strong> Kysy aina — kuka rahoittaa tätä järjestöä? Onko "kansalaiskampanjalla" ammattimainen PR-toimisto? Löytyykö jäsenistö vai vain toimipiste ja verkkosivut? Avoimuusvaatimukset (lobbarirekisterit, yhdistysten tilinpäätökset) ovat tärkeä vastakeino.
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="ilmio" id="firehose-of-falsehood">
+    <div class="ilmio-tag">Ilmiö 10</div>
+    <h2>Firehose of falsehood — valheiden paloletku</h2>
+    <p>RAND Corporation dokumentoi vuonna 2016 Venäjän propagandatekniikan, jolle he antoivat nimen <em>Firehose of Falsehood</em>. Perinteinen propaganda yrittää olla uskottava — tämä tekniikka hylkää uskottavuuden kokonaan ja korvaa sen <strong>volyymilla ja nopeudella</strong>.</p>
+
+    <p>Neljä tunnusmerkkiä:</p>
+    <ul>
+      <li><strong>Suuri volyymi</strong> — jatkuva tulva väitteitä, joihin on mahdoton vastata kaikkiin</li>
+      <li><strong>Useita kanavia samanaikaisesti</strong> — uutiset, some, viihdesivu, "asiantuntijat"</li>
+      <li><strong>Ei sitoutumista totuuteen</strong> — ristiriitaiset väitteet samanaikaisesti, täyskäännökset ilman häpeää</li>
+      <li><strong>Ei sitoutumista realismiin</strong> — tarkoitus ei ole vakuuttaa vaan hämmentää ja uuvuttaa</li>
+    </ul>
+
+    <div class="mermaid">
+flowchart TD
+  T["Tavoite: ei vakuuttaa\nvaan hämmentää"] --> V["Suuri volyymi\nväitteitä"]
+  V --> B["Osa väitteistä on totta\n→ sekoittuu valheisiin"]
+  V --> Ri["Ristiriitaisia versioita\nsamasta tapahtumasta"]
+  B --> H["Yleisö ei tiedä\nmitä uskoa"]
+  Ri --> H
+  H --> E["'Kaikki valehtelet'\n→ luottamus kaikkeen\nromahtaa"]
+  E --> F["Valta hyötyy:\nepäilevä yleisö\nei mobilisoi muutosta"]
+  style T fill:#fdf0f0,stroke:#c0392b
+  style F fill:#fdf0f0,stroke:#c0392b
+  style E fill:#fff3cd,stroke:#f39c12
+    </div>
+    <p class="kaavio-selitys">Firehose of falsehood: tavoite ei ole saada ihmisiä uskomaan valheita — vaan saada heidät lopettamaan kaiken uskomisen.</p>
+
+    <div class="huomiolaatikko">
+      <strong>Miksi tämä toimii:</strong> Faktojen tarkistaminen vaatii aikaa ja resursseja. Valheen levittäminen on nopeampaa kuin sen kumoaminen. RAND-tutkijoiden havainto: vaikka yksittäinen väite kumottaisiin, volyymi kokonaisuutena tekee tehtävänsä — yleisö väsyy ja turhautuu.
+    </div>
+
+    <p>Tekniikka ei ole yksinomaan venäläinen — RAND:n analyysi kuvaa Venäjän valtiomediaa, mutta sama rakenne tunnistetaan muissakin konteksteissa: poliittisissa kampanjoissa, yritysten kriisiviestinnässä ja sosiaalisessa mediassa yleisesti. Kun informaatioympäristö on kyllästetty, <em>instituutioihin kohdistuva luottamus heikkenee</em> — ja se hyödyttää niitä, joilla on institutionaalinen valta mutta huono maine.</p>
+
+    <div class="vaaralatikko">
+      <strong>Vastakeino:</strong> RAND suosittelee "älä toista, älä vahvista" -periaatetta: yksittäisten väitteiden kumoaminen voi vahvistaa niitä (ks. <em>backfire effect</em>). Tehokkaampi tapa on rakentaa yleinen medianlukutaito ja inokulointipohjainen viestintä — varoittaa tekniikasta etukäteen, ennen kuin se osuu. (Ks. <a href="#inokulointiteoria">Inokulointiteoria</a>.)
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="ilmio" id="backfire-effect">
+    <div class="ilmio-tag">Ilmiö 11</div>
+    <h2>Backfire effect — väärinkäsityksen vahvistuminen</h2>
+    <p>Backfire effect kuvaa ilmiötä, jossa henkilölle esitetty korjaus hänen virheelliseen uskomukseensa voi <em>vahvistaa</em> alkuperäistä uskomusta sen sijaan, että korjaisi sen. Mitä vahvemmin yrität kumota väärää uskomusta, sitä tiukemmin ihminen voi tarrautua siihen.</p>
+
+    <p>Ilmiö dokumentoitiin alun perin Brendan Nyhanin ja Jason Reiflerin tutkimuksissa (2010), joissa osallistujat pitäytyivät poliittisissa väärinkäsityksissään vielä vahvemmin saatuaan faktakorjauksen.</p>
+
+    <div class="mermaid">
+flowchart LR
+  U["Henkilöllä on\nvirheellinen uskomus"] --> K["Korjaus esitetään\nfaktatiedoilla"]
+  K -->|"odotettu reaktio"| M["Uskomus korjaantuu"]
+  K -->|"backfire effect"| V["Uskomus vahvistuu\n— korjaus torjutaan"]
+  V --> I["Identiteetti ja\nsosiaalinen ryhmä\nsuojataan"]
+  style V fill:#fdf0f0,stroke:#c0392b
+  style M fill:#f0fdf4,stroke:#27ae60
+    </div>
+    <p class="kaavio-selitys">Backfire effect: korjaus aktivoi puolustusmekanismin, joka vahvistaa alkuperäistä uskomusta.</p>
+
+    <div class="huomiolaatikko">
+      <strong>Miksi näin tapahtuu:</strong> Uskomukset — erityisesti poliittiset ja identiteettiin kytkeytyvät — eivät ole pelkkiä tietopisteitä. Ne ovat osa sitä, kuka ihminen on ja mihin ryhmään hän kuuluu. Korjaus ei tunnu tietovirheeltä — se tuntuu hyökkäykseltä identiteettiä vastaan.
+    </div>
+
+    <p>Myöhemmät replikaatiotutkimukset ovat osittain kyseenalaistaneet efektin vahvuuden. Meta-analyysit viittaavat siihen, että varsinainen taaksepäin sinkoutuminen on harvinaisempaa kuin alkuperäiset tutkimukset antoivat ymmärtää — mutta uskomusten vastustuskyky korjauksille on silti dokumentoitu ilmiö, erityisesti vahvasti identiteettiin kytkeytyvissä aiheissa.</p>
+
+    <div class="vaaralatikko">
+      <strong>Käytännön seuraus:</strong> Faktojen toistaminen ei aina riitä — ja väärinkäsityksen suora vastustaminen voi pahentaa tilannetta. RAND-tutkijat suosittelevat <em>inokulointipohjaista</em> lähestymistapaa: kerro etukäteen, millaisia manipulaatiotekniikkoja on olemassa, ennen kuin ne iskevät. Ennakkovaroitus rakentaa vastustuskykyä paremmin kuin jälkikäteen korjaaminen. (Ks. myös <a href="#firehose-of-falsehood">Firehose of Falsehood</a> ja <a href="#inokulointiteoria">Inokulointiteoria</a>.)
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="ilmio" id="valta-suojelee-valtaa">
+    <div class="ilmio-tag">Ilmiö 12</div>
+    <h2>Valta suojelee valtaa</h2>
+    <p>Vallan itsesuojelun mekanismi on yksinkertainen: ne jotka ovat vallassa asettavat pelisäännöt, valitsevat tuomarit ja määrittelevät mikä on laillista. Tämä ei vaadi salajuonta — riittää, että jokainen toimii rationaalisesti omien etujensa mukaisesti.</p>
+
+    <div class="mermaid">
+flowchart TD
+  A["Eliitti hallitsee\ninstituutioita"] --> B["Instituutiot luovat säännöt\njoista eliitti hyötyy"]
+  B --> C["Säännöt legitimoivat\neliitin aseman"]
+  C --> D["Eliitillä resurssit\nvaikuttaa politiikkaan"]
+  D --> E["Politiikka suojelee\neliitin etuja"]
+  E --> A
+  B --> F["Koulutus, media, oikeus\ntoistavat narratiivia"]
+  F --> C
+    </div>
+    <p class="kaavio-selitys">Vallan itsesuojelun silmukka: järjestelmä vahvistaa itse itseään.</p>
+
+    <p>Mekanismi toimii usealla tasolla samanaikaisesti:</p>
+    <ul>
+      <li><strong>Lainsäädäntö:</strong> Verolainsäädäntö, perintöverot, pääomaverotus — sääntöjä kirjoittavat ne, joilla on eniten menetettävää niiden muuttuessa.</li>
+      <li><strong>Instituutiot:</strong> Tuomareiden nimitysprosessit, virkamieshallinto, yhtiöiden hallitusvalinnat — kaikissa suositaan jo sisäpiirissä olevia.</li>
+      <li><strong>Narratiivi:</strong> Rikkaus esitetään ansaittuna, köyhyys yksilön valinnan seurauksena. Rakenteet tehdään näkymättömiksi.</li>
+      <li><strong>Verkostot:</strong> Samat henkilöt kiertävät hallitusten, yritysten ja järjestöjen johtoasemissa. Revolving door -ilmiö.</li>
+    </ul>
+
+    <div class="huomiolaatikko">
+      <strong>Miksi tämä ei ole salaliittoteoria:</strong> Vallan itsesuojelu ei edellytä, että kukaan suunnittelee sitä tietoisesti. Riittää, että kukin toimija suojelee omaa asemaansa — tuloksena on järjestelmä, joka näyttää koordinoidulta vaikka se on emergenttiä.
+    </div>
+
+    <p>C. Wright Mills kuvasi ilmiötä teoksessaan <em>The Power Elite</em> (1956): taloudellinen, poliittinen ja sotilaallinen eliitti kietoutuvat toisiinsa niin, että niiden erottaminen on vaikeaa. Myöhemmin Pierre Bourdieu käsitteli samaa ilmiötä sosiaalisen pääoman ja kentän käsitteillä: resurssit — raha, kontaktit, koulutus — kasautuvat ja siirtyvät sukupolvelta toiselle.</p>
+
+    <div class="vaaralatikko">
+      <strong>Käytännön seuraus:</strong> Reformit, jotka uhkaavat olemassaolevia valtarakenteita, kohtaavat institutionaalista vastustusta vaikka ne olisivat enemmistön toivomia. Muutoksen tekeminen vaatii voittaa pelin säännöillä, jotka on suunniteltu estämään muutos.
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="ilmio" id="kafka-ilmio">
+    <div class="ilmio-tag">Ilmiö 13</div>
+    <h2>Kafka-ilmiö — byrokratian labyrintti</h2>
+    <p>Kafka-ilmiö kuvaa institutionaalista rakennetta, jossa oikeuksien tai palvelujen saaminen on teknisesti mahdollista mutta käytännössä mahdotonta — ei suoran kiellon, vaan keskenään ristiriitaisten, epäselvästi kirjoitettujen tai kehämäisesti viittaavien sääntöjen takia.</p>
+    <p>Nimi tulee Franz Kafkan romaaneista — erityisesti <em>Oikeudenkäynnistä</em> (1925) ja <em>Linnasta</em> (1926), joissa päähenkilöt kohtaavat järjestelmiä joiden logiikka on heidän ulottumattomissaan.</p>
+
+    <div class="mermaid">
+flowchart TD
+  A["Tarvitset asiakirja A"] --> B["A vaatii asiakirja B"]
+  B --> C["B vaatii todistus C"]
+  C --> D["C myönnetään vain\nasiakirja A:n kanssa"]
+  D --> A
+  style A fill:#fdf0f0,stroke:#7f8c8d
+  style B fill:#fdf0f0,stroke:#7f8c8d
+  style C fill:#fdf0f0,stroke:#7f8c8d
+  style D fill:#fdf0f0,stroke:#7f8c8d
+    </div>
+    <p class="kaavio-selitys">Kafka-kehä: jokainen vaatimus edellyttää jotain, jota ei voi saada ilman kyseistä vaatimusta.</p>
+
+    <div class="huomiolaatikko">
+      <strong>Konkreettisia esimerkkejä:</strong>
+      <ul style="margin:0.5em 0 0;">
+        <li>Oleskelulupa edellyttää vakituista osoitetta — vakituinen osoite edellyttää oleskelulupaa.</li>
+        <li>Pankkitili vaatii osoitetodistuksen — osoitetodistus vaatii pankkitilin.</li>
+        <li>Työtodistus tarvitaan töihin pääsemiseksi — töihin pääseminen tarvitaan työtodistuksen saamiseksi.</li>
+      </ul>
+    </div>
+
+    <p>Oleellista on, että järjestelmä on usein <em>muodollisesti neutraali</em> — samat säännöt koskevat kaikkia. Juuri tämä tekee Kafka-ilmiöstä tehokkaan vallankäytön välineen: sen voi kiistää, koska syrjintä ei tapahdu eksplisiittisesti. Rakenne itsessään tekee sen.</p>
+
+    <div class="vaaralatikko">
+      <strong>Tunnistaminen:</strong> Kysy — onko oikeus olemassa vain paperilla? Onko hakuprosessi suunniteltu niin, että juuri ne joille se on tarkoitettu eivät käytännössä kykene sitä käyttämään? Jos vastaus on kyllä, rakenne on Kafkamainen — joko tahallisesti tai laiminlyönnin takia.
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="ilmio" id="catch-22">
+    <div class="ilmio-tag">Ilmiö 14</div>
+    <h2>Catch-22 — pakenematon ansa</h2>
+    <p>Catch-22 on looginen ansa, jossa järjestelmän omat säännöt tekevät pakenemisen mahdottomaksi. Termi tulee Joseph Hellerin romaanista (1961): toisen maailmansodan lentäjä voi pyytää vapautusta lentotehtävistä mielenterveyden perusteella — mutta vapautuksen pyytäminen todistaa, että hän on järjissään. Hulluus on ainoa peruste, mutta kukaan hullu ei pyydä vapautusta.</p>
+
+    <div class="mermaid">
+flowchart LR
+  A["Lentäjä haluaa\npäästä pois"] --> B["Sääntö: hullu\nvoi pyytää vapautusta"]
+  B --> C["Pyytää vapautusta"]
+  C --> D["Pyytäminen todistaa\nolevan järjissään"]
+  D --> E["Vapautus evätty\n— takaisin lentämään"]
+  E --> A
+  style D fill:#fff3cd,stroke:#f39c12
+  style E fill:#fdf0f0,stroke:#c0392b
+    </div>
+    <p class="kaavio-selitys">Catch-22: pakotie on suljettu juuri sillä säännöllä joka sen pitäisi avata.</p>
+
+    <div class="infolaatikko">
+      <strong>Rakenteen ydin:</strong> Catch-22 eroaa tavallisesta byrokratiasta siinä, että se ei ole epäselvä tai hidas — se on loogisesti suljettu. Mitä enemmän yrität käyttää järjestelmää sen tarkoitetulla tavalla, sitä varmemmin päädyt takaisin lähtöpisteeseen.
+    </div>
+
+    <p>Rakenteen tunnistaa siitä, että poikkeuksiin pääseminen edellyttää juuri sen aseman poistumista, jonka takia poikkeusta tarvitaan:</p>
+    <ul>
+      <li>Töihin pääseminen vaatii työkokemusta — työkokemuksen saa vain töissä olemalla.</li>
+      <li>Luottorajan saaminen vaatii luottohistoriaa — luottohistorian saa vain käyttämällä luottoa.</li>
+      <li>Ilmiantaja tarvitsee institutionaalisen suojan ilmiantamiseen — mutta suoja edellyttää ilmiannon menevän instituution omia kanavia pitkin.</li>
+    </ul>
+
+    <div class="vaaralatikko">
+      <strong>Vallankäytön muoto:</strong> Catch-22-rakenteet näyttävät reiluilta — säännöt ovat julkisia ja niitä sovelletaan tasaisesti. Rakenteen absurdius on vaikea osoittaa, koska jokainen yksittäinen sääntö erikseen kuulostaa järkevältä.
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="ilmio" id="goodhartin-laki">
+    <div class="ilmio-tag">Ilmiö 15</div>
+    <h2>Goodhartin laki — mittari syö tavoitteen</h2>
+    <p><em>"Kun mittarista tulee tavoite, se lakkaa olemasta hyvä mittari."</em> Taloustieteilijä Charles Goodhart muotoili periaatteen rahapolitiikan yhteydessä 1975, mutta se kuvaa ilmiötä joka toistuu kaikissa instituutioissa joissa suoritusta mitataan ja palkitaan.</p>
+
+    <div class="mermaid">
+flowchart TD
+  A["Tavoite:\nparantaa X:ää"] --> B["Mittari M\nkuvaa X:ää hyvin"]
+  B --> C["M:stä tulee\nvirallinen tavoite"]
+  C --> D["Organisaatio optimoi\nM:ää, ei X:ää"]
+  D --> E["M paranee —\nX ei parane"]
+  E --> F["'Mittarit kunnossa'"]
+  style D fill:#fff3cd,stroke:#f39c12
+  style E fill:#fdf0f0,stroke:#c0392b
+  style F fill:#fdf0f0,stroke:#c0392b
+    </div>
+    <p class="kaavio-selitys">Goodhartin laki: optimointi kohdistuu mittariin, ei mittarin takana olevaan ilmiöön.</p>
+
+    <div class="infolaatikko">
+      <strong>Dokumentoituja tapauksia:</strong>
+      <ul style="margin:0.5em 0 0;">
+        <li><strong>Neuvostoliiton naulatuotanto:</strong> Kvootit kappalemäärässä — tehtaat tuottivat miljoonia pieniä nauloja. Kvootit painoon — yksi jättiläisnaula täytti kvootin.</li>
+        <li><strong>NHS jonotusajat (UK):</strong> Sairaankuljetukset kierrättivät potilaan ympäri kaupunkia ennen sairaalaan saapumista, jotta jonotusajan kello alkaisi "oikeaan" aikaan.</li>
+        <li><strong>Poliisitilastot:</strong> Kun pidätysmäärät ovat mittari, resurssit kohdistuvat helppoihin tapauksiin vaikeiden kustannuksella.</li>
+        <li><strong>Koulutus:</strong> Intensiivinen PISA-harjoittelu paransi pisteitä ilman että kriittinen ajattelu tai syvempi oppiminen kehittyi.</li>
+      </ul>
+    </div>
+
+    <p>Laki ei tarkoita, että mittaaminen on turhaa — se tarkoittaa, että yksittäinen mittari ei koskaan kuvaa koko tavoitetta. Mitä enemmän päätöksiä tehdään yhden mittarin perusteella, sitä enemmän resursseja ohjautuu sen optimointiin todellisen tavoitteen kustannuksella.</p>
+
+    <div class="huomiolaatikko">
+      <strong>Käytännön kysymys:</strong> Mitä tämä mittari <em>ei</em> mittaa? Jos toimijalla on kannustin parantaa mittaria eikä mitattavaa ilmiötä, Goodhartin laki on jo käynnissä.
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="ilmio" id="darvo">
+    <div class="ilmio-tag">Ilmiö 16</div>
+    <h2>DARVO — uhrin ja syyttäjän roolien kääntäminen</h2>
+    <p>DARVO (Deny, Attack, Reverse Victim and Offender) on psykologi Jennifer Freydin vuonna 1997 kuvaama reaktiostrategia, jota käyttävät henkilöt tai instituutiot joita pidetään vastuullisina väärinkäytöksestä. Strategia koostuu kolmesta vaiheesta: kiistä, hyökkää, käännä roolit.</p>
+
+    <div class="mermaid">
+flowchart TD
+  S["Syytös tai vastuuvaatimus"] --> D["Deny — Kiistä\n'En koskaan tehnyt niin'"]
+  D --> A["Attack — Hyökkää\n'Syyttäjällä on agenda'\n'Hän valehtelee'"]
+  A --> R["Reverse — Käännä roolit\n'Minä olen tässä uhri'"]
+  R --> E["Alkuperäinen syytös\nhämärtyy tai unohtuu"]
+  style D fill:#fff3cd,stroke:#f39c12
+  style A fill:#fdf0f0,stroke:#c0392b
+  style R fill:#fdf0f0,stroke:#c0392b
+    </div>
+    <p class="kaavio-selitys">DARVO: strategia siirtää huomion teosta tekijän kärsimykseen.</p>
+
+    <div class="huomiolaatikko">
+      <strong>Kolme vaihetta käytännössä:</strong>
+      <ul style="margin:0.5em 0 0;">
+        <li><strong>Deny (kiistä):</strong> Tapahtuma rekonstruoidaan. "En uhannut, annoin neuvon." "En syrjinyt, sovelsin sääntöjä."</li>
+        <li><strong>Attack (hyökkää):</strong> Syyttäjän motiivit, luonne tai uskottavuus kyseenalaistetaan. Huomio siirtyy teosta tekijään.</li>
+        <li><strong>Reverse (käännä):</strong> Vastuuseen vaatiminen esitetään hyökkäyksenä — syyttäjästä tulee tekijä, syytetystä uhri. "Hänen syytöksensä tuhoavat maineen ja perheen."</li>
+      </ul>
+    </div>
+
+    <p>DARVO toimii sekä yksilö- että institutionaalisella tasolla. Korporaatiot, jotka haastetaan oikeuteen ympäristövahingoista, voivat esittää itsensä "sääntelybyrokratian uhreina". Poliitikot, jotka joutuvat eettisten kysymysten kohteeksi, kääntyvät "poliittisen vainon" uhreiksi. Rakenne on sama.</p>
+
+    <div class="vaaralatikko">
+      <strong>Tunnistaminen:</strong> DARVO onnistuu, koska jokainen vaihe erikseen kuulostaa oikeutetulta — on laillista kiistää syytös, on sallittua kyseenalaistaa syyttäjä, on inhimillistä kertoa miten syytös vaikuttaa itseen. Strategian tunnistaa siitä, että nämä tapahtuvat nopeasti peräkkäin ja alkuperäinen kysymys jää vastaamatta.
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="ilmio" id="manufactured-consent">
+    <div class="ilmio-tag">Ilmiö 17</div>
+    <h2>Manufactured consent — suostumus tehdään</h2>
+    <p>Noam Chomsky ja Edward Herman esittivät teoksessaan <em>Manufacturing Consent</em> (1988) propagandamallin, joka kuvaa miten valtamedia tuottaa ideologista yhdenmukaisuutta ilman eksplisiittistä sensuuria. Malli ei oleta salajuonta — se kuvaa rakenteellisia suodattimia, jotka toimivat taloudellisten kannustimien kautta.</p>
+
+    <div class="mermaid">
+flowchart LR
+  O["Omistus"] --> F["Toimitus"]
+  M["Mainonta"] --> F
+  L["Lähteet"] --> F
+  Fl["Flak"] --> F
+  I["Ideologia"] --> F
+  F --> U["Uutiset jotka\nnäyttävät neutraaleilta\nmutta ovat suodatettuja"]
+  style F fill:#fff3cd,stroke:#f39c12
+  style U fill:#f0f6fd,stroke:#2980b9
+    </div>
+    <p class="kaavio-selitys">Viisi suodatinta toimivat samanaikaisesti — tulos näyttää toimitukselliselta harkinnalta mutta heijastaa rakenteellisia paineita.</p>
+
+    <p>Viisi suodatinta:</p>
+    <ul>
+      <li><strong>Omistus</strong> — suuret mediayhtiöt omistavat suurimman osan uutistuotannosta. Omistajien intressit muovaavat toimituspolitiikkaa ilman suoria käskyjä.</li>
+      <li><strong>Mainonta</strong> — mainostajat ovat tosiasiallisia rahoittajia. Media joka ärsyttää mainostajia menettää tulonsa.</li>
+      <li><strong>Lähteet</strong> — virallisilla lähteillä (hallitukset, suuryritykset) on resurssit tuottaa materiaalia jota media käyttää. Epäviralliset äänet ovat kalliimpia hankkia.</li>
+      <li><strong>Flak</strong> — järjestäytynyt kritiikki ja oikeudelliset uhkaukset rankaisevat "vääristä" jutuista. Media oppii mitä aiheita kannattaa välttää.</li>
+      <li><strong>Ideologia</strong> — jaettu kehys siitä mikä on "normaalia" ja mikä "radikaalia". Määrittelee mitä kysymyksiä edes esitetään.</li>
+    </ul>
+
+    <div class="infolaatikko">
+      <strong>Mallin ydinväite:</strong> Sensuuri ei ole tehokkain tiedonhallinnan muoto. Tehokkaampi on muokata sitä, mitä toimittajat <em>pitävät uutisarvoisena</em> — mitä kysymyksiä esitetään, mistä näkökulmasta, kenelle annetaan puheenvuoro. Nämä valinnat tehdään ennen kuin yhtään sanaa on kirjoitettu.
+    </div>
+
+    <div class="huomiolaatikko">
+      <strong>Käytännön kysymys:</strong> Kuka omistaa tämän median? Ketkä ovat sen suurimmat mainostajat? Mitkä äänet puuttuvat — ei siksi, että ne olisi sensuroitu, vaan siksi, ettei niitä koskaan pyydetty?
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="ilmio" id="halo-efekti">
+    <div class="ilmio-tag">Ilmiö 18</div>
+    <h2>Halo-efekti ja stigma — ensivaikutelman loukku</h2>
+    <p>Halo-efekti (Edward Thorndike, 1920) on kognitiivinen vinouma, jossa yhden positiivisen piirteen havaitseminen saa aivot päättelemään, että henkilöllä on muitakin positiivisia piirteitä — vaikka näillä ei ole mitään loogista yhteyttä. Kaunis ihminen arvioidaan automaattisesti älykkäämmäksi, luotettavammaksi ja kyvykkäämmäksi kuin hän ehkä on.</p>
+    <p><strong>Stigma</strong> (kutsutaan myös devil's horn -efektiksi) on saman ilmiön kääntöpuoli: yksi negatiivinen piirre värittää kaiken muun arvioinnin negatiiviseksi. Yhdessä ne muodostavat saman kolikon kaksi puolta.</p>
+
+    <div class="halo-grid">
+      <div class="halo-puoli halo-side">
+        <h4>☀ Halo — positiivinen säteily</h4>
+        <ul>
+          <li>Symmetriset kasvot → luotettava</li>
+          <li>Urheilullinen vartalo → kurinalainen</li>
+          <li>Kalliit vaatteet (LV, YSL, Ralph Lauren) → pätevä</li>
+          <li>Tuttu brändi (Felix) → turvallinen</li>
+          <li>Hyvä tuoksu → huolehtivainen</li>
+          <li>Siisti pukeutuminen → ammattimainen</li>
+        </ul>
+        <div class="halo-signaali">
+          <span>älykäs</span><span>luotettava</span><span>lämmin</span><span>kyvykäs</span><span>rehellinen</span><span>lojaali</span>
+        </div>
+      </div>
+      <div class="halo-puoli stigma-side">
+        <h4>☽ Stigma — negatiivinen varjo</h4>
+        <ul>
+          <li>Epäsiisti ulkonäkö → epäluotettava</li>
+          <li>Halpa vaatetus → epäpätevä</li>
+          <li>Vieras aksentti → vähemmän älykäs</li>
+          <li>Ylipaino → laiska</li>
+          <li>Heikko kädenpuristus → epävarma</li>
+          <li>Tuntematon brändi → huonolaatuinen</li>
+        </ul>
+        <div class="halo-signaali">
+          <span>epäluotettava</span><span>kyvytön</span><span>epärehellinen</span><span>laiska</span><span>epäpätevä</span>
+        </div>
+      </div>
+    </div>
+    <p class="kaavio-selitys">Halo ja stigma toimivat automaattisesti — nopeammin kuin ehdit tietoisesti arvioida.</p>
+
+    <div class="huomiolaatikko">
+      <strong>Mitä aivot tekevät:</strong> Ensivaikutelma syntyy millisekunneissa. Aivot luovat kokonaiskuvan ihmisestä ennen kuin olet edes sanonut sanaakaan — ja se kokonaiskuva värittää kaiken myöhemmän tiedon tulkinnan. Hyvä ulkonäkö yhdistetään automaattisesti: ajattelevaisuuteen, ystävällisyyteen, luotettavuuteen, lämpöön, lojaalisuuteen, anteliaisuuteen, kyvykkyyteen, johtajuuteen ja älykkyyteen. Näillä ei ole ulkonäön kanssa mitään tekemistä — mutta aivoille sillä ei ole väliä.
+    </div>
+
+    <div class="mermaid">
+flowchart LR
+  P["Yksi positiivinen\npiirre havaitaan"] --> H["Halo aktivoituu"]
+  H --> A["Arvioidaan älykkyys\n— positiivisesti"]
+  H --> B["Arvioidaan luotettavuus\n— positiivisesti"]
+  H --> C["Arvioidaan kyvykkyys\n— positiivisesti"]
+  N["Yksi negatiivinen\npiirre havaitaan"] --> S["Stigma aktivoituu"]
+  S --> D["Arvioidaan älykkyys\n— negatiivisesti"]
+  S --> E["Arvioidaan luotettavuus\n— negatiivisesti"]
+  S --> F["Arvioidaan kyvykkyys\n— negatiivisesti"]
+  style H fill:#fff8e1,stroke:#f9a825
+  style S fill:#f3f0f8,stroke:#9c27b0
+    </div>
+    <p class="kaavio-selitys">Yksi havainto säteilee kaikkeen — halo tai stigma aktivoituu automaattisesti.</p>
+
+    <h3>Korona-tutkimus: halo sammuu ruudun läpi</h3>
+    <p>Etäopetukseen siirtyminen koronaviruspandemian aikana tarjosi luonnollisen koeasetelman halo-efektin tutkimiseen. Kun yliopisto-opetus siirtyi etäyhteyksiin, opettajat eivät enää nähneet opiskelijoita kasvokkain — vain kurssisuoritukset puhuivat puolestaan.</p>
+    <p>Tulos: kauniimmiksi arvioidut opiskelijat saivat lähiopetuksessa parempia arvosanoja kuin heidän suoritustasonsa olisi edellyttänyt. Etäopetuksessa tämä etu katosi — ja vähemmän kauniiksi arvioidut opiskelijat saivat parempia arvosanoja kuin aiemmin. Halo-efekti toimii kasvokkain, mutta ei ruudun läpi. (<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4631535" target="_blank">SSRN 4631535</a>)</p>
+
+    <div class="vaaralatikko">
+      <strong>Käytännön seuraus:</strong> Halo-efekti ei ole tahallinen — se tapahtuu automaattisesti, ennen tietoista ajattelua. Rekrytoinnissa, arvioinnissa, oikeussaleissa ja lääkärin vastaanotolla ulkonäkö vaikuttaa lopputulokseen tavalla, jota kumpikaan osapuoli ei tunnista. Rakenteelliset toimet (sokkoarviointi, standardoidut kriteerit, anonymisointi) ovat tehokkaampia kuin yksittäisten vinoumien tiedostaminen.
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="ilmio" id="brooksin-laki">
+    <div class="ilmio-tag">Ilmiö 19</div>
+    <h2>Brooksin laki — lisähenkilö myöhästyttää</h2>
+    <p>Fred Brooks dokumentoi teoksessaan <em>The Mythical Man-Month</em> (1975) ilmiön, joka on sittemmin toistettu jokaisessa sukupolvessa: myöhässä olevaan ohjelmistoprojektiin lisätty uusi henkilö tekee siitä vielä myöhässä olevamman. Laki tuntuu ensin epäintuitiiviselta — lisää käsiä, enemmän työtä, nopeampi valmistuminen. Mutta ohjelmistoprojekti ei ole pellavan niittämistä.</p>
+
+    <div class="mermaid">
+flowchart LR
+  M["Projekti myöhässä"] --> P["Lisätään ihmisiä"]
+  P --> O["Uudet tarvitsevat\nperehdytystä"]
+  P --> K["Kommunikaatiokanavat\nräjähtävät"]
+  O --> V["Vanhat käyttävät\naikansa perehdyttämiseen"]
+  K --> S["Koordinaatiokustannus\nylittää hyödyn"]
+  V --> H["Projekti hidastuu\nentisestään"]
+  S --> H
+  style H fill:#fdf0f0,stroke:#c0392b
+  style M fill:#fff3cd,stroke:#f39c12
+    </div>
+    <p class="kaavio-selitys">Brooksin laki: lisäresurssi myöhäisessä vaiheessa aiheuttaa enemmän haittaa kuin hyötyä.</p>
+
+    <div class="infolaatikko">
+      <strong>Miksi kommunikaatio räjähtää:</strong> Tiimin kommunikaatiokanavien määrä kasvaa kaavalla <em>n × (n−1) / 2</em>. Kahdella henkilöllä on 1 kanava. Viidellä 10. Kymmenellä 45. Kahdellakymmenellä 190. Jokainen uusi jäsen ei lisää yhtä kanavaa — hän lisää yhtä monta kanavaa kuin tiimissä on jo ihmisiä.
+    </div>
+
+    <div class="vaaralatikko">
+      <strong>Miksi sama toistuu joka projektissa:</strong> Kun projekti on myöhässä, johdon paine on lisätä resursseja — se on ainoa näkyvä toimenpide. Brooksin lain tietäminen ei auta, jos organisaatiorakenne palkitsee näkyvistä toimenpiteistä eikä oikeista.
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="ilmio" id="yhdeksanyhdeksan">
+    <div class="ilmio-tag">Ilmiö 20</div>
+    <h2>Yhdeksän-yhdeksän-sääntö — "melkein valmis" -illuusio</h2>
+    <p>Tom Cargill muotoili ohjelmoijien kansanviisauden: <em>"Ensimmäinen 90 % koodista vie 90 % kehitysajasta. Viimeinen 10 % koodista vie loput 90 % kehitysajasta."</em> Projekti on pitkään "melkein valmis" — mutta viimeiset prosentit ovat kovimmat.</p>
+
+    <div class="mermaid">
+flowchart LR
+  A["Demo toimii\n→ '90 % valmis'"] --> B["Reunatapaukset\nDatan laatu\nIntegraatiot"]
+  B --> C["Tuotantoonvienti\nKäyttäjätestaus\nYlläpito"]
+  C --> D["Loput 90 %\nkehitysajasta"]
+  style A fill:#f0fdf4,stroke:#27ae60
+  style D fill:#fdf0f0,stroke:#c0392b
+    </div>
+    <p class="kaavio-selitys">Demo valmiina ei tarkoita tuotantoa valmiina — se tarkoittaa, että helppo osuus on tehty.</p>
+
+    <p>Data- ja analytiikkaprojekteissa ilmiö on erityisen terävä: pipeline saadaan liikkeelle nopeasti, malli toimii testiympäristössä, dashboard näyttää hyvältä demossa. Sitten alkaa todellinen työ — reunatapaukset, datan laatu, integraatiot, oikeat käyttäjät, tuotantoonvienti, käyttöoikeudet, dokumentaatio, ylläpito, päivitykset.</p>
+
+    <div class="vaaralatikko">
+      <strong>Projektijohdolle:</strong> Kun tiimi raportoi olevansa "90 % valmis", kysy erikseen: onko tuotantoonvienti tehty, onko reunatapaukset käyty läpi, onko käyttäjät testanneet oikeilla datoilla? Jos ei — projekti ei ole 90 % valmis.
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="ilmio" id="hofstadterin-laki">
+    <div class="ilmio-tag">Ilmiö 21</div>
+    <h2>Hofstadterin laki — rekursiivinen aikataululaki</h2>
+    <p>Douglas Hofstadter muotoili rekursiivisen totuuden teoksessaan <em>Gödel, Escher, Bach</em> (1979): <em>"Kaikki kestää aina odotettua kauemmin — jopa kun otat Hofstadterin lain huomioon."</em> Projektiarviot ovat systemaattisesti liian optimistisia, eikä tämä korjaudu edes kun tietää sen.</p>
+
+    <div class="mermaid">
+flowchart LR
+  A["Arvio: 3 kk"] --> B["Lisätään puskuri\n→ 4 kk"]
+  B --> C["Todellisuus: 6 kk"]
+  C --> D["Seuraava projekti:\nArvio: 3 kk..."]
+  style C fill:#fdf0f0,stroke:#c0392b
+  style D fill:#fff3cd,stroke:#f39c12
+    </div>
+    <p class="kaavio-selitys">Hofstadterin laki on rekursiivinen: koska sama vinouma vaikuttaa myös puskuriin, puskuri on aina liian pieni.</p>
+
+    <p>Ilmiö kytkeytyy Kahnemanin ja Tverskyn <em>suunnitteluharhaukseen</em> (planning fallacy): ihmiset arvioivat omaa projektiaan sisältä käsin — parhaiden skenaarioiden mukaan — eivätkä ulkoa käsin vertaamalla vastaaviin aiempiin projekteihin. Rakennusprojekti arvioidaan sen mukaan miten <em>tämä</em> projekti sujuu, ei sen mukaan miten vastaavat projektit yleensä sujuvat.</p>
+
+    <div class="vaaralatikko">
+      <strong>Korjauskeino:</strong> Käytä ulkoista referenssiluokkaa — kysy montako vastaavaa projektia on aikataulussa ja budjetissa valmistunut, ja anna sen ohjata arviota. Sisäinen optimismi on lähes aina virheellisempi kuin historiallinen keskiarvo.
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="ilmio" id="kuolonmarssi">
+    <div class="ilmio-tag">Ilmiö 22</div>
+    <h2>Kuolonmarssi — projekti jota ei voi lopettaa</h2>
+    <p>Edward Yourdon kuvasi teoksessaan <em>Death March</em> (1997) projektiluokan, jossa kaikki tietävät jo varhain että projekti epäonnistuu — mutta kukaan ei pysty tai uskalla sanoa sitä ääneen. Projekti jatkuu, resurssit kuluvat, ihmisiä palaa loppuun, ja lopputulos on silti huono tai peruutetaan.</p>
+
+    <div class="huomiolaatikko">
+      <strong>Kuolonmarssin tunnusmerkit:</strong>
+      <ul style="margin:0.5em 0 0;">
+        <li>Aikataulu tai budjetti on puolet siitä mitä asiantuntijat arvioivat tarvittavan.</li>
+        <li>Vaatimukset muuttuvat jatkuvasti mutta aikataulu ei.</li>
+        <li>Tiimi tietää ongelman — johto ei halua kuulla sitä.</li>
+        <li>Projekti on "strategisesti tärkeä", mikä tarkoittaa ettei sitä voi peruuttaa poliittisista syistä vaikka pitäisi.</li>
+        <li>Loppuvaiheessa testataan vähemmän, ei enemmän — aikaa ei ole.</li>
+        <li>Parhaat tekijät lähtevät ensimmäisenä, jäljelle jäävät kantavat kasvavan taakan.</li>
+      </ul>
+    </div>
+
+    <p>Kuolonmarssi eroaa tavallisesta myöhässä olevasta projektista siinä, että epäonnistuminen on strukturaalinen — se on sisäänrakennettu alkuperäisiin reunaehtoihin, ei vain huonoa tuurua. Jatkaminen on rationaalista jokaiselle yksittäiselle toimijalle (ei halua olla se joka "lopetti projektin"), vaikka lopettaminen olisi rationaalista organisaatiolle.</p>
+
+    <div class="vaaralatikko">
+      <strong>Uponneiden kustannusten loukku:</strong> Kuolonmarssit jatkuvat usein siksi, että niihin on jo investoitu paljon — lopettaminen näyttäisi tuhlaukselta. Mutta jo käytetty raha ei palaudu jatkamalla. Relevantti kysymys on aina: kannattaako jatkaa <em>tästä hetkestä eteenpäin</em>?
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="ilmio" id="tekninen-velka">
+    <div class="ilmio-tag">Ilmiö 23</div>
+    <h2>Tekninen velka — oikoteiden korko</h2>
+    <p>Ward Cunningham loi termin 1992: tekninen velka on metafora oikotielle, joka nopeuttaa kehitystä nyt mutta kasvaa korkoineen tulevaisuudessa. Jokainen "tehdään nyt nopeasti, korjataan myöhemmin" -päätös on lainaa tulevaisuuden kehityskapasiteetista.</p>
+
+    <div class="mermaid">
+flowchart LR
+  O["Oikotie:\n'tehdään nyt nopeasti'"] --> V["Tekninen velka\nkasvaa"]
+  V --> H["Jokainen muutos\nvaikeutuu"]
+  H --> P["Paine tehdä\nlisää oikoteitä"]
+  P --> V
+  V --> K["Järjestelmä muuttuu\nliian kalliiksi\nmyllistää"]
+  style V fill:#fff3cd,stroke:#f39c12
+  style K fill:#fdf0f0,stroke:#c0392b
+    </div>
+    <p class="kaavio-selitys">Tekninen velka kumuloituu — ja kasvaa korkoineen mitä kauemmin se on maksamatta.</p>
+
+    <p>Data- ja analytiikkaprojekteissa tekninen velka näkyy erityisen selvästi:</p>
+    <ul>
+      <li>Kovakoodatut polkumuuttujat ja salasanat skripteissä</li>
+      <li>Dokumentoimattomat transformaatiot joita kukaan ei enää ymmärrä</li>
+      <li>"Väliaikaiset" SQL-skriptit jotka päätyvät tuotantoon ja jäävät sinne</li>
+      <li>Dashboard-laskut joita kukaan ei enää uskalla muuttaa — "se vaan toimii"</li>
+      <li>Manuaaliset korjausajot joista tulee viikoittainen rutiini</li>
+    </ul>
+
+    <div class="vaaralatikko">
+      <strong>Velka ei katoa itsestään:</strong> Teknistä velkaa ei poisteta huomioimalla se sprinttisuunnitelmassa kerran vuodessa. Se vaatii systemaattista "velanmaksua" — refaktorointia, dokumentointia ja testausta osana normaalia kehitystyötä, ei erillisenä projektina joka aina siirtyy seuraavaan kvarttaaliin.
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="ilmio" id="conways-laki">
+    <div class="ilmio-tag">Ilmiö 24</div>
+    <h2>Conwayn laki — organisaatio heijastuu arkkitehtuuriin</h2>
+    <p>Melvin Conway esitti vuonna 1967: <em>"Organisaatiot, jotka suunnittelevat järjestelmiä, tuottavat järjestelmiä jotka heijastavat kyseisten organisaatioiden kommunikaatiorakenteita."</em> Toisin sanoen: järjestelmä näyttää siltä, miltä tiimit näyttävät.</p>
+
+    <div class="mermaid">
+flowchart TD
+  O["Organisaatio:\n3 tiimiä erillään"] --> S["Järjestelmä:\n3 erillistä moduulia\nhuonoilla rajapinnoilla"]
+  O2["Organisaatio:\ntiimit yhteisessä\ntilassa"] --> S2["Järjestelmä:\nintegroitu arkkitehtuuri\nselkeillä rajapinnoilla"]
+  style S fill:#fdf0f0,stroke:#c0392b
+  style S2 fill:#f0fdf4,stroke:#27ae60
+    </div>
+    <p class="kaavio-selitys">Conwayn laki: muuta ensin organisaatio, jos haluat muuttaa arkkitehtuuria.</p>
+
+    <p>Laki ei ole pessimistinen — se on käytännöllinen. Amazon sovelsi sitä tietoisesti "kaksi pizzaa" -tiimisäännöllään: tiimin pitää mahtua kahteen pizzaan, koska se pakottaa pienet autonomiset yksiköt joiden rajapinnat ovat selkeitä. Tulos näkyy AWS:n arkkitehtuurissa.</p>
+
+    <div class="infolaatikko">
+      <strong>Käänteinen Conwayn manööveri:</strong> Muuta tiimien rakennetta ensin, niin arkkitehtuuri seuraa. Jos haluat mikropalveluarkkitehtuurin mutta tiimit ovat silossaan, saat vain hajautetun monoliitin — kaikki mikropalvelujen haitat ilman hyötyjä.
+    </div>
+
+    <div class="vaaralatikko">
+      <strong>Data-arkkitehtuurissa:</strong> Jos tietovarastoarkkitehtuuri heijastelee organisaatiosiiloja — myynti, markkinointi, tuotanto kukin omina datajärjestelminään ilman yhteistä mallia — syy on lähes aina organisaatiorakenteessa, ei teknisessä päätöksessä.
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="ilmio" id="bikeshedding">
+    <div class="ilmio-tag">Ilmiö 25</div>
+    <h2>Bikeshedding — triviaalisuuslaki</h2>
+    <p>C. Northcote Parkinson kuvasi 1957 ilmiön, jonka myöhemmin nimettiin bikesheddingiksi: komitea käyttää enemmän aikaa polkupyöräkatoksen värin valintaan kuin ydinvoimalan reaktorisuunnitteluun. Syy on yksinkertainen — reaktorista harva osaa sanoa mitään, katoksen väristä jokainen voi.</p>
+
+    <div class="mermaid">
+flowchart LR
+  K["Kokous"] --> Y["Ydinvoimalan\nreaktorisuunnitelma\n— 2 min, hyväksytty"]
+  K --> P["Polkupyöräkatoksen\nväri\n— 45 min, ei päätöstä"]
+  style P fill:#fdf0f0,stroke:#c0392b
+  style Y fill:#f0fdf4,stroke:#27ae60
+    </div>
+    <p class="kaavio-selitys">Parkinsonin triviaalisuuslaki: kokouksen huomio on kääntäen verrannollinen asian monimutkaisuuteen.</p>
+
+    <p>Teknisessä kontekstissa bikeshedding näkyy esimerkiksi: muuttujanimen kirjoitusasusta väitellään tuntikausia, mutta tietomallinnuksen granulariteettipäätös tehdään minuuteissa koska aihe on liian tekninen puolet osallistujista. Tai: dashboardin väripaletti saa enemmän kommentteja kuin mittarilogiikka.</p>
+
+    <div class="huomiolaatikko">
+      <strong>Miksi tämä on institutionaalinen ongelma:</strong> Bikeshedding ei johdu huonoista ihmisistä — se johtuu siitä, että kokouksissa on enemmän ihmisiä kuin on tarpeen monimutkaisten päätösten tekemiseen. Suuressa kokouksessa jokainen haluaa osoittaa osallistumisensa, ja yksinkertaisiin asioihin on helpoin osallistua.
+    </div>
+
+    <div class="vaaralatikko">
+      <strong>Rakenteellinen korjaus:</strong> Päätökset pitäisi tehdä pienimmällä mahdollisella joukolla jolla on relevantti osaaminen. Iso kokous on esittelyä, ei päätöksentekoa varten. Jos muuttujanimen kirjoitusasusta väitellään — se on merkki siitä, että kokouksessa on väärät ihmiset tai väärä agenda.
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="ilmio" id="scope-creep">
+    <div class="ilmio-tag">Ilmiö 26</div>
+    <h2>Scope creep — vaatimusten hiljaa laajeneminen</h2>
+    <p>Scope creep on ilmiö, jossa projektin laajuus kasvaa asteittain ilman vastaavaa muutosta aikatauluun tai budjettiin. Yksittäiset muutokset tuntuvat pieniltä ja kohtuullisilta — kokonaisvaikutus on massiivinen.</p>
+
+    <div class="mermaid">
+flowchart LR
+  A["Alkuperäinen\nscope"] --> B["'Lisätään vain\nnämä kentät'"]
+  B --> C["'Tehdään myös\ntämä näkymä'"]
+  C --> D["'Kun kerran\nollaan tässä...'"]
+  D --> E["Projekti 3×\nalkuperäistä\nlaajempi"]
+  E --> F["Sama aikataulu\nja budjetti"]
+  style E fill:#fff3cd,stroke:#f39c12
+  style F fill:#fdf0f0,stroke:#c0392b
+    </div>
+    <p class="kaavio-selitys">Scope creep: jokainen yksittäinen lisäys tuntuu pieneltä — kokonaisvaikutus on kumuloituva.</p>
+
+    <p>Scope creep ei aina tule asiakkaalta. Sisäinen scope creep syntyy kun kehittäjät lisäävät ominaisuuksia joita ei pyydetty ("kun kerran ollaan tässä, tehdään tämäkin kunnolla"), tai kun projektiryhmä ei osaa sanoa ei pyynnöille koska jokainen pyyntö erikseen tuntuu kohtuulliselta.</p>
+
+    <div class="infolaatikko">
+      <strong>Data-projekteissa erityinen muoto:</strong> "Raporttipyyntö" alkaa yhdestä mittarista. Sitten lisätään segmentointi. Sitten vertailukausi. Sitten poikkeus tiettyyn toimialaan. Sitten erikoislogiikka yhdelle asiakkaalle. Lopulta "raportti" on räätälöityjen erikoistapausten kokoelma jota kukaan ei ymmärrä kokonaan.
+    </div>
+
+    <div class="vaaralatikko">
+      <strong>Ainoa tehoava keino:</strong> Kirjallinen scope-dokumentti jonka muuttaminen vaatii eksplisiittisen päätöksen aikataulun tai budjetin muutoksesta. "Pienet muutokset" hyväksytään suullisesti ja kirjataan ylös — kokonaisvaikutus tulee näkyväksi ennen kuin se on jo tapahtunut.
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="ilmio" id="hippo-efekti">
+    <div class="ilmio-tag">Ilmiö 27</div>
+    <h2>HIPPO-efekti — johtajan mielipide voittaa datan</h2>
+    <p>HIPPO (Highest Paid Person's Opinion) kuvaa ilmiötä, jossa kokouksen korkein hierarkkinen asema määrittää lopputuloksen — ei data, asiantuntemus tai argumenttien laatu. Kun johtaja esittää kantansa, muut alkavat sovittaa omansa sen mukaan.</p>
+
+    <div class="mermaid">
+flowchart TD
+  D["Data ja analyysi\nosoittavat X"] --> K["Kokous"]
+  A["Asiantuntijat\nsuosittelevat X"] --> K
+  H["HIPPO sanoo Y"] --> K
+  K --> P["Päätös: Y"]
+  style H fill:#fdf0f0,stroke:#5d4037
+  style P fill:#fdf0f0,stroke:#5d4037
+    </div>
+    <p class="kaavio-selitys">HIPPO-efekti: hierarkkinen asema korvaa perustelut päätöksenteossa.</p>
+
+    <div class="huomiolaatikko">
+      <strong>Miten se toimii ilman käskyä:</strong> Kukaan ei sano "tehdään niin kuin pomo sanoo". Sen sijaan: data esitellään, asiantuntijat puhuvat — ja sitten johtaja avaa suunsa. Hiljaisuus laskeutuu. Muutama nyökkäys. Päätös syntyy.
+    </div>
+
+    <p>Efekti ei vaadi autoritaarista johtajaa. Riittää, että ihmiset tietävät kenen mielipide ratkaisee. Psykologinen turvallisuus — tai sen puute — tekee loput: eriävän mielipiteen esittäminen ylöspäin hierarkiassa on sosiaalinen riski, jonka useimmat välttävät.</p>
+
+    <div class="vaaralatikko">
+      <strong>Tunnistaminen:</strong> Katso kenen puheenvuoron jälkeen muut alkavat muuttaa kantaansa. Jos se on aina sama henkilö — ja sama henkilö on hierarkiassa korkein — HIPPO on paikalla. Hyvä testi: miten päätökset syntyisivät, jos johtaja ei olisi kokouksessa?
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="ilmio" id="performatiivinen-lasnaolo">
+    <div class="ilmio-tag">Ilmiö 28</div>
+    <h2>Performatiivinen läsnäolo — näytelmä sitoutumisesta</h2>
+    <p>Performatiivinen läsnäolo tarkoittaa, että työntekijä osoittaa lojaalisuutensa ja sitoutumisensa <em>näkymisen</em> kautta — ei suorituksen. Varhain töihin saapuminen, myöhään lähteminen, viikonloppusähköposteihin vastaaminen ja toimistolla istuminen vaikkei työtä olisi — kaikki ovat signaaleja, joita organisaatiokulttuuri palkitsee.</p>
+
+    <div class="mermaid">
+flowchart LR
+  S["Todellinen suoritus\n(tulokset, laatu)"] -->|"vaikea mitata"| A["Arviointi"]
+  N["Näkyminen\n(läsnäolo, kiireisyys)"] -->|"helppo havaita"| A
+  A --> U["Ura etenee\nnäkymisen perusteella"]
+  style N fill:#fff3cd,stroke:#00695c
+  style U fill:#fdf0f0,stroke:#00695c
+    </div>
+    <p class="kaavio-selitys">Kun suoritusta on vaikea mitata, näkyminen korvaa sen — ja organisaatio alkaa optimoida näkymistä.</p>
+
+    <div class="infolaatikko">
+      <strong>Face time -kulttuuri:</strong> Angloamerikkalaisessa työkulttuurissa ilmiöstä käytetään termiä <em>face time</em> — fyysinen läsnäolo toimistolla koetaan merkkinä sitoutumisesta riippumatta siitä, mitä läsnäoloaikana tehdään. Etätyön yleistyminen siirsi performanssin sähköpostien ajoitukseen ja chat-statuksiin.
+    </div>
+
+    <p>Ilmiö on <a href="#goodhartin-laki">Goodhartin lain</a> erikoistapaus: kun "sitoutuminen" mitataan läsnäololla, läsnäolosta tulee tavoite. Tuloksena on organisaatio, jossa pitkiä päiviä tekevä keskinkertainen suorittaja näyttää sitoutuneemmalta kuin lyhyempää päivää tekevä erinomainen suorittaja.</p>
+
+    <div class="vaaralatikko">
+      <strong>Rakenteellinen seuraus:</strong> Performatiivinen läsnäolo karsii organisaatiosta parhaita itsenäisiä tekijöitä — ne jotka eivät tarvitse ulkoista valvontaa eivätkä halua näytellä sitoutumista. Jäljelle jäävät ne, joille näytteleminen on luontevaa.
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="ilmio" id="rituaalinen-raportointi">
+    <div class="ilmio-tag">Ilmiö 29</div>
+    <h2>Rituaalinen raportointi — kontrollin näytelmä</h2>
+    <p>Rituaalinen raportointi on käytäntö, jossa säännölliset status-päivitykset, viikkoraportit ja check-init palvelevat ensisijaisesti <em>kontrollin osoittamista</em> — ei tiedonvälitystä. Raportti ei ole informaatiota varten; se on osoitus siitä, että olet järjestelmän piirissä ja järjestelmä tietää missä olet.</p>
+
+    <div class="mermaid">
+flowchart TD
+  J["Johto haluaa\nkontrollin tunnetta"] --> R["Pakollinen viikkoraportti"]
+  R --> T["Tiimi käyttää\naikaa raportin\nkirjoittamiseen"]
+  T --> L["Johto lukee\nraportin pintapuolisesti\ntai ei ollenkaan"]
+  L --> J
+  style R fill:#fff3cd,stroke:#37474f
+  style T fill:#fdf0f0,stroke:#37474f
+    </div>
+    <p class="kaavio-selitys">Rituaalinen raportointi: molemmat osapuolet tietävät ettei raportti välitä oleellista tietoa — mutta rituaali jatkuu.</p>
+
+    <div class="huomiolaatikko">
+      <strong>Miten tunnistaa rituaalin:</strong> Kysy — muuttuisiko päätöksenteko, jos raporttia ei olisi? Jos vastaus on ei, raportti on rituaali. Toinen testi: kuinka kauan vanhat raportit arkistoidaan ennen kuin kukaan katsoo niitä uudelleen?
+    </div>
+
+    <p>Rituaalinen raportointi on alistumisriitti, joka vahvistaa hierarkkista järjestystä: alainen raportoi ylöspäin, esimies vastaanottaa. Itse sisällöllä on toissijainen merkitys. Käytäntö voi olla peräisin organisaation varhaisesta vaiheesta, jolloin sillä oli todellinen tarkoitus — mutta se jatkuu muuttuneessa tilanteessa, koska sen kyseenalaistaminen tulkitaan epälojaalisuudeksi.</p>
+
+    <div class="vaaralatikko">
+      <strong>Kustannus:</strong> Jos viisihenkinen tiimi käyttää tunnin viikossa raportin kirjoittamiseen, se on 260 tuntia vuodessa — kuuden viikon työpanos. Rituaalisen raportoinnin kokonaiskustannus suuressa organisaatiossa on merkittävä, mutta se on hajautettu niin monelle henkilölle, ettei se näy missään yksittäisessä luvussa.
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="ilmio" id="initiointirituaalit">
+    <div class="ilmio-tag">Ilmiö 30</div>
+    <h2>Initiointirituaalit — hierarkian naturalisointi</h2>
+    <p>Initiointirituaali on prosessi, jossa uusi tulokas "ansaitsee paikkansa" tekemällä epämiellyttäviä, nöyryyttäviä tai epäolennaisia tehtäviä. Virallinen perustelu on oppiminen tai koetteleminen — todellinen funktio on hierarkian sisäistäminen: kun olet itse kärsinyt sen, et enää kyseenalaista sitä.</p>
+
+    <div class="mermaid">
+flowchart TD
+  U["Uusi tulokas"] --> I["Initiointi:\nepämiellyttävät tehtävät\nmatalimmalla tasolla"]
+  I --> K["Kognitiivinen dissonanssi:\n'Jos kärsin tästä,\nsen täytyy olla tärkeää'"]
+  K --> H["Hierarkia naturalisoituu:\n'Näin täällä tehdään'"]
+  H --> J["Tulokas puolustaa\nsamaa järjestelmää\nseuraavalle tulokkaalle"]
+  style I fill:#fdf0f0,stroke:#4a148c
+  style H fill:#fff3cd,stroke:#4a148c
+    </div>
+    <p class="kaavio-selitys">Initiointirituaali: kärsimys tuottaa sitoutumisen, sitoutuminen tuottaa järjestelmän puolustamisen.</p>
+
+    <div class="infolaatikko">
+      <strong>Kognitiivinen dissonanssi:</strong> Leon Festingerin teoria (1957) selittää mekanismin: jos olet kärsinyt jotain saadaksesi jotain, aivot selittävät kärsimyksen jälkikäteen merkitykselliseksi. Mitä kovempi initiointi, sitä vahvempi sitoutuminen ryhmään — vaikka ryhmä osoittautuisi myöhemmin pettynykseksi. Sama ilmiö on dokumentoitu armeijassa, veljeskunnissa ja yrityskulttuureissa.
+    </div>
+
+    <p>Työelämässä initiointi on harvoin eksplisiittistä. Se esiintyy epävirallisena normina: "meillä nuoret tekevät ensin nämä tehtävät", "se kuuluu uraan", "kaikki ovat tehneet sen". Kukaan ei käske — kulttuuri hoitaa sen.</p>
+
+    <div class="vaaralatikko">
+      <strong>Rakenteellinen ongelma:</strong> Initiointirituaalit karsivat ihmiset, jotka eivät suostu alistumaan — usein ne itsenäisimmät ja kriittisimmät. Organisaatio koostuu ajan myötä niistä, jotka ovat läpäisseet seulan — ja juuri tämän takia pitävät seulaa oikeutettuna.
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="ilmio" id="betteridgen-laki">
+    <div class="ilmio-tag">Ilmiö 31</div>
+    <h2>Betteridgen laki — kysymysmerkki tarkoittaa "ei"</h2>
+    <p><em>"Jokainen otsikko, joka päättyy kysymysmerkkiin, voidaan vastata sanalla 'ei'."</em> Brittitoimittaja Ian Betteridge muotoili periaatteen vuonna 2009, mutta ilmiö on tunnettu otsikointikäytäntönä jo vuosikymmenien ajan. Laki ei ole matemaattinen totuus — se kuvaa mediajulkaisemisen logiikkaa: jos vastaus olisi "kyllä", otsikko kirjoitettaisiin väitelauseena.</p>
+
+    <div class="mermaid">
+flowchart LR
+  A["Toimittajalla on\nheikko väite\ntai pelkkä spekulaatio"] --> B["Väitelause:\n'X aiheuttaa Y'"]
+  A --> C["Kysymys:\n'Aiheuttaako X Y:n?'"]
+  B --> D["Riski: jos väärässä,\nvastuu on julkaisijalla"]
+  C --> E["Ei riskiä:\notsikko on vain kysymys\n— ei väite"]
+  E --> F["Klikkejä ja huomiota\nilman juridista\nvastuuta"]
+  style D fill:#fdf0f0,stroke:#c0392b
+  style C fill:#fff3cd,stroke:#f39c12
+  style F fill:#fdf0f0,stroke:#c0392b
+    </div>
+    <p class="kaavio-selitys">Betteridgen laki: kysymysmerkki on halpa vakuutus — spekulaatio pääsee julki ilman väitteen vastuuta.</p>
+
+    <div class="infolaatikko">
+      <strong>Esimerkkejä otsikkotyypistä:</strong>
+      <ul style="margin:0.5em 0 0;">
+        <li>"Aiheuttaako 5G-verkko syöpää?" — Ei.</li>
+        <li>"Onko tämä löytö muuttamassa historian käsitystä?" — Ei.</li>
+        <li>"Voisiko uusi dieetti pelastaa elämäsi?" — Ei.</li>
+        <li>"Onko X:llä salainen agenda?" — Ei.</li>
+      </ul>
+      Poikkeukset ovat harvinaisia — ja niissä vastaus on useimmiten "kyllä, mutta vain rajallisesti".
+    </div>
+
+    <p>Mekanismi on yksinkertainen: kysymysmuoto mahdollistaa huomiota herättävän väitteen esittämisen ilman toimituksellista vastuuta siitä. Jos toimittaja tietää vastauksen olevan "kyllä", hän kirjoittaa sen suoraan. Kun otsikko päättyy kysymysmerkkiin, se on lähes aina merkki siitä, että toimituksella ei ole näyttöä — tai että se tietää vastauksen olevan "ei" mutta haluaa silti klikkejä aiheesta.</p>
+
+    <div class="huomiolaatikko">
+      <strong>Miksi laki toimii:</strong> Lukijan aivot rekisteröivät kysymyksen sisällön ennen sen muotoa. "Aiheuttaako lisäaine X syöpää?" jättää epäilyn mieleen — vaikka artikkeli itse kumoaisi väitteen. Kysymys on jo kylvetty. Sama rakenne toimii poliittisessa viestinnässä: "Onko poliitikko X korruptoitunut?" riittää maineen vahingoittamiseen vailla yhtäkään todistetta.
+    </div>
+
+    <p>Betteridgen laki kytkeytyy <a href="#firehose-of-falsehood">Firehose of Falsehood</a> -tekniikkaan: kun spekulatiivisia kysymysotsikoita julkaistaan tarpeeksi paljon, lukijan on mahdoton arvioida mitä on todistettu ja mitä ei. Kysymysmuoto on yksittäisenä harmittoman näköinen — volyymina se muodostaa informaatiomelun, jossa kaikki väitteet näyttävät yhtä epävarmoilta.</p>
+
+    <div class="vaaralatikko">
+      <strong>Käytännön testi:</strong> Kun luet kysymysmerkkiin päättyvän otsikon, käännä se väitelauseeksi: "X aiheuttaa Y." Onko tämä väite artikkelin sisällön tukema? Jos ei — otsikko on spekulaatiota, joka hyödyntää kysymysmuodon suojaa. Vastaus Betteridgen lakiin on lähes aina: ei.
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="ilmio" id="inokulointiteoria">
+    <div class="ilmio-tag">Ilmiö 32</div>
+    <h2>Inokulointiteoria — mentaalinen rokotus</h2>
+    <p>Inokulointiteoria (William McGuire, 1961) soveltaa rokotuslogiikkaa asenteiden suojelemiseen. Lääketieteessä heikentynyt virusannos opettaa immuunijärjestelmän tunnistamaan ja torjumaan oikean viruksen. Psykologiassa sama periaate: altistamalla ihmiset <em>heikennettyyn ja kumottuun</em> versioon manipulaatioargumentista rakennetaan mentaalisia "vasta-aineita", jotka toimivat kun oikea manipulaatio kohdataan.</p>
+
+    <p>Teoria koostuu kahdesta elementistä:</p>
+    <ol>
+      <li><strong>Varoitus:</strong> Kerrotaan etukäteen, että heidän uskomuksiaan tai arvojaan tullaan yrittämään muuttaa manipulatiivisesti.</li>
+      <li><strong>Ennaltaehkäisevä kumoaminen:</strong> Esitellään heikennetty versio manipulaatioargumentista — ja kumotaan se heti. Näin aivoille tarjoutuu mahdollisuus harjoitella kriittistä vastausta turvallisesti.</li>
+    </ol>
+
+    <div class="mermaid">
+flowchart LR
+  subgraph Laak["Lääketiede: rokotus"]
+    direction LR
+    HV["Heikennetty virus"] --> IM["Immuunivaste\nkehittyy"]
+    IM --> SL["Oikea virus\ntorjutaan"]
+  end
+  subgraph Psyk["Psykologia: inokulointi"]
+    direction LR
+    HA["Heikennetty\nmanipulaatioargumentti\n+ kumoaminen"] --> MA["Mentaaliset\nvasta-aineet kehittyvät"]
+    MA --> SP["Oikea manipulaatio\ntorjutaan"]
+  end
+    </div>
+    <p class="kaavio-selitys">Sama logiikka — eri kohde. Harjoittelu turvallisessa ympäristössä rakentaa suojan oikeaa kohtaamista varten.</p>
+
+    <div class="huomiolaatikko">
+      <strong>Miksi inokulointi toimii paremmin kuin jälkikäteen korjaaminen:</strong> Väärän tiedon levittäminen on nopeampaa kuin sen kumoaminen. Ja mitä vahvemmin virheellinen uskomus on jo iskostunut, sitä todennäköisemmin suora korjaus laukaisee vastareaktion (<a href="#backfire-effect">backfire effect</a>). Inokulointi toimii <em>ennen</em> kohtaamista — silloin puolustusasemia ei rakenneta kriisin keskelläkään. Pelkästään manipulaatiotekniikan <em>nimeäminen</em> etukäteen riittää osittaiseen suojaukseen.
+    </div>
+
+    <p>Moderni inokulointitutkimus (Sander van der Linden, Jon Roozenbeek, John Cook) on siirtynyt yksilökohtaisesta teoriasta skaalautuviin interventioihin. Keskeinen havainto: ei tarvitse kumota jokaista yksittäistä väitettä — riittää, että tunnistaa käytetyn manipulaatiokehyksen. Tämä tekee inokulointipohjaisista interventioista mahdollisia myös valtioiden ja alustojen mittakaavassa.</p>
+
+    <div class="infolaatikko">
+      <strong>Käytännön sovelluksia:</strong>
+      <ul style="margin:0.5em 0 0;">
+        <li><strong>Bad News -peli (2018):</strong> Cambridgen yliopiston kehittämä selainpeli, jossa pelaaja simuloi disinformaatiotoimijaa — tarkoituksena on opettaa tunnistamaan manipulaatiotekniikat sisältäpäin. Tutkitusti tehokas inokulointimenetelmä.</li>
+        <li><strong>Go Viral! (2020):</strong> WHO:n kanssa yhteistyössä kehitetty peli COVID-19-disinformaatiota vastaan.</li>
+        <li><strong>YouTuben prebunking-kampanjat (2022):</strong> Google ja YouTube ottivat inokulointiperiaatteen mukaiset lyhytvideot käyttöön ennen Ukrainan sodan alkua useissa Euroopan maissa — kampanja edelsi tapahtumia, ei reagoinut niihin.</li>
+        <li><strong>Firehose-vaste:</strong> RAND-tutkijat nimesivät inokulointipohjaisen viestinnän tehokkaimmaksi vastatoimeksi informaatiosodankäyntiä vastaan — ks. <a href="#firehose-of-falsehood">Firehose of falsehood</a>.</li>
+      </ul>
+    </div>
+
+    <div class="vaaralatikko">
+      <strong>Rajoitukset:</strong> Inokulointi rakentaa suojan <em>tunnistettuja</em> tekniikoita vastaan — uudet manipulaatiomuodot voivat silti toimia. Inokulointivaikutus myös heikkenee ajan myötä ja vaatii "tehosteannostuksia". Lisäksi inokulointi ei toimi yhtä hyvin kaikilla: vahvasti identiteettiin kytkeytyvissä aiheissa suoja on heikompi, ja juuri siellä <a href="#backfire-effect">backfire effect</a> on voimakkain.
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="ilmio" id="korkoa-korolle">
+    <div class="ilmio-tag">Ilmiö 33</div>
+    <h2>Korkoa korolle -efekti — eksponentiaalinen kasvu</h2>
+    <p>Korkoa korolle -efekti (<em>compound interest</em>, <em>compounding effect</em>) tarkoittaa ilmiötä, jossa kasvu kohdistuu koko kertyneeseen pohjaan — ei vain alkuperäiseen pääomaan. Tulos ei kasva lineaarisesti vaan <strong>kiihtyvästi</strong>: mitä suurempi pohja, sitä suurempi seuraava lisäys.</p>
+
+    <p>Kaava: <code>A = P × (1 + r)<sup>t</sup></code> — missä <em>P</em> on alkupääoma, <em>r</em> vuotuinen korko ja <em>t</em> aika vuosina.</p>
+
+    <div class="avainluku-rivi">
+      <div class="avainluku"><div class="luku">242 700 €</div><div class="selite">100 000 € @ 3 % / 30 v</div></div>
+      <div class="avainluku"><div class="luku">761 200 €</div><div class="selite">100 000 € @ 7 % / 30 v</div></div>
+      <div class="avainluku"><div class="luku">3 000 000 €</div><div class="selite">100 000 € @ 12 % / 30 v</div></div>
+      <div class="avainluku"><div class="luku">310 000 €</div><div class="selite">Lineaarinen 7 000 €/v / 30 v</div></div>
+    </div>
+
+    <div class="graafi-wrapper">
+      <div class="graafi-otsikko">100 000 € eri korkokannoilla — 30 vuotta</div>
+      <canvas id="kkk-kasvu-graafi" height="260"></canvas>
+    </div>
+    <p class="kaavio-selitys">Liiku kursorin kanssa graafin päällä nähdäksesi tarkat luvut. Katkoviiva = lineaarinen kasvu (ei korkoa korolle) samalla 7 %:n euromäärällä vuodessa.</p>
+
+    <div class="huomiolaatikko">
+      <strong>72:n sääntö:</strong> Jaa 72 vuotuisella korkoprosentilla — saat arvioidun tuplautumisajan. 7 % korolla pääoma tuplautuu noin 72 ÷ 7 ≈ 10 vuodessa. 12 % korolla 6 vuodessa. Sääntö toimii myös toisin päin: jos haluaa tuplata 8 vuodessa, tarvitaan noin 9 % vuosituotto.
+    </div>
+
+    <div class="infolaatikko">
+      <strong>Efekti toimii myös rahan ulkopuolella:</strong>
+      <ul style="margin:0.5em 0 0;">
+        <li><strong>Osaaminen:</strong> Mitä enemmän tiedät aiheesta, sitä helpompi oppia lisää — taustatieto toimii "korkopohjana". Kirja kasvattaa sanastoa, joka helpottaa seuraavaa kirjaa.</li>
+        <li><strong>Verkostot:</strong> Laajempi verkosto houkuttelee uusia kontakteja — jokainen uusi kontakti kasvattaa pohjaa, josta seuraavat kasvavat.</li>
+        <li><strong>Maine:</strong> Hyvä maine avaa ovia, jotka tuottavat lisää hyviä suosituksia.</li>
+        <li><strong>Epidemiat:</strong> Tartuttamisnopeus kerrotaan tartuntojen määrällä — kasvu on eksponentiaalista kunnes väestöpohja loppuu tai toimenpiteet hidastavat.</li>
+        <li><strong>Päivittäinen esimerkki:</strong> 10 sivua kirjaa päivässä = 3 650 sivua vuodessa ≈ 12–15 kirjaa. Seuraavana vuonna taustatieto nopeuttaa lukemista.</li>
+      </ul>
+    </div>
+
+    <div class="vaaralatikko">
+      <strong>Lineaarisen ajattelun loukku:</strong> Ihmisaivot ovat huonoja hahmottamaan eksponentiaalista kasvua. Intuitio arvioi kasvun lineaariseksi — siksi ylipaino kertyy "yllättäen", velka karkaavat "yhtäkkiä" ja rokotteen leviäminen "yllättää". Eksponentiaalinen kasvukäyrä näyttää pitkään miltei tasaiselta — ja sitten se nousee pystyyn. Se osa on jo myöhäistä yrittää pysäyttää perinteisillä keinoilla.
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="ilmio" id="negatiivinen-korkoa">
+    <div class="ilmio-tag">Ilmiö 34</div>
+    <h2>Negatiivinen korkoa korolle — eksponentiaalinen hajoaminen</h2>
+    <p>Korkoa korolle -efekti toimii myös <em>vastaan</em>. Kun tuotto on negatiivinen, tai kun laiminlyönti kumuloituu, kasautumislogiikka kiihdyttää huononemista samalla tavalla kuin se aiemmin kiihdytti kasvua. Kolme keskeistä ilmenemismuotoa:</p>
+
+    <div class="graafi-kaksois">
+      <div class="graafi-wrapper">
+        <div class="graafi-otsikko">Unohtamiskäyrä — % muistissa ilman kertausta</div>
+        <canvas id="ebbinghaus-graafi" height="260"></canvas>
+      </div>
+      <div class="graafi-wrapper">
+        <div class="graafi-otsikko">Velkakierre — 100 000 € @ 20 % / 10 vuotta</div>
+        <canvas id="velka-graafi" height="260"></canvas>
+      </div>
+    </div>
+    <p class="kaavio-selitys">Vasemmalla: Ebbinghaus'n unohtamiskäyrä — ilman kertausta muisti romahtaa eksponentiaalisesti. Oikealla: 100 000 €:n velka kasvaa 619 000 €:oon ilman lyhennyksiä; 40 000 €/v riittää maksamaan sen pois neljässä vuodessa.</p>
+
+    <div class="huomiolaatikko">
+      <strong>Laiminlyönti ei ole neutraalia — se kumuloituu:</strong> Yksi ylilyöty ateria ei lihota. Yksi unohdettu treeni ei heikennä kuntoa. Mutta laiminlyönnin <em>tottumuksesta</em> tulee eksponentiaalinen: heikentynyt kunto vähentää motivaatiota liikkua, joka heikentää kuntoa lisää. Sama rakenne kuin velassa — vain hitaammin.
+    </div>
+
+    <div class="infolaatikko">
+      <strong>Vastatoimet — positiivinen kierre käännetään käyttöön:</strong>
+      <ul style="margin:0.5em 0 0;">
+        <li><strong>Hajautettu kertaus (spaced repetition):</strong> Ebbinghaus'n unohtamiskäyrä kumotaan toistamalla juuri ennen kuin muisti hajoaa — Anki, Duolingo ja vastaavat hyödyntävät tätä. 5 toistoa oikeaan aikaan korvaa 50 satunnaista toistoa.</li>
+        <li><strong>Pääoman lyhentäminen ensin:</strong> Velan minimikorkomaksu pitää velkakirjan hengissä — pääoman lyhennys katkaisee eksponentiaalisen kasvupohjan.</li>
+        <li><strong>Systeemimuutos ennen motivaatiota:</strong> Koska motivaatio laskee eksponentiaalisesti, ympäristömuutos (treeniseuran sitoutuminen, automaattinen säästö) on luotettavampi kuin tahdonvoima.</li>
+      </ul>
+    </div>
+
+    <div class="vaaralatikko">
+      <strong>Palautumisen asymmetria:</strong> Eksponentiaalinen lasku on helpompi kuin palautuminen. 50 % lasku vaatii 100 % nousun palatakseen lähtötasoon. Terveyden, osaamisen tai varallisuuden menettäminen ottaa pitkään takaisin — ja usein tarvitaan <em>ylikompensaatiota</em>, ei pelkkää tasapainottamista. Tämä tekee ennaltaehkäisystä lähes aina halvempaa kuin korjaamisesta. Ks. myös <a href="#korkoa-korolle">Korkoa korolle -efekti</a>: palautuminen vaatii positiivisen kiihtyvyyden pidemmältä ajalta kuin mitä menetys kesti.
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="ilmio" id="hajota-hallitse">
+    <div class="ilmio-tag">Ilmiö 35</div>
+    <h2>Hajota ja hallitse — <em>divide et impera</em></h2>
+    <p>Hajota ja hallitse on vallan ylläpitämisen perusstrategia: hallitseva taho pitää valtansa jakamalla potentiaaliset vastavoiman muodostajat toisilleen vihamielisiksi ryhmiksi. Koalitio, joka voisi haastaa vallan, ei koskaan muodostu — koska sen osat taistelevat keskenään.</p>
+    <p>Strategian ydin ei ole väkivalta vaan <strong>epäluottamuksen kylväminen</strong>: kun ryhmät A ja B pitävät toisiaan vihollisina, molemmat hakevat turvaa hallitsijalta — joka kontrolloi molempien resursseja.</p>
+
+    <div class="mermaid">
+flowchart TD
+  H["Hallitseva taho\nvaltio · johto · imperiumi"]
+  H -->|"resurssit\nsuoja"| A["Ryhmä A"]
+  H -->|"resurssit\nsuoja"| B["Ryhmä B"]
+  H -->|"resurssit\nsuoja"| C["Ryhmä C"]
+  A <-->|"kilpailu\nepäluottamus"| B
+  B <-->|"kilpailu\nepäluottamus"| C
+  A <-->|"kilpailu\nepäluottamus"| C
+  A -.->|"hakee tukea\nhallitsijalta"| H
+  B -.->|"hakee tukea\nhallitsijalta"| H
+  C -.->|"hakee tukea\nhallitsijalta"| H
+  style H fill:#fdf0f0,stroke:#b71c1c,font-weight:bold
+  style A fill:#fff8f8,stroke:#b71c1c
+  style B fill:#fff8f8,stroke:#b71c1c
+  style C fill:#fff8f8,stroke:#b71c1c
+    </div>
+    <p class="kaavio-selitys">Hallitsija ei tarvitse enemmistöä — riittää, että kukaan muukaan ei saa sitä. Ryhmien keskinäinen kilpailu tekee koalitiosta mahdottoman.</p>
+
+    <div class="infolaatikko">
+      <strong>Historiallisia ja nykyisiä esimerkkejä:</strong>
+      <ul style="margin:0.5em 0 0;">
+        <li><strong>Makedonian Filippos II (300-luku eKr.):</strong> Piti kreikkalaiskaupunkivaltiot toisilleen vihamielisina neuvottelemalla erikseen kunkin kanssa, lupaten kullekin etuja toisen kustannuksella.</li>
+        <li><strong>Brittiläinen siirtomaahallinto:</strong> "Indirect rule" — paikalliset eliitit hallitsivat omia ryhmiään brittien puolesta, ja ryhmien välinen kilpailu esti yhtenäisen vastarintaliikkeen synnyn. Intian kastijärjestelmän hallinnollinen vahvistaminen on esimerkki.</li>
+        <li><strong>Palkkahajonnan salaaminen työpaikoilla:</strong> Kun palkat ovat salaisia, työntekijät eivät voi muodostaa yhteistä neuvottelurintamaa — kukin neuvottelee yksin työnantajan kanssa.</li>
+        <li><strong>Poliittinen polarisaatio:</strong> Kun vasemmisto ja oikeisto taistelevat identiteettikysymyksistä, talouspolitiikka — joka vaikuttaa molempiin samalla tavalla — jää pimentoon.</li>
+        <li><strong>Somealgoritmi:</strong> Suuttumusta ruokkiva sisältö pitää käyttäjät toisilleen vihamielisina ryhmäkuplissa, jolloin alustan harjoittama valvonta jää huomiotta.</li>
+      </ul>
+    </div>
+
+    <div class="huomiolaatikko">
+      <strong>Tunnistaminen käytännössä:</strong> Kysy aina — kuka <em>hyötyy</em> siitä, että ryhmät A ja B riitelevät keskenään? Jos ryhmien välinen konflikti palvelee systemaattisesti jonkun kolmannen etua, hajota-ja-hallitse on todennäköisesti käynnissä. Erityinen varoitusmerkki: kun etuoikeutettu taho kehystää itsensä puolueettomaksi välittäjäksi kahden "ääriliikkeen" välissä.
+    </div>
+
+    <div class="vaaralatikko">
+      <strong>Sorrettujen keskinäinen taistelu:</strong> Strategian tehokkain muoto on se, jossa hallitsijan ei tarvitse edes toimia aktiivisesti — riittää, että rakenteet pitävät ryhmät kilpailutilassa toisiaan vastaan. Prekariaatti kilpailee prekariaatin kanssa työtunneista. Maahanmuuttajat kilpailevat kantaväestön köyhien kanssa huonoista töistä. Naisten keskinäinen arvostelu pitää naiset kiireisinä toisistaan — ei rakenteesta. Hajota-ja-hallitse on onnistunut täydellisesti silloin, kun sorretut itse selittävät ongelmansa toistensa syyksi.
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="ilmio" id="korkokierre">
+    <div class="ilmio-tag">Ilmiö 36</div>
+    <h2>Negatiivinen korkokierre — velkaeksponentti 30 vuodessa</h2>
+    <p>Velka käyttäytyy täsmälleen kuten sijoitus — mutta vastakkaiseen suuntaan. Sama eksponentiaalinen logiikka, joka kasvattaa 100 000 € sijoituksen 761 000 €:ksi seitsemässä prosentissa, kasvattaa 100 000 € velan <strong>miljoonia euroiksi</strong> korkeammilla kuluttajaluottokoroilla. Aikajänne ratkaisee kaiken.</p>
+
+    <p>Korkokierre syntyy, kun velka kasvaa nopeammin kuin kyky maksaa sitä pois: korko lisääntyy pääomaan, seuraava korko lasketaan suuremmasta summasta, ja kierre kiihtyy.</p>
+
+    <div class="avainluku-rivi">
+      <div class="avainluku"><div class="luku">432 000 €</div><div class="selite">100 000 € @ 5 % / 30 v</div></div>
+      <div class="avainluku"><div class="luku">1 745 000 €</div><div class="selite">100 000 € @ 10 % / 30 v</div></div>
+      <div class="avainluku"><div class="luku">23 700 000 €</div><div class="selite">100 000 € @ 20 % / 30 v</div></div>
+      <div class="avainluku"><div class="luku">190 000 000 €</div><div class="selite">100 000 € @ 30 % / 30 v</div></div>
+    </div>
+
+    <div class="graafi-wrapper">
+      <div class="graafi-otsikko">100 000 € velka eri korkokannoilla — 30 vuotta (logaritminen asteikko)</div>
+      <canvas id="korkokierre-graafi" height="300"></canvas>
+    </div>
+    <p class="kaavio-selitys">Logaritminen Y-asteikko tekee kaikki neljä käyrää näkyviksi — jokainen askelma on 10× edellinen. Vie kursori päälle nähdäksesi euromäärät.</p>
+
+    <table>
+      <caption>100 000 € velka ilman lyhennyksiä — kasvu vuosittain</caption>
+      <thead>
+        <tr><th>Aika</th><th>5 % / v</th><th>10 % / v</th><th>20 % / v</th><th>30 % / v</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>5 v</td><td>128 000 €</td><td>161 000 €</td><td>249 000 €</td><td>371 000 €</td></tr>
+        <tr><td>10 v</td><td>163 000 €</td><td>259 000 €</td><td>619 000 €</td><td>1 379 000 €</td></tr>
+        <tr><td>20 v</td><td>265 000 €</td><td>673 000 €</td><td>3 834 000 €</td><td>19 005 000 €</td></tr>
+        <tr><td>30 v</td><td>432 000 €</td><td>1 745 000 €</td><td>23 738 000 €</td><td>190 050 000 €</td></tr>
+      </tbody>
+    </table>
+
+    <div class="huomiolaatikko">
+      <strong>Kuukausierän harha:</strong> Kuluttajaluoton myyntiargumentti on aina kuukausierä — ei kokonaiskustannus. 100 000 € luotto 20 %:n korolla ja 10 vuoden maksuajalla maksaa kuussa noin 1 940 €, mutta yhteensä 232 000 € — eli 132 000 € pelkkää korkoa. Pitkittämällä maksuaikaa 20 vuoteen kuukausierä laskee 1 670 €:oon, mutta kokonaishinta nousee 400 000 €:oon. <strong>Pidempi maksuaika on myyjän etu, ei ostajan.</strong>
+    </div>
+
+    <div class="infolaatikko">
+      <strong>Tyypilliset korkotasot Suomessa:</strong>
+      <ul style="margin:0.5em 0 0;">
+        <li><strong>Asuntolaina:</strong> 3–5 % — matalin luokka, pitkä maksuaika silti riskitekijä</li>
+        <li><strong>Autolaina / henkilöluotto:</strong> 7–15 % — markkinoidaan "kohtuullisena"</li>
+        <li><strong>Kulutusluotto (pikavippi):</strong> 20–40 % — lain sallima enimmäiskorko Suomessa on 20 % + 3 kk euribor, mutta erilaiset kulut voivat nostaa todellisen vuosikoron korkeammaksi</li>
+        <li><strong>Luottokortti:</strong> 15–25 % — vaarallisin arjen väline, koska minimisuoritus on tyypillisesti vain 2–3 % saldosta</li>
+      </ul>
+    </div>
+
+    <div class="vaaralatikko">
+      <strong>Minimisuorituksen loukku:</strong> Luottokorttiyhtiöt asettavat minimisuorituksen tahallisen pieneksi. Jos maksat vain minimisuorituksen 25 000 €:n luottokorttivelasta (20 % korko, min. 2 % saldosta / kk), velan maksaminen kokonaan kestää yli 30 vuotta ja kokonaishinta on yli 60 000 € — enemmän kuin alkuperäinen velka. Ks. <a href="#korkoa-korolle">Korkoa korolle -efekti</a>: sama logiikka, vain suunta on väärä.
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="ilmio" id="konsensus-fetissi">
+    <div class="ilmio-tag">Ilmiö 37</div>
+    <h2>Konsensus fetissi — kun yksimielisyydestä tulee itseisarvo</h2>
+    <p>Konsensus fetissi tarkoittaa ilmiötä, jossa ryhmä alkaa pitää <strong>yksimielisyyttä itseisarvona</strong> — ei välineenä hyviin päätöksiin. Erimielisyyttä ei koeta informaatioksi vaan uhkaksi ryhmän yhteenkuuluvuudelle. Tuloksena tehdään päätöksiä, joita kukaan ei oikeasti kannata, mutta joita kaikki näyttävät kannattavan.</p>
+
+    <div class="mermaid">
+flowchart TD
+  E["Ehdotus esitetään kokouksessa"]
+  E --> A["Henkilö A huomaa ongelman\nMutta: 'muut vaikuttavat\nvakuuttuneilta — ehkä minä\nen ymmärrä'"]
+  E --> B["Henkilö B on eri mieltä\nMutta: 'en halua vaikuttaa\nvaikealta tai negatiiviselta'"]
+  E --> C["Henkilö C epäröi\nMutta: 'päätös vaikuttaa\njo tehdyltä — miksi\nvastustaa?'"]
+  A --> K["Kaikki nyökkäävät\n— 'Sovittu!'"]
+  B --> K
+  C --> K
+  K --> P["Päätös, jota\nkukaan ei halunnut"]
+  P --> S["Käytäväkeskustelut:\n'Tiesitkö että tämä on\nkatastrofi?'"]
+  style E fill:#f0f6fd,stroke:#01579b
+  style K fill:#fff3cd,stroke:#f39c12
+  style P fill:#fdf0f0,stroke:#c0392b,font-weight:bold
+  style S fill:#fdf0f0,stroke:#c0392b
+    </div>
+    <p class="kaavio-selitys">Jokainen yksilö tulkitsee muiden hiljaisuuden merkiksi yksimielisyydestä — vaikka kaikki ovat hiljaa samasta syystä. Tätä kutsutaan pluralistiseksi tietämättömyydeksi.</p>
+
+    <div class="infolaatikko">
+      <strong>Kolme mekanismia saman ilmiön takana:</strong>
+      <ul style="margin:0.5em 0 0;">
+        <li>
+          <strong>Ryhmäajattelu</strong> (Irving Janis, 1972): Kiinteä ryhmä alkaa priorisoida sisäistä harmoniaa kriittisen ajattelun sijaan. Janis tunnisti ilmiön tutkiessaan Yhdysvaltain katastrofaalisia poliittisia päätöksiä — Sikojenlahden maihinnousu, Pearlharbor-varoitusmerkit, Challenger-katastrofi. Yhteiset piirteet: illusion yksimielisyydestä, itsesensuurin paine, "henkivartijoita" jotka suojelevat johtajaa vastakkaislta tiedolta.
+        </li>
+        <li>
+          <strong>Pluralistinen tietämättömyys</strong> (Katz &amp; Allport, 1931): Ryhmän jäsenet tulkitsevat toistensa hiljaisuuden tai myöntymisen merkiksi todellisesta kannatuksesta — vaikka kaikki ovat yksityisesti eri mieltä. Klassinen esimerkki: yliopisto-opiskelijat, jotka eivät kysy kysymyksiä luennolla, koska kukaan muukaan ei kysy — ja kaikki tulkitsevat tämän merkiksi, että muut ymmärtävät asian.
+        </li>
+        <li>
+          <strong>Abileenin paradoksi</strong> (Jerry Harvey, 1974): Ryhmä tekee kollektiivisesti päätöksen, jota yksikään jäsen ei yksityisesti halua — koska jokainen olettaa muiden haluavan. Harvey kuvaa perheen, joka ajaa 85 km kuumuudessa Abileneen syömään, vaikka kukaan heistä ei halunnut lähteä. Tunnusmerkki: päätös tehtiin "kaikkien takia" mutta kukaan ei halututkaan sitä.
+        </li>
+      </ul>
+    </div>
+
+    <div class="huomiolaatikko">
+      <strong>Tunnistaminen organisaatiossa:</strong>
+      <ul style="margin:0.5em 0 0;">
+        <li>Kokoukset sujuvat aina "hyvin" — ei koskaan kiistoja tai kysymyksiä</li>
+        <li>Todelliset mielipiteet ilmaistaan käytäväkeskusteluissa, ei kokouksessa</li>
+        <li>Erimieliset henkilöt leimataan "negatiivisiksi" tai "ei-tiimipelaajiksi"</li>
+        <li>Päätökset tuntuvat jo tehdyiltä ennen kokousta — kokous on muodollisuus</li>
+        <li>Johtaja kysyy mielipidettä mutta sen ilmaisu johtaa rangaistukseen (epäsuoraan tai suoraan)</li>
+        <li>"Konsensus" tarkoittaa käytännössä "johtajan kanta, jota ei vastusteta ääneen"</li>
+      </ul>
+    </div>
+
+    <div class="vaaralatikko">
+      <strong>Konsensus-kulttuurin erityinen vaara:</strong> Konsensushakuisuus ei ole pelkästään organisatorinen ongelma — se on <em>epistemologinen</em> ongelma. Kun erimielisyyttä ei sallita, ryhmä menettää pääsynsä hajautettuun tietoon: se tieto, jota kukaan yksittäinen jäsen ei omista mutta ryhmä yhteisesti omistaisi, jää syntymättä. Päätös tehdään johtajan tai äänessä olevan henkilön tiedolla — ei koko ryhmän tiedolla. Vertaa: <a href="#hippo-efekti">HIPPO-efekti</a> kuvaa saman ongelman hierarkkista muotoa — korkea-arvoisin henkilö vie päätöksen, muut hiljentyvät. Konsensus fetissi on demokratisoitu versio samasta virheestä: siinä jokainen hiljentää itse itsensä.
+    </div>
+
+    <div class="infolaatikko">
+      <strong>Vastatoimet — kuinka rakentaa psykologisesti turvallinen eri mieltä oleminen:</strong>
+      <ul style="margin:0.5em 0 0;">
+        <li><strong>Nimetty paholaisen asianajaja</strong> (<em>devil's advocate</em>): Joku saa virallisen mandaatin etsiä päätöksestä virheet. Rooli normalisoi kritiikin — ei henkilökohtaistaa sitä.</li>
+        <li><strong>Kirjallinen esiäänestys ennen kokousta:</strong> Jokainen kirjaa kantansa anonyymisti ennen kuin kuulee muiden kannat. Estää sosiaalisen paineen muokkaamasta näkemyksiä ennen ilmaisua.</li>
+        <li><strong>Premortem:</strong> Kysytään "kuvittele, että tämä päätös epäonnistui vuoden kuluttua — miksi?" Retrokausaalinen kehys irrottaa oman identiteetin päätöksestä ja tekee kritiikin turvalliseksi.</li>
+        <li><strong>Johtaja puhuu viimeisenä:</strong> Kun johtaja ilmaisee kantansa ensimmäisenä, muut sovittautuvat siihen. Vaihde: johtaja kuuntelee ensin, esittää oman kantansa viimeisenä.</li>
+      </ul>
+    </div>
+  </div>
+
+
+
+    </main>
+  </div>
+
+  <footer class="sivusto-footer">
+    <strong>Kriittisen ajattelun opas</strong><br>
+    <span class="footer-linkit">
+      <a href="ilmiot.html">Ilmiöitä</a> ·
+      <a href="virhepaatelmat.html">Loogiset virhepäätelmät</a> ·
+      <a href="kognitiiviset-vinoumat.html">Kognitiiviset vinoumat</a>
+    </span>
+  </footer>
+
+<script>
+(function () {
+  /* ── Värit ── */
+  const SININEN   = '#2e86ab';
+  const TUMMA     = '#1a5276';
+  const VAALEA    = '#90c8e0';
+  const HARMAA    = '#aaa';
+  const PINKKI    = '#a23b72';
+  const PINKKI2   = '#d48ab0';
+
+  const vuosiLabels = Array.from({length: 31}, (_, i) => i + ' v');
+  const yrs = Array.from({length: 31}, (_, i) => i);
+  const cpd = r => yrs.map(t => Math.round(100000 * Math.pow(1 + r, t)));
+  const lin = yrs.map(t => 100000 + t * 7000); // lineaarinen vertailu (7 % / v, ei korkoa korolle)
+
+  /* ── Graafi 1: Korkoa korolle kasvu 30 v ── */
+  new Chart(document.getElementById('kkk-kasvu-graafi'), {
+    type: 'line',
+    data: {
+      labels: vuosiLabels,
+      datasets: [
+        {
+          label: 'Lineaarinen (ei korkoa korolle)',
+          data: lin,
+          borderColor: HARMAA,
+          borderDash: [6, 4],
+          borderWidth: 2,
+          pointRadius: 0,
+          fill: false,
+          tension: 0,
+        },
+        {
+          label: '3 % / vuosi',
+          data: cpd(0.03),
+          borderColor: VAALEA,
+          borderWidth: 2,
+          pointRadius: 0,
+          fill: false,
+          tension: 0.3,
+        },
+        {
+          label: '7 % / vuosi',
+          data: cpd(0.07),
+          borderColor: SININEN,
+          borderWidth: 3,
+          pointRadius: 0,
+          backgroundColor: 'rgba(46,134,171,0.08)',
+          fill: true,
+          tension: 0.3,
+        },
+        {
+          label: '12 % / vuosi',
+          data: cpd(0.12),
+          borderColor: TUMMA,
+          borderWidth: 3,
+          pointRadius: 0,
+          backgroundColor: 'rgba(26,82,118,0.10)',
+          fill: true,
+          tension: 0.3,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        tooltip: {
+          callbacks: {
+            label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y.toLocaleString('fi-FI')} €`,
+          },
+        },
+        legend: { position: 'bottom', labels: { boxWidth: 14, font: { size: 12 } } },
+      },
+      scales: {
+        x: { title: { display: true, text: 'Aika' }, ticks: { maxTicksLimit: 11 } },
+        y: {
+          title: { display: true, text: '€' },
+          ticks: { callback: v => v.toLocaleString('fi-FI') + ' €' },
+        },
+      },
+    },
+  });
+
+  /* ── Graafi 2: Ebbinghaus unohtamiskäyrä ── */
+  // Pisteet: heti, 20min, 1h, 9h, 1pv, 2pv, 6pv, 1vk, 2vk, 1kk, 3kk
+  const ebbLabels = ['0', '20 min', '1 h', '9 h', '1 pv', '2 pv', '6 pv', '1 vk', '2 vk', '1 kk', '3 kk'];
+  const ebbData   = [100, 58, 44, 36, 33, 28, 25, 23, 20, 17, 15];
+  // Hajautettu kertaus: jokainen kertaus nostaa takaisin lähelle 100 %
+  const srData    = [100, 100, 100, 95, 99, 95, 99, 99, 95, 99, 97];
+
+  new Chart(document.getElementById('ebbinghaus-graafi'), {
+    type: 'line',
+    data: {
+      labels: ebbLabels,
+      datasets: [
+        {
+          label: 'Ilman kertausta',
+          data: ebbData,
+          borderColor: PINKKI,
+          borderWidth: 3,
+          pointRadius: 3,
+          backgroundColor: 'rgba(162,59,114,0.10)',
+          fill: true,
+          tension: 0.35,
+        },
+        {
+          label: 'Hajautettu kertaus',
+          data: srData,
+          borderColor: '#27ae60',
+          borderWidth: 2,
+          borderDash: [5, 3],
+          pointRadius: 3,
+          fill: false,
+          tension: 0.1,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        tooltip: {
+          callbacks: {
+            label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y} %`,
+          },
+        },
+        legend: { position: 'bottom', labels: { boxWidth: 14, font: { size: 12 } } },
+      },
+      scales: {
+        x: { title: { display: true, text: 'Aika oppimisesta' } },
+        y: {
+          min: 0, max: 105,
+          title: { display: true, text: '% muistissa' },
+          ticks: { callback: v => v + ' %' },
+        },
+      },
+    },
+  });
+
+  /* ── Graafi 3: Velkakierre 10 vuotta ── */
+  const velkaYrs = Array.from({length: 11}, (_, i) => i + ' v');
+
+  /* ── Graafi 4: Korkokierre 30 v, log-asteikko ── */
+  const kkYears = Array.from({length: 31}, (_, i) => i + ' v');
+  const debtGrowth = r => Array.from({length: 31}, (_, t) => Math.round(100000 * Math.pow(1 + r, t)));
+
+  new Chart(document.getElementById('korkokierre-graafi'), {
+    type: 'line',
+    data: {
+      labels: kkYears,
+      datasets: [
+        {
+          label: '5 % / vuosi (asuntolaina)',
+          data: debtGrowth(0.05),
+          borderColor: '#64b5f6',
+          borderWidth: 2,
+          pointRadius: 0,
+          fill: false,
+          tension: 0.3,
+        },
+        {
+          label: '10 % / vuosi (henkilöluotto)',
+          data: debtGrowth(0.10),
+          borderColor: '#1a237e',
+          borderWidth: 2,
+          pointRadius: 0,
+          fill: false,
+          tension: 0.3,
+        },
+        {
+          label: '20 % / vuosi (kulutusluotto)',
+          data: debtGrowth(0.20),
+          borderColor: '#b71c1c',
+          borderWidth: 3,
+          pointRadius: 0,
+          backgroundColor: 'rgba(183,28,28,0.07)',
+          fill: true,
+          tension: 0.3,
+        },
+        {
+          label: '30 % / vuosi (pikavippi)',
+          data: debtGrowth(0.30),
+          borderColor: '#4a0000',
+          borderWidth: 2,
+          borderDash: [6, 3],
+          pointRadius: 0,
+          fill: false,
+          tension: 0.3,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        tooltip: {
+          callbacks: {
+            label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y.toLocaleString('fi-FI')} €`,
+          },
+        },
+        legend: { position: 'bottom', labels: { boxWidth: 14, font: { size: 12 } } },
+      },
+      scales: {
+        x: { title: { display: true, text: 'Aika' }, ticks: { maxTicksLimit: 11 } },
+        y: {
+          type: 'logarithmic',
+          title: { display: true, text: '€ (log-asteikko)' },
+          ticks: {
+            callback: v => {
+              if ([100000, 200000, 500000, 1000000, 5000000, 10000000, 100000000].includes(v))
+                return (v >= 1000000 ? (v/1000000).toLocaleString('fi-FI') + ' M€' : (v/1000).toLocaleString('fi-FI') + ' k€');
+              return null;
+            },
+          },
+        },
+      },
+    },
+  });
+
+  // Ei maksuja: 100 000 × 1.20^t
+  const eiMaksuja = Array.from({length: 11}, (_, t) => Math.round(100000 * Math.pow(1.20, t)));
+
+  // Vähimmäismaksu 15 000 €/v (alle koron → velka kasvaa)
+  const minMaksu = [100000];
+  for (let t = 1; t <= 10; t++) minMaksu.push(Math.round(minMaksu[t-1] * 1.20 - 15000));
+
+  // Riittävä maksu 40 000 €/v → maksettu ~v. 4
+  const aggMaksu = [100000];
+  for (let t = 1; t <= 10; t++) aggMaksu.push(Math.max(0, Math.round(aggMaksu[t-1] * 1.20 - 40000)));
+
+  new Chart(document.getElementById('velka-graafi'), {
+    type: 'line',
+    data: {
+      labels: velkaYrs,
+      datasets: [
+        {
+          label: 'Ei lyhennyksiä',
+          data: eiMaksuja,
+          borderColor: PINKKI,
+          borderWidth: 3,
+          pointRadius: 3,
+          backgroundColor: 'rgba(162,59,114,0.10)',
+          fill: true,
+          tension: 0.3,
+        },
+        {
+          label: 'Vähimmäismaksu 15 000 €/v',
+          data: minMaksu,
+          borderColor: PINKKI2,
+          borderWidth: 2,
+          borderDash: [4, 3],
+          pointRadius: 3,
+          fill: false,
+          tension: 0.3,
+        },
+        {
+          label: 'Riittävä maksu 40 000 €/v',
+          data: aggMaksu,
+          borderColor: '#27ae60',
+          borderWidth: 2,
+          pointRadius: 3,
+          fill: false,
+          tension: 0.3,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        tooltip: {
+          callbacks: {
+            label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y.toLocaleString('fi-FI')} €`,
+          },
+        },
+        legend: { position: 'bottom', labels: { boxWidth: 14, font: { size: 12 } } },
+      },
+      scales: {
+        x: { title: { display: true, text: 'Aika' } },
+        y: {
+          min: 0,
+          title: { display: true, text: 'Velka (€)' },
+          ticks: { callback: v => v.toLocaleString('fi-FI') + ' €' },
+        },
+      },
+    },
+  });
+})();
+</script>
+
+</body>
+</html>
