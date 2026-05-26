@@ -115,6 +115,9 @@
     #korkokierre               { border-top-color: #1a237e; }
     #korkokierre               .ilmio-tag { background: #1a237e; }
     #korkokierre               { border-top-width: 6px; background: linear-gradient(160deg,#f0f0ff 0%,#fff 60%); }
+    #omenoita-appelsiineja     { border-top-color: #6a1b9a; }
+    #omenoita-appelsiineja     .ilmio-tag { background: #6a1b9a; }
+    #omenoita-appelsiineja     { border-top-width: 6px; background: linear-gradient(160deg,#f8f4ff 0%,#fff 60%); }
     #korkokierre               .graafi-wrapper { background: #f4f4fd; border-color: #c0c0e8; }
     #korkokierre               .graafi-otsikko { color: #1a237e; }
     #korkokierre               .avainluku { border-color: #c0c0e8; }
@@ -395,6 +398,7 @@
         <a href="#darvo"><span class="hak-piste" style="background:#922b21"></span>16. DARVO</a>
         <a href="#halo-efekti"><span class="hak-piste" style="background:#f9a825"></span>17. Halo-efekti ja stigma</a>
         <a href="#konsensus-fetissi"><span class="hak-piste" style="background:#01579b"></span>18. Konsensus fetissi</a>
+        <a href="#omenoita-appelsiineja"><span class="hak-piste" style="background:#6a1b9a"></span>39. Omenoita ja appelsiineja</a>
       </div>
 
       <div class="hak-kategoria">
@@ -1839,6 +1843,53 @@ flowchart LR
     </div>
   </div>
 
+
+
+
+
+  <!-- ============================================================ -->
+  <div class="ilmio" id="omenoita-appelsiineja">
+    <div class="ilmio-tag">Ilmiö 39</div>
+    <h2>Omenoita ja appelsiineja — vertailun harha</h2>
+    <p>Vertailuharha syntyy, kun rinnastetaan kaksi asiaa, jotka näyttävät samanlaisilta mutta eroavat juuri niissä ominaisuuksissa, jotka tekevät vertailusta merkityksellisen. Teknisesti vertailu on mahdollinen — molemmilla on hinta, molemmat ovat hedelmiä — mutta käytännössä se johtaa harhaan, koska vertailtavat kohteet eivät ole samalla tasolla tai samassa kontekstissa.</p>
+
+    <p>Ilmaisulla <em>"se on kuin vertaisi omenoita appelsiineihin"</em> tarkoitetaan, että vertailu on epäreilua tai harhaanjohtavaa, koska vertailun kohteet poikkeavat oleellisesti toisistaan juuri siinä suhteessa, joka ratkaisee. Harha on erityisen tehokas, koska pinnallisesti vertailu vaikuttaa loogiselta.</p>
+
+    <div class="mermaid">
+flowchart TD
+  V["Väite: A on parempi kuin B"] --> M["Metriikka valittu\nniin, että A voittaa"]
+  M --> P["Metriikka ei kuitenkaan\nmittaa oikeaa asiaa"]
+  P --> H["Vertailu näyttää\nfaktapohjaiselta"]
+  H --> J["Johtopäätös on silti\nharhaanjohtava"]
+  style H fill:#f8f4ff,stroke:#6a1b9a
+  style J fill:#fdf0f0,stroke:#c0392b
+    </div>
+    <p class="kaavio-selitys">Vertailuharha kätkeytyy näennäisesti neutraalin luvun taakse — harha on metriikan valinnassa, ei laskutoimituksessa.</p>
+
+    <div class="huomiolaatikko">
+      <strong>Kolme tyypillistä muotoa:</strong>
+      <ul style="margin:0.5em 0 0;">
+        <li><strong>Kontekstiton absoluuttiluku:</strong> "Ruotsi käyttää puolustukseen 10 miljardia, Suomi 6 miljardia" — ei mainita, että Ruotsin väestö on lähes kaksinkertainen.</li>
+        <li><strong>Eri mittarit samaan lauseeseen:</strong> "Suomessa sairaalapaikkoja on vähemmän kuin Saksassa" — mainitsematta, että Saksa laskee hoivakodit ja Suomi ei.</li>
+        <li><strong>Eri aikajakso tai ryhmä:</strong> "Tänään on kylmempää kuin eilen" todistusmateriaali ilmastonmuutosta vastaan — yksittäinen päivä vs. vuosikymmenten trendi.</li>
+      </ul>
+    </div>
+
+    <p>Harha esiintyy erityisen usein tilastoja hyödyntävässä retoriikassa (ks. <a href="#tilastoilla-valehtelu">Tilastoilla valehtelu</a>) ja BKT-vertailuissa (ks. <a href="#bkt-harha">BKT-harha</a>). Propagandassa sitä käytetään tietoisesti: valitaan metriikka, jossa oma puoli voittaa, ja pidetään huoli, että konteksti jää mainitsematta.</p>
+
+    <div class="infolaatikko">
+      <strong>Suomalaisia esimerkkejä:</strong>
+      <ul style="margin:0.5em 0 0;">
+        <li><strong>Veroaste:</strong> "Suomen veroaste on Euroopan korkein" — ilman mainintaa, mitä verorahoilla saa (ilmainen koulutus, terveydenhuolto, lastenhoidon tuki). Vertailu USA:han ilman palveluerojen huomiointia on omenoita ja appelsiineja.</li>
+        <li><strong>Rikostilastot:</strong> Maahanmuuttajien rikollisuusluvut eri maissa eivät ole vertailukelpoisia, koska rikosten kirjaamistavat, laillisuusmääritelmät ja demografiat vaihtelevat.</li>
+        <li><strong>Koulutus:</strong> PISA-pisteiden vertailu maiden välillä ilman sosioekonomisten taustatekijöiden vakiointia — Suomessa ja Singaporessa koululaiset ovat eri lähtökohdista.</li>
+      </ul>
+    </div>
+
+    <div class="vaaralatikko">
+      <strong>Tunnistaminen:</strong> Aina kun kuulet vertailun, kysy: <em>Onko metriikka vakioitu? Mittaako se samaa asiaa molemmissa tapauksissa? Onko konteksti sama?</em> Erityisesti absoluuttiset luvut ilman suhteutusta väkilukuun, BKT:hen tai historialliseen vaihteluun ovat varoitusmerkki. Jos vertailua ei voi esittää samalla mittarilla samassa kontekstissa, se ei ole vertailu — se on mielipide lukujen suulla.
+    </div>
+  </div>
 
 
 
