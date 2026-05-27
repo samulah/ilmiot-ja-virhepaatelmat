@@ -22,9 +22,15 @@
       padding: 1.8rem 2rem 2rem;
       background: #fff;
       box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .ilmio:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.11);
     }
     .ilmio h2 {
       margin-top: 0;
+      font-family: 'Spectral', Georgia, serif;
     }
     .ilmio-tag {
       display: inline-block;
@@ -117,7 +123,6 @@
     #korkokierre               { border-top-width: 6px; background: linear-gradient(160deg,#f0f0ff 0%,#fff 60%); }
     #omenoita-appelsiineja     { border-top-color: #6a1b9a; }
     #omenoita-appelsiineja     .ilmio-tag { background: #6a1b9a; }
-    #omenoita-appelsiineja     { border-top-width: 6px; background: linear-gradient(160deg,#f8f4ff 0%,#fff 60%); }
     #korkokierre               .graafi-wrapper { background: #f4f4fd; border-color: #c0c0e8; }
     #korkokierre               .graafi-otsikko { color: #1a237e; }
     #korkokierre               .avainluku { border-color: #c0c0e8; }
@@ -130,24 +135,27 @@
 
     .huomiolaatikko {
       background: #fdf6ec;
-      border-left: 4px solid #e67e22;
+      border-left: 6px solid #e67e22;
       padding: 1em 1.2em;
       margin: 1.5rem 0;
-      font-size: 0.95em;
+      font-size: 1em;
+      border-radius: 0 6px 6px 0;
     }
     .vaaralatikko {
       background: #fdf0f0;
-      border-left: 4px solid #c0392b;
+      border-left: 6px solid #c0392b;
       padding: 1em 1.2em;
       margin: 1.5rem 0;
-      font-size: 0.95em;
+      font-size: 1em;
+      border-radius: 0 6px 6px 0;
     }
     .infolaatikko {
       background: #f0f6fd;
-      border-left: 4px solid #2980b9;
+      border-left: 6px solid #2980b9;
       padding: 1em 1.2em;
       margin: 1.5rem 0;
-      font-size: 0.95em;
+      font-size: 1em;
+      border-radius: 0 6px 6px 0;
     }
     .sabotaasi-lista {
       background: #1e1e1e;
@@ -354,6 +362,112 @@
       .sivu-layout { flex-direction: column; padding: 0 1rem 3rem; }
       .sivupalkki  { position: static; max-height: none; flex: none; width: 100%; }
     }
+    /* H1-otsikkoalue */
+    .paasisu > h1 {
+      font-size: 1.75em;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      padding-bottom: 0.55rem;
+      border-bottom: 2px solid #e0ddd7;
+      margin-bottom: 0.4rem;
+      color: #1a2332;
+    }
+    .paasisu > p:first-of-type {
+      color: #5a5a5a;
+      font-size: 0.97em;
+      margin-top: 0;
+      margin-bottom: 2.2rem;
+      line-height: 1.6;
+    }
+
+    /* ── Jako-napit ───────────────────────────────────────────── */
+    .ilmio-jaa {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+    }
+    .ilmio-jaa-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      background: transparent;
+      border: 1px solid #dddbd4;
+      border-radius: 20px;
+      padding: 0.26em 0.72em 0.26em 0.55em;
+      font-size: 0.72em;
+      color: #aaa;
+      cursor: pointer;
+      font-family: 'Source Sans 3', sans-serif;
+      letter-spacing: 0.04em;
+      transition: border-color 0.15s, color 0.15s, background 0.15s;
+      line-height: 1;
+    }
+    .ilmio-jaa-btn:hover {
+      border-color: #bbb;
+      color: #666;
+      background: rgba(0,0,0,0.025);
+    }
+    .ilmio-jaa-menu {
+      position: absolute;
+      top: calc(100% + 9px);
+      right: 0;
+      background: #1e2b3c;
+      border-radius: 10px;
+      padding: 0.55rem 0.65rem;
+      display: flex;
+      gap: 0.15rem;
+      align-items: center;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.24), 0 2px 6px rgba(0,0,0,0.12);
+      opacity: 0;
+      transform: translateY(-5px) scale(0.95);
+      transition: opacity 0.15s ease, transform 0.15s ease;
+      pointer-events: none;
+      z-index: 500;
+    }
+    .ilmio-jaa-menu::before {
+      content: '';
+      position: absolute;
+      top: -4px;
+      right: 13px;
+      width: 9px;
+      height: 9px;
+      background: #1e2b3c;
+      transform: rotate(45deg);
+      border-radius: 2px;
+    }
+    .ilmio-jaa-menu.aktiv {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: all;
+    }
+    .jaa-ikoni {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 33px;
+      height: 33px;
+      border-radius: 7px;
+      text-decoration: none;
+      color: rgba(255,255,255,0.72);
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      transition: background 0.12s, color 0.12s;
+      flex-shrink: 0;
+    }
+    .jaa-ikoni:hover { background: rgba(255,255,255,0.11); color: #fff; }
+    .jaa-ikoni.kopioitu { color: #4ade80 !important; }
+    .jaa-erotinviiva {
+      width: 1px;
+      height: 18px;
+      background: rgba(255,255,255,0.13);
+      margin: 0 0.12rem;
+      flex-shrink: 0;
+    }
+    @media (max-width: 600px) {
+      .ilmio-jaa { top: 1.1rem; right: 1rem; }
+      .ilmio-jaa-btn span { display: none; }
+    }
   </style>
 </head>
 <body>
@@ -398,39 +512,39 @@
         <a href="#darvo"><span class="hak-piste" style="background:#922b21"></span>16. DARVO</a>
         <a href="#halo-efekti"><span class="hak-piste" style="background:#f9a825"></span>17. Halo-efekti ja stigma</a>
         <a href="#konsensus-fetissi"><span class="hak-piste" style="background:#01579b"></span>18. Konsensus fetissi</a>
-        <a href="#omenoita-appelsiineja"><span class="hak-piste" style="background:#6a1b9a"></span>39. Omenoita ja appelsiineja</a>
+        <a href="#omenoita-appelsiineja"><span class="hak-piste" style="background:#6a1b9a"></span>19. Omenoita ja appelsiineja</a>
       </div>
 
       <div class="hak-kategoria">
         <div class="hak-otsikko">Byrokratia ja organisaatio</div>
-        <a href="#simple-sabotage"><span class="hak-piste" style="background:#c0a000"></span>19. Simple Sabotage Field Manual (1944)</a>
-        <a href="#kafka-ilmio"><span class="hak-piste" style="background:#7f8c8d"></span>20. Kafka-ilmiö</a>
-        <a href="#catch-22"><span class="hak-piste" style="background:#6c3483"></span>21. Catch-22</a>
-        <a href="#goodhartin-laki"><span class="hak-piste" style="background:#148f77"></span>22. Goodhartin laki</a>
-        <a href="#hippo-efekti"><span class="hak-piste" style="background:#5d4037"></span>23. HIPPO-efekti</a>
-        <a href="#performatiivinen-lasnaolo"><span class="hak-piste" style="background:#00695c"></span>24. Performatiivinen läsnäolo</a>
-        <a href="#rituaalinen-raportointi"><span class="hak-piste" style="background:#37474f"></span>25. Rituaalinen raportointi</a>
-        <a href="#initiointirituaalit"><span class="hak-piste" style="background:#4a148c"></span>26. Initiointirituaalit</a>
-        <a href="#portinvartija-kulttuuri"><span class="hak-piste" style="background:#2d6a4f"></span>27. Portinvartija-kulttuuri</a>
+        <a href="#simple-sabotage"><span class="hak-piste" style="background:#c0a000"></span>20. Simple Sabotage Field Manual (1944)</a>
+        <a href="#kafka-ilmio"><span class="hak-piste" style="background:#7f8c8d"></span>21. Kafka-ilmiö</a>
+        <a href="#catch-22"><span class="hak-piste" style="background:#6c3483"></span>22. Catch-22</a>
+        <a href="#goodhartin-laki"><span class="hak-piste" style="background:#148f77"></span>23. Goodhartin laki</a>
+        <a href="#hippo-efekti"><span class="hak-piste" style="background:#5d4037"></span>24. HIPPO-efekti</a>
+        <a href="#performatiivinen-lasnaolo"><span class="hak-piste" style="background:#00695c"></span>25. Performatiivinen läsnäolo</a>
+        <a href="#rituaalinen-raportointi"><span class="hak-piste" style="background:#37474f"></span>26. Rituaalinen raportointi</a>
+        <a href="#initiointirituaalit"><span class="hak-piste" style="background:#4a148c"></span>27. Initiointirituaalit</a>
+        <a href="#portinvartija-kulttuuri"><span class="hak-piste" style="background:#2d6a4f"></span>28. Portinvartija-kulttuuri</a>
       </div>
 
       <div class="hak-kategoria">
         <div class="hak-otsikko">Projekti- ja ohjelmistokehitys</div>
-        <a href="#brooksin-laki"><span class="hak-piste" style="background:#34495e"></span>28. Brooksin laki</a>
-        <a href="#yhdeksanyhdeksan"><span class="hak-piste" style="background:#117a65"></span>29. Yhdeksän-yhdeksän-sääntö</a>
-        <a href="#hofstadterin-laki"><span class="hak-piste" style="background:#7d6608"></span>30. Hofstadterin laki</a>
-        <a href="#kuolonmarssi"><span class="hak-piste" style="background:#78281f"></span>31. Kuolonmarssi</a>
-        <a href="#tekninen-velka"><span class="hak-piste" style="background:#1b4f72"></span>32. Tekninen velka</a>
-        <a href="#conways-laki"><span class="hak-piste" style="background:#154360"></span>33. Conwayn laki</a>
-        <a href="#bikeshedding"><span class="hak-piste" style="background:#4a235a"></span>34. Bikeshedding</a>
-        <a href="#scope-creep"><span class="hak-piste" style="background:#145a32"></span>35. Scope creep</a>
+        <a href="#brooksin-laki"><span class="hak-piste" style="background:#34495e"></span>29. Brooksin laki</a>
+        <a href="#yhdeksanyhdeksan"><span class="hak-piste" style="background:#117a65"></span>30. Yhdeksän-yhdeksän-sääntö</a>
+        <a href="#hofstadterin-laki"><span class="hak-piste" style="background:#7d6608"></span>31. Hofstadterin laki</a>
+        <a href="#kuolonmarssi"><span class="hak-piste" style="background:#78281f"></span>32. Kuolonmarssi</a>
+        <a href="#tekninen-velka"><span class="hak-piste" style="background:#1b4f72"></span>33. Tekninen velka</a>
+        <a href="#conways-laki"><span class="hak-piste" style="background:#154360"></span>34. Conwayn laki</a>
+        <a href="#bikeshedding"><span class="hak-piste" style="background:#4a235a"></span>35. Bikeshedding</a>
+        <a href="#scope-creep"><span class="hak-piste" style="background:#145a32"></span>36. Scope creep</a>
       </div>
 
       <div class="hak-kategoria">
         <div class="hak-otsikko">Kasvun dynamiikka</div>
-        <a href="#korkoa-korolle"><span class="hak-piste" style="background:#2e86ab"></span>36. Korkoa korolle -efekti</a>
-        <a href="#negatiivinen-korkoa"><span class="hak-piste" style="background:#a23b72"></span>37. Negatiivinen korkoa korolle</a>
-        <a href="#korkokierre"><span class="hak-piste" style="background:#1a237e"></span>38. Negatiivinen korkokierre</a>
+        <a href="#korkoa-korolle"><span class="hak-piste" style="background:#2e86ab"></span>37. Korkoa korolle -efekti</a>
+        <a href="#negatiivinen-korkoa"><span class="hak-piste" style="background:#a23b72"></span>38. Negatiivinen korkoa korolle</a>
+        <a href="#korkokierre"><span class="hak-piste" style="background:#1a237e"></span>39. Negatiivinen korkokierre</a>
       </div>
 
         </div>
@@ -449,7 +563,7 @@
     <p>Paskuuttaminen tarkoittaa julkisen palvelun tai instituution <strong>tietoista, asteittaista heikentämistä</strong> niin, että ihmiset alkavat vaatia sen yksityistämistä tai lakkauttamista. Laatu heikkenee ei vahingossa vaan suunnitelmallisesti — budjettileikkauksilla, resurssivajeella tai poliittisella laiminlyönnillä.</p>
 
     <div class="mermaid">
-flowchart LR
+flowchart TD
   A["Julkinen palvelu\ntoimii kohtuullisesti"] --> B["Budjettileikkaukset\nresurssivaje\npoliittinen laiminlyönti"]
   B --> C["Laatu heikkenee\njonot kasvavat\nhenkilöstö vähenee"]
   C --> D["Kansalaiset\nturhautuvat\nluottamus laskee"]
@@ -811,7 +925,7 @@ flowchart TD
     <p>Tavoite on luoda vaikutelma laajasta kansalaishuolesta tai -tuesta — ilman että todelliset rahoittajat näkyvät. Päätöksentekijä, joka näkee "tuhansia huolestuneita kansalaisia", toimii eri tavalla kuin nähdessään yhden teollisuuslobbarin.</p>
 
     <div class="mermaid">
-flowchart LR
+flowchart TD
   R["Korporaatio tai\npoliittinen toimija\nrahoittaa salaa"] --> J["Julkiset\n'kansalaisjärjestöt'\nja 'asiantuntijat'"]
   R --> K["Kirjekampanjat,\npetitiot,\nsometilit"]
   R --> M["Mediajulkaisut\n'riippumattomilta'\najatushaudoista"]
@@ -876,6 +990,8 @@ flowchart TD
     <div class="vaaralatikko">
       <strong>Vastakeino:</strong> RAND suosittelee "älä toista, älä vahvista" -periaatetta: yksittäisten väitteiden kumoaminen voi vahvistaa niitä (ks. <em>backfire effect</em>). Tehokkaampi tapa on rakentaa yleinen medianlukutaito ja inokulointipohjainen viestintä — varoittaa tekniikasta etukäteen, ennen kuin se osuu. (Ks. <a href="#inokulointiteoria">Inokulointiteoria</a>.)
     </div>
+
+    <p style="margin-bottom:0;"><a href="firehose-of-falsehood.html">→ Lue lisää: Firehose of Falsehood omalla sivullaan</a> — käytännön esimerkit, miten tekniikka näkyy somessa ja miten taistella vastaan omalla nimellä tai anonyymisti.</p>
   </div>
 
   <!-- ============================================================ -->
@@ -885,7 +1001,7 @@ flowchart TD
     <p>Noam Chomsky ja Edward Herman esittivät teoksessaan <em>Manufacturing Consent</em> (1988) propagandamallin, joka kuvaa miten valtamedia tuottaa ideologista yhdenmukaisuutta ilman eksplisiittistä sensuuria. Malli ei oleta salajuonta — se kuvaa rakenteellisia suodattimia, jotka toimivat taloudellisten kannustimien kautta.</p>
 
     <div class="mermaid">
-flowchart LR
+flowchart TD
   O["Omistus"] --> F["Toimitus"]
   M["Mainonta"] --> F
   L["Lähteet"] --> F
@@ -922,7 +1038,7 @@ flowchart LR
     <p><em>"Jokainen otsikko, joka päättyy kysymysmerkkiin, voidaan vastata sanalla 'ei'."</em> Brittitoimittaja Ian Betteridge muotoili periaatteen vuonna 2009, mutta ilmiö on tunnettu otsikointikäytäntönä jo vuosikymmenien ajan. Laki ei ole matemaattinen totuus — se kuvaa mediajulkaisemisen logiikkaa: jos vastaus olisi "kyllä", otsikko kirjoitettaisiin väitelauseena.</p>
 
     <div class="mermaid">
-flowchart LR
+flowchart TD
   A["Toimittajalla on\nheikko väite\ntai pelkkä spekulaatio"] --> B["Väitelause:\n'X aiheuttaa Y'"]
   A --> C["Kysymys:\n'Aiheuttaako X Y:n?'"]
   B --> D["Riski: jos väärässä,\nvastuu on julkaisijalla"]
@@ -971,7 +1087,7 @@ flowchart LR
     </ol>
 
     <div class="mermaid">
-flowchart LR
+flowchart TD
   subgraph Laak["Lääketiede: rokotus"]
     direction LR
     HV["Heikennetty virus"] --> IM["Immuunivaste\nkehittyy"]
@@ -1015,7 +1131,7 @@ flowchart LR
     <p>Ilmiö dokumentoitiin alun perin Brendan Nyhanin ja Jason Reiflerin tutkimuksissa (2010), joissa osallistujat pitäytyivät poliittisissa väärinkäsityksissään vielä vahvemmin saatuaan faktakorjauksen.</p>
 
     <div class="mermaid">
-flowchart LR
+flowchart TD
   U["Henkilöllä on\nvirheellinen uskomus"] --> K["Korjaus esitetään\nfaktatiedoilla"]
   K -->|"odotettu reaktio"| M["Uskomus korjaantuu"]
   K -->|"backfire effect"| V["Uskomus vahvistuu\n— korjaus torjutaan"]
@@ -1114,7 +1230,7 @@ flowchart TD
     </div>
 
     <div class="mermaid">
-flowchart LR
+flowchart TD
   P["Yksi positiivinen\npiirre havaitaan"] --> H["Halo aktivoituu"]
   H --> A["Arvioidaan älykkyys\n— positiivisesti"]
   H --> B["Arvioidaan luotettavuus\n— positiivisesti"]
@@ -1202,8 +1318,49 @@ flowchart TD
       </ul>
     </div>
   </div>  <!-- ============================================================ -->
-  <div class="ilmio" id="simple-sabotage">
+  <div class="ilmio" id="omenoita-appelsiineja">
     <div class="ilmio-tag">Ilmiö 19</div>
+    <h2>Omenoita ja appelsiineja — vertailun harha</h2>
+    <p>Vertailuharha syntyy, kun rinnastetaan kaksi asiaa, jotka näyttävät samanlaisilta mutta eroavat juuri niissä ominaisuuksissa, jotka tekevät vertailusta merkityksellisen. Teknisesti vertailu on mahdollinen — molemmilla on hinta, molemmat ovat hedelmiä — mutta käytännössä se johtaa harhaan, koska vertailtavat kohteet eivät ole samalla tasolla tai samassa kontekstissa.</p>
+
+    <p>Ilmaisulla <em>"se on kuin vertaisi omenoita appelsiineihin"</em> tarkoitetaan, että vertailu on epäreilua tai harhaanjohtavaa, koska vertailun kohteet poikkeavat oleellisesti toisistaan juuri siinä suhteessa, joka ratkaisee. Harha on erityisen tehokas, koska pinnallisesti vertailu vaikuttaa loogiselta.</p>
+
+    <div class="mermaid">
+flowchart TD
+  V["Väite: A on parempi kuin B"] --> M["Metriikka valittu\nniin, että A voittaa"]
+  M --> P["Metriikka ei kuitenkaan\nmittaa oikeaa asiaa"]
+  P --> H["Vertailu näyttää\nfaktapohjaiselta"]
+  H --> J["Johtopäätös on silti\nharhaanjohtava"]
+  style H fill:#f8f4ff,stroke:#6a1b9a
+  style J fill:#fdf0f0,stroke:#c0392b
+    </div>
+    <p class="kaavio-selitys">Vertailuharha: metriikka on oikein valittu siihen tarkoitukseen, mutta väärä kysymykseen — ja tämä ero hämärtyy.</p>
+
+    <div class="infolaatikko">
+      <strong>Konkreettisia esimerkkejä:</strong>
+      <ul style="margin:0.5em 0 0;">
+        <li><strong>Julkinen vs. yksityinen terveydenhuolto:</strong> "Yksityinen on nopeampaa" — vertaillaan yksityisen sektorin parhaita palveluja julkisen sektorin pahimpaan ruuhkaan. Oikea vertailu olisi sama potilasryhmä, sama vaiva, samalla kiireellisyydellä.</li>
+        <li><strong>Sotilasmenot:</strong> "Suomi käyttää puolustukseen enemmän kuin Norja" (absoluuttisina euroina) — mutta Norjan BKT on suurempi. Oikea metriikka on BKT-prosentti. Tai päinvastoin: BKT-prosentti voi piilottaa absoluuttisen resurssieron.</li>
+        <li><strong>Palkat maiden välillä:</strong> "Suomessa palkat ovat korkeammat kuin Puolassa" — nimellisesti kyllä, mutta ostovoimapariteetti ja verotus muuttavat kuvan. Mitä verrataan: bruttopalkka, nettopalkka vai ostoskorin arvo?</li>
+        <li><strong>Poliittinen talouspolitiikka:</strong> "Hallitus A jätti ylijäämän, hallitus B alijäämän" — mutta A toimi noususuhdanteessa ja B finanssikriisin aikana. Suhdannetilanne tekee suorasta vertailusta epäreilun.</li>
+        <li><strong>Koulutus:</strong> "Maamme PISA-tulokset ovat paremmat kuin naapurimaalla" — mutta PISA mittaa lukutaitoa 15-vuotiailla. Se ei mittaa korkeakoulutuksen tasoa, ammatillista koulutusta tai koulutuksen tasa-arvoisuutta.</li>
+      </ul>
+    </div>
+
+    <div class="huomiolaatikko">
+      <strong>Tunnistaminen:</strong> Kun kuulet vertailun, kysy kolme kysymystä: Mitä tarkalleen mitataan? Onko konteksti sama molemmille? Kuka valitsi tämän metriikan ja miksi? Harha paljastuu usein jo ensimmäisestä kysymyksestä — vertailtavat kohteet eroavat juuri siinä, mikä ratkaisee.
+    </div>
+
+    <p>Vertailuharha on erityisen tehokas poliittisessa viestinnässä, koska se antaa väitteelle faktuaalisen kuoren. Luvut ovat oikeita — vain niiden valinta on harhaanjohtava. Tämä tekee harhan kumoamisesta hankalaa: pitää ensin selittää, <em>miksi</em> vertailu on epäreilu, ennen kuin voi osoittaa, että johtopäätös on väärä.</p>
+
+    <div class="vaaralatikko">
+      <strong>Poliittinen käyttö:</strong> Vertailuharhaa käytetään systemaattisesti silloin, kun halutaan tehdä epäsuotuisasta asiasta suotuisa tai päinvastoin. Tunnusmerkki: metriikka vaihtuu aina kun se alkaa osoittaa väärään suuntaan. "Emme vertaa BKT:tä vaan asukasta kohden" — ja kun sekin on epäsuotuisa, siirrytään ostovoimapariteettiin. Oikea vertailu on se, joka pysyy samana riippumatta siitä, kumpi osapuoli näyttää paremmalta.
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="ilmio" id="simple-sabotage">
+    <div class="ilmio-tag">Ilmiö 20</div>
     <h2>Simple Sabotage Field Manual (1944)</h2>
     <p>Yhdysvaltain tiedusteluvirasto OSS (Office of Strategic Services, nykyisen CIA:n edeltäjä) julkaisi vuonna 1944 käsikirjan, joka opetti siviileitä sabotoimaan vihollisen organisaatioita sisältäpäin. Asiakirja on nyt CIA:n toimesta julkisesti saatavilla.</p>
     <p>Käsikirjan byrokratiasabotaasin ohjeet ovat silmiinpistävän tuttuja:</p>
@@ -1231,7 +1388,7 @@ flowchart TD
 
   <!-- ============================================================ -->
   <div class="ilmio" id="kafka-ilmio">
-    <div class="ilmio-tag">Ilmiö 20</div>
+    <div class="ilmio-tag">Ilmiö 21</div>
     <h2>Kafka-ilmiö — byrokratian labyrintti</h2>
     <p>Kafka-ilmiö kuvaa institutionaalista rakennetta, jossa oikeuksien tai palvelujen saaminen on teknisesti mahdollista mutta käytännössä mahdotonta — ei suoran kiellon, vaan keskenään ristiriitaisten, epäselvästi kirjoitettujen tai kehämäisesti viittaavien sääntöjen takia.</p>
     <p>Nimi tulee Franz Kafkan romaaneista — erityisesti <em>Oikeudenkäynnistä</em> (1925) ja <em>Linnasta</em> (1926), joissa päähenkilöt kohtaavat järjestelmiä joiden logiikka on heidän ulottumattomissaan.</p>
@@ -1267,12 +1424,12 @@ flowchart TD
 
   <!-- ============================================================ -->
   <div class="ilmio" id="catch-22">
-    <div class="ilmio-tag">Ilmiö 21</div>
+    <div class="ilmio-tag">Ilmiö 22</div>
     <h2>Catch-22 — pakenematon ansa</h2>
     <p>Catch-22 on looginen ansa, jossa järjestelmän omat säännöt tekevät pakenemisen mahdottomaksi. Termi tulee Joseph Hellerin romaanista (1961): toisen maailmansodan lentäjä voi pyytää vapautusta lentotehtävistä mielenterveyden perusteella — mutta vapautuksen pyytäminen todistaa, että hän on järjissään. Hulluus on ainoa peruste, mutta kukaan hullu ei pyydä vapautusta.</p>
 
     <div class="mermaid">
-flowchart LR
+flowchart TD
   A["Lentäjä haluaa\npäästä pois"] --> B["Sääntö: hullu\nvoi pyytää vapautusta"]
   B --> C["Pyytää vapautusta"]
   C --> D["Pyytäminen todistaa\nolevan järjissään"]
@@ -1301,7 +1458,7 @@ flowchart LR
 
   <!-- ============================================================ -->
   <div class="ilmio" id="goodhartin-laki">
-    <div class="ilmio-tag">Ilmiö 22</div>
+    <div class="ilmio-tag">Ilmiö 23</div>
     <h2>Goodhartin laki — mittari syö tavoitteen</h2>
     <p><em>"Kun mittarista tulee tavoite, se lakkaa olemasta hyvä mittari."</em> Taloustieteilijä Charles Goodhart muotoili periaatteen rahapolitiikan yhteydessä 1975, mutta se kuvaa ilmiötä joka toistuu kaikissa instituutioissa joissa suoritusta mitataan ja palkitaan.</p>
 
@@ -1337,7 +1494,7 @@ flowchart TD
 
   <!-- ============================================================ -->
   <div class="ilmio" id="hippo-efekti">
-    <div class="ilmio-tag">Ilmiö 23</div>
+    <div class="ilmio-tag">Ilmiö 24</div>
     <h2>HIPPO-efekti — johtajan mielipide voittaa datan</h2>
     <p>HIPPO (Highest Paid Person's Opinion) kuvaa ilmiötä, jossa kokouksen korkein hierarkkinen asema määrittää lopputuloksen — ei data, asiantuntemus tai argumenttien laatu. Kun johtaja esittää kantansa, muut alkavat sovittaa omansa sen mukaan.</p>
 
@@ -1365,12 +1522,12 @@ flowchart TD
 
   <!-- ============================================================ -->
   <div class="ilmio" id="performatiivinen-lasnaolo">
-    <div class="ilmio-tag">Ilmiö 24</div>
+    <div class="ilmio-tag">Ilmiö 25</div>
     <h2>Performatiivinen läsnäolo — näytelmä sitoutumisesta</h2>
     <p>Performatiivinen läsnäolo tarkoittaa, että työntekijä osoittaa lojaalisuutensa ja sitoutumisensa <em>näkymisen</em> kautta — ei suorituksen. Varhain töihin saapuminen, myöhään lähteminen, viikonloppusähköposteihin vastaaminen ja toimistolla istuminen vaikkei työtä olisi — kaikki ovat signaaleja, joita organisaatiokulttuuri palkitsee.</p>
 
     <div class="mermaid">
-flowchart LR
+flowchart TD
   S["Todellinen suoritus\n(tulokset, laatu)"] -->|"vaikea mitata"| A["Arviointi"]
   N["Näkyminen\n(läsnäolo, kiireisyys)"] -->|"helppo havaita"| A
   A --> U["Ura etenee\nnäkymisen perusteella"]
@@ -1392,7 +1549,7 @@ flowchart LR
 
   <!-- ============================================================ -->
   <div class="ilmio" id="rituaalinen-raportointi">
-    <div class="ilmio-tag">Ilmiö 25</div>
+    <div class="ilmio-tag">Ilmiö 26</div>
     <h2>Rituaalinen raportointi — kontrollin näytelmä</h2>
     <p>Rituaalinen raportointi on käytäntö, jossa säännölliset status-päivitykset, viikkoraportit ja check-init palvelevat ensisijaisesti <em>kontrollin osoittamista</em> — ei tiedonvälitystä. Raportti ei ole informaatiota varten; se on osoitus siitä, että olet järjestelmän piirissä ja järjestelmä tietää missä olet.</p>
 
@@ -1420,7 +1577,7 @@ flowchart TD
 
   <!-- ============================================================ -->
   <div class="ilmio" id="initiointirituaalit">
-    <div class="ilmio-tag">Ilmiö 26</div>
+    <div class="ilmio-tag">Ilmiö 27</div>
     <h2>Initiointirituaalit — hierarkian naturalisointi</h2>
     <p>Initiointirituaali on prosessi, jossa uusi tulokas "ansaitsee paikkansa" tekemällä epämiellyttäviä, nöyryyttäviä tai epäolennaisia tehtäviä. Virallinen perustelu on oppiminen tai koetteleminen — todellinen funktio on hierarkian sisäistäminen: kun olet itse kärsinyt sen, et enää kyseenalaista sitä.</p>
 
@@ -1448,7 +1605,7 @@ flowchart TD
 
   <!-- ============================================================ -->
   <div class="ilmio" id="portinvartija-kulttuuri">
-    <div class="ilmio-tag">Ilmiö 27</div>
+    <div class="ilmio-tag">Ilmiö 28</div>
     <h2>Portinvartija-kulttuuri — tieto suodattuu ennen johtajaa</h2>
     <p>Irving Janisin ryhmäajatteluanalyysissä (1972) yksi kahdeksasta tunnusmerkistä on <strong>mindguards</strong> — henkivartijat: ryhmän jäseniä, jotka oma-aloitteisesti suojelevat johtajaa tai ryhmää häiritseviltä tiedolta. Kukaan ei pyydä heitä tekemään tätä. He tekevät sen "ryhmää suojellakseen" — tai koska huonojen uutisten tuoja harvoin on suosittu.</p>
     <p>Organisaatioissa ilmiö kasvaa rakenteelliseksi: jokainen hierarkiataso pehmentää ja suodattaa tietoa ennen kuin se siirtyy ylöspäin. Vaikka kukaan ei yksittäin valehtele, lopputulos on, että ylin johto toimii todellisuudesta irrallaan.</p>
@@ -1502,12 +1659,12 @@ flowchart TD
 
   <!-- ============================================================ -->
   <div class="ilmio" id="brooksin-laki">
-    <div class="ilmio-tag">Ilmiö 28</div>
+    <div class="ilmio-tag">Ilmiö 29</div>
     <h2>Brooksin laki — lisähenkilö myöhästyttää</h2>
     <p>Fred Brooks dokumentoi teoksessaan <em>The Mythical Man-Month</em> (1975) ilmiön, joka on sittemmin toistettu jokaisessa sukupolvessa: myöhässä olevaan ohjelmistoprojektiin lisätty uusi henkilö tekee siitä vielä myöhässä olevamman. Laki tuntuu ensin epäintuitiiviselta — lisää käsiä, enemmän työtä, nopeampi valmistuminen. Mutta ohjelmistoprojekti ei ole pellavan niittämistä.</p>
 
     <div class="mermaid">
-flowchart LR
+flowchart TD
   M["Projekti myöhässä"] --> P["Lisätään ihmisiä"]
   P --> O["Uudet tarvitsevat\nperehdytystä"]
   P --> K["Kommunikaatiokanavat\nräjähtävät"]
@@ -1531,12 +1688,12 @@ flowchart LR
 
   <!-- ============================================================ -->
   <div class="ilmio" id="yhdeksanyhdeksan">
-    <div class="ilmio-tag">Ilmiö 29</div>
+    <div class="ilmio-tag">Ilmiö 30</div>
     <h2>Yhdeksän-yhdeksän-sääntö — "melkein valmis" -illuusio</h2>
     <p>Tom Cargill muotoili ohjelmoijien kansanviisauden: <em>"Ensimmäinen 90 % koodista vie 90 % kehitysajasta. Viimeinen 10 % koodista vie loput 90 % kehitysajasta."</em> Projekti on pitkään "melkein valmis" — mutta viimeiset prosentit ovat kovimmat.</p>
 
     <div class="mermaid">
-flowchart LR
+flowchart TD
   A["Demo toimii\n→ '90 % valmis'"] --> B["Reunatapaukset\nDatan laatu\nIntegraatiot"]
   B --> C["Tuotantoonvienti\nKäyttäjätestaus\nYlläpito"]
   C --> D["Loput 90 %\nkehitysajasta"]
@@ -1554,12 +1711,12 @@ flowchart LR
 
   <!-- ============================================================ -->
   <div class="ilmio" id="hofstadterin-laki">
-    <div class="ilmio-tag">Ilmiö 30</div>
+    <div class="ilmio-tag">Ilmiö 31</div>
     <h2>Hofstadterin laki — rekursiivinen aikataululaki</h2>
     <p>Douglas Hofstadter muotoili rekursiivisen totuuden teoksessaan <em>Gödel, Escher, Bach</em> (1979): <em>"Kaikki kestää aina odotettua kauemmin — jopa kun otat Hofstadterin lain huomioon."</em> Projektiarviot ovat systemaattisesti liian optimistisia, eikä tämä korjaudu edes kun tietää sen.</p>
 
     <div class="mermaid">
-flowchart LR
+flowchart TD
   A["Arvio: 3 kk"] --> B["Lisätään puskuri\n→ 4 kk"]
   B --> C["Todellisuus: 6 kk"]
   C --> D["Seuraava projekti:\nArvio: 3 kk..."]
@@ -1577,7 +1734,7 @@ flowchart LR
 
   <!-- ============================================================ -->
   <div class="ilmio" id="kuolonmarssi">
-    <div class="ilmio-tag">Ilmiö 31</div>
+    <div class="ilmio-tag">Ilmiö 32</div>
     <h2>Kuolonmarssi — projekti jota ei voi lopettaa</h2>
     <p>Edward Yourdon kuvasi teoksessaan <em>Death March</em> (1997) projektiluokan, jossa kaikki tietävät jo varhain että projekti epäonnistuu — mutta kukaan ei pysty tai uskalla sanoa sitä ääneen. Projekti jatkuu, resurssit kuluvat, ihmisiä palaa loppuun, ja lopputulos on silti huono tai peruutetaan.</p>
 
@@ -1602,12 +1759,12 @@ flowchart LR
 
   <!-- ============================================================ -->
   <div class="ilmio" id="tekninen-velka">
-    <div class="ilmio-tag">Ilmiö 32</div>
+    <div class="ilmio-tag">Ilmiö 33</div>
     <h2>Tekninen velka — oikoteiden korko</h2>
     <p>Ward Cunningham loi termin 1992: tekninen velka on metafora oikotielle, joka nopeuttaa kehitystä nyt mutta kasvaa korkoineen tulevaisuudessa. Jokainen "tehdään nyt nopeasti, korjataan myöhemmin" -päätös on lainaa tulevaisuuden kehityskapasiteetista.</p>
 
     <div class="mermaid">
-flowchart LR
+flowchart TD
   O["Oikotie:\n'tehdään nyt nopeasti'"] --> V["Tekninen velka\nkasvaa"]
   V --> H["Jokainen muutos\nvaikeutuu"]
   H --> P["Paine tehdä\nlisää oikoteitä"]
@@ -1634,7 +1791,7 @@ flowchart LR
 
   <!-- ============================================================ -->
   <div class="ilmio" id="conways-laki">
-    <div class="ilmio-tag">Ilmiö 33</div>
+    <div class="ilmio-tag">Ilmiö 34</div>
     <h2>Conwayn laki — organisaatio heijastuu arkkitehtuuriin</h2>
     <p>Melvin Conway esitti vuonna 1967: <em>"Organisaatiot, jotka suunnittelevat järjestelmiä, tuottavat järjestelmiä jotka heijastavat kyseisten organisaatioiden kommunikaatiorakenteita."</em> Toisin sanoen: järjestelmä näyttää siltä, miltä tiimit näyttävät.</p>
 
@@ -1660,12 +1817,12 @@ flowchart TD
 
   <!-- ============================================================ -->
   <div class="ilmio" id="bikeshedding">
-    <div class="ilmio-tag">Ilmiö 34</div>
+    <div class="ilmio-tag">Ilmiö 35</div>
     <h2>Bikeshedding — triviaalisuuslaki</h2>
     <p>C. Northcote Parkinson kuvasi 1957 ilmiön, jonka myöhemmin nimettiin bikesheddingiksi: komitea käyttää enemmän aikaa polkupyöräkatoksen värin valintaan kuin ydinvoimalan reaktorisuunnitteluun. Syy on yksinkertainen — reaktorista harva osaa sanoa mitään, katoksen väristä jokainen voi.</p>
 
     <div class="mermaid">
-flowchart LR
+flowchart TD
   K["Kokous"] --> Y["Ydinvoimalan\nreaktorisuunnitelma\n— 2 min, hyväksytty"]
   K --> P["Polkupyöräkatoksen\nväri\n— 45 min, ei päätöstä"]
   style P fill:#fdf0f0,stroke:#c0392b
@@ -1686,12 +1843,12 @@ flowchart LR
 
   <!-- ============================================================ -->
   <div class="ilmio" id="scope-creep">
-    <div class="ilmio-tag">Ilmiö 35</div>
+    <div class="ilmio-tag">Ilmiö 36</div>
     <h2>Scope creep — vaatimusten hiljaa laajeneminen</h2>
     <p>Scope creep on ilmiö, jossa projektin laajuus kasvaa asteittain ilman vastaavaa muutosta aikatauluun tai budjettiin. Yksittäiset muutokset tuntuvat pieniltä ja kohtuullisilta — kokonaisvaikutus on massiivinen.</p>
 
     <div class="mermaid">
-flowchart LR
+flowchart TD
   A["Alkuperäinen\nscope"] --> B["'Lisätään vain\nnämä kentät'"]
   B --> C["'Tehdään myös\ntämä näkymä'"]
   C --> D["'Kun kerran\nollaan tässä...'"]
@@ -1715,7 +1872,7 @@ flowchart LR
 
   <!-- ============================================================ -->
   <div class="ilmio" id="korkoa-korolle">
-    <div class="ilmio-tag">Ilmiö 36</div>
+    <div class="ilmio-tag">Ilmiö 37</div>
     <h2>Korkoa korolle -efekti — eksponentiaalinen kasvu</h2>
     <p>Korkoa korolle -efekti (<em>compound interest</em>, <em>compounding effect</em>) tarkoittaa ilmiötä, jossa kasvu kohdistuu koko kertyneeseen pohjaan — ei vain alkuperäiseen pääomaan. Tulos ei kasva lineaarisesti vaan <strong>kiihtyvästi</strong>: mitä suurempi pohja, sitä suurempi seuraava lisäys.</p>
 
@@ -1756,7 +1913,7 @@ flowchart LR
 
   <!-- ============================================================ -->
   <div class="ilmio" id="negatiivinen-korkoa">
-    <div class="ilmio-tag">Ilmiö 37</div>
+    <div class="ilmio-tag">Ilmiö 38</div>
     <h2>Negatiivinen korkoa korolle — eksponentiaalinen hajoaminen</h2>
     <p>Korkoa korolle -efekti toimii myös <em>vastaan</em>. Kun tuotto on negatiivinen, tai kun laiminlyönti kumuloituu, kasautumislogiikka kiihdyttää huononemista samalla tavalla kuin se aiemmin kiihdytti kasvua. Kolme keskeistä ilmenemismuotoa:</p>
 
@@ -1792,7 +1949,7 @@ flowchart LR
 
   <!-- ============================================================ -->
   <div class="ilmio" id="korkokierre">
-    <div class="ilmio-tag">Ilmiö 38</div>
+    <div class="ilmio-tag">Ilmiö 39</div>
     <h2>Negatiivinen korkokierre — velkaeksponentti 30 vuodessa</h2>
     <p>Velka käyttäytyy täsmälleen kuten sijoitus — mutta vastakkaiseen suuntaan. Sama eksponentiaalinen logiikka, joka kasvattaa 100 000 € sijoituksen 761 000 €:ksi seitsemässä prosentissa, kasvattaa 100 000 € velan <strong>miljoonia euroiksi</strong> korkeammilla kuluttajaluottokoroilla. Aikajänne ratkaisee kaiken.</p>
 
@@ -1843,27 +2000,6 @@ flowchart LR
     </div>
   </div>
 
-
-
-
-
-  <!-- ============================================================ -->
-  <div class="ilmio" id="omenoita-appelsiineja">
-    <div class="ilmio-tag">Ilmiö 39</div>
-    <h2>Omenoita ja appelsiineja — vertailun harha</h2>
-    <p>Vertailuharha syntyy, kun rinnastetaan kaksi asiaa, jotka näyttävät samanlaisilta mutta eroavat juuri niissä ominaisuuksissa, jotka tekevät vertailusta merkityksellisen. Teknisesti vertailu on mahdollinen — molemmilla on hinta, molemmat ovat hedelmiä — mutta käytännössä se johtaa harhaan, koska vertailtavat kohteet eivät ole samalla tasolla tai samassa kontekstissa.</p>
-
-    <p>Ilmaisulla <em>"se on kuin vertaisi omenoita appelsiineihin"</em> tarkoitetaan, että vertailu on epäreilua tai harhaanjohtavaa, koska vertailun kohteet poikkeavat oleellisesti toisistaan juuri siinä suhteessa, joka ratkaisee. Harha on erityisen tehokas, koska pinnallisesti vertailu vaikuttaa loogiselta.</p>
-
-    <div class="mermaid">
-flowchart TD
-  V["Väite: A on parempi kuin B"] --> M["Metriikka valittu\nniin, että A voittaa"]
-  M --> P["Metriikka ei kuitenkaan\nmittaa oikeaa asiaa"]
-  P --> H["Vertailu näyttää\nfaktapohjaiselta"]
-  H --> J["Johtopäätös on silti\nharhaanjohtava"]
-  style H fill:#f8f4ff,stroke:#6a1b9a
-  style J fill:#fdf0f0,stroke:#c0392b
-    </div>
     <p class="kaavio-selitys">Vertailuharha kätkeytyy näennäisesti neutraalin luvun taakse — harha on metriikan valinnassa, ei laskutoimituksessa.</p>
 
     <div class="huomiolaatikko">
@@ -2196,5 +2332,165 @@ flowchart TD
 })();
 </script>
 
+
+<script>
+(function () {
+  const SVG = {
+    share:    `<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>`,
+    link:     `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>`,
+    check:    `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`,
+    twitter:  `<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>`,
+    linkedin: `<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>`,
+    facebook: `<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>`,
+    whatsapp: `<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>`,
+    threads:  `<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.851 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.583-1.289-.878-2.309-.884h-.01c-.783 0-1.789.199-2.454 1.118l-1.659-1.239C8.83 5.925 10.426 5.32 12.176 5.32h.016c3.326.023 5.319 2.058 5.449 5.616.059.169.112.341.16.516.697 2.509.042 5.04-1.72 6.604C14.735 23.299 13.186 23.97 12.186 24z"/></svg>`
+  };
+
+  function pageUrl(id) {
+    return window.location.href.split('#')[0] + '#' + id;
+  }
+  function cardTitle(card) {
+    const h2 = card.querySelector('h2');
+    return h2 ? h2.textContent.trim() : document.title;
+  }
+  function ikoni(html, label, cls) {
+    const el = document.createElement('button');
+    el.className = 'jaa-ikoni' + (cls ? ' ' + cls : '');
+    el.setAttribute('aria-label', label);
+    el.title = label;
+    el.innerHTML = html;
+    return el;
+  }
+  function linkki(html, label) {
+    const el = document.createElement('a');
+    el.className = 'jaa-ikoni';
+    el.setAttribute('aria-label', label);
+    el.title = label;
+    el.target = '_blank';
+    el.rel = 'noopener noreferrer';
+    el.innerHTML = html;
+    return el;
+  }
+  function erotinviiva() {
+    const el = document.createElement('div');
+    el.className = 'jaa-erotinviiva';
+    return el;
+  }
+
+  document.querySelectorAll('.ilmio[id]').forEach(card => {
+    card.style.position = 'relative';
+    const id = card.id;
+
+    const wrapper = document.createElement('div');
+    wrapper.className = 'ilmio-jaa';
+
+    // Nappi
+    const btn = document.createElement('button');
+    btn.className = 'ilmio-jaa-btn';
+    btn.setAttribute('aria-label', 'Jaa tämä ilmiö');
+    btn.innerHTML = SVG.share + '<span> Jaa</span>';
+
+    // Valikko
+    const menu = document.createElement('div');
+    menu.className = 'ilmio-jaa-menu';
+
+    // Kopioi linkki
+    const copyBtn = ikoni(SVG.link, 'Kopioi linkki');
+    copyBtn.addEventListener('click', e => {
+      e.stopPropagation();
+      navigator.clipboard.writeText(pageUrl(id)).then(() => {
+        copyBtn.innerHTML = SVG.check;
+        copyBtn.classList.add('kopioitu');
+        setTimeout(() => { copyBtn.innerHTML = SVG.link; copyBtn.classList.remove('kopioitu'); }, 1800);
+      }).catch(() => {
+        // fallback
+        const ta = document.createElement('textarea');
+        ta.value = pageUrl(id);
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        copyBtn.innerHTML = SVG.check;
+        copyBtn.classList.add('kopioitu');
+        setTimeout(() => { copyBtn.innerHTML = SVG.link; copyBtn.classList.remove('kopioitu'); }, 1800);
+      });
+    });
+
+    // Twitter / X
+    const tw = linkki(SVG.twitter, 'Jaa X:ssä');
+    tw.addEventListener('click', e => {
+      e.preventDefault(); e.stopPropagation();
+      window.open(
+        'https://twitter.com/intent/tweet?url=' + encodeURIComponent(pageUrl(id)) +
+        '&text=' + encodeURIComponent(cardTitle(card)),
+        '_blank', 'width=560,height=360'
+      );
+    });
+
+    // LinkedIn
+    const li = linkki(SVG.linkedin, 'Jaa LinkedInissä');
+    li.addEventListener('click', e => {
+      e.preventDefault(); e.stopPropagation();
+      window.open(
+        'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(pageUrl(id)),
+        '_blank', 'width=600,height=500'
+      );
+    });
+
+    // Facebook
+    const fb = linkki(SVG.facebook, 'Jaa Facebookissa');
+    fb.addEventListener('click', e => {
+      e.preventDefault(); e.stopPropagation();
+      window.open(
+        'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(pageUrl(id)),
+        '_blank', 'width=580,height=400'
+      );
+    });
+
+    // WhatsApp
+    const wa = linkki(SVG.whatsapp, 'Jaa WhatsAppissa');
+    wa.addEventListener('click', e => {
+      e.preventDefault(); e.stopPropagation();
+      window.open(
+        'https://wa.me/?text=' + encodeURIComponent(cardTitle(card) + '\n' + pageUrl(id)),
+        '_blank'
+      );
+    });
+
+    // Threads
+    const th = linkki(SVG.threads, 'Jaa Threadsissa');
+    th.addEventListener('click', e => {
+      e.preventDefault(); e.stopPropagation();
+      window.open(
+        'https://www.threads.net/intent/post?text=' + encodeURIComponent(cardTitle(card) + '\n' + pageUrl(id)),
+        '_blank'
+      );
+    });
+
+    menu.appendChild(copyBtn);
+    menu.appendChild(erotinviiva());
+    menu.appendChild(tw);
+    menu.appendChild(li);
+    menu.appendChild(fb);
+    menu.appendChild(wa);
+    menu.appendChild(th);
+
+    wrapper.appendChild(btn);
+    wrapper.appendChild(menu);
+    card.appendChild(wrapper);
+
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      document.querySelectorAll('.ilmio-jaa-menu.aktiv').forEach(m => {
+        if (m !== menu) m.classList.remove('aktiv');
+      });
+      menu.classList.toggle('aktiv');
+    });
+
+    document.addEventListener('click', () => menu.classList.remove('aktiv'));
+    menu.addEventListener('click', e => e.stopPropagation());
+  });
+})();
+</script>
 </body>
 </html>

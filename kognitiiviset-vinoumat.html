@@ -9,6 +9,10 @@
   <style>
     .mermaid svg text { font-size: 12px !important; }
     body {
+      max-width: none;
+      padding: 0;
+    }
+    .sivu-sisalto {
       max-width: 860px;
       margin: 0 auto;
       padding: 2rem 1.5rem 4rem;
@@ -64,17 +68,19 @@
     }
     .huomiolaatikko {
       background: #fdf6ec;
-      border-left: 4px solid #e67e22;
+      border-left: 6px solid #e67e22;
       padding: 1em 1.2em;
       margin: 1.5rem 0;
-      font-size: 0.95em;
+      font-size: 1em;
+      border-radius: 0 6px 6px 0;
     }
     .infolaatikko {
       background: #f0f6fd;
-      border-left: 4px solid #2980b9;
+      border-left: 6px solid #2980b9;
       padding: 1em 1.2em;
       margin: 1.5rem 0;
-      font-size: 0.95em;
+      font-size: 1em;
+      border-radius: 0 6px 6px 0;
     }
     .kaavio-selitys {
       font-size: 0.85em;
@@ -107,6 +113,8 @@
     <a href="virhepaatelmat.html">Loogiset virhepäätelmät</a>
     <a href="kognitiiviset-vinoumat.html" class="nav-aktiv">Kognitiiviset vinoumat</a>
   </nav>
+
+  <div class="sivu-sisalto">
 
   <h1>Kognitiiviset vinoumat</h1>
   <p>Kognitiivinen vinouma on systemaattinen poikkeama rationaalisesta päättelystä — ei satunnainen virhe vaan ennustettava, toistuva harhautus, joka johtuu aivojen tavasta käsitellä tietoa nopeasti. Nämä vinoumat eivät johdu tyhmyydestä: ne ovat evolutiivisesti edullisten heuristiikkojen sivuvaikutuksia.</p>
@@ -494,6 +502,8 @@ flowchart LR
       <a href="kognitiiviset-vinoumat.html">Kognitiiviset vinoumat</a>
     </span>
   </footer>
+
+  </div><!-- /.sivu-sisalto -->
 
 </body>
 </html>
