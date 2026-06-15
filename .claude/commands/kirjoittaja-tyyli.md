@@ -12,7 +12,7 @@ datamalli.fi on Power BI- ja tietomallinnusopas suomalaisille dataammattilaisill
 
 **Asiantuntija joka selittää miksi, ei vain mitä.**
 - ❌ "Käytä surrogaattiavainta."
-- ✅ "Surrogaattiavain on aina kokonaisluku — VertiPaq pakkaa INT-sarakkeet erittäin tehokkaasti. GUID- tai merkkijono-avaimet turvottavat mallia ja hidastavat laskentaa."
+- ✅ "Surrogaattiavain on aina kokonaisluku, VertiPaq pakkaa INT-sarakkeet erittäin tehokkaasti. GUID- tai merkkijono-avaimet turvottavat mallia ja hidastavat laskentaa."
 
 **Opinionoitu mutta perusteltu.** "Dataneuvoksen mielipide" -osioissa voi olla rohkeampi:
 - ❌ "Lumihiutalemalli on toisinaan sopimaton Power BI:hin."
