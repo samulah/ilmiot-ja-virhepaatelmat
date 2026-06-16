@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Firehose of falsehood — valheiden paloletku — Ilmiöitä</title>
+  <title>Kafka-ilmiö — byrokratian labyrintti — Ilmiöitä</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
   <script>mermaid.initialize({ startOnLoad: true, themeVariables: { fontSize: '12px' } });</script>
@@ -632,75 +632,71 @@
 
   <div class="kortti-breadcrumb">
     <a href="index.html">← Kaikki ilmiöt</a>
-    <span class="kortti-breadcrumb-sep">›</span><span class="kortti-breadcrumb-kat">Informaatio ja propaganda</span>
+    <span class="kortti-breadcrumb-sep">›</span><span class="kortti-breadcrumb-kat">Byrokratia ja organisaatio</span>
     <button class="kortti-random-btn" onclick="randomIlmio()" title="Satunnainen ilmiö (R)">
       <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>
       <span class="btn-text">Satunnainen</span>
     </button>
   </div>
 
-  <div class="ilmio" id="firehose-of-falsehood">
-<div class="ilmio-tag">Ilmiö 11</div>
-<h2>Firehose of falsehood — valheiden paloletku</h2>
-<p>RAND Corporation dokumentoi vuonna 2016 Venäjän propagandatekniikan, jolle he antoivat nimen <em>Firehose of Falsehood</em>. Perinteinen propaganda yrittää olla uskottava — tämä tekniikka hylkää uskottavuuden kokonaan ja korvaa sen <strong>volyymilla ja nopeudella</strong>.</p>
-<p>Neljä tunnusmerkkiä:</p>
-<ul>
-<li><strong>Suuri volyymi</strong> — jatkuva tulva väitteitä, joihin on mahdoton vastata kaikkiin</li>
-<li><strong>Useita kanavia samanaikaisesti</strong> — uutiset, some, viihdesivu, "asiantuntijat"</li>
-<li><strong>Ei sitoutumista totuuteen</strong> — ristiriitaiset väitteet samanaikaisesti, täyskäännökset ilman häpeää</li>
-<li><strong>Ei sitoutumista realismiin</strong> — tarkoitus ei ole vakuuttaa vaan hämmentää ja uuvuttaa</li>
-</ul>
+  <div class="ilmio" id="kafka-ilmio">
+<div class="ilmio-tag">Ilmiö 27</div>
+<h2>Kafka-ilmiö — byrokratian labyrintti</h2>
+<p>Kafka-ilmiö kuvaa institutionaalista rakennetta, jossa oikeuksien tai palvelujen saaminen on teknisesti mahdollista mutta käytännössä mahdotonta — ei suoran kiellon, vaan keskenään ristiriitaisten, epäselvästi kirjoitettujen tai kehämäisesti viittaavien sääntöjen takia.</p>
+<p>Nimi tulee Franz Kafkan romaaneista — erityisesti <em>Oikeudenkäynnistä</em> (1925) ja <em>Linnasta</em> (1926), joissa päähenkilöt kohtaavat järjestelmiä joiden logiikka on heidän ulottumattomissaan.</p>
 <div class="mermaid">
 flowchart TD
-  T["Tavoite: ei vakuuttaa\nvaan hämmentää"] --&gt; V["Suuri volyymi\nväitteitä"]
-  V --&gt; B["Osa väitteistä on totta\n→ sekoittuu valheisiin"]
-  V --&gt; Ri["Ristiriitaisia versioita\nsamasta tapahtumasta"]
-  B --&gt; H["Yleisö ei tiedä\nmitä uskoa"]
-  Ri --&gt; H
-  H --&gt; E["'Kaikki valehtelet'\n→ luottamus kaikkeen\nromahtaa"]
-  E --&gt; F["Valta hyötyy:\nepäilevä yleisö\nei mobilisoi muutosta"]
-  style T fill:#fdf0f0,stroke:#c0392b
-  style F fill:#fdf0f0,stroke:#c0392b
-  style E fill:#fff3cd,stroke:#f39c12
+  A["Tarvitset asiakirja A"] --&gt; B["A vaatii asiakirja B"]
+  B --&gt; C["B vaatii todistus C"]
+  C --&gt; D["C myönnetään vain\nasiakirja A:n kanssa"]
+  D --&gt; A
+  style A fill:#fdf0f0,stroke:#7f8c8d
+  style B fill:#fdf0f0,stroke:#7f8c8d
+  style C fill:#fdf0f0,stroke:#7f8c8d
+  style D fill:#fdf0f0,stroke:#7f8c8d
     </div>
-<p class="kaavio-selitys">Firehose of falsehood: tavoite ei ole saada ihmisiä uskomaan valheita — vaan saada heidät lopettamaan kaiken uskomisen.</p>
+<p class="kaavio-selitys">Kafka-kehä: jokainen vaatimus edellyttää jotain, jota ei voi saada ilman kyseistä vaatimusta.</p>
 <div class="huomiolaatikko">
-<strong>Miksi tämä toimii:</strong> Faktojen tarkistaminen vaatii aikaa ja resursseja. Valheen levittäminen on nopeampaa kuin sen kumoaminen. RAND-tutkijoiden havainto: vaikka yksittäinen väite kumottaisiin, volyymi kokonaisuutena tekee tehtävänsä — yleisö väsyy ja turhautuu.
-    </div>
-<p>Tekniikka ei ole yksinomaan venäläinen — RAND:n analyysi kuvaa Venäjän valtiomediaa, mutta sama rakenne tunnistetaan muissakin konteksteissa: poliittisissa kampanjoissa, yritysten kriisiviestinnässä ja sosiaalisessa mediassa yleisesti. Kun informaatioympäristö on kyllästetty, <em>instituutioihin kohdistuva luottamus heikkenee</em> — ja se hyödyttää niitä, joilla on institutionaalinen valta mutta huono maine.</p>
+<strong>Konkreettisia esimerkkejä:</strong>
+<ul style="margin:0.5em 0 0;">
+<li>Oleskelulupa edellyttää vakituista osoitetta — vakituinen osoite edellyttää oleskelulupaa.</li>
+<li>Pankkitili vaatii osoitetodistuksen — osoitetodistus vaatii pankkitilin.</li>
+<li>Työtodistus tarvitaan töihin pääsemiseksi — töihin pääseminen tarvitaan työtodistuksen saamiseksi.</li>
+</ul>
+</div>
+<p>Oleellista on, että järjestelmä on usein <em>muodollisesti neutraali</em> — samat säännöt koskevat kaikkia. Juuri tämä tekee Kafka-ilmiöstä tehokkaan vallankäytön välineen: sen voi kiistää, koska syrjintä ei tapahdu eksplisiittisesti. Rakenne itsessään tekee sen.</p>
 <div class="vaaralatikko">
-<strong>Vastakeino:</strong> RAND suosittelee "älä toista, älä vahvista" -periaatetta: yksittäisten väitteiden kumoaminen voi vahvistaa niitä (ks. <em>backfire effect</em>). Tehokkaampi tapa on rakentaa yleinen medialukutaito ja inokulointipohjainen viestintä — varoittaa tekniikasta etukäteen, ennen kuin se osuu. (Ks. <a href="#inokulointiteoria">Inokulointiteoria</a>.)
+<strong>Tunnistaminen:</strong> Kysy — onko oikeus olemassa vain paperilla? Onko hakuprosessi suunniteltu niin, että juuri ne joille se on tarkoitettu eivät käytännössä kykene sitä käyttämään? Jos vastaus on kyllä, rakenne on Kafkamainen — joko tahallisesti tai laiminlyönnin takia.
     </div>
-<p style="margin-bottom:0;"><a href="firehose-of-falsehood.html">→ Lue lisää: Firehose of Falsehood omalla sivullaan</a> — käytännön esimerkit, miten tekniikka näkyy somessa ja miten taistella vastaan omalla nimellä tai anonyymisti.</p>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
 <div class="lue-lisaa-rivi">
 <span class="lue-lisaa-tyyppi">Kirjoja</span>
 <ul class="lue-lisaa-lista">
-<li><cite>Nothing Is True and Everything Is Possible</cite> — Peter Pomerantsev (2014)</li>
-<li><cite>Active Measures</cite> — Thomas Rid (2020)</li>
-<li><cite>LikeWar</cite> — P.W. Singer &amp; Emerson T. Brooking (2018)</li>
+<li><cite>Oikeusjuttu</cite> (<cite>The Trial</cite>) — Franz Kafka (1925)</li>
+<li><cite>Linna</cite> (<cite>The Castle</cite>) — Franz Kafka (1926)</li>
+<li><cite>The Utopia of Rules</cite> — David Graeber (2015)</li>
 </ul>
 </div>
 <div class="lue-lisaa-rivi">
 <span class="lue-lisaa-tyyppi">Verkossa</span>
 <ul class="lue-lisaa-lista">
-<li><a href="https://en.wikipedia.org/wiki/Firehose_of_falsehood" target="_blank" rel="noopener">Wikipedia: Firehose of falsehood (englanniksi)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Kafkaesque" target="_blank" rel="noopener">Wikipedia: Kafkaesque (englanniksi)</a></li>
 </ul>
 </div>
 </div>
 </div>
 
   <nav class="kortti-nav">
-    <a class="kortti-nav-btn" href="astroturf.html">← Astroturf — keinotekoinen kansanliike</a>
+    <a class="kortti-nav-btn" href="simple-sabotage.html">← Simple Sabotage Field Manual (1944)</a>
     <div class="kortti-nav-center">
-      <span class="kortti-nav-laskuri">11 / 68</span>
+      <span class="kortti-nav-laskuri">27 / 68</span>
       <span class="kortti-nav-vinkki">
         <kbd>&#8592;</kbd> <kbd>&#8594;</kbd> selaa &middot; <kbd>R</kbd> satunnainen
         <span class="touch-vinkki">&nbsp;· swipe &#8592;&#8594; tai &#8595; random</span>
       </span>
     </div>
-    <a class="kortti-nav-btn" href="manufactured-consent.html">Manufactured consent — suostumus tehdään →</a>
+    <a class="kortti-nav-btn" href="catch-22.html">Catch-22 — pakenematon ansa →</a>
   </nav>
 
   
@@ -870,12 +866,12 @@ flowchart TD
   <script>
 (function () {
   const IDS = ["paskuuttaminen","starve-the-beast","overton-ikkuna","saantelijan-kaappaus","rautainen-laki","valta-suojelee-valtaa","hajota-hallitse","tilastoilla-valehtelu","bkt-harha","astroturf","firehose-of-falsehood","manufactured-consent","betteridgen-laki","inokulointiteoria","backfire-effect","darvo","halo-efekti","konsensus-fetissi","omenoita-appelsiineja","blame-game","gaslighting","maalitolppien-siirtaminen","argumenttitulva","sunk-cost-harha","jarjestelman-puolustelu","simple-sabotage","kafka-ilmio","catch-22","goodhartin-laki","hippo-efekti","performatiivinen-lasnaolo","rituaalinen-raportointi","initiointirituaalit","portinvartija-kulttuuri","strateginen-osaamattomuus","fofo","sivustakatsojan-efekti","brooksin-laki","yhdeksanyhdeksan","hofstadterin-laki","kuolonmarssi","tekninen-velka","conways-laki","bikeshedding","scope-creep","korkoa-korolle","negatiivinen-korkoa","korkokierre","honeypot-huijaus","bait-and-switch","kaarmeoljy","ponzi-pyramidi","pump-and-dump","pig-butchering","ennakkomaksuhuijaus","badger-game","ilmainen-naytetyo","exposure-maksu","lowball-hinnoittelu","valittajan-skimmaus","tilipuristus","foot-in-the-door","door-in-the-face","hintaankkurointi","houkutinvaihtoehto","vastavuoroisuuden-ansa","sosiaalinen-todiste","painostusclose"];
-  const PREV = 'astroturf.html';
-  const NEXT = 'manufactured-consent.html';
+  const PREV = 'simple-sabotage.html';
+  const NEXT = 'catch-22.html';
 
   function randomIlmio() {
     let id;
-    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'firehose-of-falsehood');
+    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'kafka-ilmio');
     window.location.href = id + '.html';
   }
   window.randomIlmio = randomIlmio;
