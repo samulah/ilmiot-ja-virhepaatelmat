@@ -856,6 +856,23 @@ flowchart TD
   }
   window.randomIlmio = randomIlmio;
 
+  /* ── Sisääntuloanimaatio ── */
+  (function () {
+    var d = sessionStorage.getItem('swipe-dir');
+    if (d) {
+      sessionStorage.removeItem('swipe-dir');
+      var b = document.body;
+      b.style.transition = 'none';
+      b.style.transform = 'translateX(' + (d === 'right' ? window.innerWidth : -window.innerWidth) + 'px)';
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          b.style.transition = 'transform 0.28s cubic-bezier(0.25,0.46,0.45,0.94)';
+          b.style.transform = 'translateX(0)';
+        });
+      });
+    }
+  })();
+
   /* ── Näppäimistö ── */
   document.addEventListener('keydown', function (e) {
     if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
@@ -866,27 +883,55 @@ flowchart TD
   });
 
   /* ── Swipe-eleet ── */
-  var _tx = 0, _ty = 0;
+  var _tx = 0, _ty = 0, _sx = false, _live = false;
   document.addEventListener('touchstart', function (e) {
     _tx = e.touches[0].clientX;
     _ty = e.touches[0].clientY;
+    _sx = false; _live = false;
+  }, { passive: true });
+  document.addEventListener('touchmove', function (e) {
+    if (_sx) return;
+    var dx = e.touches[0].clientX - _tx;
+    var dy = e.touches[0].clientY - _ty;
+    if (!_live) {
+      if (Math.abs(dx) > Math.abs(dy) * 1.3 && Math.abs(dx) > 8) {
+        _live = true;
+      } else if (Math.abs(dy) > Math.abs(dx) * 1.3 && Math.abs(dy) > 8) {
+        _sx = true; return;
+      }
+    }
+    if (_live) {
+      document.body.style.transition = 'none';
+      var ok = (dx < 0 && NEXT) || (dx > 0 && PREV);
+      document.body.style.transform = 'translateX(' + (ok ? dx : dx * 0.2) + 'px)';
+    }
   }, { passive: true });
   document.addEventListener('touchend', function (e) {
     var dx = e.changedTouches[0].clientX - _tx;
     var dy = e.changedTouches[0].clientY - _ty;
     var adx = Math.abs(dx), ady = Math.abs(dy);
-    if (adx > ady * 1.5 && adx > 50) {
-      /* Horisontaalinen swipe */
-      if (dx < 0 && NEXT) window.location.href = NEXT;  /* ← next */
-      if (dx > 0 && PREV) window.location.href = PREV;  /* → prev */
-    } else if (ady > adx * 1.5 && ady > 80) {
+    if (_live) {
+      if (adx > 70) {
+        var target = dx < 0 ? NEXT : PREV;
+        if (target) {
+          sessionStorage.setItem('swipe-dir', dx < 0 ? 'right' : 'left');
+          document.body.style.transition = 'transform 0.22s cubic-bezier(0.4,0,1,1)';
+          document.body.style.transform = 'translateX(' + (dx < 0 ? -window.innerWidth : window.innerWidth) + 'px)';
+          setTimeout(function () { window.location.href = target; }, 220);
+        } else {
+          document.body.style.transition = 'transform 0.28s cubic-bezier(0.25,0.46,0.45,0.94)';
+          document.body.style.transform = 'translateX(0)';
+        }
+      } else {
+        document.body.style.transition = 'transform 0.28s cubic-bezier(0.25,0.46,0.45,0.94)';
+        document.body.style.transform = 'translateX(0)';
+      }
+    } else if (!_sx && ady > adx * 1.5 && ady > 80) {
       if (dy > 0) {
-        /* Swipe alas (sormi alas) sivun pohjalla → random */
         var atBottom = window.scrollY + window.innerHeight >=
           document.documentElement.scrollHeight - 60;
         if (atBottom) randomIlmio();
       } else {
-        /* Swipe ylös (sormi ylös) sivun yläosassa → takaisin */
         if (window.scrollY < 60) history.back();
       }
     }
