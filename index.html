@@ -526,6 +526,10 @@
     <a href="ilmiot.html" class="nav-aktiv">Ilmiöitä</a>
     <a href="virhepaatelmat.html">Loogiset virhepäätelmät</a>
     <a href="kognitiiviset-vinoumat.html">Kognitiiviset vinoumat</a>
+    <button onclick="randomIlmio()" class="nav-random-btn" title="Satunnainen ilmiö (R)">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>
+      <span class="btn-text">Satunnainen</span>
+    </button>
   </nav>
 
   <div class="sivu-layout">
@@ -3593,6 +3597,24 @@ flowchart LR
 
     document.addEventListener('click', () => menu.classList.remove('aktiv'));
     menu.addEventListener('click', e => e.stopPropagation());
+  });
+})();
+</script>
+
+<script>
+(function () {
+  /* ── Satunnainen ilmiö + näppäimistönavigointi index.html:ssä ── */
+  function randomIlmio() {
+    var ids = Array.from(document.querySelectorAll('.ilmio[id]')).map(function (d) { return d.id; });
+    var id = ids[Math.floor(Math.random() * ids.length)];
+    window.location.href = 'ilmiot/' + id + '.html';
+  }
+  window.randomIlmio = randomIlmio;
+
+  document.addEventListener('keydown', function (e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.ctrlKey || e.metaKey || e.altKey) return;
+    if (e.key === 'r' || e.key === 'R') randomIlmio();
   });
 })();
 </script>
