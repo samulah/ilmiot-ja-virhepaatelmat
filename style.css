@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;600&display=swap');
 
+html { overflow-x: hidden; }
+
 /* ── Yleiset tyylit ──────────────────────────────────────────── */
 body {
   font-family: 'Source Sans 3', Arial, sans-serif;
