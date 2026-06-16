@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Firehose of falsehood — valheiden paloletku — Ilmiöitä</title>
+  <title>Korkoa korolle -efekti — eksponentiaalinen kasvu — Ilmiöitä</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
-  <script>mermaid.initialize({ startOnLoad: true, themeVariables: { fontSize: '12px' } });</script>
   
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
   <style>
 
     .mermaid svg text { font-size: 12px !important; }
@@ -632,78 +632,373 @@
 
   <div class="kortti-breadcrumb">
     <a href="index.html">← Kaikki ilmiöt</a>
-    <span class="kortti-breadcrumb-sep">›</span><span class="kortti-breadcrumb-kat">Informaatio ja propaganda</span>
+    <span class="kortti-breadcrumb-sep">›</span><span class="kortti-breadcrumb-kat">Kasvun dynamiikka</span>
     <button class="kortti-random-btn" onclick="randomIlmio()" title="Satunnainen ilmiö (R)">
       <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>
       <span class="btn-text">Satunnainen</span>
     </button>
   </div>
 
-  <div class="ilmio" id="firehose-of-falsehood">
-<div class="ilmio-tag">Ilmiö 11</div>
-<h2>Firehose of falsehood — valheiden paloletku</h2>
-<p>RAND Corporation dokumentoi vuonna 2016 Venäjän propagandatekniikan, jolle he antoivat nimen <em>Firehose of Falsehood</em>. Perinteinen propaganda yrittää olla uskottava — tämä tekniikka hylkää uskottavuuden kokonaan ja korvaa sen <strong>volyymilla ja nopeudella</strong>.</p>
-<p>Neljä tunnusmerkkiä:</p>
-<ul>
-<li><strong>Suuri volyymi</strong> — jatkuva tulva väitteitä, joihin on mahdoton vastata kaikkiin</li>
-<li><strong>Useita kanavia samanaikaisesti</strong> — uutiset, some, viihdesivu, "asiantuntijat"</li>
-<li><strong>Ei sitoutumista totuuteen</strong> — ristiriitaiset väitteet samanaikaisesti, täyskäännökset ilman häpeää</li>
-<li><strong>Ei sitoutumista realismiin</strong> — tarkoitus ei ole vakuuttaa vaan hämmentää ja uuvuttaa</li>
-</ul>
-<div class="mermaid">
-flowchart TD
-  T["Tavoite: ei vakuuttaa\nvaan hämmentää"] --&gt; V["Suuri volyymi\nväitteitä"]
-  V --&gt; B["Osa väitteistä on totta\n→ sekoittuu valheisiin"]
-  V --&gt; Ri["Ristiriitaisia versioita\nsamasta tapahtumasta"]
-  B --&gt; H["Yleisö ei tiedä\nmitä uskoa"]
-  Ri --&gt; H
-  H --&gt; E["'Kaikki valehtelet'\n→ luottamus kaikkeen\nromahtaa"]
-  E --&gt; F["Valta hyötyy:\nepäilevä yleisö\nei mobilisoi muutosta"]
-  style T fill:#fdf0f0,stroke:#c0392b
-  style F fill:#fdf0f0,stroke:#c0392b
-  style E fill:#fff3cd,stroke:#f39c12
-    </div>
-<p class="kaavio-selitys">Firehose of falsehood: tavoite ei ole saada ihmisiä uskomaan valheita — vaan saada heidät lopettamaan kaiken uskomisen.</p>
+  <div class="ilmio" id="korkoa-korolle">
+<div class="ilmio-tag">Ilmiö 46</div>
+<h2>Korkoa korolle -efekti — eksponentiaalinen kasvu</h2>
+<p>Korkoa korolle -efekti (<em>compound interest</em>, <em>compounding effect</em>) tarkoittaa ilmiötä, jossa kasvu kohdistuu koko kertyneeseen pohjaan — ei vain alkuperäiseen pääomaan. Tulos ei kasva lineaarisesti vaan <strong>kiihtyvästi</strong>: mitä suurempi pohja, sitä suurempi seuraava lisäys.</p>
+<p>Kaava: <code>A = P × (1 + r)<sup>t</sup></code> — missä <em>P</em> on alkupääoma, <em>r</em> vuotuinen korko ja <em>t</em> aika vuosina.</p>
+<div class="avainluku-rivi">
+<div class="avainluku"><div class="luku">242 700 €</div><div class="selite">100 000 € @ 3 % / 30 v</div></div>
+<div class="avainluku"><div class="luku">761 200 €</div><div class="selite">100 000 € @ 7 % / 30 v</div></div>
+<div class="avainluku"><div class="luku">3 000 000 €</div><div class="selite">100 000 € @ 12 % / 30 v</div></div>
+<div class="avainluku"><div class="luku">310 000 €</div><div class="selite">Lineaarinen 7 000 €/v / 30 v</div></div>
+</div>
+<div class="graafi-wrapper">
+<div class="graafi-otsikko">100 000 € eri korkokannoilla — 30 vuotta</div>
+<canvas height="260" id="kkk-kasvu-graafi"></canvas>
+</div>
+<p class="kaavio-selitys">Liiku kursorin kanssa graafin päällä nähdäksesi tarkat luvut. Katkoviiva = lineaarinen kasvu (ei korkoa korolle) samalla 7 %:n euromäärällä vuodessa.</p>
 <div class="huomiolaatikko">
-<strong>Miksi tämä toimii:</strong> Faktojen tarkistaminen vaatii aikaa ja resursseja. Valheen levittäminen on nopeampaa kuin sen kumoaminen. RAND-tutkijoiden havainto: vaikka yksittäinen väite kumottaisiin, volyymi kokonaisuutena tekee tehtävänsä — yleisö väsyy ja turhautuu.
+<strong>72:n sääntö:</strong> Jaa 72 vuotuisella korkoprosentilla — saat arvioidun tuplautumisajan. 7 % korolla pääoma tuplautuu noin 72 ÷ 7 ≈ 10 vuodessa. 12 % korolla 6 vuodessa. Sääntö toimii myös toisin päin: jos haluaa tuplata 8 vuodessa, tarvitaan noin 9 % vuosituotto.
     </div>
-<p>Tekniikka ei ole yksinomaan venäläinen — RAND:n analyysi kuvaa Venäjän valtiomediaa, mutta sama rakenne tunnistetaan muissakin konteksteissa: poliittisissa kampanjoissa, yritysten kriisiviestinnässä ja sosiaalisessa mediassa yleisesti. Kun informaatioympäristö on kyllästetty, <em>instituutioihin kohdistuva luottamus heikkenee</em> — ja se hyödyttää niitä, joilla on institutionaalinen valta mutta huono maine.</p>
+<div class="infolaatikko">
+<strong>Efekti toimii myös rahan ulkopuolella:</strong>
+<ul style="margin:0.5em 0 0;">
+<li><strong>Osaaminen:</strong> Mitä enemmän tiedät aiheesta, sitä helpompi oppia lisää — taustatieto toimii "korkopohjana". Kirja kasvattaa sanastoa, joka helpottaa seuraavaa kirjaa.</li>
+<li><strong>Verkostot:</strong> Laajempi verkosto houkuttelee uusia kontakteja — jokainen uusi kontakti kasvattaa pohjaa, josta seuraavat kasvavat.</li>
+<li><strong>Maine:</strong> Hyvä maine avaa ovia, jotka tuottavat lisää hyviä suosituksia.</li>
+<li><strong>Epidemiat:</strong> Tartuttamisnopeus kerrotaan tartuntojen määrällä — kasvu on eksponentiaalista kunnes väestöpohja loppuu tai toimenpiteet hidastavat.</li>
+<li><strong>Päivittäinen esimerkki:</strong> 10 sivua kirjaa päivässä = 3 650 sivua vuodessa ≈ 12–15 kirjaa. Seuraavana vuonna taustatieto nopeuttaa lukemista.</li>
+</ul>
+</div>
 <div class="vaaralatikko">
-<strong>Vastakeino:</strong> RAND suosittelee "älä toista, älä vahvista" -periaatetta: yksittäisten väitteiden kumoaminen voi vahvistaa niitä (ks. <em>backfire effect</em>). Tehokkaampi tapa on rakentaa yleinen medialukutaito ja inokulointipohjainen viestintä — varoittaa tekniikasta etukäteen, ennen kuin se osuu. (Ks. <a href="#inokulointiteoria">Inokulointiteoria</a>.)
+<strong>Lineaarisen ajattelun loukku:</strong> Ihmisaivot ovat huonoja hahmottamaan eksponentiaalista kasvua. Intuitio arvioi kasvun lineaariseksi — siksi ylipaino kertyy "yllättäen", velka karkaa "yhtäkkiä" ja rokotteen leviäminen "yllättää". Eksponentiaalinen kasvukäyrä näyttää pitkään miltei tasaiselta — ja sitten se nousee pystyyn. Se osa on jo myöhäistä yrittää pysäyttää perinteisillä keinoilla.
     </div>
-<p style="margin-bottom:0;"><a href="firehose-of-falsehood.html">→ Lue lisää: Firehose of Falsehood omalla sivullaan</a> — käytännön esimerkit, miten tekniikka näkyy somessa ja miten taistella vastaan omalla nimellä tai anonyymisti.</p>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
 <div class="lue-lisaa-rivi">
 <span class="lue-lisaa-tyyppi">Kirjoja</span>
 <ul class="lue-lisaa-lista">
-<li><cite>Nothing Is True and Everything Is Possible</cite> — Peter Pomerantsev (2014)</li>
-<li><cite>Active Measures</cite> — Thomas Rid (2020)</li>
-<li><cite>LikeWar</cite> — P.W. Singer &amp; Emerson T. Brooking (2018)</li>
+<li><cite>The Psychology of Money</cite> — Morgan Housel (2020)</li>
+<li><cite>A Random Walk Down Wall Street</cite> — Burton G. Malkiel (1973)</li>
+<li><cite>The Snowball</cite> — Alice Schroeder (2008)</li>
 </ul>
 </div>
 <div class="lue-lisaa-rivi">
 <span class="lue-lisaa-tyyppi">Verkossa</span>
 <ul class="lue-lisaa-lista">
-<li><a href="https://en.wikipedia.org/wiki/Firehose_of_falsehood" target="_blank" rel="noopener">Wikipedia: Firehose of falsehood (englanniksi)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Compound_interest" target="_blank" rel="noopener">Wikipedia: Compound interest (englanniksi)</a></li>
 </ul>
 </div>
 </div>
 </div>
 
   <nav class="kortti-nav">
-    <a class="kortti-nav-btn" href="astroturf.html">← Astroturf — keinotekoinen kansanliike</a>
+    <a class="kortti-nav-btn" href="scope-creep.html">← Scope creep — vaatimusten hiljaa laajeneminen</a>
     <div class="kortti-nav-center">
-      <span class="kortti-nav-laskuri">11 / 68</span>
+      <span class="kortti-nav-laskuri">46 / 68</span>
       <span class="kortti-nav-vinkki">
         <kbd>&#8592;</kbd> <kbd>&#8594;</kbd> selaa &middot; <kbd>R</kbd> satunnainen
         <span class="touch-vinkki">&nbsp;· swipe &#8592;&#8594; tai &#8595; random</span>
       </span>
     </div>
-    <a class="kortti-nav-btn" href="manufactured-consent.html">Manufactured consent — suostumus tehdään →</a>
+    <a class="kortti-nav-btn" href="negatiivinen-korkoa.html">Negatiivinen korkoa korolle — eksponentiaalinen hajoaminen →</a>
   </nav>
 
-  
+  <script>
+(function () {
+
+(function () {
+  /* ── Värit ── */
+  const SININEN   = '#2e86ab';
+  const TUMMA     = '#1a5276';
+  const VAALEA    = '#90c8e0';
+  const HARMAA    = '#aaa';
+  const PINKKI    = '#a23b72';
+  const PINKKI2   = '#d48ab0';
+
+  const vuosiLabels = Array.from({length: 31}, (_, i) => i + ' v');
+  const yrs = Array.from({length: 31}, (_, i) => i);
+  const cpd = r => yrs.map(t => Math.round(100000 * Math.pow(1 + r, t)));
+  const lin = yrs.map(t => 100000 + t * 7000); // lineaarinen vertailu (7 % / v, ei korkoa korolle)
+
+  /* ── Graafi 1: Korkoa korolle kasvu 30 v ── */
+  var _kkk_kasvu_graafi = document.getElementById('kkk-kasvu-graafi');
+  if (_kkk_kasvu_graafi) new Chart(_kkk_kasvu_graafi, {
+    type: 'line',
+    data: {
+      labels: vuosiLabels,
+      datasets: [
+        {
+          label: 'Lineaarinen (ei korkoa korolle)',
+          data: lin,
+          borderColor: HARMAA,
+          borderDash: [6, 4],
+          borderWidth: 2,
+          pointRadius: 0,
+          fill: false,
+          tension: 0,
+        },
+        {
+          label: '3 % / vuosi',
+          data: cpd(0.03),
+          borderColor: VAALEA,
+          borderWidth: 2,
+          pointRadius: 0,
+          fill: false,
+          tension: 0.3,
+        },
+        {
+          label: '7 % / vuosi',
+          data: cpd(0.07),
+          borderColor: SININEN,
+          borderWidth: 3,
+          pointRadius: 0,
+          backgroundColor: 'rgba(46,134,171,0.08)',
+          fill: true,
+          tension: 0.3,
+        },
+        {
+          label: '12 % / vuosi',
+          data: cpd(0.12),
+          borderColor: TUMMA,
+          borderWidth: 3,
+          pointRadius: 0,
+          backgroundColor: 'rgba(26,82,118,0.10)',
+          fill: true,
+          tension: 0.3,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        tooltip: {
+          callbacks: {
+            label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y.toLocaleString('fi-FI')} €`,
+          },
+        },
+        legend: { position: 'bottom', labels: { boxWidth: 14, font: { size: 12 } } },
+      },
+      scales: {
+        x: { title: { display: true, text: 'Aika' }, ticks: { maxTicksLimit: 11 } },
+        y: {
+          title: { display: true, text: '€' },
+          ticks: { callback: v => v.toLocaleString('fi-FI') + ' €' },
+        },
+      },
+    },
+  });
+
+  /* ── Graafi 2: Ebbinghaus unohtamiskäyrä ── */
+  // Pisteet: heti, 20min, 1h, 9h, 1pv, 2pv, 6pv, 1vk, 2vk, 1kk, 3kk
+  const ebbLabels = ['0', '20 min', '1 h', '9 h', '1 pv', '2 pv', '6 pv', '1 vk', '2 vk', '1 kk', '3 kk'];
+  const ebbData   = [100, 58, 44, 36, 33, 28, 25, 23, 20, 17, 15];
+  // Hajautettu kertaus: jokainen kertaus nostaa takaisin lähelle 100 %
+  const srData    = [100, 100, 100, 95, 99, 95, 99, 99, 95, 99, 97];
+
+  var _ebbinghaus_graafi = document.getElementById('ebbinghaus-graafi');
+  if (_ebbinghaus_graafi) new Chart(_ebbinghaus_graafi, {
+    type: 'line',
+    data: {
+      labels: ebbLabels,
+      datasets: [
+        {
+          label: 'Ilman kertausta',
+          data: ebbData,
+          borderColor: PINKKI,
+          borderWidth: 3,
+          pointRadius: 3,
+          backgroundColor: 'rgba(162,59,114,0.10)',
+          fill: true,
+          tension: 0.35,
+        },
+        {
+          label: 'Hajautettu kertaus',
+          data: srData,
+          borderColor: '#27ae60',
+          borderWidth: 2,
+          borderDash: [5, 3],
+          pointRadius: 3,
+          fill: false,
+          tension: 0.1,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        tooltip: {
+          callbacks: {
+            label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y} %`,
+          },
+        },
+        legend: { position: 'bottom', labels: { boxWidth: 14, font: { size: 12 } } },
+      },
+      scales: {
+        x: { title: { display: true, text: 'Aika oppimisesta' } },
+        y: {
+          min: 0, max: 105,
+          title: { display: true, text: '% muistissa' },
+          ticks: { callback: v => v + ' %' },
+        },
+      },
+    },
+  });
+
+  /* ── Graafi 3: Velkakierre 10 vuotta ── */
+  const velkaYrs = Array.from({length: 11}, (_, i) => i + ' v');
+
+  /* ── Graafi 4: Korkokierre 30 v, log-asteikko ── */
+  const kkYears = Array.from({length: 31}, (_, i) => i + ' v');
+  const debtGrowth = r => Array.from({length: 31}, (_, t) => Math.round(100000 * Math.pow(1 + r, t)));
+
+  var _korkokierre_graafi = document.getElementById('korkokierre-graafi');
+  if (_korkokierre_graafi) new Chart(_korkokierre_graafi, {
+    type: 'line',
+    data: {
+      labels: kkYears,
+      datasets: [
+        {
+          label: '5 % / vuosi (asuntolaina)',
+          data: debtGrowth(0.05),
+          borderColor: '#64b5f6',
+          borderWidth: 2,
+          pointRadius: 0,
+          fill: false,
+          tension: 0.3,
+        },
+        {
+          label: '10 % / vuosi (henkilöluotto)',
+          data: debtGrowth(0.10),
+          borderColor: '#1a237e',
+          borderWidth: 2,
+          pointRadius: 0,
+          fill: false,
+          tension: 0.3,
+        },
+        {
+          label: '20 % / vuosi (kulutusluotto)',
+          data: debtGrowth(0.20),
+          borderColor: '#b71c1c',
+          borderWidth: 3,
+          pointRadius: 0,
+          backgroundColor: 'rgba(183,28,28,0.07)',
+          fill: true,
+          tension: 0.3,
+        },
+        {
+          label: '30 % / vuosi (pikavippi)',
+          data: debtGrowth(0.30),
+          borderColor: '#4a0000',
+          borderWidth: 2,
+          borderDash: [6, 3],
+          pointRadius: 0,
+          fill: false,
+          tension: 0.3,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        tooltip: {
+          callbacks: {
+            label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y.toLocaleString('fi-FI')} €`,
+          },
+        },
+        legend: { position: 'bottom', labels: { boxWidth: 14, font: { size: 12 } } },
+      },
+      scales: {
+        x: { title: { display: true, text: 'Aika' }, ticks: { maxTicksLimit: 11 } },
+        y: {
+          type: 'logarithmic',
+          title: { display: true, text: '€ (log-asteikko)' },
+          ticks: {
+            callback: v => {
+              if ([100000, 200000, 500000, 1000000, 5000000, 10000000, 100000000].includes(v))
+                return (v >= 1000000 ? (v/1000000).toLocaleString('fi-FI') + ' M€' : (v/1000).toLocaleString('fi-FI') + ' k€');
+              return null;
+            },
+          },
+        },
+      },
+    },
+  });
+
+  // Ei maksuja: 100 000 × 1.20^t
+  const eiMaksuja = Array.from({length: 11}, (_, t) => Math.round(100000 * Math.pow(1.20, t)));
+
+  // Vähimmäismaksu 15 000 €/v (alle koron → velka kasvaa)
+  const minMaksu = [100000];
+  for (let t = 1; t <= 10; t++) minMaksu.push(Math.round(minMaksu[t-1] * 1.20 - 15000));
+
+  // Riittävä maksu 40 000 €/v → maksettu ~v. 4
+  const aggMaksu = [100000];
+  for (let t = 1; t <= 10; t++) aggMaksu.push(Math.max(0, Math.round(aggMaksu[t-1] * 1.20 - 40000)));
+
+  var _velka_graafi = document.getElementById('velka-graafi');
+  if (_velka_graafi) new Chart(_velka_graafi, {
+    type: 'line',
+    data: {
+      labels: velkaYrs,
+      datasets: [
+        {
+          label: 'Ei lyhennyksiä',
+          data: eiMaksuja,
+          borderColor: PINKKI,
+          borderWidth: 3,
+          pointRadius: 3,
+          backgroundColor: 'rgba(162,59,114,0.10)',
+          fill: true,
+          tension: 0.3,
+        },
+        {
+          label: 'Vähimmäismaksu 15 000 €/v',
+          data: minMaksu,
+          borderColor: PINKKI2,
+          borderWidth: 2,
+          borderDash: [4, 3],
+          pointRadius: 3,
+          fill: false,
+          tension: 0.3,
+        },
+        {
+          label: 'Riittävä maksu 40 000 €/v',
+          data: aggMaksu,
+          borderColor: '#27ae60',
+          borderWidth: 2,
+          pointRadius: 3,
+          fill: false,
+          tension: 0.3,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        tooltip: {
+          callbacks: {
+            label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y.toLocaleString('fi-FI')} €`,
+          },
+        },
+        legend: { position: 'bottom', labels: { boxWidth: 14, font: { size: 12 } } },
+      },
+      scales: {
+        x: { title: { display: true, text: 'Aika' } },
+        y: {
+          min: 0,
+          title: { display: true, text: 'Velka (€)' },
+          ticks: { callback: v => v.toLocaleString('fi-FI') + ' €' },
+        },
+      },
+    },
+  });
+})();
+
+})();
+</script>
 
   <script>
 
@@ -870,12 +1165,12 @@ flowchart TD
   <script>
 (function () {
   const IDS = ["paskuuttaminen","starve-the-beast","overton-ikkuna","saantelijan-kaappaus","rautainen-laki","valta-suojelee-valtaa","hajota-hallitse","tilastoilla-valehtelu","bkt-harha","astroturf","firehose-of-falsehood","manufactured-consent","betteridgen-laki","inokulointiteoria","backfire-effect","darvo","halo-efekti","konsensus-fetissi","omenoita-appelsiineja","blame-game","gaslighting","maalitolppien-siirtaminen","argumenttitulva","sunk-cost-harha","jarjestelman-puolustelu","simple-sabotage","kafka-ilmio","catch-22","goodhartin-laki","hippo-efekti","performatiivinen-lasnaolo","rituaalinen-raportointi","initiointirituaalit","portinvartija-kulttuuri","strateginen-osaamattomuus","fofo","sivustakatsojan-efekti","brooksin-laki","yhdeksanyhdeksan","hofstadterin-laki","kuolonmarssi","tekninen-velka","conways-laki","bikeshedding","scope-creep","korkoa-korolle","negatiivinen-korkoa","korkokierre","honeypot-huijaus","bait-and-switch","kaarmeoljy","ponzi-pyramidi","pump-and-dump","pig-butchering","ennakkomaksuhuijaus","badger-game","ilmainen-naytetyo","exposure-maksu","lowball-hinnoittelu","valittajan-skimmaus","tilipuristus","foot-in-the-door","door-in-the-face","hintaankkurointi","houkutinvaihtoehto","vastavuoroisuuden-ansa","sosiaalinen-todiste","painostusclose"];
-  const PREV = 'astroturf.html';
-  const NEXT = 'manufactured-consent.html';
+  const PREV = 'scope-creep.html';
+  const NEXT = 'negatiivinen-korkoa.html';
 
   function randomIlmio() {
     let id;
-    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'firehose-of-falsehood');
+    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'korkoa-korolle');
     window.location.href = id + '.html';
   }
   window.randomIlmio = randomIlmio;

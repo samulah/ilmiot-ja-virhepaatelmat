@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <title>Firehose of Falsehood — valheiden paloletku</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+  <script>mermaid.initialize({ startOnLoad: true, themeVariables: { fontSize: '12px' } });</script>
+  <style>
+    .mermaid svg text { font-size: 12px !important; }
+    body {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+    .ilmio {
+      margin-bottom: 2.5rem;
+      border-radius: 10px;
+      border: 1px solid #e0e4e8;
+      border-top: 5px solid #c0392b;
+      padding: 1.8rem 2rem 2rem;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+    .ilmio h2 {
+      margin-top: 0;
+    }
+    .ilmio-tag {
+      display: inline-block;
+      font-size: 0.75em;
+      background: #c0392b;
+      color: #fff;
+      border-radius: 3px;
+      padding: 0.2em 0.6em;
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .osio {
+      margin-bottom: 2.5rem;
+    }
+    .osio h2 {
+      border-bottom: 3px solid #c0392b;
+      padding-bottom: 0.4rem;
+      margin-bottom: 1.2rem;
+      color: #2c3e50;
+    }
+    .osio h3 {
+      color: #c0392b;
+      margin-top: 1.5rem;
+      margin-bottom: 0.4rem;
+    }
+    .takaisin {
+      display: inline-block;
+      margin-bottom: 2rem;
+      color: #2980b9;
+      text-decoration: none;
+      font-size: 0.9em;
+    }
+    .takaisin:hover { text-decoration: underline; }
+
+    /* Vastakeino-kortit */
+    .vastakortti {
+      background: #fff;
+      border: 1px solid #e0e4e8;
+      border-left: 5px solid #27ae60;
+      border-radius: 6px;
+      padding: 1.2rem 1.4rem;
+      margin-bottom: 1.2rem;
+    }
+    .vastakortti h4 {
+      margin: 0 0 0.5rem;
+      color: #1a6b3c;
+      font-size: 1em;
+    }
+    .vastakortti p {
+      margin: 0;
+      font-size: 0.95em;
+    }
+    .vastakortti.anonyymi {
+      border-left-color: #8e44ad;
+    }
+    .vastakortti.anonyymi h4 { color: #6c3483; }
+
+    .kontekstipalkki {
+      background: #fdf0f0;
+      border-left: 4px solid #c0392b;
+      border-radius: 0 6px 6px 0;
+      padding: 1rem 1.2rem;
+      margin: 1rem 0;
+      font-size: 0.95em;
+    }
+
+    .strategia-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    @media (max-width: 600px) {
+      .strategia-grid { grid-template-columns: 1fr; }
+    }
+
+    .strategia-kortti {
+      background: #f8f9fa;
+      border: 1px solid #dee2e6;
+      border-radius: 8px;
+      padding: 1rem 1.2rem;
+    }
+    .strategia-kortti h4 {
+      margin: 0 0 0.4rem;
+      font-size: 0.95em;
+      color: #2c3e50;
+    }
+    .strategia-kortti p {
+      margin: 0;
+      font-size: 0.88em;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <a class="takaisin" href="ilmiot.html">← Takaisin ilmiöihin</a>
+
+  <h1 style="color:#c0392b; margin-bottom:0.3rem;">Firehose of falsehood</h1>
+  <p style="color:#555; margin-top:0; font-size:1.05em;"><em>Valheiden paloletku — tai yksinkertaisesti: aihepiiriin katsomaton spämmi</em></p>
+
+  <!-- ============================================================ -->
+  <div class="osio">
+    <h2>Mistä on kyse</h2>
+
+    <p>RAND Corporation dokumentoi vuonna 2016 Venäjän valtiomedialle ominaisen propagandatekniikan, jolle he antoivat nimen <em>Firehose of Falsehood</em>. Perinteinen propaganda yrittää olla uskottavaa — tämä tekniikka hylkää uskottavuuden kokonaan ja korvaa sen <strong>volyymilla ja nopeudella</strong>.</p>
+
+    <p>Neljä tunnusmerkkiä:</p>
+    <ul>
+      <li><strong>Suuri volyymi</strong> — jatkuva tulva väitteitä, joihin on mahdoton vastata kaikkiin</li>
+      <li><strong>Useita kanavia samanaikaisesti</strong> — uutiset, some, viihdesivu, "asiantuntijat"</li>
+      <li><strong>Ei sitoutumista totuuteen</strong> — ristiriitaiset väitteet samanaikaisesti, täyskäännökset ilman häpeää</li>
+      <li><strong>Ei sitoutumista realismiin</strong> — tarkoitus ei ole vakuuttaa vaan hämmentää ja uuvuttaa</li>
+    </ul>
+
+    <div class="mermaid">
+flowchart TD
+  T["Tavoite: ei vakuuttaa\nvaan hämmentää"] --> V["Suuri volyymi\nväitteitä"]
+  V --> B["Osa väitteistä on totta\n→ sekoittuu valheisiin"]
+  V --> Ri["Ristiriitaisia versioita\nsamasta tapahtumasta"]
+  B --> H["Yleisö ei tiedä\nmitä uskoa"]
+  Ri --> H
+  H --> E["'Kaikki valehtelee'\n→ luottamus kaikkeen\nromahtaa"]
+  E --> F["Valta hyötyy:\nepäilevä yleisö\nei mobilisoi muutosta"]
+  style T fill:#fdf0f0,stroke:#c0392b
+  style F fill:#fdf0f0,stroke:#c0392b
+  style E fill:#fff3cd,stroke:#f39c12
+    </div>
+    <p style="font-size:0.85em; color:#777; text-align:center; margin-top:0.3rem;">Firehose of falsehood: tavoite ei ole saada ihmisiä uskomaan valheita — vaan saada heidät lopettamaan kaiken uskomisen.</p>
+
+    <div class="huomiolaatikko">
+      <strong>Miksi tämä toimii:</strong> Faktojen tarkistaminen vaatii aikaa ja resursseja. Valheen levittäminen on nopeampaa kuin sen kumoaminen. RAND-tutkijoiden havainto: vaikka yksittäinen väite kumottaisiin, volyymi kokonaisuutena tekee tehtävänsä — yleisö väsyy ja turhautuu.
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="osio">
+    <h2>Käytännössä: se on spämmiä — aihepiiristä riippumatta</h2>
+
+    <p>RAND:n alkuperäinen analyysi kuvasi Venäjän valtiomediaa. <strong>Sama rakenne toimii missä tahansa kontekstissa</strong> ja kenen tahansa käytössä. Firehose of falsehood ei ole propagandalaji — se on viestintätaktiikka. Se toimii politiikassa, yritysmaailmassa, somekiistoissa ja yksityiselämässä.</p>
+
+    <div class="kontekstipalkki">
+      <strong>Yksinkertaistettu määritelmä:</strong> Jos joku tuottaa niin paljon väitteitä, kysymyksiä, syytöksiä tai ristiriitaisia lausuntoja, että niihin kaikkiin vastaaminen on mahdotonta — kyseessä on Firehose of Falsehood. Spämmiä, jonka aihe vaihtuu mutta rakenne pysyy samana.
+    </div>
+
+    <p>Missä rakenne näkyy:</p>
+
+    <div class="strategia-grid">
+      <div class="strategia-kortti">
+        <h4>Poliittinen some</h4>
+        <p>Trollit tai organisoidut tilit tulvivat aihetunnisteita vastakkaisia näkemyksiä täynnä olevilla postauksilla. Tarkoitus ei ole voittaa väittelyä vaan tehdä siitä niin uuvuttavaa, ettei kukaan jaksa osallistua.</p>
+      </div>
+      <div class="strategia-kortti">
+        <h4>Henkilökohtainen häirintä</h4>
+        <p>Kohde saa päivässä kymmeniä viestejä, jotka sisältävät keskenään ristiriitaisia syytöksiä. Vaikka hän kumoaisi jokaisen, uusia tulee jatkuvasti — vastaaminen kuluttaa häntä enemmän kuin hyökkääjää.</p>
+      </div>
+      <div class="strategia-kortti">
+        <h4>Yritysviestintä kriisissä</h4>
+        <p>Yritys julkaisee peräkkäin useita ristiriitaisia selityksiä skandaalista. Toimittajat ja yleisö eivät enää tiedä, mikä on virallinen kanta — ja jotkut väsyvät kysymään.</p>
+      </div>
+      <div class="strategia-kortti">
+        <h4>Kommenttiosastot ja foorumit</h4>
+        <p>Yksittäinen käyttäjä tai koordinoitu ryhmä syöttää niin paljon vastauksia, että alkuperäinen asiallinen keskustelu hautautuu. Näyttää vilkkaalta — mutta on käytännössä häirintää.</p>
+      </div>
+    </div>
+
+    <p>Yhteinen rakenne kaikissa: <strong>volyymi on ase</strong>. Sisältö on toissijaista. Se voi olla valheita, puolitotuuksia, liioitteluja, kysymyksiä ilman vastauksia tai keskenään ristiriitaisia faktoja — pääasia on, että niitä on niin paljon, ettei kukaan pysty vastaamaan niihin kaikkiin ilman huomattavaa ajankäyttöä.</p>
+
+    <h3>Ei vaadi salaliittoa — voi syntyä myös ilman suunnittelua</h3>
+
+    <p>RAND:n alkuperäinen kuvaus oletti tietoisen, organisoidun toimijan — valtiomedia, koordinoitu trolliarmeija. Sama vaikutus syntyy <strong>ilman organisointia</strong>.</p>
+
+    <p>Kun tarpeeksi moni ihminen jakaa omasta mielestään aiheellisia syytöksiä, mielipiteitä tai kysymyksiä samasta kohteesta samaan aikaan, informaatiotulva on rakenteeltaan identtinen koordinoidun hyökkäyksen kanssa — vaikka kukaan ei olisi suunnitellut mitään. Jokainen uskoo toimivansa oikein. Yhdessä he tuottavat spämmiä.</p>
+
+    <p>Se toimii myös <strong>alitajuisesti</strong>: ihminen, joka on vahvasti jonkin asian puolesta tai sitä vastaan, tuottaa luontaisesti enemmän sisältöä aiheesta kuin neutraali ihminen. Hän ei strategisoi volyymilla — hän vain kokee asian tärkeäksi. Kun tällaisia ihmisiä on paljon, Firehose of Falsehood syntyy ilman ainuttakaan tietoista päätöstä.</p>
+
+    <div class="kontekstipalkki">
+      <strong>Käytännön seuraus:</strong> Jos joku syyttää sinua "koordinoidusta operaatiosta" tai "trolliarmeijasta", se ei välttämättä ole totta — mutta se ei myöskään tarkoita, että ongelmaa ei ole. Koordinoimaton joukko voi tuottaa saman vaikutuksen kuin koordinoitu. Ja toisinpäin: koordinoidun operaation tunnistaminen ei edellytä todisteen löytämistä salaliitosta — riittää, että rakenne on siellä.
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="osio">
+    <h2>Miten tekniikka vaikuttaa vastaanottajaan</h2>
+
+    <h3>Kognitiivinen ylikuormitus</h3>
+    <p>Ihmisen kriittinen ajattelu vaatii energiaa. Kun väitteitä tulee enemmän kuin ehtii käsitellä, aivot alkavat oikoa: hyväksyvät helpompia selityksiä, lakkaavat kyseenalaistamasta tai vetäytyvät kokonaan. Tätä kutsutaan <em>päätöksenteon väsymykseksi</em> (decision fatigue).</p>
+
+    <h3>Totuuden epäsuora heikentyminen</h3>
+    <p>Kun informaatioympäristö on kyllästetty ristiriitaisilla väitteillä, "kaikki valehtelee" -asenne alkaa tuntua järkevältä. Väitteet eivät ole yhtä hyvin perusteltuja — mutta yleisö on lakannut erottamasta niitä toisistaan.</p>
+
+    <h3>Hyökkääjän etu</h3>
+    <p>Epäsymmetria on rakenteellinen: hyökkääjä käyttää minuutteja yhden väitteen tuottamiseen, kohde käyttää tunteja sen kumoamiseen. Volyymi tekee tästä epäsuhteesta strategisen edun.</p>
+
+    <div class="vaaralatikko">
+      <strong>Seuraus:</strong> Firehose of falsehood ei useimmiten tavoittele mielipiteenmuutosta — se tavoittelee <em>toimintakyvyttömyyttä</em>. Ihminen, joka ei tiedä mitä uskoa, ei organisoidu, ei äänestä, ei protestoi, ei tue. Epävarmuus on passivoivaa.
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="osio">
+    <h2>Mitä tekniikan käyttäjä hyötyy — tietoisesti tai ei</h2>
+
+    <p>Firehose of Falsehood on viestintästrategiana epäsymmetrinen: halvempi tuottaa kuin torjua. Tämä epäsuhta selittää, miksi tekniikkaa käytetään — myös tiedostamatta.</p>
+
+    <div class="vastakortti" style="border-left-color: #e67e22;">
+      <h4 style="color: #935116;">Ajan ja energian kuluttaminen kohteelta</h4>
+      <p>Jokainen väite, johon kohde vastaa, vie häneltä aikaa ja kognitiivista kapasiteettia. Käyttäjä voi tuottaa kymmenen väitettä siinä ajassa kuin kohde kumoaa yhden. Kohdetta ei tarvitse voittaa — riittää, että hänet pidetään kiireisenä ja väsyneenä.</p>
+    </div>
+
+    <div class="vastakortti" style="border-left-color: #e67e22;">
+      <h4 style="color: #935116;">Sivustakatsojien sekoittaminen</h4>
+      <p>Vaikka aktiiviset osallistujat tietäisivät mitä tapahtuu, passiiviset seuraajat näkevät vain kohinaa. Riittävästi ristiriitaisia väitteitä tekee tilanteesta niin epäselvän, että neutraali katsoja alkaa uskoa, ettei asialla ole selvää totuutta — tai ettei se kosketa häntä.</p>
+    </div>
+
+    <div class="vastakortti" style="border-left-color: #e67e22;">
+      <h4 style="color: #935116;">Oman aseman suojaaminen ilman puolustautumista</h4>
+      <p>Jos kohde on esittänyt jonkin perustellun väitteen, siihen suoraan vastaaminen tarkoittaa sen tunnustamista vakavaksi. Volyymistrategia kiertää tämän: käyttäjä ei koskaan joudu suoraan puolustamaan asemaansa, koska keskustelu on aina jo siirtynyt uuteen väitteeseen.</p>
+    </div>
+
+    <div class="vastakortti" style="border-left-color: #e67e22;">
+      <h4 style="color: #935116;">Maineen heikentäminen ilman yhtä selkeää syytöstä</h4>
+      <p>Yksittäinen syytös on helppo torjua tai todeta perusteettomaksi. Jatkuva epämääräisten väitteiden virta ei ole — se jättää epäilyn mieleen vaikka mikään yksittäinen väite ei pitäisi. Riittää, että "jotain on, koska niin paljon puhutaan".</p>
+    </div>
+
+    <div class="vastakortti" style="border-left-color: #e67e22;">
+      <h4 style="color: #935116;">Tiedostamaton hyöty: purkautuminen ja yhteisöllisyys</h4>
+      <p>Koordinoimattomassa Firehosessa yksittäinen käyttäjä ei ajattele strategisesti. Hän saa tunnepurkauksen, kokee toimivansa oikein ja saa vahvistusta samanhenkisiltä — sosiaaliset palkinnot ovat välittömiä. Rakenne, joka hyödyttää kokonaisuutena, syntyy sivutuotteena yksittäisten ihmisten tunnereaktioista.</p>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="osio">
+    <h2>Mitä sinä hyödyt tämän tietämisestä</h2>
+
+    <p>Firehose of Falsehood -käsitteen tunteminen muuttaa tapaa, jolla havainnoit somea ja julkista keskustelua.</p>
+
+    <div class="vastakortti" style="border-left-color: #2980b9;">
+      <h4 style="color: #1a5276;">Tunnistat milloin sinua yritetään uuvuttaa — ei vakuuttaa</h4>
+      <p>Kun kohtaat tulvan väitteitä, kysymyksiä tai syytöksiä, tunnistat rakenteen ennen kuin reagoit sisältöön. Kysymys ei ole "onko tämä väite totta" vaan "onko tämä volyymi tarkoitettu estämään minua ajattelemasta selvästi". Tieto katkaisee refleksin vastata kaikkeen.</p>
+    </div>
+
+    <div class="vastakortti" style="border-left-color: #2980b9;">
+      <h4 style="color: #1a5276;">Et kuluta energiaasi tehottomasti</h4>
+      <p>Ihminen, joka ei tunnista tekniikkaa, yrittää kumota jokaisen väitteen. Ihminen, joka tunnistaa sen, valitsee missä käyttää aikaansa. Tämä on merkittävä ero jaksamisessa — erityisesti jos olet itse jonkin kiistan kohteena.</p>
+    </div>
+
+    <div class="vastakortti" style="border-left-color: #2980b9;">
+      <h4 style="color: #1a5276;">Näet koordinoinnin merkit — myös koordinoimattomassa toiminnassa</h4>
+      <p>Koska Firehose syntyy ilman salaliittoa, et tarvitse todistetta organisoinnista reagoidaksesi. Rakenne riittää tunnistamiseen. Samalla vältät virheellisen syytöksen koordinoinnista tilanteessa, jossa kyse on vain samanhenkisistä ihmisistä.</p>
+    </div>
+
+    <div class="vastakortti" style="border-left-color: #2980b9;">
+      <h4 style="color: #1a5276;">Voit selittää ilmiön muille ymmärrettävästi</h4>
+      <p>Sanalle "trollaus" tai "häirintä" on helppo vastata kiistämällä tarkoitus: "En ole trolli, olen vain eri mieltä." Firehose of Falsehood kuvaa rakenteen eikä tarkoitusta — se on vaikeampi kiistää, koska se on havaittavissa riippumatta siitä, mitä kukin osallistuja uskoo tekevänsä.</p>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="osio">
+    <h2>Miten taistella vastaan sosiaalisessa mediassa</h2>
+
+    <p>Vastakeinot jakautuvat sen mukaan, toimiiko omalla nimellä vai anonyymisti — roolit, riskit ja strategiat eroavat merkittävästi.</p>
+
+    <!-- OMALLA NIMELLÄ -->
+    <h3 style="border-top: 2px solid #27ae60; padding-top: 1rem; color: #1a6b3c;">Omalla nimellä toimiessa</h3>
+    <p>Omalla nimellä esiintyminen antaa uskottavuutta mutta altistaa henkilökohtaiselle hyökkäykselle. Strategia kannattaa rakentaa kestävyyden eikä yksittäisten taisteluvoittojen varaan.</p>
+
+    <div class="vastakortti">
+      <h4>Älä vastaa jokaiseen väitteeseen — valitse taistelut</h4>
+      <p>Firehose pakottaa kohteen käyttämään aikaansa. Jos vastaat kaikkeen, häviät resurssitaistelun. Valitse yksi tai kaksi selkeintä valetta ja kumoa ne hyvin — muiden huomiotta jättäminen ei tarkoita niiden hyväksymistä.</p>
+    </div>
+
+    <div class="vastakortti">
+      <h4>Nimeä tekniikka julkisesti</h4>
+      <p>Sen sijaan, että kumosit jokaisen väitteen erikseen, voit nimetä mitä tapahtuu: <em>"Huomaan, että tässä käytetään Firehose of Falsehood -taktiikkaa — tuotetaan niin paljon väitteitä, ettei niihin kaikkiin voi vastata. En aio pelata tätä peliä."</em> Tämä siirtää huomion sisällöstä rakenteeseen ja tekee tekniikasta näkyvän sivustakatsojille.</p>
+    </div>
+
+    <div class="vastakortti">
+      <h4>Puhu yleisölle, ei hyökkääjälle</h4>
+      <p>Firehose-tekniikan käyttäjä ei yleensä muuta mieltään — hänellä on agenda. Vastauksesi tarkoitus on sivustakatsojat, ei hyökkääjä. Kirjoita niin, että neutraali lukija ymmärtää mitä tapahtuu, ei niin, että voitat väittelyn.</p>
+    </div>
+
+    <div class="vastakortti">
+      <h4>Dokumentoi ja kerää todisteet</h4>
+      <p>Ota kuvakaappauksia ennen kuin viestit poistetaan. Koordinoitu toiminta (samanlaiset viestit usealta tililtä lyhyessä ajassa, ajoitus) voi osoittaa organisoinnin — tämä on tärkeää jos asiasta raportoidaan journalisteille, alustojen moderaattoreille tai viranomaisille.</p>
+    </div>
+
+    <div class="vastakortti">
+      <h4>Rakenna ennen kriisiä</h4>
+      <p>Uskottavuus, verkostot ja maine rakennetaan hiljaisina aikoina. Jos sinulla on jo luotettavien ihmisten verkosto, heidän tukensa kohinan keskellä on paljon arvokkaampaa kuin oman vastauksesi. Pyydä konkreettista tukea — tykkäyksiä, jakoja, julkista yhteisymmärrystä.</p>
+    </div>
+
+    <!-- ANONYYMISTI -->
+    <h3 style="border-top: 2px solid #8e44ad; padding-top: 1rem; color: #6c3483;">Anonyymisti toimiessa</h3>
+    <p>Anonyymius suojaa henkilökohtaiselta hyökkäykseltä mutta tuo omat haasteensa: uskottavuus rakennetaan eri tavalla, ja koordinaatio on vaikeampaa ilman pysyvää identiteettiä.</p>
+
+    <div class="vastakortti anonyymi">
+      <h4>Ylläpidä jatkuvaa identiteettiä — edes anonyymisti</h4>
+      <p>Täysin kertakäyttöiset tilit eivät rakenna uskottavuutta. Pysyvä nimimerkki, jolla on historia ja johdonmukaisuus, on huomattavasti vaikutusvaltaisempi kuin uusi tili joka kerta. Ihmiset luottavat johdonmukaisuuteen myös ilman oikeaa nimeä.</p>
+    </div>
+
+    <div class="vastakortti anonyymi">
+      <h4>Keskity rakenteen paljastamiseen sisältöväittelyn sijaan</h4>
+      <p>Anonyymina on vaikea kilpailla "asiantuntijuudella" — mutta kenellä tahansa on kyky osoittaa toistuvia kaavoja: <em>"Tämä sama väite on toistettu kahdeksan kertaa tänään viideltä eri tililtä"</em> on vahvempi kuin yksittäisen väitteen kumoaminen, koska se paljastaa koordinaation.</p>
+    </div>
+
+    <div class="vastakortti anonyymi">
+      <h4>Käytä primäärilähteitä, älä mielipiteitä</h4>
+      <p>Anonyymi tili, joka linkittää alkuperäislähteisiin (tutkimukset, viralliset dokumentit, alkuperäiset videot), on vaikeampi diskreditoida kuin tili, joka esittää omia tulkintojaan. Faktat puhuvat puolestaan — erityisesti silloin, kun puhuja on tuntematon.</p>
+    </div>
+
+    <div class="vastakortti anonyymi">
+      <h4>Tunnista milloin on parempi vaieta</h4>
+      <p>Anonyymius ei suojaa kaikilta riskeiltä — IP-osoitteet, kirjoitustyyli ja käyttäytymismallit voivat paljastaa sinut. Jos aihe on poliittisesti sensitiivinen tai hyökkääjällä on resursseja, harkitse mitkä taistelut ovat hintansa arvoisia. Vastaamatta jättäminen on joskus viisaampaa kuin vastaaminen.</p>
+    </div>
+
+    <div class="vastakortti anonyymi">
+      <h4>Koordinoi epämuodollisesti</h4>
+      <p>Yksi anonyymi ääni on helppo ohittaa. Ryhmä ihmisiä, jotka itsenäisesti (ilman koordinoitua operaatiota) reagoivat samaan asiaan samoin tavoin, on paljon vaikutusvaltaisempi. Tee omaa työtäsi hyvin — muut tekevät omansa.</p>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="osio">
+    <h2>Yleiset periaatteet — alustan koosta riippumatta</h2>
+
+    <div class="infolaatikko">
+      <strong>Inokulointipohjainen lähestymistapa</strong> on tehokkain vastatoimi — RAND-tutkijoiden mukaan. Kerro etukäteen, millaisia manipulaatiotekniikkoja on olemassa, <em>ennen kuin ne iskevät</em>. Ihminen, joka tietää tekniikasta, tunnistaa sen herkemmin. Ennakkovaroitus rakentaa resistenssiä paremmin kuin jälkikäteen korjaaminen.
+    </div>
+
+    <ul>
+      <li><strong>Älä toista valetta kumotaksesi sen</strong> — otsikossa toistuva väite jää mieleen vaikka artikkeli kumoaisi sen. Viittaa valheeseen epäsuorasti tai nimeä ensin totuus.</li>
+      <li><strong>Taloudellinen vastaus</strong> — yksinkertainen, selkeä kumoaminen on parempi kuin perusteellinen. Pitkät vastaukset näyttävät epävarmalta.</li>
+      <li><strong>Raportoi alustalle</strong> — koordinoitu häirintä ja valetilit rikkovat useimpien alustojen käyttöehtoja. Raportti ei aina johda toimiin, mutta massa-raportointi useammalta käyttäjältä lisää todennäköisyyttä.</li>
+      <li><strong>Pidä huolta omasta jaksamisestasi</strong> — Firehose-tekniikan sivu-efekti on uupumus. Rajoita altistumistasi. Et voi kumota kaikkea, eikä sinun tarvitse.</li>
+    </ul>
+
+    <div class="vaaralatikko">
+      <strong>Muista:</strong> Firehose of Falsehood -tekniikka on tehokkaimmillaan, kun kohde yrittää pelata hyökkääjän sääntöjen mukaan — vastaamalla kaikkeen, yksi kerrallaan. Tehokkain vastatoimi on muuttaa peliä: nimetä tekniikka, puhua yleisölle, rakentaa uskottavuutta hiljaisina aikoina ja valita taistelut viisaasti.
+    </div>
+  </div>
+
+  <p style="font-size:0.85em; color:#aaa; text-align:center; margin-top:3rem;">Osa <a href="ilmiot.html" style="color:#aaa;">Ilmiöitä — Miten valta toimii</a> -kokonaisuutta</p>
+
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Firehose of falsehood — valheiden paloletku — Ilmiöitä</title>
+  <title>Astroturf — keinotekoinen kansanliike — Ilmiöitä</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
   <script>mermaid.initialize({ startOnLoad: true, themeVariables: { fontSize: '12px' } });</script>
@@ -639,68 +639,64 @@
     </button>
   </div>
 
-  <div class="ilmio" id="firehose-of-falsehood">
-<div class="ilmio-tag">Ilmiö 11</div>
-<h2>Firehose of falsehood — valheiden paloletku</h2>
-<p>RAND Corporation dokumentoi vuonna 2016 Venäjän propagandatekniikan, jolle he antoivat nimen <em>Firehose of Falsehood</em>. Perinteinen propaganda yrittää olla uskottava — tämä tekniikka hylkää uskottavuuden kokonaan ja korvaa sen <strong>volyymilla ja nopeudella</strong>.</p>
-<p>Neljä tunnusmerkkiä:</p>
-<ul>
-<li><strong>Suuri volyymi</strong> — jatkuva tulva väitteitä, joihin on mahdoton vastata kaikkiin</li>
-<li><strong>Useita kanavia samanaikaisesti</strong> — uutiset, some, viihdesivu, "asiantuntijat"</li>
-<li><strong>Ei sitoutumista totuuteen</strong> — ristiriitaiset väitteet samanaikaisesti, täyskäännökset ilman häpeää</li>
-<li><strong>Ei sitoutumista realismiin</strong> — tarkoitus ei ole vakuuttaa vaan hämmentää ja uuvuttaa</li>
-</ul>
+  <div class="ilmio" id="astroturf">
+<div class="ilmio-tag">Ilmiö 10</div>
+<h2>Astroturf — keinotekoinen kansanliike</h2>
+<p>Astroturfing tarkoittaa korporaation, poliittisen toimijan tai muun organisoidun tahon rahoittamaa kampanjaa, joka naamioituu spontaaniksi kansanliikkeeksi. Nimi tulee AstroTurf-keinotekonurmesta: näyttää ruoholta mutta ei ole.</p>
+<p>Tavoite on luoda vaikutelma laajasta kansalaishuolesta tai -tuesta — ilman että todelliset rahoittajat näkyvät. Päätöksentekijä, joka näkee "tuhansia huolestuneita kansalaisia", toimii eri tavalla kuin nähdessään yhden teollisuuslobbarin.</p>
 <div class="mermaid">
 flowchart TD
-  T["Tavoite: ei vakuuttaa\nvaan hämmentää"] --&gt; V["Suuri volyymi\nväitteitä"]
-  V --&gt; B["Osa väitteistä on totta\n→ sekoittuu valheisiin"]
-  V --&gt; Ri["Ristiriitaisia versioita\nsamasta tapahtumasta"]
-  B --&gt; H["Yleisö ei tiedä\nmitä uskoa"]
-  Ri --&gt; H
-  H --&gt; E["'Kaikki valehtelet'\n→ luottamus kaikkeen\nromahtaa"]
-  E --&gt; F["Valta hyötyy:\nepäilevä yleisö\nei mobilisoi muutosta"]
-  style T fill:#fdf0f0,stroke:#c0392b
-  style F fill:#fdf0f0,stroke:#c0392b
-  style E fill:#fff3cd,stroke:#f39c12
+  R["Korporaatio tai\npoliittinen toimija\nrahoittaa salaa"] --&gt; J["Julkiset\n'kansalaisjärjestöt'\nja 'asiantuntijat'"]
+  R --&gt; K["Kirjekampanjat,\npetitiot,\nsometilit"]
+  R --&gt; M["Mediajulkaisut\n'riippumattomilta'\najatushaudoista"]
+  J --&gt; V["Vaikutelma:\nlaaja kansalaistuki\ntai -vastustus"]
+  K --&gt; V
+  M --&gt; V
+  V --&gt; P["Poliitikko\ntoimii 'kansan\ntahdon' mukaan"]
+  style R fill:#fdf0f0,stroke:#c0392b
+  style V fill:#fff3cd,stroke:#f39c12
     </div>
-<p class="kaavio-selitys">Firehose of falsehood: tavoite ei ole saada ihmisiä uskomaan valheita — vaan saada heidät lopettamaan kaiken uskomisen.</p>
+<p class="kaavio-selitys">Astroturfing: rahoittaja pysyy piilossa — näkyviin tulee vain "kansa".</p>
+<div class="infolaatikko">
+<strong>Historiallisia esimerkkejä:</strong>
+<ul style="margin:0.5em 0 0;">
+<li><strong>Tobacco Institute (1958–):</strong> Tupakkateollisuus perusti "tutkimuslaitoksia" ja "terveysjärjestöjä" epäilyn kylvämiseksi tupakan vaarallisuudesta.</li>
+<li><strong>Global Climate Coalition (1989–2002):</strong> Fossiiliteollisuuden rahoittama järjestö, joka kampanjoi ilmastonmuutostutkimusta vastaan "tieteellisten epävarmuuksien" nimissä.</li>
+<li><strong>"Harry and Louise" -mainoskampanja (1993):</strong> Vakuutusteollisuuden rahoittama kampanja, joka torpedoi Clintonin terveydenhuoltouudistuksen esittämällä sen "tavalliset amerikkalaiset" -hahmot huolissaan.</li>
+</ul>
+</div>
 <div class="huomiolaatikko">
-<strong>Miksi tämä toimii:</strong> Faktojen tarkistaminen vaatii aikaa ja resursseja. Valheen levittäminen on nopeampaa kuin sen kumoaminen. RAND-tutkijoiden havainto: vaikka yksittäinen väite kumottaisiin, volyymi kokonaisuutena tekee tehtävänsä — yleisö väsyy ja turhautuu.
+<strong>Tunnistaminen:</strong> Kysy aina — kuka rahoittaa tätä järjestöä? Onko "kansalaiskampanjalla" ammattimainen PR-toimisto? Löytyykö jäsenistö vai vain toimipiste ja verkkosivut? Avoimuusvaatimukset (lobbarirekisterit, yhdistysten tilinpäätökset) ovat tärkeä vastakeino.
     </div>
-<p>Tekniikka ei ole yksinomaan venäläinen — RAND:n analyysi kuvaa Venäjän valtiomediaa, mutta sama rakenne tunnistetaan muissakin konteksteissa: poliittisissa kampanjoissa, yritysten kriisiviestinnässä ja sosiaalisessa mediassa yleisesti. Kun informaatioympäristö on kyllästetty, <em>instituutioihin kohdistuva luottamus heikkenee</em> — ja se hyödyttää niitä, joilla on institutionaalinen valta mutta huono maine.</p>
-<div class="vaaralatikko">
-<strong>Vastakeino:</strong> RAND suosittelee "älä toista, älä vahvista" -periaatetta: yksittäisten väitteiden kumoaminen voi vahvistaa niitä (ks. <em>backfire effect</em>). Tehokkaampi tapa on rakentaa yleinen medialukutaito ja inokulointipohjainen viestintä — varoittaa tekniikasta etukäteen, ennen kuin se osuu. (Ks. <a href="#inokulointiteoria">Inokulointiteoria</a>.)
-    </div>
-<p style="margin-bottom:0;"><a href="firehose-of-falsehood.html">→ Lue lisää: Firehose of Falsehood omalla sivullaan</a> — käytännön esimerkit, miten tekniikka näkyy somessa ja miten taistella vastaan omalla nimellä tai anonyymisti.</p>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
 <div class="lue-lisaa-rivi">
 <span class="lue-lisaa-tyyppi">Kirjoja</span>
 <ul class="lue-lisaa-lista">
-<li><cite>Nothing Is True and Everything Is Possible</cite> — Peter Pomerantsev (2014)</li>
-<li><cite>Active Measures</cite> — Thomas Rid (2020)</li>
-<li><cite>LikeWar</cite> — P.W. Singer &amp; Emerson T. Brooking (2018)</li>
+<li><cite>Merchants of Doubt</cite> — Naomi Oreskes &amp; Erik M. Conway (2010)</li>
+<li><cite>Trust Us, We're Experts</cite> — Sheldon Rampton &amp; John Stauber (2001)</li>
 </ul>
 </div>
 <div class="lue-lisaa-rivi">
 <span class="lue-lisaa-tyyppi">Verkossa</span>
 <ul class="lue-lisaa-lista">
-<li><a href="https://en.wikipedia.org/wiki/Firehose_of_falsehood" target="_blank" rel="noopener">Wikipedia: Firehose of falsehood (englanniksi)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Astroturfing" target="_blank" rel="noopener">Wikipedia: Astroturfing (englanniksi)</a></li>
+<li><a href="https://www.sourcewatch.org/index.php/Astroturf" target="_blank" rel="noopener">SourceWatch — astroturf-kampanjoiden tietokanta (englanniksi)</a></li>
 </ul>
 </div>
 </div>
 </div>
 
   <nav class="kortti-nav">
-    <a class="kortti-nav-btn" href="astroturf.html">← Astroturf — keinotekoinen kansanliike</a>
+    <a class="kortti-nav-btn" href="bkt-harha.html">← BKT-harha — Irlannin paradoksi</a>
     <div class="kortti-nav-center">
-      <span class="kortti-nav-laskuri">11 / 68</span>
+      <span class="kortti-nav-laskuri">10 / 68</span>
       <span class="kortti-nav-vinkki">
         <kbd>&#8592;</kbd> <kbd>&#8594;</kbd> selaa &middot; <kbd>R</kbd> satunnainen
         <span class="touch-vinkki">&nbsp;· swipe &#8592;&#8594; tai &#8595; random</span>
       </span>
     </div>
-    <a class="kortti-nav-btn" href="manufactured-consent.html">Manufactured consent — suostumus tehdään →</a>
+    <a class="kortti-nav-btn" href="firehose-of-falsehood.html">Firehose of falsehood — valheiden paloletku →</a>
   </nav>
 
   
@@ -870,12 +866,12 @@ flowchart TD
   <script>
 (function () {
   const IDS = ["paskuuttaminen","starve-the-beast","overton-ikkuna","saantelijan-kaappaus","rautainen-laki","valta-suojelee-valtaa","hajota-hallitse","tilastoilla-valehtelu","bkt-harha","astroturf","firehose-of-falsehood","manufactured-consent","betteridgen-laki","inokulointiteoria","backfire-effect","darvo","halo-efekti","konsensus-fetissi","omenoita-appelsiineja","blame-game","gaslighting","maalitolppien-siirtaminen","argumenttitulva","sunk-cost-harha","jarjestelman-puolustelu","simple-sabotage","kafka-ilmio","catch-22","goodhartin-laki","hippo-efekti","performatiivinen-lasnaolo","rituaalinen-raportointi","initiointirituaalit","portinvartija-kulttuuri","strateginen-osaamattomuus","fofo","sivustakatsojan-efekti","brooksin-laki","yhdeksanyhdeksan","hofstadterin-laki","kuolonmarssi","tekninen-velka","conways-laki","bikeshedding","scope-creep","korkoa-korolle","negatiivinen-korkoa","korkokierre","honeypot-huijaus","bait-and-switch","kaarmeoljy","ponzi-pyramidi","pump-and-dump","pig-butchering","ennakkomaksuhuijaus","badger-game","ilmainen-naytetyo","exposure-maksu","lowball-hinnoittelu","valittajan-skimmaus","tilipuristus","foot-in-the-door","door-in-the-face","hintaankkurointi","houkutinvaihtoehto","vastavuoroisuuden-ansa","sosiaalinen-todiste","painostusclose"];
-  const PREV = 'astroturf.html';
-  const NEXT = 'manufactured-consent.html';
+  const PREV = 'bkt-harha.html';
+  const NEXT = 'firehose-of-falsehood.html';
 
   function randomIlmio() {
     let id;
-    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'firehose-of-falsehood');
+    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'astroturf');
     window.location.href = id + '.html';
   }
   window.randomIlmio = randomIlmio;
