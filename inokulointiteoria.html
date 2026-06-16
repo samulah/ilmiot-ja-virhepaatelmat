@@ -5,8 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Inokulointiteoria — mentaalinen rokotus — Ilmiöitä</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap">
   <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
-  <script>mermaid.initialize({ startOnLoad: true, themeVariables: { fontSize: '12px' } });</script>
+  <script>mermaid.initialize({ startOnLoad: true, theme: 'base', themeVariables: { fontSize: '12px', primaryColor: '#FBF5E0', primaryTextColor: '#1A1100', primaryBorderColor: '#C9A84C', lineColor: '#8B6914', secondaryColor: '#F5F0E5', tertiaryColor: '#FDFAF2', mainBkg: '#FBF5E0', nodeBorder: '#C9A84C', clusterBkg: '#F5F0E5', titleColor: '#3A2000', edgeLabelBackground: '#FDFAF2' } });</script>
   
   <style>
 
@@ -18,7 +20,7 @@
     }
     .ilmio {
       margin-bottom: 2.5rem;
-      border-radius: 10px;
+      border-radius: 0;
       border: 1px solid #e0e4e8;
       border-top: 5px solid #2c3e50;
       padding: 1.8rem 2rem 2rem;
@@ -39,7 +41,7 @@
       font-size: 0.75em;
       background: #2c3e50;
       color: #fff;
-      border-radius: 3px;
+      border-radius: 0;
       padding: 0.2em 0.6em;
       margin-bottom: 0.8rem;
       letter-spacing: 0.04em;
@@ -191,7 +193,7 @@
       padding: 1em 1.2em;
       margin: 1.5rem 0;
       font-size: 1em;
-      border-radius: 0 6px 6px 0;
+      border-radius: 0;
     }
     .vaaralatikko {
       background: #fdf0f0;
@@ -199,7 +201,7 @@
       padding: 1em 1.2em;
       margin: 1.5rem 0;
       font-size: 1em;
-      border-radius: 0 6px 6px 0;
+      border-radius: 0;
     }
     .infolaatikko {
       background: #f0f6fd;
@@ -207,13 +209,13 @@
       padding: 1em 1.2em;
       margin: 1.5rem 0;
       font-size: 1em;
-      border-radius: 0 6px 6px 0;
+      border-radius: 0;
     }
     .sabotaasi-lista {
       background: #1e1e1e;
       color: #d4d4d4;
       padding: 1.2em 1.5em;
-      border-radius: 6px;
+      border-radius: 0;
       font-family: monospace;
       font-size: 0.88em;
       line-height: 1.8;
@@ -270,7 +272,7 @@
     code {
       background: #eee;
       padding: 0.1em 0.4em;
-      border-radius: 3px;
+      border-radius: 0;
       font-size: 0.9em;
     }
     .halo-grid {
@@ -281,7 +283,7 @@
     }
     .halo-puoli {
       flex: 1 1 220px;
-      border-radius: 8px;
+      border-radius: 0;
       padding: 1.2rem 1.4rem;
     }
     .halo-puoli.halo-side {
@@ -313,7 +315,7 @@
     .halo-signaali span {
       font-size: 0.78em;
       padding: 0.2em 0.6em;
-      border-radius: 3px;
+      border-radius: 0;
     }
     .halo-side .halo-signaali span { background: #fff8e1; border: 1px solid #f9a825; }
     .stigma-side .halo-signaali span { background: #ede7f6; border: 1px solid #9c27b0; }
@@ -329,7 +331,7 @@
       text-transform: uppercase;
       background: #2e86ab;
       color: #fff;
-      border-radius: 3px;
+      border-radius: 0;
       padding: 0.2em 0.7em;
       margin-bottom: 1rem;
     }
@@ -337,7 +339,7 @@
     .graafi-wrapper {
       background: #f4fafd;
       border: 1px solid #c8e0ef;
-      border-radius: 8px;
+      border-radius: 0;
       padding: 1.2rem 1rem 0.6rem;
       margin: 1.5rem 0;
       position: relative;
@@ -371,7 +373,7 @@
       flex: 1 1 120px;
       background: #fff;
       border: 1px solid #c8e0ef;
-      border-radius: 6px;
+      border-radius: 0;
       padding: 0.8rem 1rem;
       text-align: center;
     }
@@ -420,9 +422,9 @@
       font-weight: 700;
       letter-spacing: -0.01em;
       padding-bottom: 0.55rem;
-      border-bottom: 2px solid #e0ddd7;
+      border-bottom: 2px solid #D4C090;
       margin-bottom: 0.4rem;
-      color: #1a2332;
+      color: #1A1100;
     }
     .paasisu > p:first-of-type {
       color: #5a5a5a;
@@ -444,7 +446,7 @@
       gap: 0.3rem;
       background: transparent;
       border: 1px solid #dddbd4;
-      border-radius: 20px;
+      border-radius: 0;
       padding: 0.26em 0.72em 0.26em 0.55em;
       font-size: 0.72em;
       color: #aaa;
@@ -463,8 +465,8 @@
       position: absolute;
       top: calc(100% + 9px);
       right: 0;
-      background: #1e2b3c;
-      border-radius: 10px;
+      background: #1C1400;
+      border-radius: 0;
       padding: 0.55rem 0.65rem;
       display: flex;
       gap: 0.15rem;
@@ -483,7 +485,7 @@
       right: 13px;
       width: 9px;
       height: 9px;
-      background: #1e2b3c;
+      background: #1C1400;
       transform: rotate(45deg);
       border-radius: 2px;
     }
@@ -498,7 +500,7 @@
       justify-content: center;
       width: 33px;
       height: 33px;
-      border-radius: 7px;
+      border-radius: 0;
       text-decoration: none;
       color: rgba(255,255,255,0.72);
       cursor: pointer;
@@ -532,7 +534,7 @@
       gap: 0.5rem;
       flex-wrap: wrap;
     }
-    .kortti-breadcrumb a { color: #2980b9; text-decoration: none; }
+    .kortti-breadcrumb a { color: #8B6914; text-decoration: none; }
     .kortti-breadcrumb a:hover { text-decoration: underline; }
     .kortti-breadcrumb-sep { color: #ccc; }
     .kortti-breadcrumb-kat { color: #666; }
@@ -541,20 +543,20 @@
       display: inline-flex;
       align-items: center;
       gap: 0.35rem;
-      background: #2c3e50;
+      background: #8B6914;
       color: #fff;
       border: none;
-      border-radius: 6px;
+      border-radius: 0;
       padding: 0.3rem 0.75rem;
       font-size: 0.82em;
-      font-family: inherit;
+      font-family: 'DM Sans', inherit;
       font-weight: 600;
       cursor: pointer;
       text-decoration: none;
       transition: background 0.12s;
       white-space: nowrap;
     }
-    .kortti-random-btn:hover { background: #1a252f; }
+    .kortti-random-btn:hover { background: #1C1400; }
     .kortti-random-btn:active { transform: scale(0.97); }
 
     .kortti-nav {
@@ -571,7 +573,7 @@
       background: #f5f4f0;
       color: #333;
       border: 1px solid #ddd;
-      border-radius: 6px;
+      border-radius: 0;
       padding: 0.5rem 0.9rem;
       font-size: 0.85em;
       text-decoration: none;
@@ -582,7 +584,7 @@
       text-overflow: ellipsis;
       white-space: nowrap;
     }
-    .kortti-nav-btn:hover { background: #eae8e2; }
+    .kortti-nav-btn:hover { background: #e8f4ee; }
     .kortti-nav-btn.disabled { opacity: 0.35; pointer-events: none; }
     .kortti-nav-center {
       display: flex;
@@ -591,7 +593,7 @@
       gap: 0.3rem;
       flex-shrink: 0;
     }
-    .kortti-nav-laskuri { color: #999; font-size: 0.78em; white-space: nowrap; }
+    .kortti-nav-laskuri { color: #999; font-size: 0.78em; white-space: nowrap; font-family: 'DM Sans', sans-serif; }
     .kortti-nav-vinkki {
       font-size: 0.7em;
       color: #ccc;
@@ -600,7 +602,7 @@
       background: #f0ede8;
       border: 1px solid #ddd;
       border-bottom-width: 2px;
-      border-radius: 3px;
+      border-radius: 0;
       padding: 0.05em 0.35em;
       font-family: inherit;
       color: #888;
