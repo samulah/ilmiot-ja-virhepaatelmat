@@ -13,4 +13,4 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-Sitemap: https://kendom.fi/ilmiöt/sitemap.xml
+Sitemap: https://www.ilmiöt.fi/sitemap.xml

@@ -1,9 +1,10 @@
-# SEO Full Audit Report — kendom.fi/ilmiöt/
+# SEO Full Audit Report — ilmiöt.fi
 
-**Audit date:** 2026-06-16  
-**Auditor:** Claude Code SEO Audit  
-**Branch:** seo  
-**Status:** Post-implementation (changes local, pending deployment)
+**Audit target:** https://www.ilmiöt.fi (`https://www.xn--ilmit-mua.fi`)
+**Audit date:** 2026-06-19
+**Auditor:** Claude Code SEO Audit
+**Branch:** seo
+**Previous audit:** 2026-06-16 (live 28/100, local build 74/100)
 
 ---
 
@@ -11,202 +12,168 @@
 
 ### SEO Health Score
 
-| State | Score |
-|-------|-------|
-| **Pre-fix (live site)** | **28 / 100** |
-| **Post-fix (local)** | **74 / 100** |
+| State | Score | Notes |
+|-------|-------|-------|
+| **Live site (deployed today)** | **28 / 100** | Pre-SEO version. None of the local SEO work is live. |
+| **Local build (before this session's fixes)** | **72 / 100** | Strong content + schema, undermined by a domain-canonical defect and a script-breaking CSP. |
+| **Local build (after C1–C2 + H1, H3, H4, M1–M2 this session)** | **~83 / 100** | All fixes below applied locally. |
+| **After deploy (C3)** | **~85 / 100** (projected) | Remaining big lever: H2 internal "related phenomena" linking (deferred). |
+
+> **Update 2026-06-19 (session 2):** Applied locally —
+> **C1** domain canonical → www.ilmiöt.fi (895 URLs);
+> **C2** CSP `'unsafe-inline'`;
+> **H1** `.htaccess` 301 to canonical host (`www.xn--ilmit-mua.fi`);
+> **H3** all 68 meta descriptions rewritten to clean full sentences;
+> **H4** `author` = **Ilmiömies** + `datePublished`/`dateModified` in Article schema, visible byline + footer on every page, new **`tietoa.html`** About page (AboutPage + Person schema);
+> **De-Kendom** — every "Kendom" reference removed; publisher Organization is now "Ilmiöitä";
+> **M1** `random.html` `noindex`; **M2** 3 too-short titles lengthened.
+> **Deferred:** **H2** related-phenomena internal-link blocks (per request); **C3** deploy (still not live); **M4** GSC/Bing (needs your accounts).
 
 ### Business Type
-Finnish educational reference site — 68 named social phenomena across 8 thematic categories. Non-commercial, informational intent. YMYL-adjacent topics (manipulation, fraud, cognitive biases).
+Finnish-language educational reference site. **68 in-depth articles** on social/power phenomena across 8 categories (power structures, propaganda & information ops, cognitive biases, bureaucracy, project-management laws, growth dynamics, scams & fraud, sales-pressure tactics). Non-commercial, informational intent. YMYL-adjacent (manipulation, fraud, cognitive bias). Server: **LiteSpeed**, HTTP/2 + HTTP/3, TTFB ~0.25 s.
 
-### Top 5 Issues Resolved
-1. ✅ Zero meta descriptions → 69/69 pages now have 100-160 char Finnish descriptions
-2. ✅ No canonical tags → 69/69 pages have absolute canonical URLs
-3. ✅ No OG/social tags → 69/69 pages have og:title, og:description, og:url, og:type
-4. ✅ No schema markup → 69/69 pages have Article + BreadcrumbList + DefinedTerm JSON-LD
-5. ✅ H2 as primary heading → 68/68 ilmiö pages now have H1
+### Top 5 Critical / High Issues
+1. **🔴 Domain canonical mismatch.** You're auditing `ilmiöt.fi`, but every canonical, `og:url`, `og:image`, the sitemap, `robots.txt` and `llms.txt` point to `kendom.fi/ilmiöt/`. If deployed as-is, `ilmiöt.fi` tells Google "the real version lives on kendom.fi" and hands all ranking authority to the other domain.
+2. **🔴 Nothing is deployed.** Live `last-modified` is 2026-06-16 13:23 — *before* the SEO files were written (17:09). The live homepage still has no meta description, no canonical, no OG tags. The 74→ improvement exists only in this repo.
+3. **🔴 CSP breaks the site on deploy.** `.htaccess` sets `script-src 'self' cdn.jsdelivr.net` with **no `'unsafe-inline'` and no nonce**, but the site has **196 inline `<script>` blocks** (Mermaid init, Chart.js config, the `random.html` redirect). Deploying `.htaccess` as-is silently kills every diagram, chart, and the random-phenomenon feature.
+4. **🟠 No host canonicalization.** `https://ilmiöt.fi/` and `https://www.ilmiöt.fi/` both return 200 with no redirect between them → duplicate content on two hostnames.
+5. **🟠 Weak internal linking.** 2–5 internal links per page and **zero "related phenomena" blocks** across 68 thematically linked articles — a large topical-authority and crawl-depth miss.
 
-### Top 5 Remaining Issues
-1. No author attribution or publication dates (E-E-A-T gap)
-2. No About/contact page (404)
-3. Homepage (/) is unrelated content — domain authority fragmented
-4. Content depth thin on some pages (~100-300 words of prose)
-5. Title tags: 11/69 outside optimal 30-70 char range (too long)
+### Top 5 Quick Wins
+1. Search-replace `kendom.fi/ilmiöt` → `www.ilmiöt.fi` across all HTML, `sitemap.xml`, `robots.txt`, `llms.txt` (one scripted pass).
+2. Add `'unsafe-inline'` to the CSP `script-src` (or nonce the inline scripts) before deploying `.htaccess`.
+3. Add a 301 from non-www → www (or vice versa) at the host/`.htaccess` level.
+4. Rewrite the 60 truncated meta descriptions into clean, full Finnish sentences (≤160 chars).
+5. Add `<meta name="robots" content="noindex">` + canonical to `random.html`.
 
 ---
 
 ## Technical SEO
 
 ### Crawlability
-
-| Check | Before | After |
-|-------|--------|-------|
-| robots.txt | 404 | ✅ Created |
-| sitemap.xml | 404 | ✅ Created (69 URLs) |
-| Sitemap in robots.txt | — | ✅ |
-| AI crawler permissions | Undefined | ✅ GPTBot, ClaudeBot, PerplexityBot explicitly allowed |
-| llms.txt | 404 | ✅ Created (68 entries, categorized) |
+- ✅ `robots.txt` present, `Allow: /` for all bots, explicit allows for GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot.
+- ✅ Clean, static, human-readable URLs (`/paskuuttaminen.html`).
+- ✅ XML sitemap with 69 URLs, `lastmod`, `priority`, `changefreq`.
+- 🔴 **`robots.txt` `Sitemap:` line points to `https://kendom.fi/ilmiöt/sitemap.xml`** — wrong host for an `ilmiöt.fi` audit.
+- 🔴 **Sitemap `<loc>` entries are all `kendom.fi`** — submitting it to GSC for ilmiöt.fi fails cross-host validation.
 
 ### Indexability
+- 🔴 **Canonical mismatch (69/69 pages → `kendom.fi/ilmiöt/`).** This is the single most consequential issue. On `ilmiöt.fi`, these canonicals deindex the domain in favour of kendom.fi.
+- 🟠 **www vs non-www both 200, no redirect.** Pick one host and 301 the other.
+- 🟡 `random.html` has no canonical, no meta-robots, no description — a client-side JS redirect that can be indexed as a thin soft-redirect page. Add `noindex`.
+- ✅ HTTP→HTTPS 301 redirect is in place.
 
-| Check | Before | After |
-|-------|--------|-------|
-| Canonical tags | 0/69 | ✅ 69/69 |
-| Meta descriptions | 0/69 | ✅ 69/69 |
-| H1 on ilmiö pages | 0/68 | ✅ 68/68 |
-| Hub category H2s | 0/8 | ✅ 8/8 (converted from `<p>`) |
-| OG tags | 0/69 | ✅ 69/69 |
+### Security
+- ✅ HTTPS with valid TLS, HTTP/2 + HTTP/3 (`alt-svc` advertised).
+- 🔴 **Security headers not live.** `.htaccess` defines HSTS, X-Content-Type-Options, X-Frame-Options, Referrer-Policy, Permissions-Policy, CSP — none are in the live response (undeployed). LiteSpeed honours `.htaccess`, so these will apply once deployed **after the CSP is fixed**.
+- 🔴 **CSP/inline-script conflict (see Critical #3).** 196 inline scripts will be blocked.
 
-### Security Headers
-
-| Header | Before | After |
-|--------|--------|-------|
-| Strict-Transport-Security | Missing | ✅ max-age=31536000; includeSubDomains |
-| X-Content-Type-Options | Missing | ✅ nosniff |
-| X-Frame-Options | Missing | ✅ SAMEORIGIN |
-| Referrer-Policy | Missing | ✅ strict-origin-when-cross-origin |
-| Permissions-Policy | Missing | ✅ camera=(), microphone=(), geolocation=() |
-| Content-Security-Policy | Missing | ✅ Added (allows CDN scripts, Google Fonts, inline styles) |
-| Content-Type charset | Missing | ✅ UTF-8 via AddDefaultCharset |
-
-### URL Structure
-- Non-ASCII path `/ilmiöt/` — technically valid, kept as-is with proper percent-encoding in canonicals
-- Individual pages at `/ilmiöt/[slug].html` — canonical absolute URLs added
-- `.html` extension — low priority, acceptable for a static site
+### Core Web Vitals (lab estimate — no field data)
+- ✅ TTFB ~0.25 s, LiteSpeed + HTTP/3, homepage HTML ~27 KB, no content `<img>` tags.
+- 🟡 Google Fonts loaded from `fonts.googleapis.com` (preconnected). Mermaid (`@11`, deferred) and Chart.js (`@4`) render client-side — watch for **CLS** as diagrams paint in, and **INP** on diagram-heavy pages.
+- ℹ️ No CrUX/GSC field data available in this run; CWV scored on lab signals only.
 
 ---
 
 ## Content Quality
 
-### E-E-A-T Assessment (Remaining Gaps)
+### E-E-A-T
+- ✅ **Experience/Expertise:** genuinely deep, original Finnish explanations; 3,200–4,400 words on sampled pages; Mermaid diagrams; cross-references to mechanisms.
+- 🟠 **Authoritativeness:** no author byline, no organisation/credentials block, no "about" page. For YMYL-adjacent topics (fraud, manipulation, cognitive bias) this caps trust signals.
+- 🟠 **Trust:** no `datePublished`/`dateModified` visible to users; no contact/about; `Article` schema lacks `author` and `datePublished`.
 
-| Factor | Score | Notes |
-|--------|-------|-------|
-| Experience | 2/10 | No first-person examples, no Finnish case studies |
-| Expertise | 5/10 | Accurate content, book citations; **still no author attribution** |
-| Authoritativeness | 2/10 | No about page, no institutional affiliation, domain identity fragmented |
-| Trustworthiness | 4/10 | Improved by canonical/schema; still no dates, no author |
+### Depth & Uniqueness
+- ✅ Long-form, unique, non-templated prose per phenomenon. No within-site duplicate content (each page distinct).
+- ✅ 1 `<h1>` per content page (68/68 phenomenon pages + index); only `random.html` has 0 (expected).
 
-### Content Depth
-- Hub page: ~700-900 words (navigation-heavy, acceptable for directory)
-- Individual ilmiö pages: ~150-400 words of Finnish prose
-- **Warning:** Several pages under 200 words (Ponzi, Paskuuttaminen) — below threshold for competitive ranking on educational queries
-- Mermaid diagrams render visually but content is not crawlable as text — recommend `<figcaption>` additions
-
-### Thin Content Watchlist
-- `ponzi-pyramidi.html` — ~44 words prose
-- `paskuuttaminen.html` — ~196 words prose
-- `simple-sabotage.html` — ~267 words prose
+### AI Citation Readiness
+- ✅ Definitional lead sentences + `DefinedTerm` schema → ideal passage-level citability for AI Overviews / ChatGPT / Perplexity.
+- ✅ `llms.txt` present and well-structured.
+- 🔴 `llms.txt` URLs all point to `kendom.fi/ilmiöt/` — same domain defect; AI engines would cite kendom.fi, not ilmiöt.fi.
 
 ---
 
 ## On-Page SEO
 
-### Meta Tags (Post-Fix)
+### Title Tags
+- Format is `"<Phenomenon> — Ilmiöitä"`.
+- Distribution (of 70): **5 under 30 chars**, 38 in the 30–60 sweet spot, **27 over 60 chars**.
+- 🟡 Short titles (e.g. `Paskuuttaminen — Ilmiöitä`, 25 chars) waste SERP real estate; consider a descriptive modifier (`Paskuuttaminen — mitä se tarkoittaa? | Ilmiöitä`).
+- 🟡 27 long titles risk SERP truncation.
 
-| Metric | Score |
-|--------|-------|
-| Descriptions present | 69/69 (100%) |
-| Description length 100-160 chars | 69/69 (100%) |
-| OG tags present | 69/69 (100%) |
-| Twitter card tags | 69/69 (100%) |
-| Title length 30-70 chars | 58/69 (84%) |
+### Meta Descriptions
+- ✅ Present on 69/69 content pages, mostly 109–160 chars.
+- 🟠 **60 of 69 end mid-sentence with no terminal punctuation** — they are mechanically cut from the first ~110 characters of body text (e.g. paskuuttaminen ends "…asteittaista heikentämistä niin").
+- 🟡 3 descriptions repeat the term ("X: X tarkoittaa…"). Rewrite into clean, benefit-led sentences.
 
 ### Heading Structure
-- Hub: H1 "Ilmiöitä" + 8 H2 category headers ✅
-- Individual pages: H1 = ilmiö name + H2 for subsections ✅
-- Title tag pattern: `[Ilmiö name] — Ilmiöitä` (good, though some are 70+ chars)
+- ✅ Single H1 per page; logical H2/H3 hierarchy in sampled pages.
 
 ### Internal Linking
-- Hub exposes all 68 links as static `<a href>` elements (confirmed, no JS-only discovery) ✅
-- Individual pages: prev/next navigation + back-to-hub link
-- Gap: No contextual cross-links within body text between related phenomena
+- 🟠 **Only 2–5 internal links per page; zero "related phenomena" sections.** With 68 tightly related articles in 8 categories, automated "Liittyvät ilmiöt" blocks (3–6 links each) would sharply improve crawl depth, topical clustering, and AI co-citation. Highest-leverage on-page opportunity.
 
 ---
 
 ## Schema & Structured Data
 
-### Implementation (Post-Fix)
+Comprehensive JSON-LD coverage (counts across the site):
 
-| Schema Type | Pages | Status |
-|-------------|-------|--------|
-| Article | 68 ilmiö pages | ✅ |
-| BreadcrumbList | 68 ilmiö pages | ✅ |
-| DefinedTerm (in Article.about) | 68 ilmiö pages | ✅ |
-| CollectionPage | Hub | ✅ |
-| ItemList (68 entries) | Hub | ✅ |
-| WebSite | Hub | ✅ |
-| Organization | Hub | ✅ |
+| @type | Count | Where |
+|-------|-------|-------|
+| Article | 68 | each phenomenon page |
+| DefinedTerm | 68 | each phenomenon page |
+| DefinedTermSet | 68 | each phenomenon page |
+| BreadcrumbList | 68 | each phenomenon page |
+| CollectionPage | 69 | all content pages |
+| Organization | 69 | all content pages |
+| ListItem | 272 | breadcrumb / list items |
+| WebSite | 1 | homepage |
+| ItemList | 1 | homepage |
 
-### Missing Schema Fields
-- `datePublished` / `dateModified` — not added (no dates visible in HTML)
-- `author` — not added (no attribution in site)
-- `image` — not added (no images on site)
-
----
-
-## Performance (Core Web Vitals)
-
-### Changes Made
-- Mermaid.js: `defer` added to 55/55 CDN pages ✅
-- Google Fonts gstatic preconnect: 56/69 pages (already had fonts.googleapis.com preconnect; 13 pages skipped fonts entirely)
-
-### Remaining Performance Risks
-- Mermaid.js (~500 KB) still blocking on pages without CDN call (but has inline script tag)
-- Google Fonts still CDN-served (self-hosting would eliminate cross-origin round-trip)
-- No `font-display: swap` in font CSS
-- ~40KB per-page inline CSS inflates HTML
+- ✅ Excellent breadth — among the strongest parts of the build.
+- 🔴 All schema `url`/`@id` values reference `kendom.fi` (domain defect).
+- 🟡 `Article` schema has no `author` or `datePublished` (ties to the E-E-A-T gap).
+- 🟡 Pages carry both `Article` and `CollectionPage` — `CollectionPage` is questionable on a single-article page; consider dropping it there.
 
 ---
 
-## AI Search Readiness
+## Performance
 
-### GEO Score
-
-| Before | After |
-|--------|-------|
-| 33/100 | ~58/100 (estimated) |
-
-### Changes
-- ✅ robots.txt with explicit AI crawler permissions (GPTBot, ClaudeBot, PerplexityBot)
-- ✅ llms.txt with full 68-item categorized index
-- ✅ DefinedTerm schema on every ilmiö page (high AI citation signal)
-- ✅ Sitemap enables full corpus discovery
-- ❌ No author/date signals (still limits AI Overview eligibility)
-- ❌ Diagram content still not text-crawlable
-
----
+- ✅ Fast origin: LiteSpeed, HTTP/3, TTFB ~0.25 s, small HTML payload, zero raster `<img>` on content pages.
+- 🟡 Render-blocking Google Fonts CSS (mitigated by `preconnect`; `display=swap` already set; self-hosting would give full control).
+- 🟡 Client-side Mermaid/Chart.js: defer is set, but monitor CLS/INP on diagram-heavy pages.
+- ℹ️ No field data (CrUX/GSC) in this run — connect Search Console for the chosen domain to get real LCP/INP/CLS.
 
 ## Images
 
-No images exist on the site. No OG image defined (social shares will show text-only preview). Mermaid SVGs are JavaScript-rendered and not indexed.
+- ✅ No content `<img>` tags → no missing-alt debt, no oversized inline images, no image-driven CLS.
+- ✅ 69 OG share images (1200×630 PNG, ~34–50 KB each) generated and referenced via `og:image`/`twitter:image`.
+- 🟡 OG images are PNG; JPEG/WebP would cut file size ~50% (minor — already small).
+- 🔴 OG image URLs point to `kendom.fi/ilmiöt/og/…` (domain defect — social previews 404 on ilmiöt.fi unless the path also exists there).
 
-**Score: 20/100** (not penalized, just no opportunity captured)
+## AI Search Readiness
 
----
-
-## Score Breakdown
-
-| Category | Weight | Before | After | Weighted Δ |
-|----------|--------|--------|-------|------------|
-| Technical SEO | 22% | 31 | 72 | +9.0 pts |
-| Content Quality | 23% | 27 | 35 | +1.8 pts |
-| On-Page SEO | 20% | 5 | 88 | +16.6 pts |
-| Schema | 10% | 0 | 82 | +8.2 pts |
-| Performance (CWV) | 10% | 45 | 58 | +1.3 pts |
-| AI Search Readiness | 10% | 33 | 58 | +2.5 pts |
-| Images | 5% | 20 | 20 | 0 pts |
-| **Total** | 100% | **28** | **74** | **+46 pts** |
+- ✅ AI crawlers explicitly allowed; `llms.txt` present; `DefinedTerm` schema + definitional structure; deep, citable content.
+- 🔴 Every AI-facing URL (`llms.txt`, canonical, schema `@id`) points to kendom.fi → citations accrue to the wrong domain.
+- 🟠 No author/dateline authority signals for AI to attribute.
 
 ---
 
-## Deployment Checklist
+## Category Scores (local build, ilmiöt.fi target)
 
-Before deployment, confirm:
-- [ ] All 69 HTML files committed to `seo` branch
-- [ ] robots.txt, sitemap.xml, .htaccess, llms.txt committed
-- [ ] Server supports `.htaccess` (LiteSpeed: yes, via ModSecurity headers)
-- [ ] Verify HSTS header after deployment: `curl -I https://kendom.fi/ilmiöt/`
-- [ ] Submit sitemap to Google Search Console
-- [ ] Test schema at validator.schema.org on 2-3 pages
-- [ ] Test OG preview at opengraph.xyz
+| Category | Weight | Score | Weighted |
+|----------|--------|-------|----------|
+| Technical SEO | 22% | 60 | 13.2 |
+| Content Quality | 23% | 78 | 17.9 |
+| On-Page SEO | 20% | 65 | 13.0 |
+| Schema / Structured Data | 10% | 82 | 8.2 |
+| Performance (CWV, lab) | 10% | 80 | 8.0 |
+| AI Search Readiness | 10% | 78 | 7.8 |
+| Images | 5% | 75 | 3.8 |
+| **Total** | **100%** | | **≈ 72 / 100** |
+
+The content and schema are genuinely strong (a 68-article, deeply-written topical corpus is a real asset). The score is held back almost entirely by **infrastructure/config issues that are fast to fix**: the domain canonical defect, the CSP conflict, host canonicalization, and undeployed state. Resolve those four and this is an ~85 site.
+
+---
+
+*See `ACTION-PLAN.md` for the prioritized, step-by-step fix list.*

@@ -1,93 +1,94 @@
-# Kendom — Ilmiöitä: Miten valta toimii
+# Ilmiöitä — Miten valta toimii
 
 > Suomenkielinen sivusto, joka selittää 68 yhteiskunnallista ilmiötä:
 > valtarakenteet, propaganda ja informaatiovaikuttaminen, kognitiiviset harhat,
 > byrokratia ja organisaatiodynamiikka, projektihallinnan lait,
 > talouden kasvuilmiöt, huijaukset ja petokset, sekä myynti- ja painostustaktiikat.
-> Sisältö on vapaasti viitattavissa.
+> Kirjoittaja: Ilmiömies. Sisältö on vapaasti viitattavissa.
+> Tietoa sivustosta: https://www.ilmiöt.fi/tietoa.html
 
 ## Kategoriat ja ilmiöt
 
 ### Vallan rakenteet
-- Paskuuttaminen: https://kendom.fi/ilmiöt/paskuuttaminen.html
-- Starve the beast: https://kendom.fi/ilmiöt/starve-the-beast.html
-- Overton-ikkuna: https://kendom.fi/ilmiöt/overton-ikkuna.html
-- Sääntelijän kaappaus: https://kendom.fi/ilmiöt/saantelijan-kaappaus.html
-- Rautainen laki oligarkiasta: https://kendom.fi/ilmiöt/rautainen-laki.html
-- Valta suojelee valtaa: https://kendom.fi/ilmiöt/valta-suojelee-valtaa.html
-- Hajota ja hallitse: https://kendom.fi/ilmiöt/hajota-hallitse.html
+- Paskuuttaminen: https://www.ilmiöt.fi/paskuuttaminen.html
+- Starve the beast: https://www.ilmiöt.fi/starve-the-beast.html
+- Overton-ikkuna: https://www.ilmiöt.fi/overton-ikkuna.html
+- Sääntelijän kaappaus: https://www.ilmiöt.fi/saantelijan-kaappaus.html
+- Rautainen laki oligarkiasta: https://www.ilmiöt.fi/rautainen-laki.html
+- Valta suojelee valtaa: https://www.ilmiöt.fi/valta-suojelee-valtaa.html
+- Hajota ja hallitse: https://www.ilmiöt.fi/hajota-hallitse.html
 
 ### Informaatio ja propaganda
-- Tilastoilla valehtelu: https://kendom.fi/ilmiöt/tilastoilla-valehtelu.html
-- BKT-harha: https://kendom.fi/ilmiöt/bkt-harha.html
-- Astroturf: https://kendom.fi/ilmiöt/astroturf.html
-- Firehose of falsehood: https://kendom.fi/ilmiöt/firehose-of-falsehood.html
-- Manufactured consent: https://kendom.fi/ilmiöt/manufactured-consent.html
-- Betteridgen laki: https://kendom.fi/ilmiöt/betteridgen-laki.html
-- Inokulointiteoria: https://kendom.fi/ilmiöt/inokulointiteoria.html
+- Tilastoilla valehtelu: https://www.ilmiöt.fi/tilastoilla-valehtelu.html
+- BKT-harha: https://www.ilmiöt.fi/bkt-harha.html
+- Astroturf: https://www.ilmiöt.fi/astroturf.html
+- Firehose of falsehood: https://www.ilmiöt.fi/firehose-of-falsehood.html
+- Manufactured consent: https://www.ilmiöt.fi/manufactured-consent.html
+- Betteridgen laki: https://www.ilmiöt.fi/betteridgen-laki.html
+- Inokulointiteoria: https://www.ilmiöt.fi/inokulointiteoria.html
 
 ### Psykologia ja kognitio
-- Backfire effect: https://kendom.fi/ilmiöt/backfire-effect.html
-- DARVO: https://kendom.fi/ilmiöt/darvo.html
-- Halo-efekti ja stigma: https://kendom.fi/ilmiöt/halo-efekti.html
-- Konsensus fetissi: https://kendom.fi/ilmiöt/konsensus-fetissi.html
-- Omenoita ja appelsiineja: https://kendom.fi/ilmiöt/omenoita-appelsiineja.html
-- The Blame Game: https://kendom.fi/ilmiöt/blame-game.html
-- Gaslighting: https://kendom.fi/ilmiöt/gaslighting.html
-- Maalitolppien siirtäminen: https://kendom.fi/ilmiöt/maalitolppien-siirtaminen.html
-- Argumenttitulva (Gish Gallop): https://kendom.fi/ilmiöt/argumenttitulva.html
-- Sunk cost -harha: https://kendom.fi/ilmiöt/sunk-cost-harha.html
-- Järjestelmän puolustelu: https://kendom.fi/ilmiöt/jarjestelman-puolustelu.html
+- Backfire effect: https://www.ilmiöt.fi/backfire-effect.html
+- DARVO: https://www.ilmiöt.fi/darvo.html
+- Halo-efekti ja stigma: https://www.ilmiöt.fi/halo-efekti.html
+- Konsensus fetissi: https://www.ilmiöt.fi/konsensus-fetissi.html
+- Omenoita ja appelsiineja: https://www.ilmiöt.fi/omenoita-appelsiineja.html
+- The Blame Game: https://www.ilmiöt.fi/blame-game.html
+- Gaslighting: https://www.ilmiöt.fi/gaslighting.html
+- Maalitolppien siirtäminen: https://www.ilmiöt.fi/maalitolppien-siirtaminen.html
+- Argumenttitulva (Gish Gallop): https://www.ilmiöt.fi/argumenttitulva.html
+- Sunk cost -harha: https://www.ilmiöt.fi/sunk-cost-harha.html
+- Järjestelmän puolustelu: https://www.ilmiöt.fi/jarjestelman-puolustelu.html
 
 ### Byrokratia ja organisaatio
-- Simple Sabotage Field Manual: https://kendom.fi/ilmiöt/simple-sabotage.html
-- Kafka-ilmiö: https://kendom.fi/ilmiöt/kafka-ilmio.html
-- Catch-22: https://kendom.fi/ilmiöt/catch-22.html
-- Goodhartin laki: https://kendom.fi/ilmiöt/goodhartin-laki.html
-- HIPPO-efekti: https://kendom.fi/ilmiöt/hippo-efekti.html
-- Performatiivinen läsnäolo: https://kendom.fi/ilmiöt/performatiivinen-lasnaolo.html
-- Rituaalinen raportointi: https://kendom.fi/ilmiöt/rituaalinen-raportointi.html
-- Initiointirituaalit: https://kendom.fi/ilmiöt/initiointirituaalit.html
-- Portinvartija-kulttuuri: https://kendom.fi/ilmiöt/portinvartija-kulttuuri.html
-- Strateginen osaamattomuus: https://kendom.fi/ilmiöt/strateginen-osaamattomuus.html
-- FOFO: https://kendom.fi/ilmiöt/fofo.html
-- Sivustakatsojan efekti: https://kendom.fi/ilmiöt/sivustakatsojan-efekti.html
+- Simple Sabotage Field Manual: https://www.ilmiöt.fi/simple-sabotage.html
+- Kafka-ilmiö: https://www.ilmiöt.fi/kafka-ilmio.html
+- Catch-22: https://www.ilmiöt.fi/catch-22.html
+- Goodhartin laki: https://www.ilmiöt.fi/goodhartin-laki.html
+- HIPPO-efekti: https://www.ilmiöt.fi/hippo-efekti.html
+- Performatiivinen läsnäolo: https://www.ilmiöt.fi/performatiivinen-lasnaolo.html
+- Rituaalinen raportointi: https://www.ilmiöt.fi/rituaalinen-raportointi.html
+- Initiointirituaalit: https://www.ilmiöt.fi/initiointirituaalit.html
+- Portinvartija-kulttuuri: https://www.ilmiöt.fi/portinvartija-kulttuuri.html
+- Strateginen osaamattomuus: https://www.ilmiöt.fi/strateginen-osaamattomuus.html
+- FOFO: https://www.ilmiöt.fi/fofo.html
+- Sivustakatsojan efekti: https://www.ilmiöt.fi/sivustakatsojan-efekti.html
 
 ### Projekti- ja ohjelmistokehitys
-- Brooksin laki: https://kendom.fi/ilmiöt/brooksin-laki.html
-- Yhdeksän-yhdeksän-sääntö: https://kendom.fi/ilmiöt/yhdeksanyhdeksan.html
-- Hofstadterin laki: https://kendom.fi/ilmiöt/hofstadterin-laki.html
-- Kuolonmarssi: https://kendom.fi/ilmiöt/kuolonmarssi.html
-- Tekninen velka: https://kendom.fi/ilmiöt/tekninen-velka.html
-- Conwayn laki: https://kendom.fi/ilmiöt/conways-laki.html
-- Bikeshedding: https://kendom.fi/ilmiöt/bikeshedding.html
-- Scope creep: https://kendom.fi/ilmiöt/scope-creep.html
+- Brooksin laki: https://www.ilmiöt.fi/brooksin-laki.html
+- Yhdeksän-yhdeksän-sääntö: https://www.ilmiöt.fi/yhdeksanyhdeksan.html
+- Hofstadterin laki: https://www.ilmiöt.fi/hofstadterin-laki.html
+- Kuolonmarssi: https://www.ilmiöt.fi/kuolonmarssi.html
+- Tekninen velka: https://www.ilmiöt.fi/tekninen-velka.html
+- Conwayn laki: https://www.ilmiöt.fi/conways-laki.html
+- Bikeshedding: https://www.ilmiöt.fi/bikeshedding.html
+- Scope creep: https://www.ilmiöt.fi/scope-creep.html
 
 ### Kasvun dynamiikka
-- Korkoa korolle -efekti: https://kendom.fi/ilmiöt/korkoa-korolle.html
-- Negatiivinen korkoa korolle: https://kendom.fi/ilmiöt/negatiivinen-korkoa.html
-- Negatiivinen korkokierre: https://kendom.fi/ilmiöt/korkokierre.html
+- Korkoa korolle -efekti: https://www.ilmiöt.fi/korkoa-korolle.html
+- Negatiivinen korkoa korolle: https://www.ilmiöt.fi/negatiivinen-korkoa.html
+- Negatiivinen korkokierre: https://www.ilmiöt.fi/korkokierre.html
 
 ### Huijaukset ja petokset
-- Honeypot-huijaus: https://kendom.fi/ilmiöt/honeypot-huijaus.html
-- Bait and switch: https://kendom.fi/ilmiöt/bait-and-switch.html
-- Käärmeöljy: https://kendom.fi/ilmiöt/kaarmeoljy.html
-- Ponzi ja pyramidihuijaus: https://kendom.fi/ilmiöt/ponzi-pyramidi.html
-- Pump and dump: https://kendom.fi/ilmiöt/pump-and-dump.html
-- Pig butchering: https://kendom.fi/ilmiöt/pig-butchering.html
-- Ennakkomaksuhuijaus (419): https://kendom.fi/ilmiöt/ennakkomaksuhuijaus.html
-- Badger game: https://kendom.fi/ilmiöt/badger-game.html
+- Honeypot-huijaus: https://www.ilmiöt.fi/honeypot-huijaus.html
+- Bait and switch: https://www.ilmiöt.fi/bait-and-switch.html
+- Käärmeöljy: https://www.ilmiöt.fi/kaarmeoljy.html
+- Ponzi ja pyramidihuijaus: https://www.ilmiöt.fi/ponzi-pyramidi.html
+- Pump and dump: https://www.ilmiöt.fi/pump-and-dump.html
+- Pig butchering: https://www.ilmiöt.fi/pig-butchering.html
+- Ennakkomaksuhuijaus (419): https://www.ilmiöt.fi/ennakkomaksuhuijaus.html
+- Badger game: https://www.ilmiöt.fi/badger-game.html
 
 ### Myyntikikat ja painostus
-- Ilmainen näytetyö: https://kendom.fi/ilmiöt/ilmainen-naytetyo.html
-- Maksu näkyvyydellä: https://kendom.fi/ilmiöt/exposure-maksu.html
-- Lowball-hinnoittelu: https://kendom.fi/ilmiöt/lowball-hinnoittelu.html
-- Välittäjän skimmaus: https://kendom.fi/ilmiöt/valittajan-skimmaus.html
-- Tilipuristus: https://kendom.fi/ilmiöt/tilipuristus.html
-- Foot-in-the-door: https://kendom.fi/ilmiöt/foot-in-the-door.html
-- Door-in-the-face: https://kendom.fi/ilmiöt/door-in-the-face.html
-- Hintaankkurointi: https://kendom.fi/ilmiöt/hintaankkurointi.html
-- Houkutinvaihtoehto: https://kendom.fi/ilmiöt/houkutinvaihtoehto.html
-- Vastavuoroisuuden ansa: https://kendom.fi/ilmiöt/vastavuoroisuuden-ansa.html
-- Sosiaalinen todiste -manipulaatio: https://kendom.fi/ilmiöt/sosiaalinen-todiste.html
-- Painostus-close: https://kendom.fi/ilmiöt/painostusclose.html
+- Ilmainen näytetyö: https://www.ilmiöt.fi/ilmainen-naytetyo.html
+- Maksu näkyvyydellä: https://www.ilmiöt.fi/exposure-maksu.html
+- Lowball-hinnoittelu: https://www.ilmiöt.fi/lowball-hinnoittelu.html
+- Välittäjän skimmaus: https://www.ilmiöt.fi/valittajan-skimmaus.html
+- Tilipuristus: https://www.ilmiöt.fi/tilipuristus.html
+- Foot-in-the-door: https://www.ilmiöt.fi/foot-in-the-door.html
+- Door-in-the-face: https://www.ilmiöt.fi/door-in-the-face.html
+- Hintaankkurointi: https://www.ilmiöt.fi/hintaankkurointi.html
+- Houkutinvaihtoehto: https://www.ilmiöt.fi/houkutinvaihtoehto.html
+- Vastavuoroisuuden ansa: https://www.ilmiöt.fi/vastavuoroisuuden-ansa.html
+- Sosiaalinen todiste -manipulaatio: https://www.ilmiöt.fi/sosiaalinen-todiste.html
+- Painostus-close: https://www.ilmiöt.fi/painostusclose.html
