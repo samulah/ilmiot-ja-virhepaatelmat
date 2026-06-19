@@ -1120,7 +1120,9 @@
   };
 
   function pageUrl(id) {
-    return window.location.href.split('#')[0];
+    var c = document.querySelector('link[rel="canonical"]');
+    var href = c && c.getAttribute('href');
+    return (href || window.location.href).split('#')[0];
   }
   function cardTitle(card) {
     const h2 = card.querySelector('h2');
