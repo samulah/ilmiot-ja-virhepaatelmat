@@ -1,0 +1,17 @@
+# Canonical host: force HTTPS + www on www.ilmiöt.fi (punycode: www.xn--ilmit-mua.fi)
+# Consolidates ilmiöt.fi (non-www) and any legacy host onto the one canonical origin.
+RewriteEngine On
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} !^www\.xn--ilmit-mua\.fi$ [NC]
+RewriteRule ^(.*)$ https://www.xn--ilmit-mua.fi/$1 [R=301,L]
+
+# Security headers
+Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+Header always set X-Content-Type-Options "nosniff"
+Header always set X-Frame-Options "SAMEORIGIN"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+AddDefaultCharset UTF-8
+
+# Content Security Policy
+Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' cdn.jsdelivr.net; style-src 'self' fonts.googleapis.com 'unsafe-inline'; font-src 'self' fonts.gstatic.com; img-src 'self' data:; frame-ancestors 'self'"

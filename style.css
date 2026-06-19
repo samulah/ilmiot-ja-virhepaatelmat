@@ -389,3 +389,7 @@ img {
   .lue-lisaa-rivi { flex-direction: column; gap: 0.1rem; }
   .lue-lisaa-tyyppi { width: auto; }
 }
+
+/* Pikkulogo ilmiösivun yläpalkissa */
+.kortti-logo { display: inline-flex; align-items: center; flex-shrink: 0; margin-right: 0.1rem; }
+.kortti-logo img { width: 24px; height: 24px; display: block; }

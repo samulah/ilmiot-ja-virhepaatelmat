@@ -1,0 +1,94 @@
+# Ilmiöitä — Miten valta toimii
+
+> Suomenkielinen sivusto, joka selittää 68 yhteiskunnallista ilmiötä:
+> valtarakenteet, propaganda ja informaatiovaikuttaminen, kognitiiviset harhat,
+> byrokratia ja organisaatiodynamiikka, projektihallinnan lait,
+> talouden kasvuilmiöt, huijaukset ja petokset, sekä myynti- ja painostustaktiikat.
+> Kirjoittaja: Ilmiömies. Sisältö on vapaasti viitattavissa.
+> Tietoa sivustosta: https://www.ilmiöt.fi/tietoa.html
+
+## Kategoriat ja ilmiöt
+
+### Vallan rakenteet
+- Paskuuttaminen: https://www.ilmiöt.fi/paskuuttaminen.html
+- Starve the beast: https://www.ilmiöt.fi/starve-the-beast.html
+- Overton-ikkuna: https://www.ilmiöt.fi/overton-ikkuna.html
+- Sääntelijän kaappaus: https://www.ilmiöt.fi/saantelijan-kaappaus.html
+- Rautainen laki oligarkiasta: https://www.ilmiöt.fi/rautainen-laki.html
+- Valta suojelee valtaa: https://www.ilmiöt.fi/valta-suojelee-valtaa.html
+- Hajota ja hallitse: https://www.ilmiöt.fi/hajota-hallitse.html
+
+### Informaatio ja propaganda
+- Tilastoilla valehtelu: https://www.ilmiöt.fi/tilastoilla-valehtelu.html
+- BKT-harha: https://www.ilmiöt.fi/bkt-harha.html
+- Astroturf: https://www.ilmiöt.fi/astroturf.html
+- Firehose of falsehood: https://www.ilmiöt.fi/firehose-of-falsehood.html
+- Manufactured consent: https://www.ilmiöt.fi/manufactured-consent.html
+- Betteridgen laki: https://www.ilmiöt.fi/betteridgen-laki.html
+- Inokulointiteoria: https://www.ilmiöt.fi/inokulointiteoria.html
+
+### Psykologia ja kognitio
+- Backfire effect: https://www.ilmiöt.fi/backfire-effect.html
+- DARVO: https://www.ilmiöt.fi/darvo.html
+- Halo-efekti ja stigma: https://www.ilmiöt.fi/halo-efekti.html
+- Konsensus fetissi: https://www.ilmiöt.fi/konsensus-fetissi.html
+- Omenoita ja appelsiineja: https://www.ilmiöt.fi/omenoita-appelsiineja.html
+- The Blame Game: https://www.ilmiöt.fi/blame-game.html
+- Gaslighting: https://www.ilmiöt.fi/gaslighting.html
+- Maalitolppien siirtäminen: https://www.ilmiöt.fi/maalitolppien-siirtaminen.html
+- Argumenttitulva (Gish Gallop): https://www.ilmiöt.fi/argumenttitulva.html
+- Sunk cost -harha: https://www.ilmiöt.fi/sunk-cost-harha.html
+- Järjestelmän puolustelu: https://www.ilmiöt.fi/jarjestelman-puolustelu.html
+
+### Byrokratia ja organisaatio
+- Simple Sabotage Field Manual: https://www.ilmiöt.fi/simple-sabotage.html
+- Kafka-ilmiö: https://www.ilmiöt.fi/kafka-ilmio.html
+- Catch-22: https://www.ilmiöt.fi/catch-22.html
+- Goodhartin laki: https://www.ilmiöt.fi/goodhartin-laki.html
+- HIPPO-efekti: https://www.ilmiöt.fi/hippo-efekti.html
+- Performatiivinen läsnäolo: https://www.ilmiöt.fi/performatiivinen-lasnaolo.html
+- Rituaalinen raportointi: https://www.ilmiöt.fi/rituaalinen-raportointi.html
+- Initiointirituaalit: https://www.ilmiöt.fi/initiointirituaalit.html
+- Portinvartija-kulttuuri: https://www.ilmiöt.fi/portinvartija-kulttuuri.html
+- Strateginen osaamattomuus: https://www.ilmiöt.fi/strateginen-osaamattomuus.html
+- FOFO: https://www.ilmiöt.fi/fofo.html
+- Sivustakatsojan efekti: https://www.ilmiöt.fi/sivustakatsojan-efekti.html
+
+### Projekti- ja ohjelmistokehitys
+- Brooksin laki: https://www.ilmiöt.fi/brooksin-laki.html
+- Yhdeksän-yhdeksän-sääntö: https://www.ilmiöt.fi/yhdeksanyhdeksan.html
+- Hofstadterin laki: https://www.ilmiöt.fi/hofstadterin-laki.html
+- Kuolonmarssi: https://www.ilmiöt.fi/kuolonmarssi.html
+- Tekninen velka: https://www.ilmiöt.fi/tekninen-velka.html
+- Conwayn laki: https://www.ilmiöt.fi/conways-laki.html
+- Bikeshedding: https://www.ilmiöt.fi/bikeshedding.html
+- Scope creep: https://www.ilmiöt.fi/scope-creep.html
+
+### Kasvun dynamiikka
+- Korkoa korolle -efekti: https://www.ilmiöt.fi/korkoa-korolle.html
+- Negatiivinen korkoa korolle: https://www.ilmiöt.fi/negatiivinen-korkoa.html
+- Negatiivinen korkokierre: https://www.ilmiöt.fi/korkokierre.html
+
+### Huijaukset ja petokset
+- Honeypot-huijaus: https://www.ilmiöt.fi/honeypot-huijaus.html
+- Bait and switch: https://www.ilmiöt.fi/bait-and-switch.html
+- Käärmeöljy: https://www.ilmiöt.fi/kaarmeoljy.html
+- Ponzi ja pyramidihuijaus: https://www.ilmiöt.fi/ponzi-pyramidi.html
+- Pump and dump: https://www.ilmiöt.fi/pump-and-dump.html
+- Pig butchering: https://www.ilmiöt.fi/pig-butchering.html
+- Ennakkomaksuhuijaus (419): https://www.ilmiöt.fi/ennakkomaksuhuijaus.html
+- Badger game: https://www.ilmiöt.fi/badger-game.html
+
+### Myyntikikat ja painostus
+- Ilmainen näytetyö: https://www.ilmiöt.fi/ilmainen-naytetyo.html
+- Maksu näkyvyydellä: https://www.ilmiöt.fi/exposure-maksu.html
+- Lowball-hinnoittelu: https://www.ilmiöt.fi/lowball-hinnoittelu.html
+- Välittäjän skimmaus: https://www.ilmiöt.fi/valittajan-skimmaus.html
+- Tilipuristus: https://www.ilmiöt.fi/tilipuristus.html
+- Foot-in-the-door: https://www.ilmiöt.fi/foot-in-the-door.html
+- Door-in-the-face: https://www.ilmiöt.fi/door-in-the-face.html
+- Hintaankkurointi: https://www.ilmiöt.fi/hintaankkurointi.html
+- Houkutinvaihtoehto: https://www.ilmiöt.fi/houkutinvaihtoehto.html
+- Vastavuoroisuuden ansa: https://www.ilmiöt.fi/vastavuoroisuuden-ansa.html
+- Sosiaalinen todiste -manipulaatio: https://www.ilmiöt.fi/sosiaalinen-todiste.html
+- Painostus-close: https://www.ilmiöt.fi/painostusclose.html
