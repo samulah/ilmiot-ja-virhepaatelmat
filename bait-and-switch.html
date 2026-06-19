@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="fonts/fonts.css">
   <script defer src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
-  <script>mermaid.initialize({ startOnLoad: true, theme: 'base', themeVariables: { fontSize: '12px', primaryColor: '#FBF5E0', primaryTextColor: '#1A1100', primaryBorderColor: '#C9A84C', lineColor: '#8B6914', secondaryColor: '#F5F0E5', tertiaryColor: '#FDFAF2', mainBkg: '#FBF5E0', nodeBorder: '#C9A84C', clusterBkg: '#F5F0E5', titleColor: '#3A2000', edgeLabelBackground: '#FDFAF2' } });</script>
+  <script>mermaid.initialize({ startOnLoad: true, theme: 'base', themeVariables: { fontSize: '12px', fontFamily: "'DM Sans', system-ui, sans-serif", primaryColor: '#FBF5E0', primaryTextColor: '#1A1100', primaryBorderColor: '#C9A84C', lineColor: '#8B6914', secondaryColor: '#F5F0E5', tertiaryColor: '#FDFAF2', mainBkg: '#FBF5E0', nodeBorder: '#C9A84C', clusterBkg: '#F5F0E5', titleColor: '#3A2000', edgeLabelBackground: '#FDFAF2' } });</script>
   
   <style>
 
@@ -741,7 +741,7 @@
 <p>Bait and switch on myyntihuijaus, jossa houkutellaan <strong>näyttävällä syötillä</strong> (poikkeuksellisen halpa tai hyvä tarjous) ja kun asiakas on jo paikalla tai sitoutunut, syötti "loppuu" tai osoittautuu kelvottomaksi — ja tilalle tarjotaan kalliimpaa, huonompaa tai täysin eri tuotetta.</p>
 <p>Houkutin ei koskaan ollut tarjolla oikeasti. Sen ainoa tehtävä oli saada uhri liikkeelle ja sijoittamaan jo aikaa, vaivaa tai rahaa — jonka jälkeen <a href="korkokierre.html">uponneiden kustannusten</a> logiikka pitää hänet paikalla, vaikka diili muuttui.</p>
 <div class="mermaid">
-flowchart LR
+flowchart TD
   A["Syötti:\n'tämä huipputuote\n vain 199 €'"] --&gt; B["Asiakas sitoutuu:\nmatka, aika, odotus"]
   B --&gt; C["'Valitettavasti se\n juuri loppui /\n ei sovi sinulle'"]
   C --&gt; D["Vaihto:\n'mutta tämä toinen\n on saatavilla' — 599 €"]

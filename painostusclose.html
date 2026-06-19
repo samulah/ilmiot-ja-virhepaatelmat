@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="fonts/fonts.css">
   <script defer src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
-  <script>mermaid.initialize({ startOnLoad: true, theme: 'base', themeVariables: { fontSize: '12px', primaryColor: '#FBF5E0', primaryTextColor: '#1A1100', primaryBorderColor: '#C9A84C', lineColor: '#8B6914', secondaryColor: '#F5F0E5', tertiaryColor: '#FDFAF2', mainBkg: '#FBF5E0', nodeBorder: '#C9A84C', clusterBkg: '#F5F0E5', titleColor: '#3A2000', edgeLabelBackground: '#FDFAF2' } });</script>
+  <script>mermaid.initialize({ startOnLoad: true, theme: 'base', themeVariables: { fontSize: '12px', fontFamily: "'DM Sans', system-ui, sans-serif", primaryColor: '#FBF5E0', primaryTextColor: '#1A1100', primaryBorderColor: '#C9A84C', lineColor: '#8B6914', secondaryColor: '#F5F0E5', tertiaryColor: '#FDFAF2', mainBkg: '#FBF5E0', nodeBorder: '#C9A84C', clusterBkg: '#F5F0E5', titleColor: '#3A2000', edgeLabelBackground: '#FDFAF2' } });</script>
   
   <style>
 
@@ -741,7 +741,7 @@
 <p>Painostus-close on myyntipuheen päätösvaihe, jossa ostajalle luodaan <strong>keinotekoinen kiire ja niukkuus</strong>, jotta hän päättäisi ennen kuin ehtii harkita tai vertailla. "Vain 2 paikkaa jäljellä", "tarjous päättyy tänään", "hinta nousee huomenna", "minulla on toinenkin kiinnostunut" — kaikki tähtäävät samaan: estää harkinta, jonka aikana kauppa saattaisi kariutua.</p>
 <p>Kiire on myyjän ystävä ja ostajan vihollinen. Mitä vähemmän aikaa ostajalla on tarkistaa faktat, vertailla vaihtoehtoja tai kysyä neuvoa, sitä todennäköisemmin hän toimii tunteella. Aito niukkuus on olemassa; manipuloitu niukkuus keksitään painostusta varten.</p>
 <div class="mermaid">
-flowchart LR
+flowchart TD
   A["Keinotekoinen niukkuus:\n'vain 2 paikkaa' /\n'tarjous päättyy tänään'"] --&gt; B["Harkinta-aika\nkatoaa"]
   B --&gt; C["Ei ehdi vertailla,\ntarkistaa, kysyä neuvoa"]
   C --&gt; D["Päätös tunteella —\nFOMO ratkaisee"]

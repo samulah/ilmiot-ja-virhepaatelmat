@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="fonts/fonts.css">
   <script defer src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
-  <script>mermaid.initialize({ startOnLoad: true, theme: 'base', themeVariables: { fontSize: '12px', primaryColor: '#FBF5E0', primaryTextColor: '#1A1100', primaryBorderColor: '#C9A84C', lineColor: '#8B6914', secondaryColor: '#F5F0E5', tertiaryColor: '#FDFAF2', mainBkg: '#FBF5E0', nodeBorder: '#C9A84C', clusterBkg: '#F5F0E5', titleColor: '#3A2000', edgeLabelBackground: '#FDFAF2' } });</script>
+  <script>mermaid.initialize({ startOnLoad: true, theme: 'base', themeVariables: { fontSize: '12px', fontFamily: "'DM Sans', system-ui, sans-serif", primaryColor: '#FBF5E0', primaryTextColor: '#1A1100', primaryBorderColor: '#C9A84C', lineColor: '#8B6914', secondaryColor: '#F5F0E5', tertiaryColor: '#FDFAF2', mainBkg: '#FBF5E0', nodeBorder: '#C9A84C', clusterBkg: '#F5F0E5', titleColor: '#3A2000', edgeLabelBackground: '#FDFAF2' } });</script>
   
   <style>
 
@@ -758,7 +758,7 @@ flowchart TD
 <ul style="margin:0.5em 0 0;">
 <li><strong>Talvivaara ja ympäristöviranomaiset (2010-luku):</strong> Sotkamon nikkelikaivos sai toistuvasti jatkoaikoja ympäristöluvilleen katastrofaalisista vuodoista huolimatta. ELY-keskus myönsi poikkeuslupia, joita ympäristöjärjestöt riitauttivat — ja voittivat hallinto-oikeudessa useammin kuin kerran. Taloudellinen intressi (kaivos työllistää, valtio on osaomistaja) väistyi ympäristövelvoitteiden edelle: viranomainen punnitsi luvitusta osittain kaivoksen jatkuvuuden ehdoilla. Korkein hallinto-oikeus kumosi useita myönteisiä lupa-ratkaisuja.
           <div class="mermaid" style="margin:0.8em 0 0.2em;">
-flowchart LR
+flowchart TD
   V["Ympäristövuoto\ntapahtuu"] --&gt; E["ELY-keskus\nmyöntää\npoikkeusluvan"]
   E --&gt;|"valitus"| H["Hallinto-oikeus\nkumoaa luvan"]
   H --&gt; E

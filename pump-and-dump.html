@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="fonts/fonts.css">
   <script defer src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
-  <script>mermaid.initialize({ startOnLoad: true, theme: 'base', themeVariables: { fontSize: '12px', primaryColor: '#FBF5E0', primaryTextColor: '#1A1100', primaryBorderColor: '#C9A84C', lineColor: '#8B6914', secondaryColor: '#F5F0E5', tertiaryColor: '#FDFAF2', mainBkg: '#FBF5E0', nodeBorder: '#C9A84C', clusterBkg: '#F5F0E5', titleColor: '#3A2000', edgeLabelBackground: '#FDFAF2' } });</script>
+  <script>mermaid.initialize({ startOnLoad: true, theme: 'base', themeVariables: { fontSize: '12px', fontFamily: "'DM Sans', system-ui, sans-serif", primaryColor: '#FBF5E0', primaryTextColor: '#1A1100', primaryBorderColor: '#C9A84C', lineColor: '#8B6914', secondaryColor: '#F5F0E5', tertiaryColor: '#FDFAF2', mainBkg: '#FBF5E0', nodeBorder: '#C9A84C', clusterBkg: '#F5F0E5', titleColor: '#3A2000', edgeLabelBackground: '#FDFAF2' } });</script>
   
   <style>
 
@@ -741,7 +741,7 @@
 <p>Pump and dump on markkinamanipulaatio, jossa jokin halpa ja vähän vaihdettu kohde (osake, kryptovaluutta, NFT) <strong>pumpataan</strong> keinotekoisesti hypellä ja koordinoidulla ostamisella, jotta hinta nousee — ja kun uudet ostajat ryntäävät mukaan, manipuloijat <strong>dumppaavat</strong> omistuksensa huipulla. Hinta romahtaa, ja myöhäiset jäävät tappiolle.</p>
 <p>Voitto ei synny kohteen arvosta vaan ajoituksesta: sisäpiiri ostaa halvalla, luo FOMO:n (pelon jäädä paitsi) ja myy juuri ennen kuin tarina paljastuu tyhjäksi.</p>
 <div class="mermaid">
-flowchart LR
+flowchart TD
   A["Sisäpiiri ostaa\nhalvalla &amp; hiljaa"] --&gt; B["Hype:\n'tämä räjähtää!'\nsome, influensserit"]
   B --&gt; C["Ulkopuoliset ostavat\n→ hinta nousee"]
   C --&gt; D["Sisäpiiri myy\nhuipulla (dump)"]

@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="fonts/fonts.css">
   <script defer src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
-  <script>mermaid.initialize({ startOnLoad: true, theme: 'base', themeVariables: { fontSize: '12px', primaryColor: '#FBF5E0', primaryTextColor: '#1A1100', primaryBorderColor: '#C9A84C', lineColor: '#8B6914', secondaryColor: '#F5F0E5', tertiaryColor: '#FDFAF2', mainBkg: '#FBF5E0', nodeBorder: '#C9A84C', clusterBkg: '#F5F0E5', titleColor: '#3A2000', edgeLabelBackground: '#FDFAF2' } });</script>
+  <script>mermaid.initialize({ startOnLoad: true, theme: 'base', themeVariables: { fontSize: '12px', fontFamily: "'DM Sans', system-ui, sans-serif", primaryColor: '#FBF5E0', primaryTextColor: '#1A1100', primaryBorderColor: '#C9A84C', lineColor: '#8B6914', secondaryColor: '#F5F0E5', tertiaryColor: '#FDFAF2', mainBkg: '#FBF5E0', nodeBorder: '#C9A84C', clusterBkg: '#F5F0E5', titleColor: '#3A2000', edgeLabelBackground: '#FDFAF2' } });</script>
   
   <style>
 
@@ -745,7 +745,7 @@
 <li><strong>Ennaltaehkäisevä kumoaminen:</strong> Esitellään heikennetty versio manipulaatioargumentista — ja kumotaan se heti. Näin aivoille tarjoutuu mahdollisuus harjoitella kriittistä vastausta turvallisesti.</li>
 </ol>
 <div class="mermaid">
-flowchart LR
+flowchart TD
   HV["Heikennetty virus"] --&gt; IM["Immuunivaste\nkehittyy"] --&gt; SL["Oikea virus\ntorjutaan"]
   HA["Heikennetty\nargumentti +\nkumoaminen"] --&gt; MA["Mentaaliset\nvasta-aineet\nkehittyvät"] --&gt; SP["Oikea manipulaatio\ntorjutaan"]
   style HV fill:#e8f5e9,stroke:#27ae60

@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="fonts/fonts.css">
   <script defer src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
-  <script>mermaid.initialize({ startOnLoad: true, theme: 'base', themeVariables: { fontSize: '12px', primaryColor: '#FBF5E0', primaryTextColor: '#1A1100', primaryBorderColor: '#C9A84C', lineColor: '#8B6914', secondaryColor: '#F5F0E5', tertiaryColor: '#FDFAF2', mainBkg: '#FBF5E0', nodeBorder: '#C9A84C', clusterBkg: '#F5F0E5', titleColor: '#3A2000', edgeLabelBackground: '#FDFAF2' } });</script>
+  <script>mermaid.initialize({ startOnLoad: true, theme: 'base', themeVariables: { fontSize: '12px', fontFamily: "'DM Sans', system-ui, sans-serif", primaryColor: '#FBF5E0', primaryTextColor: '#1A1100', primaryBorderColor: '#C9A84C', lineColor: '#8B6914', secondaryColor: '#F5F0E5', tertiaryColor: '#FDFAF2', mainBkg: '#FBF5E0', nodeBorder: '#C9A84C', clusterBkg: '#F5F0E5', titleColor: '#3A2000', edgeLabelBackground: '#FDFAF2' } });</script>
   
   <style>
 
@@ -741,7 +741,7 @@
 <p>Foot-in-the-door (suom. "jalka oven väliin") on suostuttelutekniikka, jossa esitetään ensin <strong>pieni, helposti hyväksyttävä pyyntö</strong> ja vasta sen jälkeen varsinainen, suurempi pyyntö. Kun ihminen on kerran sanonut "kyllä", hän myöntyy todennäköisemmin seuraavaankin — koska haluaa pysyä johdonmukaisena aiemman valintansa kanssa.</p>
 <p>Voima perustuu sitoutumis- ja johdonmukaisuustarpeeseen: ensimmäinen myönnytys muuttaa ihmisen käsitystä itsestään ("olen sellainen joka auttaa / on mukana"), ja seuraava pyyntö ratsastaa tällä minäkuvalla. Klassinen Freedmanin ja Fraserin koe (1966) osoitti ilmiön kokeellisesti.</p>
 <div class="mermaid">
-flowchart LR
+flowchart TD
   A["Pieni pyyntö:\n'vastaisitko\nyhteen kysymykseen?'"] --&gt; B["Kyllä —\nhelppo suostua"]
   B --&gt; C["Minäkuva:\n'olen yhteistyöhaluinen'"]
   C --&gt; D["Suuri pyyntö:\n'allekirjoittaisitko /\nostaisitko / sitoutuisitko?'"]

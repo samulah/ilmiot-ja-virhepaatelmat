@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="fonts/fonts.css">
   <script defer src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
-  <script>mermaid.initialize({ startOnLoad: true, theme: 'base', themeVariables: { fontSize: '12px', primaryColor: '#FBF5E0', primaryTextColor: '#1A1100', primaryBorderColor: '#C9A84C', lineColor: '#8B6914', secondaryColor: '#F5F0E5', tertiaryColor: '#FDFAF2', mainBkg: '#FBF5E0', nodeBorder: '#C9A84C', clusterBkg: '#F5F0E5', titleColor: '#3A2000', edgeLabelBackground: '#FDFAF2' } });</script>
+  <script>mermaid.initialize({ startOnLoad: true, theme: 'base', themeVariables: { fontSize: '12px', fontFamily: "'DM Sans', system-ui, sans-serif", primaryColor: '#FBF5E0', primaryTextColor: '#1A1100', primaryBorderColor: '#C9A84C', lineColor: '#8B6914', secondaryColor: '#F5F0E5', tertiaryColor: '#FDFAF2', mainBkg: '#FBF5E0', nodeBorder: '#C9A84C', clusterBkg: '#F5F0E5', titleColor: '#3A2000', edgeLabelBackground: '#FDFAF2' } });</script>
   
   <style>
 
@@ -741,7 +741,7 @@
 <p>Skimmauksessa välittäjä asettuu kahden osapuolen väliin ja <strong>ottaa osansa salaamalla todellisen marginaalin</strong>. Asiakas ei tiedä, paljonko tekijälle maksetaan; tekijä ei tiedä, paljonko asiakas maksaa. Tietoa pidetään tarkoituksella erillään, koska <strong>epäsymmetria on välittäjän tulonlähde</strong> — jos molemmat näkisivät koko summan, he saattaisivat sopia keskenään tai vaatia oikeudenmukaisempaa jakoa.</p>
 <p>Välittäjä tuottaa joskus aitoa arvoa: löytää töitä, takaa maksun, hoitaa sopimukset. Skimmaus alkaa siitä, kun palkkio ei vastaa palvelua ja kun marginaali aktiivisesti piilotetaan.</p>
 <div class="mermaid">
-flowchart LR
+flowchart TD
   C["Asiakas\nmaksaa 100 €/h"] --&gt; V["Välittäjä\n(marginaali piilossa)"]
   V --&gt; T["Tekijä\nsaa 55 €/h"]
   V -.salattu 45 %.-&gt; V

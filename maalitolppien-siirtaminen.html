@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="fonts/fonts.css">
   <script defer src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
-  <script>mermaid.initialize({ startOnLoad: true, theme: 'base', themeVariables: { fontSize: '12px', primaryColor: '#FBF5E0', primaryTextColor: '#1A1100', primaryBorderColor: '#C9A84C', lineColor: '#8B6914', secondaryColor: '#F5F0E5', tertiaryColor: '#FDFAF2', mainBkg: '#FBF5E0', nodeBorder: '#C9A84C', clusterBkg: '#F5F0E5', titleColor: '#3A2000', edgeLabelBackground: '#FDFAF2' } });</script>
+  <script>mermaid.initialize({ startOnLoad: true, theme: 'base', themeVariables: { fontSize: '12px', fontFamily: "'DM Sans', system-ui, sans-serif", primaryColor: '#FBF5E0', primaryTextColor: '#1A1100', primaryBorderColor: '#C9A84C', lineColor: '#8B6914', secondaryColor: '#F5F0E5', tertiaryColor: '#FDFAF2', mainBkg: '#FBF5E0', nodeBorder: '#C9A84C', clusterBkg: '#F5F0E5', titleColor: '#3A2000', edgeLabelBackground: '#FDFAF2' } });</script>
   
   <style>
 
@@ -741,7 +741,7 @@
 <p>Maalitolppien siirtäminen (eng. <em>moving the goalposts</em>) on retorinen ja strateginen taktiikka, jossa onnistumisen kriteerejä muutetaan jälkikäteen — juuri kun alkuperäinen ehto on täytetty tai lähellä täyttymistä. Tavoitteena ei ole parempi tulos: se on pitää toinen osapuoli ikuisessa suoritustilassa ilman koskaan saavutettavaa maalilinjaa.</p>
 <p>Ilmiö esiintyy kahdessa muodossa. <strong>Avoimessa muodossa</strong> siirto tapahtuu näkyvästi: "Olen jo tyytyväinen kunhan teet X" → X tehdään → "Nyt täytyy myös Y." <strong>Hiljaisessa muodossa</strong> alkuperäistä ehtoa ei koskaan selvästi asetettu — ja kun pyydetty asia on tehty, väitetään, ettei se koskaan riittänyt. Jälkimmäinen liukuu <a href="gaslighting.html">gaslightingin</a> puolelle.</p>
 <div class="mermaid">
-flowchart LR
+flowchart TD
   A["Ehto asetetaan:\n'Tee X'"] --&gt; B["X tehdään"]
   B --&gt; C["Uusi ehto:\n'Tarvitaan myös Y'"]
   C --&gt; D["Y tehdään"]

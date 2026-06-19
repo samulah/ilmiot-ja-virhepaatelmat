@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="fonts/fonts.css">
   <script defer src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
-  <script>mermaid.initialize({ startOnLoad: true, theme: 'base', themeVariables: { fontSize: '12px', primaryColor: '#FBF5E0', primaryTextColor: '#1A1100', primaryBorderColor: '#C9A84C', lineColor: '#8B6914', secondaryColor: '#F5F0E5', tertiaryColor: '#FDFAF2', mainBkg: '#FBF5E0', nodeBorder: '#C9A84C', clusterBkg: '#F5F0E5', titleColor: '#3A2000', edgeLabelBackground: '#FDFAF2' } });</script>
+  <script>mermaid.initialize({ startOnLoad: true, theme: 'base', themeVariables: { fontSize: '12px', fontFamily: "'DM Sans', system-ui, sans-serif", primaryColor: '#FBF5E0', primaryTextColor: '#1A1100', primaryBorderColor: '#C9A84C', lineColor: '#8B6914', secondaryColor: '#F5F0E5', tertiaryColor: '#FDFAF2', mainBkg: '#FBF5E0', nodeBorder: '#C9A84C', clusterBkg: '#F5F0E5', titleColor: '#3A2000', edgeLabelBackground: '#FDFAF2' } });</script>
   
   <style>
 
@@ -741,7 +741,7 @@
 <p>Door-in-the-face on foot-in-the-doorin peilikuva: esitetään ensin <strong>tahallaan ylimitoitettu pyyntö</strong>, joka torjutaan, ja heti perään "kohtuullisempi" pyyntö — joka oli koko ajan tavoite. Torjutun jättihinnan jälkeen toinen tarjous näyttää myönnytykseltä ja kohtuulliselta, vaikka se olisi yksinään esitettynä liian korkea.</p>
 <p>Tekniikka nojaa kahteen voimaan: <strong>kontrastiin</strong> (toinen luku näyttää pieneltä ensimmäisen rinnalla) ja <strong>vastavuoroisuuteen</strong> (myyjän näennäinen "perääntyminen" synnyttää paineen vastata omalla myönnytyksellä — eli kyllä-vastauksella).</p>
 <div class="mermaid">
-flowchart LR
+flowchart TD
   A["Kohtuuton pyyntö:\n'paketti maksaa\n15 000 €'"] --&gt; B["Torjunta:\n'ei käy'"]
   B --&gt; C["'Perääntyminen':\n'no, voimme tehdä\nsen 6000 €:lla'"]
   C --&gt; D["Näyttää myönnytykseltä —\n6000 € tuntuu halvalta\n15 000 €:n jälkeen"]

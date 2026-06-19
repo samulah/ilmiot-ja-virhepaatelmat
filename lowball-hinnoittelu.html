@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="fonts/fonts.css">
   <script defer src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
-  <script>mermaid.initialize({ startOnLoad: true, theme: 'base', themeVariables: { fontSize: '12px', primaryColor: '#FBF5E0', primaryTextColor: '#1A1100', primaryBorderColor: '#C9A84C', lineColor: '#8B6914', secondaryColor: '#F5F0E5', tertiaryColor: '#FDFAF2', mainBkg: '#FBF5E0', nodeBorder: '#C9A84C', clusterBkg: '#F5F0E5', titleColor: '#3A2000', edgeLabelBackground: '#FDFAF2' } });</script>
+  <script>mermaid.initialize({ startOnLoad: true, theme: 'base', themeVariables: { fontSize: '12px', fontFamily: "'DM Sans', system-ui, sans-serif", primaryColor: '#FBF5E0', primaryTextColor: '#1A1100', primaryBorderColor: '#C9A84C', lineColor: '#8B6914', secondaryColor: '#F5F0E5', tertiaryColor: '#FDFAF2', mainBkg: '#FBF5E0', nodeBorder: '#C9A84C', clusterBkg: '#F5F0E5', titleColor: '#3A2000', edgeLabelBackground: '#FDFAF2' } });</script>
   
   <style>
 
@@ -741,7 +741,7 @@
 <p>Lowball-taktiikassa kauppa avataan <strong>houkuttelevan matalalla hinnalla</strong>, jotta toinen osapuoli sitoutuu. Kun sitoutuminen on tapahtunut — sopimus allekirjoitettu, projekti aloitettu, aika varattu — hinta nousee: tulee lisämaksuja, "ehtoja joita ei mainittu", tai sovittu laajuus paljastuu riittämättömäksi. Asiakas jää, koska on jo sijoittanut aikaa ja vaivaa eikä halua aloittaa alusta.</p>
 <p>Lowball eroaa rehellisestä aliarviosta tahallisuudessa: matala hinta on syötti, ei virhe. Voima tulee <a href="sunk-cost-harha.html">uponneista kustannuksista</a> — mitä pidemmälle on edetty, sitä kalliimmalta tuntuu perääntyä.</p>
 <div class="mermaid">
-flowchart LR
+flowchart TD
   A["Matala aloitushinta:\n'teemme tämän 2000 €:lla'"] --&gt; B["Asiakas sitoutuu:\nsopimus, aika, odotus"]
   B --&gt; C["'Tämä ei sisältynytkään' /\n'laajuus oli suurempi'"]
   C --&gt; D["Hinta nousee:\n4000 €, 6000 €…"]
