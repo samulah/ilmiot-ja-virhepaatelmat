@@ -7,8 +7,34 @@
   <title>BKT-harha — Irlannin paradoksi — Ilmiöitä</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="fonts/fonts.css">
-  <script defer src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
-  <script>mermaid.initialize({ startOnLoad: true, theme: 'base', themeVariables: { fontSize: '12px', fontFamily: "'DM Sans', system-ui, sans-serif", primaryColor: '#FBF5E0', primaryTextColor: '#1A1100', primaryBorderColor: '#C9A84C', lineColor: '#8B6914', secondaryColor: '#F5F0E5', tertiaryColor: '#FDFAF2', mainBkg: '#FBF5E0', nodeBorder: '#C9A84C', clusterBkg: '#F5F0E5', titleColor: '#3A2000', edgeLabelBackground: '#FDFAF2' } });</script>
+  <script>
+  window.addEventListener('DOMContentLoaded', function () {
+    var nodes = document.querySelectorAll('.mermaid');
+    if (!nodes.length) return;
+    var loaded = false;
+    function load() {
+      if (loaded) return;
+      loaded = true;
+      var s = document.createElement('script');
+      s.src = 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js';
+      s.onload = function () {
+        mermaid.initialize({ startOnLoad: false, theme: 'base', themeVariables: { fontSize: '12px', fontFamily: "'DM Sans', system-ui, sans-serif", primaryColor: '#FBF5E0', primaryTextColor: '#1A1100', primaryBorderColor: '#C9A84C', lineColor: '#8B6914', secondaryColor: '#F5F0E5', tertiaryColor: '#FDFAF2', mainBkg: '#FBF5E0', nodeBorder: '#C9A84C', clusterBkg: '#F5F0E5', titleColor: '#3A2000', edgeLabelBackground: '#FDFAF2' } });
+        mermaid.run();
+      };
+      document.head.appendChild(s);
+    }
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { load(); io.disconnect(); }
+        });
+      }, { rootMargin: '200px 0px' });
+      nodes.forEach(function (n) { io.observe(n); });
+    } else {
+      load();
+    }
+  });
+  </script>
   
   <style>
 
@@ -676,6 +702,12 @@
     },
     {
       "@type": "Article",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.ilmiöt.fi/og/brand.png",
+        "width": 1200,
+        "height": 630
+      },
       "@id": "https://www.ilmiöt.fi/bkt-harha.html#article",
       "url": "https://www.ilmiöt.fi/bkt-harha.html",
       "headline": "BKT-harha — Irlannin paradoksi",
@@ -690,7 +722,13 @@
         "@type": "Organization",
         "name": "Ilmiöitä",
         "url": "https://www.ilmiöt.fi/",
-        "@id": "https://www.ilmiöt.fi/#organization"
+        "@id": "https://www.ilmiöt.fi/#organization",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.ilmiöt.fi/favicon.svg",
+          "width": 64,
+          "height": 64
+        }
       },
       "about": {
         "@type": "DefinedTerm",
@@ -704,8 +742,10 @@
       },
       "author": {
         "@type": "Person",
+        "@id": "https://www.ilmiöt.fi/#ilmiomies",
         "name": "Ilmiömies",
-        "url": "https://www.ilmiöt.fi/tietoa.html"
+        "url": "https://www.ilmiöt.fi/tietoa.html",
+        "description": "Kirjoittajanimi, jonka takana on kiinnostus valtaan, vaikuttamiseen ja ihmisen päättelyn vinoumiin. Sisältö perustuu julkisiin lähteisiin ja vakiintuneeseen käsitteistöön."
       },
       "datePublished": "2026-06-19",
       "dateModified": "2026-06-19"

@@ -1,35 +1,31 @@
-# SEO Action Plan — ilmiöt.fi (TODO)
+# SEO Action Plan — ilmiöt.fi
 
-Generated: 2026-06-19 · Target: https://www.ilmiöt.fi
-Companion to `FULL-AUDIT-REPORT.md`
+Generated 2026-06-21. Health score: **84/100**. Priority: Critical > High > Medium > Low.
 
-Each item lists **what** to do and **why it matters** (the concrete payoff).
+## Critical (blocks indexing / penalties)
+*None.* The site is fully crawlable and indexable.
 
-> ⚠️ A batch of changes (related-links, today's dates, Mermaid CLS fix, self-hosted fonts + tightened CSP, brand OG image) is **done locally but not yet deployed** — push to make them live.
+## High (fix within 1 week)
+1. ✅ **DONE (2026-06-21, not yet deployed).** Mermaid now lazy-loads via `IntersectionObserver` (200px margin) on all 55 pages — the library downloads only when a diagram nears the viewport. `scripts/seo_patch_v2.py`.
+2. ✅ **DONE (2026-06-21, not yet deployed).** Init ordering fixed: `load → onload → mermaid.initialize({startOnLoad:false}) → mermaid.run()` (was an immediate inline init before the `defer`-loaded bundle → threw, brand theme lost). **Pending: confirm render in a browser after deploy** (scroll to a diagram, check gold/cream styling + clean console).
+
+## Medium (fix within 1 month)
+3. **Standardize the host to punycode.** Replace `https://www.ilmiöt.fi/` with `https://www.xn--ilmit-mua.fi/` in: every page's `<link rel="canonical">` and `og:url`/`twitter` URLs, all JSON-LD `url`/`@id`, `sitemap.xml` `<loc>`, the `robots.txt` `Sitemap:` line, and `llms.txt`. Non-ASCII in sitemap `<loc>` is spec-non-compliant; consistency with the served host is cleaner.
+4. **(Already done — CLS guarded.)** `style.css` reserves `.mermaid { min-height: 220px }` and charts use a `height` attribute. Optional polish: reserve height proportional to each diagram's real size so diagrams taller than 220px don't shift.
+5. ✅ **DONE (2026-06-21, not yet deployed):**
+   - `Organization.logo` (favicon.svg ImageObject) → homepage + 68 articles + about page.
+   - `Article.image` (brand.png ImageObject, 1200×630) → 68 articles.
+   - author `Person`: `@id`-linked to canonical `#ilmiomies` + `description` → 68 articles.
+   - `SearchAction` **intentionally skipped** — on-site search is client-side only (no `?q=` endpoint), so a SearchAction target would be non-functional. `sameAs` omitted (pseudonymous author, no external profiles).
+6. **Per-article OG images.** Generate unique 1200×630 images (the repo's `scripts/generate_og_images.py` already exists) and set per-page `og:image` + descriptive `og:image:alt`, instead of the shared `/og/brand.png`.
+7. **Strengthen thin / borderline-YMYL pages.** Expand the 13 sub-300-word articles (start with `paskuuttaminen`, `conways-laki`, `hofstadterin-laki`, `yhdeksanyhdeksan`, `starve-the-beast`) with a concrete example + "how to recognise" list. For scam/finance topics (`pig-butchering`, `ponzi-pyramidi`, `ennakkomaksuhuijaus`, `korkoa-korolle`, `negatiivinen-korkoa`, `korkokierre`) add explicit citations/sources to lift trust.
+
+## Low (backlog)
+8. Add `defer` to the `chart.js` tag on the 3 finance pages (currently render-blocking).
+9. Differentiate homepage `og:title` from `og:site_name`.
+10. Point breadcrumb category node (position 2) to `index.html#<category>`.
+11. Add per-passage anchors / FAQ blocks to top phenomena for direct AI citation.
+12. Verify the site is added to Google Search Console + Bing Webmaster Tools (using the punycode property) and the sitemap submitted, so you get real indexation + CWV field data.
 
 ---
-
-## 🟡 MEDIUM
-
-- **Search Console + Bing.**
-  **What:** Verify www.ilmiöt.fi, submit `sitemap.xml`, enable URL inspection.
-  **Why it matters:** This is the only way to see *real* data instead of guessing — actual queries, impressions, clicks, CTR and position; which URLs are indexed vs excluded and why; crawl errors; and real Core Web Vitals from CrUX (field data) rather than lab estimates. Submitting the sitemap also gets all 70 URLs discovered fast. Bing's index additionally feeds Microsoft Copilot citations.
-
-- **Titles (~27 over 60 chars).**
-  **What:** Trim/restructure the over-long titles.
-  **Why it matters:** Google truncates titles past ~60 chars with "…", cutting off the distinctive keyword/hook. Tightening them makes the full, click-worthy title visible in results — more clicks at the *same* ranking, no extra content needed.
-
----
-
-## 🟢 LOW — backlog
-
-- **Harden CSP (nonces instead of `'unsafe-inline'`).** `'unsafe-inline'` currently lets *any* injected inline script run, weakening XSS protection. Nonces or external scripts restore strong XSS defense while keeping Mermaid/Chart working.
-- **Per-category hub pages.** Gives each of the 8 themes a dedicated, rankable landing page for broader category-level keywords and concentrates topical authority into a cleaner hub-and-spoke structure.
-- **`.ico`/PNG favicon fallback.** Some older/edge browsers ignore SVG favicons; a raster fallback guarantees the flag logo shows in every tab and bookmark (brand consistency).
-
----
-
-## ⚠️ Repo hygiene
-
-**What:** Commit the repo — the SEO build, `favicon.svg`, `tietoa.html`, `fonts/`, `scripts/`, and `.htaccess` are uncommitted.
-**Why it matters:** Untracked files keep getting deleted (`.htaccess` twice this session). A commit makes the whole session's work recoverable via git history and enables rollback — without it, a stray cleanup can silently wipe live-critical config again.
+*Note: this overwrites the prior 2026-06-19 audit output of the same skill. No measurements used Playwright/CrUX — those tools were unavailable in this run; Performance is assessed from architecture and assets.*

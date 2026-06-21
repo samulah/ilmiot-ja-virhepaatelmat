@@ -1,105 +1,147 @@
-# SEO Full Audit Report — ilmiöt.fi
+# Full SEO Audit — ilmiöt.fi
 
-**Audit target:** https://ilmiöt.fi → 301 → https://www.ilmiöt.fi (`www.xn--ilmit-mua.fi`)
-**Audit date:** 2026-06-19 (session 3 — post-deploy)
-**Auditor:** Claude Code SEO Audit
-**Branch:** seo
-**History:** 2026-06-16 live 28/100 · session 2 local build ~83 · **now DEPLOYED**
+**URL audited:** https://www.ilmiöt.fi/ (served as `https://www.xn--ilmit-mua.fi/`)
+**Date:** 2026-06-21
+**Crawl scope:** 70 indexable pages (68 phenomenon articles + homepage + about page); `random.html` correctly `noindex`
+**Method:** Live fetch + local source analysis (inline, no field data — Playwright/CrUX unavailable in this environment)
 
 ---
 
 ## Executive Summary
 
-### SEO Health Score
+**Overall SEO Health Score: 84 / 100** — strong.
 
-| State | Score |
-|-------|-------|
-| Session 1 (live, pre-SEO) | 28 / 100 |
-| **Live now (deployed)** | **≈ 85 / 100** |
+**Business type detected:** Publisher / educational reference site ("tietopankki"). Finnish-language glossary of 68 societal phenomena (power structures, propaganda, cognitive biases, bureaucracy, project-management laws, growth dynamics, scams, sales/pressure tactics). Single-language (fi), non-local, non-ecommerce.
 
-🎉 **The full SEO build is live in production.** Live verification (`last-modified` today 04:26 GMT):
-- `ilmiöt.fi` **301 → www.ilmiöt.fi** (host canonicalization works)
-- Security headers + CSP (`script-src … 'unsafe-inline'`) live — inline Mermaid/Chart/random scripts run
-- Canonical, meta descriptions, favicon, header/breadcrumb logo, author=Ilmiömies schema all live
-- `tietoa.html` (About) → 200 · old `og/*.png` → 404 (removed) · `favicon.svg` → 200
-- robots.txt, sitemap.xml (70 URLs), llms.txt all on `www.ilmiöt.fi`, zero "Kendom"
-- **TTFB 0.10 s**, HTTP/2+3, 46 KB homepage
+This is a well-engineered static site: clean security posture, complete and consistent structured data, real internal linking, an About page with authorship, and deliberate AI-search readiness (llms.txt + AI-crawler allow-list). The weak spots are narrow and fixable: an IDN URL inconsistency, a heavy third-party diagram library on most pages, generic social images, and a handful of thin pages.
 
-### Business Type
-Finnish educational reference site — 68 in-depth articles on power/manipulation/bias phenomena across 8 categories. Non-commercial, informational, YMYL-adjacent. Server: LiteSpeed.
+### Top 5 issues
+1. **IDN URL inconsistency** — canonical, `og:url`, schema `@id`/`url`, `sitemap.xml`, `robots.txt` and `llms.txt` all declare the raw-Unicode host `www.ilmiöt.fi`, while the site is served on punycode `xn--ilmit-mua.fi`. Non-ASCII in `<loc>` is non-compliant with the sitemap spec. *(Medium)*
+2. **`mermaid.min.js` on 55 pages from jsDelivr** — large client-side render library + `chart.js` on 3 pages; the heaviest CWV/INP factor on an otherwise featherweight site. *(Medium-High perf)*
+3. **Mermaid init ordering looks broken** — `mermaid.initialize()` is an immediate inline script placed *after* the `defer`-loaded bundle, so `mermaid` is likely undefined when it runs. Verify diagrams actually render. *(Medium — correctness)*
+4. **Generic OG image site-wide** — all 68 articles share `/og/brand.png` with generic `og:image:alt`; no per-article social/AI preview. *(Medium)*
+5. **13 thin pages (<300 words incl. chrome)** — glossary format, but the shortest (e.g. `paskuuttaminen`, `conways-laki`, `hofstadterin-laki`) are light on examples. *(Medium)*
 
-### Top issues remaining (none critical)
-1. **🟠 Sparse internal linking** — 2–5 links/page, no "related phenomena" blocks across 68 related articles. Biggest remaining lever.
-2. **🟡 No social-share image** — OG images were removed by request; shares (Slack/WhatsApp/LinkedIn/X) now show no preview thumbnail. Consider one brand OG card built from the flag logo.
-3. **🟡 27 titles > 60 chars** — minor SERP-truncation risk.
-4. **🟡 `datePublished`/`dateModified` are placeholders** (2026-06-16 / 2026-06-19) — set real dates if known.
-5. **🟡 Not yet in Search Console / Bing** — no field data (CrUX/GSC) or indexation monitoring.
-
-### Quick wins
-1. Add automated "Liittyvät ilmiöt" (3–6 links) to each article.
-2. Generate one brand OG image (flag logo + site name) and reference it site-wide.
-3. Submit `sitemap.xml` to Google Search Console + Bing Webmaster.
-4. Trim the ~27 over-long titles.
-5. Commit the repo — untracked files (notably `.htaccess`) keep getting deleted locally.
+### Top 5 quick wins
+1. Add `logo` (ImageObject) to the `Organization` schema and `image` to the `Article` schema → unlocks Article rich-result eligibility.
+2. Add per-article `og:image` + descriptive `og:image:alt` (instead of the shared `/og/brand.png`).
+3. Add `defer` to the `chart.js` tag on the 3 finance pages.
+4. Add `potentialAction` (SearchAction) to the `WebSite` schema — you already have an on-site search box.
+5. Give the author `Person` a `description`/`sameAs` (even just the About page) and consider a real attributed identity for the finance/scam pages (borderline-YMYL).
 
 ---
 
-## Technical SEO  — ~90/100
+## Technical SEO — 88/100
 
-- ✅ **Indexability:** canonical = `https://www.ilmiöt.fi/<page>` on every page (69 pages + About). `random.html` = `noindex, follow` + self-canonical.
-- ✅ **Host canonicalization:** non-www + http → `https://www.ilmiöt.fi` (301, live).
-- ✅ **Security (live):** HSTS, X-Content-Type-Options, X-Frame-Options, Referrer-Policy, Permissions-Policy, and a working CSP. Inline scripts function because `script-src` includes `'unsafe-inline'`.
-- ✅ **Crawl:** robots.txt allows all + explicit GPTBot/OAI-SearchBot/ClaudeBot/PerplexityBot; sitemap.xml (70 URLs) on correct host.
-- ✅ HTTP/2 + HTTP/3, TTFB ~0.10 s.
-- 🟡 Long-term: replace CSP `'unsafe-inline'` with nonces/external scripts (hardening, not urgent).
+**Strong:**
+- HTTPS everywhere; `Strict-Transport-Security: max-age=31536000; includeSubDomains`.
+- Full security-header suite: `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`, `Permissions-Policy`, and a real `Content-Security-Policy`. Well above typical.
+- Canonicalization correct: `http→https` 301, apex `→ www` 301.
+- `robots.txt` allows all + explicitly allows GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot.
+- `sitemap.xml` complete: 70 `<loc>` entries = every indexable page; `random.html` excluded and `noindex, follow`.
+- LiteSpeed with HTTP/2 + HTTP/3 (QUIC) advertised.
+- `viewport` meta on every page; responsive CSS.
 
-## Content Quality — ~88/100
-
-- ✅ Deep, original Finnish content (3,200–4,400 words/article); 1 H1/page; unique per phenomenon.
-- ✅ **E-E-A-T:** author **Ilmiömies** (Person schema + visible byline + date), publisher Organization "Ilmiöitä", dedicated **About page** (`tietoa.html`) linked sitewide.
-- ✅ Clean, full-sentence meta descriptions (rewritten from the prior truncated ones).
-- 🟡 Dates are placeholders; consider per-article real dates.
-
-## On-Page SEO — ~78/100
-
-- ✅ Titles, descriptions, OG/Twitter, single H1, logo in header + breadcrumb.
-- 🟠 **Internal linking still sparse** — no related-content sections (top opportunity).
-- 🟡 27 titles > 60 chars.
-
-## Schema & Structured Data — ~90/100
-
-- ✅ Article + DefinedTerm + DefinedTermSet + BreadcrumbList per phenomenon; WebSite + Organization + CollectionPage + ItemList on the hub; AboutPage + Person on About.
-- ✅ `author`, `datePublished`, `dateModified`, publisher now present; all `@id`/url on ilmiöt.fi; no Kendom.
-
-## Performance — ~82/100 (lab)
-
-- ✅ TTFB ~0.10 s, 46 KB homepage, no raster images, deferred Mermaid/Chart.
-- 🟡 Client-side Mermaid/Chart can cause CLS/INP on diagram-heavy pages — reserve container height.
-- ℹ️ No field data yet (connect CrUX/GSC).
-
-## Images — ~72/100
-
-- ✅ No content `<img>` → no alt/oversize/CLS debt. Favicon (SVG flag logo) on all pages.
-- 🟡 **OG/social images removed** (by request): no share-preview thumbnail anywhere. A single reusable brand OG image would restore social CTR without re-introducing per-page images.
-
-## AI Search Readiness — ~88/100
-
-- ✅ AI crawlers allowed, llms.txt (ilmiöt.fi, names author), DefinedTerm + definitional structure, deep citable content, About page for authority.
-- 🟡 Add author/date prominence continues to help attribution.
+**Issues:**
+- **IDN inconsistency (Medium):** every machine-readable URL uses raw `ö` (`www.ilmiöt.fi`) instead of punycode. Google normalizes IDNs, so this is not blocking indexation, but: (a) non-ASCII characters in sitemap `<loc>` violate the sitemaps.org / RFC 3986 requirement and some validators/crawlers reject them; (b) consistency between the served host (punycode) and declared canonical is cleaner. **Standardize on `https://www.xn--ilmit-mua.fi/` in canonical, `og:url`, schema `url`/`@id`, `sitemap.xml`, `robots.txt` Sitemap line, and `llms.txt`.**
+- No `<meta name="robots">` on indexable pages (fine — defaults to index,follow).
 
 ---
 
-## Category Scores
+## Content Quality — 76/100
+
+**Strong:**
+- Original, clearly-written Finnish; consistent four-part structure (what it is / mechanism / how to spot it / examples).
+- E-E-A-T basics present: dedicated `tietoa.html` About page explaining purpose, author, selection method, and sourcing ("perustuu julkisiin lähteisiin ja vakiintuneeseen käsitteistöön"); per-article byline `Kirjoittanut Ilmiömies · Päivitetty …` with `rel="author"`.
+- Good citability: definitions name origins/classic cases (e.g. gaslighting → 1944 film *Gaslight*).
+
+**Issues:**
+- **Pseudonymous authorship (Medium):** "Ilmiömies" has no real identity, credentials, or external profile. Fine for general explainers, but several topics border on YMYL — scams (`pig-butchering`, `ponzi-pyramidi`, `ennakkomaksuhuijaus`) and finance (`korkoa-korolle`, `negatiivinen-korkoa`, `korkokierre`). For those, add explicit sourcing/citations and stronger trust signals.
+- **Thin pages (Medium):** 68 articles range 240–669 visible words (median 341, incl. nav/breadcrumb/footer chrome — real body is shorter). 13 are <300 words. Glossary format tolerates this, but expanding the thinnest with a concrete example + "how to recognise" list would help both ranking and AI citation.
+
+---
+
+## On-Page SEO — 90/100
+
+**Strong:**
+- Unique, descriptive, well-sized `<title>` per page (e.g. *"Gaslighting — todellisuuden järjestelmällinen kiistäminen — Ilmiöitä"*).
+- Unique meta descriptions per page.
+- Exactly one `<h1>` per page; logical `h2`/`h3` structure; homepage `h2`s map to the 8 categories.
+- Strong internal linking: each article links to ~6–8 related phenomena plus breadcrumb + home + about (sample `gaslighting.html`: 13 internal `.html` links).
+- Clean, descriptive slug URLs.
+
+**Issues (minor):**
+- `og:site_name` and `og:title` are identical on the homepage. Cosmetic.
+- Breadcrumb category node (position 2) has no `item` URL because categories are homepage anchors — could point to `index.html#<category>`.
+
+---
+
+## Schema & Structured Data — 85/100
+
+**Implemented (all valid JSON-LD, `@graph` + `@id` referencing):**
+- Homepage: `WebSite`, `Organization`, `CollectionPage` with `mainEntity` `ItemList` (68 `ListItem`s).
+- Every article: `BreadcrumbList`, `Article` (headline, description, inLanguage, articleSection, isPartOf, publisher, about→`DefinedTerm`/`DefinedTermSet`, author `Person`, `datePublished`, `dateModified`).
+- About page: `AboutPage`.
+
+**Gaps (Medium/Low):**
+- `Organization` has **no `logo`** (ImageObject) — required for several Google rich results.
+- `Article` has **no `image`** property (relies on `og:image` only) — Article rich-result eligibility wants it.
+- Author `Person` lacks `description`/`sameAs`/`jobTitle`.
+- `WebSite` lacks `potentialAction` (SearchAction) — you have an on-site search; adding it enables the sitelinks search box.
+
+---
+
+## Performance (CWV) — 78/100
+
+*No field data (CrUX) or lab run available in this environment; assessed from architecture + assets.*
+
+**Strong:**
+- Static HTML on LiteSpeed, HTTP/2 + QUIC; small documents.
+- Inline critical CSS on homepage; small external `style.css` (~10 KB) on articles.
+- Self-hosted `woff2` fonts with `font-display: swap` (no render-blocking webfont, no FOIT).
+- No analytics/ad/tag-manager third parties.
+
+**Issues:**
+- **`mermaid@11` from jsDelivr on 55 pages (Medium-High):** large client-side diagram renderer; main contributor to JS download + parse/execute (INP/TBT risk), plus a third-party CDN dependency. Consider pre-rendering diagrams to static inline SVG at build time, or lazy-loading mermaid only when a `.mermaid` block is near the viewport (`IntersectionObserver`).
+- **`chart.js@4` on 3 finance pages loaded without `defer`/`async`** (render-blocking). Add `defer`.
+- **Init ordering (see correctness note):** `mermaid.initialize()` runs inline before the deferred bundle — verify diagrams render at all.
+
+**Already handled well:** CLS is guarded — `style.css` reserves `.mermaid { min-height: 220px }` and chart `<canvas>` elements carry an explicit `height` attribute, so diagrams/charts don't shift layout on render. (Residual: a mermaid diagram taller than 220px can still shift slightly.)
+
+---
+
+## Images — 80/100
+
+- Favicon is SVG with descriptive `alt`. Almost no raster `<img>` content (diagrams are SVG/mermaid), so no alt-text debt.
+- **Single shared OG image** `/og/brand.png` (1200×630, 200 OK) across all 68 articles, with generic `og:image:alt`. Per-article OG images would lift social + AI preview CTR. The repo already contains `scripts/generate_og_images.py` — only `brand.png` is deployed.
+
+---
+
+## AI Search Readiness (GEO) — 90/100
+
+**Strong — this is a highlight:**
+- `robots.txt` explicitly allows GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot.
+- `llms.txt` present, comprehensive: summary, 8 categories, all phenomena with absolute URLs, author, and an explicit reuse note ("Sisältö on vapaasti viitattavissa").
+- `DefinedTerm` / `DefinedTermSet` schema — ideal machine-readable definitions for AI answer engines.
+- Definitional, self-contained, citable passages; named origins/cases.
+
+**Opportunities (Low):**
+- Per-passage anchors / FAQ blocks for direct citation.
+- Fix the IDN host in `llms.txt` URLs for consistency with the served domain.
+
+---
+
+## Score Summary
 
 | Category | Weight | Score | Weighted |
-|----------|--------|-------|----------|
-| Technical SEO | 22% | 90 | 19.8 |
-| Content Quality | 23% | 88 | 20.2 |
-| On-Page SEO | 20% | 78 | 15.6 |
-| Schema | 10% | 90 | 9.0 |
-| Performance | 10% | 82 | 8.2 |
-| AI Readiness | 10% | 88 | 8.8 |
-| Images | 5% | 72 | 3.6 |
-| **Total** | **100%** | | **≈ 85 / 100** |
+|---|---:|---:|---:|
+| Technical SEO | 22% | 88 | 19.4 |
+| Content Quality | 23% | 76 | 17.5 |
+| On-Page SEO | 20% | 90 | 18.0 |
+| Schema | 10% | 85 | 8.5 |
+| Performance (CWV) | 10% | 80 | 8.0 |
+| AI Search Readiness | 10% | 90 | 9.0 |
+| Images | 5% | 80 | 4.0 |
+| **Total** | **100%** | | **84** |
 
-From **28 → 85** in one session, now live. The single biggest remaining lever is internal "related phenomena" linking; everything else is polish. See `ACTION-PLAN.md`.
+See `ACTION-PLAN.md` for the prioritized fix list.
