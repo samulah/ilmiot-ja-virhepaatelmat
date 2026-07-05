@@ -1,147 +1,181 @@
 # Full SEO Audit — ilmiöt.fi
 
 **URL audited:** https://www.ilmiöt.fi/ (served as `https://www.xn--ilmit-mua.fi/`)
-**Date:** 2026-06-21
-**Crawl scope:** 70 indexable pages (68 phenomenon articles + homepage + about page); `random.html` correctly `noindex`
-**Method:** Live fetch + local source analysis (inline, no field data — Playwright/CrUX unavailable in this environment)
+**Date:** 2026-07-05 (re-audit; supersedes the 2026-06-21 run)
+**Scope:** 70 indexable URLs (68 phenomenon articles + homepage + about); `random.html` correctly `noindex`
+**Method:** Live fetch (curl over HTTP/2+3) + full local source analysis. No field data (CrUX/Playwright unavailable in this environment); Performance assessed from architecture + live response behaviour.
 
 ---
 
 ## Executive Summary
 
-**Overall SEO Health Score: 84 / 100** — strong.
+**Overall SEO Health Score: 84 / 100 (live)** — unchanged from the 2026-06-21 audit.
 
-**Business type detected:** Publisher / educational reference site ("tietopankki"). Finnish-language glossary of 68 societal phenomena (power structures, propaganda, cognitive biases, bureaucracy, project-management laws, growth dynamics, scams, sales/pressure tactics). Single-language (fi), non-local, non-ecommerce.
+### ⚠️ Headline finding: the score hasn't moved because the improvements were never deployed.
 
-This is a well-engineered static site: clean security posture, complete and consistent structured data, real internal linking, an About page with authorship, and deliberate AI-search readiness (llms.txt + AI-crawler allow-list). The weak spots are narrow and fixable: an IDN URL inconsistency, a heavy third-party diagram library on most pages, generic social images, and a handful of thin pages.
+The live site is still the **19 June build**. Every fix from the last audit is sitting in the repo — some committed to `main`, some only in the working tree — but **none of it is on the server.** Google, Bing and the AI crawlers still see the pre-fix version. Deploying is the single highest-leverage action available and costs no new development.
 
-### Top 5 issues
-1. **IDN URL inconsistency** — canonical, `og:url`, schema `@id`/`url`, `sitemap.xml`, `robots.txt` and `llms.txt` all declare the raw-Unicode host `www.ilmiöt.fi`, while the site is served on punycode `xn--ilmit-mua.fi`. Non-ASCII in `<loc>` is non-compliant with the sitemap spec. *(Medium)*
-2. **`mermaid.min.js` on 55 pages from jsDelivr** — large client-side render library + `chart.js` on 3 pages; the heaviest CWV/INP factor on an otherwise featherweight site. *(Medium-High perf)*
-3. **Mermaid init ordering looks broken** — `mermaid.initialize()` is an immediate inline script placed *after* the `defer`-loaded bundle, so `mermaid` is likely undefined when it runs. Verify diagrams actually render. *(Medium — correctness)*
-4. **Generic OG image site-wide** — all 68 articles share `/og/brand.png` with generic `og:image:alt`; no per-article social/AI preview. *(Medium)*
-5. **13 thin pages (<300 words incl. chrome)** — glossary format, but the shortest (e.g. `paskuuttaminen`, `conways-laki`, `hofstadterin-laki`) are light on examples. *(Medium)*
+| State | What's there | Deployed? |
+|---|---|---|
+| **Live server (19 Jun build)** | Base site: full schema, security headers, sitemap, llms.txt, redirects | ✅ live |
+| **Committed to `main`, NOT deployed** | `Organization.logo` + `Article.image` (ImageObject), author `@id`→`#ilmiomies`, mermaid lazy-load via `IntersectionObserver` + init-ordering fix | ❌ pending deploy |
+| **Working tree only (uncommitted, NOT deployed)** | Full-text search (`index.html` + generated `search-index.js` + `scripts/build_search_index.py`) | ❌ uncommitted + pending deploy |
+| **Not done anywhere** | IDN→punycode host, `chart.js` `defer`, per-article OG images, thin/YMYL page strengthening, branded 404, deep-linkable search + `SearchAction` | ❌ open |
+
+**Verification:** live `gaslighting.html` has 0 `ImageObject` and eager mermaid; local has 2 `ImageObject` + `IntersectionObserver`. Live `robots.txt`/`sitemap.xml`/canonicals all still use raw-Unicode `www.ilmiöt.fi`. Homepage `last-modified: 19 Jun 2026`; live homepage has no reference to `search-index.js`.
+
+**Business type:** Publisher / educational reference ("tietopankki"). Finnish-language glossary of **68** societal phenomena across 8 categories (power, propaganda, cognitive bias, bureaucracy, project-management laws, growth/finance, scams, sales/pressure tactics). Single-language (fi), non-local, non-ecommerce.
+
+### Top 5 issues (live)
+1. **Deploy gap (highest leverage).** ~2 weeks of committed + staged SEO work is not on the server. Deploying immediately lifts Schema and Performance and makes the search feature real.
+2. **IDN host inconsistency — still open everywhere.** All 71 local pages, `sitemap.xml` (70 `<loc>`), `robots.txt` and `llms.txt` (69 URLs) use raw-Unicode `www.ilmiöt.fi`; the site is served on punycode `xn--ilmit-mua.fi`. Non-ASCII in sitemap `<loc>` violates the sitemaps.org spec. Not blocking (Google normalises IDNs) but should be standardised. *(High)*
+3. **`chart.js` render-blocking on 3 finance pages** — `<script src=…chart.umd.min.js>` with no `defer` (live *and* local). *(Medium perf)*
+4. **Generic OG image site-wide** — all 68 articles share `/og/brand.png`; per-article `/og/<slug>.png` returns 404. *(Medium)*
+5. **23 thin pages (<320 words incl. chrome)** — glossary format, but the thinnest (`paskuuttaminen` 241w, `conways-laki`, `hofstadterin-laki`, `brooksin-laki`…) are light; scam/finance pages remain uncited (borderline-YMYL). *(Medium)*
 
 ### Top 5 quick wins
-1. Add `logo` (ImageObject) to the `Organization` schema and `image` to the `Article` schema → unlocks Article rich-result eligibility.
-2. Add per-article `og:image` + descriptive `og:image:alt` (instead of the shared `/og/brand.png`).
-3. Add `defer` to the `chart.js` tag on the 3 finance pages.
-4. Add `potentialAction` (SearchAction) to the `WebSite` schema — you already have an on-site search box.
-5. Give the author `Person` a `description`/`sameAs` (even just the About page) and consider a real attributed identity for the finance/scam pages (borderline-YMYL).
+1. **Deploy the committed + staged changes** → schema logo/image live, mermaid lazy-loads, search goes live.
+2. **Standardise the host to punycode** across canonicals, `og:url`, JSON-LD `url`/`@id`, `sitemap.xml`, `robots.txt` Sitemap line, `llms.txt` (mechanical find-replace).
+3. **Add `defer` to `chart.js`** on the 3 finance pages.
+4. **Commit + `defer` the search script**, and make search deep-linkable (`/?q=…`) so you can add a `SearchAction` (sitelinks search box).
+5. **Trim ~21 over-length `<title>` tags** (>65 chars truncate in SERPs).
 
 ---
 
-## Technical SEO — 88/100
+## Deployment & Delta vs 2026-06-21
 
-**Strong:**
-- HTTPS everywhere; `Strict-Transport-Security: max-age=31536000; includeSubDomains`.
-- Full security-header suite: `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`, `Permissions-Policy`, and a real `Content-Security-Policy`. Well above typical.
-- Canonicalization correct: `http→https` 301, apex `→ www` 301.
-- `robots.txt` allows all + explicitly allows GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot.
-- `sitemap.xml` complete: 70 `<loc>` entries = every indexable page; `random.html` excluded and `noindex, follow`.
-- LiteSpeed with HTTP/2 + HTTP/3 (QUIC) advertised.
-- `viewport` meta on every page; responsive CSS.
+| Prior action item | Status now |
+|---|---|
+| Mermaid lazy-load (`IntersectionObserver`) | ✅ committed — ❌ not deployed |
+| Mermaid init-ordering fix | ✅ committed — ❌ not deployed |
+| `Organization.logo` + `Article.image` + author `@id` | ✅ committed — ❌ not deployed |
+| IDN → punycode standardisation | ❌ not started (0/71 pages) |
+| Per-article OG images | ❌ not started (`/og/<slug>.png` = 404) |
+| Thin / YMYL page strengthening | ❌ not started |
+| `chart.js` `defer` | ❌ not started (live + local) |
+| **NEW:** full-text search (`search-index.js`) | 🆕 built, uncommitted, not deployed |
+
+---
+
+## Technical SEO — 87/100
+
+**Strong (live-verified):**
+- HTTPS everywhere; `Strict-Transport-Security: max-age=31536000; includeSubDomains` on every page.
+- Full security-header suite site-wide: `X-Content-Type-Options`, `X-Frame-Options: SAMEORIGIN`, `Referrer-Policy`, `Permissions-Policy`, and a real `Content-Security-Policy`. Well above typical.
+- **Brotli compression** active (`content-encoding: br`): homepage 46 KB → 7.9 KB, article 47 KB → 12.6 KB, `style.css` → 2.5 KB.
+- Clean redirects, all single-hop 301: `http→https`, `http/https apex → www`.
+- Proper **404 status** on unknown URLs.
+- LiteSpeed with **HTTP/2 + HTTP/3 (QUIC)** advertised via `alt-svc`; homepage TTFB ~0.10 s.
+- `robots.txt` allows all + explicitly allow-lists GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot.
+- `sitemap.xml` complete: 70 `<loc>` = every indexable page.
 
 **Issues:**
-- **IDN inconsistency (Medium):** every machine-readable URL uses raw `ö` (`www.ilmiöt.fi`) instead of punycode. Google normalizes IDNs, so this is not blocking indexation, but: (a) non-ASCII characters in sitemap `<loc>` violate the sitemaps.org / RFC 3986 requirement and some validators/crawlers reject them; (b) consistency between the served host (punycode) and declared canonical is cleaner. **Standardize on `https://www.xn--ilmit-mua.fi/` in canonical, `og:url`, schema `url`/`@id`, `sitemap.xml`, `robots.txt` Sitemap line, and `llms.txt`.**
-- No `<meta name="robots">` on indexable pages (fine — defaults to index,follow).
+- **IDN inconsistency (High/Medium):** raw `ö` host in every machine-readable URL vs served punycode. Non-ASCII in sitemap `<loc>` is spec-non-compliant; some validators reject it. Standardise on `https://www.xn--ilmit-mua.fi/`.
+- **Default (unbranded) 404 page (Low):** returns correct 404 status (good for crawlers) but is the stock LiteSpeed page — a branded 404 linking home/categories would keep users on-site.
+- **CSP over-broad (Low):** `style-src` allows `fonts.googleapis.com` and `font-src` `fonts.gstatic.com`, but fonts are self-hosted (`/fonts/*.woff2`) and no page references Google Fonts. Drop the unused external font origins. `script-src` uses `'unsafe-inline'` (pragmatic for the inline mermaid/search init; acceptable for a no-input static site).
 
 ---
 
 ## Content Quality — 76/100
 
 **Strong:**
-- Original, clearly-written Finnish; consistent four-part structure (what it is / mechanism / how to spot it / examples).
-- E-E-A-T basics present: dedicated `tietoa.html` About page explaining purpose, author, selection method, and sourcing ("perustuu julkisiin lähteisiin ja vakiintuneeseen käsitteistöön"); per-article byline `Kirjoittanut Ilmiömies · Päivitetty …` with `rel="author"`.
-- Good citability: definitions name origins/classic cases (e.g. gaslighting → 1944 film *Gaslight*).
+- Original, clearly-written Finnish; consistent four-part structure (what it is / mechanism / how to spot / examples).
+- E-E-A-T basics: dedicated `tietoa.html` (purpose, author, selection method, sourcing statement); per-article byline `Kirjoittanut Ilmiömies · Päivitetty …` with `rel="author"`.
+- Good citability: definitions name origins/classic cases.
 
 **Issues:**
-- **Pseudonymous authorship (Medium):** "Ilmiömies" has no real identity, credentials, or external profile. Fine for general explainers, but several topics border on YMYL — scams (`pig-butchering`, `ponzi-pyramidi`, `ennakkomaksuhuijaus`) and finance (`korkoa-korolle`, `negatiivinen-korkoa`, `korkokierre`). For those, add explicit sourcing/citations and stronger trust signals.
-- **Thin pages (Medium):** 68 articles range 240–669 visible words (median 341, incl. nav/breadcrumb/footer chrome — real body is shorter). 13 are <300 words. Glossary format tolerates this, but expanding the thinnest with a concrete example + "how to recognise" list would help both ranking and AI citation.
+- **23 thin pages (<320 words incl. nav/breadcrumb/footer chrome; real body shorter).** Thinnest: `paskuuttaminen` 241, `yhdeksanyhdeksan` 258, `conways-laki` 262, `starve-the-beast` 264, `hofstadterin-laki` 275, `performatiivinen-lasnaolo` 276, `tekninen-velka` 282, `bikeshedding` 286, `scope-creep` 287, `brooksin-laki` 292. Mostly the project/software-law cluster. Expand with a concrete example + a short "miten tunnistat" list.
+- **Pseudonymous authorship on borderline-YMYL topics (Medium):** "Ilmiömies" has no external identity/credentials. Fine for general explainers, but scams (`pig-butchering`, `ponzi-pyramidi`, `ennakkomaksuhuijaus`) and finance (`korkoa-korolle`, `negatiivinen-korkoa`, `korkokierre`) should carry explicit citations/sources.
 
 ---
 
-## On-Page SEO — 90/100
+## On-Page SEO — 89/100
 
-**Strong:**
-- Unique, descriptive, well-sized `<title>` per page (e.g. *"Gaslighting — todellisuuden järjestelmällinen kiistäminen — Ilmiöitä"*).
-- Unique meta descriptions per page.
-- Exactly one `<h1>` per page; logical `h2`/`h3` structure; homepage `h2`s map to the 8 categories.
-- Strong internal linking: each article links to ~6–8 related phenomena plus breadcrumb + home + about (sample `gaslighting.html`: 13 internal `.html` links).
-- Clean, descriptive slug URLs.
+**Strong (verified across all 68 articles):**
+- **0 duplicate `<title>` and 0 duplicate meta descriptions** — 68/68 unique.
+- **Exactly one `<h1>` per page** — 0 exceptions.
+- Meta-description length healthy (median 151, none <70 chars).
+- Strong internal linking (~6–8 related phenomena + breadcrumb + home + about per article); clean descriptive slug URLs.
 
 **Issues (minor):**
-- `og:site_name` and `og:title` are identical on the homepage. Cosmetic.
-- Breadcrumb category node (position 2) has no `item` URL because categories are homepage anchors — could point to `index.html#<category>`.
+- **21 titles >65 chars** (median 58, max 85) — will truncate in Google SERPs. The brand suffix `— Ilmiöitä` usually truncates (acceptable), but trim the longest so the meaningful phrase survives.
+- 7 meta descriptions >160 chars (slight truncation).
+- Homepage `og:title` == `og:site_name` (cosmetic).
+- Breadcrumb category node (position 2) has no `item` URL (categories are homepage anchors) — could point to `index.html#<category>`.
 
 ---
 
-## Schema & Structured Data — 85/100
+## Schema & Structured Data — 85/100 live (→ ~92 after deploy)
 
-**Implemented (all valid JSON-LD, `@graph` + `@id` referencing):**
-- Homepage: `WebSite`, `Organization`, `CollectionPage` with `mainEntity` `ItemList` (68 `ListItem`s).
-- Every article: `BreadcrumbList`, `Article` (headline, description, inLanguage, articleSection, isPartOf, publisher, about→`DefinedTerm`/`DefinedTermSet`, author `Person`, `datePublished`, `dateModified`).
+**Live (all valid JSON-LD, `@graph` + `@id` referencing):**
+- Homepage: `WebSite`, `Organization`, `CollectionPage` → `mainEntity` `ItemList` (68 `ListItem`s).
+- Every article: `BreadcrumbList`, `Article`, `DefinedTerm`/`DefinedTermSet`, author `Person`.
 - About page: `AboutPage`.
 
-**Gaps (Medium/Low):**
-- `Organization` has **no `logo`** (ImageObject) — required for several Google rich results.
-- `Article` has **no `image`** property (relies on `og:image` only) — Article rich-result eligibility wants it.
-- Author `Person` lacks `description`/`sameAs`/`jobTitle`.
-- `WebSite` lacks `potentialAction` (SearchAction) — you have an on-site search; adding it enables the sitelinks search box.
+**Committed but not yet live** (present in local source, absent on server):
+- `Organization.logo` (favicon.svg ImageObject) on homepage + articles + about.
+- `Article.image` (brand.png ImageObject, 1200×630) on all 68 articles.
+- Author `Person` `@id`-linked to canonical `#ilmiomies` + `description`.
+
+**Still open (Low):**
+- No `SearchAction` — currently defensible (search is client-side, no `?q=` endpoint). Becomes a real win once search is made deep-linkable (see Performance/AI).
+- Author `Person` lacks `sameAs`/`jobTitle` (pseudonymous — acceptable).
 
 ---
 
-## Performance (CWV) — 78/100
+## Performance (CWV) — 80/100 (→ ~86 after deploy + chart.js fix)
 
-*No field data (CrUX) or lab run available in this environment; assessed from architecture + assets.*
+*No CrUX/lab field data available; assessed from architecture + live behaviour.*
 
 **Strong:**
-- Static HTML on LiteSpeed, HTTP/2 + QUIC; small documents.
-- Inline critical CSS on homepage; small external `style.css` (~10 KB) on articles.
-- Self-hosted `woff2` fonts with `font-display: swap` (no render-blocking webfont, no FOIT).
-- No analytics/ad/tag-manager third parties.
+- Static HTML on LiteSpeed, HTTP/2 + QUIC, Brotli; ~0.10 s homepage TTFB; tiny transfer sizes.
+- Inline critical CSS on homepage; small external `style.css` on articles.
+- Self-hosted `woff2` fonts (DM Sans + Spectral) with `font-display: swap` — no render-blocking webfont, no FOIT, no third-party font origin actually used.
+- No analytics / ad / tag-manager third parties.
+- CLS guarded: `style.css` reserves `.mermaid { min-height }` and charts carry explicit `height`.
 
 **Issues:**
-- **`mermaid@11` from jsDelivr on 55 pages (Medium-High):** large client-side diagram renderer; main contributor to JS download + parse/execute (INP/TBT risk), plus a third-party CDN dependency. Consider pre-rendering diagrams to static inline SVG at build time, or lazy-loading mermaid only when a `.mermaid` block is near the viewport (`IntersectionObserver`).
-- **`chart.js@4` on 3 finance pages loaded without `defer`/`async`** (render-blocking). Add `defer`.
-- **Init ordering (see correctness note):** `mermaid.initialize()` runs inline before the deferred bundle — verify diagrams render at all.
-
-**Already handled well:** CLS is guarded — `style.css` reserves `.mermaid { min-height: 220px }` and chart `<canvas>` elements carry an explicit `height` attribute, so diagrams/charts don't shift layout on render. (Residual: a mermaid diagram taller than 220px can still shift slightly.)
+- **`chart.js@4` render-blocking on 3 finance pages** (`korkoa-korolle`, `korkokierre`, `negatiivinen-korkoa`) — no `defer`/`async`, live *and* local. Add `defer`. *(Medium)*
+- **Mermaid eager on 55 pages live** — `<script defer src=…mermaid.min.js>` downloads on every article view. The lazy-load (`IntersectionObserver`, only downloads near a diagram) is **committed but not deployed** — deploy removes this cost. *(Medium; resolved by deploy)*
+- **Search script loads synchronously (once live):** `<script src="search-index.js">` (157 KB uncompressed, ~35 KB Brotli) with no `defer`, at end of `<body>`. Not render-blocking for content, but blocks the parser and delays DOMContentLoaded. `defer` it, or lazy-load on first focus of the search box. *(Low)*
 
 ---
 
 ## Images — 80/100
 
-- Favicon is SVG with descriptive `alt`. Almost no raster `<img>` content (diagrams are SVG/mermaid), so no alt-text debt.
-- **Single shared OG image** `/og/brand.png` (1200×630, 200 OK) across all 68 articles, with generic `og:image:alt`. Per-article OG images would lift social + AI preview CTR. The repo already contains `scripts/generate_og_images.py` — only `brand.png` is deployed.
+- SVG favicon; almost no raster `<img>` content (diagrams are mermaid/SVG) → negligible alt-text debt.
+- **Single shared OG image** `/og/brand.png` (1200×630, 200 OK, 29 KB) across all 68 articles; `/og/<slug>.png` = 404. Per-article OG images would lift social + AI-preview CTR. `scripts/generate_og_images.py` reportedly exists in-repo — wire it into the build and set per-page `og:image` + descriptive `og:image:alt`.
 
 ---
 
 ## AI Search Readiness (GEO) — 90/100
 
-**Strong — this is a highlight:**
+**Strong — a highlight:**
 - `robots.txt` explicitly allows GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot.
-- `llms.txt` present, comprehensive: summary, 8 categories, all phenomena with absolute URLs, author, and an explicit reuse note ("Sisältö on vapaasti viitattavissa").
-- `DefinedTerm` / `DefinedTermSet` schema — ideal machine-readable definitions for AI answer engines.
-- Definitional, self-contained, citable passages; named origins/cases.
+- `llms.txt` comprehensive: summary, 8 categories, all phenomena with absolute URLs, author, explicit reuse note.
+- `DefinedTerm`/`DefinedTermSet` schema — ideal machine-readable definitions for AI answer engines.
+- Definitional, self-contained, citable passages naming origins/cases.
 
 **Opportunities (Low):**
-- Per-passage anchors / FAQ blocks for direct citation.
 - Fix the IDN host in `llms.txt` URLs for consistency with the served domain.
+- Per-passage anchors / short FAQ blocks on top phenomena for direct citation.
+- Deep-linkable search (`/?q=`) → enables both `SearchAction` and cleaner AI navigation.
 
 ---
 
 ## Score Summary
 
-| Category | Weight | Score | Weighted |
-|---|---:|---:|---:|
-| Technical SEO | 22% | 88 | 19.4 |
-| Content Quality | 23% | 76 | 17.5 |
-| On-Page SEO | 20% | 90 | 18.0 |
-| Schema | 10% | 85 | 8.5 |
-| Performance (CWV) | 10% | 80 | 8.0 |
-| AI Search Readiness | 10% | 90 | 9.0 |
-| Images | 5% | 80 | 4.0 |
-| **Total** | **100%** | | **84** |
+| Category | Weight | Live | Weighted | Projected¹ |
+|---|---:|---:|---:|---:|
+| Technical SEO | 22% | 87 | 19.1 | 90 |
+| Content Quality | 23% | 76 | 17.5 | 76 |
+| On-Page SEO | 20% | 89 | 17.8 | 90 |
+| Schema | 10% | 85 | 8.5 | 92 |
+| Performance (CWV) | 10% | 80 | 8.0 | 86 |
+| AI Search Readiness | 10% | 90 | 9.0 | 90 |
+| Images | 5% | 80 | 4.0 | 80 |
+| **Total** | **100%** | | **84** | **~86–87** |
 
-See `ACTION-PLAN.md` for the prioritized fix list.
+¹ Projected = after deploying the committed + staged changes and doing the two mechanical fixes (IDN→punycode, chart.js `defer`). Reaches ~89–90 with per-article OG images + thin/YMYL strengthening.
+
+See `ACTION-PLAN.md` for the prioritised fix list.

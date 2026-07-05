@@ -1100,12 +1100,23 @@
   </p>
 </main>
 
+<script src="search-index.js"></script>
 <script>
 (function () {
   const kortit = Array.from(document.querySelectorAll('.hub-kortti'));
   const haku = document.getElementById('haku');
   const tyhja = document.getElementById('hub-tyhja');
   let aktivIdx = -1; // indeksi kortit-taulukossa
+
+  // Esilaske hakuteksti per kortti: otsikko + ilmiösivun kokoteksti (mukaan
+  // lukien mermaid-kaavioiden tekstit), lowercasena kerran. ILMIO_HAKU tulee
+  // generoidusta search-index.js:stä; jos puuttuu, haku osuu vain otsikkoon.
+  const hakuData = new Map((window.ILMIO_HAKU || []).map(e => [e.u, e.x]));
+  const nimet = kortit.map(k => k.querySelector('.hub-nimi').textContent.toLowerCase());
+  const haystackit = kortit.map((k, i) => {
+    const lisa = hakuData.get(k.getAttribute('href')) || '';
+    return (nimet[i] + ' ' + lisa).toLowerCase();
+  });
 
   function nakyvat() {
     return kortit.filter(k => !k.classList.contains('piilotettu'));
@@ -1130,9 +1141,12 @@
   // Haku
   haku.addEventListener('input', function () {
     const q = this.value.trim().toLowerCase();
-    kortit.forEach(k => {
-      const teksti = k.querySelector('.hub-nimi').textContent.toLowerCase();
-      k.classList.toggle('piilotettu', Boolean(q && !teksti.includes(q)));
+    // Lyhyillä kyselyillä (1–2 merkkiä) osu vain otsikkoon, jotta yleiset
+    // sanat eivät tuo lähes jokaista korttia; pidemmillä koko sivun teksti.
+    const kokoteksti = q.length >= 3;
+    kortit.forEach((k, i) => {
+      const hay = kokoteksti ? haystackit[i] : nimet[i];
+      k.classList.toggle('piilotettu', Boolean(q && !hay.includes(q)));
     });
     document.querySelectorAll('.hub-kategoria').forEach(kat => {
       const n = kat.querySelectorAll('.hub-kortti:not(.piilotettu)').length;
