@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <title>Ilmiöitä — Miten valta toimii</title>
+  <title>Ilmiöt — 68 yhteiskunnallista ilmiötä selitettynä | Ilmiöitä</title>
   <link rel="stylesheet" href="fonts/fonts.css">
   <link rel="stylesheet" href="fonts/spectral.css">
   <style>
@@ -99,6 +99,16 @@
       padding: 1.5rem 1.5rem 4rem;
     }
 
+    /* ── Intro ── */
+    .hub-intro {
+      max-width: 740px;
+      margin: 0.3rem auto 1.7rem;
+      text-align: center;
+      font-size: 0.9em;
+      line-height: 1.55;
+      color: #5a4712;
+    }
+
     /* ── Kategoria ── */
     .hub-kategoria { margin-bottom: 1.8rem; }
     .hub-kat-label {
@@ -107,9 +117,34 @@
       text-transform: uppercase;
       letter-spacing: 0.11em;
       color: var(--c-primary-mid);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.15rem;
       padding-left: 0.15rem;
     }
+    .hub-kat-desc {
+      font-size: 0.76em;
+      color: #8B6914;
+      margin: 0 0 0.55rem;
+      padding-left: 0.15rem;
+    }
+
+    /* ── Tietoa-osio ── */
+    .hub-tietoa {
+      max-width: 740px;
+      margin: 3rem auto 0;
+      padding-top: 1.8rem;
+      border-top: 1px solid rgba(139,105,20,0.28);
+      font-size: 0.9em;
+      line-height: 1.6;
+      color: #3d3008;
+    }
+    .hub-tietoa h2 {
+      font-family: 'Spectral', Georgia, serif;
+      font-size: 1.12em;
+      color: #1C1400;
+      margin: 1.4em 0 0.4em;
+    }
+    .hub-tietoa h2:first-child { margin-top: 0; }
+    .hub-tietoa a { color: #8B6914; }
 
     /* ── Grid ── */
     .hub-kortit {
@@ -213,17 +248,17 @@
   </style>
 
   <!-- SEO -->
-  <meta name="description" content="68 sosiaalista ilmiötä selitettynä: valtarakenteet, propaganda, kognitiiviset harhat, byrokratia, projektihallinnan lait, myyntikikat ja petokset.">
+  <meta name="description" content="Ilmiöt selitettynä suomeksi: 68 ilmiötä vallankäytöstä, propagandasta, kognitiivisista harhoista, byrokratiasta, huijauksista ja myyntikikoista — esimerkit ja vastakeinot.">
   <link rel="canonical" href="https://www.ilmiöt.fi/">
-  <meta property="og:title" content="Ilmiöitä — Miten valta toimii">
-  <meta property="og:description" content="68 sosiaalista ilmiötä selitettynä: valtarakenteet, propaganda, kognitiiviset harhat, byrokratia, projektihallinnan lait, myyntikikat ja petokset.">
+  <meta property="og:title" content="Ilmiöt — 68 yhteiskunnallista ilmiötä selitettynä | Ilmiöitä">
+  <meta property="og:description" content="Ilmiöt selitettynä suomeksi: 68 ilmiötä vallankäytöstä, propagandasta, kognitiivisista harhoista, byrokratiasta, huijauksista ja myyntikikoista — esimerkit ja vastakeinot.">
   <meta property="og:url" content="https://www.ilmiöt.fi/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fi_FI">
   <meta property="og:site_name" content="Ilmiöitä — Miten valta toimii">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Ilmiöitä — Miten valta toimii">
-  <meta name="twitter:description" content="68 sosiaalista ilmiötä selitettynä: valtarakenteet, propaganda, kognitiiviset harhat, byrokratia, projektihallinnan lait, myyntikikat ja petokset.">
+  <meta name="twitter:title" content="Ilmiöt — 68 yhteiskunnallista ilmiötä selitettynä | Ilmiöitä">
+  <meta name="twitter:description" content="Ilmiöt selitettynä suomeksi: 68 ilmiötä vallankäytöstä, propagandasta, kognitiivisista harhoista, byrokratiasta, huijauksista ja myyntikikoista — esimerkit ja vastakeinot.">
   <meta property="og:image" content="https://www.ilmiöt.fi/og/brand.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -237,8 +272,13 @@
       "@type": "WebSite",
       "@id": "https://www.ilmiöt.fi/#website",
       "name": "Ilmiöitä — Miten valta toimii",
+      "alternateName": ["Ilmiöt", "ilmiöt.fi"],
+      "description": "Suomenkielinen tietopankki, joka selittää 68 yhteiskunnallista ilmiötä: vallankäyttö, propaganda, kognitiiviset harhat, byrokratia, huijaukset ja myyntikikat.",
       "url": "https://www.ilmiöt.fi/",
-      "inLanguage": "fi"
+      "inLanguage": "fi",
+      "publisher": {
+        "@id": "https://www.ilmiöt.fi/#organization"
+      }
     },
     {
       "@type": "Organization",
@@ -253,17 +293,27 @@
       }
     },
     {
+      "@type": "Person",
+      "@id": "https://www.ilmiöt.fi/#ilmiomies",
+      "name": "Ilmiömies",
+      "url": "https://www.ilmiöt.fi/tietoa.html"
+    },
+    {
       "@type": "CollectionPage",
       "@id": "https://www.ilmiöt.fi/#collectionpage",
       "url": "https://www.ilmiöt.fi/",
-      "name": "Ilmiöitä — Miten valta toimii",
-      "description": "Ilmiöitä — 68 sosiaalista ilmiötä selitettynä: valtarakenteet, propaganda, kognitiiviset harhat, byrokratia, projektihallinnan lait, myyntikikat ja petokset. Suomenkielinen tietopankki.",
+      "name": "Ilmiöt — 68 yhteiskunnallista ilmiötä selitettynä",
+      "description": "Ilmiöt selitettynä suomeksi: 68 ilmiötä vallankäytöstä, propagandasta, kognitiivisista harhoista, byrokratiasta, huijauksista ja myyntikikoista — esimerkit ja vastakeinot.",
       "inLanguage": "fi",
+      "dateModified": "2026-07-05",
       "isPartOf": {
         "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@id": "https://www.ilmiöt.fi/#organization"
+      },
+      "author": {
+        "@id": "https://www.ilmiöt.fi/#ilmiomies"
       },
       "mainEntity": {
         "@type": "ItemList",
@@ -681,6 +731,40 @@
           }
         ]
       }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.ilmiöt.fi/#faq",
+      "inLanguage": "fi",
+      "isPartOf": {
+        "@id": "https://www.ilmiöt.fi/#website"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Mikä on ilmiö?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ilmiö on toistuva, tunnistettava käyttäytymis- tai tapahtumamalli, joka esiintyy samankaltaisena eri tilanteissa — politiikassa, työpaikoilla, mediassa ja markkinoilla. Kun ilmiöllä on nimi, sen tunnistaa nopeammin ja siihen osaa varautua. Lähikäsitteitä ovat kognitiiviset harhat ja virhepäätelmät: ajattelun järjestelmälliset vinoumat, joita moni tämän sivuston ilmiöistä hyödyntää."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mitä ilmiöitä sivusto käsittelee?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sivusto selittää 68 ilmiötä kahdeksassa kategoriassa: vallan rakenteet, informaatio ja propaganda, psykologia ja kognitio, byrokratia ja organisaatio, projekti- ja ohjelmistokehitys, kasvun dynamiikka, huijaukset ja petokset sekä myyntikikat ja painostus. Mukana ovat esimerkiksi Overton-ikkuna, gaslighting, Goodhartin laki, sunk cost -harha, Brooksin laki ja Ponzi-huijaus."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kuka sivuston on kirjoittanut?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sivuston on kirjoittanut Ilmiömies. Jokainen artikkeli selittää ilmiön taustan, toimintamekanismin, käytännön esimerkit ja vastakeinot suomeksi."
+          }
+        }
+      ]
     }
   ]
 }
@@ -710,8 +794,10 @@
 </header>
 
 <main class="hub-main" id="hub-main">
-<div class="hub-kategoria">
+<p class="hub-intro"><strong>Ilmiöitä</strong> on suomenkielinen tietopankki, joka selittää 68 yhteiskunnallista ilmiötä, kognitiivista harhaa ja manipulointitaktiikkaa: miten valta keskittyy, propaganda uppoaa, byrokratia jumiutuu ja huijaukset sekä myyntikikat vetoavat. Jokainen ilmiö on selitetty esimerkkien ja vastakeinojen kera.</p>
+<div class="hub-kategoria" id="vallan-rakenteet">
   <h2 class="hub-kat-label">Vallan rakenteet</h2>
+  <p class="hub-kat-desc">Miten valta keskittyy, suojaa itseään ja muokkaa pelisäännöt edukseen.</p>
   <div class="hub-kortit">
 <a href="paskuuttaminen.html" class="hub-kortti" style="--c:#e74c3c">
   <span class="hub-numero">1</span>
@@ -750,8 +836,9 @@
 </a>
   </div>
 </div>
-<div class="hub-kategoria">
+<div class="hub-kategoria" id="informaatio-ja-propaganda">
   <h2 class="hub-kat-label">Informaatio ja propaganda</h2>
+  <p class="hub-kat-desc">Miten mielipiteitä muokataan tilastoilla, valheilla ja keinotekoisilla kansanliikkeillä.</p>
   <div class="hub-kortit">
 <a href="tilastoilla-valehtelu.html" class="hub-kortti" style="--c:#27ae60">
   <span class="hub-numero">8</span>
@@ -790,8 +877,9 @@
 </a>
   </div>
 </div>
-<div class="hub-kategoria">
+<div class="hub-kategoria" id="psykologia-ja-kognitio">
   <h2 class="hub-kat-label">Psykologia ja kognitio</h2>
+  <p class="hub-kat-desc">Kognitiiviset harhat ja manipulointitaktiikat, jotka vääristävät ajattelua ja keskustelua.</p>
   <div class="hub-kortit">
 <a href="backfire-effect.html" class="hub-kortti" style="--c:#d35400">
   <span class="hub-numero">15</span>
@@ -850,8 +938,9 @@
 </a>
   </div>
 </div>
-<div class="hub-kategoria">
+<div class="hub-kategoria" id="byrokratia-ja-organisaatio">
   <h2 class="hub-kat-label">Byrokratia ja organisaatio</h2>
+  <p class="hub-kat-desc">Miksi organisaatiot jumiutuvat: mittarit, rituaalit ja portinvartijat.</p>
   <div class="hub-kortit">
 <a href="simple-sabotage.html" class="hub-kortti" style="--c:#c0a000">
   <span class="hub-numero">26</span>
@@ -915,8 +1004,9 @@
 </a>
   </div>
 </div>
-<div class="hub-kategoria">
+<div class="hub-kategoria" id="projekti-ja-ohjelmistokehitys">
   <h2 class="hub-kat-label">Projekti- ja ohjelmistokehitys</h2>
+  <p class="hub-kat-desc">Projektien lainalaisuudet: miksi aikataulut pettävät ja hankkeet paisuvat.</p>
   <div class="hub-kortit">
 <a href="brooksin-laki.html" class="hub-kortti" style="--c:#34495e">
   <span class="hub-numero">38</span>
@@ -960,8 +1050,9 @@
 </a>
   </div>
 </div>
-<div class="hub-kategoria">
+<div class="hub-kategoria" id="kasvun-dynamiikka">
   <h2 class="hub-kat-label">Kasvun dynamiikka</h2>
+  <p class="hub-kat-desc">Eksponentiaalinen kasvu ja rappio — korkoa korolle molempiin suuntiin.</p>
   <div class="hub-kortit">
 <a href="korkoa-korolle.html" class="hub-kortti" style="--c:#2e86ab">
   <span class="hub-numero">46</span>
@@ -980,8 +1071,9 @@
 </a>
   </div>
 </div>
-<div class="hub-kategoria">
+<div class="hub-kategoria" id="huijaukset-ja-petokset">
   <h2 class="hub-kat-label">Huijaukset ja petokset</h2>
+  <p class="hub-kat-desc">Klassiset huijausmallit Ponzista pig butcheringiin — ja miten ne tunnistaa.</p>
   <div class="hub-kortit">
 <a href="honeypot-huijaus.html" class="hub-kortti" style="--c:#b8860b">
   <span class="hub-numero">49</span>
@@ -1025,8 +1117,9 @@
 </a>
   </div>
 </div>
-<div class="hub-kategoria">
+<div class="hub-kategoria" id="myyntikikat-ja-painostus">
   <h2 class="hub-kat-label">Myyntikikat ja painostus</h2>
+  <p class="hub-kat-desc">Myynnin ja neuvottelun painostuskeinot hinta-ankkuroinnista keinotekoiseen niukkuuteen.</p>
   <div class="hub-kortit">
 <a href="ilmainen-naytetyo.html" class="hub-kortti" style="--c:#8d6e63">
   <span class="hub-numero">57</span>
@@ -1098,6 +1191,38 @@
     <kbd>R</kbd>&thinsp;satunnainen &nbsp;&middot;&nbsp;
     <kbd>Esc</kbd>&thinsp;tyhjennä haku
   </p>
+
+  <section class="hub-tietoa">
+    <h2>Mikä on ilmiö?</h2>
+    <p>Ilmiö on toistuva, tunnistettava käyttäytymis- tai tapahtumamalli, joka
+    esiintyy samankaltaisena eri tilanteissa — politiikassa, työpaikoilla,
+    mediassa ja markkinoilla. Kun ilmiöllä on nimi, sen tunnistaa nopeammin ja
+    siihen osaa varautua. Lähikäsitteitä ovat kognitiiviset harhat ja
+    virhepäätelmät: ajattelun järjestelmälliset vinoumat, joita moni tämän
+    sivuston ilmiöistä hyödyntää.</p>
+
+    <h2>Mitä ilmiöitä sivusto käsittelee?</h2>
+    <p>Sivusto selittää 68 ilmiötä kahdeksassa kategoriassa:
+    <a href="#vallan-rakenteet">vallan rakenteet</a>,
+    <a href="#informaatio-ja-propaganda">informaatio ja propaganda</a>,
+    <a href="#psykologia-ja-kognitio">psykologia ja kognitio</a>,
+    <a href="#byrokratia-ja-organisaatio">byrokratia ja organisaatio</a>,
+    <a href="#projekti-ja-ohjelmistokehitys">projekti- ja ohjelmistokehitys</a>,
+    <a href="#kasvun-dynamiikka">kasvun dynamiikka</a>,
+    <a href="#huijaukset-ja-petokset">huijaukset ja petokset</a> sekä
+    <a href="#myyntikikat-ja-painostus">myyntikikat ja painostus</a>. Mukana
+    ovat esimerkiksi <a href="overton-ikkuna.html">Overton-ikkuna</a>,
+    <a href="gaslighting.html">gaslighting</a>,
+    <a href="goodhartin-laki.html">Goodhartin laki</a>,
+    <a href="sunk-cost-harha.html">sunk cost -harha</a>,
+    <a href="brooksin-laki.html">Brooksin laki</a> ja
+    <a href="ponzi-pyramidi.html">Ponzi-huijaus</a>.</p>
+
+    <h2>Kuka sivuston on kirjoittanut?</h2>
+    <p>Sivuston on kirjoittanut Ilmiömies. Jokainen artikkeli selittää ilmiön
+    taustan, toimintamekanismin, käytännön esimerkit ja vastakeinot suomeksi.
+    Lue lisää <a href="tietoa.html">tietoa sivustosta ja tekijästä</a>.</p>
+  </section>
 </main>
 
 <script src="search-index.js"></script>
