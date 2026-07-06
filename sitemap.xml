@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.ilmiöt.fi/</loc>
-    <lastmod>2026-07-05</lastmod>
+    <lastmod>2026-07-06</lastmod>
     <priority>1.0</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -419,5 +419,53 @@
     <lastmod>2026-06-19</lastmod>
     <priority>0.5</priority>
     <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.ilmiöt.fi/whataboutismi.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.ilmiöt.fi/shrinkflaatio.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.ilmiöt.fi/doomscrolling.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.ilmiöt.fi/kaikukammio.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.ilmiöt.fi/ai-slop.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.ilmiöt.fi/parasosiaalinen-suhde.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.ilmiöt.fi/viherpesu.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.ilmiöt.fi/hiljainen-irtisanoutuminen.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
   </url>
 </urlset>

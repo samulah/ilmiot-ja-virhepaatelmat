@@ -1,9 +1,10 @@
 # Ilmiöitä — Miten valta toimii
 
-> Suomenkielinen sivusto, joka selittää 68 yhteiskunnallista ilmiötä:
+> Suomenkielinen sivusto, joka selittää 76 yhteiskunnallista ilmiötä:
 > valtarakenteet, propaganda ja informaatiovaikuttaminen, kognitiiviset harhat,
 > byrokratia ja organisaatiodynamiikka, projektihallinnan lait,
-> talouden kasvuilmiöt, huijaukset ja petokset, sekä myynti- ja painostustaktiikat.
+> talouden kasvuilmiöt, huijaukset ja petokset, myynti- ja painostustaktiikat,
+> alustatalouden ja algoritmien ilmiöt, maineenpesu sekä työelämän ilmiöt.
 > Kirjoittaja: Ilmiömies. Sisältö on vapaasti viitattavissa.
 > Tietoa sivustosta: https://www.ilmiöt.fi/tietoa.html
 
@@ -26,6 +27,7 @@
 - Manufactured consent: https://www.ilmiöt.fi/manufactured-consent.html
 - Betteridgen laki: https://www.ilmiöt.fi/betteridgen-laki.html
 - Inokulointiteoria: https://www.ilmiöt.fi/inokulointiteoria.html
+- Whataboutismi: https://www.ilmiöt.fi/whataboutismi.html
 
 ### Psykologia ja kognitio
 - Backfire effect: https://www.ilmiöt.fi/backfire-effect.html
@@ -92,3 +94,16 @@
 - Vastavuoroisuuden ansa: https://www.ilmiöt.fi/vastavuoroisuuden-ansa.html
 - Sosiaalinen todiste -manipulaatio: https://www.ilmiöt.fi/sosiaalinen-todiste.html
 - Painostus-close: https://www.ilmiöt.fi/painostusclose.html
+- Shrinkflaatio: https://www.ilmiöt.fi/shrinkflaatio.html
+
+### Alustatalous ja algoritmit
+- Doomscrolling: https://www.ilmiöt.fi/doomscrolling.html
+- Kaikukammio: https://www.ilmiöt.fi/kaikukammio.html
+- AI slop: https://www.ilmiöt.fi/ai-slop.html
+- Parasosiaalinen suhde: https://www.ilmiöt.fi/parasosiaalinen-suhde.html
+
+### Pesut ja maineenhallinta
+- Viherpesu: https://www.ilmiöt.fi/viherpesu.html
+
+### Työelämän ilmiöt
+- Hiljainen irtisanoutuminen: https://www.ilmiöt.fi/hiljainen-irtisanoutuminen.html
