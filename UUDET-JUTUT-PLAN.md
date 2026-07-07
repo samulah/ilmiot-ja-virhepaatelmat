@@ -11,7 +11,12 @@ suhde (suomenkielinen hakuvolyymi) / (kilpailun heikkous fi-SERPissä).
 > Informaatio ja propaganda -kategoriaan (nro 15) ja shrinkflaatio
 > Myyntikikkoihin (nro 70). Pesut ja Työelämä avattiin poikkeuksellisesti
 > yhdellä kortilla — ne täydennetään vähintään kolmeen P2:n alussa.
-> Seuraavaksi: commit + deploy + live-tarkistus, sitten P2.
+>
+> **P2 julkaistu 2026-07-07:** kaikki 15 sivua siirretty juureen ja koko sivusto
+> numeroitu uudelleen kategorioittain — nyt **91 ilmiötä, 11 kategoriaa**.
+> index.html, llms.txt, sitemap.xml, tietoa.html ja hakuindeksi päivitetty.
+> `luonnokset/`-kansio jäi turhaksi, sen voi poistaa. Seuraavaksi: deploy +
+> live-tarkistus (deploy-gap!), sitten P3.
 
 ---
 
@@ -57,7 +62,16 @@ ja täydentää kahta olemassa olevaa.
 
 ---
 
-## Prioriteetti 2 — seuraava aalto
+## Prioriteetti 2 — ✅ JULKAISTU 2026-07-07
+
+Kaikki 15 sivua tuotannossa. Ilmiönumerot: Streisand-ilmiö 16, trollitehdas 17,
+kuollut kissa 18, Dunning–Kruger 30, QR-koodihuijaus 62, toimitusjohtajahuijaus 63,
+rug pull 64, suunniteltu vanheneminen 78, tilausansa 79, kuollut internet 84,
+rage bait 85, tekoälypesu 87, hyvesignalointi 88, hiljainen irtisanominen 90,
+haamutyöpaikat 91. Tehdyt valinnat:
+suunniteltu vanheneminen sijoitettiin Myyntikikat ja painostus -kategoriaan
+(Kasvun dynamiikka pysyy korkoteemaisena) ja raivosyötti kulkee vakiintuneella
+englanninkielisellä nimellä **rage bait** (slug `rage-bait.html`).
 
 | Ilmiö | Slug-ehdotus | Kategoria | Päähakusanat | Arvio |
 |-------|--------------|-----------|--------------|-------|
@@ -115,15 +129,13 @@ jälkikäteen:
 | Erä | Avaa/täydentää | Sisältö | Tila |
 |-----|----------------|---------|------|
 | **A** | Uusi kategoria: **Alustatalous ja algoritmit** | doomscrolling, kaikukammio, AI slop, parasosiaalinen suhde | ✅ Julkaistu 2026-07-06 |
-| **B** | Uusi kategoria: **Pesut ja maineenhallinta** | viherpesu ✅ · tekoälypesu, hyvesignalointi | Osittain — kategoria avattu 1 kortilla, **täydennä ensin** |
-| **C** | Täydennys: **Informaatio ja propaganda** | whataboutismi ✅ · kuollut kissa, trollitehdas, Streisand-ilmiö | Osittain |
-| **D** | Uusi kategoria: **Työelämän ilmiöt** | hiljainen irtisanoutuminen ✅ · hiljainen irtisanominen, haamutyöpaikat | Osittain — kategoria avattu 1 kortilla, **täydennä ensin** |
-| **E** | Täydennykset olemassa oleviin | shrinkflaatio ✅ · tilausansa, QR-koodihuijaus, rug pull, Dunning–Kruger, suunniteltu vanheneminen | Osittain |
+| **B** | Uusi kategoria: **Pesut ja maineenhallinta** | viherpesu, tekoälypesu, hyvesignalointi | ✅ Julkaistu 2026-07-07 (3 korttia) |
+| **C** | Täydennys: **Informaatio ja propaganda** | whataboutismi, Streisand-ilmiö, trollitehdas, kuollut kissa | ✅ Julkaistu 2026-07-07 |
+| **D** | Uusi kategoria: **Työelämän ilmiöt** | hiljainen irtisanoutuminen, hiljainen irtisanominen, haamutyöpaikat | ✅ Julkaistu 2026-07-07 (3 korttia) |
+| **E** | Täydennykset olemassa oleviin | shrinkflaatio, tilausansa, QR-koodihuijaus, toimitusjohtajahuijaus, rug pull, Dunning–Kruger, suunniteltu vanheneminen, kuollut internet, rage bait | ✅ Julkaistu 2026-07-07 |
 
-**Seuraava työjärjestys (P1:n julkaisun jälkeen):** täydennä ensin ohuet
-kategoriat uskottavaan kokoon — B: tekoälypesu + hyvesignalointi ja
-D: hiljainen irtisanominen + haamutyöpaikat — sitten C:n propagandasivut
-(kuollut kissa, trollitehdas, Streisand-ilmiö) ja E:n poiminnat.
+**Seuraava työjärjestys:** P2 on kokonaan julkaistu — seuraavaksi P3:n
+pitkä häntä, kärjessä Brandolinin laki (ks. alla).
 
 Kategoriakuvaukset (hub-kat-desc) luonnoksina:
 
