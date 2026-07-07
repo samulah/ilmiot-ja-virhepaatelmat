@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <title>Prioriteetti 2 -luonnokset — Ilmiöitä</title>
+  <link rel="stylesheet" href="../fonts/fonts.css">
+  <link rel="stylesheet" href="../fonts/spectral.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --c-primary:      #C9A84C;
+      --c-primary-dark: #1C1400;
+      --c-primary-mid:  #8B6914;
+      --c-bg:           #F5F0E5;
+    }
+
+    body {
+      font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+      background: var(--c-bg);
+      color: #1A1100;
+      min-height: 100vh;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    /* ── Header ── */
+    .hub-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: var(--c-primary-dark);
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.28);
+    }
+    .hub-logo { width: 36px; height: 36px; flex-shrink: 0; }
+    .hub-header-left { flex: 1; min-width: 0; }
+    .hub-header-left h1 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      font-family: 'Spectral', Georgia, serif;
+    }
+    .hub-header-left p {
+      font-size: 0.72em;
+      color: rgba(255,255,255,0.48);
+      margin-top: 0.1em;
+      letter-spacing: 0.01em;
+    }
+    .paluu-btn {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(201,168,76,0.18);
+      color: #fff;
+      border: 1px solid rgba(201,168,76,0.4);
+      padding: 0.5rem 1rem;
+      font-size: 0.82em;
+      font-weight: 500;
+      font-family: inherit;
+      text-decoration: none;
+      transition: background 0.12s;
+      white-space: nowrap;
+    }
+    .paluu-btn:hover { background: rgba(201,168,76,0.3); }
+
+    /* ── Main ── */
+    .hub-main {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 1.5rem 1.5rem 4rem;
+    }
+    .hub-intro {
+      max-width: 740px;
+      margin: 0.3rem auto 1.2rem;
+      text-align: center;
+      font-size: 0.9em;
+      line-height: 1.55;
+      color: #5a4712;
+    }
+    .hub-huomio {
+      max-width: 740px;
+      margin: 0 auto 2rem;
+      background: #FDF6DC;
+      border: 1.5px solid #D4C090;
+      border-left: 4px solid #C9A84C;
+      padding: 0.75rem 1.1rem;
+      font-size: 0.82em;
+      line-height: 1.55;
+      color: #3d3008;
+    }
+
+    /* ── Kategoria ── */
+    .hub-kategoria { margin-bottom: 1.8rem; }
+    .hub-kat-label {
+      font-size: 0.67em;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      color: var(--c-primary-mid);
+      margin-bottom: 0.15rem;
+      padding-left: 0.15rem;
+    }
+    .hub-kat-desc {
+      font-size: 0.76em;
+      color: #8B6914;
+      margin: 0 0 0.55rem;
+      padding-left: 0.15rem;
+    }
+
+    /* ── Grid ── */
+    .hub-kortit {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 0.35rem;
+    }
+
+    /* ── Kortti ── */
+    .hub-kortti {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.6rem 0.8rem;
+      background: #FDFAF2;
+      border: 1.5px solid #D4C090;
+      border-left: 4px solid var(--c, #2c3e50);
+      text-decoration: none;
+      color: #1A1100;
+      font-size: 0.865em;
+      line-height: 1.3;
+      transition: border-color 0.1s, box-shadow 0.1s, transform 0.1s;
+    }
+    .hub-kortti:hover {
+      border-color: var(--c, #2c3e50);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.09);
+      transform: translateX(3px);
+    }
+    .hub-numero {
+      flex-shrink: 0;
+      width: 1.9em;
+      height: 1.9em;
+      background: var(--c, #2c3e50);
+      color: #fff;
+      font-size: 0.76em;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hub-nimi { flex: 1; }
+    .hub-nuoli {
+      color: #d0cdc8;
+      font-size: 1em;
+      flex-shrink: 0;
+      transition: color 0.1s;
+    }
+    .hub-kortti:hover .hub-nuoli { color: var(--c, #2c3e50); }
+
+    @media (max-width: 640px) {
+      .hub-header { padding: 0.75rem 1rem; }
+      .hub-main { padding: 1.2rem 1rem 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="hub-header">
+  <img class="hub-logo" src="../favicon.svg" alt="Ilmiöitä-logo: punainen varoituslippu" width="36" height="36">
+  <div class="hub-header-left">
+    <h1>Ilmiöitä &middot; luonnokset</h1>
+    <p>Prioriteetti 2 &middot; 15 luonnosta &middot; julkaisematta</p>
+  </div>
+  <a class="paluu-btn" href="../index.html">&larr; Kaikki ilmiöt</a>
+</header>
+
+<main class="hub-main">
+<p class="hub-intro">Prioriteetti 2:n luonnossivut tarkastelua varten, ryhmiteltyinä
+julkaisuerittäin ja tulevan kategoriansa mukaan.</p>
+<div class="hub-huomio">Nämä sivut ovat julkaisemattomia luonnoksia (noindex): numerointi,
+edellinen/seuraava-navigaatio ja satunnaisnappi toimivat vain tämän kansion sisällä.
+Julkaisussa sivut siirretään juureen, numeroidaan kategorioittain ja index.html, llms.txt,
+sitemap.xml ja hakuindeksi päivitetään (ks. UUDET-JUTUT-PLAN.md).</div>
+<div class="hub-kategoria">
+  <h2 class="hub-kat-label">Pesut ja maineenhallinta</h2>
+  <p class="hub-kat-desc">erä B (täydentää kategorian 3 korttiin)</p>
+  <div class="hub-kortit">
+<a href="tekoalypesu.html" class="hub-kortti" style="--c:#00695c">
+  <span class="hub-numero" aria-hidden="true">&#9998;</span>
+  <span class="hub-nimi">Tekoälypesu</span>
+  <span class="hub-nuoli" aria-hidden="true">&rsaquo;</span>
+</a>
+<a href="hyvesignalointi.html" class="hub-kortti" style="--c:#c62828">
+  <span class="hub-numero" aria-hidden="true">&#9998;</span>
+  <span class="hub-nimi">Hyvesignalointi</span>
+  <span class="hub-nuoli" aria-hidden="true">&rsaquo;</span>
+</a>
+  </div>
+</div>
+<div class="hub-kategoria">
+  <h2 class="hub-kat-label">Työelämän ilmiöt</h2>
+  <p class="hub-kat-desc">erä D (täydentää kategorian 3 korttiin)</p>
+  <div class="hub-kortit">
+<a href="hiljainen-irtisanominen.html" class="hub-kortti" style="--c:#1a237e">
+  <span class="hub-numero" aria-hidden="true">&#9998;</span>
+  <span class="hub-nimi">Hiljainen irtisanominen</span>
+  <span class="hub-nuoli" aria-hidden="true">&rsaquo;</span>
+</a>
+<a href="haamutyopaikat.html" class="hub-kortti" style="--c:#546e7a">
+  <span class="hub-numero" aria-hidden="true">&#9998;</span>
+  <span class="hub-nimi">Haamutyöpaikat</span>
+  <span class="hub-nuoli" aria-hidden="true">&rsaquo;</span>
+</a>
+  </div>
+</div>
+<div class="hub-kategoria">
+  <h2 class="hub-kat-label">Informaatio ja propaganda</h2>
+  <p class="hub-kat-desc">erä C</p>
+  <div class="hub-kortit">
+<a href="streisand-ilmio.html" class="hub-kortti" style="--c:#0277bd">
+  <span class="hub-numero" aria-hidden="true">&#9998;</span>
+  <span class="hub-nimi">Streisand-ilmiö</span>
+  <span class="hub-nuoli" aria-hidden="true">&rsaquo;</span>
+</a>
+<a href="trollitehdas.html" class="hub-kortti" style="--c:#4e342e">
+  <span class="hub-numero" aria-hidden="true">&#9998;</span>
+  <span class="hub-nimi">Trollitehdas</span>
+  <span class="hub-nuoli" aria-hidden="true">&rsaquo;</span>
+</a>
+<a href="kuollut-kissa.html" class="hub-kortti" style="--c:#37474f">
+  <span class="hub-numero" aria-hidden="true">&#9998;</span>
+  <span class="hub-nimi">Kuollut kissa -strategia</span>
+  <span class="hub-nuoli" aria-hidden="true">&rsaquo;</span>
+</a>
+  </div>
+</div>
+<div class="hub-kategoria">
+  <h2 class="hub-kat-label">Psykologia ja kognitio</h2>
+  <p class="hub-kat-desc">erä E</p>
+  <div class="hub-kortit">
+<a href="dunning-kruger.html" class="hub-kortti" style="--c:#f57f17">
+  <span class="hub-numero" aria-hidden="true">&#9998;</span>
+  <span class="hub-nimi">Dunning–Kruger-ilmiö</span>
+  <span class="hub-nuoli" aria-hidden="true">&rsaquo;</span>
+</a>
+  </div>
+</div>
+<div class="hub-kategoria">
+  <h2 class="hub-kat-label">Myyntikikat ja painostus</h2>
+  <p class="hub-kat-desc">erä E</p>
+  <div class="hub-kortit">
+<a href="suunniteltu-vanheneminen.html" class="hub-kortti" style="--c:#6d4c41">
+  <span class="hub-numero" aria-hidden="true">&#9998;</span>
+  <span class="hub-nimi">Suunniteltu vanheneminen</span>
+  <span class="hub-nuoli" aria-hidden="true">&rsaquo;</span>
+</a>
+<a href="tilausansa.html" class="hub-kortti" style="--c:#880e4f">
+  <span class="hub-numero" aria-hidden="true">&#9998;</span>
+  <span class="hub-nimi">Tilausansa</span>
+  <span class="hub-nuoli" aria-hidden="true">&rsaquo;</span>
+</a>
+  </div>
+</div>
+<div class="hub-kategoria">
+  <h2 class="hub-kat-label">Alustatalous ja algoritmit</h2>
+  <p class="hub-kat-desc">erä E</p>
+  <div class="hub-kortit">
+<a href="kuollut-internet.html" class="hub-kortti" style="--c:#5e35b1">
+  <span class="hub-numero" aria-hidden="true">&#9998;</span>
+  <span class="hub-nimi">Kuollut internet -teoria</span>
+  <span class="hub-nuoli" aria-hidden="true">&rsaquo;</span>
+</a>
+<a href="rage-bait.html" class="hub-kortti" style="--c:#d84315">
+  <span class="hub-numero" aria-hidden="true">&#9998;</span>
+  <span class="hub-nimi">Rage bait</span>
+  <span class="hub-nuoli" aria-hidden="true">&rsaquo;</span>
+</a>
+  </div>
+</div>
+<div class="hub-kategoria">
+  <h2 class="hub-kat-label">Huijaukset ja petokset</h2>
+  <p class="hub-kat-desc">erä E</p>
+  <div class="hub-kortit">
+<a href="qr-koodihuijaus.html" class="hub-kortti" style="--c:#0d47a1">
+  <span class="hub-numero" aria-hidden="true">&#9998;</span>
+  <span class="hub-nimi">QR-koodihuijaus</span>
+  <span class="hub-nuoli" aria-hidden="true">&rsaquo;</span>
+</a>
+<a href="toimitusjohtajahuijaus.html" class="hub-kortti" style="--c:#455a64">
+  <span class="hub-numero" aria-hidden="true">&#9998;</span>
+  <span class="hub-nimi">Toimitusjohtajahuijaus</span>
+  <span class="hub-nuoli" aria-hidden="true">&rsaquo;</span>
+</a>
+<a href="rug-pull.html" class="hub-kortti" style="--c:#4527a0">
+  <span class="hub-numero" aria-hidden="true">&#9998;</span>
+  <span class="hub-nimi">Rug pull</span>
+  <span class="hub-nuoli" aria-hidden="true">&rsaquo;</span>
+</a>
+  </div>
+</div>
+</main>
+</body>
+</html>
