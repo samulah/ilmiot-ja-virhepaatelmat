@@ -11,114 +11,147 @@
 ## Kategoriat ja ilmiöt
 
 ### Vallan rakenteet
-- Paskuuttaminen: https://www.ilmiöt.fi/paskuuttaminen.html
-- Starve the beast: https://www.ilmiöt.fi/starve-the-beast.html
-- Overton-ikkuna: https://www.ilmiöt.fi/overton-ikkuna.html
-- Sääntelijän kaappaus: https://www.ilmiöt.fi/saantelijan-kaappaus.html
-- Rautainen laki oligarkiasta: https://www.ilmiöt.fi/rautainen-laki.html
-- Valta suojelee valtaa: https://www.ilmiöt.fi/valta-suojelee-valtaa.html
-- Hajota ja hallitse: https://www.ilmiöt.fi/hajota-hallitse.html
+
+Miten valta keskittyy, suojaa itseään ja muokkaa pelisäännöt edukseen.
+
+- [Paskuuttaminen](https://www.ilmiöt.fi/paskuuttaminen.html): Julkinen palvelu heikennetään tahallaan niin huonoksi, että ihmiset alkavat itse vaatia sen yksityistämistä.
+- [Starve the beast](https://www.ilmiöt.fi/starve-the-beast.html): Leikkaa ensin verot — kasvava alijäämä pakottaa myöhemmin ajamaan julkiset palvelut alas.
+- [Overton-ikkuna](https://www.ilmiöt.fi/overton-ikkuna.html): Se kaista poliittisia ideoita, joita pidetään kulloinkin hyväksyttävinä — ja jota voi tietoisesti siirtää.
+- [Sääntelijän kaappaus](https://www.ilmiöt.fi/saantelijan-kaappaus.html): Valvottava teollisuudenala ottaa vähitellen haltuunsa viranomaisen, jonka piti valvoa sitä.
+- [Rautainen laki oligarkiasta](https://www.ilmiöt.fi/rautainen-laki.html): Jokainen organisaatio ajautuu lopulta pienen sisäpiirin hallintaan — myös demokraattiseksi tarkoitettu.
+- [Valta suojelee valtaa](https://www.ilmiöt.fi/valta-suojelee-valtaa.html): Vallassa olevat asettavat pelisäännöt, valitsevat tuomarit ja määrittelevät, mikä on laillista.
+- [Hajota ja hallitse](https://www.ilmiöt.fi/hajota-hallitse.html): Hallitseva taho pysyy vallassa pitämällä mahdolliset vastavoimat riidoissa keskenään.
 
 ### Informaatio ja propaganda
-- Tilastoilla valehtelu: https://www.ilmiöt.fi/tilastoilla-valehtelu.html
-- BKT-harha: https://www.ilmiöt.fi/bkt-harha.html
-- Astroturf: https://www.ilmiöt.fi/astroturf.html
-- Firehose of falsehood: https://www.ilmiöt.fi/firehose-of-falsehood.html
-- Manufactured consent: https://www.ilmiöt.fi/manufactured-consent.html
-- Betteridgen laki: https://www.ilmiöt.fi/betteridgen-laki.html
-- Inokulointiteoria: https://www.ilmiöt.fi/inokulointiteoria.html
-- Whataboutismi: https://www.ilmiöt.fi/whataboutismi.html
-- Streisand-ilmiö: https://www.ilmiöt.fi/streisand-ilmio.html
-- Trollitehdas: https://www.ilmiöt.fi/trollitehdas.html
-- Kuollut kissa -strategia: https://www.ilmiöt.fi/kuollut-kissa.html
+
+Miten mielipiteitä muokataan tilastoilla, valheilla ja keinotekoisilla kansanliikkeillä.
+
+- [Tilastoilla valehtelu](https://www.ilmiöt.fi/tilastoilla-valehtelu.html): Miten oikeilla luvuilla johdetaan harhaan: katkaistut akselit, valikoidut aikavälit ja vinot otokset.
+- [BKT-harha](https://www.ilmiöt.fi/bkt-harha.html): BKT mittaa tuotannon arvoa, ei hyvinvointia — ja voi kasvaa, vaikka kansalaisten talous kurjistuu.
+- [Astroturf](https://www.ilmiöt.fi/astroturf.html): Rahoitettu kampanja, joka naamioidaan tavallisten ihmisten spontaaniksi ruohonjuuriliikkeeksi.
+- [Firehose of falsehood](https://www.ilmiöt.fi/firehose-of-falsehood.html): Niin monta valhetta niin nopeasti joka kanavasta, ettei faktantarkistus ehdi perässä.
+- [Manufactured consent](https://www.ilmiöt.fi/manufactured-consent.html): Valtamedia suodattaa uutiset omistajien ja mainostajien ehdoilla — yleisön suostumus tuotetaan.
+- [Betteridgen laki](https://www.ilmiöt.fi/betteridgen-laki.html): Jos otsikko päättyy kysymysmerkkiin, vastaus on "ei" — muuten se olisi kirjoitettu väitteenä.
+- [Inokulointiteoria](https://www.ilmiöt.fi/inokulointiteoria.html): Mieli rokotetaan disinformaatiota vastaan altistamalla se etukäteen heikennetylle huijaukselle.
+- [Whataboutismi](https://www.ilmiöt.fi/whataboutismi.html): Syytökseen vastataan vastasyytöksellä: "entäs kun te…" — itse asia jää käsittelemättä.
+- [Streisand-ilmiö](https://www.ilmiöt.fi/streisand-ilmio.html): Yritys poistaa tieto julkisuudesta moninkertaistaa sen saaman huomion.
+- [Trollitehdas](https://www.ilmiöt.fi/trollitehdas.html): Organisaatio, jonka palkatut työntekijät levittävät propagandaa ja lietsovat riitaa valeprofiileilla.
+- [Kuollut kissa -strategia](https://www.ilmiöt.fi/kuollut-kissa.html): Shokeeraava sivuaihe heitetään julkisuuteen, jotta vahingollisempi puheenaihe unohtuu.
 
 ### Psykologia ja kognitio
-- Backfire effect: https://www.ilmiöt.fi/backfire-effect.html
-- DARVO: https://www.ilmiöt.fi/darvo.html
-- Halo-efekti ja stigma: https://www.ilmiöt.fi/halo-efekti.html
-- Konsensus fetissi: https://www.ilmiöt.fi/konsensus-fetissi.html
-- Omenoita ja appelsiineja: https://www.ilmiöt.fi/omenoita-appelsiineja.html
-- The Blame Game: https://www.ilmiöt.fi/blame-game.html
-- Gaslighting: https://www.ilmiöt.fi/gaslighting.html
-- Maalitolppien siirtäminen: https://www.ilmiöt.fi/maalitolppien-siirtaminen.html
-- Argumenttitulva (Gish Gallop): https://www.ilmiöt.fi/argumenttitulva.html
-- Sunk cost -harha: https://www.ilmiöt.fi/sunk-cost-harha.html
-- Järjestelmän puolustelu: https://www.ilmiöt.fi/jarjestelman-puolustelu.html
-- Dunning–Kruger-ilmiö: https://www.ilmiöt.fi/dunning-kruger.html
+
+Kognitiiviset harhat ja manipulointitaktiikat, jotka vääristävät ajattelua ja keskustelua.
+
+- [Backfire effect](https://www.ilmiöt.fi/backfire-effect.html): Virheellisen uskomuksen korjausyritys voi vahvistaa uskomusta entisestään.
+- [DARVO](https://www.ilmiöt.fi/darvo.html): Kiinni jäänyt kääntää roolit: kiistä, hyökkää ja esitä itsesi uhrina — Deny, Attack, Reverse Victim & Offender.
+- [Halo-efekti ja stigma](https://www.ilmiöt.fi/halo-efekti.html): Yksi hyvä piirre saa olettamaan kaiken muunkin hyväksi — ja yksi huono kaiken huonoksi.
+- [Konsensus fetissi](https://www.ilmiöt.fi/konsensus-fetissi.html): Yksimielisyydestä tulee itseisarvo, ja erimielisyys aletaan nähdä ongelmana — ei tietona.
+- [Omenoita ja appelsiineja](https://www.ilmiöt.fi/omenoita-appelsiineja.html): Rinnastetaan kaksi asiaa, jotka eroavat juuri siinä, mikä tekisi vertailusta mielekkään.
+- [The Blame Game](https://www.ilmiöt.fi/blame-game.html): Epäonnistumisen jälkeen energia menee syyllisen etsintään, ei ongelman korjaamiseen.
+- [Gaslighting](https://www.ilmiöt.fi/gaslighting.html): Uhrin havainnot ja muisti kiistetään järjestelmällisesti, kunnes hän epäilee omaa todellisuudentajuaan.
+- [Maalitolppien siirtäminen](https://www.ilmiöt.fi/maalitolppien-siirtaminen.html): Onnistumisen kriteerit vaihdetaan jälkikäteen — juuri kun aiemmat vaatimukset on täytetty.
+- [Argumenttitulva (Gish Gallop)](https://www.ilmiöt.fi/argumenttitulva.html): Väitteitä syydetään niin paljon kerralla, ettei kaikkia ehdi kumota — kumoamatta jäänyt näyttää voitolta.
+- [Sunk cost -harha](https://www.ilmiöt.fi/sunk-cost-harha.html): Jo menetetyt panostukset saavat jatkamaan tappiollista hanketta, vaikka lopettaminen kannattaisi.
+- [Järjestelmän puolustelu](https://www.ilmiöt.fi/jarjestelman-puolustelu.html): Ihminen puolustaa järjestelmää, joka kohtelee häntä huonosti — usko reiluun maailmaan lohduttaa.
+- [Dunning–Kruger-ilmiö](https://www.ilmiöt.fi/dunning-kruger.html): Heikoimmat osaajat yliarvioivat taitonsa eniten — arviointi vaatii samaa osaamista kuin itse taito.
 
 ### Byrokratia ja organisaatio
-- Simple Sabotage Field Manual: https://www.ilmiöt.fi/simple-sabotage.html
-- Kafka-ilmiö: https://www.ilmiöt.fi/kafka-ilmio.html
-- Catch-22: https://www.ilmiöt.fi/catch-22.html
-- Goodhartin laki: https://www.ilmiöt.fi/goodhartin-laki.html
-- HIPPO-efekti: https://www.ilmiöt.fi/hippo-efekti.html
-- Performatiivinen läsnäolo: https://www.ilmiöt.fi/performatiivinen-lasnaolo.html
-- Rituaalinen raportointi: https://www.ilmiöt.fi/rituaalinen-raportointi.html
-- Initiointirituaalit: https://www.ilmiöt.fi/initiointirituaalit.html
-- Portinvartija-kulttuuri: https://www.ilmiöt.fi/portinvartija-kulttuuri.html
-- Strateginen osaamattomuus: https://www.ilmiöt.fi/strateginen-osaamattomuus.html
-- FOFO: https://www.ilmiöt.fi/fofo.html
-- Sivustakatsojan efekti: https://www.ilmiöt.fi/sivustakatsojan-efekti.html
+
+Miksi organisaatiot jumiutuvat: mittarit, rituaalit ja portinvartijat.
+
+- [Simple Sabotage Field Manual](https://www.ilmiöt.fi/simple-sabotage.html): CIA:n edeltäjän ohjekirja: miten organisaatio halvaannutetaan kokouksilla, komiteoilla ja pykälillä.
+- [Kafka-ilmiö](https://www.ilmiöt.fi/kafka-ilmio.html): Byrokratia, jossa oikeuden saaminen on teknisesti mahdollista mutta käytännössä mahdotonta.
+- [Catch-22](https://www.ilmiöt.fi/catch-22.html): Looginen ansa: ehdon täyttäminen edellyttää asiaa, jonka voi saada vain täyttämällä ehdon.
+- [Goodhartin laki](https://www.ilmiöt.fi/goodhartin-laki.html): Kun mittarista tulee tavoite, se lakkaa olemasta hyvä mittari.
+- [HIPPO-efekti](https://www.ilmiöt.fi/hippo-efekti.html): Kokouksen lopputuloksen määrää kovapalkkaisimman mielipide — ei data eikä asiantuntemus.
+- [Performatiivinen läsnäolo](https://www.ilmiöt.fi/performatiivinen-lasnaolo.html): Sitoutumista osoitetaan näkymällä — myöhäisillä sähköposteilla ja kokouksissa istumalla, ei tuloksilla.
+- [Rituaalinen raportointi](https://www.ilmiöt.fi/rituaalinen-raportointi.html): Raportit ja status-palaverit palvelevat kontrollin näyttämistä, eivät tiedon välittämistä.
+- [Initiointirituaalit](https://www.ilmiöt.fi/initiointirituaalit.html): Tulokas "ansaitsee paikkansa" nöyryyttävillä tehtävillä — ja hierarkia alkaa tuntua luonnolliselta.
+- [Portinvartija-kulttuuri](https://www.ilmiöt.fi/portinvartija-kulttuuri.html): Tieto suodattuu matkalla ylös: johtaja kuulee vain sen, minkä portinvartijat päästävät läpi.
+- [Strateginen osaamattomuus](https://www.ilmiöt.fi/strateginen-osaamattomuus.html): Tehtävä tehdään tahallaan huonosti, jotta sitä ei pyydettäisi enää koskaan.
+- [FOFO](https://www.ilmiöt.fi/fofo.html): Fear of finding out: mittaamista vältellään, koska tulokset voisivat pakottaa toimimaan.
+- [Sivustakatsojan efekti](https://www.ilmiöt.fi/sivustakatsojan-efekti.html): Mitä enemmän todistajia, sitä epätodennäköisemmin kukaan auttaa — vastuu hajoaa joukkoon.
 
 ### Projekti- ja ohjelmistokehitys
-- Brooksin laki: https://www.ilmiöt.fi/brooksin-laki.html
-- Yhdeksän-yhdeksän-sääntö: https://www.ilmiöt.fi/yhdeksanyhdeksan.html
-- Hofstadterin laki: https://www.ilmiöt.fi/hofstadterin-laki.html
-- Kuolonmarssi: https://www.ilmiöt.fi/kuolonmarssi.html
-- Tekninen velka: https://www.ilmiöt.fi/tekninen-velka.html
-- Conwayn laki: https://www.ilmiöt.fi/conways-laki.html
-- Bikeshedding: https://www.ilmiöt.fi/bikeshedding.html
-- Scope creep: https://www.ilmiöt.fi/scope-creep.html
+
+Projektien lainalaisuudet: miksi aikataulut pettävät ja hankkeet paisuvat.
+
+- [Brooksin laki](https://www.ilmiöt.fi/brooksin-laki.html): Lisätyövoiman heittäminen myöhässä olevaan ohjelmistoprojektiin myöhästyttää sitä lisää.
+- [Yhdeksän-yhdeksän-sääntö](https://www.ilmiöt.fi/yhdeksanyhdeksan.html): Ensimmäinen 90 % työstä vie 90 % ajasta — ja viimeinen 10 % vie loput 90 %.
+- [Hofstadterin laki](https://www.ilmiöt.fi/hofstadterin-laki.html): Kaikki kestää odotettua kauemmin, vaikka ottaisit Hofstadterin lain huomioon.
+- [Kuolonmarssi](https://www.ilmiöt.fi/kuolonmarssi.html): Projekti, jonka kaikki tietävät epäonnistuvan — mutta jota kukaan ei pysty pysäyttämään.
+- [Tekninen velka](https://www.ilmiöt.fi/tekninen-velka.html): Oikotie nopeuttaa kehitystä nyt, mutta kasvaa korkoa ja peritään myöhemmin takaisin.
+- [Conwayn laki](https://www.ilmiöt.fi/conways-laki.html): Järjestelmän arkkitehtuuri kopioi väistämättä sen suunnitelleen organisaation viestintärakenteen.
+- [Bikeshedding](https://www.ilmiöt.fi/bikeshedding.html): Komitea väittelee tuntikausia polkupyöräkatoksen väristä, koska ydinvoimala on liian vaikea aihe.
+- [Scope creep](https://www.ilmiöt.fi/scope-creep.html): Projektin laajuus paisuu pala kerrallaan ilman, että aikataulu tai budjetti muuttuu mukana.
 
 ### Kasvun dynamiikka
-- Korkoa korolle -efekti: https://www.ilmiöt.fi/korkoa-korolle.html
-- Negatiivinen korkoa korolle: https://www.ilmiöt.fi/negatiivinen-korkoa.html
-- Negatiivinen korkokierre: https://www.ilmiöt.fi/korkokierre.html
+
+Eksponentiaalinen kasvu ja rappio — korkoa korolle molempiin suuntiin.
+
+- [Korkoa korolle -efekti](https://www.ilmiöt.fi/korkoa-korolle.html): Kasvu kohdistuu koko kertyneeseen pohjaan, ei vain alkupääomaan — pieni tuotto paisuu ajan myötä valtavaksi.
+- [Negatiivinen korkoa korolle](https://www.ilmiöt.fi/negatiivinen-korkoa.html): Sama kasautumislogiikka toimii alaspäin: laiminlyönti ja tappiot kiihdyttävät toisiaan.
+- [Negatiivinen korkokierre](https://www.ilmiöt.fi/korkokierre.html): Velka kasvaa samalla eksponentilla kuin sijoitus — mutta sinua vastaan.
 
 ### Huijaukset ja petokset
-- Honeypot-huijaus: https://www.ilmiöt.fi/honeypot-huijaus.html
-- Bait and switch: https://www.ilmiöt.fi/bait-and-switch.html
-- Käärmeöljy: https://www.ilmiöt.fi/kaarmeoljy.html
-- Ponzi ja pyramidihuijaus: https://www.ilmiöt.fi/ponzi-pyramidi.html
-- Pump and dump: https://www.ilmiöt.fi/pump-and-dump.html
-- Pig butchering: https://www.ilmiöt.fi/pig-butchering.html
-- Ennakkomaksuhuijaus (419): https://www.ilmiöt.fi/ennakkomaksuhuijaus.html
-- Badger game: https://www.ilmiöt.fi/badger-game.html
-- QR-koodihuijaus: https://www.ilmiöt.fi/qr-koodihuijaus.html
-- Toimitusjohtajahuijaus: https://www.ilmiöt.fi/toimitusjohtajahuijaus.html
-- Rug pull: https://www.ilmiöt.fi/rug-pull.html
+
+Klassiset huijausmallit Ponzista pig butcheringiin — ja miten ne tunnistaa.
+
+- [Honeypot-huijaus](https://www.ilmiöt.fi/honeypot-huijaus.html): Ansa houkuttelee helpolla voitolla — uloskäynti sulkeutuu vasta, kun olet jo sitoutunut.
+- [Bait and switch](https://www.ilmiöt.fi/bait-and-switch.html): Näyttävä tarjous houkuttelee paikalle, mutta tilalle myydäänkin jotain kalliimpaa tai huonompaa.
+- [Käärmeöljy](https://www.ilmiöt.fi/kaarmeoljy.html): Ihmetuote, joka lupaa parantaa kaiken eikä tee mitään — myyjä elää lupauksista, ei tuloksista.
+- [Ponzi ja pyramidihuijaus](https://www.ilmiöt.fi/ponzi-pyramidi.html): "Tuotot" maksetaan uusien sijoittajien rahoista — kunnes uusia ei enää tule ja korttitalo romahtaa.
+- [Pump and dump](https://www.ilmiöt.fi/pump-and-dump.html): Halpa osake tai krypto pumpataan hypellä huippuhintaan — ja dumpataan hyväuskoisten syliin.
+- [Pig butchering](https://www.ilmiöt.fi/pig-butchering.html): Uhri "lihotetaan" viikkojen luottamuksella ja pikkuvoitoilla ennen kuin tili tyhjennetään.
+- [Ennakkomaksuhuijaus (419)](https://www.ilmiöt.fi/ennakkomaksuhuijaus.html): Suuri summa odottaa — kunhan maksat ensin "pienen" käsittelymaksun, ja sitten seuraavan.
+- [Badger game](https://www.ilmiöt.fi/badger-game.html): Uhri houkutellaan kiusalliseen tilanteeseen ja kiristetään maksamaan vaikenemisesta.
+- [QR-koodihuijaus](https://www.ilmiöt.fi/qr-koodihuijaus.html): Väärennetty QR-koodi ohjaa valesivulle maksamaan — parkkimittarit ovat tyypillinen kohde.
+- [Toimitusjohtajahuijaus](https://www.ilmiöt.fi/toimitusjohtajahuijaus.html): "Johtaja" vaatii sähköpostilla kiireellistä maksua — kiire ja salailu ovat tuntomerkit.
+- [Rug pull](https://www.ilmiöt.fi/rug-pull.html): Kehittäjät hypettävät kryptotokenin, keräävät sijoittajien rahat ja katoavat — arvo romahtaa nollaan.
 
 ### Myyntikikat ja painostus
-- Ilmainen näytetyö: https://www.ilmiöt.fi/ilmainen-naytetyo.html
-- Maksu näkyvyydellä: https://www.ilmiöt.fi/exposure-maksu.html
-- Lowball-hinnoittelu: https://www.ilmiöt.fi/lowball-hinnoittelu.html
-- Välittäjän skimmaus: https://www.ilmiöt.fi/valittajan-skimmaus.html
-- Tilipuristus: https://www.ilmiöt.fi/tilipuristus.html
-- Foot-in-the-door: https://www.ilmiöt.fi/foot-in-the-door.html
-- Door-in-the-face: https://www.ilmiöt.fi/door-in-the-face.html
-- Hintaankkurointi: https://www.ilmiöt.fi/hintaankkurointi.html
-- Houkutinvaihtoehto: https://www.ilmiöt.fi/houkutinvaihtoehto.html
-- Vastavuoroisuuden ansa: https://www.ilmiöt.fi/vastavuoroisuuden-ansa.html
-- Sosiaalinen todiste -manipulaatio: https://www.ilmiöt.fi/sosiaalinen-todiste.html
-- Painostus-close: https://www.ilmiöt.fi/painostusclose.html
-- Shrinkflaatio: https://www.ilmiöt.fi/shrinkflaatio.html
-- Suunniteltu vanheneminen: https://www.ilmiöt.fi/suunniteltu-vanheneminen.html
-- Tilausansa: https://www.ilmiöt.fi/tilausansa.html
+
+Myynnin ja neuvottelun painostuskeinot hinta-ankkuroinnista keinotekoiseen niukkuuteen.
+
+- [Ilmainen näytetyö](https://www.ilmiöt.fi/ilmainen-naytetyo.html): "Tee koetehtävä, valitsemme parhaan" — oikeaa työtä teetetään ilmaiseksi näytteen varjolla.
+- [Maksu näkyvyydellä](https://www.ilmiöt.fi/exposure-maksu.html): Työ teetetään ilman rahaa lupaamalla näkyvyyttä, referenssiä tai "jalkaa oven väliin".
+- [Lowball-hinnoittelu](https://www.ilmiöt.fi/lowball-hinnoittelu.html): Kauppa avataan houkuttelevan halvalla — hinta nousee vasta, kun olet jo sitoutunut.
+- [Välittäjän skimmaus](https://www.ilmiöt.fi/valittajan-skimmaus.html): Välittäjä ottaa siivun molemmilta osapuolilta ja salaa todellisen marginaalinsa.
+- [Tilipuristus](https://www.ilmiöt.fi/tilipuristus.html): Työ otetaan vastaan, mutta maksua venytetään loputtomilla ehdoilla ja "hyväksyntäkierroksilla".
+- [Foot-in-the-door](https://www.ilmiöt.fi/foot-in-the-door.html): Pieni, helppo pyyntö ensin — myöntyminen tekee isomman pyynnön torjumisesta vaikeaa.
+- [Door-in-the-face](https://www.ilmiöt.fi/door-in-the-face.html): Kohtuuton pyyntö ensin, torjunnan jälkeen "kohtuullinen" — joka oli koko ajan tavoite.
+- [Hintaankkurointi](https://www.ilmiöt.fi/hintaankkurointi.html): Ensimmäinen esitetty luku asettaa vertailupisteen koko neuvottelulle — vaikka se olisi hatusta.
+- [Houkutinvaihtoehto](https://www.ilmiöt.fi/houkutinvaihtoehto.html): Valikoimaan lisätään tahallaan huono vaihtoehto, joka saa kalliimman näyttämään järkevältä.
+- [Vastavuoroisuuden ansa](https://www.ilmiöt.fi/vastavuoroisuuden-ansa.html): Ilmainen lahja tai palvelus luo velvollisuudentunteen, joka lunastetaan myöhemmin kalliisti.
+- [Sosiaalinen todiste -manipulaatio](https://www.ilmiöt.fi/sosiaalinen-todiste.html): "Muutkin jo ostivat" — epävarma ihminen matkii muita, ja kysyntä voidaan lavastaa.
+- [Painostus-close](https://www.ilmiöt.fi/painostusclose.html): Keinotekoinen kiire ja niukkuus pakottavat päättämään ennen kuin ehdit harkita.
+- [Shrinkflaatio](https://www.ilmiöt.fi/shrinkflaatio.html): Paketti pienenee, hinta pysyy — piilotettu hinnankorotus, jonka yksikköhinta paljastaa.
+- [Suunniteltu vanheneminen](https://www.ilmiöt.fi/suunniteltu-vanheneminen.html): Tuote suunnitellaan hajoamaan tai vanhenemaan ennenaikaisesti, jotta ostaisit uuden.
+- [Tilausansa](https://www.ilmiöt.fi/tilausansa.html): Tilaaminen on yhden klikkauksen helppoa, peruminen tahallaan vaikeaa.
 
 ### Alustatalous ja algoritmit
-- Doomscrolling: https://www.ilmiöt.fi/doomscrolling.html
-- Kaikukammio: https://www.ilmiöt.fi/kaikukammio.html
-- AI slop: https://www.ilmiöt.fi/ai-slop.html
-- Parasosiaalinen suhde: https://www.ilmiöt.fi/parasosiaalinen-suhde.html
-- Kuollut internet -teoria: https://www.ilmiöt.fi/kuollut-internet.html
-- Rage bait: https://www.ilmiöt.fi/rage-bait.html
+
+Miten suosittelualgoritmit, ansaintalogiikka ja huomiotalous muokkaavat käyttäytymistä verkossa.
+
+- [Doomscrolling](https://www.ilmiöt.fi/doomscrolling.html): Pakonomainen huonojen uutisten selaaminen, joka jatkuu vaikka ahdistus kasvaa.
+- [Kaikukammio](https://www.ilmiöt.fi/kaikukammio.html): Ympäristö, jossa kohtaat vain omia näkemyksiäsi vahvistavaa sisältöä.
+- [AI slop](https://www.ilmiöt.fi/ai-slop.html): Tekoälyllä massatuotettua halpasisältöä, joka kerää klikkejä palvelematta lukijaa.
+- [Parasosiaalinen suhde](https://www.ilmiöt.fi/parasosiaalinen-suhde.html): Yksipuolinen tunneside mediahahmoon tuntuu ystävyydeltä — ja sillä voi myydä mitä vain.
+- [Kuollut internet -teoria](https://www.ilmiöt.fi/kuollut-internet.html): Väite, että valtaosa verkon sisällöstä on bottien tuottamaa — salaliittona väärin, metaforana osuva.
+- [Rage bait](https://www.ilmiöt.fi/rage-bait.html): Sisältö on suunniteltu suututtamaan — vihainen jako on algoritmille yhtä arvokas kuin tykkäys.
 
 ### Pesut ja maineenhallinta
-- Viherpesu: https://www.ilmiöt.fi/viherpesu.html
-- Tekoälypesu: https://www.ilmiöt.fi/tekoalypesu.html
-- Hyvesignalointi: https://www.ilmiöt.fi/hyvesignalointi.html
+
+Viherpesusta tekoälypesuun — miten maine kiillotetaan ilman että mikään oikeasti muuttuu.
+
+- [Viherpesu](https://www.ilmiöt.fi/viherpesu.html): Markkinointi saa yrityksen näyttämään ympäristöystävällisemmältä kuin se oikeasti on.
+- [Tekoälypesu](https://www.ilmiöt.fi/tekoalypesu.html): Tuotetta markkinoidaan tekoälyllä, jota siinä ei ole — tai jonka rooli on rajusti liioiteltu.
+- [Hyvesignalointi](https://www.ilmiöt.fi/hyvesignalointi.html): Moraalinen kannanotto oman kuvan kiillottamiseksi — näkyvyys maksimoidaan, kustannus minimoidaan.
 
 ### Työelämän ilmiöt
-- Hiljainen irtisanoutuminen: https://www.ilmiöt.fi/hiljainen-irtisanoutuminen.html
-- Hiljainen irtisanominen: https://www.ilmiöt.fi/hiljainen-irtisanominen.html
-- Haamutyöpaikat: https://www.ilmiöt.fi/haamutyopaikat.html
+
+Etätyöajan uusi sanasto: hiljaiset irtisanoutumiset, haamutyöpaikat ja läsnäolon teatteri.
+
+- [Hiljainen irtisanoutuminen](https://www.ilmiöt.fi/hiljainen-irtisanoutuminen.html): Työntekijä tekee täsmälleen sopimuksen mukaiset työt — ei ylitöitä, ei ylimääräistä.
+- [Hiljainen irtisanominen](https://www.ilmiöt.fi/hiljainen-irtisanominen.html): Työolot kurjistetaan tahallaan, jotta työntekijä lähtee itse — ilman irtisanomisen kuluja.
+- [Haamutyöpaikat](https://www.ilmiöt.fi/haamutyopaikat.html): Työpaikkailmoitus, jonka takana ei ole aikomustakaan palkata ketään.
