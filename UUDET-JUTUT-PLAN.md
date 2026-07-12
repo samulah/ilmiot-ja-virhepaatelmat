@@ -13,10 +13,19 @@ suhde (suomenkielinen hakuvolyymi) / (kilpailun heikkous fi-SERPissä).
 > yhdellä kortilla — ne täydennetään vähintään kolmeen P2:n alussa.
 >
 > **P2 julkaistu 2026-07-07:** kaikki 15 sivua siirretty juureen ja koko sivusto
-> numeroitu uudelleen kategorioittain — nyt **91 ilmiötä, 11 kategoriaa**.
+> numeroitu uudelleen kategorioittain — nyt 91 ilmiötä, 11 kategoriaa.
 > index.html, llms.txt, sitemap.xml, tietoa.html ja hakuindeksi päivitetty.
 > `luonnokset/`-kansio jäi turhaksi, sen voi poistaa. Seuraavaksi: deploy +
 > live-tarkistus (deploy-gap!), sitten P3.
+>
+> **P3:n ensimmäinen erä julkaistu 2026-07-10 — nimetyt lait.** Seitsemän sivua:
+> Brandolinin laki (19), Poen laki (20), Godwinin laki (21), Hanlonin partaveitsi (34),
+> Occamin partaveitsi (35), Parkinsonin laki (48), Peterin periaate (49). Koko sivusto
+> numeroitu uudelleen — nyt **98 ilmiötä, 11 kategoriaa**. Uusia kategorioita ei
+> avattu: lait sijoittuivat kolmeen olemassa olevaan kategoriaan.
+> Vanhoille sivuille lisättiin 21 sisääntulevaa linkkiä uusiin.
+> `scripts/build_liittyvat.py`:n korttimäärän assertointi nostettu 91 → 98.
+> Seuraavaksi: deploy + live-tarkistus (deploy-gap!), sitten P3:n loput.
 
 ---
 
@@ -99,10 +108,19 @@ Matala volyymi, mutta halpoja tehdä ja vahvistavat kokonaisuutta
 (sisäinen linkitys, kategorioiden uskottava koko, "koko sanaston kattava
 lähde" -asema AI-hauissa):
 
+**Erä "nimetyt lait" — ✅ JULKAISTU 2026-07-10.** Brandolinin laki, Poen laki,
+Godwinin laki, Hanlonin partaveitsi, Occamin partaveitsi, Parkinsonin laki,
+Peterin periaate. Erä jatkaa sivuston olemassa olevaa lakikokoelmaa
+(Betteridge, Brooks, Conway, Goodhart, Hofstadter, rautainen laki).
+Vahva ristiinlinkitys: Hanlon ↔ strateginen osaamattomuus, Parkinson ↔
+bikeshedding (= Parkinsonin oma triviaalisuuden laki), Brandolini ↔
+argumenttitulva ja AI slop, Peter ↔ HiPPO-efekti ja Dunning–Kruger.
+
+Vielä tekemättä:
+
 - **Propaganda:** suuri valhe, peilisyytös (accusation in a mirror),
   refleksiivinen kontrolli, hyödyllinen idiootti, motte ja bailey,
-  sealioning, Brandolinin laki (paskapuheen epäsymmetria),
-  moraalipaniikki, hostile media effect
+  sealioning, moraalipaniikki, hostile media effect
 - **Alustatalous:** algoritminen radikalisoituminen, audience capture,
   valearvostelut / review bombing, engagement farming
 - **Työelämä:** zoom-väsymys, hustlekulttuuri
@@ -112,9 +130,9 @@ lähde" -asema AI-hauissa):
 - **Psykologia:** saatavuusheuristiikka
 - **Kasvun dynamiikka:** Gartnerin hypekäyrä, verkostovaikutus
 
-Brandolinin laki kannattaa nostaa P3:n kärkeen sivuston hengen takia,
-vaikka volyymi on pieni — se on luonteva linkityskohde lähes joka
-propagandasivulta.
+Brandolinin laki nostettiin P3:n kärkeen sivuston hengen takia, vaikka
+volyymi on pieni — se on luonteva linkityskohde lähes joka propagandasivulta.
+Se veti perässään koko "nimetyt lait" -erän (ks. yllä).
 
 ---
 
@@ -134,8 +152,8 @@ jälkikäteen:
 | **D** | Uusi kategoria: **Työelämän ilmiöt** | hiljainen irtisanoutuminen, hiljainen irtisanominen, haamutyöpaikat | ✅ Julkaistu 2026-07-07 (3 korttia) |
 | **E** | Täydennykset olemassa oleviin | shrinkflaatio, tilausansa, QR-koodihuijaus, toimitusjohtajahuijaus, rug pull, Dunning–Kruger, suunniteltu vanheneminen, kuollut internet, rage bait | ✅ Julkaistu 2026-07-07 |
 
-**Seuraava työjärjestys:** P2 on kokonaan julkaistu — seuraavaksi P3:n
-pitkä häntä, kärjessä Brandolinin laki (ks. alla).
+**Seuraava työjärjestys:** P2 ja P3:n "nimetyt lait" -erä on julkaistu —
+seuraavaksi deploy ja live-tarkistus, sitten P3:n loput (ks. alla).
 
 Kategoriakuvaukset (hub-kat-desc) luonnoksina:
 
