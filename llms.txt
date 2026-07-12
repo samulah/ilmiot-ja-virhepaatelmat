@@ -1,6 +1,6 @@
 # Ilmiöitä — Miten valta toimii
 
-> Suomenkielinen sivusto, joka selittää 91 yhteiskunnallista ilmiötä:
+> Suomenkielinen sivusto, joka selittää 98 yhteiskunnallista ilmiötä:
 > valtarakenteet, propaganda ja informaatiovaikuttaminen, kognitiiviset harhat,
 > byrokratia ja organisaatiodynamiikka, projektihallinnan lait,
 > talouden kasvuilmiöt, huijaukset ja petokset, myynti- ja painostustaktiikat,
@@ -37,6 +37,9 @@ Miten mielipiteitä muokataan tilastoilla, valheilla ja keinotekoisilla kansanli
 - [Streisand-ilmiö](https://www.ilmiöt.fi/streisand-ilmio.html): Yritys poistaa tieto julkisuudesta moninkertaistaa sen saaman huomion.
 - [Trollitehdas](https://www.ilmiöt.fi/trollitehdas.html): Organisaatio, jonka palkatut työntekijät levittävät propagandaa ja lietsovat riitaa valeprofiileilla.
 - [Kuollut kissa -strategia](https://www.ilmiöt.fi/kuollut-kissa.html): Shokeeraava sivuaihe heitetään julkisuuteen, jotta vahingollisempi puheenaihe unohtuu.
+- [Brandolinin laki](https://www.ilmiöt.fi/brandolinin-laki.html): Hölynpölyn kumoamiseen tarvitaan moninkertaisesti enemmän energiaa kuin sen tuottamiseen.
+- [Poen laki](https://www.ilmiöt.fi/poen-laki.html): Ilman selvää vihjettä ääriajattelun parodiaa ei voi erottaa aidosta ääriajattelusta.
+- [Godwinin laki](https://www.ilmiöt.fi/godwinin-laki.html): Mitä pidempi verkkokeskustelu, sitä varmemmin joku vertaa vastapuolta natseihin.
 
 ### Psykologia ja kognitio
 
@@ -54,6 +57,8 @@ Kognitiiviset harhat ja manipulointitaktiikat, jotka vääristävät ajattelua j
 - [Sunk cost -harha](https://www.ilmiöt.fi/sunk-cost-harha.html): Jo menetetyt panostukset saavat jatkamaan tappiollista hanketta, vaikka lopettaminen kannattaisi.
 - [Järjestelmän puolustelu](https://www.ilmiöt.fi/jarjestelman-puolustelu.html): Ihminen puolustaa järjestelmää, joka kohtelee häntä huonosti — usko reiluun maailmaan lohduttaa.
 - [Dunning–Kruger-ilmiö](https://www.ilmiöt.fi/dunning-kruger.html): Heikoimmat osaajat yliarvioivat taitonsa eniten — arviointi vaatii samaa osaamista kuin itse taito.
+- [Hanlonin partaveitsi](https://www.ilmiöt.fi/hanlonin-partaveitsi.html): Älä oleta pahantahtoisuutta siellä, missä huolimattomuus riittää selitykseksi.
+- [Occamin partaveitsi](https://www.ilmiöt.fi/occamin-partaveitsi.html): Kun kaksi selitystä sopii havaintoihin yhtä hyvin, valitse se jossa on vähemmän oletuksia.
 
 ### Byrokratia ja organisaatio
 
@@ -71,6 +76,8 @@ Miksi organisaatiot jumiutuvat: mittarit, rituaalit ja portinvartijat.
 - [Strateginen osaamattomuus](https://www.ilmiöt.fi/strateginen-osaamattomuus.html): Tehtävä tehdään tahallaan huonosti, jotta sitä ei pyydettäisi enää koskaan.
 - [FOFO](https://www.ilmiöt.fi/fofo.html): Fear of finding out: mittaamista vältellään, koska tulokset voisivat pakottaa toimimaan.
 - [Sivustakatsojan efekti](https://www.ilmiöt.fi/sivustakatsojan-efekti.html): Mitä enemmän todistajia, sitä epätodennäköisemmin kukaan auttaa — vastuu hajoaa joukkoon.
+- [Parkinsonin laki](https://www.ilmiöt.fi/parkinsonin-laki.html): Työ venyy täyttämään kaiken sille varatun ajan — ja hallinto kasvaa vaikka työ vähenisi.
+- [Peterin periaate](https://www.ilmiöt.fi/peterin-periaate.html): Hyvä työntekijä ylennetään huonoksi esimieheksi, koska ylennys palkitsee väärää osaamista.
 
 ### Projekti- ja ohjelmistokehitys
 
