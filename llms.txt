@@ -1,6 +1,6 @@
 # Ilmiöitä — Miten valta toimii
 
-> Suomenkielinen sivusto, joka selittää 98 yhteiskunnallista ilmiötä:
+> Suomenkielinen sivusto, joka selittää 106 yhteiskunnallista ilmiötä:
 > valtarakenteet, propaganda ja informaatiovaikuttaminen, kognitiiviset harhat,
 > byrokratia ja organisaatiodynamiikka, projektihallinnan lait,
 > talouden kasvuilmiöt, huijaukset ja petokset, myynti- ja painostustaktiikat,
@@ -162,3 +162,16 @@ Etätyöajan uusi sanasto: hiljaiset irtisanoutumiset, haamutyöpaikat ja läsn�
 - [Hiljainen irtisanoutuminen](https://www.ilmiöt.fi/hiljainen-irtisanoutuminen.html): Työntekijä tekee täsmälleen sopimuksen mukaiset työt — ei ylitöitä, ei ylimääräistä.
 - [Hiljainen irtisanominen](https://www.ilmiöt.fi/hiljainen-irtisanominen.html): Työolot kurjistetaan tahallaan, jotta työntekijä lähtee itse — ilman irtisanomisen kuluja.
 - [Haamutyöpaikat](https://www.ilmiöt.fi/haamutyopaikat.html): Työpaikkailmoitus, jonka takana ei ole aikomustakaan palkata ketään.
+
+### Tilastoilla valehtelu
+
+Miten luvuilla ja kaavioilla johdetaan harhaan valehtelematta kertaakaan — akseleista aikaväleihin ja sattuman kalasteluun.
+
+- [Kaksois-y-akseli](https://www.ilmiöt.fi/kaksois-y-akseli.html): Kaksi vapaasti skaalattua asteikkoa saa mitkä tahansa käyrät kulkemaan käsi kädessä.
+- [Pinta-alaharha](https://www.ilmiöt.fi/pinta-alaharha.html): Kaksinkertainen arvo piirretään kaksinkertaisena halkaisijana — ja näyttää nelinkertaiselta.
+- [Cherry-picking](https://www.ilmiöt.fi/cherry-picking-aikavali.html): Aikavälin alku- ja loppupiste valitaan niin, että sama aikasarja todistaa mitä tahansa.
+- [Keskiarvoharha](https://www.ilmiöt.fi/keskiarvo-vs-mediaani.html): Vinossa jakaumassa keskiarvo ja mediaani kertovat eri tarinan — ja kertoja valitsee sopivamman.
+- [Suhteellinen riski](https://www.ilmiöt.fi/suhteellinen-riski.html): ”Riski kaksinkertaistui” voi tarkoittaa siirtymää yhdestä tapauksesta kahteen sataatuhatta kohden.
+- [Selviytymisharha](https://www.ilmiöt.fi/selviytymisharha.html): Vain palanneet koneet lasketaan — data kertoo selviytyjistä, ei kadonneista.
+- [Simpsonin paradoksi](https://www.ilmiöt.fi/simpsonin-paradoksi.html): Kokonaisuus näyttää kasvua, vaikka jokainen osaryhmä laskee — tai päinvastoin.
+- [P-hakkerointi](https://www.ilmiöt.fi/p-hakkerointi.html): Testataan kunnes jokin näyttää merkitsevältä — ja julkaistaan vain se yksi tulos.
