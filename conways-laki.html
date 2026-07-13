@@ -657,17 +657,17 @@
   </style>
 
   <!-- SEO -->
-  <meta name="description" content="Melvin Conway esitti vuonna 1967: &quot;Organisaatiot, jotka suunnittelevat järjestelmiä, tuottavat järjestelmiä jotka heijastavat kyseisten organisaatioiden…">
+  <meta name="description" content="Conwayn laki: järjestelmä perii organisaation rakenteen. Selitämme mistä laissa on kyse, miltä se näyttää käytännössä ja miten käännät sen hyödyksesi.">
   <link rel="canonical" href="https://www.ilmiöt.fi/conways-laki.html">
   <meta property="og:title" content="Conwayn laki — organisaatio heijastuu arkkitehtuuriin — Ilmiöitä">
-  <meta property="og:description" content="Melvin Conway esitti vuonna 1967: &quot;Organisaatiot, jotka suunnittelevat järjestelmiä, tuottavat järjestelmiä jotka heijastavat kyseisten organisaatioiden…">
+  <meta property="og:description" content="Conwayn laki: järjestelmä perii organisaation rakenteen. Selitämme mistä laissa on kyse, miltä se näyttää käytännössä ja miten käännät sen hyödyksesi.">
   <meta property="og:url" content="https://www.ilmiöt.fi/conways-laki.html">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="fi_FI">
   <meta property="og:site_name" content="Ilmiöitä — Miten valta toimii">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Conwayn laki — organisaatio heijastuu arkkitehtuuriin — Ilmiöitä">
-  <meta name="twitter:description" content="Melvin Conway esitti vuonna 1967: &quot;Organisaatiot, jotka suunnittelevat järjestelmiä, tuottavat järjestelmiä jotka heijastavat kyseisten organisaatioiden…">
+  <meta name="twitter:description" content="Conwayn laki: järjestelmä perii organisaation rakenteen. Selitämme mistä laissa on kyse, miltä se näyttää käytännössä ja miten käännät sen hyödyksesi.">
   <meta property="og:image" content="https://www.ilmiöt.fi/og/brand.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -749,7 +749,7 @@
         "description": "Kirjoittajanimi, jonka takana on kiinnostus valtaan, vaikuttamiseen ja ihmisen päättelyn vinoumiin. Sisältö perustuu julkisiin lähteisiin ja vakiintuneeseen käsitteistöön."
       },
       "datePublished": "2026-06-19",
-      "dateModified": "2026-06-19"
+      "dateModified": "2026-07-13"
     }
   ]
 }
@@ -778,7 +778,7 @@
   <div class="ilmio" id="conways-laki">
 <div class="ilmio-tag">Ilmiö 55</div>
 <h1>Conwayn laki — organisaatio heijastuu arkkitehtuuriin</h1>
-<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 19.6.2026</p>
+<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 13.7.2026</p>
 <p>Melvin Conway esitti vuonna 1967: <em>"Organisaatiot, jotka suunnittelevat järjestelmiä, tuottavat järjestelmiä jotka heijastavat kyseisten organisaatioiden kommunikaatiorakenteita."</em> Toisin sanoen: järjestelmä näyttää siltä, miltä tiimit näyttävät.</p>
 <div class="mermaid">
 flowchart TD
@@ -789,11 +789,11 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Conwayn laki: muuta ensin organisaatio, jos haluat muuttaa arkkitehtuuria.</p>
 <p>Laki ei ole pessimistinen — se on käytännöllinen. Amazon sovelsi sitä tietoisesti "kaksi pizzaa" -tiimisäännöllään: tiimin pitää mahtua kahteen pizzaan, koska se pakottaa pienet autonomiset yksiköt joiden rajapinnat ovat selkeitä. Tulos näkyy AWS:n arkkitehtuurissa.</p>
-<div class="infolaatikko">
-<strong>Käänteinen Conwayn manööveri:</strong> Muuta tiimien rakennetta ensin, niin arkkitehtuuri seuraa. Jos haluat mikropalveluarkkitehtuurin mutta tiimit ovat silossaan, saat vain hajautetun monoliitin — kaikki mikropalvelujen haitat ilman hyötyjä.
-    </div>
 <div class="vaaralatikko">
 <strong>Data-arkkitehtuurissa:</strong> Jos tietovarastoarkkitehtuuri heijastelee organisaatiosiiloja — myynti, markkinointi, tuotanto kukin omina datajärjestelminään ilman yhteistä mallia — syy on lähes aina organisaatiorakenteessa, ei teknisessä päätöksessä.
+    </div>
+<div class="huomiolaatikko">
+<strong>Vastakeino — käänteinen Conwayn manööveri:</strong> Koska laki toimii joka tapauksessa, käytä sitä tietoisesti: suunnittele ensin haluttu arkkitehtuuri ja organisoi tiimit sen mukaan — ei toisinpäin. Käytännössä: piirrä tavoitearkkitehtuurin moduulit ja rajapinnat, anna kullekin moduulille yksi omistava tiimi ja varmista, että tiimien väliset kommunikaatiokanavat vastaavat haluttuja rajapintoja. Jos haluat mikropalveluarkkitehtuurin mutta tiimit ovat silossaan, saat vain hajautetun monoliitin — kaikki mikropalvelujen haitat ilman hyötyjä. Varoitusmerkki arjessa: jos jokainen arkkitehtuurimuutos vaatii kolmen tiimin yhteiskokouksen, organisaatiokaavio on jo arkkitehtuurisi.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -862,7 +862,7 @@ flowchart TD
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="tekninen-velka.html">← Tekninen velka — oikoteiden korko</a>
     <div class="kortti-nav-center">
-      <span class="kortti-nav-laskuri">55 / 98</span>
+      <span class="kortti-nav-laskuri">55 / 106</span>
       <span class="kortti-nav-vinkki">
         <kbd>&#8592;</kbd> <kbd>&#8594;</kbd> selaa &middot; <kbd>R</kbd> satunnainen
         <span class="touch-vinkki">&nbsp;· swipe &#8592;&#8594; tai &#8595; random</span>
@@ -1039,7 +1039,7 @@ flowchart TD
 
   <script>
 (function () {
-  const IDS = ["paskuuttaminen", "starve-the-beast", "overton-ikkuna", "saantelijan-kaappaus", "rautainen-laki", "valta-suojelee-valtaa", "hajota-hallitse", "tilastoilla-valehtelu", "bkt-harha", "astroturf", "firehose-of-falsehood", "manufactured-consent", "betteridgen-laki", "inokulointiteoria", "whataboutismi", "streisand-ilmio", "trollitehdas", "kuollut-kissa", "brandolinin-laki", "poen-laki", "godwinin-laki", "backfire-effect", "darvo", "halo-efekti", "konsensus-fetissi", "omenoita-appelsiineja", "blame-game", "gaslighting", "maalitolppien-siirtaminen", "argumenttitulva", "sunk-cost-harha", "jarjestelman-puolustelu", "dunning-kruger", "hanlonin-partaveitsi", "occamin-partaveitsi", "simple-sabotage", "kafka-ilmio", "catch-22", "goodhartin-laki", "hippo-efekti", "performatiivinen-lasnaolo", "rituaalinen-raportointi", "initiointirituaalit", "portinvartija-kulttuuri", "strateginen-osaamattomuus", "fofo", "sivustakatsojan-efekti", "parkinsonin-laki", "peterin-periaate", "brooksin-laki", "yhdeksanyhdeksan", "hofstadterin-laki", "kuolonmarssi", "tekninen-velka", "conways-laki", "bikeshedding", "scope-creep", "korkoa-korolle", "negatiivinen-korkoa", "korkokierre", "honeypot-huijaus", "bait-and-switch", "kaarmeoljy", "ponzi-pyramidi", "pump-and-dump", "pig-butchering", "ennakkomaksuhuijaus", "badger-game", "qr-koodihuijaus", "toimitusjohtajahuijaus", "rug-pull", "ilmainen-naytetyo", "exposure-maksu", "lowball-hinnoittelu", "valittajan-skimmaus", "tilipuristus", "foot-in-the-door", "door-in-the-face", "hintaankkurointi", "houkutinvaihtoehto", "vastavuoroisuuden-ansa", "sosiaalinen-todiste", "painostusclose", "shrinkflaatio", "suunniteltu-vanheneminen", "tilausansa", "doomscrolling", "kaikukammio", "ai-slop", "parasosiaalinen-suhde", "kuollut-internet", "rage-bait", "viherpesu", "tekoalypesu", "hyvesignalointi", "hiljainen-irtisanoutuminen", "hiljainen-irtisanominen", "haamutyopaikat"];
+  const IDS = ["paskuuttaminen", "starve-the-beast", "overton-ikkuna", "saantelijan-kaappaus", "rautainen-laki", "valta-suojelee-valtaa", "hajota-hallitse", "tilastoilla-valehtelu", "bkt-harha", "astroturf", "firehose-of-falsehood", "manufactured-consent", "betteridgen-laki", "inokulointiteoria", "whataboutismi", "streisand-ilmio", "trollitehdas", "kuollut-kissa", "brandolinin-laki", "poen-laki", "godwinin-laki", "backfire-effect", "darvo", "halo-efekti", "konsensus-fetissi", "omenoita-appelsiineja", "blame-game", "gaslighting", "maalitolppien-siirtaminen", "argumenttitulva", "sunk-cost-harha", "jarjestelman-puolustelu", "dunning-kruger", "hanlonin-partaveitsi", "occamin-partaveitsi", "simple-sabotage", "kafka-ilmio", "catch-22", "goodhartin-laki", "hippo-efekti", "performatiivinen-lasnaolo", "rituaalinen-raportointi", "initiointirituaalit", "portinvartija-kulttuuri", "strateginen-osaamattomuus", "fofo", "sivustakatsojan-efekti", "parkinsonin-laki", "peterin-periaate", "brooksin-laki", "yhdeksanyhdeksan", "hofstadterin-laki", "kuolonmarssi", "tekninen-velka", "conways-laki", "bikeshedding", "scope-creep", "korkoa-korolle", "negatiivinen-korkoa", "korkokierre", "honeypot-huijaus", "bait-and-switch", "kaarmeoljy", "ponzi-pyramidi", "pump-and-dump", "pig-butchering", "ennakkomaksuhuijaus", "badger-game", "qr-koodihuijaus", "toimitusjohtajahuijaus", "rug-pull", "ilmainen-naytetyo", "exposure-maksu", "lowball-hinnoittelu", "valittajan-skimmaus", "tilipuristus", "foot-in-the-door", "door-in-the-face", "hintaankkurointi", "houkutinvaihtoehto", "vastavuoroisuuden-ansa", "sosiaalinen-todiste", "painostusclose", "shrinkflaatio", "suunniteltu-vanheneminen", "tilausansa", "doomscrolling", "kaikukammio", "ai-slop", "parasosiaalinen-suhde", "kuollut-internet", "rage-bait", "viherpesu", "tekoalypesu", "hyvesignalointi", "hiljainen-irtisanoutuminen", "hiljainen-irtisanominen", "haamutyopaikat", "kaksois-y-akseli", "pinta-alaharha", "cherry-picking-aikavali", "keskiarvo-vs-mediaani", "suhteellinen-riski", "selviytymisharha", "simpsonin-paradoksi", "p-hakkerointi"];
   const PREV = 'tekninen-velka.html';
   const NEXT = 'bikeshedding.html';
 
