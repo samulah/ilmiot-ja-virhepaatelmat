@@ -6,9 +6,34 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Kuolonmarssi — projekti jota ei voi lopettaa — Ilmiöitä</title>
   <link rel="stylesheet" href="style.css?v=20260709">
-  
-  
-  
+  <script>
+  window.addEventListener('DOMContentLoaded', function () {
+    var nodes = document.querySelectorAll('.mermaid');
+    if (!nodes.length) return;
+    var loaded = false;
+    function load() {
+      if (loaded) return;
+      loaded = true;
+      var s = document.createElement('script');
+      s.src = 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js';
+      s.onload = function () {
+        mermaid.initialize({ startOnLoad: false, theme: 'base', themeVariables: { fontSize: '12px', fontFamily: "'DM Sans', system-ui, sans-serif", primaryColor: '#FBF5E0', primaryTextColor: '#1A1100', primaryBorderColor: '#C9A84C', lineColor: '#8B6914', secondaryColor: '#F5F0E5', tertiaryColor: '#FDFAF2', mainBkg: '#FBF5E0', nodeBorder: '#C9A84C', clusterBkg: '#F5F0E5', titleColor: '#3A2000', edgeLabelBackground: '#FDFAF2' } });
+        mermaid.run();
+      };
+      document.head.appendChild(s);
+    }
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { load(); io.disconnect(); }
+        });
+      }, { rootMargin: '200px 0px' });
+      nodes.forEach(function (n) { io.observe(n); });
+    } else {
+      load();
+    }
+  });
+  </script>
   <style>
 
     .mermaid svg text { font-size: 12px !important; }
@@ -630,17 +655,17 @@
   </style>
 
   <!-- SEO -->
-  <meta name="description" content="Edward Yourdon kuvasi teoksessaan Death March (1997) projektiluokan, jossa kaikki tietävät jo varhain että projekti epäonnistuu — mutta kukaan ei pysty tai…">
+  <meta name="description" content="Kuolonmarssi: projekti, jonka kaikki tietävät epäonnistuvan, mutta kukaan ei lopeta. Selitämme kierteen ja vastakeinot ennen marssia ja sen aikana.">
   <link rel="canonical" href="https://www.ilmiöt.fi/kuolonmarssi.html">
   <meta property="og:title" content="Kuolonmarssi — projekti jota ei voi lopettaa — Ilmiöitä">
-  <meta property="og:description" content="Edward Yourdon kuvasi teoksessaan Death March (1997) projektiluokan, jossa kaikki tietävät jo varhain että projekti epäonnistuu — mutta kukaan ei pysty tai…">
+  <meta property="og:description" content="Kuolonmarssi: projekti, jonka kaikki tietävät epäonnistuvan, mutta kukaan ei lopeta. Selitämme kierteen ja vastakeinot ennen marssia ja sen aikana.">
   <meta property="og:url" content="https://www.ilmiöt.fi/kuolonmarssi.html">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="fi_FI">
   <meta property="og:site_name" content="Ilmiöitä — Miten valta toimii">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Kuolonmarssi — projekti jota ei voi lopettaa — Ilmiöitä">
-  <meta name="twitter:description" content="Edward Yourdon kuvasi teoksessaan Death March (1997) projektiluokan, jossa kaikki tietävät jo varhain että projekti epäonnistuu — mutta kukaan ei pysty tai…">
+  <meta name="twitter:description" content="Kuolonmarssi: projekti, jonka kaikki tietävät epäonnistuvan, mutta kukaan ei lopeta. Selitämme kierteen ja vastakeinot ennen marssia ja sen aikana.">
   <meta property="og:image" content="https://www.ilmiöt.fi/og/brand.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -722,7 +747,7 @@
         "description": "Kirjoittajanimi, jonka takana on kiinnostus valtaan, vaikuttamiseen ja ihmisen päättelyn vinoumiin. Sisältö perustuu julkisiin lähteisiin ja vakiintuneeseen käsitteistöön."
       },
       "datePublished": "2026-06-19",
-      "dateModified": "2026-06-19"
+      "dateModified": "2026-07-13"
     }
   ]
 }
@@ -751,8 +776,22 @@
   <div class="ilmio" id="kuolonmarssi">
 <div class="ilmio-tag">Ilmiö 53</div>
 <h1>Kuolonmarssi — projekti jota ei voi lopettaa</h1>
-<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 19.6.2026</p>
+<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 13.7.2026</p>
 <p>Edward Yourdon kuvasi teoksessaan <em>Death March</em> (1997) projektiluokan, jossa kaikki tietävät jo varhain että projekti epäonnistuu — mutta kukaan ei pysty tai uskalla sanoa sitä ääneen. Projekti jatkuu, resurssit kuluvat, ihmisiä palaa loppuun, ja lopputulos on silti huono tai peruutetaan.</p>
+<div class="mermaid">
+flowchart TD
+  A["Epärealistinen aikataulu\ntai budjetti alusta asti"] --&gt; B["Tiimi näkee ongelman\njo varhain"]
+  B --&gt; C["Kukaan ei sano ääneen —\npoliittinen hinta liian suuri"]
+  C --&gt; D["Aikataulu pettää\n→ lisää painetta ja ylitöitä"]
+  D --&gt; E["Parhaat tekijät lähtevät\n→ taakka kasvaa jäljelle jääville"]
+  E --&gt; F["Testausta ja laatua\nkarsitaan loppuvaiheessa"]
+  F --&gt; G["Lopputulos: huono\ntai projekti peruutetaan"]
+  D --&gt; C
+  style A fill:#fff3cd,stroke:#f39c12
+  style C fill:#fdf0f0,stroke:#c0392b
+  style G fill:#fdf0f0,stroke:#c0392b
+    </div>
+<p class="kaavio-selitys">Kuolonmarssin kierre: paine ja vaikeneminen ruokkivat toisiaan — mitä pahemmin aikataulu pettää, sitä kalliimpaa ongelmasta on puhua ääneen.</p>
 <div class="huomiolaatikko">
 <strong>Kuolonmarssin tunnusmerkit:</strong>
 <ul style="margin:0.5em 0 0;">
@@ -767,6 +806,9 @@
 <p>Kuolonmarssi eroaa tavallisesta myöhässä olevasta projektista siinä, että epäonnistuminen on strukturaalinen — se on sisäänrakennettu alkuperäisiin reunaehtoihin, ei vain huonoa tuurua. Jatkaminen on rationaalista jokaiselle yksittäiselle toimijalle (ei halua olla se joka "lopetti projektin"), vaikka lopettaminen olisi rationaalista organisaatiolle.</p>
 <div class="vaaralatikko">
 <strong>Uponneiden kustannusten loukku:</strong> Kuolonmarssit jatkuvat usein siksi, että niihin on jo investoitu paljon — lopettaminen näyttäisi tuhlaukselta. Mutta jo käytetty raha ei palaudu jatkamalla. Relevantti kysymys on aina: kannattaako jatkaa <em>tästä hetkestä eteenpäin</em>?
+    </div>
+<div class="huomiolaatikko">
+<strong>Tunnistaminen ja vastakeinot:</strong> Paras suoja rakennetaan ennen marssia: kirjaa exit-kriteerit ylös projektin alussa — millä mittarilukemilla tai päivämäärillä projekti keskeytetään — sillä kriteereistä on mahdoton sopia enää siinä vaiheessa, kun kasvot ovat pelissä. Käynnissä olevalle projektille tee säännöllinen tarkistus: <em>aloittaisimmeko tämän projektin tänään, tällä tiedolla ja tällä hinnalla?</em> Jos ei, jatkamista pitää perustella erikseen — ei lopettamista. Tuo arvioon ulkopuolinen, jonka ura ei riipu projektista: hän näkee sen, mitä sisäpiiri ei voi sanoa ääneen (ks. <a href="sunk-cost-harha.html">Sunk cost -harha</a>). Ja tiimin jäsenenä dokumentoi varoituksesi kirjallisesti — se ei pelasta projektia, mutta se pelastaa sinut jälkiselvittelyssä.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
