@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <title>Uudet luonnokset — Ilmiöitä</title>
+  <link rel="stylesheet" href="../fonts/fonts.css">
+  <link rel="stylesheet" href="../fonts/spectral.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --c-primary:      #C9A84C;
+      --c-primary-dark: #1C1400;
+      --c-primary-mid:  #8B6914;
+      --c-bg:           #F5F0E5;
+    }
+
+    body {
+      font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+      background: var(--c-bg);
+      color: #1A1100;
+      min-height: 100vh;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    .hub-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: var(--c-primary-dark);
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.28);
+    }
+    .hub-logo { width: 36px; height: 36px; flex-shrink: 0; }
+    .hub-header-left { flex: 1; min-width: 0; }
+    .hub-header-left h1 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      font-family: 'Spectral', Georgia, serif;
+    }
+    .hub-header-left p {
+      font-size: 0.72em;
+      color: rgba(255,255,255,0.48);
+      margin-top: 0.1em;
+      letter-spacing: 0.01em;
+    }
+    .paluu-btn {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(201,168,76,0.18);
+      color: #fff;
+      border: 1px solid rgba(201,168,76,0.4);
+      padding: 0.5rem 1rem;
+      font-size: 0.82em;
+      font-weight: 500;
+      font-family: inherit;
+      text-decoration: none;
+      transition: background 0.12s;
+      white-space: nowrap;
+    }
+    .paluu-btn:hover { background: rgba(201,168,76,0.3); }
+
+    .hub-main {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 1.5rem 1.5rem 4rem;
+    }
+    .hub-intro {
+      max-width: 740px;
+      margin: 0.3rem auto 1.2rem;
+      text-align: center;
+      font-size: 0.9em;
+      line-height: 1.55;
+      color: #5a4712;
+    }
+    .hub-huomio {
+      max-width: 740px;
+      margin: 0 auto 2rem;
+      background: #FDF6DC;
+      border: 1.5px solid #D4C090;
+      border-left: 4px solid #C9A84C;
+      padding: 0.75rem 1.1rem;
+      font-size: 0.82em;
+      line-height: 1.55;
+      color: #3d3008;
+    }
+
+    .hub-kategoria { margin-bottom: 1.8rem; }
+    .hub-kat-label {
+      font-size: 0.67em;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      color: var(--c-primary-mid);
+      margin-bottom: 0.15rem;
+      padding-left: 0.15rem;
+    }
+    .hub-kat-desc {
+      font-size: 0.76em;
+      color: #8B6914;
+      margin: 0 0 0.55rem;
+      padding-left: 0.15rem;
+    }
+
+    .hub-kortit {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 0.35rem;
+    }
+
+    .hub-kortti {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.6rem 0.8rem;
+      background: #FDFAF2;
+      border: 1.5px solid #D4C090;
+      border-left: 4px solid var(--c, #2c3e50);
+      text-decoration: none;
+      color: #1A1100;
+      font-size: 0.865em;
+      line-height: 1.3;
+      transition: border-color 0.1s, box-shadow 0.1s, transform 0.1s;
+    }
+    .hub-kortti:hover {
+      border-color: var(--c, #2c3e50);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.09);
+      transform: translateX(3px);
+    }
+    .hub-numero {
+      flex-shrink: 0;
+      width: 1.9em;
+      height: 1.9em;
+      background: var(--c, #2c3e50);
+      color: #fff;
+      font-size: 0.76em;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hub-nimi { flex: 1; }
+    .hub-nuoli {
+      color: #d0cdc8;
+      font-size: 1em;
+      flex-shrink: 0;
+      transition: color 0.1s;
+    }
+    .hub-kortti:hover .hub-nuoli { color: var(--c, #2c3e50); }
+
+    @media (max-width: 640px) {
+      .hub-header { padding: 0.75rem 1rem; }
+      .hub-main { padding: 1.2rem 1rem 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="hub-header">
+  <img class="hub-logo" src="../favicon.svg" alt="Ilmiöitä-logo: punainen varoituslippu" width="36" height="36">
+  <div class="hub-header-left">
+    <h1>Ilmiöitä &middot; luonnokset</h1>
+    <p>Pareto &amp; some-kommentointi &middot; 3 luonnosta &middot; julkaisematta</p>
+  </div>
+  <a class="paluu-btn" href="../index.html">&larr; Kaikki ilmiöt</a>
+</header>
+
+<main class="hub-main">
+<p class="hub-intro">Kolme uutta luonnossivua tarkastelua varten: yleinen 80/20-jakaumalaki
+sekä kaksi toisiinsa liittyvää some-ilmiötä osallistumisen epätasapainosta ja
+kommenttiosioiden kärjistymisestä.</p>
+<div class="hub-huomio">Nämä sivut ovat julkaisemattomia luonnoksia (noindex): numerointi,
+edellinen/seuraava-navigaatio ja satunnaisnappi toimivat vain tämän kansion sisällä.
+Julkaisussa sivut siirretään juureen, numeroidaan kategorioittain ja index.html, llms.txt,
+sitemap.xml ja hakuindeksi päivitetään.</div>
+<div class="hub-kategoria">
+  <h2 class="hub-kat-label">Byrokratia ja organisaatio</h2>
+  <p class="hub-kat-desc">täydennys</p>
+  <div class="hub-kortit">
+<a href="pareto-periaate.html" class="hub-kortti" style="--c:#9a7d0a">
+  <span class="hub-numero" aria-hidden="true">&#9998;</span>
+  <span class="hub-nimi">Pareto-periaate</span>
+  <span class="hub-nuoli" aria-hidden="true">&rsaquo;</span>
+</a>
+  </div>
+</div>
+<div class="hub-kategoria">
+  <h2 class="hub-kat-label">Alustatalous ja algoritmit</h2>
+  <p class="hub-kat-desc">täydennys</p>
+  <div class="hub-kortit">
+<a href="1-prosentin-saanto.html" class="hub-kortti" style="--c:#1b2631">
+  <span class="hub-numero" aria-hidden="true">&#9998;</span>
+  <span class="hub-nimi">1 %:n sääntö (90-9-1)</span>
+  <span class="hub-nuoli" aria-hidden="true">&rsaquo;</span>
+</a>
+<a href="aanekas-vahemmisto.html" class="hub-kortti" style="--c:#7b241c">
+  <span class="hub-numero" aria-hidden="true">&#9998;</span>
+  <span class="hub-nimi">Äänekäs vähemmistö</span>
+  <span class="hub-nuoli" aria-hidden="true">&rsaquo;</span>
+</a>
+  </div>
+</div>
+</main>
+</body>
+</html>
