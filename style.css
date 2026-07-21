@@ -427,3 +427,38 @@ img {
 /* CLS: varaa tila Mermaid-diagrammeille ennen renderöintiä */
 .mermaid { min-height: 220px; display: flex; align-items: center; justify-content: center; }
 .mermaid svg { max-width: 100%; height: auto; }
+
+/* Ilmiön jakonappi + jaa-valikko (popover, ei pino) */
+.ilmio-jaa { position: relative; display: inline-block; margin-top: 1.4rem; }
+.ilmio-jaa-btn {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  background: #f5f4f0; border: 1px solid #ddd; color: #333;
+  padding: 0.45rem 0.9rem; font-size: 0.85em; font-family: 'DM Sans', inherit;
+  font-weight: 600; cursor: pointer; transition: background 0.12s, border-color 0.12s;
+}
+.ilmio-jaa-btn:hover { background: #e8f4ee; border-color: #8B6914; }
+.ilmio-jaa-btn svg { flex-shrink: 0; }
+.ilmio-jaa-menu {
+  position: absolute; top: calc(100% + 0.5rem); left: 0;
+  display: flex; align-items: center; gap: 0.25rem;
+  background: #fff; border: 1px solid #ddd; box-shadow: 0 6px 18px rgba(0,0,0,0.14);
+  padding: 0.4rem 0.55rem;
+  opacity: 0; visibility: hidden; transform: translateY(-4px);
+  transition: opacity 0.15s ease, transform 0.15s ease, visibility 0s linear 0.15s;
+  z-index: 20; white-space: nowrap;
+}
+.ilmio-jaa-menu.aktiv {
+  opacity: 1; visibility: visible; transform: translateY(0);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+.jaa-ikoni {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 30px; height: 30px; border: none; background: transparent; color: #555;
+  cursor: pointer; padding: 0; text-decoration: none; transition: background 0.12s, color 0.12s;
+}
+.jaa-ikoni:hover { background: #f0ede8; color: #1C1400; }
+.jaa-ikoni.kopioitu { color: #2e7d32; }
+.jaa-erotinviiva { width: 1px; height: 20px; background: #e0e0e0; margin: 0 0.15rem; flex-shrink: 0; }
+@media (max-width: 480px) {
+  .ilmio-jaa-menu { left: auto; right: 0; }
+}

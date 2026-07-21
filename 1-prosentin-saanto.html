@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>1 %:n sääntö (90-9-1) — kuka verkossa oikeasti puhuu — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260709">
+  <link rel="stylesheet" href="style.css?v=20260721">
   <link rel="stylesheet" href="fonts/fonts.css">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
@@ -111,13 +111,19 @@
       width: 70px;
       background: #2980b9;
       position: relative;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
+      min-height: 2px;
+    }
+    .pylvas-luku {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 100%;
+      margin-bottom: 0.3em;
+      text-align: center;
       font-size: 0.8em;
       font-weight: bold;
-      color: #fff;
-      padding-top: 4px;
+      color: #333;
+      white-space: nowrap;
     }
     .pylvas-label {
       font-size: 0.78em;
@@ -466,9 +472,9 @@
 <div class="avainluku"><div class="luku">1&nbsp;%</div><div class="selite">tuottaa valtaosan sisällöstä</div></div>
 </div>
 <div class="pylvas-wrapper">
-<div class="pylvas" style="height:100%; background:#c8c8c8; color:#333;">90 %<span></span></div>
-<div class="pylvas" style="height:35%; background:#8B6914;">9 %</div>
-<div class="pylvas" style="height:6%; background:#c0392b;">1 %</div>
+<div class="pylvas" style="height:100%; background:#c8c8c8;"><span class="pylvas-luku">90 %</span></div>
+<div class="pylvas" style="height:10%; background:#8B6914;"><span class="pylvas-luku">9 %</span></div>
+<div class="pylvas" style="height:1.1%; background:#c0392b;"><span class="pylvas-luku">1 %</span></div>
 </div>
 <p class="kaavio-selitys">Lurkkaajien, satunnaisosallistujien ja aktiivisen ytimen suhteelliset osuudet — pylvään korkeus kuvaa ryhmän kokoa, ei sen tuottamaa sisältöä.</p>
 <p>Mekanismi ei vaadi kenenkään pahantahtoisuutta. Sisällön tuottaminen — kommentin kirjoittaminen, artikkelin editointi, videon lataaminen — vaatii aina enemmän vaivaa ja altistaa enemmän arvostelulle kuin pelkkä lukeminen. Kynnys nousta katsojasta puhujaksi on korkea, ja suurin osa jättää sen ylittämättä. Suosittelualgoritmit vahvistavat vinoumaa entisestään: ne nostavat näkyviin sitä, mihin ihmiset reagoivat, eivätkä lurkkaajat koskaan reagoi mihinkään — joten kommenttiosio, jonka näet, on aina sen 1 %:n tuottama, ei koko yleisön otos.</p>
