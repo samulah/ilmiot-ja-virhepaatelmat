@@ -41,7 +41,7 @@ def lue_ilmiot() -> dict:
             "numero": int(numero), "vari": vari,
             "nimi": nimi.strip(), "kuvaus": kuvaus.strip(),
         }
-    assert len(ilmiot) == 106, f"index.html: odotettiin 106 korttia, löytyi {len(ilmiot)}"
+    assert len(ilmiot) == 109, f"index.html: odotettiin 109 korttia, löytyi {len(ilmiot)}"
     return ilmiot
 
 
