@@ -3,12 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-  <!-- LUONNOS: poista tämä noindex-rivi kun sivu siirretään pääsivustolle -->
-  <meta name="robots" content="noindex">
-  <title>Pareto-periaate — 80/20-sääntö — Ilmiöitä</title>
-  <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="../fonts/fonts.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Äänekäs vähemmistö — kommenttiosio ei ole mielipidemittari — Ilmiöitä</title>
+  <link rel="stylesheet" href="style.css?v=20260709">
+  <link rel="stylesheet" href="fonts/fonts.css">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -76,24 +74,11 @@
       text-transform: uppercase;
     }
     /* Jokaiselle ilmiölle oma väri */
-    #pareto-periaate { border-top-color: #9a7d0a; }
-    #pareto-periaate .ilmio-tag { background: #9a7d0a; }
-    .kkk-taulukko td:nth-child(2) { color: #888; }
-    .kkk-taulukko td:nth-child(3) { color: #2e86ab; font-weight: bold; }
-    .kkk-taulukko td:nth-child(4) { color: #1a7044; font-weight: bold; }
-    .kkk-taulukko tr:last-child td { background: #f0f6fd; }
-
+    #aanekas-vahemmisto { border-top-color: #7b241c; }
+    #aanekas-vahemmisto .ilmio-tag { background: #7b241c; }
     .huomiolaatikko {
       background: #fdf6ec;
       border-left: 6px solid #e67e22;
-      padding: 1em 1.2em;
-      margin: 1.5rem 0;
-      font-size: 1em;
-      border-radius: 0;
-    }
-    .vaaralatikko {
-      background: #fdf0f0;
-      border-left: 6px solid #c0392b;
       padding: 1em 1.2em;
       margin: 1.5rem 0;
       font-size: 1em;
@@ -107,36 +92,19 @@
       font-size: 1em;
       border-radius: 0;
     }
+    .vaaralatikko {
+      background: #fdf0f0;
+      border-left: 6px solid #c0392b;
+      padding: 1em 1.2em;
+      margin: 1.5rem 0;
+      font-size: 1em;
+      border-radius: 0;
+    }
     .kaavio-selitys {
       font-size: 0.85em;
       color: #666;
       text-align: center;
       margin-top: 0.4rem;
-    }
-    .pylvas-wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-      gap: 0.6rem;
-      height: 120px;
-      border-bottom: 2px solid #333;
-      padding: 0 0.5rem;
-    }
-    .pylvas {
-      width: 36px;
-      background: #2980b9;
-      position: relative;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      font-size: 0.75em;
-      color: #fff;
-      padding-top: 4px;
-    }
-    .pylvas-label {
-      font-size: 0.78em;
-      color: #555;
-      margin-top: 0.3rem;
     }
     code {
       background: #eee;
@@ -313,20 +281,64 @@
 
     body { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
     .ilmio { margin-bottom: 0; }
+
+    /* ── Random-siirtymäanimaatio (scroll reunaan) ── */
+    .random-siirtyma-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.9rem;
+      background: #1C1400;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+    .random-siirtyma-overlay.nakyva {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .random-siirtyma-logo {
+      width: 56px;
+      height: 56px;
+      opacity: 0;
+      transform: scale(0.6) rotate(-8deg);
+      filter: drop-shadow(0 0 18px rgba(201,168,76,0.55));
+    }
+    .random-siirtyma-overlay.nakyva .random-siirtyma-logo {
+      animation: random-logo-pulssi 0.7s cubic-bezier(0.34,1.56,0.64,1) forwards;
+    }
+    @keyframes random-logo-pulssi {
+      0%   { opacity: 0; transform: scale(0.4) rotate(-12deg); }
+      55%  { opacity: 1; transform: scale(1.15) rotate(4deg); }
+      100% { opacity: 1; transform: scale(1) rotate(0deg); }
+    }
+    .random-siirtyma-teksti {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.82em;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      opacity: 0;
+      transition: opacity 0.3s ease 0.15s;
+    }
+    .random-siirtyma-overlay.nakyva .random-siirtyma-teksti { opacity: 1; }
   </style>
 
   <!-- SEO -->
-  <meta name="description" content="Pareto-periaate eli 80/20-sääntö: pieni osa syistä selittää suurimman osan seurauksista. Mistä havainto tulee ja miksi sitä käytetään väärin.">
-  <link rel="canonical" href="https://www.ilmiöt.fi/pareto-periaate.html">
-  <meta property="og:title" content="Pareto-periaate — 80/20-sääntö — Ilmiöitä">
-  <meta property="og:description" content="Pareto-periaate eli 80/20-sääntö: pieni osa syistä selittää suurimman osan seurauksista. Mistä havainto tulee ja miksi sitä käytetään väärin.">
-  <meta property="og:url" content="https://www.ilmiöt.fi/pareto-periaate.html">
+  <meta name="description" content="Äänekäs vähemmistö vääristää kuvan yleisestä mielipiteestä: kärjekkäimmät kommentoijat näkyvät eniten, kun hiljainen enemmistö ei koskaan vastaa.">
+  <link rel="canonical" href="https://www.ilmiöt.fi/aanekas-vahemmisto.html">
+  <meta property="og:title" content="Äänekäs vähemmistö — kommenttiosio ei ole mielipidemittari — Ilmiöitä">
+  <meta property="og:description" content="Äänekäs vähemmistö vääristää kuvan yleisestä mielipiteestä: kärjekkäimmät kommentoijat näkyvät eniten, kun hiljainen enemmistö ei koskaan vastaa.">
+  <meta property="og:url" content="https://www.ilmiöt.fi/aanekas-vahemmisto.html">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="fi_FI">
   <meta property="og:site_name" content="Ilmiöitä — Miten valta toimii">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Pareto-periaate — 80/20-sääntö — Ilmiöitä">
-  <meta name="twitter:description" content="Pareto-periaate eli 80/20-sääntö: pieni osa syistä selittää suurimman osan seurauksista. Mistä havainto tulee ja miksi sitä käytetään väärin.">
+  <meta name="twitter:title" content="Äänekäs vähemmistö — kommenttiosio ei ole mielipidemittari — Ilmiöitä">
+  <meta name="twitter:description" content="Äänekäs vähemmistö vääristää kuvan yleisestä mielipiteestä: kärjekkäimmät kommentoijat näkyvät eniten, kun hiljainen enemmistö ei koskaan vastaa.">
   <meta property="og:image" content="https://www.ilmiöt.fi/og/brand.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -349,14 +361,14 @@
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Byrokratia ja organisaatio",
-          "item": "https://www.ilmiöt.fi/#byrokratia-ja-organisaatio"
+          "name": "Alustatalous ja algoritmit",
+          "item": "https://www.ilmiöt.fi/#alustatalous-ja-algoritmit"
         },
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Pareto-periaate — 80/20-sääntö",
-          "item": "https://www.ilmiöt.fi/pareto-periaate.html"
+          "name": "Äänekäs vähemmistö — kommenttiosio ei ole mielipidemittari",
+          "item": "https://www.ilmiöt.fi/aanekas-vahemmisto.html"
         }
       ]
     },
@@ -368,12 +380,12 @@
         "width": 1200,
         "height": 630
       },
-      "@id": "https://www.ilmiöt.fi/pareto-periaate.html#article",
-      "url": "https://www.ilmiöt.fi/pareto-periaate.html",
-      "headline": "Pareto-periaate — 80/20-sääntö",
-      "description": "Pareto-periaate eli 80/20-sääntö: pieni osa syistä selittää suurimman osan seurauksista. Mistä havainto tulee ja miksi sitä käytetään väärin.",
+      "@id": "https://www.ilmiöt.fi/aanekas-vahemmisto.html#article",
+      "url": "https://www.ilmiöt.fi/aanekas-vahemmisto.html",
+      "headline": "Äänekäs vähemmistö — kommenttiosio ei ole mielipidemittari",
+      "description": "Äänekäs vähemmistö vääristää kuvan yleisestä mielipiteestä: kärjekkäimmät kommentoijat näkyvät eniten, kun hiljainen enemmistö ei koskaan vastaa.",
       "inLanguage": "fi",
-      "articleSection": "Byrokratia ja organisaatio",
+      "articleSection": "Alustatalous ja algoritmit",
       "isPartOf": {
         "@type": "CollectionPage",
         "@id": "https://www.ilmiöt.fi/"
@@ -415,49 +427,55 @@
 <body>
 
   <div class="kortti-breadcrumb">
-    <a href="../index.html" class="kortti-logo" aria-label="Ilmiöitä — etusivu"><img src="../favicon.svg" alt="Ilmiöitä"></a>
-    <a href="index.html">← Luonnokset</a>
-    <span class="kortti-breadcrumb-sep">›</span><span class="kortti-breadcrumb-kat">Byrokratia ja organisaatio</span>
+    <a href="index.html" class="kortti-logo" aria-label="Ilmiöitä — etusivu"><img src="favicon.svg" alt="Ilmiöitä"></a>
+    <a href="index.html">← Kaikki ilmiöt</a>
+    <span class="kortti-breadcrumb-sep">›</span><span class="kortti-breadcrumb-kat">Alustatalous ja algoritmit</span>
     <button class="kortti-random-btn" onclick="randomIlmio()" title="Satunnainen ilmiö (R)">
       <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>
       <span class="btn-text">Satunnainen</span>
     </button>
   </div>
 
-  <div class="ilmio" id="pareto-periaate">
-<div class="ilmio-tag">Uusi ilmiö · luonnos</div>
-<h1>Pareto-periaate — 80/20-sääntö</h1>
-<p class="ilmio-byline">Kirjoittanut <a href="../tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 14.7.2026</p>
-<p><strong>Pareto-periaate</strong>, tuttavallisemmin <strong>80/20-sääntö</strong>, väittää että suurin osa seurauksista syntyy pienestä osasta syitä: 20 % asiakkaista tuo 80 % liikevaihdosta, 20 % koodista aiheuttaa 80 % virheistä, 20 % työtehtävistä tuottaa 80 % arvosta. Italialainen taloustieteilijä <strong>Vilfredo Pareto</strong> huomasi 1896 tutkiessaan Italian maanomistusta, että noin 80 % maasta oli noin 20 %:n väestöstä hallussa — ja sama epäsuhta toistui muissakin maissa ja muissa aineistoissa, joita hän tarkasteli.</p>
-<div class="avainluku-rivi">
-<div class="avainluku"><div class="luku">20&nbsp;%</div><div class="selite">syistä / panoksesta</div></div>
-<div class="avainluku"><div class="luku">→</div><div class="selite">tuottaa</div></div>
-<div class="avainluku"><div class="luku">80&nbsp;%</div><div class="selite">seurauksista / tuotoksesta</div></div>
-</div>
-<p>Luvut 80 ja 20 eivät ole tarkka mittaustulos vaan nyrkkisääntö äärimmäisen epätasaiselle jakaumalle — tilastotieteessä tätä kutsutaan <strong>valtalaiksi</strong> (power law): harvat tapaukset selittävät suurimman osan kokonaismäärästä, ja loput jakautuvat pitkälle "hännälle" pieninä osuuksina. Sama muoto toistuu kaupunkien koossa, kirjan sanojen esiintymistiheydessä ja — kuten seuraava ilmiö tällä sivustolla näyttää — siinä, ketkä verkossa ylipäätään avaavat suunsa: ks. <a href="1-prosentin-saanto.html">1 %:n sääntö</a>, jossa sama epätasaisuus viedään äärimmilleen.</p>
+  <div class="ilmio" id="aanekas-vahemmisto">
+<div class="ilmio-tag">Ilmiö 95</div>
+<h1>Äänekäs vähemmistö — kommenttiosio ei ole mielipidemittari</h1>
+<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 14.7.2026</p>
+<p><strong>Äänekäs vähemmistö</strong> (englanniksi <em>vocal minority</em>) tarkoittaa sitä, että pieni, aktiivinen ja usein kärjekäs joukko näkyy ja kuuluu keskustelussa moninkertaisesti suhteessa kokoonsa — kun taas <strong>hiljainen enemmistö</strong>, joka ei koskaan kommentoi, jää täysin näkymättömäksi. Kommenttiosion sävy vaikuttaa siksi helposti todelliselta "yleiseltä mielipiteeltä", vaikka se on itse asiassa <a href="1-prosentin-saanto.html">1 %:n säännön</a> mukaisesti hyvin kapean joukon tuottama.</p>
+<div class="mermaid">
+flowchart TD
+  T["Julkaisu tai\nuutinen ilmestyy"] --&gt; V["Voimakkaimman\ntunnereaktion\nsaaneet kommentoivat ensin"]
+  V --&gt; N["Algoritmi nostaa\nsuosituimmat/kärjekkäimmät\nkommentit näkyviin"]
+  N --&gt; K["Keskustelu näyttää\nyksipuoliselta tai vihaiselta"]
+  K --&gt; H["Maltilliset ja eri mieltä\nolevat vetäytyvät —\neivät halua osaksi riitaa"]
+  H --&gt; V
+  style K fill:#fdf0f0,stroke:#c0392b
+    </div>
+<p class="kaavio-selitys">Kierre vahvistaa itseään: mitä kärjekkäämmältä keskustelu näyttää, sitä epätodennäköisemmin maltillinen ääni liittyy siihen.</p>
+<p>Ilmiöllä on kolme toisiaan vahvistavaa syytä. Ensinnäkin tunteen voimakkuus ennustaa osallistumisalttiutta epäsymmetrisesti: tyytyväinen tai neutraali ihminen harvemmin näkee vaivaa kommentoidakseen, kun taas suuttunut tai loukkaantunut kokee tarvetta sanoa asian ääneen. Toiseksi suosittelualgoritmit nostavat näkyvimmäksi sen, mikä kerää eniten reaktioita — ja kärjekäs kommentti kerää niitä tehokkaammin kuin tasapainoinen. Kolmanneksi vaikuttaa sosiaalipsykologiassa 1970-luvulta tunnettu <strong>vaikenemisen kierre</strong> (<em>spiral of silence</em>, Elisabeth Noelle-Neumann, 1974): kun oma näkemys vaikuttaa vähemmistön kannalta, ihminen vaikenee mieluummin kuin altistuu vastareaktiolle — mikä tekee näkyvästä enemmistöstä entistä näkyvämmän ja hiljaisesta yhä hiljaisemman.</p>
 <div class="infolaatikko">
-<strong>Ei luonnonlaki, vaan heuristiikka:</strong> 80/20 ei ole tarkka matemaattinen totuus eikä summaudu aina täsmälleen sataan (osuudet voivat olla 70/30 tai 90/10 tapauksesta riippuen). Se on muistisääntö sille, että <em>useimmissa</em> järjestelmissä panokset ja tuotokset jakautuvat epätasaisesti — ei kuvaus jokaisesta ilmiöstä. Tasan jakautuvia asioita (esim. kolikonheitto) sääntö ei koske lainkaan.
+<strong>Ero läheisiin käsitteisiin:</strong> Äänekäs vähemmistö ei ole sama asia kuin <a href="kaikukammio.html">kaikukammio</a>, jossa näet vain omaa kantaasi tukevaa sisältöä — se koskee sitä, mitä <em>yksi</em> kommenttiosio tai keskusteluketju näyttää edustavan koko yleisöstä. Se kytkeytyy kuitenkin <a href="rage-bait.html">rage baitiin</a>: sisältö, joka on suunniteltu ärsyttämään, tuottaa juuri sellaisia kommentteja, joita äänekäs vähemmistö parhaiten synnyttää.
     </div>
-<p>Yritysmaailmassa periaatteen popularisoi liikkeenjohdon konsultti <strong>Joseph M. Juran</strong> 1940-luvulla nimellä <em>"vital few and trivial many"</em> — harvat elintärkeät ja monet vähäpätöiset. Laatujohtamisessa ajatus oli mullistava: sen sijaan että virheitä metsästettäisiin tasaisesti kaikkialta, kannattaa etsiä se pieni syiden joukko, joka selittää suurimman osan viasta, ja korjata ensin ne. Sama logiikka pätee ajankäytössä (harvat tehtävät tuottavat suurimman osan tuloksista), asiakaspalvelussa (harvat valittajat aiheuttavat suurimman osan yhteydenotoista) ja ohjelmistokehityksessä (harva osa koodista aiheuttaa suurimman osan kaatumisista).</p>
 <div class="huomiolaatikko">
-<strong>Käytännön sovellus:</strong> Ennen kuin yrität parantaa kaikkea yhtä paljon, kysy missä 20 % panoksesta tuottaa 80 % tuloksesta — ja keskitä rajallinen aika, raha ja huomio siihen. Tunnista myös käänteinen riski: jos 20 % asiakkaista, ominaisuuksista tai virheistä selittää valtaosan kuormasta, loput 80 % kannattaa usein karsia tai automatisoida, ei hioa loputtomiin.
-    </div>
-<div class="vaaralatikko">
-<strong>Väärinkäytön riski:</strong> "80/20" viljellään usein retorisena korulauseena ilman mittausta — kuka tahansa voi väittää jotain olevan "80 % työstä" todistamatta sitä. Periaate ohjaa myös helposti hylkäämään sen "vähäpätöisen" 80 %:n kokonaan, vaikka pienissäkin osuuksissa voi piillä yksittäisiä suuririskisiä poikkeuksia (esim. harvinainen mutta katastrofaalinen virhe koodin syrjäisessä kolkassa). Jakauman muoto kannattaa tarkistaa oikealla datalla ennen kuin sen perusteella tehdään päätöksiä.
-    </div>
+<strong>Tunnistaminen ja vastakeinot:</strong>
+<ul style="margin:0.5em 0 0;">
+<li>Älä johda yleisön mielipidettä kommenttiosion sävystä — vertaa sitä aina muihin mittareihin (kyselyt, äänestykset, myyntiluvut, laajempi otanta).</li>
+<li>Organisaatiot ja julkaisijat: älä muuta linjaa yksittäisen kommenttivyöryn perusteella ennen kuin olet varmistanut, edustaako se laajempaa mielipidettä vai kapeaa mutta äänekästä ryhmää.</li>
+<li>Jos huomaat vetäytyväsi keskustelusta pelkästä epämukavuudesta joutua eri mieltä olevaksi, tunnista se — se on juuri se mekanismi, joka pitää kierteen käynnissä.</li>
+<li>Kommenttiosion moderointi ja rakentavan keskustelun palkitseminen (esim. laadukkaimman vastauksen nostaminen ylös) voi tasapainottaa vinoumaa paremmin kuin pelkkä poistaminen.</li>
+</ul>
+</div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
 <div class="lue-lisaa-rivi">
 <span class="lue-lisaa-tyyppi">Kirjoja</span>
 <ul class="lue-lisaa-lista">
-<li><cite>Cours d'économie politique</cite> — Vilfredo Pareto (1896)</li>
-<li><cite>The 80/20 Principle</cite> — Richard Koch (1997)</li>
+<li><cite>The Spiral of Silence: Public Opinion — Our Social Skin</cite> — Elisabeth Noelle-Neumann (1984)</li>
 </ul>
 </div>
 <div class="lue-lisaa-rivi">
 <span class="lue-lisaa-tyyppi">Verkossa</span>
 <ul class="lue-lisaa-lista">
-<li><a href="https://en.wikipedia.org/wiki/Pareto_principle" target="_blank" rel="noopener">Wikipedia: Pareto principle (englanniksi)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Spiral_of_silence" target="_blank" rel="noopener">Wikipedia: Spiral of silence (englanniksi)</a></li>
 </ul>
 </div>
 </div>
@@ -467,34 +485,34 @@
     <h2>Liittyvät ilmiöt</h2>
     <div class="liittyvat-kortit">
     <a href="1-prosentin-saanto.html" class="liittyvat-kortti" style="--c:#1b2631">
-      <span class="liittyvat-numero">✎</span>
+      <span class="liittyvat-numero">94</span>
       <span class="liittyvat-teksti">
         <span class="liittyvat-nimi">1 %:n sääntö (90-9-1)</span>
-        <span class="liittyvat-kuvaus">Sama epätasainen jakauma ääriversiona: verkkoyhteisöissä 1 % tuottaa suurimman osan sisällöstä.</span>
+        <span class="liittyvat-kuvaus">90 % lurkkii, 9 % osallistuu satunnaisesti ja 1 % tuottaa suurimman osan verkkoyhteisöjen sisällöstä.</span>
       </span>
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
-    <a href="../peterin-periaate.html" class="liittyvat-kortti" style="--c:#512e5f">
-      <span class="liittyvat-numero">49</span>
+    <a href="rage-bait.html" class="liittyvat-kortti" style="--c:#d84315">
+      <span class="liittyvat-numero">93</span>
       <span class="liittyvat-teksti">
-        <span class="liittyvat-nimi">Peterin periaate</span>
-        <span class="liittyvat-kuvaus">Jokainen ylenee hierarkiassa lopulta tasolle, jolla ei enää suoriudu.</span>
+        <span class="liittyvat-nimi">Rage bait</span>
+        <span class="liittyvat-kuvaus">Sisältö on suunniteltu suututtamaan — vihainen jako on algoritmille yhtä arvokas kuin tykkäys.</span>
       </span>
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
-    <a href="../parkinsonin-laki.html" class="liittyvat-kortti" style="--c:#7e5109">
-      <span class="liittyvat-numero">48</span>
+    <a href="kaikukammio.html" class="liittyvat-kortti" style="--c:#00838f">
+      <span class="liittyvat-numero">89</span>
       <span class="liittyvat-teksti">
-        <span class="liittyvat-nimi">Parkinsonin laki</span>
-        <span class="liittyvat-kuvaus">Työ venyy täyttämään kaiken sille varatun ajan — ja hallinto kasvaa vaikka työ vähenisi.</span>
+        <span class="liittyvat-nimi">Kaikukammio</span>
+        <span class="liittyvat-kuvaus">Ympäristö, jossa kohtaat vain omia näkemyksiäsi vahvistavaa sisältöä.</span>
       </span>
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
-    <a href="../goodhartin-laki.html" class="liittyvat-kortti" style="--c:#148f77">
-      <span class="liittyvat-numero">39</span>
+    <a href="argumenttitulva.html" class="liittyvat-kortti" style="--c:#2c3e50">
+      <span class="liittyvat-numero">30</span>
       <span class="liittyvat-teksti">
-        <span class="liittyvat-nimi">Goodhartin laki</span>
-        <span class="liittyvat-kuvaus">Kun mittarista tulee tavoite, se lakkaa olemasta hyvä mittari.</span>
+        <span class="liittyvat-nimi">Argumenttitulva</span>
+        <span class="liittyvat-kuvaus">Väitteitä syydetään niin paljon kerralla, ettei kaikkia ehdi kumota — kumoamatta jäänyt näyttää voitolta.</span>
       </span>
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
@@ -502,15 +520,15 @@
   </aside>
 
   <nav class="kortti-nav">
-    <span class="kortti-nav-btn disabled">← Ei edellistä</span>
+    <a class="kortti-nav-btn" href="1-prosentin-saanto.html">← 1 %:n sääntö (90-9-1) — kuka verkossa oikeasti puhuu</a>
     <div class="kortti-nav-center">
-      <span class="kortti-nav-laskuri">1 / 3 · luonnos</span>
+      <span class="kortti-nav-laskuri">95 / 109</span>
       <span class="kortti-nav-vinkki">
         <kbd>&#8592;</kbd> <kbd>&#8594;</kbd> selaa &middot; <kbd>R</kbd> satunnainen
         <span class="touch-vinkki">&nbsp;· swipe &#8592;&#8594; tai &#8595; random</span>
       </span>
     </div>
-    <a class="kortti-nav-btn" href="1-prosentin-saanto.html">1 %:n sääntö — kuka verkossa oikeasti puhuu →</a>
+    <a class="kortti-nav-btn" href="viherpesu.html">Viherpesu — vihreää pintaa ilman tekoja →</a>
   </nav>
 
 
@@ -672,16 +690,137 @@
 
   <script>
 (function () {
-  const IDS = ["pareto-periaate", "1-prosentin-saanto", "aanekas-vahemmisto"];
-  const PREV = '';
-  const NEXT = '1-prosentin-saanto.html';
+  const IDS = ["paskuuttaminen", "starve-the-beast", "overton-ikkuna", "saantelijan-kaappaus", "rautainen-laki", "valta-suojelee-valtaa", "hajota-hallitse", "tilastoilla-valehtelu", "bkt-harha", "astroturf", "firehose-of-falsehood", "manufactured-consent", "betteridgen-laki", "inokulointiteoria", "whataboutismi", "streisand-ilmio", "trollitehdas", "kuollut-kissa", "brandolinin-laki", "poen-laki", "godwinin-laki", "backfire-effect", "darvo", "halo-efekti", "konsensus-fetissi", "omenoita-appelsiineja", "blame-game", "gaslighting", "maalitolppien-siirtaminen", "argumenttitulva", "sunk-cost-harha", "jarjestelman-puolustelu", "dunning-kruger", "hanlonin-partaveitsi", "occamin-partaveitsi", "simple-sabotage", "kafka-ilmio", "catch-22", "goodhartin-laki", "hippo-efekti", "performatiivinen-lasnaolo", "rituaalinen-raportointi", "initiointirituaalit", "portinvartija-kulttuuri", "strateginen-osaamattomuus", "fofo", "sivustakatsojan-efekti", "parkinsonin-laki", "peterin-periaate", "pareto-periaate", "brooksin-laki", "yhdeksanyhdeksan", "hofstadterin-laki", "kuolonmarssi", "tekninen-velka", "conways-laki", "bikeshedding", "scope-creep", "korkoa-korolle", "negatiivinen-korkoa", "korkokierre", "honeypot-huijaus", "bait-and-switch", "kaarmeoljy", "ponzi-pyramidi", "pump-and-dump", "pig-butchering", "ennakkomaksuhuijaus", "badger-game", "qr-koodihuijaus", "toimitusjohtajahuijaus", "rug-pull", "ilmainen-naytetyo", "exposure-maksu", "lowball-hinnoittelu", "valittajan-skimmaus", "tilipuristus", "foot-in-the-door", "door-in-the-face", "hintaankkurointi", "houkutinvaihtoehto", "vastavuoroisuuden-ansa", "sosiaalinen-todiste", "painostusclose", "shrinkflaatio", "suunniteltu-vanheneminen", "tilausansa", "doomscrolling", "kaikukammio", "ai-slop", "parasosiaalinen-suhde", "kuollut-internet", "rage-bait", "1-prosentin-saanto", "aanekas-vahemmisto", "viherpesu", "tekoalypesu", "hyvesignalointi", "hiljainen-irtisanoutuminen", "hiljainen-irtisanominen", "haamutyopaikat", "kaksois-y-akseli", "pinta-alaharha", "cherry-picking-aikavali", "keskiarvo-vs-mediaani", "suhteellinen-riski", "selviytymisharha", "simpsonin-paradoksi", "p-hakkerointi"];
+  const PREV = '1-prosentin-saanto.html';
+  const NEXT = 'viherpesu.html';
 
   function randomIlmio() {
     let id;
-    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'pareto-periaate');
+    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'aanekas-vahemmisto');
+    merkitseRandomHyppy();
     window.location.href = id + '.html';
   }
   window.randomIlmio = randomIlmio;
+
+  /* ── Reunaan rullattaessa: logoanimaatio, sitten siirtymä ── */
+  var _siirtymaKaynnissa = false;
+
+  var RANDOM_SYVYYS_KEY = 'random-syvyys';
+  function lueRandomSyvyys() {
+    var v = parseInt(sessionStorage.getItem(RANDOM_SYVYYS_KEY) || '0', 10);
+    return isNaN(v) ? 0 : v;
+  }
+  var randomSyvyys = lueRandomSyvyys();
+  var VOI_JATKAA_KEY = 'voi-jatkaa-eteenpain';
+  var voiJatkaaEteenpain = sessionStorage.getItem(VOI_JATKAA_KEY) === '1';
+  function merkitseRandomHyppy() {
+    sessionStorage.setItem(RANDOM_SYVYYS_KEY, String(randomSyvyys + 1));
+    sessionStorage.setItem(VOI_JATKAA_KEY, '0');
+    voiJatkaaEteenpain = false;
+  }
+  function nollaaRandomKetju() {
+    sessionStorage.setItem(RANDOM_SYVYYS_KEY, '0');
+    sessionStorage.setItem(VOI_JATKAA_KEY, '0');
+    voiJatkaaEteenpain = false;
+  }
+  function naytaKumausEfekti() {
+    var b = document.body;
+    b.style.transition = 'transform 0.15s ease-out';
+    b.style.transform = 'translateY(14px)';
+    setTimeout(function () {
+      b.style.transition = 'transform 0.25s cubic-bezier(0.34,1.56,0.64,1)';
+      b.style.transform = 'translateY(0)';
+    }, 130);
+  }
+  document.querySelectorAll('a.kortti-nav-btn').forEach(function (a) {
+    a.addEventListener('click', nollaaRandomKetju);
+  });
+
+  function naytaSiirtyma(teksti, kohdeUrl) {
+    if (_siirtymaKaynnissa || !kohdeUrl) return;
+    _siirtymaKaynnissa = true;
+    var overlay = document.createElement('div');
+    overlay.className = 'random-siirtyma-overlay';
+    overlay.innerHTML =
+      '<img class="random-siirtyma-logo" src="favicon.svg" alt="">' +
+      '<span class="random-siirtyma-teksti">' + teksti + '&hellip;</span>';
+    document.body.appendChild(overlay);
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () { overlay.classList.add('nakyva'); });
+    });
+    setTimeout(function () { window.location.href = kohdeUrl; }, 650);
+  }
+  function naytaRandomSiirtyma() {
+    if (_siirtymaKaynnissa) return;
+    var id;
+    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'aanekas-vahemmisto');
+    merkitseRandomHyppy();
+    naytaSiirtyma('Satunnainen ilmiö', id + '.html');
+  }
+  window.naytaRandomSiirtyma = naytaRandomSiirtyma;
+  function naytaAlasSiirtyma() {
+    if (_siirtymaKaynnissa) return;
+    if (voiJatkaaEteenpain) {
+      randomSyvyys += 1;
+      sessionStorage.setItem(RANDOM_SYVYYS_KEY, String(randomSyvyys));
+      sessionStorage.setItem(VOI_JATKAA_KEY, '0');
+      voiJatkaaEteenpain = false;
+      _siirtymaKaynnissa = true;
+      var overlay = document.createElement('div');
+      overlay.className = 'random-siirtyma-overlay';
+      overlay.innerHTML =
+        '<img class="random-siirtyma-logo" src="favicon.svg" alt="">' +
+        '<span class="random-siirtyma-teksti">Eteenpäin&hellip;</span>';
+      document.body.appendChild(overlay);
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () { overlay.classList.add('nakyva'); });
+      });
+      setTimeout(function () { history.forward(); }, 650);
+    } else {
+      naytaRandomSiirtyma();
+    }
+  }
+  function naytaTakaisinSiirtyma() {
+    if (_siirtymaKaynnissa) return;
+    if (randomSyvyys > 0) {
+      randomSyvyys -= 1;
+      sessionStorage.setItem(RANDOM_SYVYYS_KEY, String(randomSyvyys));
+      sessionStorage.setItem(VOI_JATKAA_KEY, '1');
+      _siirtymaKaynnissa = true;
+      var overlay = document.createElement('div');
+      overlay.className = 'random-siirtyma-overlay';
+      overlay.innerHTML =
+        '<img class="random-siirtyma-logo" src="favicon.svg" alt="">' +
+        '<span class="random-siirtyma-teksti">Takaisin&hellip;</span>';
+      document.body.appendChild(overlay);
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () { overlay.classList.add('nakyva'); });
+      });
+      setTimeout(function () { history.back(); }, 650);
+    } else {
+      naytaKumausEfekti();
+    }
+  }
+
+  /* Hiiren rullalla pohjaan asti → random, ylös asti alusta → edellinen */
+  var _wheelKertyma = 0, _wheelAika = 0;
+  document.addEventListener('wheel', function (e) {
+    if (_siirtymaKaynnissa || e.deltaY === 0) { _wheelKertyma = 0; return; }
+
+    var atBottom = window.scrollY + window.innerHeight >=
+      document.documentElement.scrollHeight - 4;
+    var atTop = window.scrollY <= 4;
+    var suuntaOk = (e.deltaY > 0 && atBottom) || (e.deltaY < 0 && atTop);
+    if (!suuntaOk) { _wheelKertyma = 0; return; }
+
+    var now = Date.now();
+    if (now - _wheelAika > 500) _wheelKertyma = 0;
+    _wheelAika = now;
+    _wheelKertyma += e.deltaY;
+
+    if (_wheelKertyma > 140) naytaAlasSiirtyma();
+    else if (_wheelKertyma < -140) naytaTakaisinSiirtyma();
+  }, { passive: true });
 
   (function () {
     var d = sessionStorage.getItem('swipe-dir');
@@ -702,15 +841,16 @@
   document.addEventListener('keydown', function (e) {
     if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
     if (e.ctrlKey || e.metaKey || e.altKey) return;
-    if (e.key === 'ArrowLeft'  && PREV) window.location.href = PREV;
-    if (e.key === 'ArrowRight' && NEXT) window.location.href = NEXT;
+    if (e.key === 'ArrowLeft'  && PREV) { nollaaRandomKetju(); window.location.href = PREV; }
+    if (e.key === 'ArrowRight' && NEXT) { nollaaRandomKetju(); window.location.href = NEXT; }
     if (e.key === 'r' || e.key === 'R') randomIlmio();
   });
 
-  var _tx = 0, _ty = 0, _sx = false, _live = false;
+  var _tx = 0, _ty = 0, _tt = 0, _sx = false, _live = false;
   document.addEventListener('touchstart', function (e) {
     _tx = e.touches[0].clientX;
     _ty = e.touches[0].clientY;
+    _tt = Date.now();
     _sx = false; _live = false;
   }, { passive: true });
   document.addEventListener('touchmove', function (e) {
@@ -718,9 +858,9 @@
     var dx = e.touches[0].clientX - _tx;
     var dy = e.touches[0].clientY - _ty;
     if (!_live) {
-      if (Math.abs(dx) > Math.abs(dy) * 1.3 && Math.abs(dx) > 8) {
+      if (Math.abs(dx) > Math.abs(dy) * 1.3 && Math.abs(dx) > 22) {
         _live = true;
-      } else if (Math.abs(dy) > Math.abs(dx) * 1.3 && Math.abs(dy) > 8) {
+      } else if (Math.abs(dy) > Math.abs(dx) * 1.3 && Math.abs(dy) > 22) {
         _sx = true; return;
       }
     }
@@ -734,10 +874,12 @@
     var dx = e.changedTouches[0].clientX - _tx;
     var dy = e.changedTouches[0].clientY - _ty;
     var adx = Math.abs(dx), ady = Math.abs(dy);
+    var nopeaTarpeeksi = (Date.now() - _tt) < 380;
     if (_live) {
-      if (adx > 70) {
+      if (adx > 120 && nopeaTarpeeksi) {
         var target = dx < 0 ? NEXT : PREV;
         if (target) {
+          nollaaRandomKetju();
           sessionStorage.setItem('swipe-dir', dx < 0 ? 'right' : 'left');
           document.body.style.transition = 'transform 0.22s cubic-bezier(0.4,0,1,1)';
           document.body.style.transform = 'translateX(' + (dx < 0 ? -window.innerWidth : window.innerWidth) + 'px)';
@@ -750,13 +892,13 @@
         document.body.style.transition = 'transform 0.28s cubic-bezier(0.25,0.46,0.45,0.94)';
         document.body.style.transform = 'translateX(0)';
       }
-    } else if (!_sx && ady > adx * 1.5 && ady > 80) {
+    } else if (!_sx && ady > adx * 1.5 && ady > 140 && nopeaTarpeeksi) {
       if (dy > 0) {
         var atBottom = window.scrollY + window.innerHeight >=
           document.documentElement.scrollHeight - 60;
-        if (atBottom) randomIlmio();
+        if (atBottom) naytaAlasSiirtyma();
       } else {
-        if (window.scrollY < 60) history.back();
+        if (window.scrollY < 60) naytaTakaisinSiirtyma();
       }
     }
   }, { passive: true });
@@ -764,7 +906,7 @@
   </script>
 
   <footer class="ilmio-footer">
-    <p>© 2026 Ilmiöitä — Miten valta toimii · Kirjoittanut Ilmiömies · <a href="../tietoa.html">Tietoa sivustosta ja tekijästä</a></p>
+    <p>© 2026 Ilmiöitä — Miten valta toimii · Kirjoittanut Ilmiömies · <a href="tietoa.html">Tietoa sivustosta ja tekijästä</a></p>
   </footer>
 </body>
 </html>

@@ -517,6 +517,18 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://www.ilmiöt.fi/1-prosentin-saanto.html</loc>
+    <lastmod>2026-07-21</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.ilmiöt.fi/aanekas-vahemmisto.html</loc>
+    <lastmod>2026-07-21</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://www.ilmiöt.fi/viherpesu.html</loc>
     <lastmod>2026-07-13</lastmod>
     <priority>0.8</priority>
@@ -591,6 +603,12 @@
   <url>
     <loc>https://www.ilmiöt.fi/peterin-periaate.html</loc>
     <lastmod>2026-07-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.ilmiöt.fi/pareto-periaate.html</loc>
+    <lastmod>2026-07-21</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
