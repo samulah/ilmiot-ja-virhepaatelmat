@@ -793,7 +793,7 @@
         "description": "Kirjoittajanimi, jonka takana on kiinnostus valtaan, vaikuttamiseen ja ihmisen päättelyn vinoumiin. Sisältö perustuu julkisiin lähteisiin ja vakiintuneeseen käsitteistöön."
       },
       "datePublished": "2026-06-19",
-      "dateModified": "2026-06-19"
+      "dateModified": "2026-07-21"
     }
   ]
 }
@@ -822,8 +822,8 @@
   <div class="ilmio" id="bikeshedding">
 <div class="ilmio-tag">Ilmiö 57</div>
 <h1>Bikeshedding — triviaalisuuslaki</h1>
-<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 19.6.2026</p>
-<p>C. Northcote Parkinson kuvasi 1957 ilmiön, jonka myöhemmin nimettiin bikesheddingiksi: komitea käyttää enemmän aikaa polkupyöräkatoksen värin valintaan kuin ydinvoimalan reaktorisuunnitteluun. Syy on yksinkertainen — reaktorista harva osaa sanoa mitään, katoksen väristä jokainen voi.</p>
+<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 21.7.2026</p>
+<p>C. Northcote Parkinson kuvasi 1957 ilmiön, jonka myöhemmin nimettiin bikesheddingiksi: komitea käyttää enemmän aikaa polkupyöräkatoksen värin valintaan kuin ydinvoimalan reaktorisuunnitteluun. Mekanismi ei ole se, että triviaali asia olisi "kiinnostavampi" — vaan se, että kommentointi on riskitöntä vain silloin, kun ei voi olla väärässä. Reaktorista voi sanoa jotain vain jos osaa reaktoritekniikkaa, ja silloin väärä lausunto paljastuu asiantuntijoille heti. Katoksen väristä ei voi olla teknisesti väärässä — joten jokainen uskaltaa osallistua, ja osallistuminen venyy keskusteluksi.</p>
 <div class="mermaid">
 flowchart TD
   K["Kokous"] --&gt; Y["Ydinvoimalan\nreaktorisuunnitelma\n— 2 min, hyväksytty"]
@@ -832,12 +832,37 @@ flowchart TD
   style Y fill:#f0fdf4,stroke:#27ae60
     </div>
 <p class="kaavio-selitys">Parkinsonin triviaalisuuslaki: kokouksen huomio on kääntäen verrannollinen asian monimutkaisuuteen.</p>
-<p>Teknisessä kontekstissa bikeshedding näkyy esimerkiksi: muuttujanimen kirjoitusasusta väitellään tuntikausia, mutta tietomallinnuksen granulariteettipäätös tehdään minuuteissa koska aihe on liian tekninen puolet osallistujista. Tai: dashboardin väripaletti saa enemmän kommentteja kuin mittarilogiikka.</p>
+<p>Parkinsonin alkuperäinen esimerkki (1957) oli itse asiassa kolmiosainen, ja juuri sen kolmas kohta paljastaa mekanismin selvimmin. Talouskomitea käsitteli samassa kokouksessa kolme asiaa: 10 miljoonan punnan ydinreaktorin, 350 punnan polkupyörätallin ja 21 punnan virvoke­budjetin henkilökunnalle.</p>
+<div class="tilasto-grid">
+<div class="tilasto-esimerkki">
+<h4>Ydinreaktori — 10 M£</h4>
+<div class="pylvas-wrapper"><div class="pylvas" style="height:14px; background:#27ae60;">2,5 min</div></div>
+<div class="pylvas-label">Hyväksyttiin lähes keskustelutta — kukaan ei osannut kyseenalaistaa insinöörien lukuja</div>
+</div>
+<div class="tilasto-esimerkki">
+<h4>Pyörätalli — 350 £</h4>
+<div class="pylvas-wrapper"><div class="pylvas" style="height:70px; background:#e67e22;">45 min</div></div>
+<div class="pylvas-label">Jokainen osasi kuvitella pyörätallin ja väitellä sen katosta</div>
+</div>
+<div class="tilasto-esimerkki">
+<h4>Virvokebudjetti — 21 £</h4>
+<div class="pylvas-wrapper"><div class="pylvas" style="height:120px; background:#c0392b;">1 h 15 min</div></div>
+<div class="pylvas-label">Halvin ja triviaalein asia — pisin keskustelu, koska jokainen tunsi kahvin hinnan</div>
+</div>
+</div>
+<p>Suunta on selvä: mitä pienempi ja arkipäiväisempi asia, sitä enemmän aikaa siihen käytetään — koska yhä useampi kokouksessa istuva voi ottaa siihen kantaa ilman pelkoa siitä, että asiantuntija osoittaa hänet vääräksi.</p>
+<p>Teknisessä kontekstissa bikeshedding näkyy esimerkiksi: muuttujanimen kirjoitusasusta väitellään koodikatselmuksessa tuntikausia, mutta tietokannan sirpalointi- tai arkkitehtuuripäätös menee läpi minuuteissa, koska aihe on liian tekninen suurimmalle osalle osallistujista. Dashboardin väripaletti saa enemmän kommentteja kuin sen taustalla oleva mittarilogiikka. Fontin koko herättää enemmän keskustelua PR:ssä kuin tietoturva-aukko, koska fontista jokainen uskaltaa sanoa mielipiteensä.</p>
 <div class="huomiolaatikko">
-<strong>Miksi tämä on institutionaalinen ongelma:</strong> Bikeshedding ei johdu huonoista ihmisistä — se johtuu siitä, että kokouksissa on enemmän ihmisiä kuin on tarpeen monimutkaisten päätösten tekemiseen. Suuressa kokouksessa jokainen haluaa osoittaa osallistumisensa, ja yksinkertaisiin asioihin on helpoin osallistua.
+<strong>Miksi tämä on institutionaalinen ongelma:</strong> Bikeshedding ei johdu huonoista ihmisistä — se johtuu siitä, että kokouksissa on enemmän ihmisiä kuin on tarpeen monimutkaisten päätösten tekemiseen. Suuressa kokouksessa jokainen haluaa osoittaa osallistumisensa, ja yksinkertaisiin asioihin on helpoin — ja turvallisinta — osallistua.
     </div>
 <div class="vaaralatikko">
-<strong>Rakenteellinen korjaus:</strong> Päätökset pitäisi tehdä pienimmällä mahdollisella joukolla jolla on relevantti osaaminen. Iso kokous on esittelyä, ei päätöksentekoa varten. Jos muuttujanimen kirjoitusasusta väitellään — se on merkki siitä, että kokouksessa on väärät ihmiset tai väärä agenda.
+<strong>Rakenteellinen korjaus:</strong> Kolme konkreettista tekniikkaa:
+<ul style="margin:0.6em 0 0; padding-left:1.3em;">
+<li><strong>Aikaboksaus per aihe:</strong> jokaiselle asialistan kohdalle etukäteen määrätty maksimiaika — kun aika loppuu, päätös tehdään tai siirretään pienemmälle ryhmälle.</li>
+<li><strong>"Kaksi minuuttia" -sääntö:</strong> jos kukaan ei pysty perustelemaan kantaansa kahdessa minuutissa asiantuntemuksella, asia ei kuulu koko ryhmän agendalle.</li>
+<li><strong>Triviaalit päätökset asynkronisesti:</strong> väripaletti, muuttujanimi tai fontti päätetään kommenttiketjussa tai äänestyksellä ilman yhteistä kokousaikaa — ei ansaitse reaaliaikaista keskustelua.</li>
+</ul>
+Päätökset pitäisi ylipäätään tehdä pienimmällä mahdollisella joukolla jolla on relevantti osaaminen. Iso kokous on esittelyä, ei päätöksentekoa varten. Jos muuttujanimen kirjoitusasusta väitellään — se on merkki siitä, että kokouksessa on väärät ihmiset tai väärä agenda.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
