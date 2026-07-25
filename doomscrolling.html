@@ -698,7 +698,12 @@
       transition: opacity 0.3s ease 0.15s;
     }
     .random-siirtyma-overlay.nakyva .random-siirtyma-teksti { opacity: 1; }
-  </style>
+  
+.infolaatikko h2.laatikko-otsikko, .huomiolaatikko h2.laatikko-otsikko {
+  display: inline; font: inherit; font-weight: 700; color: inherit;
+  margin: 0; padding: 0; letter-spacing: inherit;
+}
+</style>
 
   <!-- SEO -->
   <meta name="description" content="Doomscrolling: kurjuuden selaaminen koukuttaa. Selitämme miksi algoritmi syöttää ahdistusta ja miten katkaiset kierteen käytännössä.">
@@ -838,7 +843,7 @@ flowchart TD
 <p class="kaavio-selitys">Doomscrolling-kierre: ahdistus lisää selaamista ja selaaminen ahdistusta — algoritmi voitelee rattaat.</p>
 <p>Kierre naamioituu tiedonhankinnaksi. Tuntuu vastuulliselta "pysyä kartalla", mutta sadas otsikko samasta kriisistä ei enää lisää ymmärrystä — se lisää vain kuormaa. Tutkimuksissa runsas kriisiuutisten seuraaminen on yhdistetty ahdistuneisuuteen, unihäiriöihin ja mielialan laskuun, ja vaikutus kulkee molempiin suuntiin: huonovointisena selaa enemmän, ja selaaminen pahentaa oloa.</p>
 <div class="huomiolaatikko">
-<strong>Kierteen katkaisu:</strong>
+<h2 class="laatikko-otsikko">Kierteen katkaisu:</h2>
 <ul style="margin:0.5em 0 0;">
 <li>Anna uutisille aika ja paikka: yksi tai kaksi tietoista uutishetkeä päivässä syötteen tihkuvirran sijaan.</li>
 <li>Poista push-ilmoitukset uutis- ja somesovelluksilta — ne ovat kierteen sytytin.</li>

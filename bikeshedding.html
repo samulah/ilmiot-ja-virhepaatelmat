@@ -698,7 +698,12 @@
       transition: opacity 0.3s ease 0.15s;
     }
     .random-siirtyma-overlay.nakyva .random-siirtyma-teksti { opacity: 1; }
-  </style>
+  
+.infolaatikko h2.laatikko-otsikko, .huomiolaatikko h2.laatikko-otsikko {
+  display: inline; font: inherit; font-weight: 700; color: inherit;
+  margin: 0; padding: 0; letter-spacing: inherit;
+}
+</style>
 
   <!-- SEO -->
   <meta name="description" content="Bikeshedding: triviaalit asiat saavat eniten keskustelua. Selitämme miksi pyöräteline puhuttaa enemmän kuin ydinvoimala ja miten kokoukset korjataan.">
@@ -853,7 +858,7 @@ flowchart TD
 <p>Suunta on selvä: mitä pienempi ja arkipäiväisempi asia, sitä enemmän aikaa siihen käytetään — koska yhä useampi kokouksessa istuva voi ottaa siihen kantaa ilman pelkoa siitä, että asiantuntija osoittaa hänet vääräksi.</p>
 <p>Teknisessä kontekstissa bikeshedding näkyy esimerkiksi: muuttujanimen kirjoitusasusta väitellään koodikatselmuksessa tuntikausia, mutta tietokannan sirpalointi- tai arkkitehtuuripäätös menee läpi minuuteissa, koska aihe on liian tekninen suurimmalle osalle osallistujista. Dashboardin väripaletti saa enemmän kommentteja kuin sen taustalla oleva mittarilogiikka. Fontin koko herättää enemmän keskustelua PR:ssä kuin tietoturva-aukko, koska fontista jokainen uskaltaa sanoa mielipiteensä.</p>
 <div class="huomiolaatikko">
-<strong>Miksi tämä on institutionaalinen ongelma:</strong> Bikeshedding ei johdu huonoista ihmisistä — se johtuu siitä, että kokouksissa on enemmän ihmisiä kuin on tarpeen monimutkaisten päätösten tekemiseen. Suuressa kokouksessa jokainen haluaa osoittaa osallistumisensa, ja yksinkertaisiin asioihin on helpoin — ja turvallisinta — osallistua.
+<h2 class="laatikko-otsikko">Miksi tämä on institutionaalinen ongelma:</h2> Bikeshedding ei johdu huonoista ihmisistä — se johtuu siitä, että kokouksissa on enemmän ihmisiä kuin on tarpeen monimutkaisten päätösten tekemiseen. Suuressa kokouksessa jokainen haluaa osoittaa osallistumisensa, ja yksinkertaisiin asioihin on helpoin — ja turvallisinta — osallistua.
     </div>
 <div class="vaaralatikko">
 <strong>Rakenteellinen korjaus:</strong> Kolme konkreettista tekniikkaa:

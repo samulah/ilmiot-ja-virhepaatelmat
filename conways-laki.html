@@ -698,7 +698,12 @@
       transition: opacity 0.3s ease 0.15s;
     }
     .random-siirtyma-overlay.nakyva .random-siirtyma-teksti { opacity: 1; }
-  </style>
+  
+.infolaatikko h2.laatikko-otsikko, .huomiolaatikko h2.laatikko-otsikko {
+  display: inline; font: inherit; font-weight: 700; color: inherit;
+  margin: 0; padding: 0; letter-spacing: inherit;
+}
+</style>
 
   <!-- SEO -->
   <meta name="description" content="Conwayn laki: järjestelmä perii organisaation rakenteen. Selitämme mistä laissa on kyse, miltä se näyttää käytännössä ja miten käännät sen hyödyksesi.">
@@ -837,7 +842,7 @@ flowchart TD
 <strong>Data-arkkitehtuurissa:</strong> Jos tietovarastoarkkitehtuuri heijastelee organisaatiosiiloja — myynti, markkinointi, tuotanto kukin omina datajärjestelminään ilman yhteistä mallia — syy on lähes aina organisaatiorakenteessa, ei teknisessä päätöksessä.
     </div>
 <div class="huomiolaatikko">
-<strong>Vastakeino — käänteinen Conwayn manööveri:</strong> Koska laki toimii joka tapauksessa, käytä sitä tietoisesti: suunnittele ensin haluttu arkkitehtuuri ja organisoi tiimit sen mukaan — ei toisinpäin. Käytännössä: piirrä tavoitearkkitehtuurin moduulit ja rajapinnat, anna kullekin moduulille yksi omistava tiimi ja varmista, että tiimien väliset kommunikaatiokanavat vastaavat haluttuja rajapintoja. Jos haluat mikropalveluarkkitehtuurin mutta tiimit ovat silossaan, saat vain hajautetun monoliitin — kaikki mikropalvelujen haitat ilman hyötyjä. Varoitusmerkki arjessa: jos jokainen arkkitehtuurimuutos vaatii kolmen tiimin yhteiskokouksen, organisaatiokaavio on jo arkkitehtuurisi.
+<h2 class="laatikko-otsikko">Vastakeino — käänteinen Conwayn manööveri:</h2> Koska laki toimii joka tapauksessa, käytä sitä tietoisesti: suunnittele ensin haluttu arkkitehtuuri ja organisoi tiimit sen mukaan — ei toisinpäin. Käytännössä: piirrä tavoitearkkitehtuurin moduulit ja rajapinnat, anna kullekin moduulille yksi omistava tiimi ja varmista, että tiimien väliset kommunikaatiokanavat vastaavat haluttuja rajapintoja. Jos haluat mikropalveluarkkitehtuurin mutta tiimit ovat silossaan, saat vain hajautetun monoliitin — kaikki mikropalvelujen haitat ilman hyötyjä. Varoitusmerkki arjessa: jos jokainen arkkitehtuurimuutos vaatii kolmen tiimin yhteiskokouksen, organisaatiokaavio on jo arkkitehtuurisi.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>

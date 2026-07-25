@@ -698,7 +698,12 @@
       transition: opacity 0.3s ease 0.15s;
     }
     .random-siirtyma-overlay.nakyva .random-siirtyma-teksti { opacity: 1; }
-  </style>
+  
+.infolaatikko h2.laatikko-otsikko, .huomiolaatikko h2.laatikko-otsikko {
+  display: inline; font: inherit; font-weight: 700; color: inherit;
+  margin: 0; padding: 0; letter-spacing: inherit;
+}
+</style>
 
   <!-- SEO -->
   <meta name="description" content="Honeypot-huijaus: ansa, johon on helppo mennä ja mahdoton palata. Selitämme miten houkutusansa toimii käytännössä ja mistä tunnistat sen ajoissa.">
@@ -837,7 +842,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Honeypotin ydin: sisäänpääsy on tahallaan helppoa, koska uloskäyntiä ei ole.</p>
 <div class="infolaatikko">
-<strong>Tyypillisiä muotoja:</strong>
+<h2 class="laatikko-otsikko">Tyypillisiä muotoja:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Krypto-honeypot:</strong> Älysopimus, jonka voi <em>ostaa</em> mutta jonka koodi estää <em>myynnin</em>. Hinta näyttää nousevan (kukaan ei voi myydä), mikä houkuttelee lisää ostajia — kunnes tekijä tyhjentää likviditeetin.</li>
 <li><strong>Romanssi-/kiristysansa (honeytrap):</strong> Houkutteleva tuntematon luo luottamuksen tai saa uhrin lähettämään arkaluontoista materiaalia, jota käytetään kiristykseen.</li>

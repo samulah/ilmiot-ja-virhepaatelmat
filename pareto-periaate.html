@@ -355,7 +355,12 @@
       transition: opacity 0.3s ease 0.15s;
     }
     .random-siirtyma-overlay.nakyva .random-siirtyma-teksti { opacity: 1; }
-  </style>
+  
+.infolaatikko h2.laatikko-otsikko, .huomiolaatikko h2.laatikko-otsikko {
+  display: inline; font: inherit; font-weight: 700; color: inherit;
+  margin: 0; padding: 0; letter-spacing: inherit;
+}
+</style>
 
   <!-- SEO -->
   <meta name="description" content="Pareto-periaate eli 80/20-sääntö: pieni osa syistä selittää suurimman osan seurauksista. Mistä havainto tulee ja miksi sitä käytetään väärin.">
@@ -478,11 +483,11 @@
 </div>
 <p>Luvut 80 ja 20 eivät ole tarkka mittaustulos vaan nyrkkisääntö äärimmäisen epätasaiselle jakaumalle — tilastotieteessä tätä kutsutaan <strong>valtalaiksi</strong> (power law): harvat tapaukset selittävät suurimman osan kokonaismäärästä, ja loput jakautuvat pitkälle "hännälle" pieninä osuuksina. Sama muoto toistuu kaupunkien koossa, kirjan sanojen esiintymistiheydessä ja — kuten seuraava ilmiö tällä sivustolla näyttää — siinä, ketkä verkossa ylipäätään avaavat suunsa: ks. <a href="1-prosentin-saanto.html">1 %:n sääntö</a>, jossa sama epätasaisuus viedään äärimmilleen.</p>
 <div class="infolaatikko">
-<strong>Ei luonnonlaki, vaan heuristiikka:</strong> 80/20 ei ole tarkka matemaattinen totuus eikä summaudu aina täsmälleen sataan (osuudet voivat olla 70/30 tai 90/10 tapauksesta riippuen). Se on muistisääntö sille, että <em>useimmissa</em> järjestelmissä panokset ja tuotokset jakautuvat epätasaisesti — ei kuvaus jokaisesta ilmiöstä. Tasan jakautuvia asioita (esim. kolikonheitto) sääntö ei koske lainkaan.
+<h2 class="laatikko-otsikko">Ei luonnonlaki, vaan heuristiikka:</h2> 80/20 ei ole tarkka matemaattinen totuus eikä summaudu aina täsmälleen sataan (osuudet voivat olla 70/30 tai 90/10 tapauksesta riippuen). Se on muistisääntö sille, että <em>useimmissa</em> järjestelmissä panokset ja tuotokset jakautuvat epätasaisesti — ei kuvaus jokaisesta ilmiöstä. Tasan jakautuvia asioita (esim. kolikonheitto) sääntö ei koske lainkaan.
     </div>
 <p>Yritysmaailmassa periaatteen popularisoi liikkeenjohdon konsultti <strong>Joseph M. Juran</strong> 1940-luvulla nimellä <em>"vital few and trivial many"</em> — harvat elintärkeät ja monet vähäpätöiset. Laatujohtamisessa ajatus oli mullistava: sen sijaan että virheitä metsästettäisiin tasaisesti kaikkialta, kannattaa etsiä se pieni syiden joukko, joka selittää suurimman osan viasta, ja korjata ensin ne. Sama logiikka pätee ajankäytössä (harvat tehtävät tuottavat suurimman osan tuloksista), asiakaspalvelussa (harvat valittajat aiheuttavat suurimman osan yhteydenotoista) ja ohjelmistokehityksessä (harva osa koodista aiheuttaa suurimman osan kaatumisista).</p>
 <div class="huomiolaatikko">
-<strong>Käytännön sovellus:</strong> Ennen kuin yrität parantaa kaikkea yhtä paljon, kysy missä 20 % panoksesta tuottaa 80 % tuloksesta — ja keskitä rajallinen aika, raha ja huomio siihen. Tunnista myös käänteinen riski: jos 20 % asiakkaista, ominaisuuksista tai virheistä selittää valtaosan kuormasta, loput 80 % kannattaa usein karsia tai automatisoida, ei hioa loputtomiin.
+<h2 class="laatikko-otsikko">Käytännön sovellus:</h2> Ennen kuin yrität parantaa kaikkea yhtä paljon, kysy missä 20 % panoksesta tuottaa 80 % tuloksesta — ja keskitä rajallinen aika, raha ja huomio siihen. Tunnista myös käänteinen riski: jos 20 % asiakkaista, ominaisuuksista tai virheistä selittää valtaosan kuormasta, loput 80 % kannattaa usein karsia tai automatisoida, ei hioa loputtomiin.
     </div>
 <div class="vaaralatikko">
 <strong>Väärinkäytön riski:</strong> "80/20" viljellään usein retorisena korulauseena ilman mittausta — kuka tahansa voi väittää jotain olevan "80 % työstä" todistamatta sitä. Periaate ohjaa myös helposti hylkäämään sen "vähäpätöisen" 80 %:n kokonaan, vaikka pienissäkin osuuksissa voi piillä yksittäisiä suuririskisiä poikkeuksia (esim. harvinainen mutta katastrofaalinen virhe koodin syrjäisessä kolkassa). Jakauman muoto kannattaa tarkistaa oikealla datalla ennen kuin sen perusteella tehdään päätöksiä.

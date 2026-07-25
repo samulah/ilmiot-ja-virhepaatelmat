@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css?v=20260721">
   
   
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js" defer></script>
   <style>
 
     .mermaid svg text { font-size: 12px !important; }
@@ -671,7 +671,12 @@
       transition: opacity 0.3s ease 0.15s;
     }
     .random-siirtyma-overlay.nakyva .random-siirtyma-teksti { opacity: 1; }
-  </style>
+  
+.infolaatikko h2.laatikko-otsikko, .huomiolaatikko h2.laatikko-otsikko {
+  display: inline; font: inherit; font-weight: 700; color: inherit;
+  margin: 0; padding: 0; letter-spacing: inherit;
+}
+</style>
 
   <!-- SEO -->
   <meta name="description" content="Korkoa korolle -efekti: miten eksponentiaalinen kasvu toimii, miten käännät sen hyödyksesi — ja miksi sama voima on velassa vaarallinen. Mukana 72:n sääntö.">
@@ -810,10 +815,10 @@
 </div>
 <p class="kaavio-selitys">Liiku kursorin kanssa graafin päällä nähdäksesi tarkat luvut. Katkoviiva = lineaarinen kasvu (ei korkoa korolle) samalla 7 %:n euromäärällä vuodessa.</p>
 <div class="huomiolaatikko">
-<strong>72:n sääntö:</strong> Jaa 72 vuotuisella korkoprosentilla — saat arvioidun tuplautumisajan. 7 % korolla pääoma tuplautuu noin 72 ÷ 7 ≈ 10 vuodessa. 12 % korolla 6 vuodessa. Sääntö toimii myös toisin päin: jos haluaa tuplata 8 vuodessa, tarvitaan noin 9 % vuosituotto.
+<h2 class="laatikko-otsikko">72:n sääntö:</h2> Jaa 72 vuotuisella korkoprosentilla — saat arvioidun tuplautumisajan. 7 % korolla pääoma tuplautuu noin 72 ÷ 7 ≈ 10 vuodessa. 12 % korolla 6 vuodessa. Sääntö toimii myös toisin päin: jos haluaa tuplata 8 vuodessa, tarvitaan noin 9 % vuosituotto.
     </div>
 <div class="infolaatikko">
-<strong>Efekti toimii myös rahan ulkopuolella:</strong>
+<h2 class="laatikko-otsikko">Efekti toimii myös rahan ulkopuolella:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Osaaminen:</strong> Mitä enemmän tiedät aiheesta, sitä helpompi oppia lisää — taustatieto toimii "korkopohjana". Kirja kasvattaa sanastoa, joka helpottaa seuraavaa kirjaa.</li>
 <li><strong>Verkostot:</strong> Laajempi verkosto houkuttelee uusia kontakteja — jokainen uusi kontakti kasvattaa pohjaa, josta seuraavat kasvavat.</li>
@@ -826,7 +831,7 @@
 <strong>Lineaarisen ajattelun loukku:</strong> Ihmisaivot ovat huonoja hahmottamaan eksponentiaalista kasvua. Intuitio arvioi kasvun lineaariseksi — siksi ylipaino kertyy "yllättäen", velka karkaa "yhtäkkiä" ja rokotteen leviäminen "yllättää". Eksponentiaalinen kasvukäyrä näyttää pitkään miltei tasaiselta — ja sitten se nousee pystyyn. Se osa on jo myöhäistä yrittää pysäyttää perinteisillä keinoilla.
     </div>
 <div class="huomiolaatikko">
-<strong>Käännä efekti hyödyksesi:</strong> Tärkein muuttuja on aika, joten aloita ennen kuin summa tuntuu merkitykselliseltä: 72:n säännöllä 7 %:n vuosituotto tuplaa pääoman noin kymmenessä vuodessa — 25-vuotiaana aloitettu säästö ehtii tuplaantua eläkeikään mennessä kolme–neljä kertaa, 45-vuotiaana aloitettu kerran tai kaksi. Automatisoi kuukausisiirto, jotta kasvu ei jää motivaation varaan, ja anna tuottojen jäädä kasvamaan korkoa. Ja muista, että sama mekanismi toimii myös sinua vastaan velassa: ks. <a href="korkokierre.html">Negatiivinen korkokierre</a>.
+<h2 class="laatikko-otsikko">Käännä efekti hyödyksesi:</h2> Tärkein muuttuja on aika, joten aloita ennen kuin summa tuntuu merkitykselliseltä: 72:n säännöllä 7 %:n vuosituotto tuplaa pääoman noin kymmenessä vuodessa — 25-vuotiaana aloitettu säästö ehtii tuplaantua eläkeikään mennessä kolme–neljä kertaa, 45-vuotiaana aloitettu kerran tai kaksi. Automatisoi kuukausisiirto, jotta kasvu ei jää motivaation varaan, ja anna tuottojen jäädä kasvamaan korkoa. Ja muista, että sama mekanismi toimii myös sinua vastaan velassa: ks. <a href="korkokierre.html">Negatiivinen korkokierre</a>.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -898,6 +903,7 @@
   </nav>
 
   <script>
+document.addEventListener('DOMContentLoaded', function () {
 (function () {
 
 (function () {
@@ -1193,6 +1199,7 @@
 })();
 
 })();
+});
 </script>
 
   <script>
