@@ -156,7 +156,24 @@ Samalla description: aloita suoralla määritelmällä ("X tarkoittaa …"), ei 
 
 ---
 
-### VAIHE 2 — "Suomeksi"-vastauslohko + FAQ-schema (1 pv, top-15 sivua) 🔥
+### VAIHE 2 — "Suomeksi"-vastauslohko + FAQ-schema (1 pv, top-15 sivua) ✅ TEHTY 25.7.2026
+
+**Toteutus:** `scripts/seo_vastauslohko.py` (idempotentti). 15 sivua, FAQPage-schemoja
+1 → 16. Kaksi tietoista poikkeamaa alla olevasta suunnitelmasta:
+
+1. **Lohko vastaa käännöskysymykseen, ei määritelmäkysymykseen.** Kaikki 15 sivua jo
+   avautuvat lauseella "X tarkoittaa…", joten alla ehdotettu lohko H1:n alle olisi
+   toistanut ensimmäisen kappaleen. Puuttuva pala oli suomennos, ei määritelmä.
+2. **Mitta on merkkejä, ei sanoja.** Alla oleva 40–55 sanaa on johdettu
+   englanninkielisestä ohjeesta. Suomeksi se on ~380–450 merkkiä eli ohi Googlen
+   ~300 merkin snippet-katkaisun. Toteutetut lohkot ovat 253–295 merkkiä.
+
+**Suomennoslinja:** §3:n taulukko listaa "vakiintuneina suomennoksina" sanoja, jotka
+eivät sitä ole — `ai-slop.html` sanoo itse leipätekstissään, ettei slopille ole
+vakiintunutta suomennosta. Lohko erottaa siksi kaksi tapausta: vakiintunut vastine
+sanotaan suoraan (kaasuvalotus, raivosyötti, hunajapurkki, sädekehävaikutus,
+käärmeöljy), vakiintumaton sanotaan vakiintumattomaksi (AI slop, doomscrolling).
+Keksittyä suomennosta ei esitetä vakiintuneena.
 
 **Miksi:** korjaa intentiovajeen. Vaikuttaa **sekä** sijoitukseen että CTR:ään
 (rich snippet). Nykyisin koko sivustolla on vain 1 FAQPage-schema.
@@ -202,7 +219,27 @@ erottautumistekijä sanakirjoihin nähden. Sitä kannattaa korostaa, ei laimenta
 
 ---
 
-### VAIHE 4 — Kannibalisaatio ja hukkanäytöt (2–3 h)
+### VAIHE 4 — Kannibalisaatio ja hukkanäytöt (2–3 h) ✅ TEHTY 25.7.2026
+
+**Kannibalisaatio: kaikki kolme paria purettu.** Poikkeus: `kuollut-kissa`in
+Streisand-mainintaa ei poistettu vaan se linkitettiin. Termi on osa "ero
+lähikäsitteisiin" -kohtaa, ja linkitys ohjaa signaalin oikeaan osoitteeseen ilman
+sisältötappiota.
+
+> **Hukkanäyttö-lista ei pitänyt paikkaansa — tarkista lähtödata ennen kuin
+> tätä osiota käytetään uudelleen.** Seitsemästä kohteesta vain yksi
+> (`conways-laki`, yhdyssana "tietovarastoarkkitehtuuri") oli aidosti korjattavissa.
+>
+> - **Neljässä sanaa ei ole sivulla lainkaan:** `jarjestelman-puolustelu`
+>   ("sulautettu järjestelmä", "järjestelmällinen"), `gaslighting` ("kiittämätön"),
+>   `hippo-efekti` ("tyrsky ylppö"), `firehose-of-falsehood` ("valaistusvyöhyke").
+>   Google matchaa nämä semanttisesti, ei kirjaimellisesta sanasta. Poistettavaa ei ole.
+> - **Kahta ei pidä koskea:** `konsensus-fetissi`n "itseisarvo" on sivun teesi
+>   (H1, title, ensimmäinen virke), ja `bkt-harha`n Irlanti on sivun kanoninen
+>   esimerkki 24 esiintymällä. Näiden poisto vaihtaisi hyvän sisällön mittariin.
+>
+> Yleisemmin: sijalla 30–90 olevat näytöt eivät vahingoita sijoituksia, ne vain
+> vääristävät keskisijainnin. Se ei ole syy heikentää sisältöä.
 
 Samasta kyselystä kilpailee kaksi sivua → Google ei valitse kumpaakaan:
 
@@ -239,13 +276,19 @@ todennettu.
 
 ## 5. Yhteenveto: mitä ensin
 
-| # | Toimenpide | Työmäärä | Vaikutus | Riski |
-|---|---|---|---|---|
-| 1 | Title + meta, top-15 | 1–2 h | 5 → ~25 klikkiä/kk | ei mitään |
-| 2 | Suomeksi-lohko + FAQ-schema, top-15 | 1 pv | sija 11,6 → 6–8 klusterissa | ei mitään |
-| 3 | Sisällön syventäminen, top-5 | 2–4 vk | sija 9–10 → 3–5 | työläs |
-| 4 | Kannibalisaatio + hukkanäytöt | 2–3 h | siistii mittarit | pieni |
-| 5 | Kategoriasivut | 1–2 vk | uusi kysyntä | kysyntä todentamatta |
+| # | Toimenpide | Työmäärä | Vaikutus | Riski | Tila |
+|---|---|---|---|---|---|
+| 1 | Title + meta, top-15 | 1–2 h | 5 → ~25 klikkiä/kk | ei mitään | ✅ livenä |
+| 2 | Suomeksi-lohko + FAQ-schema, top-15 | 1 pv | sija 11,6 → 6–8 klusterissa | ei mitään | 🔨 committattu, ei livenä |
+| 3 | Sisällön syventäminen, top-5 | 2–4 vk | sija 9–10 → 3–5 | työläs | ⬜ **ainoa aloittamaton** |
+| 4 | Kannibalisaatio + hukkanäytöt | 2–3 h | siistii mittarit | pieni | 🔨 committattu, ei livenä |
+| 5 | Kategoriasivut | 1–2 vk | uusi kysyntä | kysyntä todentamatta | ✅ livenä 25.7. |
+
+**Livetilanne 25.7.2026.** Vaiheet 1 ja 5 ovat livenä ja tarkistettu: 12 kategoriasivua
+vastaa 200:lla, `tilastoilla-valehtelu.html` → 301 kategoriasivulle, ja
+`index.html` / `sitemap.xml` / `llms.txt` ovat md5-identtisiä `kategoriasivut`-haaran
+kanssa. Vaiheet 2 ja 4 ovat haarassa `vaihe4-kannibalisaatio`, jota ei ole mergetty
+eikä deployattu — niiden mittaus ei ala ennen sitä.
 
 **Konservatiivinen kokonaisarvio vaiheiden 1–3 jälkeen:** ~1 100 näyttöä/kk nykysisällöllä,
 striking-distance-kyselyt sijalle 3 ⇒ **~90 klikkiä/kk** (nyt 5). Näyttömäärä itsessään
