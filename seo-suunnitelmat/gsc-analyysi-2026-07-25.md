@@ -198,10 +198,32 @@ Olemassa oleva `DefinedTerm`-schema kannattaa säilyttää — se on jo oikein.
 
 ---
 
-### VAIHE 3 — Sisällön syventäminen, vain top-5 sivua (2–4 vk)
+### VAIHE 3 — Sisällön syventäminen, vain top-5 sivua (2–4 vk) ❌ HYLÄTTY 25.7.2026
 
-**Miksi vasta kolmantena:** kallein vaihe, mutta ainoa keino päästä sijalta 9–10 kärkeen.
-Ei tehdä kaikille 109 sivulle — vain niille, joilla on todistettua kysyntää.
+> **Tätä vaihetta ei toteuteta tässä muodossa.** Kokeilu aloitettiin
+> `whataboutismi`-sivulla ja peruttiin kesken: 355 → ~1 300 sanaa teki tekstistä
+> tietosanakirjaa, ei popularisointia.
+>
+> **Perustelu, joka ei kestänyt.** Vaihe nojasi §3:n havaintoon "pisin sisältö
+> voittaa": kärkitulos tietoviisas.fi on sijalla 1 noin 1 800–2 000 sanalla.
+> Havainto pitää paikkansa, mutta johtopäätös ei: tietoviisas.fi on eri tuote.
+> Tämän sivuston etu on, että ilmiön saa haltuun minuutissa. Pituus, jolla
+> kilpailija voittaa, on täsmälleen se ominaisuus jota tällä sivustolla ei ole —
+> eikä sitä kannata kopioida sijoituksen takia.
+>
+> Alla oleva osiolista on siis mitoitusohjeena kuollut. Yksittäinen kohta —
+> **konkreettiset suomalaiset esimerkit** — on silti aitoa uutta tietoa eikä
+> täytettä, ja se voidaan lisätä ~150–200 sanan kokoisena, jos mittaus antaa
+> siihen aiheen.
+>
+> **Ennen kuin sisältöön kosketaan lainkaan: odota dataa.** Vaiheet 1, 2 ja 4
+> ovat livenä vasta 25.7.2026. Niiden vaikutus näkyy 1–2 viikossa. Jos
+> "suomeksi"-klusteri liikkuu ennustetusti sijalta 11,6 sijalle 6–8, pituutta ei
+> tarvita lainkaan. Sisältötyötä ei kannata tehdä sokkona.
+
+**Alkuperäinen perustelu (säilytetty kirjanpitoa varten):** kallein vaihe, mutta
+ainoa keino päästä sijalta 9–10 kärkeen. Ei tehdä kaikille 109 sivulle — vain
+niille, joilla on todistettua kysyntää.
 
 Kohteet: `whataboutismi` (184 näyttöä), `ai-slop` (87), `hyvesignalointi` (77),
 `darvo` (60), `rage-bait` (51) = **54 % kaikista näytöistä viidellä sivulla.**
@@ -280,7 +302,7 @@ todennettu.
 |---|---|---|---|---|---|
 | 1 | Title + meta, top-15 | 1–2 h | 5 → ~25 klikkiä/kk | ei mitään | ✅ livenä |
 | 2 | Suomeksi-lohko + FAQ-schema, top-15 | 1 pv | sija 11,6 → 6–8 klusterissa | ei mitään | 🔨 committattu, ei livenä |
-| 3 | Sisällön syventäminen, top-5 | 2–4 vk | sija 9–10 → 3–5 | työläs | ⬜ **ainoa aloittamaton** |
+| 3 | Sisällön syventäminen, top-5 | 2–4 vk | sija 9–10 → 3–5 | työläs | ❌ hylätty — ks. vaihe 3 |
 | 4 | Kannibalisaatio + hukkanäytöt | 2–3 h | siistii mittarit | pieni | 🔨 committattu, ei livenä |
 | 5 | Kategoriasivut | 1–2 vk | uusi kysyntä | kysyntä todentamatta | ✅ livenä 25.7. |
 
