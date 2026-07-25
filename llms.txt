@@ -1,6 +1,6 @@
 # Ilmiöitä — Miten valta toimii
 
-> Suomenkielinen sivusto, joka selittää 109 yhteiskunnallista ilmiötä:
+> Suomenkielinen sivusto, joka selittää 108 yhteiskunnallista ilmiötä:
 > valtarakenteet, propaganda ja informaatiovaikuttaminen, kognitiiviset harhat,
 > byrokratia ja organisaatiodynamiikka, projektihallinnan lait,
 > talouden kasvuilmiöt, huijaukset ja petokset, myynti- ja painostustaktiikat,
@@ -14,6 +14,8 @@
 
 Miten valta keskittyy, suojaa itseään ja muokkaa pelisäännöt edukseen.
 
+Kategoriasivu: https://www.ilmiöt.fi/kategoria-vallan-rakenteet.html
+
 - [Paskuuttaminen](https://www.ilmiöt.fi/paskuuttaminen.html): Julkinen palvelu heikennetään tahallaan niin huonoksi, että ihmiset alkavat itse vaatia sen yksityistämistä.
 - [Starve the beast](https://www.ilmiöt.fi/starve-the-beast.html): Leikkaa ensin verot — kasvava alijäämä pakottaa myöhemmin ajamaan julkiset palvelut alas.
 - [Overton-ikkuna](https://www.ilmiöt.fi/overton-ikkuna.html): Se kaista poliittisia ideoita, joita pidetään kulloinkin hyväksyttävinä — ja jota voi tietoisesti siirtää.
@@ -26,7 +28,8 @@ Miten valta keskittyy, suojaa itseään ja muokkaa pelisäännöt edukseen.
 
 Miten mielipiteitä muokataan tilastoilla, valheilla ja keinotekoisilla kansanliikkeillä.
 
-- [Tilastoilla valehtelu](https://www.ilmiöt.fi/tilastoilla-valehtelu.html): Miten oikeilla luvuilla johdetaan harhaan: katkaistut akselit, valikoidut aikavälit ja vinot otokset.
+Kategoriasivu: https://www.ilmiöt.fi/kategoria-informaatio-ja-propaganda.html
+
 - [BKT-harha](https://www.ilmiöt.fi/bkt-harha.html): BKT mittaa tuotannon arvoa, ei hyvinvointia — ja voi kasvaa, vaikka kansalaisten talous kurjistuu.
 - [Astroturf](https://www.ilmiöt.fi/astroturf.html): Rahoitettu kampanja, joka naamioidaan tavallisten ihmisten spontaaniksi ruohonjuuriliikkeeksi.
 - [Firehose of falsehood](https://www.ilmiöt.fi/firehose-of-falsehood.html): Niin monta valhetta niin nopeasti joka kanavasta, ettei faktantarkistus ehdi perässä.
@@ -44,6 +47,8 @@ Miten mielipiteitä muokataan tilastoilla, valheilla ja keinotekoisilla kansanli
 ### Psykologia ja kognitio
 
 Kognitiiviset harhat ja manipulointitaktiikat, jotka vääristävät ajattelua ja keskustelua.
+
+Kategoriasivu: https://www.ilmiöt.fi/kategoria-psykologia-ja-kognitio.html
 
 - [Backfire effect](https://www.ilmiöt.fi/backfire-effect.html): Virheellisen uskomuksen korjausyritys voi vahvistaa uskomusta entisestään.
 - [DARVO](https://www.ilmiöt.fi/darvo.html): Kiinni jäänyt kääntää roolit: kiistä, hyökkää ja esitä itsesi uhrina — Deny, Attack, Reverse Victim & Offender.
@@ -63,6 +68,8 @@ Kognitiiviset harhat ja manipulointitaktiikat, jotka vääristävät ajattelua j
 ### Byrokratia ja organisaatio
 
 Miksi organisaatiot jumiutuvat: mittarit, rituaalit ja portinvartijat.
+
+Kategoriasivu: https://www.ilmiöt.fi/kategoria-byrokratia-ja-organisaatio.html
 
 - [Simple Sabotage Field Manual](https://www.ilmiöt.fi/simple-sabotage.html): CIA:n edeltäjän ohjekirja: miten organisaatio halvaannutetaan kokouksilla, komiteoilla ja pykälillä.
 - [Kafka-ilmiö](https://www.ilmiöt.fi/kafka-ilmio.html): Byrokratia, jossa oikeuden saaminen on teknisesti mahdollista mutta käytännössä mahdotonta.
@@ -84,6 +91,8 @@ Miksi organisaatiot jumiutuvat: mittarit, rituaalit ja portinvartijat.
 
 Projektien lainalaisuudet: miksi aikataulut pettävät ja hankkeet paisuvat.
 
+Kategoriasivu: https://www.ilmiöt.fi/kategoria-projekti-ja-ohjelmistokehitys.html
+
 - [Brooksin laki](https://www.ilmiöt.fi/brooksin-laki.html): Lisätyövoiman heittäminen myöhässä olevaan ohjelmistoprojektiin myöhästyttää sitä lisää.
 - [Yhdeksän-yhdeksän-sääntö](https://www.ilmiöt.fi/yhdeksanyhdeksan.html): Ensimmäinen 90 % työstä vie 90 % ajasta — ja viimeinen 10 % vie loput 90 %.
 - [Hofstadterin laki](https://www.ilmiöt.fi/hofstadterin-laki.html): Kaikki kestää odotettua kauemmin, vaikka ottaisit Hofstadterin lain huomioon.
@@ -97,6 +106,8 @@ Projektien lainalaisuudet: miksi aikataulut pettävät ja hankkeet paisuvat.
 
 Eksponentiaalinen kasvu ja rappio — korkoa korolle molempiin suuntiin.
 
+Kategoriasivu: https://www.ilmiöt.fi/kategoria-kasvun-dynamiikka.html
+
 - [Korkoa korolle -efekti](https://www.ilmiöt.fi/korkoa-korolle.html): Kasvu kohdistuu koko kertyneeseen pohjaan, ei vain alkupääomaan — pieni tuotto paisuu ajan myötä valtavaksi.
 - [Negatiivinen korkoa korolle](https://www.ilmiöt.fi/negatiivinen-korkoa.html): Sama kasautumislogiikka toimii alaspäin: laiminlyönti ja tappiot kiihdyttävät toisiaan.
 - [Negatiivinen korkokierre](https://www.ilmiöt.fi/korkokierre.html): Velka kasvaa samalla eksponentilla kuin sijoitus — mutta sinua vastaan.
@@ -104,6 +115,8 @@ Eksponentiaalinen kasvu ja rappio — korkoa korolle molempiin suuntiin.
 ### Huijaukset ja petokset
 
 Klassiset huijausmallit Ponzista pig butcheringiin — ja miten ne tunnistaa.
+
+Kategoriasivu: https://www.ilmiöt.fi/kategoria-huijaukset-ja-petokset.html
 
 - [Honeypot-huijaus](https://www.ilmiöt.fi/honeypot-huijaus.html): Ansa houkuttelee helpolla voitolla — uloskäynti sulkeutuu vasta, kun olet jo sitoutunut.
 - [Bait and switch](https://www.ilmiöt.fi/bait-and-switch.html): Näyttävä tarjous houkuttelee paikalle, mutta tilalle myydäänkin jotain kalliimpaa tai huonompaa.
@@ -120,6 +133,8 @@ Klassiset huijausmallit Ponzista pig butcheringiin — ja miten ne tunnistaa.
 ### Myyntikikat ja painostus
 
 Myynnin ja neuvottelun painostuskeinot hinta-ankkuroinnista keinotekoiseen niukkuuteen.
+
+Kategoriasivu: https://www.ilmiöt.fi/kategoria-myyntikikat-ja-painostus.html
 
 - [Ilmainen näytetyö](https://www.ilmiöt.fi/ilmainen-naytetyo.html): "Tee koetehtävä, valitsemme parhaan" — oikeaa työtä teetetään ilmaiseksi näytteen varjolla.
 - [Maksu näkyvyydellä](https://www.ilmiöt.fi/exposure-maksu.html): Työ teetetään ilman rahaa lupaamalla näkyvyyttä, referenssiä tai "jalkaa oven väliin".
@@ -141,6 +156,8 @@ Myynnin ja neuvottelun painostuskeinot hinta-ankkuroinnista keinotekoiseen niukk
 
 Miten suosittelualgoritmit, ansaintalogiikka ja huomiotalous muokkaavat käyttäytymistä verkossa.
 
+Kategoriasivu: https://www.ilmiöt.fi/kategoria-alustatalous-ja-algoritmit.html
+
 - [Doomscrolling](https://www.ilmiöt.fi/doomscrolling.html): Pakonomainen huonojen uutisten selaaminen, joka jatkuu vaikka ahdistus kasvaa.
 - [Kaikukammio](https://www.ilmiöt.fi/kaikukammio.html): Ympäristö, jossa kohtaat vain omia näkemyksiäsi vahvistavaa sisältöä.
 - [AI slop](https://www.ilmiöt.fi/ai-slop.html): Tekoälyllä massatuotettua halpasisältöä, joka kerää klikkejä palvelematta lukijaa.
@@ -154,6 +171,8 @@ Miten suosittelualgoritmit, ansaintalogiikka ja huomiotalous muokkaavat käyttä
 
 Viherpesusta tekoälypesuun — miten maine kiillotetaan ilman että mikään oikeasti muuttuu.
 
+Kategoriasivu: https://www.ilmiöt.fi/kategoria-pesut-ja-maineenhallinta.html
+
 - [Viherpesu](https://www.ilmiöt.fi/viherpesu.html): Markkinointi saa yrityksen näyttämään ympäristöystävällisemmältä kuin se oikeasti on.
 - [Tekoälypesu](https://www.ilmiöt.fi/tekoalypesu.html): Tuotetta markkinoidaan tekoälyllä, jota siinä ei ole — tai jonka rooli on rajusti liioiteltu.
 - [Hyvesignalointi](https://www.ilmiöt.fi/hyvesignalointi.html): Moraalinen kannanotto oman kuvan kiillottamiseksi — näkyvyys maksimoidaan, kustannus minimoidaan.
@@ -162,6 +181,8 @@ Viherpesusta tekoälypesuun — miten maine kiillotetaan ilman että mikään oi
 
 Etätyöajan uusi sanasto: hiljaiset irtisanoutumiset, haamutyöpaikat ja läsnäolon teatteri.
 
+Kategoriasivu: https://www.ilmiöt.fi/kategoria-tyoelaman-ilmiot.html
+
 - [Hiljainen irtisanoutuminen](https://www.ilmiöt.fi/hiljainen-irtisanoutuminen.html): Työntekijä tekee täsmälleen sopimuksen mukaiset työt — ei ylitöitä, ei ylimääräistä.
 - [Hiljainen irtisanominen](https://www.ilmiöt.fi/hiljainen-irtisanominen.html): Työolot kurjistetaan tahallaan, jotta työntekijä lähtee itse — ilman irtisanomisen kuluja.
 - [Haamutyöpaikat](https://www.ilmiöt.fi/haamutyopaikat.html): Työpaikkailmoitus, jonka takana ei ole aikomustakaan palkata ketään.
@@ -169,6 +190,8 @@ Etätyöajan uusi sanasto: hiljaiset irtisanoutumiset, haamutyöpaikat ja läsn�
 ### Tilastoilla valehtelu
 
 Miten luvuilla ja kaavioilla johdetaan harhaan valehtelematta kertaakaan — akseleista aikaväleihin ja sattuman kalasteluun.
+
+Kategoriasivu: https://www.ilmiöt.fi/kategoria-tilastoilla-valehtelu.html
 
 - [Kaksois-y-akseli](https://www.ilmiöt.fi/kaksois-y-akseli.html): Kaksi vapaasti skaalattua asteikkoa saa mitkä tahansa käyrät kulkemaan käsi kädessä.
 - [Pinta-alaharha](https://www.ilmiöt.fi/pinta-alaharha.html): Kaksinkertainen arvo piirretään kaksinkertaisena halkaisijana — ja näyttää nelinkertaiselta.
