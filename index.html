@@ -203,6 +203,20 @@
       outline: 2px solid var(--c-primary-mid);
       outline-offset: 2px;
     }
+    /* Haku osui kategorian johdantoesseeseen muttei yhteenkään sen ilmiöön:
+       kortteja ei ole näkyvissä, joten kategorialinkki on ainoa sisältö. */
+    .hub-kategoria.vain-kategoriaosuma .hub-kortit { display: none; }
+    .hub-kategoria.vain-kategoriaosuma .hub-kat-linkki {
+      border-color: var(--c-primary-mid);
+      background: #FBF5E0;
+    }
+    .hub-kategoria.vain-kategoriaosuma .hub-kat-label::after {
+      content: ' — osuma kategorian kuvauksessa';
+      font-weight: 500;
+      text-transform: none;
+      letter-spacing: 0.02em;
+      color: #A08A50;
+    }
 
     /* ── Tietoa-osio ── */
     .hub-tietoa {
@@ -2241,6 +2255,23 @@
     return (nimet[i] + ' ' + lisa).toLowerCase();
   });
 
+  // Kategoriatason hakuteksti: otsikko + kuvaus + kategoriasivun johdantoessee
+  // (search-index.js sisältää myös kategoriasivut). Tämän ansiosta kategoria
+  // pysyy näkyvissä 'Lue koko kategoria' -linkkeineen silloinkin, kun haku osuu
+  // esseeseen muttei yhteenkään yksittäiseen ilmiökorttiin.
+  const kategoriat = Array.from(document.querySelectorAll('.hub-kategoria'));
+  const katHaystackit = new Map(kategoriat.map(kat => {
+    const linkki = kat.querySelector('.hub-kat-linkki');
+    const otsikko = kat.querySelector('.hub-kat-label');
+    const kuvaus = kat.querySelector('.hub-kat-desc');
+    const osat = [
+      otsikko ? otsikko.textContent : '',
+      kuvaus ? kuvaus.textContent : '',
+      linkki ? (hakuData.get(linkki.getAttribute('href')) || '') : ''
+    ];
+    return [kat, osat.join(' ').replace(/\s+/g, ' ').toLowerCase()];
+  }));
+
   function nakyvat() {
     return kortit.filter(k => !k.classList.contains('piilotettu'));
   }
@@ -2271,12 +2302,19 @@
       const hay = kokoteksti ? haystackit[i] : nimet[i];
       k.classList.toggle('piilotettu', Boolean(q && !hay.includes(q)));
     });
-    document.querySelectorAll('.hub-kategoria').forEach(kat => {
+    let katOsumia = 0;
+    kategoriat.forEach(kat => {
       const n = kat.querySelectorAll('.hub-kortti:not(.piilotettu)').length;
-      kat.style.display = n === 0 ? 'none' : '';
+      // Kategoriaosumat vain kokotekstihaussa, samasta syystä kuin korteilla:
+      // 1–2 merkin kyselyt osuisivat lähes joka kategoriaan.
+      const katOsuu = Boolean(q) && kokoteksti &&
+        (katHaystackit.get(kat) || '').includes(q);
+      if (n === 0 && katOsuu) katOsumia++;
+      kat.classList.toggle('vain-kategoriaosuma', n === 0 && katOsuu);
+      kat.style.display = (n === 0 && !katOsuu) ? 'none' : '';
     });
     const n = nakyvat();
-    tyhja.style.display = n.length === 0 ? 'block' : 'none';
+    tyhja.style.display = (n.length === 0 && katOsumia === 0) ? 'block' : 'none';
     if (aktivIdx >= 0) kortit[aktivIdx].classList.remove('aktiv');
     aktivIdx = -1;
   });
