@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css?v=20260721">
   
   
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js" defer></script>
   <style>
 
     .mermaid svg text { font-size: 12px !important; }
@@ -671,7 +671,12 @@
       transition: opacity 0.3s ease 0.15s;
     }
     .random-siirtyma-overlay.nakyva .random-siirtyma-teksti { opacity: 1; }
-  </style>
+  
+.infolaatikko h2.laatikko-otsikko, .huomiolaatikko h2.laatikko-otsikko {
+  display: inline; font: inherit; font-weight: 700; color: inherit;
+  margin: 0; padding: 0; letter-spacing: inherit;
+}
+</style>
 
   <!-- SEO -->
   <meta name="description" content="Negatiivinen korkokierre: velka kasvaa nopeammin kuin maksukyky. Selitämme lukujen avulla, miten kierre syntyy ja miten suojaudut siltä.">
@@ -822,10 +827,10 @@
 </tbody>
 </table>
 <div class="huomiolaatikko">
-<strong>Kuukausierän harha:</strong> Kuluttajaluoton myyntiargumentti on aina kuukausierä — ei kokonaiskustannus. 100 000 € luotto 20 %:n korolla ja 10 vuoden maksuajalla maksaa kuussa noin 1 940 €, mutta yhteensä 232 000 € — eli 132 000 € pelkkää korkoa. Pitkittämällä maksuaikaa 20 vuoteen kuukausierä laskee 1 670 €:oon, mutta kokonaishinta nousee 400 000 €:oon. <strong>Pidempi maksuaika on myyjän etu, ei ostajan.</strong>
+<h2 class="laatikko-otsikko">Kuukausierän harha:</h2> Kuluttajaluoton myyntiargumentti on aina kuukausierä — ei kokonaiskustannus. 100 000 € luotto 20 %:n korolla ja 10 vuoden maksuajalla maksaa kuussa noin 1 940 €, mutta yhteensä 232 000 € — eli 132 000 € pelkkää korkoa. Pitkittämällä maksuaikaa 20 vuoteen kuukausierä laskee 1 670 €:oon, mutta kokonaishinta nousee 400 000 €:oon. <strong>Pidempi maksuaika on myyjän etu, ei ostajan.</strong>
 </div>
 <div class="infolaatikko">
-<strong>Tyypilliset korkotasot Suomessa:</strong>
+<h2 class="laatikko-otsikko">Tyypilliset korkotasot Suomessa:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Asuntolaina:</strong> 3–5 % — matalin luokka, pitkä maksuaika silti riskitekijä</li>
 <li><strong>Autolaina / henkilöluotto:</strong> 7–15 % — markkinoidaan "kohtuullisena"</li>
@@ -837,7 +842,7 @@
 <strong>Minimisuorituksen loukku:</strong> Luottokorttiyhtiöt asettavat minimisuorituksen tahallisen pieneksi. Jos maksat vain minimisuorituksen 25 000 €:n luottokorttivelasta (20 % korko, min. 2 % saldosta / kk), velan maksaminen kokonaan kestää yli 30 vuotta ja kokonaishinta on yli 60 000 € — enemmän kuin alkuperäinen velka. Ks. <a href="korkoa-korolle.html">Korkoa korolle -efekti</a>: sama logiikka, vain suunta on väärä.
     </div>
 <div class="huomiolaatikko">
-<strong>Suojaudu kierteeltä:</strong> Maksa aina enemmän kuin minimilyhennys — jo pienikin ylitys lyhentää maksuaikaa vuosilla, koska se kohdistuu suoraan pääomaan. Katso aina kokonaiskustannus, älä kuukausierää: pyydä luotonantajalta todellinen vuosikorko ja koko takaisinmaksusumma kirjallisena ennen allekirjoitusta. Jos kalliita luottoja on useita, kilpailuta ja yhdistä ne yhdeksi halvemmaksi lainaksi — 30 %:n pikavipin vaihtaminen 10 %:n pankkilainaan on tuottoisin "sijoitus", jonka voi tehdä. Ja jos velat kasvavat maksukykyä nopeammin, hakeudu Talous- ja velkaneuvontaan (oikeusapu.fi) heti eikä vasta pakkoperinnässä — palvelu on maksuton, ja mitä aiemmin kierteeseen puututaan, sitä enemmän vaihtoehtoja on jäljellä.
+<h2 class="laatikko-otsikko">Suojaudu kierteeltä:</h2> Maksa aina enemmän kuin minimilyhennys — jo pienikin ylitys lyhentää maksuaikaa vuosilla, koska se kohdistuu suoraan pääomaan. Katso aina kokonaiskustannus, älä kuukausierää: pyydä luotonantajalta todellinen vuosikorko ja koko takaisinmaksusumma kirjallisena ennen allekirjoitusta. Jos kalliita luottoja on useita, kilpailuta ja yhdistä ne yhdeksi halvemmaksi lainaksi — 30 %:n pikavipin vaihtaminen 10 %:n pankkilainaan on tuottoisin "sijoitus", jonka voi tehdä. Ja jos velat kasvavat maksukykyä nopeammin, hakeudu Talous- ja velkaneuvontaan (oikeusapu.fi) heti eikä vasta pakkoperinnässä — palvelu on maksuton, ja mitä aiemmin kierteeseen puututaan, sitä enemmän vaihtoehtoja on jäljellä.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -908,6 +913,7 @@
   </nav>
 
   <script>
+document.addEventListener('DOMContentLoaded', function () {
 (function () {
 
 (function () {
@@ -1203,6 +1209,7 @@
 })();
 
 })();
+});
 </script>
 
   <script>

@@ -78,6 +78,7 @@ Miksi organisaatiot jumiutuvat: mittarit, rituaalit ja portinvartijat.
 - [Sivustakatsojan efekti](https://www.ilmiöt.fi/sivustakatsojan-efekti.html): Mitä enemmän todistajia, sitä epätodennäköisemmin kukaan auttaa — vastuu hajoaa joukkoon.
 - [Parkinsonin laki](https://www.ilmiöt.fi/parkinsonin-laki.html): Työ venyy täyttämään kaiken sille varatun ajan — ja hallinto kasvaa vaikka työ vähenisi.
 - [Peterin periaate](https://www.ilmiöt.fi/peterin-periaate.html): Hyvä työntekijä ylennetään huonoksi esimieheksi, koska ylennys palkitsee väärää osaamista.
+- [Pareto-periaate](https://www.ilmiöt.fi/pareto-periaate.html): Pieni osa syistä selittää suurimman osan seurauksista — 20 % panoksesta tuottaa usein 80 % tuloksesta.
 
 ### Projekti- ja ohjelmistokehitys
 
@@ -146,6 +147,8 @@ Miten suosittelualgoritmit, ansaintalogiikka ja huomiotalous muokkaavat käyttä
 - [Parasosiaalinen suhde](https://www.ilmiöt.fi/parasosiaalinen-suhde.html): Yksipuolinen tunneside mediahahmoon tuntuu ystävyydeltä — ja sillä voi myydä mitä vain.
 - [Kuollut internet -teoria](https://www.ilmiöt.fi/kuollut-internet.html): Väite, että valtaosa verkon sisällöstä on bottien tuottamaa — salaliittona väärin, metaforana osuva.
 - [Rage bait](https://www.ilmiöt.fi/rage-bait.html): Sisältö on suunniteltu suututtamaan — vihainen jako on algoritmille yhtä arvokas kuin tykkäys.
+- [1 %:n sääntö (90-9-1)](https://www.ilmiöt.fi/1-prosentin-saanto.html): 90 % lurkkii, 9 % osallistuu satunnaisesti ja 1 % tuottaa suurimman osan verkkoyhteisöjen sisällöstä.
+- [Äänekäs vähemmistö](https://www.ilmiöt.fi/aanekas-vahemmisto.html): Kärjekkäimmät kommentoijat näkyvät eniten, kun hiljainen enemmistö ei koskaan vastaa.
 
 ### Pesut ja maineenhallinta
 

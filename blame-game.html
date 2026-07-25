@@ -698,7 +698,12 @@
       transition: opacity 0.3s ease 0.15s;
     }
     .random-siirtyma-overlay.nakyva .random-siirtyma-teksti { opacity: 1; }
-  </style>
+  
+.infolaatikko h2.laatikko-otsikko, .huomiolaatikko h2.laatikko-otsikko {
+  display: inline; font: inherit; font-weight: 700; color: inherit;
+  margin: 0; padding: 0; letter-spacing: inherit;
+}
+</style>
 
   <!-- SEO -->
   <meta name="description" content="The Blame Game: syyllisen etsintä korvaa ongelman ratkaisun. Selitämme syyttelykierteen mekanismin ja miten katkaiset sen työyhteisössä.">
@@ -840,7 +845,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Syyttelyn kehä: juurisyy jää koskematta, sama virhe toistuu.</p>
 <div class="huomiolaatikko">
-<strong>Kehän kolme tasoa:</strong>
+<h2 class="laatikko-otsikko">Kehän kolme tasoa:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Yksilötaso:</strong> "Projektipäällikkö epäonnistui" — henkilö vaihdetaan, prosessi säilyy ennallaan.</li>
 <li><strong>Tiimitaso:</strong> Osastot syyttävät toisiaan — myynti syyttää tuotantoa, tuotanto syyttää myyntiä. Kukaan ei omista kokonaisuutta.</li>

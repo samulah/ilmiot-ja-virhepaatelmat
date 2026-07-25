@@ -698,7 +698,12 @@
       transition: opacity 0.3s ease 0.15s;
     }
     .random-siirtyma-overlay.nakyva .random-siirtyma-teksti { opacity: 1; }
-  </style>
+  
+.infolaatikko h2.laatikko-otsikko, .huomiolaatikko h2.laatikko-otsikko {
+  display: inline; font: inherit; font-weight: 700; color: inherit;
+  margin: 0; padding: 0; letter-spacing: inherit;
+}
+</style>
 
   <!-- SEO -->
   <meta name="description" content="Tekninen velka: oikotie nyt, korko myöhemmin. Selitämme miten velka kasautuu käytännössä ja miten velanmaksu rakennetaan osaksi arkea.">
@@ -848,7 +853,7 @@ flowchart TD
 <strong>Velka ei katoa itsestään:</strong> Teknistä velkaa ei poisteta huomioimalla se sprinttisuunnitelmassa kerran vuodessa. Se vaatii systemaattista "velanmaksua" — refaktorointia, dokumentointia ja testausta osana normaalia kehitystyötä, ei erillisenä projektina joka aina siirtyy seuraavaan kvarttaaliin.
     </div>
 <div class="huomiolaatikko">
-<strong>Vastakeinot — velanmaksu käytännössä:</strong> Sovi kiinteä velkabudjetti, esimerkiksi 15–20 % jokaisesta sprintistä tai työviikosta velan lyhentämiseen — ei "kun ehditään", vaan varattuna etukäteen kuten lainanlyhennys. Tee velka näkyväksi: kirjaa jokainen tietoinen oikotie backlogiin tai velkalokiin syntyhetkellä, sillä näkymätön velka ei koskaan pääse priorisointiin. Noudata partiosääntöä: jätä koodi aina hieman siistimmäksi kuin sen löysit — pieni jatkuva lyhennys voittaa suuren kertaremontin, joka ei koskaan toteudu. Ja kun uusi oikotie ehdotetaan, hinnoittele se ääneen: "säästämme nyt kaksi päivää ja maksamme myöhemmin enemmän — otetaanko laina?"
+<h2 class="laatikko-otsikko">Vastakeinot — velanmaksu käytännössä:</h2> Sovi kiinteä velkabudjetti, esimerkiksi 15–20 % jokaisesta sprintistä tai työviikosta velan lyhentämiseen — ei "kun ehditään", vaan varattuna etukäteen kuten lainanlyhennys. Tee velka näkyväksi: kirjaa jokainen tietoinen oikotie backlogiin tai velkalokiin syntyhetkellä, sillä näkymätön velka ei koskaan pääse priorisointiin. Noudata partiosääntöä: jätä koodi aina hieman siistimmäksi kuin sen löysit — pieni jatkuva lyhennys voittaa suuren kertaremontin, joka ei koskaan toteudu. Ja kun uusi oikotie ehdotetaan, hinnoittele se ääneen: "säästämme nyt kaksi päivää ja maksamme myöhemmin enemmän — otetaanko laina?"
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>

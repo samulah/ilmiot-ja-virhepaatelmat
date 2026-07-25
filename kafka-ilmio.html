@@ -698,7 +698,12 @@
       transition: opacity 0.3s ease 0.15s;
     }
     .random-siirtyma-overlay.nakyva .random-siirtyma-teksti { opacity: 1; }
-  </style>
+  
+.infolaatikko h2.laatikko-otsikko, .huomiolaatikko h2.laatikko-otsikko {
+  display: inline; font: inherit; font-weight: 700; color: inherit;
+  margin: 0; padding: 0; letter-spacing: inherit;
+}
+</style>
 
   <!-- SEO -->
   <meta name="description" content="Kafka-ilmiö: byrokratia, jossa sääntö estää säännön noudattamisen. Selitämme labyrintin logiikan, käytännön esimerkit ja miten pääset ulos.">
@@ -838,7 +843,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Kafka-kehä: jokainen vaatimus edellyttää jotain, jota ei voi saada ilman kyseistä vaatimusta.</p>
 <div class="huomiolaatikko">
-<strong>Konkreettisia esimerkkejä:</strong>
+<h2 class="laatikko-otsikko">Konkreettisia esimerkkejä:</h2>
 <ul style="margin:0.5em 0 0;">
 <li>Oleskelulupa edellyttää vakituista osoitetta — vakituinen osoite edellyttää oleskelulupaa.</li>
 <li>Pankkitili vaatii osoitetodistuksen — osoitetodistus vaatii pankkitilin.</li>

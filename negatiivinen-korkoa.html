@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css?v=20260721">
   
   
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js" defer></script>
   <style>
 
     .mermaid svg text { font-size: 12px !important; }
@@ -671,7 +671,12 @@
       transition: opacity 0.3s ease 0.15s;
     }
     .random-siirtyma-overlay.nakyva .random-siirtyma-teksti { opacity: 1; }
-  </style>
+  
+.infolaatikko h2.laatikko-otsikko, .huomiolaatikko h2.laatikko-otsikko {
+  display: inline; font: inherit; font-weight: 700; color: inherit;
+  margin: 0; padding: 0; letter-spacing: inherit;
+}
+</style>
 
   <!-- SEO -->
   <meta name="description" content="Negatiivinen korkoa korolle: pienet laiminlyönnit kertautuvat eksponentiaalisesti. Selitämme hajoamisen logiikan ja miten kierre katkaistaan ajoissa.">
@@ -809,10 +814,10 @@
 </div>
 <p class="kaavio-selitys">Vasemmalla: Ebbinghaus'n unohtamiskäyrä — ilman kertausta muisti romahtaa eksponentiaalisesti. Oikealla: 100 000 €:n velka kasvaa 619 000 €:oon ilman lyhennyksiä; 40 000 €/v riittää maksamaan sen pois neljässä vuodessa.</p>
 <div class="huomiolaatikko">
-<strong>Laiminlyönti ei ole neutraalia — se kumuloituu:</strong> Yksi ylilyöty ateria ei lihota. Yksi unohdettu treeni ei heikennä kuntoa. Mutta laiminlyönnin <em>tottumuksesta</em> tulee eksponentiaalinen: heikentynyt kunto vähentää motivaatiota liikkua, joka heikentää kuntoa lisää. Sama rakenne kuin velassa — vain hitaammin.
+<h2 class="laatikko-otsikko">Laiminlyönti ei ole neutraalia — se kumuloituu:</h2> Yksi ylilyöty ateria ei lihota. Yksi unohdettu treeni ei heikennä kuntoa. Mutta laiminlyönnin <em>tottumuksesta</em> tulee eksponentiaalinen: heikentynyt kunto vähentää motivaatiota liikkua, joka heikentää kuntoa lisää. Sama rakenne kuin velassa — vain hitaammin.
     </div>
 <div class="infolaatikko">
-<strong>Vastatoimet — positiivinen kierre käännetään käyttöön:</strong>
+<h2 class="laatikko-otsikko">Vastatoimet — positiivinen kierre käännetään käyttöön:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Hajautettu kertaus (spaced repetition):</strong> Ebbinghaus'n unohtamiskäyrä kumotaan toistamalla juuri ennen kuin muisti hajoaa — Anki, Duolingo ja vastaavat hyödyntävät tätä. 5 toistoa oikeaan aikaan korvaa 50 satunnaista toistoa.</li>
 <li><strong>Pääoman lyhentäminen ensin:</strong> Velan minimikorkomaksu pitää velkakirjan hengissä — pääoman lyhennys katkaisee eksponentiaalisen kasvupohjan.</li>
@@ -891,6 +896,7 @@
   </nav>
 
   <script>
+document.addEventListener('DOMContentLoaded', function () {
 (function () {
 
 (function () {
@@ -1186,6 +1192,7 @@
 })();
 
 })();
+});
 </script>
 
   <script>
