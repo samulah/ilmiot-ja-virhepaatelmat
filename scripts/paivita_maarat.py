@@ -46,7 +46,7 @@ def lue_kategoriat(html):
     kategoriat = []
     for m in re.finditer(
             r'<div class="hub-kategoria" id="([^"]+)">\s*'
-            r'<h2 class="hub-kat-label">([^<]+)<span class="hub-kat-count">(.*?)</span></h2>(.*?)\n</div>',
+            r'<h2 class="hub-kat-label">(?:<span class="hub-kat-nro">\d+</span>)?([^<]+)<span class="hub-kat-count">(.*?)</span></h2>(.*?)\n</div>',
             html, re.S):
         kat_id, label, _, runko = m.groups()
         slugit = re.findall(r'href="([a-z0-9-]+)\.html" class="hub-kortti"', runko)
@@ -61,7 +61,7 @@ def lue_kortit(html):
     kategoriat = []
     for m in re.finditer(
             r'<div class="hub-kategoria" id="[^"]+">\s*'
-            r'<h2 class="hub-kat-label">([^<]+)<span class="hub-kat-count">.*?</span></h2>\s*'
+            r'<h2 class="hub-kat-label">(?:<span class="hub-kat-nro">\d+</span>)?([^<]+)<span class="hub-kat-count">.*?</span></h2>\s*'
             r'<p class="hub-kat-desc">(.*?)</p>(.*?)\n</div>', html, re.S):
         label, kat_desc, runko = m.groups()
         kortit = re.findall(
@@ -131,7 +131,7 @@ def paivita_index(raportti):
         html = re.sub(pattern, uusi_nav, html)
 
         # hub-kat-count
-        pattern = (rf'(<h2 class="hub-kat-label">{re.escape(label)}'
+        pattern = (rf'(<h2 class="hub-kat-label">(?:<span class="hub-kat-nro">\d+</span>)?{re.escape(label)}'
                    rf'<span class="hub-kat-count">) · \d+ ilmiötä(</span>)')
         korvattu, n = re.subn(pattern, rf"\g<1> · {len(slugit)} ilmiötä\g<2>", html)
         assert n == 1, f"hub-kat-count ei löydy: {label}"
@@ -205,9 +205,19 @@ def paivita_llms(yhteensa, kortit, raportti):
     kat_kuvaukset = {m.group(1).strip(): m.group(2).strip() for m in
                      re.finditer(r"^### (.+)\n\n(.+?)\n", runko, re.M)}
 
+    # kategoriasivut, jos niitä on tehty (build_kategoriat.py) — label → slug
+    kat_sivut = {}
+    for kat_id, label, _ in lue_kategoriat((ROOT / "index.html").read_text(encoding="utf-8")):
+        slug = re.sub(r"-kategoria$", "", kat_id)
+        if (ROOT / f"kategoria-{slug}.html").exists():
+            kat_sivut[label] = slug
+
     ulos, lisatyt, erot = [], [], []
     for label, kat_desc, kortit_kat in kortit:
         ulos += [f"### {label}", "", kat_kuvaukset.get(label, kat_desc), ""]
+        if label in kat_sivut:
+            ulos += [f"Kategoriasivu: https://www.ilmiöt.fi/"
+                     f"kategoria-{kat_sivut[label]}.html", ""]
         for slug, nimi, kuvaus in kortit_kat:
             if slug in rivit:
                 ulos.append(rivit[slug])

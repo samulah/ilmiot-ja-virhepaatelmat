@@ -7,6 +7,78 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://www.ilmiöt.fi/kategoria-vallan-rakenteet.html</loc>
+    <lastmod>2026-07-25</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.ilmiöt.fi/kategoria-informaatio-ja-propaganda.html</loc>
+    <lastmod>2026-07-25</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.ilmiöt.fi/kategoria-psykologia-ja-kognitio.html</loc>
+    <lastmod>2026-07-25</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.ilmiöt.fi/kategoria-byrokratia-ja-organisaatio.html</loc>
+    <lastmod>2026-07-25</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.ilmiöt.fi/kategoria-projekti-ja-ohjelmistokehitys.html</loc>
+    <lastmod>2026-07-25</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.ilmiöt.fi/kategoria-kasvun-dynamiikka.html</loc>
+    <lastmod>2026-07-25</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.ilmiöt.fi/kategoria-huijaukset-ja-petokset.html</loc>
+    <lastmod>2026-07-25</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.ilmiöt.fi/kategoria-myyntikikat-ja-painostus.html</loc>
+    <lastmod>2026-07-25</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.ilmiöt.fi/kategoria-alustatalous-ja-algoritmit.html</loc>
+    <lastmod>2026-07-25</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.ilmiöt.fi/kategoria-pesut-ja-maineenhallinta.html</loc>
+    <lastmod>2026-07-25</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.ilmiöt.fi/kategoria-tyoelaman-ilmiot.html</loc>
+    <lastmod>2026-07-25</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.ilmiöt.fi/kategoria-tilastoilla-valehtelu.html</loc>
+    <lastmod>2026-07-25</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://www.ilmiöt.fi/paskuuttaminen.html</loc>
     <lastmod>2026-07-13</lastmod>
     <priority>0.8</priority>
@@ -45,12 +117,6 @@
   <url>
     <loc>https://www.ilmiöt.fi/hajota-hallitse.html</loc>
     <lastmod>2026-06-19</lastmod>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://www.ilmiöt.fi/tilastoilla-valehtelu.html</loc>
-    <lastmod>2026-07-12</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>

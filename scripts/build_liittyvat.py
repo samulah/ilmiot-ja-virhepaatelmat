@@ -26,6 +26,11 @@ HUB_CARD_RE = re.compile(
     r'<span class="hub-kuvaus">(.*?)</span>\s*'
     r'</span>', re.S)
 
+KAT_RE = re.compile(
+    r'<div class="hub-kategoria" id="([^"]+)">\s*'
+    r'<h2 class="hub-kat-label">(?:<span class="hub-kat-nro">\d+</span>)?([^<]+)<span class="hub-kat-count">.*?</span></h2>\s*'
+    r'<p class="hub-kat-desc">(.*?)</p>(.*?)\n</div>', re.S)
+
 ASIDE_RE = re.compile(
     r'(<aside class="liittyvat" aria-label="Liittyvät ilmiöt">)(.*?)(</aside>)', re.S)
 
@@ -33,7 +38,12 @@ LINK_RE = re.compile(r'<a href="([^"]+)"')
 
 
 def lue_ilmiot() -> dict:
-    """index.html → href → {numero, vari, nimi, kuvaus}"""
+    """index.html → href → {numero, vari, nimi, kuvaus}
+
+    Mukana ovat sekä ilmiösivut (numero) että kategoriasivut (numeron tilalla
+    ⊞). Kategoriakortti syntyy, kun ilmiösivulla on linkki muotoa
+    kategoria-<slug>.html — näin ilmiöltä on ylöspäin linkki kategoriaansa
+    ilman että liittyvat-lohkoon tarvitaan uutta rakennetta."""
     src = (ROOT / "index.html").read_text(encoding="utf-8")
     ilmiot = {}
     for href, vari, numero, nimi, kuvaus in HUB_CARD_RE.findall(src):
@@ -41,14 +51,26 @@ def lue_ilmiot() -> dict:
             "numero": int(numero), "vari": vari,
             "nimi": nimi.strip(), "kuvaus": kuvaus.strip(),
         }
-    assert len(ilmiot) == 109, f"index.html: odotettiin 109 korttia, löytyi {len(ilmiot)}"
+    assert ilmiot, "index.html: hub-kortteja ei löytynyt"
+
+    for kat_id, label, kuvaus, runko in KAT_RE.findall(src):
+        eka = HUB_CARD_RE.search(runko)
+        slug = re.sub(r"-kategoria$", "", kat_id)
+        ilmiot[f"kategoria-{slug}.html"] = {
+            "numero": None,
+            "vari": eka.group(2) if eka else "#8B6914",
+            "nimi": f"{label.strip()} — koko kategoria",
+            "kuvaus": re.sub(r"\s+", " ",
+                             re.sub(r"<[^>]+>", "", kuvaus)).strip().split(". ")[0] + ".",
+        }
     return ilmiot
 
 
 def kortti(href: str, tiedot: dict) -> str:
+    merkki = tiedot["numero"] if tiedot["numero"] is not None else "&#8862;"
     return (
         f'    <a href="{href}" class="liittyvat-kortti" style="--c:{tiedot["vari"]}">\n'
-        f'      <span class="liittyvat-numero">{tiedot["numero"]}</span>\n'
+        f'      <span class="liittyvat-numero">{merkki}</span>\n'
         f'      <span class="liittyvat-teksti">\n'
         f'        <span class="liittyvat-nimi">{tiedot["nimi"]}</span>\n'
         f'        <span class="liittyvat-kuvaus">{tiedot["kuvaus"]}</span>\n'
@@ -91,7 +113,7 @@ def main() -> None:
     if len(sys.argv) > 1:
         sivut = [ROOT / a for a in sys.argv[1:]]
     else:
-        sivut = sorted(ROOT / h for h in ilmiot)
+        sivut = sorted(ROOT / h for h, t in ilmiot.items() if t["numero"] is not None)
     muutettu = 0
     for sivu in sivut:
         assert sivu.exists(), f"{sivu} puuttuu"
