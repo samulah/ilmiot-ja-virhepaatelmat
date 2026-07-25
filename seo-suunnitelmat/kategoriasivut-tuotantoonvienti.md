@@ -1,7 +1,12 @@
 # Tuotantoonvienti: kategoriasivut + ilmiön #8 poisto
 
 **Päiväys:** 2026-07-25
-**Tila:** valmis ajettavaksi — ei vielä ajettu
+**Tila:** VIETY LIVENÄ 25.7.2026. Luvut 4–6 ajettu (haara `kategoriasivut`), ja luvun 7
+livetarkistukset menevät läpi: 12/12 kategoriasivua vastaa 200:lla,
+`tilastoilla-valehtelu.html` → 301 `kategoria-tilastoilla-valehtelu.html`, ja
+`index.html` / `sitemap.xml` / `llms.txt` ovat md5-identtisiä haaran kanssa.
+Myös `.htaccess`in käsin viety 301 on paikallaan.
+**Jäljellä:** vain luvun 9 mittaus (+48 h, +2 vk, +4–8 vk).
 **Liittyy:** `kategoriasivut-2026-07-25.md` (suunnittelu ja perustelut)
 **Kohde:** https://www.ilmiöt.fi/ (punycode `www.xn--ilmit-mua.fi`)
 

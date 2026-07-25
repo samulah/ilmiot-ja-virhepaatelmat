@@ -839,7 +839,7 @@ flowchart TD
 <p class="kaavio-selitys">Conwayn laki: muuta ensin organisaatio, jos haluat muuttaa arkkitehtuuria.</p>
 <p>Laki ei ole pessimistinen — se on käytännöllinen. Amazon sovelsi sitä tietoisesti "kaksi pizzaa" -tiimisäännöllään: tiimin pitää mahtua kahteen pizzaan, koska se pakottaa pienet autonomiset yksiköt joiden rajapinnat ovat selkeitä. Tulos näkyy AWS:n arkkitehtuurissa.</p>
 <div class="vaaralatikko">
-<strong>Data-arkkitehtuurissa:</strong> Jos tietovarastoarkkitehtuuri heijastelee organisaatiosiiloja — myynti, markkinointi, tuotanto kukin omina datajärjestelminään ilman yhteistä mallia — syy on lähes aina organisaatiorakenteessa, ei teknisessä päätöksessä.
+<strong>Data-arkkitehtuurissa:</strong> Jos tietovaraston arkkitehtuuri heijastelee organisaatiosiiloja — myynti, markkinointi, tuotanto kukin omina datajärjestelminään ilman yhteistä mallia — syy on lähes aina organisaatiorakenteessa, ei teknisessä päätöksessä.
     </div>
 <div class="huomiolaatikko">
 <h2 class="laatikko-otsikko">Vastakeino — käänteinen Conwayn manööveri:</h2> Koska laki toimii joka tapauksessa, käytä sitä tietoisesti: suunnittele ensin haluttu arkkitehtuuri ja organisoi tiimit sen mukaan — ei toisinpäin. Käytännössä: piirrä tavoitearkkitehtuurin moduulit ja rajapinnat, anna kullekin moduulille yksi omistava tiimi ja varmista, että tiimien väliset kommunikaatiokanavat vastaavat haluttuja rajapintoja. Jos haluat mikropalveluarkkitehtuurin mutta tiimit ovat silossaan, saat vain hajautetun monoliitin — kaikki mikropalvelujen haitat ilman hyötyjä. Varoitusmerkki arjessa: jos jokainen arkkitehtuurimuutos vaatii kolmen tiimin yhteiskokouksen, organisaatiokaavio on jo arkkitehtuurisi.
