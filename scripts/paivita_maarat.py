@@ -10,7 +10,9 @@ Päivittää:
                sivujen H1:istä, FAQ-teksti), hub-header, hub-intro,
                hub-katnav-lukumäärät, hub-kat-count-lukumäärät, näkyvä FAQ
   tietoa.html: "selittää N", "jaettu X teemaan", "numeroitu yhdestä N:een"
-  llms.txt   : "selittää N yhteiskunnallista ilmiötä"
+  llms.txt   : "selittää N yhteiskunnallista ilmiötä" SEKÄ ilmiölistan
+               jäsenyys/järjestys (puuttuvat lisätään, poistuneet karsitaan;
+               olemassa olevien rivien tekstiä ei ylikirjoiteta)
 
 Idempotentti; tulostaa raportin ja kaatuu assertiin jos rakenne ei täsmää
 (esim. kortin sivutiedosto puuttuu).
@@ -49,6 +51,29 @@ def lue_kategoriat(html):
         kat_id, label, _, runko = m.groups()
         slugit = re.findall(r'href="([a-z0-9-]+)\.html" class="hub-kortti"', runko)
         kategoriat.append((kat_id, label, slugit))
+    return kategoriat
+
+
+def lue_kortit(html):
+    """Kuten lue_kategoriat, mutta mukana kategorian kuvaus ja korttien
+    nimi + kuvaus: [(label, kat_desc, [(slug, nimi, kuvaus), ...]), ...].
+    Käytetään llms.txt:n entry-listan synkronointiin."""
+    kategoriat = []
+    for m in re.finditer(
+            r'<div class="hub-kategoria" id="[^"]+">\s*'
+            r'<h2 class="hub-kat-label">([^<]+)<span class="hub-kat-count">.*?</span></h2>\s*'
+            r'<p class="hub-kat-desc">(.*?)</p>(.*?)\n</div>', html, re.S):
+        label, kat_desc, runko = m.groups()
+        kortit = re.findall(
+            r'<a href="([a-z0-9-]+)\.html" class="hub-kortti"[^>]*>\s*'
+            r'<span class="hub-numero">\d+</span>\s*<span class="hub-teksti">\s*'
+            r'<span class="hub-nimi">(.*?)</span>\s*'
+            r'<span class="hub-kuvaus">(.*?)</span>', runko, re.S)
+        kat_desc = re.sub(r"<[^>]+>", "", kat_desc).strip()
+        ekavirke = re.match(r"(.*?[.!?])(\s|$)", kat_desc, re.S)
+        kategoriat.append((label.strip(),
+                           (ekavirke.group(1) if ekavirke else kat_desc),
+                           [(s, n.strip(), k.strip()) for s, n, k in kortit]))
     return kategoriat
 
 
@@ -150,13 +175,70 @@ def paivita_tietoa(yhteensa, n_kat, raportti):
     p.write_text(html, encoding="utf-8")
 
 
-def paivita_llms(yhteensa, raportti):
+LLMS_OTSIKKO = "## Kategoriat ja ilmiöt"
+
+
+def paivita_llms(yhteensa, kortit, raportti):
+    """Päivittää llms.txt:n määrän JA synkronoi ilmiölistan index.html:n
+    kortteihin.
+
+    Synkronoi vain JÄSENYYDEN ja JÄRJESTYKSEN: puuttuvat ilmiöt lisätään
+    kortin nimellä + kuvauksella, poistuneet karsitaan, järjestys otetaan
+    korteista. Jo olemassa olevien rivien TEKSTIÄ ei kosketa — llms.txt:ssä
+    on tarkoituksellisia käsin hiottuja eroja kortteihin nähden (esim.
+    "Argumenttitulva (Gish Gallop)", "Lowball-hinnoittelu"), ja ne saavat
+    jäädä. Eroavaisuudet raportoidaan, jotta ne voi halutessaan yhtenäistää.
+    """
     p = ROOT / "llms.txt"
     txt = p.read_text(encoding="utf-8")
-    uusi = re.sub(r"selittää \d+ yhteiskunnallista ilmiötä",
-                  f"selittää {yhteensa} yhteiskunnallista ilmiötä", txt)
-    if uusi != txt:
-        raportti.append("llms.txt: määrä päivitetty")
+
+    txt = re.sub(r"selittää \d+ yhteiskunnallista ilmiötä",
+                 f"selittää {yhteensa} yhteiskunnallista ilmiötä", txt)
+
+    assert LLMS_OTSIKKO in txt, f"llms.txt: '{LLMS_OTSIKKO}' puuttuu"
+    ylatunniste, _, runko = txt.partition(LLMS_OTSIKKO)
+
+    # nykyiset rivit slugeittain + kategoriakuvaukset otsikoittain
+    rivit = {m.group(1): m.group(0) for m in
+             re.finditer(r"^- \[[^\]]*\]\(https://www\.ilmiöt\.fi/"
+                         r"([a-z0-9-]+)\.html\):.*$", runko, re.M)}
+    kat_kuvaukset = {m.group(1).strip(): m.group(2).strip() for m in
+                     re.finditer(r"^### (.+)\n\n(.+?)\n", runko, re.M)}
+
+    ulos, lisatyt, erot = [], [], []
+    for label, kat_desc, kortit_kat in kortit:
+        ulos += [f"### {label}", "", kat_kuvaukset.get(label, kat_desc), ""]
+        for slug, nimi, kuvaus in kortit_kat:
+            if slug in rivit:
+                ulos.append(rivit[slug])
+                oma = f"- [{nimi}](https://www.ilmiöt.fi/{slug}.html): {kuvaus}"
+                if rivit[slug] != oma:
+                    erot.append(slug)
+            else:
+                ulos.append(f"- [{nimi}](https://www.ilmiöt.fi/{slug}.html): {kuvaus}")
+                lisatyt.append(slug)
+        ulos.append("")
+
+    kortti_slugit = {s for _, _, ks in kortit for s, _, _ in ks}
+    poistetut = sorted(set(rivit) - kortti_slugit)
+
+    uusi = ylatunniste + LLMS_OTSIKKO + "\n\n" + "\n".join(ulos).rstrip("\n") + "\n"
+    if uusi != p.read_text(encoding="utf-8"):
+        if lisatyt:
+            raportti.append(f"llms.txt: lisätty {len(lisatyt)} ilmiötä "
+                            f"({', '.join(lisatyt)})")
+        if poistetut:
+            raportti.append(f"llms.txt: poistettu {len(poistetut)} ilmiötä "
+                            f"({', '.join(poistetut)})")
+        if not lisatyt and not poistetut:
+            raportti.append("llms.txt: määrä/järjestys päivitetty")
+    if erot:
+        raportti.append(f"llms.txt: {len(erot)} riviä poikkeaa kortin tekstistä "
+                        f"(säilytetty ennallaan): {', '.join(erot)}")
+
+    # sanity: yhtä monta riviä kuin kortteja
+    n_rivit = len(re.findall(r"^- \[", uusi, re.M))
+    assert n_rivit == yhteensa, f"llms.txt: {n_rivit} riviä, odotettiin {yhteensa}"
     p.write_text(uusi, encoding="utf-8")
 
 
@@ -164,7 +246,9 @@ if __name__ == "__main__":
     raportti = []
     yhteensa, n_kat = paivita_index(raportti)
     paivita_tietoa(yhteensa, n_kat, raportti)
-    paivita_llms(yhteensa, raportti)
+    paivita_llms(yhteensa,
+                 lue_kortit((ROOT / "index.html").read_text(encoding="utf-8")),
+                 raportti)
     print(f"Laskettu korteista: {yhteensa} ilmiötä, {n_kat} kategoriaa")
     if raportti:
         for r in raportti:
