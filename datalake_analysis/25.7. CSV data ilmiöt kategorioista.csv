@@ -1,0 +1,445 @@
+﻿sivusto_ryhma,kategoria,polku,haku_lauseke,pvm_avain,distinctcount visitor key,käydyt sivut,sivujen määrä,kävijää per sivulataus,Sum of klikit,Average of klikkiprosentti,Average of keskisijainti,Sum of gsc naytot,Sum of naytot,GSC näyttö vs näyttö suhde
+ilmiöt.fi,,/,ilmiöitä,20260715,255,2,5,0.7348703170028819,0,0.00%,11,1,347,347
+ilmiöt.fi,,/,ilmiöitä,20260717,255,2,5,0.7348703170028819,0,0.00%,9,1,347,347
+ilmiöt.fi,,/,sammioita,20260715,255,2,5,0.7348703170028819,0,0.00%,25,1,347,347
+ilmiöt.fi,Psykologia ja kognitio,/darvo.html,darvo,20260702,29,2,2,0.725,0,0.00%,26,1,40,40
+ilmiöt.fi,Psykologia ja kognitio,/darvo.html,darvo,20260704,29,2,2,0.725,0,0.00%,5,1,40,40
+ilmiöt.fi,Psykologia ja kognitio,/darvo.html,darvo suomeksi,20260702,29,2,2,0.725,0,0.00%,8,1,40,40
+ilmiöt.fi,Psykologia ja kognitio,/darvo.html,darvo suomeksi,20260711,29,2,2,0.725,0,0.00%,1,1,40,40
+ilmiöt.fi,Psykologia ja kognitio,/darvo.html,darvo suomeksi,20260713,29,2,2,0.725,0,0.00%,9,1,40,40
+ilmiöt.fi,Psykologia ja kognitio,/darvo.html,darvo suomeksi,20260714,29,2,2,0.725,0,0.00%,8,1,40,40
+ilmiöt.fi,Psykologia ja kognitio,/darvo.html,darvo suomeksi,20260716,29,2,2,0.725,0,0.00%,8,1,40,40
+ilmiöt.fi,Psykologia ja kognitio,/darvo.html,darvo taktiikka,20260706,29,2,2,0.725,0,0.00%,6,1,40,40
+ilmiöt.fi,Psykologia ja kognitio,/darvo.html,darvo taktiikka,20260708,29,2,2,0.725,0,0.00%,5,1,40,40
+ilmiöt.fi,Psykologia ja kognitio,/darvo.html,darvo taktiikka,20260720,29,2,2,0.725,0,0.00%,3,1,40,40
+ilmiöt.fi,Psykologia ja kognitio,/darvo.html,darvo tekniikka,20260709,29,2,2,0.725,0,0.00%,20,1,40,40
+ilmiöt.fi,Alustatalous ja algoritmit,/ai-slop.html,ai slop suomeksi,20260709,37,2,2,0.9487179487179487,0,0.00%,7,1,39,39
+ilmiöt.fi,Alustatalous ja algoritmit,/ai-slop.html,ai slop suomeksi,20260712,37,2,2,0.9487179487179487,0,0.00%,7,1,39,39
+ilmiöt.fi,Alustatalous ja algoritmit,/ai-slop.html,ai slop suomeksi,20260713,37,2,2,0.9487179487179487,0,0.00%,7,1,39,39
+ilmiöt.fi,Alustatalous ja algoritmit,/ai-slop.html,ai slop suomeksi,20260718,37,2,2,0.9487179487179487,0,0.00%,9,1,39,39
+ilmiöt.fi,Alustatalous ja algoritmit,/ai-slop.html,slop,20260721,37,2,2,0.9487179487179487,0,0.00%,5,1,39,39
+ilmiöt.fi,Alustatalous ja algoritmit,/ai-slop.html,slop suomeksi,20260708,37,2,2,0.9487179487179487,0,0.00%,12,1,39,39
+ilmiöt.fi,Alustatalous ja algoritmit,/ai-slop.html,slop suomeksi,20260712,37,2,2,0.9487179487179487,0,0.00%,12,1,39,39
+ilmiöt.fi,Alustatalous ja algoritmit,/ai-slop.html,slop suomeksi,20260722,37,2,2,0.9487179487179487,0,0.00%,12,1,39,39
+ilmiöt.fi,Alustatalous ja algoritmit,/ai-slop.html,slop suomeksi,20260724,37,2,2,0.9487179487179487,0,0.00%,9,1,39,39
+ilmiöt.fi,Alustatalous ja algoritmit,/rage-bait.html,rage bait suomeksi,20260717,19,2,2,0.8636363636363636,0,0.00%,10,1,22,22
+ilmiöt.fi,Alustatalous ja algoritmit,/rage-bait.html,rage bait suomeksi,20260721,19,2,2,0.8636363636363636,0,0.00%,11,1,22,22
+ilmiöt.fi,Alustatalous ja algoritmit,/rage-bait.html,rage baita,20260722,19,2,2,0.8636363636363636,0,0.00%,11,1,22,22
+ilmiöt.fi,Alustatalous ja algoritmit,/rage-bait.html,ragebait,20260713,19,2,2,0.8636363636363636,0,0.00%,16,1,22,22
+ilmiöt.fi,Alustatalous ja algoritmit,/rage-bait.html,ragebait suomeksi,20260711,19,2,2,0.8636363636363636,0,0.00%,9,1,22,22
+ilmiöt.fi,Alustatalous ja algoritmit,/rage-bait.html,ragebait suomeksi,20260715,19,2,2,0.8636363636363636,0,0.00%,13,1,22,22
+ilmiöt.fi,Alustatalous ja algoritmit,/rage-bait.html,ragebait tarkoittaa,20260718,19,2,2,0.8636363636363636,0,0.00%,15,1,22,22
+ilmiöt.fi,Alustatalous ja algoritmit,/rage-bait.html,raivo,20260710,19,2,2,0.8636363636363636,0,0.00%,5,1,22,22
+ilmiöt.fi,Psykologia ja kognitio,/darvo.html,darvo suomeksi,20260703,29,2,2,0.725,0,0.00%,8,2,40,20
+ilmiöt.fi,Psykologia ja kognitio,/darvo.html,darvo suomeksi,20260709,29,2,2,0.725,0,0.00%,4.5,2,40,20
+ilmiöt.fi,Psykologia ja kognitio,/darvo.html,darvo suomeksi,20260715,29,2,2,0.725,0,0.00%,1,2,40,20
+ilmiöt.fi,Psykologia ja kognitio,/darvo.html,darvo suomeksi,20260718,29,2,2,0.725,0,0.00%,1,2,40,20
+ilmiöt.fi,Psykologia ja kognitio,/darvo.html,darvo suomeksi,20260719,29,2,2,0.725,0,0.00%,4.5,2,40,20
+ilmiöt.fi,Psykologia ja kognitio,/darvo.html,darvo suomeksi,20260722,29,2,2,0.725,0,0.00%,5,2,40,20
+ilmiöt.fi,Psykologia ja kognitio,/darvo.html,darvo taktiikka,20260705,29,2,2,0.725,0,0.00%,3,2,40,20
+ilmiöt.fi,Psykologia ja kognitio,/darvo.html,darvo taktiikka,20260710,29,2,2,0.725,0,0.00%,5.5,2,40,20
+ilmiöt.fi,Psykologia ja kognitio,/darvo.html,darvo taktiikka,20260711,29,2,2,0.725,0,0.00%,3,2,40,20
+ilmiöt.fi,Psykologia ja kognitio,/darvo.html,darvo taktiikka,20260716,29,2,2,0.725,0,0.00%,2.5,2,40,20
+ilmiöt.fi,Psykologia ja kognitio,/darvo.html,darvo taktiikka,20260717,29,2,2,0.725,1,50.00%,2.5,2,40,20
+ilmiöt.fi,Psykologia ja kognitio,/darvo.html,darvo taktiikka,20260718,29,2,2,0.725,0,0.00%,4,2,40,20
+ilmiöt.fi,Psykologia ja kognitio,/darvo.html,darvo taktiikka,20260719,29,2,2,0.725,0,0.00%,2,2,40,20
+ilmiöt.fi,Psykologia ja kognitio,/darvo.html,darvo taktiikka,20260722,29,2,2,0.725,0,0.00%,4.5,2,40,20
+ilmiöt.fi,Psykologia ja kognitio,/darvo.html,darvo taktiikka,20260724,29,2,2,0.725,0,0.00%,3.5,2,40,20
+ilmiöt.fi,Alustatalous ja algoritmit,/ai-slop.html,ai slop suomeksi,20260710,37,2,2,0.9487179487179487,0,0.00%,8.5,2,39,19.5
+ilmiöt.fi,Alustatalous ja algoritmit,/ai-slop.html,ai slop suomeksi,20260714,37,2,2,0.9487179487179487,0,0.00%,9,2,39,19.5
+ilmiöt.fi,Alustatalous ja algoritmit,/ai-slop.html,ai slop suomeksi,20260719,37,2,2,0.9487179487179487,0,0.00%,7,2,39,19.5
+ilmiöt.fi,Alustatalous ja algoritmit,/ai-slop.html,ai slop suomeksi,20260724,37,2,2,0.9487179487179487,1,50.00%,7.5,2,39,19.5
+ilmiöt.fi,Alustatalous ja algoritmit,/ai-slop.html,slop suomeksi,20260710,37,2,2,0.9487179487179487,0,0.00%,12.5,2,39,19.5
+ilmiöt.fi,Alustatalous ja algoritmit,/ai-slop.html,slop suomeksi,20260711,37,2,2,0.9487179487179487,0,0.00%,13,2,39,19.5
+ilmiöt.fi,Alustatalous ja algoritmit,/ai-slop.html,slop suomeksi,20260713,37,2,2,0.9487179487179487,0,0.00%,12,2,39,19.5
+ilmiöt.fi,Alustatalous ja algoritmit,/ai-slop.html,slop suomeksi,20260716,37,2,2,0.9487179487179487,0,0.00%,12,2,39,19.5
+ilmiöt.fi,Alustatalous ja algoritmit,/ai-slop.html,slop suomeksi,20260719,37,2,2,0.9487179487179487,0,0.00%,9,2,39,19.5
+ilmiöt.fi,Alustatalous ja algoritmit,/ai-slop.html,slop suomeksi,20260720,37,2,2,0.9487179487179487,0,0.00%,12,2,39,19.5
+ilmiöt.fi,Pesut ja maineenhallinta,/viherpesu.html,mitä on viherpesu,20260715,15,2,2,1,0,0.00%,62,1,15,15
+ilmiöt.fi,Pesut ja maineenhallinta,/viherpesu.html,viherpesu,20260709,15,2,2,1,0,0.00%,52,1,15,15
+ilmiöt.fi,Pesut ja maineenhallinta,/viherpesu.html,viherpesu,20260710,15,2,2,1,0,0.00%,60,1,15,15
+ilmiöt.fi,Pesut ja maineenhallinta,/viherpesu.html,viherpesu,20260711,15,2,2,1,0,0.00%,56,1,15,15
+ilmiöt.fi,Pesut ja maineenhallinta,/viherpesu.html,viherpesu,20260713,15,2,2,1,0,0.00%,59,1,15,15
+ilmiöt.fi,Pesut ja maineenhallinta,/viherpesu.html,viherpesu,20260714,15,2,2,1,0,0.00%,62,1,15,15
+ilmiöt.fi,Pesut ja maineenhallinta,/viherpesu.html,viherpesu,20260722,15,2,2,1,0,0.00%,66,1,15,15
+ilmiöt.fi,Pesut ja maineenhallinta,/viherpesu.html,viherpesu,20260723,15,2,2,1,0,0.00%,60,1,15,15
+ilmiöt.fi,Psykologia ja kognitio,/halo-efekti.html,halo efekti,20260705,13,2,2,0.9285714285714286,0,0.00%,12,1,14,14
+ilmiöt.fi,Psykologia ja kognitio,/halo-efekti.html,halo efekti,20260706,13,2,2,0.9285714285714286,0,0.00%,11,1,14,14
+ilmiöt.fi,Psykologia ja kognitio,/halo-efekti.html,halo efekti,20260710,13,2,2,0.9285714285714286,0,0.00%,13,1,14,14
+ilmiöt.fi,Psykologia ja kognitio,/halo-efekti.html,halo efekti,20260711,13,2,2,0.9285714285714286,0,0.00%,6,1,14,14
+ilmiöt.fi,Psykologia ja kognitio,/halo-efekti.html,halo efekti,20260721,13,2,2,0.9285714285714286,0,0.00%,13,1,14,14
+ilmiöt.fi,Psykologia ja kognitio,/halo-efekti.html,halo efekti,20260722,13,2,2,0.9285714285714286,0,0.00%,13,1,14,14
+ilmiöt.fi,Psykologia ja kognitio,/halo-efekti.html,halo effect suomeksi,20260717,13,2,2,0.9285714285714286,0,0.00%,12,1,14,14
+ilmiöt.fi,Psykologia ja kognitio,/halo-efekti.html,halo effekten,20260719,13,2,2,0.9285714285714286,0,0.00%,69,1,14,14
+ilmiöt.fi,Psykologia ja kognitio,/halo-efekti.html,halo effekti,20260708,13,2,2,0.9285714285714286,0,0.00%,10,1,14,14
+ilmiöt.fi,Psykologia ja kognitio,/halo-efekti.html,halo effekti,20260711,13,2,2,0.9285714285714286,0,0.00%,12,1,14,14
+ilmiöt.fi,Psykologia ja kognitio,/halo-efekti.html,haloefekti,20260704,13,2,2,0.9285714285714286,0,0.00%,10,1,14,14
+ilmiöt.fi,Psykologia ja kognitio,/halo-efekti.html,haloefekti,20260706,13,2,2,0.9285714285714286,0,0.00%,11,1,14,14
+ilmiöt.fi,Psykologia ja kognitio,/halo-efekti.html,haloefekti,20260712,13,2,2,0.9285714285714286,0,0.00%,20,1,14,14
+ilmiöt.fi,Psykologia ja kognitio,/halo-efekti.html,halo-effekten,20260719,13,2,2,0.9285714285714286,0,0.00%,63,1,14,14
+ilmiöt.fi,Psykologia ja kognitio,/darvo.html,darvo suomeksi,20260710,29,2,2,0.725,1,33.33%,5.666666666666667,3,40,13.333333333333334
+ilmiöt.fi,Psykologia ja kognitio,/darvo.html,darvo taktiikka,20260713,29,2,2,0.725,0,0.00%,2,3,40,13.333333333333334
+ilmiöt.fi,Alustatalous ja algoritmit,/ai-slop.html,ai slop suomeksi,20260711,37,2,2,0.9487179487179487,0,0.00%,7.5,3,39,13
+ilmiöt.fi,Alustatalous ja algoritmit,/ai-slop.html,ai slop suomeksi,20260717,37,2,2,0.9487179487179487,0,0.00%,8,3,39,13
+ilmiöt.fi,Alustatalous ja algoritmit,/ai-slop.html,slop suomeksi,20260715,37,2,2,0.9487179487179487,0,0.00%,11.75,3,39,13
+ilmiöt.fi,Alustatalous ja algoritmit,/ai-slop.html,slop suomeksi,20260718,37,2,2,0.9487179487179487,0,0.00%,8.666666666666666,3,39,13
+ilmiöt.fi,Alustatalous ja algoritmit,/ai-slop.html,slop suomeksi,20260721,37,2,2,0.9487179487179487,0,0.00%,12.5,3,39,13
+ilmiöt.fi,Informaatio ja propaganda,/whataboutismi.html,whataboutismi,20260717,10,2,2,0.7692307692307693,0,0.00%,10,1,13,13
+ilmiöt.fi,Informaatio ja propaganda,/whataboutismi.html,whataboutismi suomeksi,20260718,10,2,2,0.7692307692307693,0,0.00%,9,1,13,13
+ilmiöt.fi,Informaatio ja propaganda,/whataboutismi.html,whataboutismi tarkoittaa,20260714,10,2,2,0.7692307692307693,0,0.00%,11,1,13,13
+ilmiöt.fi,Alustatalous ja algoritmit,/kuollut-internet.html,dead internet teoria,20260723,10,2,2,0.8333333333333334,0,0.00%,18,1,12,12
+ilmiöt.fi,Alustatalous ja algoritmit,/kuollut-internet.html,kuollut internet teoria,20260713,10,2,2,0.8333333333333334,0,0.00%,11,1,12,12
+ilmiöt.fi,Psykologia ja kognitio,/dunning-kruger.html,dunning,20260715,12,2,2,1,0,0.00%,23,1,12,12
+ilmiöt.fi,Psykologia ja kognitio,/dunning-kruger.html,dunning krueger,20260716,12,2,2,1,0,0.00%,1,1,12,12
+ilmiöt.fi,Psykologia ja kognitio,/dunning-kruger.html,dunning kruger,20260718,12,2,2,1,0,0.00%,20,1,12,12
+ilmiöt.fi,Psykologia ja kognitio,/dunning-kruger.html,dunning kruger efekti,20260715,12,2,2,1,0,0.00%,22,1,12,12
+ilmiöt.fi,Psykologia ja kognitio,/dunning-kruger.html,dunning kruger ilmiö,20260713,12,2,2,1,0,0.00%,10,1,12,12
+ilmiöt.fi,Psykologia ja kognitio,/dunning-kruger.html,dunning kruger ilmiö,20260715,12,2,2,1,0,0.00%,12,1,12,12
+ilmiöt.fi,Psykologia ja kognitio,/dunning-kruger.html,dunning kruger ilmiö,20260716,12,2,2,1,0,0.00%,12,1,12,12
+ilmiöt.fi,Psykologia ja kognitio,/dunning-kruger.html,dunning-kruger,20260716,12,2,2,1,0,0.00%,1,1,12,12
+ilmiöt.fi,Psykologia ja kognitio,/jarjestelman-puolustelu.html,järjestelmällinen,20260715,9,2,2,0.75,0,0.00%,67,1,12,12
+ilmiöt.fi,Psykologia ja kognitio,/jarjestelman-puolustelu.html,sulautettu järjestelmä,20260713,9,2,2,0.75,0,0.00%,90,1,12,12
+ilmiöt.fi,Psykologia ja kognitio,/jarjestelman-puolustelu.html,sulautettu järjestelmä,20260717,9,2,2,0.75,0,0.00%,87,1,12,12
+ilmiöt.fi,Alustatalous ja algoritmit,/rage-bait.html,rage bait suomeksi,20260710,19,2,2,0.8636363636363636,0,0.00%,10.5,2,22,11
+ilmiöt.fi,Alustatalous ja algoritmit,/rage-bait.html,rage bait suomeksi,20260712,19,2,2,0.8636363636363636,0,0.00%,10.5,2,22,11
+ilmiöt.fi,Alustatalous ja algoritmit,/rage-bait.html,rage bait suomeksi,20260713,19,2,2,0.8636363636363636,0,0.00%,11.5,2,22,11
+ilmiöt.fi,Alustatalous ja algoritmit,/rage-bait.html,rage bait suomeksi,20260718,19,2,2,0.8636363636363636,0,0.00%,11.5,2,22,11
+ilmiöt.fi,Alustatalous ja algoritmit,/rage-bait.html,rage bait tarkoittaa,20260719,19,2,2,0.8636363636363636,0,0.00%,11,2,22,11
+ilmiöt.fi,Alustatalous ja algoritmit,/rage-bait.html,ragebait,20260711,19,2,2,0.8636363636363636,0,0.00%,21,2,22,11
+ilmiöt.fi,Alustatalous ja algoritmit,/rage-bait.html,ragebait,20260715,19,2,2,0.8636363636363636,0,0.00%,22,2,22,11
+ilmiöt.fi,Työelämän ilmiöt,/hiljainen-irtisanoutuminen.html,hiljainen irtisanominen,20260719,8,2,2,0.7272727272727273,0,0.00%,8,1,11,11
+ilmiöt.fi,Vallan rakenteet,/hajota-hallitse.html,divide et impera suomeksi,20260714,9,2,2,0.8181818181818182,0,0.00%,9,1,11,11
+ilmiöt.fi,Vallan rakenteet,/hajota-hallitse.html,divide et impera suomeksi,20260715,9,2,2,0.8181818181818182,0,0.00%,8,1,11,11
+ilmiöt.fi,Vallan rakenteet,/hajota-hallitse.html,hajota ja hallitse,20260723,9,2,2,0.8181818181818182,0,0.00%,16,1,11,11
+ilmiöt.fi,Psykologia ja kognitio,/darvo.html,darvo taktiikka,20260712,29,2,2,0.725,0,0.00%,3.1666666666666665,4,40,10
+ilmiöt.fi,Psykologia ja kognitio,/darvo.html,darvo taktiikka,20260714,29,2,2,0.725,0,0.00%,1.6666666666666665,4,40,10
+ilmiöt.fi,Työelämän ilmiöt,/haamutyopaikat.html,haamutyöpaikka,20260709,8,2,2,0.8,0,0.00%,10,1,10,10
+ilmiöt.fi,Työelämän ilmiöt,/haamutyopaikat.html,haamutyöpaikka,20260712,8,2,2,0.8,0,0.00%,10,1,10,10
+ilmiöt.fi,Työelämän ilmiöt,/haamutyopaikat.html,haamutyöpaikka,20260716,8,2,2,0.8,0,0.00%,11,1,10,10
+ilmiöt.fi,Työelämän ilmiöt,/haamutyopaikat.html,haamutyöpaikka,20260719,8,2,2,0.8,0,0.00%,14,1,10,10
+ilmiöt.fi,Alustatalous ja algoritmit,/ai-slop.html,slop suomeksi,20260709,37,2,2,0.9487179487179487,0,0.00%,11.25,4,39,9.75
+ilmiöt.fi,Alustatalous ja algoritmit,/ai-slop.html,slop suomeksi,20260714,37,2,2,0.9487179487179487,0,0.00%,12,4,39,9.75
+ilmiöt.fi,Alustatalous ja algoritmit,/kaikukammio.html,kaikukammio,20260720,8,2,2,0.8888888888888888,0,0.00%,8,1,9,9
+ilmiöt.fi,Alustatalous ja algoritmit,/kaikukammio.html,kaikukammio,20260722,8,2,2,0.8888888888888888,0,0.00%,9,1,9,9
+ilmiöt.fi,Alustatalous ja algoritmit,/kaikukammio.html,kaikukammio,20260723,8,2,2,0.8888888888888888,0,0.00%,6,1,9,9
+ilmiöt.fi,Alustatalous ja algoritmit,/parasosiaalinen-suhde.html,parasosiaalinen,20260721,9,2,2,1,0,0.00%,20,1,9,9
+ilmiöt.fi,Alustatalous ja algoritmit,/parasosiaalinen-suhde.html,parasosiaalinen,20260722,9,2,2,1,0,0.00%,19,1,9,9
+ilmiöt.fi,Alustatalous ja algoritmit,/parasosiaalinen-suhde.html,parasosiaalinen,20260723,9,2,2,1,0,0.00%,19,1,9,9
+ilmiöt.fi,Alustatalous ja algoritmit,/parasosiaalinen-suhde.html,parasosiaalinen tarkoittaa,20260720,9,2,2,1,0,0.00%,9,1,9,9
+ilmiöt.fi,Alustatalous ja algoritmit,/parasosiaalinen-suhde.html,parasosiaalinen tarkoittaa,20260722,9,2,2,1,0,0.00%,7,1,9,9
+ilmiöt.fi,Byrokratia ja organisaatio,/goodhartin-laki.html,goodhartin laki,20260705,7,2,2,0.7777777777777778,0,0.00%,7,1,9,9
+ilmiöt.fi,Byrokratia ja organisaatio,/goodhartin-laki.html,goodhartin laki,20260712,7,2,2,0.7777777777777778,0,0.00%,5,1,9,9
+ilmiöt.fi,Byrokratia ja organisaatio,/goodhartin-laki.html,goodhartin laki,20260713,7,2,2,0.7777777777777778,0,0.00%,5,1,9,9
+ilmiöt.fi,Byrokratia ja organisaatio,/goodhartin-laki.html,goodhartin laki,20260715,7,2,2,0.7777777777777778,0,0.00%,5,1,9,9
+ilmiöt.fi,Byrokratia ja organisaatio,/goodhartin-laki.html,goodhartin laki,20260721,7,2,2,0.7777777777777778,0,0.00%,5,1,9,9
+ilmiöt.fi,Byrokratia ja organisaatio,/goodhartin-laki.html,goodhartin laki,20260722,7,2,2,0.7777777777777778,0,0.00%,5,1,9,9
+ilmiöt.fi,Byrokratia ja organisaatio,/kafka-ilmio.html,kafka asiantuntijat itä eurooppa,20260707,9,2,2,1,0,0.00%,18,1,9,9
+ilmiöt.fi,Byrokratia ja organisaatio,/kafka-ilmio.html,kafka asiantuntijat itä eurooppa,20260714,9,2,2,1,0,0.00%,14,1,9,9
+ilmiöt.fi,Byrokratia ja organisaatio,/kafka-ilmio.html,kafka ulkoistaminen,20260721,9,2,2,1,0,0.00%,28,1,9,9
+ilmiöt.fi,Byrokratia ja organisaatio,/kafka-ilmio.html,kafkamainen,20260719,9,2,2,1,0,0.00%,22,1,9,9
+ilmiöt.fi,Byrokratia ja organisaatio,/kafka-ilmio.html,kafkamainen,20260722,9,2,2,1,0,0.00%,22,1,9,9
+ilmiöt.fi,Byrokratia ja organisaatio,/kafka-ilmio.html,ulkoistaminen kafka,20260707,9,2,2,1,0,0.00%,32,1,9,9
+ilmiöt.fi,Byrokratia ja organisaatio,/kafka-ilmio.html,ulkoistaminen kafka,20260714,9,2,2,1,0,0.00%,34,1,9,9
+ilmiöt.fi,Byrokratia ja organisaatio,/kafka-ilmio.html,ulkoistaminen kafka,20260721,9,2,2,1,0,0.00%,39,1,9,9
+ilmiöt.fi,Byrokratia ja organisaatio,/simple-sabotage.html,simple sabotage field manual,20260704,9,2,2,1,0,0.00%,4,1,9,9
+ilmiöt.fi,Byrokratia ja organisaatio,/simple-sabotage.html,simple sabotage field manual 1944,20260718,9,2,2,1,0,0.00%,95,1,9,9
+ilmiöt.fi,Byrokratia ja organisaatio,/simple-sabotage.html,simple sabotage field manual wiki,20260712,9,2,2,1,0,0.00%,39,1,9,9
+ilmiöt.fi,Byrokratia ja organisaatio,/simple-sabotage.html,simple sabotage field manual wiki,20260714,9,2,2,1,0,0.00%,28,1,9,9
+ilmiöt.fi,Byrokratia ja organisaatio,/simple-sabotage.html,simple sabotage field manual wiki,20260717,9,2,2,1,0,0.00%,40,1,9,9
+ilmiöt.fi,Byrokratia ja organisaatio,/simple-sabotage.html,simple sabotage field manual wiki,20260718,9,2,2,1,0,0.00%,59,1,9,9
+ilmiöt.fi,Byrokratia ja organisaatio,/simple-sabotage.html,simple sabotage field manual wikipedia,20260703,9,2,2,1,0,0.00%,50,1,9,9
+ilmiöt.fi,Byrokratia ja organisaatio,/simple-sabotage.html,simple sabotage field manual wikipedia,20260706,9,2,2,1,0,0.00%,44,1,9,9
+ilmiöt.fi,Informaatio ja propaganda,/astroturf.html,astroturfing,20260710,7,2,2,0.7777777777777778,0,0.00%,6,1,9,9
+ilmiöt.fi,Informaatio ja propaganda,/astroturf.html,astroturfing,20260713,7,2,2,0.7777777777777778,0,0.00%,16,1,9,9
+ilmiöt.fi,Informaatio ja propaganda,/bkt-harha.html,bkt,20260709,8,2,2,0.8888888888888888,0,0.00%,47,1,9,9
+ilmiöt.fi,Informaatio ja propaganda,/bkt-harha.html,bkt,20260711,8,2,2,0.8888888888888888,0,0.00%,71,1,9,9
+ilmiöt.fi,Informaatio ja propaganda,/bkt-harha.html,bkt,20260713,8,2,2,0.8888888888888888,0,0.00%,76,1,9,9
+ilmiöt.fi,Informaatio ja propaganda,/bkt-harha.html,bkt englanniksi,20260714,8,2,2,0.8888888888888888,0,0.00%,34,1,9,9
+ilmiöt.fi,Informaatio ja propaganda,/bkt-harha.html,bktl,20260713,8,2,2,0.8888888888888888,0,0.00%,24,1,9,9
+ilmiöt.fi,Informaatio ja propaganda,/bkt-harha.html,bktl,20260715,8,2,2,0.8888888888888888,0,0.00%,26,1,9,9
+ilmiöt.fi,Informaatio ja propaganda,/bkt-harha.html,bruttokansantuote englanniksi,20260714,8,2,2,0.8888888888888888,0,0.00%,36,1,9,9
+ilmiöt.fi,Informaatio ja propaganda,/bkt-harha.html,irlannin talous,20260715,8,2,2,0.8888888888888888,0,0.00%,56,1,9,9
+ilmiöt.fi,Informaatio ja propaganda,/bkt-harha.html,irlanti bkt,20260715,8,2,2,0.8888888888888888,0,0.00%,12,1,9,9
+ilmiöt.fi,Informaatio ja propaganda,/bkt-harha.html,irlanti bkt,20260721,8,2,2,0.8888888888888888,0,0.00%,12,1,9,9
+ilmiöt.fi,Informaatio ja propaganda,/bkt-harha.html,irlanti talous,20260715,8,2,2,0.8888888888888888,0,0.00%,51,1,9,9
+ilmiöt.fi,Informaatio ja propaganda,/bkt-harha.html,mikä on bkt,20260713,8,2,2,0.8888888888888888,0,0.00%,41,1,9,9
+ilmiöt.fi,Informaatio ja propaganda,/firehose-of-falsehood.html,valaistusvyöhyke,20260713,7,2,2,0.7777777777777778,0,0.00%,41,1,9,9
+ilmiöt.fi,Informaatio ja propaganda,/trollitehdas.html,trollitehdas,20260715,7,2,2,0.7777777777777778,0,0.00%,11,1,9,9
+ilmiöt.fi,Informaatio ja propaganda,/trollitehdas.html,trollitehdas,20260717,7,2,2,0.7777777777777778,0,0.00%,8,1,9,9
+ilmiöt.fi,Informaatio ja propaganda,/trollitehdas.html,trollitehdas,20260724,7,2,2,0.7777777777777778,0,0.00%,11,1,9,9
+ilmiöt.fi,Psykologia ja kognitio,/sunk-cost-harha.html,sunk cost fallacy suomeksi,20260720,7,2,2,0.7777777777777778,0,0.00%,9,1,9,9
+ilmiöt.fi,Psykologia ja kognitio,/sunk-cost-harha.html,sunk cost fallacy suomeksi,20260723,7,2,2,0.7777777777777778,0,0.00%,9,1,9,9
+ilmiöt.fi,Psykologia ja kognitio,/sunk-cost-harha.html,uponneet kustannukset,20260722,7,2,2,0.7777777777777778,0,0.00%,30,1,9,9
+ilmiöt.fi,Psykologia ja kognitio,/sunk-cost-harha.html,uponneiden kustannusten harha,20260712,7,2,2,0.7777777777777778,0,0.00%,16,1,9,9
+ilmiöt.fi,Psykologia ja kognitio,/sunk-cost-harha.html,uponneiden kustannusten harha,20260723,7,2,2,0.7777777777777778,0,0.00%,9,1,9,9
+ilmiöt.fi,Vallan rakenteet,/overton-ikkuna.html,overton ikkuna,20260712,7,2,2,0.7777777777777778,0,0.00%,5,1,9,9
+ilmiöt.fi,Vallan rakenteet,/overton-ikkuna.html,overton ikkuna,20260718,7,2,2,0.7777777777777778,0,0.00%,5,1,9,9
+ilmiöt.fi,Vallan rakenteet,/overton-ikkuna.html,overtonin ikkuna,20260710,7,2,2,0.7777777777777778,0,0.00%,22,1,9,9
+ilmiöt.fi,Vallan rakenteet,/overton-ikkuna.html,overtonin ikkuna,20260721,7,2,2,0.7777777777777778,0,0.00%,18,1,9,9
+ilmiöt.fi,Byrokratia ja organisaatio,/peterin-periaate.html,periaate,20260720,8,2,2,1,0,0.00%,20,1,8,8
+ilmiöt.fi,Byrokratia ja organisaatio,/peterin-periaate.html,periaate,20260721,8,2,2,1,0,0.00%,28,1,8,8
+ilmiöt.fi,Byrokratia ja organisaatio,/peterin-periaate.html,peterin periaate,20260714,8,2,2,1,0,0.00%,6,1,8,8
+ilmiöt.fi,Byrokratia ja organisaatio,/peterin-periaate.html,peterin periaate,20260715,8,2,2,1,0,0.00%,6,1,8,8
+ilmiöt.fi,Byrokratia ja organisaatio,/peterin-periaate.html,peterin periaate,20260717,8,2,2,1,0,0.00%,10,1,8,8
+ilmiöt.fi,Byrokratia ja organisaatio,/peterin-periaate.html,peterin periaate,20260719,8,2,2,1,0,0.00%,7,1,8,8
+ilmiöt.fi,Byrokratia ja organisaatio,/peterin-periaate.html,peterin periaate,20260720,8,2,2,1,0,0.00%,7,1,8,8
+ilmiöt.fi,Byrokratia ja organisaatio,/peterin-periaate.html,peterin periaate,20260723,8,2,2,1,0,0.00%,8,1,8,8
+ilmiöt.fi,Huijaukset ja petokset,/bait-and-switch.html,bait and switch,20260717,7,2,2,0.875,0,0.00%,24,1,8,8
+ilmiöt.fi,Huijaukset ja petokset,/honeypot-huijaus.html,honeypot,20260709,6,2,2,0.75,0,0.00%,8,1,8,8
+ilmiöt.fi,Huijaukset ja petokset,/honeypot-huijaus.html,honeypot,20260712,6,2,2,0.75,0,0.00%,10,1,8,8
+ilmiöt.fi,Huijaukset ja petokset,/honeypot-huijaus.html,honeypot,20260715,6,2,2,0.75,0,0.00%,10,1,8,8
+ilmiöt.fi,Huijaukset ja petokset,/honeypot-huijaus.html,honwypot,20260713,6,2,2,0.75,0,0.00%,8,1,8,8
+ilmiöt.fi,Informaatio ja propaganda,/kuollut-kissa.html,streisand ilmiö,20260712,6,2,2,0.75,0,0.00%,6,1,8,8
+ilmiöt.fi,Informaatio ja propaganda,/kuollut-kissa.html,streisandin ilmiö,20260712,6,2,2,0.75,0,0.00%,20,1,8,8
+ilmiöt.fi,Projekti- ja ohjelmistokehitys,/kuolonmarssi.html,ulosmarssi,20260709,8,2,2,1,0,0.00%,51,1,8,8
+ilmiöt.fi,Psykologia ja kognitio,/darvo.html,darvo taktiikka,20260715,29,2,2,0.725,0,0.00%,4,5,40,8
+ilmiöt.fi,Psykologia ja kognitio,/gaslighting.html,gaslighting,20260709,6,2,2,0.75,0,0.00%,25,1,8,8
+ilmiöt.fi,Psykologia ja kognitio,/gaslighting.html,gaslighting,20260710,6,2,2,0.75,0,0.00%,51,1,8,8
+ilmiöt.fi,Psykologia ja kognitio,/gaslighting.html,gaslighting,20260712,6,2,2,0.75,0,0.00%,23,1,8,8
+ilmiöt.fi,Psykologia ja kognitio,/gaslighting.html,gaslighting,20260719,6,2,2,0.75,0,0.00%,28,1,8,8
+ilmiöt.fi,Psykologia ja kognitio,/gaslighting.html,gaslighting,20260721,6,2,2,0.75,0,0.00%,26,1,8,8
+ilmiöt.fi,Psykologia ja kognitio,/gaslighting.html,gaslighting suomeksi,20260709,6,2,2,0.75,0,0.00%,29,1,8,8
+ilmiöt.fi,Psykologia ja kognitio,/gaslighting.html,gaslighting suomeksi,20260716,6,2,2,0.75,0,0.00%,30,1,8,8
+ilmiöt.fi,Psykologia ja kognitio,/gaslighting.html,gaslighting suomeksi,20260723,6,2,2,0.75,0,0.00%,30,1,8,8
+ilmiöt.fi,Psykologia ja kognitio,/gaslighting.html,gaslighting tarkoittaa,20260715,6,2,2,0.75,0,0.00%,26,1,8,8
+ilmiöt.fi,Psykologia ja kognitio,/gaslighting.html,gaslighting tarkoittaa,20260718,6,2,2,0.75,0,0.00%,27,1,8,8
+ilmiöt.fi,Psykologia ja kognitio,/gaslighting.html,kaasuvalottaminen,20260715,6,2,2,0.75,0,0.00%,43,1,8,8
+ilmiöt.fi,Psykologia ja kognitio,/gaslighting.html,kaasuvalotus,20260714,6,2,2,0.75,0,0.00%,47,1,8,8
+ilmiöt.fi,Psykologia ja kognitio,/gaslighting.html,kaasuvalotus,20260716,6,2,2,0.75,0,0.00%,47,1,8,8
+ilmiöt.fi,Psykologia ja kognitio,/gaslighting.html,kiittämätön,20260711,6,2,2,0.75,0,0.00%,53,1,8,8
+ilmiöt.fi,Psykologia ja kognitio,/hanlonin-partaveitsi.html,hanlonin partaveitsi,20260713,8,2,2,1,0,0.00%,6,1,8,8
+ilmiöt.fi,Psykologia ja kognitio,/hanlonin-partaveitsi.html,hanlonin partaveitsi,20260718,8,2,2,1,0,0.00%,12,1,8,8
+ilmiöt.fi,Psykologia ja kognitio,/hanlonin-partaveitsi.html,hanlonin partaveitsi,20260719,8,2,2,1,0,0.00%,10,1,8,8
+ilmiöt.fi,Psykologia ja kognitio,/hanlonin-partaveitsi.html,hanlonin partaveitsi,20260721,8,2,2,1,0,0.00%,9,1,8,8
+ilmiöt.fi,Psykologia ja kognitio,/hanlonin-partaveitsi.html,hanlonin partaveitsi,20260723,8,2,2,1,0,0.00%,7,1,8,8
+ilmiöt.fi,Psykologia ja kognitio,/konsensus-fetissi.html,itseisarvo etiikka,20260715,6,2,2,0.75,0,0.00%,29,1,8,8
+ilmiöt.fi,Psykologia ja kognitio,/konsensus-fetissi.html,itseisarvo tarkoittaa,20260715,6,2,2,0.75,0,0.00%,32,1,8,8
+ilmiöt.fi,Psykologia ja kognitio,/konsensus-fetissi.html,konsensuaalinen,20260715,6,2,2,0.75,0,0.00%,75,1,8,8
+ilmiöt.fi,Psykologia ja kognitio,/konsensus-fetissi.html,mikä on itseisarvo,20260715,6,2,2,0.75,0,0.00%,50,1,8,8
+ilmiöt.fi,Psykologia ja kognitio,/maalitolppien-siirtaminen.html,maalitolppien siirtely,20260712,7,2,2,0.875,0,0.00%,9,1,8,8
+ilmiöt.fi,Psykologia ja kognitio,/maalitolppien-siirtaminen.html,maalitolppien siirtely,20260713,7,2,2,0.875,0,0.00%,9,1,8,8
+ilmiöt.fi,Psykologia ja kognitio,/maalitolppien-siirtaminen.html,maalitolppien siirtely,20260714,7,2,2,0.875,0,0.00%,6,1,8,8
+ilmiöt.fi,Psykologia ja kognitio,/maalitolppien-siirtaminen.html,maalitolppien siirtely,20260718,7,2,2,0.875,0,0.00%,9,1,8,8
+ilmiöt.fi,Tilastoilla valehtelu,/simpsonin-paradoksi.html,simpsonin paradoksi,20260719,7,2,2,0.875,0,0.00%,4,1,8,8
+ilmiöt.fi,Tilastoilla valehtelu,/simpsonin-paradoksi.html,simpsonin paradoksi,20260724,7,2,2,0.875,0,0.00%,6,1,8,8
+ilmiöt.fi,Alustatalous ja algoritmit,/ai-slop.html,ai slop suomeksi,20260716,37,2,2,0.9487179487179487,0,0.00%,7.875,5,39,7.8
+ilmiöt.fi,Pesut ja maineenhallinta,/viherpesu.html,viherpesu,20260712,15,2,2,1,0,0.00%,91,2,15,7.5
+ilmiöt.fi,Alustatalous ja algoritmit,/rage-bait.html,rage bait suomeksi,20260709,19,2,2,0.8636363636363636,0,0.00%,9,3,22,7.333333333333333
+ilmiöt.fi,Alustatalous ja algoritmit,/rage-bait.html,rage bait suomeksi,20260715,19,2,2,0.8636363636363636,0,0.00%,10.333333333333334,3,22,7.333333333333333
+ilmiöt.fi,Alustatalous ja algoritmit,/rage-bait.html,rage bait suomeksi,20260716,19,2,2,0.8636363636363636,0,0.00%,11,3,22,7.333333333333333
+ilmiöt.fi,Alustatalous ja algoritmit,/rage-bait.html,rage bait suomeksi,20260720,19,2,2,0.8636363636363636,0,0.00%,11,3,22,7.333333333333333
+ilmiöt.fi,Alustatalous ja algoritmit,/rage-bait.html,rage bait suomeksi,20260722,19,2,2,0.8636363636363636,0,0.00%,11,3,22,7.333333333333333
+ilmiöt.fi,Alustatalous ja algoritmit,/rage-bait.html,rage bait suomeksi,20260723,19,2,2,0.8636363636363636,0,0.00%,12,3,22,7.333333333333333
+ilmiöt.fi,Alustatalous ja algoritmit,/rage-bait.html,rage bait suomeksi,20260724,19,2,2,0.8636363636363636,0,0.00%,12,3,22,7.333333333333333
+ilmiöt.fi,Alustatalous ja algoritmit,/doomscrolling.html,doomscrolling suomeksi,20260711,6,2,2,0.8571428571428571,0,0.00%,11,1,7,7
+ilmiöt.fi,Alustatalous ja algoritmit,/doomscrolling.html,doomscrolling suomeksi,20260712,6,2,2,0.8571428571428571,0,0.00%,9,1,7,7
+ilmiöt.fi,Alustatalous ja algoritmit,/doomscrolling.html,doomscrolling suomeksi,20260713,6,2,2,0.8571428571428571,0,0.00%,11,1,7,7
+ilmiöt.fi,Alustatalous ja algoritmit,/doomscrolling.html,doomscrolling suomeksi,20260715,6,2,2,0.8571428571428571,0,0.00%,15,1,7,7
+ilmiöt.fi,Alustatalous ja algoritmit,/doomscrolling.html,doomscrolling suomeksi,20260717,6,2,2,0.8571428571428571,0,0.00%,11,1,7,7
+ilmiöt.fi,Alustatalous ja algoritmit,/doomscrolling.html,doomscrolling suomeksi,20260719,6,2,2,0.8571428571428571,0,0.00%,11,1,7,7
+ilmiöt.fi,Alustatalous ja algoritmit,/doomscrolling.html,doomscrolling suomeksi,20260723,6,2,2,0.8571428571428571,0,0.00%,10,1,7,7
+ilmiöt.fi,Alustatalous ja algoritmit,/doomscrolling.html,doomscrolling tarkoittaa,20260713,6,2,2,0.8571428571428571,0,0.00%,9,1,7,7
+ilmiöt.fi,Alustatalous ja algoritmit,/doomscrolling.html,doomscrolling tarkoittaa,20260718,6,2,2,0.8571428571428571,0,0.00%,10,1,7,7
+ilmiöt.fi,Alustatalous ja algoritmit,/doomscrolling.html,doomscrolling tarkoittaa,20260720,6,2,2,0.8571428571428571,0,0.00%,9,1,7,7
+ilmiöt.fi,Byrokratia ja organisaatio,/catch-22.html,catch 22,20260708,7,2,2,1,0,0.00%,26,1,7,7
+ilmiöt.fi,Byrokratia ja organisaatio,/catch-22.html,catch 22,20260711,7,2,2,1,0,0.00%,27,1,7,7
+ilmiöt.fi,Byrokratia ja organisaatio,/catch-22.html,catch 22,20260712,7,2,2,1,0,0.00%,30,1,7,7
+ilmiöt.fi,Byrokratia ja organisaatio,/catch-22.html,catch 22 suomeksi,20260713,7,2,2,1,0,0.00%,27,1,7,7
+ilmiöt.fi,Huijaukset ja petokset,/kaarmeoljy.html,käärmeenlumooja,20260714,5,2,2,0.7142857142857143,0,0.00%,63,1,7,7
+ilmiöt.fi,Huijaukset ja petokset,/kaarmeoljy.html,käärmeöljy,20260707,5,2,2,0.7142857142857143,0,0.00%,11,1,7,7
+ilmiöt.fi,Huijaukset ja petokset,/kaarmeoljy.html,käärmeöljy,20260708,5,2,2,0.7142857142857143,0,0.00%,12,1,7,7
+ilmiöt.fi,Huijaukset ja petokset,/kaarmeoljy.html,käärmeöljy,20260710,5,2,2,0.7142857142857143,0,0.00%,12,1,7,7
+ilmiöt.fi,Huijaukset ja petokset,/kaarmeoljy.html,käärmeöljy,20260717,5,2,2,0.7142857142857143,0,0.00%,11,1,7,7
+ilmiöt.fi,Huijaukset ja petokset,/kaarmeoljy.html,käärmeöljy,20260720,5,2,2,0.7142857142857143,0,0.00%,11,1,7,7
+ilmiöt.fi,Huijaukset ja petokset,/kaarmeoljy.html,mitä on käärmeöljy,20260709,5,2,2,0.7142857142857143,0,0.00%,5,1,7,7
+ilmiöt.fi,Huijaukset ja petokset,/kaarmeoljy.html,mitä on käärmeöljy,20260711,5,2,2,0.7142857142857143,0,0.00%,1,1,7,7
+ilmiöt.fi,Huijaukset ja petokset,/kaarmeoljy.html,mitä on käärmeöljy,20260715,5,2,2,0.7142857142857143,0,0.00%,6,1,7,7
+ilmiöt.fi,Informaatio ja propaganda,/brandolinin-laki.html,brandolinin laki,20260714,6,2,2,0.8571428571428571,0,0.00%,5,1,7,7
+ilmiöt.fi,Informaatio ja propaganda,/brandolinin-laki.html,brandolinin laki,20260715,6,2,2,0.8571428571428571,0,0.00%,5,1,7,7
+ilmiöt.fi,Informaatio ja propaganda,/brandolinin-laki.html,brandolinin laki,20260716,6,2,2,0.8571428571428571,0,0.00%,5,1,7,7
+ilmiöt.fi,Informaatio ja propaganda,/brandolinin-laki.html,brandolinin laki,20260720,6,2,2,0.8571428571428571,0,0.00%,7,1,7,7
+ilmiöt.fi,Psykologia ja kognitio,/halo-efekti.html,halo efekti,20260718,13,2,2,0.9285714285714286,0,0.00%,12.5,2,14,7
+ilmiöt.fi,Psykologia ja kognitio,/halo-efekti.html,halo efekti,20260719,13,2,2,0.9285714285714286,0,0.00%,11,2,14,7
+ilmiöt.fi,Psykologia ja kognitio,/halo-efekti.html,halo efekti,20260720,13,2,2,0.9285714285714286,0,0.00%,10.5,2,14,7
+ilmiöt.fi,Psykologia ja kognitio,/occamin-partaveitsi.html,hanlonin partaveitsi,20260715,6,2,2,0.8571428571428571,0,0.00%,26,1,7,7
+ilmiöt.fi,Psykologia ja kognitio,/occamin-partaveitsi.html,occamin partaveitsi,20260714,6,2,2,0.8571428571428571,0,0.00%,14,1,7,7
+ilmiöt.fi,Psykologia ja kognitio,/occamin-partaveitsi.html,occamin partaveitsi,20260724,6,2,2,0.8571428571428571,0,0.00%,29,1,7,7
+ilmiöt.fi,Työelämän ilmiöt,/hiljainen-irtisanominen.html,hiljainen irtisanominen,20260714,5,2,2,0.7142857142857143,0,0.00%,10,1,7,7
+ilmiöt.fi,Alustatalous ja algoritmit,/ai-slop.html,ai slop suomeksi,20260721,37,2,2,0.9487179487179487,0,0.00%,8.5,6,39,6.5
+ilmiöt.fi,Alustatalous ja algoritmit,/ai-slop.html,ai slop suomeksi,20260723,37,2,2,0.9487179487179487,0,0.00%,7.9,6,39,6.5
+ilmiöt.fi,Informaatio ja propaganda,/whataboutismi.html,whataboutism suomeksi,20260720,10,2,2,0.7692307692307693,0,0.00%,10.5,2,13,6.5
+ilmiöt.fi,Informaatio ja propaganda,/whataboutismi.html,whataboutismi,20260707,10,2,2,0.7692307692307693,0,0.00%,11,2,13,6.5
+ilmiöt.fi,Informaatio ja propaganda,/whataboutismi.html,whataboutismi,20260720,10,2,2,0.7692307692307693,0,0.00%,9.5,2,13,6.5
+ilmiöt.fi,Informaatio ja propaganda,/whataboutismi.html,whataboutismi suomeksi,20260714,10,2,2,0.7692307692307693,0,0.00%,9.5,2,13,6.5
+ilmiöt.fi,Informaatio ja propaganda,/whataboutismi.html,whataboutismi suomeksi,20260716,10,2,2,0.7692307692307693,0,0.00%,9.5,2,13,6.5
+ilmiöt.fi,Informaatio ja propaganda,/whataboutismi.html,whataboutismi suomeksi,20260717,10,2,2,0.7692307692307693,0,0.00%,9,2,13,6.5
+ilmiöt.fi,Informaatio ja propaganda,/whataboutismi.html,whataboutismi suomeksi,20260720,10,2,2,0.7692307692307693,0,0.00%,9,2,13,6.5
+ilmiöt.fi,Informaatio ja propaganda,/whataboutismi.html,whataboutismi suomeksi,20260722,10,2,2,0.7692307692307693,0,0.00%,9,2,13,6.5
+ilmiöt.fi,Informaatio ja propaganda,/whataboutismi.html,whataboutismi suomeksi,20260724,10,2,2,0.7692307692307693,0,0.00%,9,2,13,6.5
+ilmiöt.fi,Byrokratia ja organisaatio,/fofo.html,fofo,20260716,6,2,2,1,0,0.00%,6,1,6,6
+ilmiöt.fi,Byrokratia ja organisaatio,/fofo.html,föfö,20260717,6,2,2,1,0,0.00%,7,1,6,6
+ilmiöt.fi,Byrokratia ja organisaatio,/fofo.html,föfö,20260718,6,2,2,1,0,0.00%,6,1,6,6
+ilmiöt.fi,Byrokratia ja organisaatio,/hippo-efekti.html,tyrsky ylppö,20260715,6,2,2,1,0,0.00%,55,1,6,6
+ilmiöt.fi,Byrokratia ja organisaatio,/parkinsonin-laki.html,parkinsonin laki,20260715,6,2,2,1,0,0.00%,38,1,6,6
+ilmiöt.fi,Byrokratia ja organisaatio,/parkinsonin-laki.html,parkinsonin laki,20260716,6,2,2,1,0,0.00%,36,1,6,6
+ilmiöt.fi,Byrokratia ja organisaatio,/parkinsonin-laki.html,parkinsonin laki,20260724,6,2,2,1,0,0.00%,41,1,6,6
+ilmiöt.fi,Huijaukset ja petokset,/ponzi-pyramidi.html,ponzi huijaus,20260714,5,2,2,0.8333333333333334,0,0.00%,23,1,6,6
+ilmiöt.fi,Huijaukset ja petokset,/ponzi-pyramidi.html,ponzi huijaus,20260715,5,2,2,0.8333333333333334,0,0.00%,30,1,6,6
+ilmiöt.fi,Huijaukset ja petokset,/ponzi-pyramidi.html,pyramidihuijaus,20260710,5,2,2,0.8333333333333334,0,0.00%,54,1,6,6
+ilmiöt.fi,Huijaukset ja petokset,/ponzi-pyramidi.html,pyramidihuijaus,20260712,5,2,2,0.8333333333333334,0,0.00%,53,1,6,6
+ilmiöt.fi,Huijaukset ja petokset,/ponzi-pyramidi.html,pyramidihuijaus,20260715,5,2,2,0.8333333333333334,0,0.00%,50,1,6,6
+ilmiöt.fi,Huijaukset ja petokset,/ponzi-pyramidi.html,pyramidihuijaus,20260719,5,2,2,0.8333333333333334,0,0.00%,61,1,6,6
+ilmiöt.fi,Huijaukset ja petokset,/qr-koodihuijaus.html,turvaskannerit,20260722,5,2,2,0.8333333333333334,0,0.00%,68,1,6,6
+ilmiöt.fi,Huijaukset ja petokset,/toimitusjohtajahuijaus.html,toimitusjohtajahuijaus,20260709,6,2,2,1,0,0.00%,20,1,6,6
+ilmiöt.fi,Huijaukset ja petokset,/toimitusjohtajahuijaus.html,toimitusjohtajahuijaus,20260711,6,2,2,1,0,0.00%,20,1,6,6
+ilmiöt.fi,Huijaukset ja petokset,/toimitusjohtajahuijaus.html,toimitusjohtajahuijaus,20260715,6,2,2,1,0,0.00%,17,1,6,6
+ilmiöt.fi,Informaatio ja propaganda,/streisand-ilmio.html,streisand ilmiö,20260712,5,2,2,0.8333333333333334,0,0.00%,9,1,6,6
+ilmiöt.fi,Informaatio ja propaganda,/streisand-ilmio.html,streisand ilmiö,20260713,5,2,2,0.8333333333333334,0,0.00%,5,1,6,6
+ilmiöt.fi,Informaatio ja propaganda,/streisand-ilmio.html,streisand ilmiö,20260718,5,2,2,0.8333333333333334,0,0.00%,4,1,6,6
+ilmiöt.fi,Informaatio ja propaganda,/streisand-ilmio.html,streisand ilmiö,20260719,5,2,2,0.8333333333333334,0,0.00%,5,1,6,6
+ilmiöt.fi,Informaatio ja propaganda,/streisand-ilmio.html,streisand ilmiö,20260721,5,2,2,0.8333333333333334,0,0.00%,4,1,6,6
+ilmiöt.fi,Informaatio ja propaganda,/streisand-ilmio.html,streisand ilmiö,20260722,5,2,2,0.8333333333333334,0,0.00%,4,1,6,6
+ilmiöt.fi,Informaatio ja propaganda,/streisand-ilmio.html,streisand-ilmiö,20260713,5,2,2,0.8333333333333334,0,0.00%,5,1,6,6
+ilmiöt.fi,Informaatio ja propaganda,/streisand-ilmio.html,streisandin ilmiö,20260712,5,2,2,0.8333333333333334,0,0.00%,8,1,6,6
+ilmiöt.fi,Informaatio ja propaganda,/streisand-ilmio.html,streisandin ilmiö,20260716,5,2,2,0.8333333333333334,0,0.00%,7,1,6,6
+ilmiöt.fi,Informaatio ja propaganda,/streisand-ilmio.html,streisandin ilmiö,20260718,5,2,2,0.8333333333333334,0,0.00%,8,1,6,6
+ilmiöt.fi,Informaatio ja propaganda,/streisand-ilmio.html,streisandin ilmiö,20260719,5,2,2,0.8333333333333334,0,0.00%,4,1,6,6
+ilmiöt.fi,Kasvun dynamiikka,/korkoa-korolle.html,korkoa korolle efekti,20260712,6,2,2,1,0,0.00%,48,1,6,6
+ilmiöt.fi,Kasvun dynamiikka,/korkoa-korolle.html,korkoa korolle efekti,20260717,6,2,2,1,0,0.00%,49,1,6,6
+ilmiöt.fi,Myyntikikat ja painostus,/suunniteltu-vanheneminen.html,planned obsolescence suomeksi,20260710,6,2,2,1,0,0.00%,8,1,6,6
+ilmiöt.fi,Myyntikikat ja painostus,/suunniteltu-vanheneminen.html,planned obsolescence suomeksi,20260714,6,2,2,1,0,0.00%,8,1,6,6
+ilmiöt.fi,Myyntikikat ja painostus,/suunniteltu-vanheneminen.html,planned obsolescence suomeksi,20260716,6,2,2,1,0,0.00%,8,1,6,6
+ilmiöt.fi,Myyntikikat ja painostus,/suunniteltu-vanheneminen.html,planned obsolescence suomeksi,20260720,6,2,2,1,0,0.00%,8,1,6,6
+ilmiöt.fi,Myyntikikat ja painostus,/suunniteltu-vanheneminen.html,planned obsolescence suomeksi,20260723,6,2,2,1,0,0.00%,8,1,6,6
+ilmiöt.fi,Myyntikikat ja painostus,/suunniteltu-vanheneminen.html,suunniteltu vanheneminen,20260715,6,2,2,1,0,0.00%,16,1,6,6
+ilmiöt.fi,Projekti- ja ohjelmistokehitys,/scope-creep.html,scope,20260713,6,2,2,1,0,0.00%,36,1,6,6
+ilmiöt.fi,Projekti- ja ohjelmistokehitys,/scope-creep.html,scope,20260714,6,2,2,1,0,0.00%,34,1,6,6
+ilmiöt.fi,Projekti- ja ohjelmistokehitys,/scope-creep.html,scope,20260724,6,2,2,1,0,0.00%,38,1,6,6
+ilmiöt.fi,Projekti- ja ohjelmistokehitys,/scope-creep.html,scope creep,20260719,6,2,2,1,0,0.00%,81,1,6,6
+ilmiöt.fi,Projekti- ja ohjelmistokehitys,/scope-creep.html,scope creep suomeksi,20260715,6,2,2,1,0,0.00%,6,1,6,6
+ilmiöt.fi,Projekti- ja ohjelmistokehitys,/yhdeksanyhdeksan.html,yhdeksän,20260714,6,2,2,1,0,0.00%,11,1,6,6
+ilmiöt.fi,Projekti- ja ohjelmistokehitys,/yhdeksanyhdeksan.html,yhdeksän,20260722,6,2,2,1,0,0.00%,14,1,6,6
+ilmiöt.fi,Alustatalous ja algoritmit,/ai-slop.html,ai slop suomeksi,20260720,37,2,2,0.9487179487179487,0,0.00%,8.166666666666666,7,39,5.571428571428571
+ilmiöt.fi,Alustatalous ja algoritmit,/rage-bait.html,rage bait suomeksi,20260711,19,2,2,0.8636363636363636,0,0.00%,10.5,4,22,5.5
+ilmiöt.fi,Alustatalous ja algoritmit,/rage-bait.html,rage bait suomeksi,20260719,19,2,2,0.8636363636363636,0,0.00%,11.25,4,22,5.5
+ilmiöt.fi,Vallan rakenteet,/hajota-hallitse.html,hajota ja hallitse,20260714,9,2,2,0.8181818181818182,0,0.00%,15.5,2,11,5.5
+ilmiöt.fi,Byrokratia ja organisaatio,/sivustakatsojan-efekti.html,sivustakatsoja efekti,20260707,5,2,2,1,0,0.00%,7,1,5,5
+ilmiöt.fi,Byrokratia ja organisaatio,/sivustakatsojan-efekti.html,sivustakatsoja efekti,20260714,5,2,2,1,0,0.00%,4,1,5,5
+ilmiöt.fi,Byrokratia ja organisaatio,/sivustakatsojan-efekti.html,sivustakatsoja efekti,20260717,5,2,2,1,0,0.00%,8,1,5,5
+ilmiöt.fi,Byrokratia ja organisaatio,/sivustakatsojan-efekti.html,sivustakatsoja efekti,20260718,5,2,2,1,0,0.00%,7,1,5,5
+ilmiöt.fi,Byrokratia ja organisaatio,/sivustakatsojan-efekti.html,sivustakatsoja efekti,20260720,5,2,2,1,0,0.00%,6,1,5,5
+ilmiöt.fi,Huijaukset ja petokset,/pump-and-dump.html,pump and dump bedeutung,20260705,5,2,2,1,0,0.00%,85,1,5,5
+ilmiöt.fi,Huijaukset ja petokset,/pump-and-dump.html,pumppa,20260715,5,2,2,1,0,0.00%,11,1,5,5
+ilmiöt.fi,Informaatio ja propaganda,/poen-laki.html,poen laki,20260713,4,2,2,0.8,0,0.00%,3,1,5,5
+ilmiöt.fi,Informaatio ja propaganda,/poen-laki.html,poen laki,20260714,4,2,2,0.8,0,0.00%,4,1,5,5
+ilmiöt.fi,Informaatio ja propaganda,/poen-laki.html,poen laki,20260718,4,2,2,0.8,0,0.00%,4,1,5,5
+ilmiöt.fi,Informaatio ja propaganda,/poen-laki.html,poen laki,20260723,4,2,2,0.8,0,0.00%,3,1,5,5
+ilmiöt.fi,Pesut ja maineenhallinta,/hyvesignalointi.html,hyve signalointi,20260712,5,2,2,1,0,0.00%,10,1,5,5
+ilmiöt.fi,Pesut ja maineenhallinta,/hyvesignalointi.html,hyve signalointi,20260714,5,2,2,1,0,0.00%,12,1,5,5
+ilmiöt.fi,Pesut ja maineenhallinta,/hyvesignalointi.html,hyve signalointi,20260719,5,2,2,1,0,0.00%,12,1,5,5
+ilmiöt.fi,Pesut ja maineenhallinta,/hyvesignalointi.html,hyvesignalointi,20260718,5,2,2,1,0,0.00%,11,1,5,5
+ilmiöt.fi,Pesut ja maineenhallinta,/hyvesignalointi.html,hyvesignalointi,20260721,5,2,2,1,0,0.00%,8,1,5,5
+ilmiöt.fi,Pesut ja maineenhallinta,/hyvesignalointi.html,hyvesignalointi tarkoittaa,20260712,5,2,2,1,0,0.00%,10,1,5,5
+ilmiöt.fi,Pesut ja maineenhallinta,/hyvesignalointi.html,hyvesignalointi tarkoittaa,20260716,5,2,2,1,0,0.00%,12,1,5,5
+ilmiöt.fi,Pesut ja maineenhallinta,/hyvesignalointi.html,hyvesignalointi tarkoittaa,20260718,5,2,2,1,0,0.00%,9,1,5,5
+ilmiöt.fi,Pesut ja maineenhallinta,/hyvesignalointi.html,hyvesignalointi tarkoittaa,20260721,5,2,2,1,0,0.00%,11,1,5,5
+ilmiöt.fi,Pesut ja maineenhallinta,/hyvesignalointi.html,hyvesignalointi tarkoittaa,20260722,5,2,2,1,0,0.00%,11,1,5,5
+ilmiöt.fi,Pesut ja maineenhallinta,/hyvesignalointi.html,hyvesignalointi tarkoittaa,20260723,5,2,2,1,0,0.00%,11,1,5,5
+ilmiöt.fi,Projekti- ja ohjelmistokehitys,/conways-laki.html,tietovarastoarkkitehtuuri,20260722,5,2,2,1,0,0.00%,46,1,5,5
+ilmiöt.fi,Projekti- ja ohjelmistokehitys,/tekninen-velka.html,tekninen velka,20260710,5,2,2,1,0,0.00%,17,1,5,5
+ilmiöt.fi,Projekti- ja ohjelmistokehitys,/tekninen-velka.html,tekninen velka,20260712,5,2,2,1,0,0.00%,17,1,5,5
+ilmiöt.fi,Projekti- ja ohjelmistokehitys,/tekninen-velka.html,tekninen velka,20260714,5,2,2,1,0,0.00%,17,1,5,5
+ilmiöt.fi,Projekti- ja ohjelmistokehitys,/tekninen-velka.html,tekninen velka,20260718,5,2,2,1,0,0.00%,16,1,5,5
+ilmiöt.fi,Projekti- ja ohjelmistokehitys,/tekninen-velka.html,tekninen velka,20260720,5,2,2,1,0,0.00%,18,1,5,5
+ilmiöt.fi,Projekti- ja ohjelmistokehitys,/tekninen-velka.html,tekninen velka,20260722,5,2,2,1,0,0.00%,19,1,5,5
+ilmiöt.fi,Työelämän ilmiöt,/haamutyopaikat.html,haamutyöpaikka,20260714,8,2,2,0.8,0,0.00%,10,2,10,5
+ilmiöt.fi,Alustatalous ja algoritmit,/kaikukammio.html,kaikukammio,20260709,8,2,2,0.8888888888888888,0,0.00%,9.5,2,9,4.5
+ilmiöt.fi,Alustatalous ja algoritmit,/kaikukammio.html,kaikukammio,20260712,8,2,2,0.8888888888888888,0,0.00%,9,2,9,4.5
+ilmiöt.fi,Alustatalous ja algoritmit,/kaikukammio.html,kaikukammio,20260713,8,2,2,0.8888888888888888,0,0.00%,7.5,2,9,4.5
+ilmiöt.fi,Alustatalous ja algoritmit,/parasosiaalinen-suhde.html,parasosiaalinen,20260714,9,2,2,1,0,0.00%,29.5,2,9,4.5
+ilmiöt.fi,Alustatalous ja algoritmit,/parasosiaalinen-suhde.html,parasosiaalinen tarkoittaa,20260721,9,2,2,1,0,0.00%,8,2,9,4.5
+ilmiöt.fi,Byrokratia ja organisaatio,/goodhartin-laki.html,goodhartin laki,20260710,7,2,2,0.7777777777777778,0,0.00%,5,2,9,4.5
+ilmiöt.fi,Byrokratia ja organisaatio,/simple-sabotage.html,simple sabotage field manual wiki,20260703,9,2,2,1,0,0.00%,57,2,9,4.5
+ilmiöt.fi,Informaatio ja propaganda,/bkt-harha.html,bkt,20260712,8,2,2,0.8888888888888888,0,0.00%,40,2,9,4.5
+ilmiöt.fi,Informaatio ja propaganda,/bkt-harha.html,bkt tarkoittaa,20260713,8,2,2,0.8888888888888888,0,0.00%,42,2,9,4.5
+ilmiöt.fi,Informaatio ja propaganda,/bkt-harha.html,nimellinen bkt,20260715,8,2,2,0.8888888888888888,0,0.00%,38,2,9,4.5
+ilmiöt.fi,Psykologia ja kognitio,/sunk-cost-harha.html,sunk cost fallacy suomeksi,20260721,7,2,2,0.7777777777777778,0,0.00%,11.5,2,9,4.5
+ilmiöt.fi,Vallan rakenteet,/overton-ikkuna.html,mikä on overtonin ikkuna,20260717,7,2,2,0.7777777777777778,0,0.00%,21,2,9,4.5
+ilmiöt.fi,Vallan rakenteet,/overton-ikkuna.html,overton ikkuna,20260714,7,2,2,0.7777777777777778,0,0.00%,10.5,2,9,4.5
+ilmiöt.fi,Informaatio ja propaganda,/whataboutismi.html,whataboutismi suomeksi,20260715,10,2,2,0.7692307692307693,0,0.00%,9,3,13,4.333333333333333
+ilmiöt.fi,Informaatio ja propaganda,/whataboutismi.html,whataboutismi suomeksi,20260723,10,2,2,0.7692307692307693,0,0.00%,9,3,13,4.333333333333333
+ilmiöt.fi,Informaatio ja propaganda,/whataboutismi.html,whataboutismi tarkoittaa,20260711,10,2,2,0.7692307692307693,0,0.00%,11,3,13,4.333333333333333
+ilmiöt.fi,Byrokratia ja organisaatio,/peterin-periaate.html,periaate,20260714,8,2,2,1,0,0.00%,18,2,8,4
+ilmiöt.fi,Byrokratia ja organisaatio,/peterin-periaate.html,peterin periaate,20260713,8,2,2,1,0,0.00%,6,2,8,4
+ilmiöt.fi,Byrokratia ja organisaatio,/strateginen-osaamattomuus.html,weaponized incompetence suomeksi,20260711,4,2,2,1,0,0.00%,10,1,4,4
+ilmiöt.fi,Byrokratia ja organisaatio,/strateginen-osaamattomuus.html,weaponized incompetence suomeksi,20260722,4,2,2,1,0,0.00%,11,1,4,4
+ilmiöt.fi,Huijaukset ja petokset,/honeypot-huijaus.html,honeypot,20260708,6,2,2,0.75,0,0.00%,9,2,8,4
+ilmiöt.fi,Psykologia ja kognitio,/dunning-kruger.html,dunning kruger,20260717,12,2,2,1,0,0.00%,1,3,12,4
+ilmiöt.fi,Psykologia ja kognitio,/gaslighting.html,gaslighting,20260711,6,2,2,0.75,0,0.00%,29.5,2,8,4
+ilmiöt.fi,Psykologia ja kognitio,/hanlonin-partaveitsi.html,hanlonin partaveitsi,20260717,8,2,2,1,0,0.00%,9,2,8,4
+ilmiöt.fi,Alustatalous ja algoritmit,/ai-slop.html,ai slop suomeksi,20260722,37,2,2,0.9487179487179487,0,0.00%,8.05,11,39,3.5454545454545454
+ilmiöt.fi,Alustatalous ja algoritmit,/doomscrolling.html,doomscrolling tarkoittaa,20260714,6,2,2,0.8571428571428571,0,0.00%,9,2,7,3.5
+ilmiöt.fi,Alustatalous ja algoritmit,/doomscrolling.html,doomscrolling tarkoittaa,20260716,6,2,2,0.8571428571428571,0,0.00%,9.5,2,7,3.5
+ilmiöt.fi,Huijaukset ja petokset,/kaarmeoljy.html,mitä on käärmeöljy,20260718,5,2,2,0.7142857142857143,0,0.00%,4,2,7,3.5
+ilmiöt.fi,Psykologia ja kognitio,/halo-efekti.html,halo efekti,20260717,13,2,2,0.9285714285714286,1,25.00%,13.25,4,14,3.5
+ilmiöt.fi,Psykologia ja kognitio,/occamin-partaveitsi.html,occamin partaveitsi,20260720,6,2,2,0.8571428571428571,0,0.00%,14.5,2,7,3.5
+ilmiöt.fi,Informaatio ja propaganda,/whataboutismi.html,whataboutismi,20260724,10,2,2,0.7692307692307693,0,0.00%,9,4,13,3.25
+ilmiöt.fi,Huijaukset ja petokset,/ponzi-pyramidi.html,ponzi huijaus,20260710,5,2,2,0.8333333333333334,0,0.00%,24.5,2,6,3
+ilmiöt.fi,Huijaukset ja petokset,/ponzi-pyramidi.html,pyramidihuijaus,20260722,5,2,2,0.8333333333333334,0,0.00%,67.5,2,6,3
+ilmiöt.fi,Huijaukset ja petokset,/toimitusjohtajahuijaus.html,toimitusjohtajahuijaus,20260718,6,2,2,1,0,0.00%,10.5,2,6,3
+ilmiöt.fi,Informaatio ja propaganda,/bkt-harha.html,bkt,20260714,8,2,2,0.8888888888888888,0,0.00%,47.333333333333336,3,9,3
+ilmiöt.fi,Informaatio ja propaganda,/streisand-ilmio.html,streisand-ilmiö,20260710,5,2,2,0.8333333333333334,0,0.00%,6,2,6,3
+ilmiöt.fi,Kasvun dynamiikka,/korkokierre.html,negatiivinen korko,20260715,3,2,2,1,0,0.00%,55,1,3,3
+ilmiöt.fi,Projekti- ja ohjelmistokehitys,/scope-creep.html,scope,20260710,6,2,2,1,0,0.00%,33.5,2,6,3
+ilmiöt.fi,Projekti- ja ohjelmistokehitys,/scope-creep.html,scope suomeksi,20260713,6,2,2,1,0,0.00%,36,2,6,3
+ilmiöt.fi,Huijaukset ja petokset,/honeypot-huijaus.html,honeypot,20260716,6,2,2,0.75,0,0.00%,11.333333333333334,3,8,2.6666666666666665
+ilmiöt.fi,Psykologia ja kognitio,/gaslighting.html,gaslighting,20260714,6,2,2,0.75,0,0.00%,35.666666666666664,3,8,2.6666666666666665
+ilmiöt.fi,Psykologia ja kognitio,/hanlonin-partaveitsi.html,hanlonin partaveitsi,20260720,8,2,2,1,0,0.00%,9.25,3,8,2.6666666666666665
+ilmiöt.fi,Informaatio ja propaganda,/whataboutismi.html,whataboutismi,20260710,10,2,2,0.7692307692307693,0,0.00%,10.5,5,13,2.6
+ilmiöt.fi,Informaatio ja propaganda,/whataboutismi.html,whataboutismi,20260715,10,2,2,0.7692307692307693,0,0.00%,10.8,5,13,2.6
+ilmiöt.fi,Informaatio ja propaganda,/whataboutismi.html,whataboutismi suomeksi,20260721,10,2,2,0.7692307692307693,0,0.00%,9.555555555555555,5,13,2.6
+ilmiöt.fi,Byrokratia ja organisaatio,/sivustakatsojan-efekti.html,sivustakatsoja efekti,20260709,5,2,2,1,0,0.00%,6,2,5,2.5
+ilmiöt.fi,Byrokratia ja organisaatio,/sivustakatsojan-efekti.html,sivustakatsoja efekti,20260721,5,2,2,1,0,0.00%,6.5,2,5,2.5
+ilmiöt.fi,Pesut ja maineenhallinta,/hyvesignalointi.html,hyve signalointi,20260715,5,2,2,1,0,0.00%,13,2,5,2.5
+ilmiöt.fi,Pesut ja maineenhallinta,/hyvesignalointi.html,hyve signalointi,20260723,5,2,2,1,0,0.00%,11.5,2,5,2.5
+ilmiöt.fi,Pesut ja maineenhallinta,/hyvesignalointi.html,hyvesignalointi,20260717,5,2,2,1,0,0.00%,11.5,2,5,2.5
+ilmiöt.fi,Pesut ja maineenhallinta,/hyvesignalointi.html,hyvesignalointi,20260722,5,2,2,1,0,0.00%,11,2,5,2.5
+ilmiöt.fi,Pesut ja maineenhallinta,/hyvesignalointi.html,hyvesignalointi,20260723,5,2,2,1,0,0.00%,11,2,5,2.5
+ilmiöt.fi,Pesut ja maineenhallinta,/hyvesignalointi.html,hyvesignalointi tarkoittaa,20260711,5,2,2,1,0,0.00%,9.5,2,5,2.5
+ilmiöt.fi,Pesut ja maineenhallinta,/hyvesignalointi.html,hyvesignalointi tarkoittaa,20260717,5,2,2,1,0,0.00%,11,2,5,2.5
+ilmiöt.fi,Projekti- ja ohjelmistokehitys,/tekninen-velka.html,tekninen velka,20260724,5,2,2,1,0,0.00%,21.5,2,5,2.5
+ilmiöt.fi,Huijaukset ja petokset,/kaarmeoljy.html,mitä on käärmeöljy,20260707,5,2,2,0.7142857142857143,0,0.00%,6.333333333333333,3,7,2.3333333333333335
+ilmiöt.fi,Informaatio ja propaganda,/whataboutismi.html,whataboutismi,20260709,10,2,2,0.7692307692307693,0,0.00%,10.833333333333334,6,13,2.1666666666666665
+ilmiöt.fi,Byrokratia ja organisaatio,/peterin-periaate.html,peterin periaate,20260721,8,2,2,1,0,0.00%,8.5,4,8,2
+ilmiöt.fi,Byrokratia ja organisaatio,/strateginen-osaamattomuus.html,weaponized incompetence suomeksi,20260713,4,2,2,1,0,0.00%,9.5,2,4,2
+ilmiöt.fi,Informaatio ja propaganda,/godwinin-laki.html,godwinin laki,20260718,3,2,2,0.75,0,0.00%,4.5,2,4,2
+ilmiöt.fi,Psykologia ja kognitio,/hanlonin-partaveitsi.html,hanlonin partaveitsi,20260715,8,2,2,1,0,0.00%,8,4,8,2
+ilmiöt.fi,Psykologia ja kognitio,/hanlonin-partaveitsi.html,hanlonin partaveitsi,20260722,8,2,2,1,0,0.00%,9.25,4,8,2
+ilmiöt.fi,Informaatio ja propaganda,/whataboutismi.html,whataboutismi,20260711,10,2,2,0.7692307692307693,0,0.00%,10.5,7,13,1.8571428571428572
+ilmiöt.fi,Informaatio ja propaganda,/whataboutismi.html,whataboutismi,20260718,10,2,2,0.7692307692307693,0,0.00%,10.416666666666668,7,13,1.8571428571428572
+ilmiöt.fi,Byrokratia ja organisaatio,/sivustakatsojan-efekti.html,sivustakatsoja efekti,20260712,5,2,2,1,0,0.00%,7.5,3,5,1.6666666666666667
+ilmiöt.fi,Pesut ja maineenhallinta,/hyvesignalointi.html,hyvesignalointi,20260709,5,2,2,1,0,0.00%,10.75,3,5,1.6666666666666667
+ilmiöt.fi,Pesut ja maineenhallinta,/hyvesignalointi.html,hyvesignalointi,20260711,5,2,2,1,0,0.00%,9.75,3,5,1.6666666666666667
+ilmiöt.fi,Pesut ja maineenhallinta,/hyvesignalointi.html,hyvesignalointi,20260712,5,2,2,1,0,0.00%,10,3,5,1.6666666666666667
+ilmiöt.fi,Pesut ja maineenhallinta,/hyvesignalointi.html,hyvesignalointi,20260719,5,2,2,1,0,0.00%,11,3,5,1.6666666666666667
+ilmiöt.fi,Informaatio ja propaganda,/whataboutismi.html,whataboutismi,20260712,10,2,2,0.7692307692307693,0,0.00%,10.5,8,13,1.625
+ilmiöt.fi,Informaatio ja propaganda,/whataboutismi.html,whataboutismi,20260719,10,2,2,0.7692307692307693,0,0.00%,10.366666666666667,8,13,1.625
+ilmiöt.fi,Huijaukset ja petokset,/honeypot-huijaus.html,honeypot,20260714,6,2,2,0.75,0,0.00%,9.583333333333332,5,8,1.6
+ilmiöt.fi,Kasvun dynamiikka,/korkokierre.html,mikä on negatiivinen korko,20260713,3,2,2,1,0,0.00%,50,2,3,1.5
+ilmiöt.fi,Kasvun dynamiikka,/korkokierre.html,negatiivinen talletuskorko,20260711,3,2,2,1,0,0.00%,56.5,2,3,1.5
+ilmiöt.fi,Psykologia ja kognitio,/dunning-kruger.html,dunning kruger,20260715,12,2,2,1,0,0.00%,10.5,8,12,1.5
+ilmiöt.fi,Informaatio ja propaganda,/whataboutismi.html,whataboutismi,20260708,10,2,2,0.7692307692307693,0,0.00%,10.75,9,13,1.4444444444444444
+ilmiöt.fi,Informaatio ja propaganda,/whataboutismi.html,whataboutismi,20260714,10,2,2,0.7692307692307693,0,0.00%,10.166666666666668,9,13,1.4444444444444444
+ilmiöt.fi,Informaatio ja propaganda,/whataboutismi.html,whataboutismi,20260716,10,2,2,0.7692307692307693,0,0.00%,10.425,9,13,1.4444444444444444
+ilmiöt.fi,Byrokratia ja organisaatio,/strateginen-osaamattomuus.html,weaponized incompetence suomeksi,20260715,4,2,2,1,0,0.00%,10.333333333333334,3,4,1.3333333333333333
+ilmiöt.fi,Pesut ja maineenhallinta,/hyvesignalointi.html,hyvesignalointi,20260713,5,2,2,1,0,0.00%,9.333333333333332,4,5,1.25
+ilmiöt.fi,Psykologia ja kognitio,/dunning-kruger.html,dunning kruger,20260716,12,2,2,1,0,0.00%,1,10,12,1.2
+ilmiöt.fi,Informaatio ja propaganda,/whataboutismi.html,whataboutismi,20260713,10,2,2,0.7692307692307693,0,0.00%,10.733333333333334,13,13,1
+ilmiöt.fi,Pesut ja maineenhallinta,/hyvesignalointi.html,hyvesignalointi,20260720,5,2,2,1,0,0.00%,11.416666666666668,5,5,1
+ilmiöt.fi,Informaatio ja propaganda,/whataboutismi.html,whataboutismi,20260723,10,2,2,0.7692307692307693,0,0.00%,9.933333333333334,15,13,0.8666666666666667
+ilmiöt.fi,Pesut ja maineenhallinta,/hyvesignalointi.html,hyvesignalointi,20260714,5,2,2,1,0,0.00%,10.5,7,5,0.7142857142857143
+ilmiöt.fi,Pesut ja maineenhallinta,/hyvesignalointi.html,hyvesignalointi,20260710,5,2,2,1,0,0.00%,8.033333333333333,8,5,0.625
+ilmiöt.fi,Pesut ja maineenhallinta,/hyvesignalointi.html,hyvesignalointi,20260715,5,2,2,1,0,0.00%,11.125,8,5,0.625
+ilmiöt.fi,Pesut ja maineenhallinta,/hyvesignalointi.html,hyvesignalointi,20260716,5,2,2,1,0,0.00%,10.833333333333332,8,5,0.625
+ilmiöt.fi,Informaatio ja propaganda,/whataboutismi.html,whataboutismi,20260722,10,2,2,0.7692307692307693,1,1.75%,9.666666666666666,21,13,0.6190476190476191
+ilmiöt.fi,Informaatio ja propaganda,/whataboutismi.html,whataboutismi,20260721,10,2,2,0.7692307692307693,0,0.00%,9.950000000000001,23,13,0.5652173913043478

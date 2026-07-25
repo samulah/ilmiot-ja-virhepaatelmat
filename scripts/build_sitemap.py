@@ -27,6 +27,7 @@ BASE = "https://www.ilmiöt.fi/"
 
 # (polku, priority, changefreq)
 ETUSIVU = ("", "1.0", "monthly")
+KATEGORIA = ("kategoria-{slug}.html", "0.7", "monthly")
 ILMIO = ("{slug}.html", "0.8", "monthly")
 TIETOA = ("tietoa.html", "0.5", "yearly")
 
@@ -36,6 +37,14 @@ def kortit_jarjestyksessa(html):
     assert slugit, "hub-kortteja ei löytynyt index.html:stä"
     assert len(slugit) == len(set(slugit)), "duplikaattikortti index.html:ssä"
     return slugit
+
+
+def kategoriat_jarjestyksessa(html):
+    """index.html:n kategoriajärjestyksessä ne kategoriat, joilla on oma sivu.
+    Kategoriasivuja tehdään vaiheittain, joten puuttuva sivu ei ole virhe."""
+    kat_idt = re.findall(r'<div class="hub-kategoria" id="([^"]+)">', html)
+    slugit = [re.sub(r"-kategoria$", "", k) for k in kat_idt]
+    return [s for s in slugit if (ROOT / f"kategoria-{s}.html").exists()]
 
 
 def git_paiva(tiedosto):
@@ -64,6 +73,9 @@ def rakenna():
              '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
 
     sivut = [(ETUSIVU[0], "index.html", ETUSIVU[1], ETUSIVU[2])]
+    sivut += [(KATEGORIA[0].format(slug=s), f"kategoria-{s}.html",
+               KATEGORIA[1], KATEGORIA[2])
+              for s in kategoriat_jarjestyksessa(html)]
     sivut += [(ILMIO[0].format(slug=s), f"{s}.html", ILMIO[1], ILMIO[2])
               for s in kortit_jarjestyksessa(html)]
     sivut.append((TIETOA[0], "tietoa.html", TIETOA[1], TIETOA[2]))
