@@ -47,10 +47,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SISALTO = ROOT / "kategoriat"
-LUONNOSKANSIO = ROOT / "luonnokset-kategoriat"
+LUONNOSKANSIO = ROOT / "luonnokset-media"
 
 DOMAIN = "https://www.ilmiöt.fi"
-CSS_VERSIO = "20260721"   # pidä samassa kuin ilmiösivuilla (ks. muisti: CSS cache-bust)
+CSS_VERSIO = "20260727"   # pidä samassa kuin ilmiösivuilla (ks. muisti: CSS cache-bust)
 
 
 # ───────────────────────────── index.html ──────────────────────────────
@@ -630,8 +630,15 @@ def main(argv):
         meta, meta_runko = lue_sisalto(polku)
         meta["_runko"] = meta_runko
         kat_id = meta["kat_id"]
-        assert kat_id in kategoriat, \
-            f"{polku.name}: kat_id '{kat_id}' ei ole index.html:ssä"
+        # Kategoria voi olla luonnos: sisältötiedosto on olemassa, mutta
+        # kategoriaa ei ole vielä index.html:ssä, koska sen ilmiöitä ei ole
+        # julkaistu. Massa-ajo ohittaa sellaisen; nimeltä pyydettäessä
+        # puuttuva kat_id on edelleen virhe (kirjoitusvirheet kiinni).
+        if kat_id not in kategoriat:
+            assert not valitut, \
+                f"{polku.name}: kat_id '{kat_id}' ei ole index.html:ssä"
+            print(f"ohitetaan {polku.name}: kat_id '{kat_id}' ei ole vielä index.html:ssä")
+            continue
         # tiedostonimi määrää URLin; muut skriptit johtavat sen kat_id:stä
         assert re.sub(r"-kategoria$", "", kat_id) == polku.stem, \
             (f"{polku.name}: tiedoston nimen pitää olla "

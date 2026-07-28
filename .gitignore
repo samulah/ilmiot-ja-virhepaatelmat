@@ -1,2 +1,4 @@
 scripts/__pycache__/
 .htaccess
+.claude/worktrees/
+*:Zone.Identifier
