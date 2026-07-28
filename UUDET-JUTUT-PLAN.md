@@ -205,3 +205,56 @@ kohdalla, klikit, keskimääräinen sijainti päätermillä. Jos P1-sivu ei
 saa impressioita 4 viikossa, tarkista indeksointi (URL inspection)
 ennen sisältömuutoksia. Arvioidut volyymit voi validoida etukäteen
 DataForSEO-työkaluilla, jos halutaan varmistus ennen kirjoitustyötä.
+
+---
+
+## Media ja julkisuus — 13. kategoria (luonnokset 2026-07-28)
+
+Lähtökohta: sivustolla on jo runsaasti media-lähisukuisia ilmiöitä
+(manufactured consent 11, Betteridgen laki 12, kuollut kissa 17, astroturf 9,
+firehose 10, trollitehdas 16, kaikukammio 88, rage bait 92), mutta ne ovat
+hajallaan Informaatio ja propaganda- sekä Alustatalous-kategorioissa.
+Käyttämätön maasto on nimenomaan **julkisuuden aukot**: miksi jostain ei
+uutisoida ja miksi asia kerrotaan juuri niin kuin kerrotaan.
+
+**Luonnokset kansiossa `luonnokset-media/` (numerot 109–118, alustavia):**
+
+| Nro | Sivu | Alkuperäistermi | Miksi |
+|-----|------|-----------------|-------|
+| 109 | Uutiskynnys | news threshold / news values | Kategorian ankkurisivu; hyvä suomenkielinen hakutermi, fi-SERPissä vain sanakirjatasoa |
+| 110 | Uutisautiomaa | news desert | Ajankohtainen, tutkimuspohja vahva (Abernathy; Gao–Lee–Murphy 2020) |
+| 111 | Pääsyjournalismi | access journalism | Vastaa suoraan "miksi ei kysytä vaikeita" -kysymykseen |
+| 112 | Tiedotejournalismi | churnalism | Kovat luvut (Cardiff 2008), linkittyy astroturfiin ja pesuihin |
+| 113 | Bränditurvallisuus | brand safety | Moderni, konkreettinen; selittää demonetisoinnin ja kiertoilmaisut |
+| 114 | Huonojen uutisten hautaaminen | burying bad news | Nimetty tapaus (Jo Moore 2001), erottuu kuolleesta kissasta |
+| 115 | Väärä tasapaino | false balance / bothsidesism | Klassikko, puuttui kokonaan; pari konsensus-fetissille |
+| 116 | Kehäraportointi | circular reporting / citogenesis | Jaettava esimerkki (Jarre-sitaatti 2009) |
+| 117 | Gell-Mannin amnesia | Gell-Mann amnesia effect | Nimetty ilmiö, fi-SERP käytännössä tyhjä — sivuston ydinaluetta |
+| 118 | Vihamielisen median harha | hostile media effect | Klassinen tutkimus (Vallone ym. 1985), selittää mediakritiikin symmetrian |
+
+**Vaihe 2 -ehdokkaat** (ei vielä luonnoksia): vaientamiskanne (SLAPP),
+hiljaisuuden spiraali, symbolinen näkymättömyys, natiivimainonta/advertoriaali,
+ajatushautomon pesu, oikaisukuilu, sitogeneesi omana sivunaan, uutisvälttely,
+ilkeän maailman oireyhtymä, kolmannen henkilön efekti, tunnistettavan uhrin
+vaikutus, myötätuntoväsymys, kontekstin poisto, uutisen puoliintumisaika,
+vaaleanpunainen lima -journalismi (nimeäminen auki).
+
+**Päällekkäisyysriskit, jotka on hoidettava ristiinlinkityksellä:**
+hiljaisuuden spiraali ↔ äänekäs vähemmistö (94), uutisvälttely ↔ doomscrolling (87),
+ajatushautomon pesu ↔ astroturf (9), oikaisukuilu ↔ Brandolinin laki (18).
+
+**Kategorian avaamisen sivuvaikutus:** jos Media ja julkisuus perustetaan,
+sinne kannattaa siirtää ainakin kuollut kissa, Betteridgen laki,
+manufactured consent ja portinvartija-kulttuuri — mikä tarkoittaa koko
+sivuston uudelleennumerointia kuten P3:ssa, sekä uutta kategoriasivua
+(`kategoria-media-ja-julkisuus.html`) 12 nykyisen rinnalle. Kategoriasivun
+sisältötiedosto on jo tehty: `kategoriat/media-ja-julkisuus.md` (~550 sanaa
+uniikkia proosaa), ja esikatselu `luonnokset-media/kategoria-media-ja-julkisuus.html`.
+Julkaisussa sivun tekee `build_kategoriat.py media-ja-julkisuus` — massa-ajo
+ohittaa kategorian siihen asti, koska sitä ei ole vielä index.html:ssä.
+Samalla 12 nykyisen kategoriasivun laskurit muuttuvat muotoon `x / 13`.
+
+**Generointi:** `scripts/build_media_luonnokset.py` (pohjana
+`aanekas-vahemmisto.html`). Luonnoksissa on `noindex` ja `../`-etuliitteiset
+polut; julkaistaessa molemmat puretaan ja ajetaan build_liittyvat.py,
+paivita_maarat.py, build_sitemap.py ja build_search_index.py.

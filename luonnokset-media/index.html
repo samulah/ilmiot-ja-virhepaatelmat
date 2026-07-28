@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <title>Uudet luonnokset — Ilmiöitä</title>
+  <link rel="stylesheet" href="../fonts/fonts.css">
+  <link rel="stylesheet" href="../fonts/spectral.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --c-primary:      #C9A84C;
+      --c-primary-dark: #1C1400;
+      --c-primary-mid:  #8B6914;
+      --c-bg:           #F5F0E5;
+    }
+
+    body {
+      font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+      background: var(--c-bg);
+      color: #1A1100;
+      min-height: 100vh;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    .hub-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: var(--c-primary-dark);
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.28);
+    }
+    .hub-logo { width: 36px; height: 36px; flex-shrink: 0; }
+    .hub-header-left { flex: 1; min-width: 0; }
+    .hub-header-left h1 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      font-family: 'Spectral', Georgia, serif;
+    }
+    .hub-header-left p {
+      font-size: 0.72em;
+      color: rgba(255,255,255,0.48);
+      margin-top: 0.1em;
+      letter-spacing: 0.01em;
+    }
+    .paluu-btn {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(201,168,76,0.18);
+      color: #fff;
+      border: 1px solid rgba(201,168,76,0.4);
+      padding: 0.5rem 1rem;
+      font-size: 0.82em;
+      font-weight: 500;
+      font-family: inherit;
+      text-decoration: none;
+      transition: background 0.12s;
+      white-space: nowrap;
+    }
+    .paluu-btn:hover { background: rgba(201,168,76,0.3); }
+
+    .hub-main {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 1.5rem 1.5rem 4rem;
+    }
+    .hub-intro {
+      max-width: 740px;
+      margin: 0.3rem auto 1.2rem;
+      text-align: center;
+      font-size: 0.9em;
+      line-height: 1.55;
+      color: #5a4712;
+    }
+    .hub-huomio {
+      max-width: 740px;
+      margin: 0 auto 2rem;
+      background: #FDF6DC;
+      border: 1.5px solid #D4C090;
+      border-left: 4px solid #C9A84C;
+      padding: 0.75rem 1.1rem;
+      font-size: 0.82em;
+      line-height: 1.55;
+      color: #3d3008;
+    }
+
+    .hub-intro code, .hub-huomio code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.92em;
+      background: rgba(201,168,76,0.16);
+      padding: 0.05em 0.3em;
+    }
+
+    .hub-kategoria { margin-bottom: 1.8rem; }
+    .hub-kat-label {
+      font-size: 0.67em;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      color: var(--c-primary-mid);
+      margin-bottom: 0.15rem;
+      padding-left: 0.15rem;
+    }
+    .hub-kat-desc {
+      font-size: 0.76em;
+      color: #8B6914;
+      margin: 0 0 0.55rem;
+      padding-left: 0.15rem;
+    }
+
+    .hub-kortit {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 0.35rem;
+    }
+
+    .hub-kortti {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.6rem 0.8rem;
+      background: #FDFAF2;
+      border: 1.5px solid #D4C090;
+      border-left: 4px solid var(--c, #2c3e50);
+      text-decoration: none;
+      color: #1A1100;
+      font-size: 0.865em;
+      line-height: 1.3;
+      transition: border-color 0.1s, box-shadow 0.1s, transform 0.1s;
+    }
+    .hub-kortti:hover {
+      border-color: var(--c, #2c3e50);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.09);
+      transform: translateX(3px);
+    }
+    .hub-numero {
+      flex-shrink: 0;
+      width: 1.9em;
+      height: 1.9em;
+      background: var(--c, #2c3e50);
+      color: #fff;
+      font-size: 0.76em;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hub-nimi { flex: 1; }
+    .hub-nuoli {
+      color: #d0cdc8;
+      font-size: 1em;
+      flex-shrink: 0;
+      transition: color 0.1s;
+    }
+    .hub-kortti:hover .hub-nuoli { color: var(--c, #2c3e50); }
+
+    @media (max-width: 640px) {
+      .hub-header { padding: 0.75rem 1rem; }
+      .hub-main { padding: 1.2rem 1rem 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="hub-header">
+  <img class="hub-logo" src="../favicon.svg" alt="Ilmiöitä-logo: punainen varoituslippu" width="36" height="36">
+  <div class="hub-header-left">
+    <h1>Ilmiöitä &middot; luonnokset</h1>
+    <p>14 ilmiötä + 1 kategoriasivu odottaa julkaisua</p>
+  </div>
+  <a class="paluu-btn" href="../index.html">&larr; Kaikki ilmiöt</a>
+</header>
+
+<main class="hub-main">
+<p class="hub-intro">Julkaisemattomat luonnokset. Sivut ovat <code>noindex</code>-merkittyjä ja
+niiden polut osoittavat <code>../</code>-etuliitteellä juureen — julkaistaessa molemmat puretaan.
+Numerot ovat alustavia ja ne lyödään lukkoon vasta uudelleennumeroinnissa.</p>
+
+<div class="hub-huomio">
+  <strong>Julkaisun tarkistuslista:</strong> siirrä sivu juureen &rarr; poista
+  <code>&lt;meta name="robots" content="noindex"&gt;</code> &rarr; riisu <code>../</code>-etuliitteet
+  &rarr; lisää ilmiö <code>index.html</code>:ään ja kategoriasivulle &rarr; aja
+  <code>build_liittyvat.py</code>, <code>paivita_maarat.py</code>, <code>build_sitemap.py</code> ja
+  <code>build_search_index.py</code> &rarr; päivitä IDS/PREV/NEXT kaikille sivuille.
+  <br><strong>Kategoriasivu:</strong> lähde on <code>kategoriat/media-ja-julkisuus.md</code>. Kun
+  kategoria on <code>index.html</code>:ssä, sivun tekee <code>build_kategoriat.py media-ja-julkisuus</code>
+  — tämän kansion esikatselu on kertakäyttöinen. Muista myös päivittää 12 nykyisen kategoriasivun
+  laskurit muotoon <code>x / 13</code> ja Tilastoilla valehtelu -sivun "seuraava kategoria" -linkki.
+</div>
+
+<section class="hub-kategoria">
+  <div class="hub-kat-label">Media ja julkisuus &middot; uusi kategoria (13.)</div>
+  <p class="hub-kat-desc">Miksi jostain ei uutisoida, miksi jostain kerrotaan vinoutuneesti — ja miksi yleisö lukee sen kuten lukee.</p>
+  <div class="hub-kortit">
+    <a class="hub-kortti" style="--c:#283593" href="kategoria-media-ja-julkisuus.html"><span class="hub-numero">13</span><span class="hub-nimi">Kategoriasivu: Media ja julkisuus</span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#455a64" href="uutiskynnys.html"><span class="hub-numero">109</span><span class="hub-nimi">Uutiskynnys</span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#546e7a" href="uutisautiomaa.html"><span class="hub-numero">110</span><span class="hub-nimi">Uutisautiomaa</span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#6d4c41" href="paasyjournalismi.html"><span class="hub-numero">111</span><span class="hub-nimi">Pääsyjournalismi</span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#00796b" href="tiedotejournalismi.html"><span class="hub-numero">112</span><span class="hub-nimi">Tiedotejournalismi</span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#0277bd" href="branditurvallisuus.html"><span class="hub-numero">113</span><span class="hub-nimi">Bränditurvallisuus</span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#4527a0" href="huonojen-uutisten-hautaaminen.html"><span class="hub-numero">114</span><span class="hub-nimi">Huonojen uutisten hautaaminen</span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#ad1457" href="vaara-tasapaino.html"><span class="hub-numero">115</span><span class="hub-nimi">Väärä tasapaino</span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#7b1fa2" href="keharaportointi.html"><span class="hub-numero">116</span><span class="hub-nimi">Kehäraportointi</span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#e65100" href="gell-mannin-amnesia.html"><span class="hub-numero">117</span><span class="hub-nimi">Gell-Mannin amnesia</span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#33691e" href="vihamielisen-median-harha.html"><span class="hub-numero">118</span><span class="hub-nimi">Vihamielisen median harha</span><span class="hub-nuoli">&rsaquo;</span></a>
+  </div>
+</section>
+
+<section class="hub-kategoria">
+  <div class="hub-kat-label">Projekti- ja ohjelmistokehitys &middot; suurhankkeet</div>
+  <p class="hub-kat-desc">Neljän sivun erä päätöksenteon ja kustannusarvioiden vinoumista. Numerot sijoittuvat nykyisen kategorian sisään, joten julkaisu siirtää sitä seuraavat numerot eteenpäin.</p>
+  <div class="hub-kortit">
+    <a class="hub-kortti" style="--c:#3d5a6c" href="lukittu-paatos.html"><span class="hub-numero">54</span><span class="hub-nimi">Lukittu päätös</span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#7a4b12" href="strateginen-aliarviointi.html"><span class="hub-numero">55</span><span class="hub-nimi">Strateginen aliarviointi</span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#5b2c6f" href="paatosperainen-todistelu.html"><span class="hub-numero">56</span><span class="hub-nimi">Päätösperäinen todistelu</span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#6e2c00" href="lapi-hinnalla-milla-hyvansa.html"><span class="hub-numero">57</span><span class="hub-nimi">Läpi hinnalla millä hyvänsä</span><span class="hub-nuoli">&rsaquo;</span></a>
+  </div>
+</section>
+</main>
+</body>
+</html>

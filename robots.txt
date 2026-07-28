@@ -13,4 +13,4 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-Sitemap: https://www.ilmiöt.fi/sitemap.xml
+Sitemap: https://www.xn--ilmit-mua.fi/sitemap.xml
