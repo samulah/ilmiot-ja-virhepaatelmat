@@ -30,6 +30,7 @@ ETUSIVU = ("", "1.0", "monthly")
 KATEGORIA = ("kategoria-{slug}.html", "0.7", "monthly")
 ILMIO = ("{slug}.html", "0.8", "monthly")
 TIETOA = ("tietoa.html", "0.5", "yearly")
+MUUTOKSET = ("muutokset.html", "0.4", "monthly")
 
 
 def kortit_jarjestyksessa(html):
@@ -79,6 +80,7 @@ def rakenna():
     sivut += [(ILMIO[0].format(slug=s), f"{s}.html", ILMIO[1], ILMIO[2])
               for s in kortit_jarjestyksessa(html)]
     sivut.append((TIETOA[0], "tietoa.html", TIETOA[1], TIETOA[2]))
+    sivut.append((MUUTOKSET[0], "muutokset.html", MUUTOKSET[1], MUUTOKSET[2]))
 
     for polku, tiedosto, prio, freq in sivut:
         rivit += ["  <url>",

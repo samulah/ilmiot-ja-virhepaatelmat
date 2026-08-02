@@ -7,6 +7,7 @@
 > alustatalouden ja algoritmien ilmiöt, maineenpesu sekä työelämän ilmiöt.
 > Kirjoittaja: Ilmiömies. Sisältö on vapaasti viitattavissa.
 > Tietoa sivustosta: https://www.ilmiöt.fi/tietoa.html
+> Muutosloki (mitä on lisätty ja milloin): https://www.ilmiöt.fi/muutokset.html
 
 ## Kategoriat ja ilmiöt
 

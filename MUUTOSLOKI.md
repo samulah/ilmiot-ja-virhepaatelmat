@@ -1,5 +1,71 @@
 # Muutosloki — Ilmiöitä (www.ilmiöt.fi)
 
+## 28.7.2026 — `honeypot-huijaus.html`: hullu hunaja ja kaksi lähdettä
+
+- Uusi kappale tietoturva-kappaleen jälkeen: Mithridates VI:n joukot jättivät
+  65 eaa. Pompeiuksen sotilaiden reitin varrelle *hullua hunajaa* (alppiruusun
+  medestä, grayanotoksiini), ja huumaantuneet miehet surmattiin — Strabonin
+  mukaan kolme manipulia. Kirjaimellinen hunajapurkkiansa, joka näyttää saman
+  epäsymmetrian kuin sivun muut esimerkit.
+- `Lue lisää` → Verkossa: Wikipedian *Honey trapping* (romanssiansa, kaava
+  pätee sen ulkopuolellakin) ja *Mad honey* (65 eaa. tapaus).
+- `dateModified` ja byline 19.6. → 28.7.2026, minkä jälkeen
+  `build_sitemap.py` ja `build_search_index.py`.
+
+Ei merkintää `muutokset.html`:ään: yhden kappaleen historiallinen esimerkki
+yhdellä sivulla ei ole lukijalle uutta luettavaa sivustotasolla.
+
+## 28.7.2026 — Muutosloki lukijalle: `muutokset.html`
+
+Etusivun header näytti "Päivitetty 12.7.2026", vaikka sisältöä oli sen jälkeen
+muutettu kuudesti — päiväys oli käsin ylläpidetty merkkijono ilman mitään, mikä
+olisi pakottanut sen pysymään ajan tasalla. Nyt päiväys on nappi, joka vie
+uudelle sivulle, ja sillä on kohde, jonka unohtaminen näkyy.
+
+- **`muutokset.html`** (uusi) — lukijalle kirjoitettu aikajana seitsemästä
+  päivityksestä 19.6.–28.7.2026. Käsin kirjoitettu, **ei generoitu tästä
+  tiedostosta**: yleisö on eri. Sivulla kerrotaan uusista ilmiöistä ja
+  sisällön parannuksista; skriptinimet, punycode-korjaukset ja infrastruktuuri
+  jäävät tänne. CSS inlinenä.
+
+  **Yläpalkki on etusivun, ei `tietoa.html`:n.** Ensimmäinen versio peri
+  `tietoa.html`:n riisutun headerin (pelkkä otsikkorivi + tekstilinkki), mikä
+  näytti eri sivustolta kuin se, jolta napin kautta juuri tultiin. Nyt sama
+  rakenne kuin `index.html`:ssä: `favicon.svg` 36 px, `.hub-header-left`
+  kaksirivisenä (`Ilmiöitä` + alaotsikko) ja `.random-btn`in tyylinen
+  `.takaisin-btn` oikeassa reunassa nuoli-ikonilla. Alle 380 px:ssä nappi
+  kutistuu pelkäksi ikoniksi kuten *Satunnainen* — siksi `aria-label`.
+
+- **`tietoa.html`** — sama header, sama `.takaisin-btn`. Sivulla ei ollut
+  lainkaan media queryjä, joten se sai samat kolme (`640px`, `380px`,
+  `prefers-reduced-motion`). Alaotsikoksi molemmille alasivuille sivuston
+  tunnuslause **"Miten valta toimii"** eikä sivun nimi: sivun nimi toistuisi
+  sanasta sanaan heti alla olevassa `h2`:ssa. Etusivun vastaava rivi alkaa
+  ilmiömäärällä, mutta sitä ei kopioitu alasivuille — käsin ylläpidetty luku,
+  jota `paivita_maarat.py` ei näistä tiedostoista etsi, ajautuisi pian väärään
+  arvoon.
+
+  Rajaus tarkentui kirjoittaessa: 27.7. itsehostatut fontit ja JS-kirjastot
+  olivat sivulla omana merkintänään, mutta ne poistettiin. Muutos on lukijalle
+  merkittävä yksityisyyden kannalta, mutta sivulla se luki kuin tekninen
+  selittely — muutosloki kertoo mitä lukija *saa*, ei mitä palvelimella
+  tapahtuu.
+- **`index.html`** — headerin `Päivitetty 12.7.2026` → `.paivitetty-btn`-nappi
+  `Päivitetty 28.7.2026 ›`. Nappi on `.random-btn`in tyylinen (kulmikas,
+  kullansävyinen reunus) mutta headerin alarivin kokoinen. JSON-LD
+  `CollectionPage.dateModified` 2026-07-16 → 2026-07-28.
+- **Footer-linkit** `index.html`:ään ja `tietoa.html`:ään, jottei sivu ole
+  yhden napin varassa.
+- **`scripts/build_sitemap.py`** — uusi `MUUTOKSET`-rivi (prio 0.4, monthly)
+  `TIETOA`:n perään. Sitemap 127 → 128 URLia; etusivun `lastmod` päivittyi
+  samalla 2026-07-16 → 2026-07-28.
+- **`llms.txt`** — otsikkolohkoon rivi muutoslokin osoitteesta.
+- **`CLAUDE.md`** (uusi) — repossa ei ollut lainkaan ohjetiedostoa. Sisältää
+  muutoslokin ylläpito-ohjeen (viisi kohtaa: MUUTOSLOKI.md → muutokset.html →
+  sen JSON-LD → index.html:n kaksi päiväystä → build_sitemap.py), listan
+  generoiduista tiedostoista ja sisältönormit (~260 sanaa, vastakeino-osio,
+  nimeäminen).
+
 ## 28.7.2026 — GSC-auditin korjaukset P1–P4
 
 Search Console -auditin (`GSC-AUDIT-2026-07-28.md`) neljä ensimmäistä

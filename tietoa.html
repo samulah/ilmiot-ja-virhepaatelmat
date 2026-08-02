@@ -77,19 +77,56 @@
       line-height: 1.7;
       -webkit-text-size-adjust: 100%;
     }
+    /* ── Header (sama rakenne kuin index.html:ssä) ── */
     .hub-header {
       position: sticky; top: 0; z-index: 20;
       background: var(--c-primary-dark);
+      border-bottom: none;
       padding: 0.85rem 1.5rem;
       display: flex; align-items: center; gap: 0.75rem;
       box-shadow: 0 2px 12px rgba(0,0,0,0.28);
     }
-    .hub-header h1 {
-      font-size: 1rem; font-weight: 700; color: #fff; line-height: 1.2;
-      font-family: 'Spectral', Georgia, serif; letter-spacing: -0.01em;
+    .hub-logo { width: 36px; height: 36px; flex-shrink: 0; }
+    .hub-header-left {
+      flex-shrink: 0;
+      margin-right: 0.25rem;
     }
-    .hub-header a { margin-left: auto; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; }
-    .hub-header a:hover { color: #fff; }
+    .hub-header-left h1 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      font-family: 'Spectral', Georgia, serif;
+    }
+    .hub-header-left p {
+      font-size: 0.72em;
+      color: rgba(255,255,255,0.48);
+      margin-top: 0.1em;
+      margin-bottom: 0;
+      letter-spacing: 0.01em;
+    }
+    .takaisin-btn {
+      flex-shrink: 0;
+      margin-left: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(201,168,76,0.18);
+      color: #fff;
+      border: 1px solid rgba(201,168,76,0.4);
+      border-radius: 0;
+      padding: 0.5rem 1rem;
+      font-size: 0.82em;
+      font-weight: 500;
+      font-family: inherit;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.12s;
+      white-space: nowrap;
+    }
+    .takaisin-btn:hover { background: rgba(201,168,76,0.3); color: #fff; }
+    .takaisin-btn:active { transform: scale(0.97); }
     main {
       max-width: 760px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem;
     }
@@ -112,13 +149,33 @@
       font-size: .8rem; color: var(--c-primary-mid); line-height: 1.6;
     }
     .ilmio-footer a { color: var(--c-primary-mid); }
+    @media (max-width: 640px) {
+      .hub-header { padding: 0.75rem 1rem; }
+      .hub-header-left { flex: 1; }
+      main { padding: 2rem 1.1rem 3rem; }
+      main h2 { font-size: 1.6rem; }
+    }
+    @media (max-width: 380px) {
+      .takaisin-btn .btn-label { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .takaisin-btn { transition: none; }
+      .takaisin-btn:active { transform: none; }
+    }
   </style>
 </head>
 <body>
 
   <header class="hub-header">
-    <h1>Ilmiöitä — Miten valta toimii</h1>
-    <a href="index.html">← Kaikki ilmiöt</a>
+    <img class="hub-logo" src="favicon.svg" alt="Ilmiöitä-logo: punainen varoituslippu" width="36" height="36">
+    <div class="hub-header-left">
+      <h1>Ilmiöitä</h1>
+      <p>Miten valta toimii</p>
+    </div>
+    <a class="takaisin-btn" href="index.html" title="Kaikki ilmiöt" aria-label="Kaikki ilmiöt">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      <span class="btn-label">Kaikki ilmiöt</span>
+    </a>
   </header>
 
   <main>
@@ -163,7 +220,8 @@
 
   <footer class="ilmio-footer">
     <p>© 2026 Ilmiöitä — Miten valta toimii · Kirjoittanut Ilmiömies ·
-    <a href="index.html">Kaikki ilmiöt</a></p>
+    <a href="index.html">Kaikki ilmiöt</a> ·
+    <a href="muutokset.html">Mitä sivustolle on tehty</a></p>
   </footer>
 
 </body>

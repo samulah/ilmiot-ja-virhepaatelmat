@@ -57,6 +57,26 @@
       margin-top: 0.1em;
       letter-spacing: 0.01em;
     }
+    .paivitetty-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3em;
+      padding: 0.08em 0.5em;
+      border: 1px solid rgba(201,168,76,0.38);
+      background: rgba(201,168,76,0.14);
+      color: rgba(255,255,255,0.72);
+      text-decoration: none;
+      font-family: inherit;
+      font-size: inherit;
+      cursor: pointer;
+      transition: background 0.12s, color 0.12s, border-color 0.12s;
+    }
+    .paivitetty-btn:hover,
+    .paivitetty-btn:focus-visible {
+      background: rgba(201,168,76,0.32);
+      border-color: rgba(201,168,76,0.7);
+      color: #fff;
+    }
     .hub-haku {
       flex: 1;
       min-width: 0;
@@ -431,7 +451,7 @@
       "name": "Ilmiöt — 113 yhteiskunnallista ilmiötä selitettynä",
       "description": "Ilmiöt selitettynä suomeksi: 113 ilmiötä vallankäytöstä, propagandasta, kognitiivisista harhoista, byrokratiasta, huijauksista ja myyntikikoista — esimerkit ja vastakeinot.",
       "inLanguage": "fi",
-      "dateModified": "2026-07-16",
+      "dateModified": "2026-07-28",
       "isPartOf": {
         "@id": "https://www.ilmiöt.fi/#website"
       },
@@ -1196,7 +1216,7 @@
   <img class="hub-logo" src="favicon.svg" alt="Ilmiöitä-logo: punainen varoituslippu" width="36" height="36">
   <div class="hub-header-left">
     <h1>Ilmiöitä</h1>
-    <p>113 ilmiötä &middot; Miten valta toimii &middot; Päivitetty 12.7.2026</p>
+    <p>113 ilmiötä &middot; Miten valta toimii &middot; <a class="paivitetty-btn" href="muutokset.html" title="Mitä sivustolle on tehty">Päivitetty 28.7.2026 &rsaquo;</a></p>
   </div>
   <input class="hub-haku" type="search" id="haku" placeholder="Etsi ilmiötä&hellip;" autocomplete="off" spellcheck="false">
   <button class="random-btn" onclick="randomIlmio()" title="Satunnainen ilmiö (R)">
@@ -2421,7 +2441,7 @@
 </script>
 
   <footer class="ilmio-footer">
-    <p>© 2026 Ilmiöitä — Miten valta toimii · Kirjoittanut Ilmiömies · <a href="tietoa.html">Tietoa sivustosta ja tekijästä</a></p>
+    <p>© 2026 Ilmiöitä — Miten valta toimii · Kirjoittanut Ilmiömies · <a href="tietoa.html">Tietoa sivustosta ja tekijästä</a> · <a href="muutokset.html">Mitä sivustolle on tehty</a></p>
   </footer>
 </body>
 </html>
