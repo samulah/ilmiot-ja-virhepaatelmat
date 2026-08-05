@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <title>Brandolinin laki — valheen kumoaminen maksaa kymmenkertaisesti — Ilmiöitä</title>
+  <title>Brandolinin laki — valhe on halpaa, kumoaminen kallista — Ilmiöitä</title>
   <link rel="stylesheet" href="style.css?v=20260725">
   <link rel="stylesheet" href="fonts/fonts.css">
   <script>
@@ -16,7 +16,7 @@
       if (loaded) return;
       loaded = true;
       var s = document.createElement('script');
-      s.src = 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js';
+      s.src = 'js/mermaid.min.js';
       s.onload = function () {
         mermaid.initialize({ startOnLoad: false, theme: 'base', themeVariables: { fontSize: '12px', fontFamily: "'DM Sans', system-ui, sans-serif", primaryColor: '#FBF5E0', primaryTextColor: '#1A1100', primaryBorderColor: '#C9A84C', lineColor: '#8B6914', secondaryColor: '#F5F0E5', tertiaryColor: '#FDFAF2', mainBkg: '#FBF5E0', nodeBorder: '#C9A84C', clusterBkg: '#F5F0E5', titleColor: '#3A2000', edgeLabelBackground: '#FDFAF2' } });
         mermaid.run();
@@ -577,7 +577,7 @@
     .kortti-breadcrumb a { color: #8B6914; text-decoration: none; }
     .kortti-breadcrumb a:hover { text-decoration: underline; }
     .kortti-breadcrumb-sep { color: #ccc; }
-    .kortti-breadcrumb .kortti-breadcrumb .kortti-breadcrumb .kortti-breadcrumb-kat { color: #666; }
+    .kortti-breadcrumb .kortti-breadcrumb-kat { color: #666; }
     .kortti-random-btn {
       margin-left: auto;
       display: inline-flex;
@@ -713,7 +713,7 @@
     }
     .random-siirtyma-overlay.nakyva .random-siirtyma-teksti { opacity: 1; }
   
-.infolaatikko h2.laatikko-otsikko, .huomiolaatikko h2.laatikko-otsikko {
+.infolaatikko h2.laatikko-otsikko, .huomiolaatikko h2.laatikko-otsikko, .vaaralatikko h2.laatikko-otsikko {
   display: inline; font: inherit; font-weight: 700; color: inherit;
   margin: 0; padding: 0; letter-spacing: inherit;
 }
@@ -722,14 +722,14 @@
   <!-- SEO -->
   <meta name="description" content="Brandolinin laki: valheen kumoaminen maksaa kymmenkertaisesti sen levittämiseen nähden. Selitämme asymmetrian seuraukset ja järkevät vastakeinot.">
   <link rel="canonical" href="https://www.ilmiöt.fi/brandolinin-laki.html">
-  <meta property="og:title" content="Brandolinin laki — valheen kumoaminen maksaa kymmenkertaisesti — Ilmiöitä">
+  <meta property="og:title" content="Brandolinin laki — valhe on halpaa, kumoaminen kallista — Ilmiöitä">
   <meta property="og:description" content="Brandolinin laki: valheen kumoaminen maksaa kymmenkertaisesti sen levittämiseen nähden. Selitämme asymmetrian seuraukset ja järkevät vastakeinot.">
   <meta property="og:url" content="https://www.ilmiöt.fi/brandolinin-laki.html">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="fi_FI">
   <meta property="og:site_name" content="Ilmiöitä — Miten valta toimii">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Brandolinin laki — valheen kumoaminen maksaa kymmenkertaisesti — Ilmiöitä">
+  <meta name="twitter:title" content="Brandolinin laki — valhe on halpaa, kumoaminen kallista — Ilmiöitä">
   <meta name="twitter:description" content="Brandolinin laki: valheen kumoaminen maksaa kymmenkertaisesti sen levittämiseen nähden. Selitämme asymmetrian seuraukset ja järkevät vastakeinot.">
   <meta property="og:image" content="https://www.ilmiöt.fi/og/brand.png">
   <meta property="og:image:width" content="1200">
@@ -812,11 +812,34 @@
         "description": "Kirjoittajanimi, jonka takana on kiinnostus valtaan, vaikuttamiseen ja ihmisen päättelyn vinoumiin. Sisältö perustuu julkisiin lähteisiin ja vakiintuneeseen käsitteistöön."
       },
       "datePublished": "2026-07-10",
-      "dateModified": "2026-07-10"
+      "dateModified": "2026-08-04"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.ilmiöt.fi/brandolinin-laki.html#faq",
+      "inLanguage": "fi",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Kuka muotoili Brandolinin lain?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Italialainen ohjelmistokehittäjä Alberto Brandolini kirjoitti lauseen Twitteriin 11.1.2013 seurattuaan televisioväittelyä, jossa toinen osapuoli latasi väitteitä nopeammin kuin toinen ehti tarkistaa niitä. Laki tunnetaan myös nimellä bullshit asymmetry principle."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mitä Brandolinin laille voi tehdä?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Jokaisen väitteen kumoaminen ei ole mahdollista — se on laskutoimitus, ei asennekysymys. Toimivampaa on osoittaa väitteiden lähde tai kaava kuin käsitellä ne yksitellen, ja valita kumottavaksi ne väitteet, joilla on eniten painoa."
+          }
+        }
+      ]
     }
   ]
 }
-  </script>
+</script>
   <style>
     .ilmio-byline{font-size:.82rem;color:#8B6914;font-style:italic;margin:.15rem 0 1.3rem;}
     .ilmio-byline a{color:#8B6914;}
@@ -841,8 +864,12 @@
   <div class="ilmio" id="brandolinin-laki">
 <div class="ilmio-tag">Ilmiö 18</div>
 <h1>Brandolinin laki — valheen kumoaminen maksaa kymmenkertaisesti</h1>
-<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 10.7.2026</p>
+<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 4.8.2026</p>
 <p><em>"Hölynpölyn kumoamiseen tarvittava energia on suuruusluokkaa suurempi kuin sen tuottamiseen."</em> Italialainen ohjelmistokehittäjä Alberto Brandolini kirjoitti lauseen Twitteriin 11. tammikuuta 2013 — kirjoitusvirheineen, muodossa <em>"the bullshit asimmetry"</em>. Hän oli juuri seurannut televisioväittelyä, jossa toinen osapuoli latasi väitteitä nopeammin kuin toinen ehti tarkistaa niitä. Laki tunnetaan myös nimellä <em>bullshit asymmetry principle</em>, paskapuheen epäsymmetria.</p>
+<div class="infolaatikko vastauslohko">
+<h2 class="laatikko-otsikko">Mitä Brandolinin laki tarkoittaa?</h2>
+<p style="margin:0.4em 0 0;"><strong>Brandolinin laki</strong> sanoo, että hölynpölyn kumoaminen vaatii suuruusluokkaa enemmän vaivaa kuin sen tuottaminen. Väitteen voi heittää sekunnissa, mutta sen tarkistaminen vie tunteja. Epäsymmetria selittää, miksi virheellinen tieto leviää nopeammin kuin oikaisu ehtii perässä.</p>
+</div>
 <div class="mermaid">
 flowchart LR
   A["Väite keksitään\nsekunneissa"] --&gt; B["Julkaisu:\nei lähteitä,\nei varauksia"]
@@ -872,7 +899,7 @@ flowchart LR
     </div>
 <p>Brandolinin laki ei ole yksittäinen kikka vaan se ehto, jonka varassa useat tekniikat toimivat. <a href="argumenttitulva.html">Argumenttitulva</a> on laki tietoisesti aseistettuna: väitteitä ladataan väittelyssä nopeammin kuin vastapuoli ehtii käsitellä yhtäkään. <a href="firehose-of-falsehood.html">Firehose of falsehood</a> skaalaa saman valtiollisen propagandan mitassa. <a href="ai-slop.html">AI slop</a> on lain uusin muoto: kun tuotantokustannus painuu käytännössä nollaan, epäsymmetria ei enää ole kymmenkertainen vaan rajaton.</p>
 <div class="vaaralatikko">
-<strong>Käytännön johtopäätös:</strong> Jokaisen väitteen kumoamalla ei voi voittaa — se on laskutoimitus, ei asenne. Kolme asiaa toimii silti. <em>Kumoa tekniikka, älä jokaista väitettä:</em> yksi selitys siitä, miksi väitteitä tulee tulvana, kattaa ne kaikki. <em>Ehkäise ennalta:</em> <a href="inokulointiteoria.html">inokulointi</a> on ainoa vastakeino, joka skaalautuu, koska se tehdään kerran ja suojaa monelta. <em>Älä toista väitettä otsikossa:</em> oikaisu, joka aloittaa valheella, levittää sitä.
+<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Jokaisen väitteen kumoamalla ei voi voittaa — se on laskutoimitus, ei asenne. Kolme asiaa toimii silti. <em>Kumoa tekniikka, älä jokaista väitettä:</em> yksi selitys siitä, miksi väitteitä tulee tulvana, kattaa ne kaikki. <em>Ehkäise ennalta:</em> <a href="inokulointiteoria.html">inokulointi</a> on ainoa vastakeino, joka skaalautuu, koska se tehdään kerran ja suojaa monelta. <em>Älä toista väitettä otsikossa:</em> oikaisu, joka aloittaa valheella, levittää sitä.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -921,7 +948,7 @@ flowchart LR
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
     <a href="ai-slop.html" class="liittyvat-kortti" style="--c:#311b92">
-      <span class="liittyvat-numero">89</span>
+      <span class="liittyvat-numero">93</span>
       <span class="liittyvat-teksti">
         <span class="liittyvat-nimi">AI slop</span>
         <span class="liittyvat-kuvaus">Tekoälyllä massatuotettua halpasisältöä, joka kerää klikkejä palvelematta lukijaa.</span>
@@ -942,7 +969,7 @@ flowchart LR
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="kuollut-kissa.html">← Kuollut kissa -strategia — skandaali pöydälle</a>
     <div class="kortti-nav-center">
-      <span class="kortti-nav-laskuri">18 / 113</span>
+      <span class="kortti-nav-laskuri">18 / 127</span>
       <span class="kortti-nav-vinkki">
         <kbd>&#8592;</kbd> <kbd>&#8594;</kbd> selaa &middot; <kbd>R</kbd> satunnainen
         <span class="touch-vinkki">&nbsp;· swipe &#8592;&#8594; tai &#8595; random</span>
@@ -1119,7 +1146,7 @@ flowchart LR
 
   <script>
 (function () {
-  const IDS = ["paskuuttaminen", "starve-the-beast", "overton-ikkuna", "saantelijan-kaappaus", "rautainen-laki", "valta-suojelee-valtaa", "hajota-hallitse", "bkt-harha", "astroturf", "firehose-of-falsehood", "manufactured-consent", "betteridgen-laki", "inokulointiteoria", "whataboutismi", "streisand-ilmio", "trollitehdas", "kuollut-kissa", "brandolinin-laki", "poen-laki", "godwinin-laki", "backfire-effect", "darvo", "halo-efekti", "konsensus-fetissi", "omenoita-appelsiineja", "blame-game", "gaslighting", "maalitolppien-siirtaminen", "argumenttitulva", "sunk-cost-harha", "jarjestelman-puolustelu", "dunning-kruger", "hanlonin-partaveitsi", "occamin-partaveitsi", "simple-sabotage", "kafka-ilmio", "catch-22", "goodhartin-laki", "hippo-efekti", "performatiivinen-lasnaolo", "rituaalinen-raportointi", "initiointirituaalit", "portinvartija-kulttuuri", "strateginen-osaamattomuus", "fofo", "sivustakatsojan-efekti", "parkinsonin-laki", "peterin-periaate", "pareto-periaate", "brooksin-laki", "yhdeksanyhdeksan", "hofstadterin-laki", "kuolonmarssi", "tekninen-velka", "conways-laki", "bikeshedding", "scope-creep", "korkoa-korolle", "negatiivinen-korkoa", "korkokierre", "honeypot-huijaus", "bait-and-switch", "kaarmeoljy", "ponzi-pyramidi", "pump-and-dump", "pig-butchering", "ennakkomaksuhuijaus", "badger-game", "qr-koodihuijaus", "toimitusjohtajahuijaus", "rug-pull", "ilmainen-naytetyo", "exposure-maksu", "lowball-hinnoittelu", "valittajan-skimmaus", "tilipuristus", "foot-in-the-door", "door-in-the-face", "hintaankkurointi", "houkutinvaihtoehto", "vastavuoroisuuden-ansa", "sosiaalinen-todiste", "painostusclose", "shrinkflaatio", "suunniteltu-vanheneminen", "tilausansa", "doomscrolling", "kaikukammio", "ai-slop", "parasosiaalinen-suhde", "kuollut-internet", "rage-bait", "klikkiotsikko", "engagement-bait", "1-prosentin-saanto", "aanekas-vahemmisto", "viherpesu", "sinipesu", "urheilupesu", "pinkkipesu", "tekoalypesu", "hyvesignalointi", "hiljainen-irtisanoutuminen", "hiljainen-irtisanominen", "haamutyopaikat", "kaksois-y-akseli", "pinta-alaharha", "cherry-picking-aikavali", "keskiarvo-vs-mediaani", "suhteellinen-riski", "selviytymisharha", "simpsonin-paradoksi", "p-hakkerointi"];
+  const IDS = ["paskuuttaminen", "starve-the-beast", "overton-ikkuna", "saantelijan-kaappaus", "rautainen-laki", "valta-suojelee-valtaa", "hajota-hallitse", "bkt-harha", "astroturf", "firehose-of-falsehood", "manufactured-consent", "betteridgen-laki", "inokulointiteoria", "whataboutismi", "streisand-ilmio", "trollitehdas", "kuollut-kissa", "brandolinin-laki", "poen-laki", "godwinin-laki", "backfire-effect", "darvo", "halo-efekti", "konsensus-fetissi", "omenoita-appelsiineja", "blame-game", "gaslighting", "maalitolppien-siirtaminen", "argumenttitulva", "sunk-cost-harha", "jarjestelman-puolustelu", "dunning-kruger", "hanlonin-partaveitsi", "occamin-partaveitsi", "simple-sabotage", "kafka-ilmio", "catch-22", "goodhartin-laki", "hippo-efekti", "performatiivinen-lasnaolo", "rituaalinen-raportointi", "initiointirituaalit", "portinvartija-kulttuuri", "strateginen-osaamattomuus", "fofo", "sivustakatsojan-efekti", "parkinsonin-laki", "peterin-periaate", "pareto-periaate", "brooksin-laki", "yhdeksanyhdeksan", "hofstadterin-laki", "kuolonmarssi", "lukittu-paatos", "strateginen-aliarviointi", "paatosperainen-todistelu", "lapi-hinnalla-milla-hyvansa", "tekninen-velka", "conways-laki", "bikeshedding", "scope-creep", "korkoa-korolle", "negatiivinen-korkoa", "korkokierre", "honeypot-huijaus", "bait-and-switch", "kaarmeoljy", "ponzi-pyramidi", "pump-and-dump", "pig-butchering", "ennakkomaksuhuijaus", "badger-game", "qr-koodihuijaus", "toimitusjohtajahuijaus", "rug-pull", "ilmainen-naytetyo", "exposure-maksu", "lowball-hinnoittelu", "valittajan-skimmaus", "tilipuristus", "foot-in-the-door", "door-in-the-face", "hintaankkurointi", "houkutinvaihtoehto", "vastavuoroisuuden-ansa", "sosiaalinen-todiste", "painostusclose", "shrinkflaatio", "suunniteltu-vanheneminen", "tilausansa", "doomscrolling", "kaikukammio", "ai-slop", "parasosiaalinen-suhde", "kuollut-internet", "rage-bait", "klikkiotsikko", "engagement-bait", "1-prosentin-saanto", "aanekas-vahemmisto", "viherpesu", "sinipesu", "urheilupesu", "pinkkipesu", "tekoalypesu", "hyvesignalointi", "hiljainen-irtisanoutuminen", "hiljainen-irtisanominen", "haamutyopaikat", "kaksois-y-akseli", "pinta-alaharha", "cherry-picking-aikavali", "keskiarvo-vs-mediaani", "suhteellinen-riski", "selviytymisharha", "simpsonin-paradoksi", "p-hakkerointi", "uutiskynnys", "uutisautiomaa", "paasyjournalismi", "tiedotejournalismi", "branditurvallisuus", "huonojen-uutisten-hautaaminen", "vaara-tasapaino", "keharaportointi", "gell-mannin-amnesia", "vihamielisen-median-harha"];
   const PREV = 'kuollut-kissa.html';
   const NEXT = 'poen-laki.html';
 

@@ -4,7 +4,7 @@ h1: Media ja julkisuus — miksi jostain ei kerrota
 otsikko: Media ja julkisuus — 10 syytä siihen, mitä uutisista puuttuu
 kuvaus: Uutiskynnys, pääsyjournalismi, tiedotejournalismi, väärä tasapaino. Kymmenen julkisuuden ilmiötä — eikä yksikään niistä edellytä, että kukaan valehtelee.
 vari: "#283593"
-paivitetty: 2026-07-28
+paivitetty: 2026-08-05
 naapurit:
   - kategoria-informaatio-ja-propaganda | Informaatio ja propaganda
   - kategoria-alustatalous-ja-algoritmit | Alustatalous ja algoritmit

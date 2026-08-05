@@ -378,6 +378,217 @@ SIVUT = {
              "ei tuota uutta uutista, poistoyritys tuottaa."),
         ],
     ),
+
+# ── Toinen erä: TOIMENPIDESUUNNITELMA-2026-08-04 kohta M2 ──────────────
+# Rajattu tietoisesti 10 sivuun, ei kaikkiin 98:aan: ensimmäisen erän
+# 15 sivun kohortti EI ole tuottanut klikkejä (CTR 1,19 % vs. muun
+# sivuston 1,56 %). Perustelu on AI-sitaatti ja featured snippet, ei CTR,
+# eikä kumpaakaan voi vielä mitata. Nämä 10 ovat eniten näyttöjä keränneet
+# sivut ilman vastauslohkoa — yhteensä 363 näyttöä. Mitataan 6 viikon päästä.
+#
+# Kulma on eri kuin ensimmäisessä erässä: näiden sivujen ensimmäinen
+# kappale kertoo jo englanninkielisen termin, joten pelkkä käännöslohko
+# toistaisi sen. Lohko vastaa siksi määritelmäkysymykseen.
+
+    "brandolinin-laki": (
+        "Mitä Brandolinin laki tarkoittaa?",
+        "<strong>Brandolinin laki</strong> sanoo, että hölynpölyn kumoaminen "
+        "vaatii suuruusluokkaa enemmän vaivaa kuin sen tuottaminen. Väitteen "
+        "voi heittää sekunnissa, mutta sen tarkistaminen vie tunteja. "
+        "Epäsymmetria selittää, miksi virheellinen tieto leviää nopeammin "
+        "kuin oikaisu ehtii perässä.",
+        [
+            ("Kuka muotoili Brandolinin lain?",
+             "Italialainen ohjelmistokehittäjä Alberto Brandolini kirjoitti "
+             "lauseen Twitteriin 11.1.2013 seurattuaan televisioväittelyä, "
+             "jossa toinen osapuoli latasi väitteitä nopeammin kuin toinen "
+             "ehti tarkistaa niitä. Laki tunnetaan myös nimellä bullshit "
+             "asymmetry principle."),
+            ("Mitä Brandolinin laille voi tehdä?",
+             "Jokaisen väitteen kumoaminen ei ole mahdollista — se on "
+             "laskutoimitus, ei asennekysymys. Toimivampaa on osoittaa "
+             "väitteiden lähde tai kaava kuin käsitellä ne yksitellen, ja "
+             "valita kumottavaksi ne väitteet, joilla on eniten painoa."),
+        ],
+    ),
+    "goodhartin-laki": (
+        "Mitä Goodhartin laki tarkoittaa?",
+        "<strong>Goodhartin laki</strong> tarkoittaa, että kun mittarista "
+        "tehdään tavoite, se lakkaa mittaamasta sitä mitä oli tarkoitus. "
+        "Ihmiset alkavat optimoida lukua eivätkä asiaa luvun takana. "
+        "Mittari näyttää yhä paranevan, vaikka itse tavoite jää "
+        "saavuttamatta tai jopa heikkenee.",
+        [
+            ("Kuka oli Charles Goodhart?",
+             "Brittiläinen taloustieteilijä, joka muotoili periaatteen 1975 "
+             "rahapolitiikan yhteydessä. Havainto koski aluksi rahan "
+             "tarjonnan mittareita, mutta sama kaava toistuu kaikissa "
+             "organisaatioissa, joissa suoritusta mitataan ja palkitaan."),
+            ("Miten Goodhartin lakia voi torjua?",
+             "Käytä useampaa mittaria yhtä aikaa, vaihda niitä ajoittain ja "
+             "pidä osa mittaamisesta erillään palkitsemisesta. Kysy myös "
+             "säännöllisesti, mitä mittarin parantaminen tarkoittaa "
+             "käytännössä — jos vastausta ei ole, mittari on jo irronnut "
+             "tavoitteesta."),
+        ],
+    ),
+    "occamin-partaveitsi": (
+        "Mitä Occamin partaveitsi tarkoittaa?",
+        "<strong>Occamin partaveitsi</strong> on valintasääntö, ei totuuden "
+        "mittari. Ehto sen käytölle on tiukka: selitysten on selitettävä "
+        "havainnot yhtä hyvin, ja vasta silloin vähemmän olettava voittaa. "
+        "Useimmiten ehto ei täyty — ja silloin partaveitsi ei sano mitään.",
+        [
+            ("Kuka oli Vilhelm Occamilainen?",
+             "Englantilainen fransiskaanimunkki (n. 1287–1347), jonka mukaan "
+             "sääntö on nimetty. Kuuluisinta latinankielistä muotoilua "
+             "entia non sunt multiplicanda praeter necessitatem ei "
+             "kuitenkaan löydy hänen omista teksteistään."),
+            ("Mikä ero on Occamin ja Hanlonin partaveitsellä?",
+             "Occamin partaveitsi koskee selityksiä yleisesti: valitse se, "
+             "joka olettaa vähiten. Hanlonin partaveitsi on sen sovellus "
+             "ihmisten aikeisiin: älä oleta pahantahtoisuutta, jos "
+             "huolimattomuus riittää selitykseksi."),
+        ],
+    ),
+    "sivustakatsojan-efekti": (
+        "Mikä on sivustakatsojan efekti?",
+        "<strong>Sivustakatsojan efekti</strong> (eng. <em>bystander "
+        "effect</em>) tarkoittaa sitä, että mitä useampi ihminen näkee "
+        "avuntarpeen, sitä epätodennäköisemmin kukaan toimii. Vastuu "
+        "jakautuu niin monelle, ettei kenellekään jää siitä merkittävää "
+        "osuutta — ja jokainen olettaa jonkun toisen hoitavan asian.",
+        [
+            ("Miksi iso joukko auttaa harvemmin kuin yksi ihminen?",
+             "Kaksi mekanismia toimii yhtä aikaa. Vastuu hajoaa joukon "
+             "kesken, ja lisäksi ihmiset lukevat tilanteen toisistaan: kun "
+             "kukaan muu ei reagoi, tilanne tulkitaan vaarattomaksi. "
+             "Yksin ollessa kumpikaan mekanismi ei toimi."),
+            ("Miten sivustakatsojan efektin voi katkaista?",
+             "Nimeä vastaanottaja yksilöllisesti. \"Joku soittakoon 112\" "
+             "ei tuota toimintaa, mutta \"sinä sinisessä takissa, soita "
+             "112\" tuottaa. Sama pätee työpaikalla: tehtävä ilman nimeä "
+             "jää tekemättä."),
+        ],
+    ),
+    "sunk-cost-harha": (
+        "Mikä on sunk cost -harha suomeksi?",
+        "<strong>Sunk cost -harha</strong> on suomeksi <strong>upponneiden "
+        "kustannusten harha</strong>. Se tarkoittaa taipumusta jatkaa "
+        "hanketta siksi, että siihen on jo uponnut rahaa, aikaa tai vaivaa. "
+        "Mennyt panostus ei palaa jatkamallakaan, joten päätöksen pitäisi "
+        "riippua vain tulevasta tuotosta.",
+        [
+            ("Mikä on Concorde-harha?",
+             "Sunk cost -harhan tunnetuin nimitys. Britannia ja Ranska "
+             "jatkoivat Concorde-koneen rahoittamista senkin jälkeen, kun "
+             "sen kannattamattomuus oli selvää — juuri siksi, että hankkeeseen "
+             "oli jo sijoitettu valtavasti."),
+            ("Miten sunk cost -harhan tunnistaa itsessään?",
+             "Kysy: jos emme olisi vielä sijoittaneet tähän mitään, "
+             "aloittaisimmeko sen nyt? Jos vastaus on ei, jatkamisen ainoa "
+             "peruste on mennyt kustannus — eikä se ole peruste."),
+        ],
+    ),
+    "pump-and-dump": (
+        "Mitä pump and dump tarkoittaa?",
+        "<strong>Pump and dump</strong> tarkoittaa järjestettyä hinnannousua, "
+        "jonka tarkoitus on tuottaa ostajia myyntihetkelle. Järjestäjä "
+        "omistaa kohteen jo ennen hypeä ja myy sen huipulla niille, jotka "
+        "hype toi paikalle. Tappion kantaa aina viimeisenä ostanut, ei "
+        "manipuloija.",
+        [
+            ("Missä pump and dump esiintyy?",
+             "Klassisesti pienissä pörssiosakkeissa, nykyään erityisesti "
+             "kryptovaluutoissa ja NFT-kohteissa, joissa vaihto on ohutta ja "
+             "sääntely kevyttä. Koordinointi tapahtuu usein suljetuissa "
+             "Telegram- tai Discord-ryhmissä."),
+            ("Onko pump and dump laitonta?",
+             "Säännellyillä arvopaperimarkkinoilla kyllä — se on "
+             "markkinamanipulaatiota. Kryptomarkkinoilla oikeustila on "
+             "epäselvempi ja valvonta ohuempaa, mikä on yksi syy siihen, "
+             "miksi kaava on siirtynyt sinne."),
+        ],
+    ),
+    "argumenttitulva": (
+        "Mikä on Gish Gallop suomeksi?",
+        "<strong>Gish Gallop</strong> on suomeksi <strong>argumenttitulva</strong>. "
+        "Siinä esitetään niin monta väitettä niin nopeasti, ettei vastapuoli "
+        "ehdi vastata kaikkiin. Väitteiden todenperäisyydellä ei ole "
+        "merkitystä, eikä niiden ole tarkoituskaan kestää tarkastelua: "
+        "tavoite on kuormittaa vastustaja, ei vakuuttaa yleisöä.",
+        [
+            ("Mistä nimi Gish Gallop tulee?",
+             "Nimi tulee yhdysvaltalaisesta kreationistidebatisti Duane "
+             "Gishistä, joka käytti taktiikkaa järjestelmällisesti "
+             "evoluutiobiologien kanssa käymissään väittelyissä 1970- ja "
+             "1980-luvuilla."),
+            ("Miten argumenttitulvaan kannattaa vastata?",
+             "Älä yritä vastata kaikkeen — se on juuri taktiikan tavoite. "
+             "Valitse yksi tai kaksi väitettä, käsittele ne kunnolla loppuun "
+             "ja nimeä taktiikka ääneen, jotta yleisö näkee määrän "
+             "korvanneen perustelun."),
+        ],
+    ),
+    "overton-ikkuna": (
+        "Mitä Overton-ikkuna tarkoittaa?",
+        "<strong>Overton-ikkuna</strong> kuvaa sitä, mitä poliitikko voi sanoa "
+        "menettämättä uskottavuuttaan — ei sitä, mikä on oikein tai "
+        "kannatettavaa. Ikkunan sisällä oleva kanta on vaalikelpoinen, "
+        "ulkopuolella oleva ei. Siksi vaikuttaminen kohdistuu usein "
+        "ikkunaan itseensä.",
+        [
+            ("Kuka oli Joseph Overton?",
+             "Yhdysvaltalainen ajatushautomovaikuttaja, joka kehitti mallin "
+             "1990-luvulla. Hänen havaintonsa oli, että poliitikko ei voi "
+             "valita mitä tahansa kantaa — vain ikkunan sisällä olevia — "
+             "joten vaikuttaminen kohdistuu ikkunaan itseensä."),
+            ("Miten Overton-ikkunaa siirretään?",
+             "Esittämällä toistuvasti kantoja, jotka ovat nykyisen ikkunan "
+             "ulkoreunalla tai sen ulkopuolella. Ääripää tekee sitä "
+             "lähimpänä olevasta kannasta maltillisen, jolloin koko kaista "
+             "siirtyy vähitellen samaan suuntaan."),
+        ],
+    ),
+    "maalitolppien-siirtaminen": (
+        "Mitä maalitolppien siirtäminen tarkoittaa?",
+        "<strong>Maalitolppien siirtäminen</strong> tarkoittaa, että ehto "
+        "vaihdetaan sen jälkeen kun se on täytetty. Rehellisestä kriteerin "
+        "tarkennuksesta sen erottaa ajoitus ja vaikeneminen: uusi vaatimus "
+        "ilmestyy vasta kun vanha on menossa läpi, eikä vanhan täyttymistä "
+        "myönnetä ääneen.",
+        [
+            ("Missä maalitolppia siirretään?",
+             "Väittelyssä: todiste hyväksytään ensin riittäväksi, ja kun se "
+             "esitetään, vaaditaan seuraavaa. Työelämässä: ylennyksen ehto "
+             "täyttyy, minkä jälkeen ilmestyy uusi ehto. Kaava on sama "
+             "molemmissa."),
+            ("Miten maalitolppien siirtämiseen vastataan?",
+             "Kirjaa ehto ylös ennen suoritusta ja palaa siihen sanatarkasti. "
+             "Kun ehto muuttuu, nimeä muutos ääneen ja pyydä uusi ehto "
+             "kirjallisena — silloin siirto tulee näkyviin myös muille."),
+        ],
+    ),
+    "kaikukammio": (
+        "Mitä kaikukammio tarkoittaa?",
+        "<strong>Kaikukammio</strong> tarkoittaa ympäristöä, jossa eriävä "
+        "näkemys on mitätöity jo ennen kuin se kuullaan. Olennaista ei ole "
+        "vastapuolen puuttuminen vaan se, että vastapuoli esitellään "
+        "epäluotettavana — jolloin sen perusteluja ei tarvitse käsitellä "
+        "lainkaan.",
+        [
+            ("Mikä ero on kaikukammiolla ja kuplalla?",
+             "Kupla tarkoittaa, ettei eriävää tietoa tule vastaan. "
+             "Kaikukammiossa sitä tulee, mutta se on ennalta mitätöity: "
+             "vastapuoli esitellään pilkan kohteena, joten sen argumentteja "
+             "ei tarvitse käsitellä."),
+            ("Miten kaikukammiosta pääsee ulos?",
+             "Testaa itsesi: osaatko selittää vastapuolen parhaan "
+             "argumentin niin, että hän tunnistaisi sen omakseen? Jos et, "
+             "olet kuullut vain sen karikatyyrin. Hae lähde, joka on eri "
+             "mieltä mutta jota pidät rehellisenä."),
+        ],
+    ),
 }
 
 FAQ_SIJAINTI = re.compile(

@@ -39,7 +39,7 @@ MERMAID_NEW = """  <script>
       if (loaded) return;
       loaded = true;
       var s = document.createElement('script');
-      s.src = 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js';
+      s.src = 'js/mermaid.min.js';
       s.onload = function () {
         mermaid.initialize(%s);
         mermaid.run();

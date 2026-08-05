@@ -70,11 +70,22 @@ def kasittele(polku, kartta, kuiva):
         teksti,
         count=1,
     )
-    teksti = teksti.replace(
-        ".kortti-breadcrumb-kat { color: #666; }",
+    # Idempotenssi: pelkkä .replace() ei riitä, koska tulos sisältää lähtökuvion
+    # osajonona — jokainen uusi ajo kasvatti jälkeläisketjua yhdellä tasolla,
+    # ja kolmen ajon jälkeen selektori oli nelinkertainen eikä täsmännyt enää
+    # mihinkään. Normalisoidaan ketju aina yhteen tasoon.
+    teksti = re.sub(
+        r"(?:\.kortti-breadcrumb )+\.kortti-breadcrumb-kat \{ color: #666; \}",
         ".kortti-breadcrumb .kortti-breadcrumb-kat { color: #666; }",
-        1,
+        teksti,
+        count=1,
     )
+    if ".kortti-breadcrumb .kortti-breadcrumb-kat" not in teksti:
+        teksti = teksti.replace(
+            ".kortti-breadcrumb-kat { color: #666; }",
+            ".kortti-breadcrumb .kortti-breadcrumb-kat { color: #666; }",
+            1,
+        )
 
     muuttui = teksti != alkup
     if muuttui and not kuiva:

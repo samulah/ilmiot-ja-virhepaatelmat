@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <title>Rautainen laki oligarkiasta — organisaatioiden väistämätön mätäneminen — Ilmiöitä</title>
+  <title>Rautainen laki oligarkiasta — väistämätön mätäneminen — Ilmiöitä</title>
   <link rel="stylesheet" href="style.css?v=20260725">
   <link rel="stylesheet" href="fonts/fonts.css">
   <script>
@@ -16,7 +16,7 @@
       if (loaded) return;
       loaded = true;
       var s = document.createElement('script');
-      s.src = 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js';
+      s.src = 'js/mermaid.min.js';
       s.onload = function () {
         mermaid.initialize({ startOnLoad: false, theme: 'base', themeVariables: { fontSize: '12px', fontFamily: "'DM Sans', system-ui, sans-serif", primaryColor: '#FBF5E0', primaryTextColor: '#1A1100', primaryBorderColor: '#C9A84C', lineColor: '#8B6914', secondaryColor: '#F5F0E5', tertiaryColor: '#FDFAF2', mainBkg: '#FBF5E0', nodeBorder: '#C9A84C', clusterBkg: '#F5F0E5', titleColor: '#3A2000', edgeLabelBackground: '#FDFAF2' } });
         mermaid.run();
@@ -563,7 +563,7 @@
     .kortti-breadcrumb a { color: #8B6914; text-decoration: none; }
     .kortti-breadcrumb a:hover { text-decoration: underline; }
     .kortti-breadcrumb-sep { color: #ccc; }
-    .kortti-breadcrumb .kortti-breadcrumb .kortti-breadcrumb .kortti-breadcrumb-kat { color: #666; }
+    .kortti-breadcrumb .kortti-breadcrumb-kat { color: #666; }
     .kortti-random-btn {
       margin-left: auto;
       display: inline-flex;
@@ -699,7 +699,7 @@
     }
     .random-siirtyma-overlay.nakyva .random-siirtyma-teksti { opacity: 1; }
   
-.infolaatikko h2.laatikko-otsikko, .huomiolaatikko h2.laatikko-otsikko {
+.infolaatikko h2.laatikko-otsikko, .huomiolaatikko h2.laatikko-otsikko, .vaaralatikko h2.laatikko-otsikko {
   display: inline; font: inherit; font-weight: 700; color: inherit;
   margin: 0; padding: 0; letter-spacing: inherit;
 }
@@ -708,14 +708,14 @@
   <!-- SEO -->
   <meta name="description" content="Rautainen laki oligarkiasta: jokainen organisaatio ajautuu harvainvaltaan. Selitämme miksi, mistä sen tunnistaa ja mitkä rakenteet hidastavat kehitystä.">
   <link rel="canonical" href="https://www.ilmiöt.fi/rautainen-laki.html">
-  <meta property="og:title" content="Rautainen laki oligarkiasta — organisaatioiden väistämätön mätäneminen — Ilmiöitä">
+  <meta property="og:title" content="Rautainen laki oligarkiasta — väistämätön mätäneminen — Ilmiöitä">
   <meta property="og:description" content="Rautainen laki oligarkiasta: jokainen organisaatio ajautuu harvainvaltaan. Selitämme miksi, mistä sen tunnistaa ja mitkä rakenteet hidastavat kehitystä.">
   <meta property="og:url" content="https://www.ilmiöt.fi/rautainen-laki.html">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="fi_FI">
   <meta property="og:site_name" content="Ilmiöitä — Miten valta toimii">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Rautainen laki oligarkiasta — organisaatioiden väistämätön mätäneminen — Ilmiöitä">
+  <meta name="twitter:title" content="Rautainen laki oligarkiasta — väistämätön mätäneminen — Ilmiöitä">
   <meta name="twitter:description" content="Rautainen laki oligarkiasta: jokainen organisaatio ajautuu harvainvaltaan. Selitämme miksi, mistä sen tunnistaa ja mitkä rakenteet hidastavat kehitystä.">
   <meta property="og:image" content="https://www.ilmiöt.fi/og/brand.png">
   <meta property="og:image:width" content="1200">
@@ -866,7 +866,7 @@ flowchart TD
 </ul>
 </div>
 <div class="vaaralatikko">
-<strong>Miksi rakenne ei suojele:</strong> Demokraattiset muodot — äänestykset, valinnat, hallintoneuvostot — eivät estä lakia toteutumasta. Johto kontrolloi informaatiota, asialistan muodostamista, ehdokasasettelua ja tulkintaa. Muodollinen demokratia voi toimia legitimaation tuottajana valtarakenteen ylläpitämiseen. Suoja ei löydy sääntökirjasta vaan aktiivisesta, informoidusta jäsen- tai omistajapohjan osallistumisesta — ja tämän ylläpitäminen on kallis, jatkuva ponnistus. Vertaa: <a href="saantelijan-kaappaus.html">Sääntelijän kaappaus</a> on saman logiikan erikoistapaus viranomaistasolla.
+<h2 class="laatikko-otsikko">Miksi rakenne ei suojele:</h2> Demokraattiset muodot — äänestykset, valinnat, hallintoneuvostot — eivät estä lakia toteutumasta. Johto kontrolloi informaatiota, asialistan muodostamista, ehdokasasettelua ja tulkintaa. Muodollinen demokratia voi toimia legitimaation tuottajana valtarakenteen ylläpitämiseen. Suoja ei löydy sääntökirjasta vaan aktiivisesta, informoidusta jäsen- tai omistajapohjan osallistumisesta — ja tämän ylläpitäminen on kallis, jatkuva ponnistus. Vertaa: <a href="saantelijan-kaappaus.html">Sääntelijän kaappaus</a> on saman logiikan erikoistapaus viranomaistasolla.
     </div>
 <div class="huomiolaatikko">
 <h2 class="laatikko-otsikko">Vastakeinot — rakenteet jotka hidastavat lakia:</h2> Kokonaan lakia ei voi kumota, mutta sitä voi hidastaa rakenteilla, jotka eivät ole johdon itsensä hallinnassa: määräaikaiset luottamustoimet ja pakollinen rotaatio (sama henkilö ei jatka vuosikymmentä), avoin talous- ja palkkioraportointi suoraan jäsenille tai omistajille, ja kilpailevien ehdokkaiden aktiivinen rekrytointi ennen jokaista valintaa — vaali ilman vastaehdokasta on nimitys, ei vaali. Jäsenenä tehokkain yksittäinen teko on osallistua juuri niihin kokouksiin, joissa ehdokkaat asetetaan: siellä valta liikkuu, ei äänestyksessä.
@@ -946,7 +946,7 @@ flowchart TD
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="saantelijan-kaappaus.html">← Sääntelijän kaappaus</a>
     <div class="kortti-nav-center">
-      <span class="kortti-nav-laskuri">5 / 113</span>
+      <span class="kortti-nav-laskuri">5 / 127</span>
       <span class="kortti-nav-vinkki">
         <kbd>&#8592;</kbd> <kbd>&#8594;</kbd> selaa &middot; <kbd>R</kbd> satunnainen
         <span class="touch-vinkki">&nbsp;· swipe &#8592;&#8594; tai &#8595; random</span>
@@ -1123,7 +1123,7 @@ flowchart TD
 
   <script>
 (function () {
-  const IDS = ["paskuuttaminen", "starve-the-beast", "overton-ikkuna", "saantelijan-kaappaus", "rautainen-laki", "valta-suojelee-valtaa", "hajota-hallitse", "bkt-harha", "astroturf", "firehose-of-falsehood", "manufactured-consent", "betteridgen-laki", "inokulointiteoria", "whataboutismi", "streisand-ilmio", "trollitehdas", "kuollut-kissa", "brandolinin-laki", "poen-laki", "godwinin-laki", "backfire-effect", "darvo", "halo-efekti", "konsensus-fetissi", "omenoita-appelsiineja", "blame-game", "gaslighting", "maalitolppien-siirtaminen", "argumenttitulva", "sunk-cost-harha", "jarjestelman-puolustelu", "dunning-kruger", "hanlonin-partaveitsi", "occamin-partaveitsi", "simple-sabotage", "kafka-ilmio", "catch-22", "goodhartin-laki", "hippo-efekti", "performatiivinen-lasnaolo", "rituaalinen-raportointi", "initiointirituaalit", "portinvartija-kulttuuri", "strateginen-osaamattomuus", "fofo", "sivustakatsojan-efekti", "parkinsonin-laki", "peterin-periaate", "pareto-periaate", "brooksin-laki", "yhdeksanyhdeksan", "hofstadterin-laki", "kuolonmarssi", "tekninen-velka", "conways-laki", "bikeshedding", "scope-creep", "korkoa-korolle", "negatiivinen-korkoa", "korkokierre", "honeypot-huijaus", "bait-and-switch", "kaarmeoljy", "ponzi-pyramidi", "pump-and-dump", "pig-butchering", "ennakkomaksuhuijaus", "badger-game", "qr-koodihuijaus", "toimitusjohtajahuijaus", "rug-pull", "ilmainen-naytetyo", "exposure-maksu", "lowball-hinnoittelu", "valittajan-skimmaus", "tilipuristus", "foot-in-the-door", "door-in-the-face", "hintaankkurointi", "houkutinvaihtoehto", "vastavuoroisuuden-ansa", "sosiaalinen-todiste", "painostusclose", "shrinkflaatio", "suunniteltu-vanheneminen", "tilausansa", "doomscrolling", "kaikukammio", "ai-slop", "parasosiaalinen-suhde", "kuollut-internet", "rage-bait", "klikkiotsikko", "engagement-bait", "1-prosentin-saanto", "aanekas-vahemmisto", "viherpesu", "sinipesu", "urheilupesu", "pinkkipesu", "tekoalypesu", "hyvesignalointi", "hiljainen-irtisanoutuminen", "hiljainen-irtisanominen", "haamutyopaikat", "kaksois-y-akseli", "pinta-alaharha", "cherry-picking-aikavali", "keskiarvo-vs-mediaani", "suhteellinen-riski", "selviytymisharha", "simpsonin-paradoksi", "p-hakkerointi"];
+  const IDS = ["paskuuttaminen", "starve-the-beast", "overton-ikkuna", "saantelijan-kaappaus", "rautainen-laki", "valta-suojelee-valtaa", "hajota-hallitse", "bkt-harha", "astroturf", "firehose-of-falsehood", "manufactured-consent", "betteridgen-laki", "inokulointiteoria", "whataboutismi", "streisand-ilmio", "trollitehdas", "kuollut-kissa", "brandolinin-laki", "poen-laki", "godwinin-laki", "backfire-effect", "darvo", "halo-efekti", "konsensus-fetissi", "omenoita-appelsiineja", "blame-game", "gaslighting", "maalitolppien-siirtaminen", "argumenttitulva", "sunk-cost-harha", "jarjestelman-puolustelu", "dunning-kruger", "hanlonin-partaveitsi", "occamin-partaveitsi", "simple-sabotage", "kafka-ilmio", "catch-22", "goodhartin-laki", "hippo-efekti", "performatiivinen-lasnaolo", "rituaalinen-raportointi", "initiointirituaalit", "portinvartija-kulttuuri", "strateginen-osaamattomuus", "fofo", "sivustakatsojan-efekti", "parkinsonin-laki", "peterin-periaate", "pareto-periaate", "brooksin-laki", "yhdeksanyhdeksan", "hofstadterin-laki", "kuolonmarssi", "lukittu-paatos", "strateginen-aliarviointi", "paatosperainen-todistelu", "lapi-hinnalla-milla-hyvansa", "tekninen-velka", "conways-laki", "bikeshedding", "scope-creep", "korkoa-korolle", "negatiivinen-korkoa", "korkokierre", "honeypot-huijaus", "bait-and-switch", "kaarmeoljy", "ponzi-pyramidi", "pump-and-dump", "pig-butchering", "ennakkomaksuhuijaus", "badger-game", "qr-koodihuijaus", "toimitusjohtajahuijaus", "rug-pull", "ilmainen-naytetyo", "exposure-maksu", "lowball-hinnoittelu", "valittajan-skimmaus", "tilipuristus", "foot-in-the-door", "door-in-the-face", "hintaankkurointi", "houkutinvaihtoehto", "vastavuoroisuuden-ansa", "sosiaalinen-todiste", "painostusclose", "shrinkflaatio", "suunniteltu-vanheneminen", "tilausansa", "doomscrolling", "kaikukammio", "ai-slop", "parasosiaalinen-suhde", "kuollut-internet", "rage-bait", "klikkiotsikko", "engagement-bait", "1-prosentin-saanto", "aanekas-vahemmisto", "viherpesu", "sinipesu", "urheilupesu", "pinkkipesu", "tekoalypesu", "hyvesignalointi", "hiljainen-irtisanoutuminen", "hiljainen-irtisanominen", "haamutyopaikat", "kaksois-y-akseli", "pinta-alaharha", "cherry-picking-aikavali", "keskiarvo-vs-mediaani", "suhteellinen-riski", "selviytymisharha", "simpsonin-paradoksi", "p-hakkerointi", "uutiskynnys", "uutisautiomaa", "paasyjournalismi", "tiedotejournalismi", "branditurvallisuus", "huonojen-uutisten-hautaaminen", "vaara-tasapaino", "keharaportointi", "gell-mannin-amnesia", "vihamielisen-median-harha"];
   const PREV = 'saantelijan-kaappaus.html';
   const NEXT = 'valta-suojelee-valtaa.html';
 

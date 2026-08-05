@@ -1,6 +1,6 @@
 # Ilmiöitä — Miten valta toimii
 
-> Suomenkielinen sivusto, joka selittää 113 yhteiskunnallista ilmiötä:
+> Suomenkielinen sivusto, joka selittää 127 yhteiskunnallista ilmiötä:
 > valtarakenteet, propaganda ja informaatiovaikuttaminen, kognitiiviset harhat,
 > byrokratia ja organisaatiodynamiikka, projektihallinnan lait,
 > talouden kasvuilmiöt, huijaukset ja petokset, myynti- ja painostustaktiikat,
@@ -98,6 +98,10 @@ Kategoriasivu: https://www.ilmiöt.fi/kategoria-projekti-ja-ohjelmistokehitys.ht
 - [Yhdeksän-yhdeksän-sääntö](https://www.ilmiöt.fi/yhdeksanyhdeksan.html): Ensimmäinen 90 % työstä vie 90 % ajasta — ja viimeinen 10 % vie loput 90 %.
 - [Hofstadterin laki](https://www.ilmiöt.fi/hofstadterin-laki.html): Kaikki kestää odotettua kauemmin, vaikka ottaisit Hofstadterin lain huomioon.
 - [Kuolonmarssi](https://www.ilmiöt.fi/kuolonmarssi.html): Projekti, jonka kaikki tietävät epäonnistuvan — mutta jota kukaan ei pysty pysäyttämään.
+- [Lukittu päätös](https://www.ilmiöt.fi/lukittu-paatos.html): Muodollinen päätös tehdään kokouksessa, todellinen vuosia aiemmin — käsittely vain vahvistaa lukon.
+- [Strateginen aliarviointi](https://www.ilmiöt.fi/strateginen-aliarviointi.html): Suurhankkeen kustannusarvio ei ole ennuste vaan hakemus: hinta viritetään portin kokoiseksi.
+- [Päätösperäinen todistelu](https://www.ilmiöt.fi/paatosperainen-todistelu.html): Selvitys tilataan vastaus valmiina — tutkimus etsii perustelun päätökselle eikä toisin päin.
+- [Läpi hinnalla millä hyvänsä](https://www.ilmiöt.fi/lapi-hinnalla-milla-hyvansa.html): Kun hankkeeseen on sidottu nimi, jokainen huono uutinen uhkaa päättäjää eikä hanketta.
 - [Tekninen velka](https://www.ilmiöt.fi/tekninen-velka.html): Oikotie nopeuttaa kehitystä nyt, mutta kasvaa korkoa ja peritään myöhemmin takaisin.
 - [Conwayn laki](https://www.ilmiöt.fi/conways-laki.html): Järjestelmän arkkitehtuuri kopioi väistämättä sen suunnitelleen organisaation viestintärakenteen.
 - [Bikeshedding](https://www.ilmiöt.fi/bikeshedding.html): Komitea väittelee tuntikausia polkupyöräkatoksen väristä, koska ydinvoimala on liian vaikea aihe.
@@ -207,3 +211,18 @@ Kategoriasivu: https://www.ilmiöt.fi/kategoria-tilastoilla-valehtelu.html
 - [Selviytymisharha](https://www.ilmiöt.fi/selviytymisharha.html): Vain palanneet koneet lasketaan — data kertoo selviytyjistä, ei kadonneista.
 - [Simpsonin paradoksi](https://www.ilmiöt.fi/simpsonin-paradoksi.html): Kokonaisuus näyttää kasvua, vaikka jokainen osaryhmä laskee — tai päinvastoin.
 - [P-hakkerointi](https://www.ilmiöt.fi/p-hakkerointi.html): Testataan kunnes jokin näyttää merkitsevältä — ja julkaistaan vain se yksi tulos.
+
+### Media ja julkisuus
+
+Miksi jostain ei uutisoida lainkaan, miksi jostain kerrotaan vinoutuneesti — ja miksi yleisö lukee lopputuloksen niin kuin lukee.
+
+- [Uutiskynnys](https://www.ilmiöt.fi/uutiskynnys.html): Uutiseksi pääsee asia, jolla on tapahtuman muoto — hidas ja rakenteellinen jää kertomatta.
+- [Uutisautiomaa](https://www.ilmiöt.fi/uutisautiomaa.html): Kun paikallislehti lakkaa, valtuuston kokouksissa ei istu ketään eikä virheitä huomaa kukaan.
+- [Pääsyjournalismi](https://www.ilmiöt.fi/paasyjournalismi.html): Toimittaja on riippuvainen lähteen pääsystä, joten kriittinen kysymys maksaisi koko suhteen.
+- [Tiedotejournalismi](https://www.ilmiöt.fi/tiedotejournalismi.html): Uutinen on kevyesti muokattu tiedote: aiheen, kulman ja sitaatit valitsi lähettäjä.
+- [Bränditurvallisuus](https://www.ilmiöt.fi/branditurvallisuus.html): Mainostajan estolista katkaisee tulon vakavista aiheista — kirjoittamisesta tulee kannattamatonta.
+- [Huonojen uutisten hautaaminen](https://www.ilmiöt.fi/huonojen-uutisten-hautaaminen.html): Ikävä tieto julkaistaan perjantai-iltapäivänä tai ison uutisen varjossa — avoimesti mutta huomaamatta.
+- [Väärä tasapaino](https://www.ilmiöt.fi/vaara-tasapaino.html): Marginaalinen näkemys saa saman palstatilan kuin valtavirta, ja kiista näyttää tasaväkiseltä.
+- [Kehäraportointi](https://www.ilmiöt.fi/keharaportointi.html): Yksi väite siteerataan ketjussa eteenpäin, kunnes se näyttää neljän lähteen vahvistamalta.
+- [Gell-Mannin amnesia](https://www.ilmiöt.fi/gell-mannin-amnesia.html): Huomaat oman alasi jutussa virheet, käännät sivua ja luotat seuraavaan aivan yhtä paljon.
+- [Vihamielisen median harha](https://www.ilmiöt.fi/vihamielisen-median-harha.html): Kaksi vastakkaista leiriä lukee saman jutun ja kumpikin kokee sen puolueelliseksi itseään vastaan.

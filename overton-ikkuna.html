@@ -16,7 +16,7 @@
       if (loaded) return;
       loaded = true;
       var s = document.createElement('script');
-      s.src = 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js';
+      s.src = 'js/mermaid.min.js';
       s.onload = function () {
         mermaid.initialize({ startOnLoad: false, theme: 'base', themeVariables: { fontSize: '12px', fontFamily: "'DM Sans', system-ui, sans-serif", primaryColor: '#FBF5E0', primaryTextColor: '#1A1100', primaryBorderColor: '#C9A84C', lineColor: '#8B6914', secondaryColor: '#F5F0E5', tertiaryColor: '#FDFAF2', mainBkg: '#FBF5E0', nodeBorder: '#C9A84C', clusterBkg: '#F5F0E5', titleColor: '#3A2000', edgeLabelBackground: '#FDFAF2' } });
         mermaid.run();
@@ -563,7 +563,7 @@
     .kortti-breadcrumb a { color: #8B6914; text-decoration: none; }
     .kortti-breadcrumb a:hover { text-decoration: underline; }
     .kortti-breadcrumb-sep { color: #ccc; }
-    .kortti-breadcrumb .kortti-breadcrumb .kortti-breadcrumb .kortti-breadcrumb-kat { color: #666; }
+    .kortti-breadcrumb .kortti-breadcrumb-kat { color: #666; }
     .kortti-random-btn {
       margin-left: auto;
       display: inline-flex;
@@ -699,7 +699,7 @@
     }
     .random-siirtyma-overlay.nakyva .random-siirtyma-teksti { opacity: 1; }
   
-.infolaatikko h2.laatikko-otsikko, .huomiolaatikko h2.laatikko-otsikko {
+.infolaatikko h2.laatikko-otsikko, .huomiolaatikko h2.laatikko-otsikko, .vaaralatikko h2.laatikko-otsikko {
   display: inline; font: inherit; font-weight: 700; color: inherit;
   margin: 0; padding: 0; letter-spacing: inherit;
 }
@@ -798,11 +798,34 @@
         "description": "Kirjoittajanimi, jonka takana on kiinnostus valtaan, vaikuttamiseen ja ihmisen päättelyn vinoumiin. Sisältö perustuu julkisiin lähteisiin ja vakiintuneeseen käsitteistöön."
       },
       "datePublished": "2026-06-19",
-      "dateModified": "2026-07-12"
+      "dateModified": "2026-08-04"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.ilmiöt.fi/overton-ikkuna.html#faq",
+      "inLanguage": "fi",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Kuka oli Joseph Overton?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yhdysvaltalainen ajatushautomovaikuttaja, joka kehitti mallin 1990-luvulla. Hänen havaintonsa oli, että poliitikko ei voi valita mitä tahansa kantaa — vain ikkunan sisällä olevia — joten vaikuttaminen kohdistuu ikkunaan itseensä."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Miten Overton-ikkunaa siirretään?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Esittämällä toistuvasti kantoja, jotka ovat nykyisen ikkunan ulkoreunalla tai sen ulkopuolella. Ääripää tekee sitä lähimpänä olevasta kannasta maltillisen, jolloin koko kaista siirtyy vähitellen samaan suuntaan."
+          }
+        }
+      ]
     }
   ]
 }
-  </script>
+</script>
   <style>
     .ilmio-byline{font-size:.82rem;color:#8B6914;font-style:italic;margin:.15rem 0 1.3rem;}
     .ilmio-byline a{color:#8B6914;}
@@ -827,8 +850,12 @@
   <div class="ilmio" id="overton-ikkuna">
 <div class="ilmio-tag">Ilmiö 3</div>
 <h1>Overton-ikkuna</h1>
-<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 12.7.2026</p>
+<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 4.8.2026</p>
 <p>Overton-ikkuna kuvaa sitä kaistaa poliittisia ideoita, joita pidetään yhteiskunnallisesti hyväksyttävinä tietyllä hetkellä. Ikkunan ulkopuolella olevat ideat ovat "radikaaleja", "hulluja" tai "ajattelemattomia" — ei siksi, että ne ovat huonoja, vaan siksi, että ne ovat vielä normin ulkopuolella.</p>
+<div class="infolaatikko vastauslohko">
+<h2 class="laatikko-otsikko">Mitä Overton-ikkuna tarkoittaa?</h2>
+<p style="margin:0.4em 0 0;"><strong>Overton-ikkuna</strong> kuvaa sitä, mitä poliitikko voi sanoa menettämättä uskottavuuttaan — ei sitä, mikä on oikein tai kannatettavaa. Ikkunan sisällä oleva kanta on vaalikelpoinen, ulkopuolella oleva ei. Siksi vaikuttaminen kohdistuu usein ikkunaan itseensä.</p>
+</div>
 <p>Keskeinen havainto: ikkunaa voidaan <strong>tietoisesti siirtää</strong>. Edistämällä äärimmäisiä kantoja — vaikka ne eivät koskaan tulisi politiikaksi — voidaan tehdä aiemmin radikaalista näkemyksestä "kohtuullinen kompromissi".</p>
 <div class="mermaid">
 flowchart TD
@@ -852,7 +879,7 @@ flowchart TD
     </div>
 <p>Joseph Overton kehitti käsitteen 1990-luvulla Mackinac Center for Public Policy -ajatushautomossa. Alun perin neutraali analyysityökalu — mutta myöhemmin myös strategiseksi ohjenuoraksi tunnustettu: jos haluat siirtää politiikkaa tiettyyn suuntaan, tue myös sen suunnan äärimmäisempiä kantoja, vaikka et niistä itse pitäisikään.</p>
 <div class="vaaralatikko">
-<strong>Käytännön seuraus:</strong> Mediahuomio ääriliikkeille — myös kriittinen — voi siirtää ikkunaa heidän suuntaansa. Äärikannan raportointi normalisoi sen osana poliittista kenttää, vaikka tarkoitus olisi ollut tuomita se.
+<h2 class="laatikko-otsikko">Käytännön seuraus:</h2> Mediahuomio ääriliikkeille — myös kriittinen — voi siirtää ikkunaa heidän suuntaansa. Äärikannan raportointi normalisoi sen osana poliittista kenttää, vaikka tarkoitus olisi ollut tuomita se.
     </div>
 <div class="huomiolaatikko">
 <h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Ikkunan siirron tunnistaa vertailusta: ehdotus näyttää maltilliselta vain vielä äärimmäisemmän rinnalla. Arvioi ehdotus sen omilla seurauksilla, älä ääripäiden rinnalla — ja kysy: olisinko hyväksynyt tämän viisi vuotta sitten? Jos en, muuttuiko asia vai ikkuna?
@@ -925,7 +952,7 @@ flowchart TD
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="starve-the-beast.html">← Starve the beast</a>
     <div class="kortti-nav-center">
-      <span class="kortti-nav-laskuri">3 / 113</span>
+      <span class="kortti-nav-laskuri">3 / 127</span>
       <span class="kortti-nav-vinkki">
         <kbd>&#8592;</kbd> <kbd>&#8594;</kbd> selaa &middot; <kbd>R</kbd> satunnainen
         <span class="touch-vinkki">&nbsp;· swipe &#8592;&#8594; tai &#8595; random</span>
@@ -1102,7 +1129,7 @@ flowchart TD
 
   <script>
 (function () {
-  const IDS = ["paskuuttaminen", "starve-the-beast", "overton-ikkuna", "saantelijan-kaappaus", "rautainen-laki", "valta-suojelee-valtaa", "hajota-hallitse", "bkt-harha", "astroturf", "firehose-of-falsehood", "manufactured-consent", "betteridgen-laki", "inokulointiteoria", "whataboutismi", "streisand-ilmio", "trollitehdas", "kuollut-kissa", "brandolinin-laki", "poen-laki", "godwinin-laki", "backfire-effect", "darvo", "halo-efekti", "konsensus-fetissi", "omenoita-appelsiineja", "blame-game", "gaslighting", "maalitolppien-siirtaminen", "argumenttitulva", "sunk-cost-harha", "jarjestelman-puolustelu", "dunning-kruger", "hanlonin-partaveitsi", "occamin-partaveitsi", "simple-sabotage", "kafka-ilmio", "catch-22", "goodhartin-laki", "hippo-efekti", "performatiivinen-lasnaolo", "rituaalinen-raportointi", "initiointirituaalit", "portinvartija-kulttuuri", "strateginen-osaamattomuus", "fofo", "sivustakatsojan-efekti", "parkinsonin-laki", "peterin-periaate", "pareto-periaate", "brooksin-laki", "yhdeksanyhdeksan", "hofstadterin-laki", "kuolonmarssi", "tekninen-velka", "conways-laki", "bikeshedding", "scope-creep", "korkoa-korolle", "negatiivinen-korkoa", "korkokierre", "honeypot-huijaus", "bait-and-switch", "kaarmeoljy", "ponzi-pyramidi", "pump-and-dump", "pig-butchering", "ennakkomaksuhuijaus", "badger-game", "qr-koodihuijaus", "toimitusjohtajahuijaus", "rug-pull", "ilmainen-naytetyo", "exposure-maksu", "lowball-hinnoittelu", "valittajan-skimmaus", "tilipuristus", "foot-in-the-door", "door-in-the-face", "hintaankkurointi", "houkutinvaihtoehto", "vastavuoroisuuden-ansa", "sosiaalinen-todiste", "painostusclose", "shrinkflaatio", "suunniteltu-vanheneminen", "tilausansa", "doomscrolling", "kaikukammio", "ai-slop", "parasosiaalinen-suhde", "kuollut-internet", "rage-bait", "klikkiotsikko", "engagement-bait", "1-prosentin-saanto", "aanekas-vahemmisto", "viherpesu", "sinipesu", "urheilupesu", "pinkkipesu", "tekoalypesu", "hyvesignalointi", "hiljainen-irtisanoutuminen", "hiljainen-irtisanominen", "haamutyopaikat", "kaksois-y-akseli", "pinta-alaharha", "cherry-picking-aikavali", "keskiarvo-vs-mediaani", "suhteellinen-riski", "selviytymisharha", "simpsonin-paradoksi", "p-hakkerointi"];
+  const IDS = ["paskuuttaminen", "starve-the-beast", "overton-ikkuna", "saantelijan-kaappaus", "rautainen-laki", "valta-suojelee-valtaa", "hajota-hallitse", "bkt-harha", "astroturf", "firehose-of-falsehood", "manufactured-consent", "betteridgen-laki", "inokulointiteoria", "whataboutismi", "streisand-ilmio", "trollitehdas", "kuollut-kissa", "brandolinin-laki", "poen-laki", "godwinin-laki", "backfire-effect", "darvo", "halo-efekti", "konsensus-fetissi", "omenoita-appelsiineja", "blame-game", "gaslighting", "maalitolppien-siirtaminen", "argumenttitulva", "sunk-cost-harha", "jarjestelman-puolustelu", "dunning-kruger", "hanlonin-partaveitsi", "occamin-partaveitsi", "simple-sabotage", "kafka-ilmio", "catch-22", "goodhartin-laki", "hippo-efekti", "performatiivinen-lasnaolo", "rituaalinen-raportointi", "initiointirituaalit", "portinvartija-kulttuuri", "strateginen-osaamattomuus", "fofo", "sivustakatsojan-efekti", "parkinsonin-laki", "peterin-periaate", "pareto-periaate", "brooksin-laki", "yhdeksanyhdeksan", "hofstadterin-laki", "kuolonmarssi", "lukittu-paatos", "strateginen-aliarviointi", "paatosperainen-todistelu", "lapi-hinnalla-milla-hyvansa", "tekninen-velka", "conways-laki", "bikeshedding", "scope-creep", "korkoa-korolle", "negatiivinen-korkoa", "korkokierre", "honeypot-huijaus", "bait-and-switch", "kaarmeoljy", "ponzi-pyramidi", "pump-and-dump", "pig-butchering", "ennakkomaksuhuijaus", "badger-game", "qr-koodihuijaus", "toimitusjohtajahuijaus", "rug-pull", "ilmainen-naytetyo", "exposure-maksu", "lowball-hinnoittelu", "valittajan-skimmaus", "tilipuristus", "foot-in-the-door", "door-in-the-face", "hintaankkurointi", "houkutinvaihtoehto", "vastavuoroisuuden-ansa", "sosiaalinen-todiste", "painostusclose", "shrinkflaatio", "suunniteltu-vanheneminen", "tilausansa", "doomscrolling", "kaikukammio", "ai-slop", "parasosiaalinen-suhde", "kuollut-internet", "rage-bait", "klikkiotsikko", "engagement-bait", "1-prosentin-saanto", "aanekas-vahemmisto", "viherpesu", "sinipesu", "urheilupesu", "pinkkipesu", "tekoalypesu", "hyvesignalointi", "hiljainen-irtisanoutuminen", "hiljainen-irtisanominen", "haamutyopaikat", "kaksois-y-akseli", "pinta-alaharha", "cherry-picking-aikavali", "keskiarvo-vs-mediaani", "suhteellinen-riski", "selviytymisharha", "simpsonin-paradoksi", "p-hakkerointi", "uutiskynnys", "uutisautiomaa", "paasyjournalismi", "tiedotejournalismi", "branditurvallisuus", "huonojen-uutisten-hautaaminen", "vaara-tasapaino", "keharaportointi", "gell-mannin-amnesia", "vihamielisen-median-harha"];
   const PREV = 'starve-the-beast.html';
   const NEXT = 'saantelijan-kaappaus.html';
 

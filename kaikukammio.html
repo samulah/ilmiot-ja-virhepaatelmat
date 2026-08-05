@@ -16,7 +16,7 @@
       if (loaded) return;
       loaded = true;
       var s = document.createElement('script');
-      s.src = 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js';
+      s.src = 'js/mermaid.min.js';
       s.onload = function () {
         mermaid.initialize({ startOnLoad: false, theme: 'base', themeVariables: { fontSize: '12px', fontFamily: "'DM Sans', system-ui, sans-serif", primaryColor: '#FBF5E0', primaryTextColor: '#1A1100', primaryBorderColor: '#C9A84C', lineColor: '#8B6914', secondaryColor: '#F5F0E5', tertiaryColor: '#FDFAF2', mainBkg: '#FBF5E0', nodeBorder: '#C9A84C', clusterBkg: '#F5F0E5', titleColor: '#3A2000', edgeLabelBackground: '#FDFAF2' } });
         mermaid.run();
@@ -563,7 +563,7 @@
     .kortti-breadcrumb a { color: #8B6914; text-decoration: none; }
     .kortti-breadcrumb a:hover { text-decoration: underline; }
     .kortti-breadcrumb-sep { color: #ccc; }
-    .kortti-breadcrumb .kortti-breadcrumb .kortti-breadcrumb .kortti-breadcrumb-kat { color: #666; }
+    .kortti-breadcrumb .kortti-breadcrumb-kat { color: #666; }
     .kortti-random-btn {
       margin-left: auto;
       display: inline-flex;
@@ -699,7 +699,7 @@
     }
     .random-siirtyma-overlay.nakyva .random-siirtyma-teksti { opacity: 1; }
   
-.infolaatikko h2.laatikko-otsikko, .huomiolaatikko h2.laatikko-otsikko {
+.infolaatikko h2.laatikko-otsikko, .huomiolaatikko h2.laatikko-otsikko, .vaaralatikko h2.laatikko-otsikko {
   display: inline; font: inherit; font-weight: 700; color: inherit;
   margin: 0; padding: 0; letter-spacing: inherit;
 }
@@ -798,11 +798,34 @@
         "description": "Kirjoittajanimi, jonka takana on kiinnostus valtaan, vaikuttamiseen ja ihmisen päättelyn vinoumiin. Sisältö perustuu julkisiin lähteisiin ja vakiintuneeseen käsitteistöön."
       },
       "datePublished": "2026-07-06",
-      "dateModified": "2026-07-06"
+      "dateModified": "2026-08-04"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.ilmiöt.fi/kaikukammio.html#faq",
+      "inLanguage": "fi",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Mikä ero on kaikukammiolla ja kuplalla?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kupla tarkoittaa, ettei eriävää tietoa tule vastaan. Kaikukammiossa sitä tulee, mutta se on ennalta mitätöity: vastapuoli esitellään pilkan kohteena, joten sen argumentteja ei tarvitse käsitellä."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Miten kaikukammiosta pääsee ulos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Testaa itsesi: osaatko selittää vastapuolen parhaan argumentin niin, että hän tunnistaisi sen omakseen? Jos et, olet kuullut vain sen karikatyyrin. Hae lähde, joka on eri mieltä mutta jota pidät rehellisenä."
+          }
+        }
+      ]
     }
   ]
 }
-  </script>
+</script>
   <style>
     .ilmio-byline{font-size:.82rem;color:#8B6914;font-style:italic;margin:.15rem 0 1.3rem;}
     .ilmio-byline a{color:#8B6914;}
@@ -825,10 +848,14 @@
   </div>
 
   <div class="ilmio" id="kaikukammio">
-<div class="ilmio-tag">Ilmiö 88</div>
+<div class="ilmio-tag">Ilmiö 92</div>
 <h1>Kaikukammio — samanmielisyyden vahvistin</h1>
-<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 6.7.2026</p>
+<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 4.8.2026</p>
 <p>Kaikukammio (engl. <strong>echo chamber</strong>) on ympäristö, jossa kohtaat lähes pelkästään omia näkemyksiäsi vahvistavaa sisältöä ja samanmielisiä ihmisiä. Eriävät näkemykset eivät joko saavu perille lainkaan — tai ne saapuvat valmiiksi kehystettyinä: vastapuolen typerimpinä edustajina, pilkan kohteina.</p>
+<div class="infolaatikko vastauslohko">
+<h2 class="laatikko-otsikko">Mitä kaikukammio tarkoittaa?</h2>
+<p style="margin:0.4em 0 0;"><strong>Kaikukammio</strong> tarkoittaa ympäristöä, jossa eriävä näkemys on mitätöity jo ennen kuin se kuullaan. Olennaista ei ole vastapuolen puuttuminen vaan se, että vastapuoli esitellään epäluotettavana — jolloin sen perusteluja ei tarvitse käsitellä lainkaan.</p>
+</div>
 <p>Lähikäsitteet kannattaa erottaa. <strong>Filtterikupla</strong> (filter bubble, Eli Pariser 2011) on algoritmin tekemää personointia: kaksi ihmistä näkee samalla haulla eri maailman. Filosofi C. Thi Nguyen erottaa lisäksi <strong>tietokuplan</strong> ja kaikukammion: kuplasta toiset äänet puuttuvat vahingossa, kaikukammiossa ne on aktiivisesti leimattu epäluotettaviksi. Ero ratkaisee vaikeusasteen — kupla puhkeaa tiedolla, kaikukammio ei, koska ulkopuolinen tieto on selitetty pahantahtoiseksi jo etukäteen.</p>
 <div class="mermaid">
 flowchart TD
@@ -855,10 +882,10 @@ flowchart TD
 </ul>
 </div>
 <div class="vaaralatikko">
-<strong>Kaikukammio rakennetaan myös tahallaan.</strong> Poliittiselle vaikuttajalle valmis kammio on jakelukanava: ensin yleisö eristetään muista lähteistä ("valtamedia valehtelee — vain me kerromme totuuden"), ja sen jälkeen eristetylle yleisölle voi syöttää lähes mitä tahansa, koska korjaavaa tietoa ei enää uskota. Työkalut ovat tuttuja: mikrokohdennettu mainonta näyttää eri kuplille eri viestit (Cambridge Analytica -skandaali 2016 paljasti mittakaavan), trollitehtaat perustavat ja ruokkivat ryhmiä poliittisen kentän molemmilla laidoilla — Venäjän Internet Research Agency pyöritti Yhdysvalloissa kummankin laidan "kansanliikkeitä" — ja kammion sisälle istutettu "oma media" pitää huolen, ettei kukaan lähde. Jyrkkä kupla on myös liiketoimintaa: sitoutunut kammio klikkaa, lahjoittaa ja ostaa.
+<h2 class="laatikko-otsikko">Kaikukammio rakennetaan myös tahallaan.</h2> Poliittiselle vaikuttajalle valmis kammio on jakelukanava: ensin yleisö eristetään muista lähteistä ("valtamedia valehtelee — vain me kerromme totuuden"), ja sen jälkeen eristetylle yleisölle voi syöttää lähes mitä tahansa, koska korjaavaa tietoa ei enää uskota. Työkalut ovat tuttuja: mikrokohdennettu mainonta näyttää eri kuplille eri viestit (Cambridge Analytica -skandaali 2016 paljasti mittakaavan), trollitehtaat perustavat ja ruokkivat ryhmiä poliittisen kentän molemmilla laidoilla — Venäjän Internet Research Agency pyöritti Yhdysvalloissa kummankin laidan "kansanliikkeitä" — ja kammion sisälle istutettu "oma media" pitää huolen, ettei kukaan lähde. Jyrkkä kupla on myös liiketoimintaa: sitoutunut kammio klikkaa, lahjoittaa ja ostaa.
 </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Ulospääsy:</h2>
+<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2>
 <ul style="margin:0.5em 0 0;">
 <li>Testaa itsesi: osaatko selittää vastapuolen parhaan argumentin niin, että he tunnistaisivat sen omakseen? Jos et, tunnet kannan vain kammiosi kertomana.</li>
 <li>Seuraa tietoisesti muutamaa laatulähdettä, jotka ovat kanssasi eri mieltä. "Eri mieltä" ja "epäluotettava" ovat eri asioita.</li>
@@ -889,7 +916,7 @@ flowchart TD
     <h2>Liittyvät ilmiöt</h2>
     <div class="liittyvat-kortit">
     <a href="doomscrolling.html" class="liittyvat-kortti" style="--c:#263238">
-      <span class="liittyvat-numero">87</span>
+      <span class="liittyvat-numero">91</span>
       <span class="liittyvat-teksti">
         <span class="liittyvat-nimi">Doomscrolling</span>
         <span class="liittyvat-kuvaus">Pakonomainen huonojen uutisten selaaminen, joka jatkuu vaikka ahdistus kasvaa.</span>
@@ -913,7 +940,7 @@ flowchart TD
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
     <a href="sosiaalinen-todiste.html" class="liittyvat-kortti" style="--c:#b71c1c">
-      <span class="liittyvat-numero">82</span>
+      <span class="liittyvat-numero">86</span>
       <span class="liittyvat-teksti">
         <span class="liittyvat-nimi">Sosiaalinen todiste -manipulaatio</span>
         <span class="liittyvat-kuvaus">"Muutkin jo ostivat" — epävarma ihminen matkii muita, ja kysyntä voidaan lavastaa.</span>
@@ -929,7 +956,7 @@ flowchart TD
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
     <a href="rage-bait.html" class="liittyvat-kortti" style="--c:#d84315">
-      <span class="liittyvat-numero">92</span>
+      <span class="liittyvat-numero">96</span>
       <span class="liittyvat-teksti">
         <span class="liittyvat-nimi">Rage bait</span>
         <span class="liittyvat-kuvaus">Sisältö on suunniteltu suututtamaan — vihainen jako on algoritmille yhtä arvokas kuin tykkäys.</span>
@@ -937,7 +964,7 @@ flowchart TD
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
     <a href="engagement-bait.html" class="liittyvat-kortti" style="--c:#5d4037">
-      <span class="liittyvat-numero">94</span>
+      <span class="liittyvat-numero">98</span>
       <span class="liittyvat-teksti">
         <span class="liittyvat-nimi">Engagement bait</span>
         <span class="liittyvat-kuvaus">Sisältö pyytää reaktiota suoraan, koska algoritmi palkitsee vuorovaikutuksesta riippumatta sen syystä.</span>
@@ -950,7 +977,7 @@ flowchart TD
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="doomscrolling.html">← Doomscrolling — kurjuusselauksen kierre</a>
     <div class="kortti-nav-center">
-      <span class="kortti-nav-laskuri">88 / 113</span>
+      <span class="kortti-nav-laskuri">92 / 127</span>
       <span class="kortti-nav-vinkki">
         <kbd>&#8592;</kbd> <kbd>&#8594;</kbd> selaa &middot; <kbd>R</kbd> satunnainen
         <span class="touch-vinkki">&nbsp;· swipe &#8592;&#8594; tai &#8595; random</span>
@@ -1127,7 +1154,7 @@ flowchart TD
 
   <script>
 (function () {
-  const IDS = ["paskuuttaminen", "starve-the-beast", "overton-ikkuna", "saantelijan-kaappaus", "rautainen-laki", "valta-suojelee-valtaa", "hajota-hallitse", "bkt-harha", "astroturf", "firehose-of-falsehood", "manufactured-consent", "betteridgen-laki", "inokulointiteoria", "whataboutismi", "streisand-ilmio", "trollitehdas", "kuollut-kissa", "brandolinin-laki", "poen-laki", "godwinin-laki", "backfire-effect", "darvo", "halo-efekti", "konsensus-fetissi", "omenoita-appelsiineja", "blame-game", "gaslighting", "maalitolppien-siirtaminen", "argumenttitulva", "sunk-cost-harha", "jarjestelman-puolustelu", "dunning-kruger", "hanlonin-partaveitsi", "occamin-partaveitsi", "simple-sabotage", "kafka-ilmio", "catch-22", "goodhartin-laki", "hippo-efekti", "performatiivinen-lasnaolo", "rituaalinen-raportointi", "initiointirituaalit", "portinvartija-kulttuuri", "strateginen-osaamattomuus", "fofo", "sivustakatsojan-efekti", "parkinsonin-laki", "peterin-periaate", "pareto-periaate", "brooksin-laki", "yhdeksanyhdeksan", "hofstadterin-laki", "kuolonmarssi", "tekninen-velka", "conways-laki", "bikeshedding", "scope-creep", "korkoa-korolle", "negatiivinen-korkoa", "korkokierre", "honeypot-huijaus", "bait-and-switch", "kaarmeoljy", "ponzi-pyramidi", "pump-and-dump", "pig-butchering", "ennakkomaksuhuijaus", "badger-game", "qr-koodihuijaus", "toimitusjohtajahuijaus", "rug-pull", "ilmainen-naytetyo", "exposure-maksu", "lowball-hinnoittelu", "valittajan-skimmaus", "tilipuristus", "foot-in-the-door", "door-in-the-face", "hintaankkurointi", "houkutinvaihtoehto", "vastavuoroisuuden-ansa", "sosiaalinen-todiste", "painostusclose", "shrinkflaatio", "suunniteltu-vanheneminen", "tilausansa", "doomscrolling", "kaikukammio", "ai-slop", "parasosiaalinen-suhde", "kuollut-internet", "rage-bait", "klikkiotsikko", "engagement-bait", "1-prosentin-saanto", "aanekas-vahemmisto", "viherpesu", "sinipesu", "urheilupesu", "pinkkipesu", "tekoalypesu", "hyvesignalointi", "hiljainen-irtisanoutuminen", "hiljainen-irtisanominen", "haamutyopaikat", "kaksois-y-akseli", "pinta-alaharha", "cherry-picking-aikavali", "keskiarvo-vs-mediaani", "suhteellinen-riski", "selviytymisharha", "simpsonin-paradoksi", "p-hakkerointi"];
+  const IDS = ["paskuuttaminen", "starve-the-beast", "overton-ikkuna", "saantelijan-kaappaus", "rautainen-laki", "valta-suojelee-valtaa", "hajota-hallitse", "bkt-harha", "astroturf", "firehose-of-falsehood", "manufactured-consent", "betteridgen-laki", "inokulointiteoria", "whataboutismi", "streisand-ilmio", "trollitehdas", "kuollut-kissa", "brandolinin-laki", "poen-laki", "godwinin-laki", "backfire-effect", "darvo", "halo-efekti", "konsensus-fetissi", "omenoita-appelsiineja", "blame-game", "gaslighting", "maalitolppien-siirtaminen", "argumenttitulva", "sunk-cost-harha", "jarjestelman-puolustelu", "dunning-kruger", "hanlonin-partaveitsi", "occamin-partaveitsi", "simple-sabotage", "kafka-ilmio", "catch-22", "goodhartin-laki", "hippo-efekti", "performatiivinen-lasnaolo", "rituaalinen-raportointi", "initiointirituaalit", "portinvartija-kulttuuri", "strateginen-osaamattomuus", "fofo", "sivustakatsojan-efekti", "parkinsonin-laki", "peterin-periaate", "pareto-periaate", "brooksin-laki", "yhdeksanyhdeksan", "hofstadterin-laki", "kuolonmarssi", "lukittu-paatos", "strateginen-aliarviointi", "paatosperainen-todistelu", "lapi-hinnalla-milla-hyvansa", "tekninen-velka", "conways-laki", "bikeshedding", "scope-creep", "korkoa-korolle", "negatiivinen-korkoa", "korkokierre", "honeypot-huijaus", "bait-and-switch", "kaarmeoljy", "ponzi-pyramidi", "pump-and-dump", "pig-butchering", "ennakkomaksuhuijaus", "badger-game", "qr-koodihuijaus", "toimitusjohtajahuijaus", "rug-pull", "ilmainen-naytetyo", "exposure-maksu", "lowball-hinnoittelu", "valittajan-skimmaus", "tilipuristus", "foot-in-the-door", "door-in-the-face", "hintaankkurointi", "houkutinvaihtoehto", "vastavuoroisuuden-ansa", "sosiaalinen-todiste", "painostusclose", "shrinkflaatio", "suunniteltu-vanheneminen", "tilausansa", "doomscrolling", "kaikukammio", "ai-slop", "parasosiaalinen-suhde", "kuollut-internet", "rage-bait", "klikkiotsikko", "engagement-bait", "1-prosentin-saanto", "aanekas-vahemmisto", "viherpesu", "sinipesu", "urheilupesu", "pinkkipesu", "tekoalypesu", "hyvesignalointi", "hiljainen-irtisanoutuminen", "hiljainen-irtisanominen", "haamutyopaikat", "kaksois-y-akseli", "pinta-alaharha", "cherry-picking-aikavali", "keskiarvo-vs-mediaani", "suhteellinen-riski", "selviytymisharha", "simpsonin-paradoksi", "p-hakkerointi", "uutiskynnys", "uutisautiomaa", "paasyjournalismi", "tiedotejournalismi", "branditurvallisuus", "huonojen-uutisten-hautaaminen", "vaara-tasapaino", "keharaportointi", "gell-mannin-amnesia", "vihamielisen-median-harha"];
   const PREV = 'doomscrolling.html';
   const NEXT = 'ai-slop.html';
 

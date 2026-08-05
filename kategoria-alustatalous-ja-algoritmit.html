@@ -192,8 +192,11 @@
       font-weight: 700; line-height: 1.1; letter-spacing: -0.015em;
       color: #fff; margin: 0; max-width: 20ch;
     }
-    .kat-alaotsikko {
-      display: block; margin-top: 0.5rem;
+    /* Oma <p> h1:n ulkopuolella. font-family toistetaan tässä, koska ulkoasu
+       periytyi aiemmin h1:ltä — nyt periytymisketju ei enää kulje sen kautta. */
+    p.kat-alaotsikko {
+      margin: 0.5rem 0 0;
+      font-family: var(--font-display, 'Spectral', Georgia, serif);
       font-size: clamp(0.95rem, 2.2vw, 1.18rem);
       font-weight: 400; font-style: italic; line-height: 1.4;
       color: rgba(255,255,255,0.6); max-width: 34ch;
@@ -353,9 +356,10 @@
         <a class="kat-paluu" href="index.html">
           <img src="favicon.svg" alt="" width="20" height="20">Kaikki ilmiöt
         </a>
-        <p class="kat-eyebrow">Kategoria 9 / 12</p>
-        <h1 class="kat-nimi">Alustatalous ja algoritmit<span class="kat-alaotsikko">miksi syöte näyttää siltä kuin näyttää</span></h1>
-        <p class="kat-meta">10 ilmiötä<span>·</span>Ilmiöt 87&ndash;96<span>·</span>Päivitetty 28.7.2026</p>
+        <p class="kat-eyebrow">Kategoria 9 / 13</p>
+        <h1 class="kat-nimi">Alustatalous ja algoritmit</h1>
+        <p class="kat-alaotsikko">miksi syöte näyttää siltä kuin näyttää</p>
+        <p class="kat-meta">10 ilmiötä<span>·</span>Ilmiöt 91&ndash;100<span>·</span>Päivitetty 28.7.2026</p>
       </div>
     </div>
   </header>
@@ -372,7 +376,7 @@
 <h2>Kymmenen ilmiötä</h2>
 <div class="kat-kortit">
 <a href="doomscrolling.html" class="hub-kortti" style="--c:#263238">
-  <span class="hub-numero">87</span>
+  <span class="hub-numero">91</span>
   <span class="hub-teksti">
     <span class="hub-nimi">Doomscrolling</span>
     <span class="hub-kuvaus">Pakonomainen huonojen uutisten selaaminen, joka jatkuu vaikka ahdistus kasvaa.</span>
@@ -380,7 +384,7 @@
   <span class="hub-nuoli" aria-hidden="true">›</span>
 </a>
 <a href="kaikukammio.html" class="hub-kortti" style="--c:#00838f">
-  <span class="hub-numero">88</span>
+  <span class="hub-numero">92</span>
   <span class="hub-teksti">
     <span class="hub-nimi">Kaikukammio</span>
     <span class="hub-kuvaus">Ympäristö, jossa kohtaat vain omia näkemyksiäsi vahvistavaa sisältöä.</span>
@@ -388,7 +392,7 @@
   <span class="hub-nuoli" aria-hidden="true">›</span>
 </a>
 <a href="ai-slop.html" class="hub-kortti" style="--c:#311b92">
-  <span class="hub-numero">89</span>
+  <span class="hub-numero">93</span>
   <span class="hub-teksti">
     <span class="hub-nimi">AI slop</span>
     <span class="hub-kuvaus">Tekoälyllä massatuotettua halpasisältöä, joka kerää klikkejä palvelematta lukijaa.</span>
@@ -396,7 +400,7 @@
   <span class="hub-nuoli" aria-hidden="true">›</span>
 </a>
 <a href="parasosiaalinen-suhde.html" class="hub-kortti" style="--c:#ad1457">
-  <span class="hub-numero">90</span>
+  <span class="hub-numero">94</span>
   <span class="hub-teksti">
     <span class="hub-nimi">Parasosiaalinen suhde</span>
     <span class="hub-kuvaus">Yksipuolinen tunneside mediahahmoon tuntuu ystävyydeltä — ja sillä voi myydä mitä vain.</span>
@@ -404,7 +408,7 @@
   <span class="hub-nuoli" aria-hidden="true">›</span>
 </a>
 <a href="kuollut-internet.html" class="hub-kortti" style="--c:#5e35b1">
-  <span class="hub-numero">91</span>
+  <span class="hub-numero">95</span>
   <span class="hub-teksti">
     <span class="hub-nimi">Kuollut internet -teoria</span>
     <span class="hub-kuvaus">Väite, että valtaosa verkon sisällöstä on bottien tuottamaa — salaliittona väärin, metaforana osuva.</span>
@@ -412,7 +416,7 @@
   <span class="hub-nuoli" aria-hidden="true">›</span>
 </a>
 <a href="rage-bait.html" class="hub-kortti" style="--c:#d84315">
-  <span class="hub-numero">92</span>
+  <span class="hub-numero">96</span>
   <span class="hub-teksti">
     <span class="hub-nimi">Rage bait</span>
     <span class="hub-kuvaus">Sisältö on suunniteltu suututtamaan — vihainen jako on algoritmille yhtä arvokas kuin tykkäys.</span>
@@ -420,7 +424,7 @@
   <span class="hub-nuoli" aria-hidden="true">›</span>
 </a>
 <a href="klikkiotsikko.html" class="hub-kortti" style="--c:#ef6c00">
-  <span class="hub-numero">93</span>
+  <span class="hub-numero">97</span>
   <span class="hub-teksti">
     <span class="hub-nimi">Klikkiotsikko</span>
     <span class="hub-kuvaus">Otsikko on rakennettu tuottamaan klikki, ei kertomaan mitä juttu sisältää — tieto pidätetään tahallaan.</span>
@@ -428,7 +432,7 @@
   <span class="hub-nuoli" aria-hidden="true">›</span>
 </a>
 <a href="engagement-bait.html" class="hub-kortti" style="--c:#5d4037">
-  <span class="hub-numero">94</span>
+  <span class="hub-numero">98</span>
   <span class="hub-teksti">
     <span class="hub-nimi">Engagement bait</span>
     <span class="hub-kuvaus">Sisältö pyytää reaktiota suoraan, koska algoritmi palkitsee vuorovaikutuksesta riippumatta sen syystä.</span>
@@ -436,7 +440,7 @@
   <span class="hub-nuoli" aria-hidden="true">›</span>
 </a>
 <a href="1-prosentin-saanto.html" class="hub-kortti" style="--c:#1b2631">
-  <span class="hub-numero">95</span>
+  <span class="hub-numero">99</span>
   <span class="hub-teksti">
     <span class="hub-nimi">1 %:n sääntö (90-9-1)</span>
     <span class="hub-kuvaus">90 % lurkkii, 9 % osallistuu satunnaisesti ja 1 % tuottaa suurimman osan verkkoyhteisöjen sisällöstä.</span>
@@ -444,7 +448,7 @@
   <span class="hub-nuoli" aria-hidden="true">›</span>
 </a>
 <a href="aanekas-vahemmisto.html" class="hub-kortti" style="--c:#7b241c">
-  <span class="hub-numero">96</span>
+  <span class="hub-numero">100</span>
   <span class="hub-teksti">
     <span class="hub-nimi">Äänekäs vähemmistö</span>
     <span class="hub-kuvaus">Kärjekkäimmät kommentoijat näkyvät eniten, kun hiljainen enemmistö ei koskaan vastaa.</span>
@@ -477,6 +481,7 @@
   <p class="kat-naapurit-label">Aiheeseen liittyvät kategoriat</p>
   <a href="kategoria-informaatio-ja-propaganda.html">Informaatio ja propaganda →</a>
   <a href="kategoria-psykologia-ja-kognitio.html">Psykologia ja kognitio →</a>
+  <a href="kategoria-media-ja-julkisuus.html">Media ja julkisuus →</a>
 </nav>
 <nav class="kat-siirry" aria-label="Kategoriasta toiseen">
   <div class="kat-siirry-parit">
@@ -489,7 +494,7 @@
       <span class="kat-siirry-nimi">10. Pesut ja maineenhallinta &rarr;</span>
     </a>
   </div>
-  <a class="kat-siirry-kaikki" href="index.html">Kategoria <b>9 / 12</b> &middot; katso kaikki kategoriat</a>
+  <a class="kat-siirry-kaikki" href="index.html">Kategoria <b>9 / 13</b> &middot; katso kaikki kategoriat</a>
 </nav>
   </main>
 

@@ -1,5 +1,232 @@
 # Muutosloki — Ilmiöitä (www.ilmiöt.fi)
 
+## 5.8.2026 — Suurhanke-erä (4) ja media-erä (10) julkaistu: 113 → 127 ilmiötä, 13. kategoria
+
+`luonnokset-media/ANALYYSI.md`:n julkaisujärjestyksen kaksi ensimmäistä erää
+kerralla. Kansioon jää enää vaalierän 3 luonnosta (loka–marras 2026) ja
+`ANALYYSI.md`.
+
+**Erä 1 — suurhankkeet (113 → 117), Projekti- ja ohjelmistokehitys.**
+`lisaa_ilmiot.py --kirjoita`, `LUONNOKSET` osoittamaan `luonnokset-media/`.
+Kortit ankkuroitiin `kuolonmarssi`n perään ketjuna, joten numerot ovat
+54–57 (`lukittu-paatos`, `strateginen-aliarviointi`, `paatosperainen-todistelu`,
+`lapi-hinnalla-milla-hyvansa`) ja 60 vanhaa sivua numeroitiin uudelleen
+(pienin muuttunut 58). Kategoria 8 → 12 ilmiötä.
+
+**Erä 2 — Media ja julkisuus (117 → 127), uusi kategoria 13.**
+`lisaa_ilmiot.py` **ei osaa rakentaa uutta `hub-kategoria`-lohkoa**, vain
+pujottaa kortin olemassa olevan perään. Siksi skriptiin lisättiin lippu
+`--kortit-valmiina`: lohko kortteineen (10 kpl, numerot 118–127) ja
+`hub-katnav`-linkki kirjoitettiin `index.html`:ään käsin, ja skripti teki
+loput — luonnokset juureen, `const IDS`, PREV/NEXT, selausnapit ja
+`N / 127`-laskurit kaikille 127 sivulle. `index.html`:ään se ei koske
+lainkaan, ja tarkistaa vain että numerointi on 1..N. Kategoria sijoitettiin
+**viimeiseksi**, jolloin yksikään vanha sivu ei numeroitunut uudelleen.
+
+**Luonnoksista periytyneet virheet (korjattu julkaisun yhteydessä).**
+
+- Media-erän 10 sivun murupolku osoitti `kategoria-alustatalous-ja-algoritmit.html`:ään
+  sekä näkyvässä murupolussa että JSON-LD:n `BreadcrumbList`issa — luonnospohjan
+  jäänne ajalta, jolloin kategoriaa 13 ei ollut. Korvattu sedillä.
+  Suurhanke-erän 4 sivua olivat oikein.
+- Kaikki 14 sivua linkittivät `style.css?v=20260727`, muut 113 sivua
+  `?v=20260725`. Yhtenäistetty jälkimmäiseen (`style.css` ei ole muuttunut).
+  Kategoriasivut jäävät 20260727:ään — versio on kovakoodattu
+  `build_kategoriat.py`:hyn (`CSS_VERSIO`), ja se on vanha ero.
+- `datePublished`/`dateModified` ja näkyvä "Päivitetty" olivat luonnoksen
+  kirjoituspäivä (27.–28.7.). Asetettu julkaisupäiväksi 2026-08-05, jotta
+  sitemapin `lastmod` on totta.
+
+**Kategoriasisältö.** `kategoriat/projekti-ja-ohjelmistokehitys.md`: "Kolme
+mekanismia" → "Neljä mekanismia" (uusi lohko *Arvio on hakemus*), otsikko ja
+kuvaus 8 → 12, kaksi uutta kytkentäbullettia ja viides lukijaohje
+(vertailuluokka). `kategoriat/media-ja-julkisuus.md` oli valmiina;
+vain `paivitetty` 2026-07-28 → 2026-08-05.
+
+**Regeneroinnit.** `paivita_maarat.py` (127 ilmiötä / 13 kategoriaa; llms.txt
++14 entryä), `build_kategoriat.py` (13 sivua, laskurit `x / 13` automaattisesti),
+`murupolku_kategoriaan.py`, `build_liittyvat.py`, `build_sitemap.py`,
+`build_search_index.py`. Etusivun `paivitetty-btn` ja `CollectionPage`in
+`dateModified` 5.8.2026; `muutokset.html` sai kaksi `article.muutos`-merkintää.
+
+**Huom seuraavalle sessiolle:** `lisaa_ilmiot.py`:n `UUDET`-taulukko on nyt
+media-erän sisältö. Se on ajettu loppuun — seuraavalla kerralla taulukko
+korvataan, ei täydennetä.
+
+## 4.8.2026 — Toimenpidesuunnitelman loput (H2, H3, M1, M2, M4, M5, M6)
+
+Samana päivänä viikko 1:n jälkeen. **H1 (kategoriasivudiagnoosi) jäi tekemättä:**
+se vaatii GSC-service accountin URL Inspectionia varten, eikä sitä ole. Kaikki
+muu suunnitelmasta on tehty.
+
+**H2 + H3 — sisääntulevat sisäiset linkit.** Kolmas aalto `lisaa_sisalinkit.py`:n
+`GSC_ELOKUU`-taulukkoon, sen jälkeen `build_liittyvat.py`. Suunnitelman premissi
+H2:sta oli **vanhentunut**: `hyvesignalointi.html` oli jo 12 sisääntulevalla
+linkillä (darvo 11), eli toisen aallon jäljiltä tavoite oli jo täyttynyt. Vaje
+oli muualla. Tulos: hyvesignalointi 12→14, doomscrolling 8→10, peterin-periaate
+8→10, hanlonin-partaveitsi 8→9. Kahdeksan linkkiä oli jo olemassa (skripti on
+idempotentti), eikä yhdenkään lähdesivun korttimäärä ylittänyt 7:ää.
+
+**M4 — murupolun CSS-selektori (113 sivua).** Vika ei ollut selektorissa vaan
+`murupolku_kategoriaan.py`:n **idempotenssissa**: se teki
+`.replace(".kortti-breadcrumb-kat {…}", ".kortti-breadcrumb .kortti-breadcrumb-kat {…}")`,
+ja koska tulos sisältää lähtökuvion osajonona, jokainen ajo kasvatti
+jälkeläisketjua yhdellä tasolla. Kolmen ajon jälkeen selektori oli
+nelinkertainen eikä täsmännyt mihinkään. Korvattu regexillä, joka normalisoi
+ketjun aina yhteen tasoon. 113/113 oikein, ajo toistettavissa.
+
+**M5 — 7 liian pitkää meta-kuvausta.** Kuusi kategoriakuvausta lyhennettiin
+lähteessä `kategoriat/*.md` (184→134 … 166→157) ja sivut regeneroitiin;
+`index.html` 172→140. Koko sivustolla 0 kuvausta yli 160 merkin.
+
+**M1 — vastakeino-osion nimi.** Kaksi vaihetta.
+
+*Mekaaninen osa.* `laatikko_otsikot.py` kattoi vain `.infolaatikko` ja
+`.huomiolaatikko`, joten koko `.vaaralatikko`-perhe (~70 laatikkoa) oli jäänyt
+`<strong>`-muotoon — ja **31 niistä oli jo nimeltään "Tunnistaminen ja
+vastakeinot:"**. Lupaus siis piti, mutta merkkaus ei kertonut sitä.
+Laajennuksessa kaksi ansaa, molemmat samasta syystä:
+
+- Luokka on `vaaralatikko` **yhdellä a:lla** (vaara+latikko). Alternaatio
+  `(?:info|huomio|vaara)laatikko` tuottaa `vaaralaatikko` eikä osu koskaan.
+  Nyt vaihtoehdot luetellaan kokonaisina niminä.
+- Samasta syystä silmukan esikarsinta `if 'laatikko">' not in html: continue`
+  ohitti sivut, joilla oli vain vaaralaatikko — `vaaralatikko">` ei sisällä
+  osajonoa `laatikko">`. Kolme sivua jäi ensimmäisellä korjatulla ajolla.
+
+Tulos: 70 + 3 laatikkoa `<strong>` → `<h2 class="laatikko-otsikko">`. CSS-sääntö
+päivitettiin paikalleen (`VANHA_CSS`-regex) eikä lisätty toisena kopiona.
+
+*Käsityöosa.* Yhtenäistämislinja **kysyttiin käyttäjältä**, koska vaihtoehdot
+tuottavat eri lopputuloksen. Valinta: nimetään uudelleen vain geneeriset,
+säilytetään ne joissa nimi kertoo kenelle tai miten. 26 otsikkoa uudelleen
+(`Suojaudu:`, `Mitä tehdä:`, `Ulospääsy:`, `Korjauskeino:`, `Käytännön testi:`,
+`Vastakysymys:` …), 22 säilytettiin (`Vastakeinot projektijohdolle:`,
+`Hakijalle:`, `Kuluttajalle:`, `Vastakeino — käänteinen Conwayn manööveri:` …).
+
+**91/113 sivua kantaa nyt otsikkoa "Tunnistaminen ja vastakeinot:" h2-tasolla**
+(ennen 34), ja kaikilla 113:lla vastakeino-osio on h2-ankkuri.
+
+**M2 — vastauslohko + FAQPage 10 sivulle.** Toinen erä `seo_vastauslohko.py`:n
+`SIVUT`-taulukkoon. Rajattu suunnitelman mukaan 10 sivuun, ei 98:aan: ensimmäisen
+erän 15 sivun kohortti ei ole tuottanut klikkejä (CTR 1,19 % vs. 1,56 %).
+Perustelu on AI-sitaatti ja featured snippet, ei CTR.
+
+Kulma on eri kuin ensimmäisessä erässä. Ensimmäinen erä vastasi
+käännöskysymykseen, koska sivut avautuivat jo määritelmällä. Näillä kymmenellä
+**ensimmäinen kappale kertoo jo englanninkielisen termin**, joten käännöslohko
+toistaisi sen. Lohko vastaa siksi määritelmäkysymykseen.
+
+Ensimmäinen veto toisti silti liikaa: sanatason päällekkäisyys ensimmäisen
+kappaleen kanssa oli `kaikukammio` 87 %, `maalitolppien-siirtaminen` 74 %,
+`occamin-partaveitsi` 67 %, `pump-and-dump` 62 %, `overton-ikkuna` 59 %. Ne
+viisi kirjoitettiin uusiksi eri kulmasta (kaikukammio: kyse ei ole vastapuolen
+puuttumisesta vaan sen ennakkomitätöinnistä; Overton: kyse on siitä mitä
+poliitikko *voi sanoa*, ei siitä mikä on oikein). Päällekkäisyys nyt 5–50 %,
+kaikki vastaukset skriptin 240–300 merkin ikkunassa.
+
+FAQPage 15 → 26 sivulla (25 ilmiösivua + etusivu). 128 JSON-LD-lohkoa, 0 virhettä.
+
+**M6 — `hofstadterin-laki.html`.** Sivuston ainoa sivu ilman sisältö-`h2`:ta.
+Kaksi orpoa kappaletta laatikoihin sivuston omalla kaavalla: `Miksi puskuri ei
+riitä:` (huomiolaatikko) ja `Ilmiö arjessa:` (infolaatikko); `Korjauskeino:` →
+`Tunnistaminen ja vastakeinot:` M1:n mukana. Nyt 3 sisältö-h2:ta. Todennettu
+kuvakaappauksella.
+
+**Lukijalle näkyvät muutokset → `muutokset.html`.** Toisin kuin viikko 1, M1 ja
+M2 muuttavat sitä mitä sivulla lukee, joten uusi `<article class="muutos">`,
+`dateModified` 2026-08-04 sekä `index.html`:n nappi ja JSON-LD samalle päivälle,
+minkä jälkeen `build_sitemap.py`. `dateModified` nostettiin **vain niille 10
+sivulle, joille tuli uutta tekstiä** — otsikoiden uudelleennimeäminen on
+merkintää, ei sisältöä, joten M1:n 26 sivua eivät saaneet uutta päiväystä
+(sama linja kuin 28.7. murupolkukorjauksessa, audit §6 C4). Lopuksi
+`build_search_index.py` (125 sivua, 358 kt).
+
+## 4.8.2026 — Toimenpidesuunnitelman viikko 1 (K1, K2, H4, H5, M3)
+
+Lähde: `gsc/TOIMENPIDESUUNNITELMA-2026-08-04.md`, joka perustuu samana päivänä
+tehtyyn auditointiin `gsc/SEO-AUDIT-2026-08-04.md`. Kaikki viisi kohtaa ovat
+teknisiä, joten **ei merkintää `muutokset.html`:ään** eikä etusivun
+`Päivitetty`-päiväyksen nostoa: lukijalle ei tullut uutta luettavaa.
+Sisältö ei muuttunut millään sivulla, joten `dateModified` pysyy ennallaan
+eikä `build_sitemap.py`:tä tarvinnut ajaa.
+
+**K1 — CDN pois, paikalliset kopiot käyttöön (97 sivua).** `js/mermaid.min.js`
+(3,5 Mt) ja `js/chart.umd.min.js` (208 kt) ladattiin levylle jo 28.7., mutta
+HTML jäi osoittamaan `cdn.jsdelivr.net`iin — itsehostaminen oli puolivalmis
+`CLAUDE.md`:n oman säännön vastaisesti. Uusi `scripts/korjaa_cdn_viittaukset.py`
+(kuivaharjoitus oletuksena, `--kirjoita`) käänsi mermaidin 94 sivulla ja
+chart.js:n 3 sivulla. Mermaid tulee inline-skriptin `s.src`-sijoituksesta,
+chart.js `<script src>`-tagista — skripti hoitaa molemmat.
+
+Järjestys oli tärkeä: renderöinti todennettiin **ennen** CSP:n kiristystä.
+Playwright-testi `darvo`, `bikeshedding` (mermaid) ja `korkokierre` (chart.js)
+→ SVG/canvas syntyy, nolla ulkoista pyyntöä. Paikallinen mermaid-nide on
+esbuild-ESM, joka päättyy `globalThis["mermaid"] = …` — sama globaali API kuin
+CDN-niteessä, joten sivujen `mermaid.initialize()` toimii muuttumattomana.
+Vasta sitten `.htaccess`: `script-src 'self' 'unsafe-inline' cdn.jsdelivr.net`
+→ `script-src 'self' 'unsafe-inline'`.
+
+Testiä kirjoittaessa paljastui sivuston oma ansa: sivun pohjaan vierittäminen
+laukaisee satunnaissiirtymän, joka navigoi toiselle ilmiösivulle — canvas katoaa
+DOM:ista ja testi näyttää väärää epäonnistumista. Testi vierittää nyt
+kaavioelementtiin, ei pohjaan.
+
+Regressiosuoja: `scripts/seo_patch_v2.py` kirjoitti CDN-URLin uusiin sivuihin
+(rivi 42) → osoittaa nyt `js/mermaid.min.js`. Sen `MERMAID_OLD`-vakio ja
+`seo_patch.py`:n vastaava regex jätettiin ennalleen: ne ovat *hakukuvioita*
+vanhalle merkkaukselle, eivät emittereitä.
+
+**K2 — kategoriasivujen H1 (12 sivua).** `<h1 class="kat-nimi">Alustatalous ja
+algoritmit<span class="kat-alaotsikko">miksi syöte…</span></h1>` luki tekstinä
+`Alustatalous ja algoritmitmiksi syöte…` — `<span>` on inline-elementti ilman
+välimerkkiä, joten hakukone, ruudunlukija ja LLM näkivät sanajonon, jota kukaan
+ei hae. Korjaus `scripts/build_kategoriat.py`:hyn: alaotsikko on nyt oma `<p>`
+`h1`:n **ulkopuolella**, ja 12 sivua regeneroitiin.
+
+CSS-selektori `.kat-alaotsikko` → `p.kat-alaotsikko`; `display:block` poistui
+(tarpeeton `<p>`:llä), tilalle `margin: 0.5rem 0 0` `<p>`:n oletusmarginaalien
+kumoamiseksi. **`font-family` piti toistaa erikseen**: alaotsikko peri Spectralin
+`h1`:ltä, eikä periytymisketju enää kulje sen kautta. Ulkoasu todennettiin
+kuvakaappauksella ja `getComputedStyle`illa — identtinen.
+
+**H4 — viisi titleä, jotka katkesivat kesken merkityksen.** Ei laajaa
+title-remonttia: 56 titleä on yli 60 merkkiä, mutta useimmissa katkeaa vain
+`— Ilmiöitä`, jonka Google usein pudottaa itsekin. Nämä viisi menettivät
+sisältöä. Muutettiin `<title>`, `og:title` ja `twitter:title`; näkyvä `h1`
+jätettiin ennalleen, koska kyse on SERP-näyttöongelmasta eikä sisältöongelmasta.
+
+| Sivu | mrk | Uusi title | ydin |
+|---|---|---|---|
+| `brandolinin-laki` | 73→66 | Brandolinin laki — valhe on halpaa, kumoaminen kallista | 55 |
+| `badger-game` | 85→68 | Badger game — lavastettu tilanne, kiristys vaikenemisesta | 57 |
+| `rautainen-laki` | 81→64 | Rautainen laki oligarkiasta — väistämätön mätäneminen | 53 |
+| `jarjestelman-puolustelu` | 76→65 | Järjestelmän puolustelu — miksi häviäjä puolustaa sitä | 54 |
+| `lowball-hinnoittelu` | 74→68 | Lowball — matala aloitushinta nousee sitoutumisen jälkeen | 57 |
+
+*ydin* = merkitysosa ilman `— Ilmiöitä`-loppuliitettä; kaikki alle 60, joten
+katkaisu osuu enää loppuliitteeseen.
+
+**H5 — `defer` etusivun hakuindeksiin.** `index.html`:
+`<script src="search-index.js">` (363 kt, 3,4× sivun oma koko) esti
+renderöinnin. Pelkkä `defer` olisi kuitenkin **rikkonut haun**: sitä seuraava
+inline-IIFE luki `window.ILMIO_HAKU`:n heti, ja deferoitu skripti ajetaan vasta
+myöhemmin — kokotekstihaku olisi pudonnut hiljaa pelkkään otsikko-osumaan.
+Siksi IIFE `(function () {…})()` → `document.addEventListener('DOMContentLoaded',
+function () {…})`; deferoitu skripti ajetaan ennen DOMContentLoadedia, joten
+indeksi on valmis. Todennettu selaimessa: `ILMIO_HAKU` 125 entryä,
+kokotekstiosumat (`budjettileikkauksilla`, `yksityistämistä`) löytyvät,
+`window.randomIlmio` on yhä globaali, nolla sivuvirhettä.
+
+**M3 — stray-tiedosto pois webbijuuresta.** `artikkelein_sisaltolustaus_not_article.html`
+(74 kt, 28.7. vastakeino-auditoinnin työkalu) oli julkisesti haettavissa ilman
+canonicalia ja schemaa; `noindex,nofollow` esti indeksoinnin muttei pääsyä.
+`git mv` → `luonnokset/`. Ei `sitemap.xml`-muutosta — ei ollut siellä.
+
+**Huom deployssa:** `.htaccess` on `.gitignore`ssa, joten CSP-muutos **ei tule
+gitin mukana** vaan on vietävä palvelimelle käsin. Jos CSP menee livenä ennen
+HTML:ää, 94 sivun kaaviot hajoavat — vie HTML ensin.
+
 ## 28.7.2026 — `honeypot-huijaus.html`: hullu hunaja ja kaksi lähdettä
 
 - Uusi kappale tietoturva-kappaleen jälkeen: Mithridates VI:n joukot jättivät

@@ -357,8 +357,11 @@ TYYLI = """  <style>
       font-weight: 700; line-height: 1.1; letter-spacing: -0.015em;
       color: #fff; margin: 0; max-width: 20ch;
     }
-    .kat-alaotsikko {
-      display: block; margin-top: 0.5rem;
+    /* Oma <p> h1:n ulkopuolella. font-family toistetaan tässä, koska ulkoasu
+       periytyi aiemmin h1:ltä — nyt periytymisketju ei enää kulje sen kautta. */
+    p.kat-alaotsikko {
+      margin: 0.5rem 0 0;
+      font-family: var(--font-display, 'Spectral', Georgia, serif);
       font-size: clamp(0.95rem, 2.2vw, 1.18rem);
       font-weight: 400; font-style: italic; line-height: 1.4;
       color: rgba(255,255,255,0.6); max-width: 34ch;
@@ -525,10 +528,13 @@ def rakenna(slug, meta, kat, luonnos=False, edellinen=None, seuraava=None):
     otsikko = f"{meta['otsikko']} — Ilmiöitä"
     url = f"{DOMAIN}/kategoria-{slug}.html"
 
-    # h1 "Nimi — alaotsikko" kahdelle riville; koko teksti pysyy h1:n sisällä
+    # h1 on tasan kategorian nimi; alaotsikko on oma <p> h1:n ULKOPUOLELLA.
+    # Aiemmin alaotsikko oli h1:n sisällä <span>issä ilman välimerkkiä, jolloin
+    # h1 luki tekstinä "Alustatalous ja algoritmitmiksi syöte…" — hakukone,
+    # ruudunlukija ja LLM näkivät sanajonon, jota kukaan ei hae.
     osat = meta["h1"].split(" — ", 1)
     paaotsikko = osat[0]
-    alaotsikko = (f'<span class="kat-alaotsikko">{osat[1]}</span>'
+    alaotsikko = (f'<p class="kat-alaotsikko">{osat[1]}</p>'
                   if len(osat) > 1 else "")
     ilmioalue = (f'<span>·</span>Ilmiöt {kat["ilmioalue"]}'
                  if kat["ilmioalue"] else "")
@@ -571,7 +577,8 @@ def rakenna(slug, meta, kat, luonnos=False, edellinen=None, seuraava=None):
           <img src="{etu}favicon.svg" alt="" width="20" height="20">Kaikki ilmiöt
         </a>
         <p class="kat-eyebrow">Kategoria {kat['nro']} / {kat['kat_yhteensa']}</p>
-        <h1 class="kat-nimi">{paaotsikko}{alaotsikko}</h1>
+        <h1 class="kat-nimi">{paaotsikko}</h1>
+        {alaotsikko}
         <p class="kat-meta">{len(kat['kortit'])} ilmiötä{ilmioalue}<span>·</span>Päivitetty {suomipvm(meta['paivitetty'])}</p>
       </div>
     </div>

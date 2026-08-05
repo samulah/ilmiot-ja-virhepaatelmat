@@ -150,8 +150,11 @@
       font-weight: 700; line-height: 1.1; letter-spacing: -0.015em;
       color: #fff; margin: 0; max-width: 20ch;
     }
-    .kat-alaotsikko {
-      display: block; margin-top: 0.5rem;
+    /* Oma <p> h1:n ulkopuolella. font-family toistetaan tässä, koska ulkoasu
+       periytyi aiemmin h1:ltä — nyt periytymisketju ei enää kulje sen kautta. */
+    p.kat-alaotsikko {
+      margin: 0.5rem 0 0;
+      font-family: var(--font-display, 'Spectral', Georgia, serif);
       font-size: clamp(0.95rem, 2.2vw, 1.18rem);
       font-weight: 400; font-style: italic; line-height: 1.4;
       color: rgba(255,255,255,0.6); max-width: 34ch;
@@ -311,9 +314,10 @@
         <a class="kat-paluu" href="index.html">
           <img src="favicon.svg" alt="" width="20" height="20">Kaikki ilmiöt
         </a>
-        <p class="kat-eyebrow">Kategoria 11 / 12</p>
-        <h1 class="kat-nimi">Työelämän ilmiöt<span class="kat-alaotsikko">mitä tapahtuu, kun luottamus rapautuu molempiin suuntiin</span></h1>
-        <p class="kat-meta">3 ilmiötä<span>·</span>Ilmiöt 103&ndash;105<span>·</span>Päivitetty 25.7.2026</p>
+        <p class="kat-eyebrow">Kategoria 11 / 13</p>
+        <h1 class="kat-nimi">Työelämän ilmiöt</h1>
+        <p class="kat-alaotsikko">mitä tapahtuu, kun luottamus rapautuu molempiin suuntiin</p>
+        <p class="kat-meta">3 ilmiötä<span>·</span>Ilmiöt 107&ndash;109<span>·</span>Päivitetty 25.7.2026</p>
       </div>
     </div>
   </header>
@@ -328,7 +332,7 @@
 <h2>Kolme ilmiötä</h2>
 <div class="kat-kortit">
 <a href="hiljainen-irtisanoutuminen.html" class="hub-kortti" style="--c:#3949ab">
-  <span class="hub-numero">103</span>
+  <span class="hub-numero">107</span>
   <span class="hub-teksti">
     <span class="hub-nimi">Hiljainen irtisanoutuminen</span>
     <span class="hub-kuvaus">Työntekijä tekee täsmälleen sopimuksen mukaiset työt — ei ylitöitä, ei ylimääräistä.</span>
@@ -336,7 +340,7 @@
   <span class="hub-nuoli" aria-hidden="true">›</span>
 </a>
 <a href="hiljainen-irtisanominen.html" class="hub-kortti" style="--c:#1a237e">
-  <span class="hub-numero">104</span>
+  <span class="hub-numero">108</span>
   <span class="hub-teksti">
     <span class="hub-nimi">Hiljainen irtisanominen</span>
     <span class="hub-kuvaus">Työolot kurjistetaan tahallaan, jotta työntekijä lähtee itse — ilman irtisanomisen kuluja.</span>
@@ -344,7 +348,7 @@
   <span class="hub-nuoli" aria-hidden="true">›</span>
 </a>
 <a href="haamutyopaikat.html" class="hub-kortti" style="--c:#546e7a">
-  <span class="hub-numero">105</span>
+  <span class="hub-numero">109</span>
   <span class="hub-teksti">
     <span class="hub-nimi">Haamutyöpaikat</span>
     <span class="hub-kuvaus">Työpaikkailmoitus, jonka takana ei ole aikomustakaan palkata ketään.</span>
@@ -384,7 +388,7 @@
       <span class="kat-siirry-nimi">12. Tilastoilla valehtelu &rarr;</span>
     </a>
   </div>
-  <a class="kat-siirry-kaikki" href="index.html">Kategoria <b>11 / 12</b> &middot; katso kaikki kategoriat</a>
+  <a class="kat-siirry-kaikki" href="index.html">Kategoria <b>11 / 13</b> &middot; katso kaikki kategoriat</a>
 </nav>
   </main>
 

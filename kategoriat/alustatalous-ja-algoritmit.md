@@ -9,6 +9,7 @@ naapurit:
   - kategoria-informaatio-ja-propaganda | Informaatio ja propaganda →
   - kategoria-psykologia-ja-kognitio | Psykologia ja kognitio →
   - kategoria-myyntikikat-ja-painostus | Myyntikikat ja painostus →
+  - kategoria-media-ja-julkisuus | Media ja julkisuus →
 ---
 
 Alustojen ilmiöistä puhutaan usein ongelmina, jotka pitäisi korjata. Se on väärä kehys, ja se on syy siihen miksi korjaukset eivät toimi. **Nämä kymmenen ilmiötä eivät ole vikoja järjestelmässä. Ne ovat sitä, miltä onnistunut optimointi näyttää, kun optimoitava suure on käytetty aika.**

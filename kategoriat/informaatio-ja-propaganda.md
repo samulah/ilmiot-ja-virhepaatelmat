@@ -2,13 +2,14 @@
 kat_id: informaatio-ja-propaganda
 h1: Informaatio ja propaganda — miksi nykypropaganda ei vakuuta vaan väsyttää
 otsikko: Informaatio ja propaganda — 13 vaikuttamisen tekniikkaa selitettynä
-kuvaus: Astroturf, firehose of falsehood, kuollut kissa. Kolmetoista informaatiovaikuttamisen tekniikkaa ja se, mikä yhdistää niitä: tavoite ei ole vakuuttaa vaan uuvuttaa.
+kuvaus: Astroturf, firehose of falsehood, kuollut kissa. Kolmetoista informaatiovaikuttamisen tekniikkaa, joiden tavoite ei ole vakuuttaa vaan uuvuttaa.
 vari: "#27ae60"
 paivitetty: 2026-07-25
 naapurit:
   - kategoria-tilastoilla-valehtelu | Tilastoilla valehtelu →
   - kategoria-psykologia-ja-kognitio | Psykologia ja kognitio →
   - kategoria-alustatalous-ja-algoritmit | Alustatalous ja algoritmit →
+  - kategoria-media-ja-julkisuus | Media ja julkisuus →
 ---
 
 Vanha propaganda yritti saada sinut uskomaan jotain. Nykyinen tyytyy usein vähempään: että et usko mitään. Se on halvempaa, se ei vaadi uskottavaa tarinaa, eikä siitä voi jäädä kiinni samalla tavalla — väärää väitettä voi oikaista, mutta yleistä epäluuloa ei.

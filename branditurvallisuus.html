@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-  <title>Tiedotejournalismi — uutinen, jonka kirjoitti viestintätoimisto — Ilmiöitä</title>
-  <link rel="stylesheet" href="../style.css?v=20260727">
-  <link rel="stylesheet" href="../fonts/fonts.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Bränditurvallisuus — mainostaja päättää, mistä aiheista kannattaa kirjoittaa — Ilmiöitä</title>
+  <link rel="stylesheet" href="style.css?v=20260725">
+  <link rel="stylesheet" href="fonts/fonts.css">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -16,7 +16,7 @@
       if (loaded) return;
       loaded = true;
       var s = document.createElement('script');
-      s.src = '../js/mermaid.min.js';
+      s.src = 'js/mermaid.min.js';
       s.onload = function () {
         mermaid.initialize({ startOnLoad: false, theme: 'base', themeVariables: { fontSize: '12px', fontFamily: "'DM Sans', system-ui, sans-serif", primaryColor: '#FBF5E0', primaryTextColor: '#1A1100', primaryBorderColor: '#C9A84C', lineColor: '#8B6914', secondaryColor: '#F5F0E5', tertiaryColor: '#FDFAF2', mainBkg: '#FBF5E0', nodeBorder: '#C9A84C', clusterBkg: '#F5F0E5', titleColor: '#3A2000', edgeLabelBackground: '#FDFAF2' } });
         mermaid.run();
@@ -74,8 +74,8 @@
       text-transform: uppercase;
     }
     /* Jokaiselle ilmiölle oma väri */
-    #tiedotejournalismi { border-top-color: #00796b; }
-    #tiedotejournalismi .ilmio-tag { background: #00796b; }
+    #branditurvallisuus { border-top-color: #0277bd; }
+    #branditurvallisuus .ilmio-tag { background: #0277bd; }
     .huomiolaatikko {
       background: #fdf6ec;
       border-left: 6px solid #e67e22;
@@ -192,7 +192,7 @@
     .kortti-breadcrumb a { color: #8B6914; text-decoration: none; }
     .kortti-breadcrumb a:hover { text-decoration: underline; }
     .kortti-breadcrumb-sep { color: #ccc; }
-    .kortti-breadcrumb-kat { color: #666; }
+    .kortti-breadcrumb .kortti-breadcrumb-kat { color: #666; }
     .kortti-random-btn {
       margin-left: auto;
       display: inline-flex;
@@ -333,18 +333,17 @@
 </style>
 
   <!-- SEO -->
-  <meta name="description" content="Tiedotejournalismissa uutinen on kevyesti muokattu tiedote: aiheen, kulman ja sitaatit valitsi lähettäjä, ja toimitus tarkisti lähinnä kielen.">
-  <meta name="robots" content="noindex"><!-- POISTA-JULKAISTAESSA -->
-  <link rel="canonical" href="https://www.ilmiöt.fi/tiedotejournalismi.html">
-  <meta property="og:title" content="Tiedotejournalismi — uutinen, jonka kirjoitti viestintätoimisto — Ilmiöitä">
-  <meta property="og:description" content="Tiedotejournalismissa uutinen on kevyesti muokattu tiedote: aiheen, kulman ja sitaatit valitsi lähettäjä, ja toimitus tarkisti lähinnä kielen.">
-  <meta property="og:url" content="https://www.ilmiöt.fi/tiedotejournalismi.html">
+  <meta name="description" content="Bränditurvallisuuden estolistat katkaisevat mainostulon vakavista aiheista: kukaan ei kiellä uutisointia, mutta sen tekeminen muuttuu kannattamattomaksi.">
+  <link rel="canonical" href="https://www.ilmiöt.fi/branditurvallisuus.html">
+  <meta property="og:title" content="Bränditurvallisuus — mainostaja päättää, mistä aiheista kannattaa kirjoittaa — Ilmiöitä">
+  <meta property="og:description" content="Bränditurvallisuuden estolistat katkaisevat mainostulon vakavista aiheista: kukaan ei kiellä uutisointia, mutta sen tekeminen muuttuu kannattamattomaksi.">
+  <meta property="og:url" content="https://www.ilmiöt.fi/branditurvallisuus.html">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="fi_FI">
   <meta property="og:site_name" content="Ilmiöitä — Miten valta toimii">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Tiedotejournalismi — uutinen, jonka kirjoitti viestintätoimisto — Ilmiöitä">
-  <meta name="twitter:description" content="Tiedotejournalismissa uutinen on kevyesti muokattu tiedote: aiheen, kulman ja sitaatit valitsi lähettäjä, ja toimitus tarkisti lähinnä kielen.">
+  <meta name="twitter:title" content="Bränditurvallisuus — mainostaja päättää, mistä aiheista kannattaa kirjoittaa — Ilmiöitä">
+  <meta name="twitter:description" content="Bränditurvallisuuden estolistat katkaisevat mainostulon vakavista aiheista: kukaan ei kiellä uutisointia, mutta sen tekeminen muuttuu kannattamattomaksi.">
   <meta property="og:image" content="https://www.ilmiöt.fi/og/brand.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -368,13 +367,13 @@
           "@type": "ListItem",
           "position": 2,
           "name": "Media ja julkisuus",
-          "item": "https://www.ilmiöt.fi/kategoria-alustatalous-ja-algoritmit.html"
+          "item": "https://www.ilmiöt.fi/kategoria-media-ja-julkisuus.html"
         },
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Tiedotejournalismi — uutinen, jonka kirjoitti viestintätoimisto",
-          "item": "https://www.ilmiöt.fi/tiedotejournalismi.html"
+          "name": "Bränditurvallisuus — mainostaja päättää, mistä aiheista kannattaa kirjoittaa",
+          "item": "https://www.ilmiöt.fi/branditurvallisuus.html"
         }
       ]
     },
@@ -386,10 +385,10 @@
         "width": 1200,
         "height": 630
       },
-      "@id": "https://www.ilmiöt.fi/tiedotejournalismi.html#article",
-      "url": "https://www.ilmiöt.fi/tiedotejournalismi.html",
-      "headline": "Tiedotejournalismi — uutinen, jonka kirjoitti viestintätoimisto",
-      "description": "Tiedotejournalismissa uutinen on kevyesti muokattu tiedote: aiheen, kulman ja sitaatit valitsi lähettäjä, ja toimitus tarkisti lähinnä kielen.",
+      "@id": "https://www.ilmiöt.fi/branditurvallisuus.html#article",
+      "url": "https://www.ilmiöt.fi/branditurvallisuus.html",
+      "headline": "Bränditurvallisuus — mainostaja päättää, mistä aiheista kannattaa kirjoittaa",
+      "description": "Bränditurvallisuuden estolistat katkaisevat mainostulon vakavista aiheista: kukaan ei kiellä uutisointia, mutta sen tekeminen muuttuu kannattamattomaksi.",
       "inLanguage": "fi",
       "articleSection": "Media ja julkisuus",
       "isPartOf": {
@@ -415,8 +414,8 @@
         "url": "https://www.ilmiöt.fi/tietoa.html",
         "description": "Kirjoittajanimi, jonka takana on kiinnostus valtaan, vaikuttamiseen ja ihmisen päättelyn vinoumiin. Sisältö perustuu julkisiin lähteisiin ja vakiintuneeseen käsitteistöön."
       },
-      "datePublished": "2026-07-28",
-      "dateModified": "2026-07-28"
+      "datePublished": "2026-08-05",
+      "dateModified": "2026-08-05"
     }
   ]
 }
@@ -433,57 +432,51 @@
 <body>
 
   <div class="kortti-breadcrumb">
-    <a href="../index.html" class="kortti-logo" aria-label="Ilmiöitä — etusivu"><img src="../favicon.svg" alt="Ilmiöitä"></a>
-    <a href="../index.html">← Kaikki ilmiöt</a>
-    <span class="kortti-breadcrumb-sep">›</span><a href="kategoria-alustatalous-ja-algoritmit.html" class="kortti-breadcrumb-kat">Media ja julkisuus</a>
+    <a href="index.html" class="kortti-logo" aria-label="Ilmiöitä — etusivu"><img src="favicon.svg" alt="Ilmiöitä"></a>
+    <a href="index.html">← Kaikki ilmiöt</a>
+    <span class="kortti-breadcrumb-sep">›</span><a href="kategoria-media-ja-julkisuus.html" class="kortti-breadcrumb-kat">Media ja julkisuus</a>
     <button class="kortti-random-btn" onclick="randomIlmio()" title="Satunnainen ilmiö (R)">
       <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>
       <span class="btn-text">Satunnainen</span>
     </button>
   </div>
 
-  <div class="ilmio" id="tiedotejournalismi">
-<div class="ilmio-tag">Ilmiö 117</div>
-<h1>Tiedotejournalismi — uutinen, jonka kirjoitti viestintätoimisto</h1>
-<p class="ilmio-byline">Kirjoittanut <a href="../tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 28.7.2026</p>
-<p><strong>Tiedotejournalismi</strong> (englanniksi <em>churnalism</em>) tarkoittaa juttua, joka on käytännössä kevyesti muokattu tiedote tai uutistoimistosähke. Nick Davies popularisoi termin kirjassaan <em>Flat Earth News</em> (2008). Sen taustatutkimuksessa Cardiffin yliopisto kävi läpi 2 207 brittilehtijuttua: noin 60 prosenttia koostui kokonaan tai pääosin uutistoimisto- tai PR-aineistosta, ja vain 12 prosenttia oli kokonaan toimittajan itsensä hankkimaa.</p>
+  <div class="ilmio" id="branditurvallisuus">
+<div class="ilmio-tag">Ilmiö 122</div>
+<h1>Bränditurvallisuus — mainostaja päättää, mistä aiheista kannattaa kirjoittaa</h1>
+<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 5.8.2026</p>
+<p><strong>Bränditurvallisuus</strong> (englanniksi <em>brand safety</em>) tarkoittaa mainostajan pyrkimystä varmistaa, ettei sen mainos näy ei-toivotun sisällön vieressä. Käytännössä se toteutetaan avainsanojen estolistoilla: mainosjärjestelmä ohittaa sivut, joilta löytyy sanoja kuten <em>ampuminen</em>, <em>kuolema</em>, <em>sota</em> tai <em>koronavirus</em>. Ketään ei sensuroida — mutta juuri niiden juttujen tekeminen, jotka ovat journalistisesti tärkeimpiä, lakkaa tuottamasta rahaa.</p>
 <div class="mermaid">
 flowchart TD
-  A["Organisaatio lähettää\nvalmiin tiedotteen"] --&gt; B["Toimitus: vähemmän\ntoimittajia, enemmän tilaa"]
-  B --&gt; C["Otsikko ja kärki\nsäilyvät, kieli muokataan"]
-  C --&gt; D["Juttu julkaistaan\nuutisena"]
-  D --&gt; E["Muut siteeraavat juttua\n— eivät tiedotetta"]
-  style E fill:#fdf0f0,stroke:#c0392b
+  A["Mainostajan estolista:\nkielletyt avainsanat"] --&gt; B["Mainoksia ei näytetä\nvakavan jutun vierellä"]
+  B --&gt; C["Vakava aihe tuottaa\nvähemmän kuin kevyt"]
+  C --&gt; D["Toimitus painottaa\nturvallisia aiheita"]
+  D --&gt; E["Tekijät välttelevät sanoja\nja kiertoilmaisevat"]
+  style C fill:#fdf0f0,stroke:#c0392b
     </div>
-<p class="kaavio-selitys">Alkuperä katoaa matkalla: viides lukija näkee uutisen, ei viestintäosaston tekstiä.</p>
-<p>Syy on rakenteellinen, ei laiskuus. Toimitusten henkilöstö on supistunut samaan aikaan kun julkaisualustoja ja päivitystahtia on tullut lisää, ja viestinnän ammattilaisia on länsimaissa nykyään moninkertaisesti toimittajiin nähden. Kun yhden toimittajan on tuotettava useita juttuja päivässä, valmis, siteerattava ja "uutismainen" aineisto on ainoa tapa selviytyä.</p>
-<p>Lopputulos ei yleensä ole valheellinen. Se on valikoitunut: aiheen, ajankohdan, kulman, vertailukohdan ja haastateltavan on valinnut se, jonka etua juttu palvelee. Tutkimusuutisissa sama koskee yliopistojen tiedotteita, jotka kärjistävät tuloksen useammin kuin itse tutkimus.</p>
+<p class="kaavio-selitys">Vaikutus ei näy kieltona vaan tulorivinä — ja siirtyy sitä kautta sisältöön.</p>
+<p>Ilmiö tuli näkyväksi koronapandemian alussa 2020, kun uutissivustot menettivät mainostuloja juuri sen aiheen kohdalla, jota kaikki lukivat. Estolistoilta on löydetty myös ihmisryhmiä kuvaavia sanoja, jolloin vähemmistöjä koskeva journalismi muuttuu automaattisesti "riskialttiiksi". Videopalveluissa sama näkyy suoraan tekijöiden kielessä: kiertoilmaisut kuolemasta tai seksuaalisuudesta ovat vastaus algoritmiselle demonetisoinnille, ei sattumaa.</p>
+<p>Kyse on siis mainosrahan kautta kulkevasta aihevalinnasta. Se ei vaadi kenenkään pahaa tahtoa: mainostaja suojelee brändiään, alusta myy suojausta ja julkaisija sopeutuu tulovirtaan.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Ero läheisiin käsitteisiin:</h2> Tiedote on avoimesti lähettäjänsä teksti — <a href="../astroturf.html">astroturf</a> sen sijaan teeskentelee ruohonjuuritason liikettä. <a href="../viherpesu.html">Viherpesu</a> ja <a href="../tekoalypesu.html">tekoälypesu</a> ovat tyypillistä tiedotejournalismin sisältöä: väite kulkee läpi, koska kukaan ei ehdi tarkistaa sitä.
+<h2 class="laatikko-otsikko">Ero läheisiin käsitteisiin:</h2> Sensuurissa joku kieltää julkaisemisen; tässä julkaiseminen on vapaata mutta kannattamatonta. Vaikutus on <a href="manufactured-consent.html">manufactured consentin</a> mainostajasuodattimen nykyversio, ja se selittää osaltaan, miksi <a href="rage-bait.html">rage bait</a> ja <a href="ai-slop.html">AI slop</a> ovat taloudellisesti järkevämpiä kuin vakava uutinen.
     </div>
 <div class="huomiolaatikko">
 <h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2>
 <ul style="margin:0.5em 0 0;">
-<li>Kopioi jutun tunnistettavin virke hakukoneeseen lainausmerkeissä. Jos sama lause löytyy viidestä julkaisusta, kyseessä on tiedote.</li>
-<li>Katso, onko jutussa yhtään haastateltavaa, joka ei kuulu tiedotteen lähettäjän organisaatioon.</li>
-<li>Tutkimusuutisissa etsi alkuperäisjulkaisu ja vertaa sen johtopäätöstä otsikkoon.</li>
-<li>Huomaa ero: "yritys kertoo" ei ole sama asia kuin "on selvitetty" — myös silloin kun juttu on muuten moitteeton.</li>
-<li>Toimituksissa vastakeino on merkintäkäytäntö: kerro lukijalle avoimesti, kun juttu perustuu tiedotteeseen.</li>
+<li>Huomaa kiertoilmaisut videoissa ja somessa — ne kertovat, mitä sanoja alusta rankaisee.</li>
+<li>Älä tulkitse aiheen vähäistä käsittelyä todisteeksi siitä, ettei aihe ole tärkeä.</li>
+<li>Mainostajana pyydä nähtäväksi käytetyt estolistat ja karsi niistä sanat, jotka estävät asiajournalismin. Konteksti&shy;analyysi on tarkempi työkalu kuin avainsanaesto.</li>
+<li>Lukijana: tilaukset ja lahjoitukset ovat ainoa tulomuoto, johon estolistat eivät vaikuta.</li>
+<li>Julkaisijana kannattaa mitata, kuinka suuri osa jutuista jää mainoksettomiksi — luku kertoo, kuinka paljon estolistat ohjaavat sisältöä.</li>
 </ul>
 </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
 <div class="lue-lisaa-rivi">
-<span class="lue-lisaa-tyyppi">Kirjoja</span>
-<ul class="lue-lisaa-lista">
-<li><cite>Flat Earth News</cite> — Nick Davies (2008)</li>
-<li><cite>The Quality and Independence of British Journalism</cite> — Justin Lewis ym., Cardiff University (2008)</li>
-</ul>
-</div>
-<div class="lue-lisaa-rivi">
 <span class="lue-lisaa-tyyppi">Verkossa</span>
 <ul class="lue-lisaa-lista">
-<li><a href="https://en.wikipedia.org/wiki/Churnalism" target="_blank" rel="noopener">Wikipedia: Churnalism (englanniksi)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Brand_safety" target="_blank" rel="noopener">Wikipedia: Brand safety (englanniksi)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Demonetization_(YouTube)" target="_blank" rel="noopener">Wikipedia: YouTube-demonetisointi (englanniksi)</a></li>
 </ul>
 </div>
 </div>
@@ -492,35 +485,35 @@ flowchart TD
   <aside class="liittyvat" aria-label="Liittyvät ilmiöt">
     <h2>Liittyvät ilmiöt</h2>
     <div class="liittyvat-kortit">
-    <a href="paasyjournalismi.html" class="liittyvat-kortti" style="--c:#6d4c41">
-      <span class="liittyvat-numero">116</span>
+    <a href="uutiskynnys.html" class="liittyvat-kortti" style="--c:#455a64">
+      <span class="liittyvat-numero">118</span>
       <span class="liittyvat-teksti">
-        <span class="liittyvat-nimi">Pääsyjournalismi</span>
-        <span class="liittyvat-kuvaus">Kriittinen kysymys maksaa lähteen, joten kysymykset pehmenevät ja juttu kevenee.</span>
+        <span class="liittyvat-nimi">Uutiskynnys</span>
+        <span class="liittyvat-kuvaus">Uutiseksi pääsee asia, jolla on tapahtuman muoto — hidas ja rakenteellinen jää kertomatta.</span>
       </span>
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
-    <a href="keharaportointi.html" class="liittyvat-kortti" style="--c:#7b1fa2">
-      <span class="liittyvat-numero">121</span>
+    <a href="manufactured-consent.html" class="liittyvat-kortti" style="--c:#1a5276">
+      <span class="liittyvat-numero">11</span>
       <span class="liittyvat-teksti">
-        <span class="liittyvat-nimi">Kehäraportointi</span>
-        <span class="liittyvat-kuvaus">Sama alkulähde siteerattuna neljä kertaa näyttää neljältä riippumattomalta vahvistukselta.</span>
+        <span class="liittyvat-nimi">Manufactured consent</span>
+        <span class="liittyvat-kuvaus">Valtamedia suodattaa uutiset omistajien ja mainostajien ehdoilla — yleisön suostumus tuotetaan.</span>
       </span>
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
-    <a href="../astroturf.html" class="liittyvat-kortti" style="--c:#1abc9c">
-      <span class="liittyvat-numero">9</span>
+    <a href="rage-bait.html" class="liittyvat-kortti" style="--c:#d84315">
+      <span class="liittyvat-numero">96</span>
       <span class="liittyvat-teksti">
-        <span class="liittyvat-nimi">Astroturf</span>
-        <span class="liittyvat-kuvaus">Rahoitettu kampanja, joka naamioidaan tavallisten ihmisten spontaaniksi ruohonjuuriliikkeeksi.</span>
+        <span class="liittyvat-nimi">Rage bait</span>
+        <span class="liittyvat-kuvaus">Sisältö on suunniteltu suututtamaan — vihainen jako on algoritmille yhtä arvokas kuin tykkäys.</span>
       </span>
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
-    <a href="../viherpesu.html" class="liittyvat-kortti" style="--c:#2e7d32">
-      <span class="liittyvat-numero">97</span>
+    <a href="ai-slop.html" class="liittyvat-kortti" style="--c:#311b92">
+      <span class="liittyvat-numero">93</span>
       <span class="liittyvat-teksti">
-        <span class="liittyvat-nimi">Viherpesu</span>
-        <span class="liittyvat-kuvaus">Markkinointi saa yrityksen näyttämään ympäristöystävällisemmältä kuin se oikeasti on.</span>
+        <span class="liittyvat-nimi">AI slop</span>
+        <span class="liittyvat-kuvaus">Tekoälyllä massatuotettua halpasisältöä, joka kerää klikkejä palvelematta lukijaa.</span>
       </span>
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
@@ -528,15 +521,15 @@ flowchart TD
   </aside>
 
   <nav class="kortti-nav">
-    <a class="kortti-nav-btn" href="paasyjournalismi.html">← Pääsyjournalismi — kriittinen kysymys maksaa lähteen</a>
+    <a class="kortti-nav-btn" href="tiedotejournalismi.html">← Tiedotejournalismi — uutinen, jonka kirjoitti viestintätoimisto</a>
     <div class="kortti-nav-center">
-      <span class="kortti-nav-laskuri">117 / 123</span>
+      <span class="kortti-nav-laskuri">122 / 127</span>
       <span class="kortti-nav-vinkki">
         <kbd>&#8592;</kbd> <kbd>&#8594;</kbd> selaa &middot; <kbd>R</kbd> satunnainen
         <span class="touch-vinkki">&nbsp;· swipe &#8592;&#8594; tai &#8595; random</span>
       </span>
     </div>
-    <a class="kortti-nav-btn" href="branditurvallisuus.html">Bränditurvallisuus — mainostaja päättää, mistä aiheista kannattaa kirjoittaa →</a>
+    <a class="kortti-nav-btn" href="huonojen-uutisten-hautaaminen.html">Huonojen uutisten hautaaminen — hyvä päivä julkaista ikävä asia →</a>
   </nav>
 
 
@@ -698,15 +691,15 @@ flowchart TD
 
   <script>
 (function () {
-  const IDS = ["paskuuttaminen", "starve-the-beast", "overton-ikkuna", "saantelijan-kaappaus", "rautainen-laki", "valta-suojelee-valtaa", "hajota-hallitse", "bkt-harha", "astroturf", "firehose-of-falsehood", "manufactured-consent", "betteridgen-laki", "inokulointiteoria", "whataboutismi", "streisand-ilmio", "trollitehdas", "kuollut-kissa", "brandolinin-laki", "poen-laki", "godwinin-laki", "backfire-effect", "darvo", "halo-efekti", "konsensus-fetissi", "omenoita-appelsiineja", "blame-game", "gaslighting", "maalitolppien-siirtaminen", "argumenttitulva", "sunk-cost-harha", "jarjestelman-puolustelu", "dunning-kruger", "hanlonin-partaveitsi", "occamin-partaveitsi", "simple-sabotage", "kafka-ilmio", "catch-22", "goodhartin-laki", "hippo-efekti", "performatiivinen-lasnaolo", "rituaalinen-raportointi", "initiointirituaalit", "portinvartija-kulttuuri", "strateginen-osaamattomuus", "fofo", "sivustakatsojan-efekti", "parkinsonin-laki", "peterin-periaate", "pareto-periaate", "brooksin-laki", "yhdeksanyhdeksan", "hofstadterin-laki", "kuolonmarssi", "tekninen-velka", "conways-laki", "bikeshedding", "scope-creep", "korkoa-korolle", "negatiivinen-korkoa", "korkokierre", "honeypot-huijaus", "bait-and-switch", "kaarmeoljy", "ponzi-pyramidi", "pump-and-dump", "pig-butchering", "ennakkomaksuhuijaus", "badger-game", "qr-koodihuijaus", "toimitusjohtajahuijaus", "rug-pull", "ilmainen-naytetyo", "exposure-maksu", "lowball-hinnoittelu", "valittajan-skimmaus", "tilipuristus", "foot-in-the-door", "door-in-the-face", "hintaankkurointi", "houkutinvaihtoehto", "vastavuoroisuuden-ansa", "sosiaalinen-todiste", "painostusclose", "shrinkflaatio", "suunniteltu-vanheneminen", "tilausansa", "doomscrolling", "kaikukammio", "ai-slop", "parasosiaalinen-suhde", "kuollut-internet", "rage-bait", "klikkiotsikko", "engagement-bait", "1-prosentin-saanto", "aanekas-vahemmisto", "viherpesu", "sinipesu", "urheilupesu", "pinkkipesu", "tekoalypesu", "hyvesignalointi", "hiljainen-irtisanoutuminen", "hiljainen-irtisanominen", "haamutyopaikat", "kaksois-y-akseli", "pinta-alaharha", "cherry-picking-aikavali", "keskiarvo-vs-mediaani", "suhteellinen-riski", "selviytymisharha", "simpsonin-paradoksi", "p-hakkerointi"];
-  const PREV = 'paasyjournalismi.html';
-  const NEXT = 'branditurvallisuus.html';
+  const IDS = ["paskuuttaminen", "starve-the-beast", "overton-ikkuna", "saantelijan-kaappaus", "rautainen-laki", "valta-suojelee-valtaa", "hajota-hallitse", "bkt-harha", "astroturf", "firehose-of-falsehood", "manufactured-consent", "betteridgen-laki", "inokulointiteoria", "whataboutismi", "streisand-ilmio", "trollitehdas", "kuollut-kissa", "brandolinin-laki", "poen-laki", "godwinin-laki", "backfire-effect", "darvo", "halo-efekti", "konsensus-fetissi", "omenoita-appelsiineja", "blame-game", "gaslighting", "maalitolppien-siirtaminen", "argumenttitulva", "sunk-cost-harha", "jarjestelman-puolustelu", "dunning-kruger", "hanlonin-partaveitsi", "occamin-partaveitsi", "simple-sabotage", "kafka-ilmio", "catch-22", "goodhartin-laki", "hippo-efekti", "performatiivinen-lasnaolo", "rituaalinen-raportointi", "initiointirituaalit", "portinvartija-kulttuuri", "strateginen-osaamattomuus", "fofo", "sivustakatsojan-efekti", "parkinsonin-laki", "peterin-periaate", "pareto-periaate", "brooksin-laki", "yhdeksanyhdeksan", "hofstadterin-laki", "kuolonmarssi", "lukittu-paatos", "strateginen-aliarviointi", "paatosperainen-todistelu", "lapi-hinnalla-milla-hyvansa", "tekninen-velka", "conways-laki", "bikeshedding", "scope-creep", "korkoa-korolle", "negatiivinen-korkoa", "korkokierre", "honeypot-huijaus", "bait-and-switch", "kaarmeoljy", "ponzi-pyramidi", "pump-and-dump", "pig-butchering", "ennakkomaksuhuijaus", "badger-game", "qr-koodihuijaus", "toimitusjohtajahuijaus", "rug-pull", "ilmainen-naytetyo", "exposure-maksu", "lowball-hinnoittelu", "valittajan-skimmaus", "tilipuristus", "foot-in-the-door", "door-in-the-face", "hintaankkurointi", "houkutinvaihtoehto", "vastavuoroisuuden-ansa", "sosiaalinen-todiste", "painostusclose", "shrinkflaatio", "suunniteltu-vanheneminen", "tilausansa", "doomscrolling", "kaikukammio", "ai-slop", "parasosiaalinen-suhde", "kuollut-internet", "rage-bait", "klikkiotsikko", "engagement-bait", "1-prosentin-saanto", "aanekas-vahemmisto", "viherpesu", "sinipesu", "urheilupesu", "pinkkipesu", "tekoalypesu", "hyvesignalointi", "hiljainen-irtisanoutuminen", "hiljainen-irtisanominen", "haamutyopaikat", "kaksois-y-akseli", "pinta-alaharha", "cherry-picking-aikavali", "keskiarvo-vs-mediaani", "suhteellinen-riski", "selviytymisharha", "simpsonin-paradoksi", "p-hakkerointi", "uutiskynnys", "uutisautiomaa", "paasyjournalismi", "tiedotejournalismi", "branditurvallisuus", "huonojen-uutisten-hautaaminen", "vaara-tasapaino", "keharaportointi", "gell-mannin-amnesia", "vihamielisen-median-harha"];
+  const PREV = 'tiedotejournalismi.html';
+  const NEXT = 'huonojen-uutisten-hautaaminen.html';
 
   function randomIlmio() {
     let id;
-    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'tiedotejournalismi');
+    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'branditurvallisuus');
     merkitseRandomHyppy();
-    window.location.href = '../' + id + '.html';
+    window.location.href = id + '.html';
   }
   window.randomIlmio = randomIlmio;
 
@@ -750,7 +743,7 @@ flowchart TD
     var overlay = document.createElement('div');
     overlay.className = 'random-siirtyma-overlay';
     overlay.innerHTML =
-      '<img class="random-siirtyma-logo" src="../favicon.svg" alt="">' +
+      '<img class="random-siirtyma-logo" src="favicon.svg" alt="">' +
       '<span class="random-siirtyma-teksti">' + teksti + '&hellip;</span>';
     document.body.appendChild(overlay);
     requestAnimationFrame(function () {
@@ -761,9 +754,9 @@ flowchart TD
   function naytaRandomSiirtyma() {
     if (_siirtymaKaynnissa) return;
     var id;
-    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'tiedotejournalismi');
+    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'branditurvallisuus');
     merkitseRandomHyppy();
-    naytaSiirtyma('Satunnainen ilmiö', '../' + id + '.html');
+    naytaSiirtyma('Satunnainen ilmiö', id + '.html');
   }
   window.naytaRandomSiirtyma = naytaRandomSiirtyma;
   function naytaAlasSiirtyma() {
@@ -777,7 +770,7 @@ flowchart TD
       var overlay = document.createElement('div');
       overlay.className = 'random-siirtyma-overlay';
       overlay.innerHTML =
-        '<img class="random-siirtyma-logo" src="../favicon.svg" alt="">' +
+        '<img class="random-siirtyma-logo" src="favicon.svg" alt="">' +
         '<span class="random-siirtyma-teksti">Eteenpäin&hellip;</span>';
       document.body.appendChild(overlay);
       requestAnimationFrame(function () {
@@ -798,7 +791,7 @@ flowchart TD
       var overlay = document.createElement('div');
       overlay.className = 'random-siirtyma-overlay';
       overlay.innerHTML =
-        '<img class="random-siirtyma-logo" src="../favicon.svg" alt="">' +
+        '<img class="random-siirtyma-logo" src="favicon.svg" alt="">' +
         '<span class="random-siirtyma-teksti">Takaisin&hellip;</span>';
       document.body.appendChild(overlay);
       requestAnimationFrame(function () {
@@ -914,7 +907,7 @@ flowchart TD
   </script>
 
   <footer class="ilmio-footer">
-    <p>© 2026 Ilmiöitä — Miten valta toimii · Kirjoittanut Ilmiömies · <a href="../tietoa.html">Tietoa sivustosta ja tekijästä</a></p>
+    <p>© 2026 Ilmiöitä — Miten valta toimii · Kirjoittanut Ilmiömies · <a href="tietoa.html">Tietoa sivustosta ja tekijästä</a></p>
   </footer>
 </body>
 </html>

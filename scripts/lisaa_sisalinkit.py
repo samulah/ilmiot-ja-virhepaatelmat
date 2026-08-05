@@ -96,6 +96,38 @@ KLUSTERI = {
     ],
 }
 
+# Kolmas aalto: TOIMENPIDESUUNNITELMA-2026-08-04 kohdat H2–H3. Kohteet ovat
+# sivuja, joilla on näyttöjä muttei klikkejä sijalta 7–10 — GSC-datan mukaan
+# klikkejä tulee vasta sijalta ≤5, joten kyse on sijoituksen nostosta.
+# hyvesignalointi.html on H2:n nimetty kohde, mutta se oli jo 12 sisääntulevalla
+# (darvo 11) toisen aallon jäljiltä; siksi tässä vain kaksi täydennystä.
+GSC_ELOKUU = {
+    "hanlonin-partaveitsi.html": [     # 38 näyttöä, sija 7,76, 8 linkkiä
+        "occamin-partaveitsi.html",    # sisarpartaveitsi, sama päättelyperhe
+        "dunning-kruger.html",         # tyhmyys selittää ennen pahuutta
+        "blame-game.html",             # syyllisen etsintä ilman tahallisuutta
+        "strateginen-osaamattomuus.html",  # osaamattomuus tahallisena
+        "kafka-ilmio.html",            # järjestelmä vahingoittaa ilman aikomusta
+    ],
+    "doomscrolling.html": [            # 30 näyttöä, sija 9,38, 8 linkkiä
+        "kaikukammio.html",            # sama syötteen mekanismi
+        "fofo.html",                   # pelko ohjaa selaamista
+        "engagement-bait.html",        # syöte on rakennettu pidättämään
+        "parasosiaalinen-suhde.html",  # syötteen henkilöityminen
+    ],
+    "peterin-periaate.html": [         # 12 näyttöä, sija 8,00, 8 linkkiä
+        "parkinsonin-laki.html",       # nimetty organisaatiolaki
+        "rautainen-laki.html",         # organisaation väistämätön rappeutuminen
+        "hiljainen-irtisanominen.html",  # ylennyksen kääntöpuoli
+        "hippo-efekti.html",           # pätemättömän päätösvalta
+        "strateginen-osaamattomuus.html",
+    ],
+    "hyvesignalointi.html": [          # 261 näyttöä, sija 7,89 — H2:n kärkikohde
+        "konsensus-fetissi.html",      # yksimielisyyden esittäminen
+        "manufactured-consent.html",   # signaali suostumuksen tuottajana
+    ],
+}
+
 ASIDE_RE = re.compile(
     r'(<aside class="liittyvat" aria-label="Liittyvät ilmiöt">.*?)'
     r'(\n    </div>\n  </aside>)', re.S)
@@ -104,7 +136,7 @@ ASIDE_RE = re.compile(
 def main() -> None:
     lisatty = 0
     kosketut = set()
-    for kohde, lahteet in {**SUUNNITELMA, **KLUSTERI}.items():
+    for kohde, lahteet in {**SUUNNITELMA, **KLUSTERI, **GSC_ELOKUU}.items():
         assert (ROOT / kohde).exists(), f"{kohde} puuttuu"
         for lahde in lahteet:
             polku = ROOT / lahde

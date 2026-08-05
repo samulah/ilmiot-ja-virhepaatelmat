@@ -2,13 +2,14 @@
 kat_id: tilastoilla-valehtelu-kategoria
 h1: Tilastoilla valehtelu — miten luvuilla johdetaan harhaan valehtelematta
 otsikko: Tilastoilla valehtelu — 8 tekniikkaa, joilla luvut johtavat harhaan
-kuvaus: Katkaistu akseli, valikoitu aikaväli, väärä keskiluku. Kahdeksan tapaa johtaa harhaan tilastolla joka on teknisesti oikein — ja viisi kysymystä, jotka paljastavat ne.
+kuvaus: Katkaistu akseli, valikoitu aikaväli, väärä keskiluku. Kahdeksan tapaa johtaa harhaan tilastolla, joka on teknisesti oikein — ja viisi paljastavaa kysymystä.
 vari: "#1565c0"
 paivitetty: 2026-07-25
 naapurit:
   - kategoria-informaatio-ja-propaganda | Informaatio ja propaganda →
   - kategoria-psykologia-ja-kognitio | Psykologia ja kognitio →
   - kategoria-byrokratia-ja-organisaatio | Byrokratia ja organisaatio →
+  - kategoria-media-ja-julkisuus | Media ja julkisuus →
 ---
 
 Tilastolla valehteleminen eroaa tavallisesta valehtelusta yhdessä ratkaisevassa kohdassa: yksikään luku ei ole väärä. Katkaistun akselin pylväät on piirretty täsmälleen oikein, valikoidun aikavälin kasvuprosentti on laskettu oikein, ja kaksinkertaistunut riski todella kaksinkertaistui. Harha syntyy siitä, mitä esitys korostaa ja mitä se jättää sanomatta. Juuri siksi nämä tekniikat ovat niin kestäviä — niistä ei voi jäädä kiinni valehtelusta.

@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-  <title>Kehäraportointi — sama lähde neljä kertaa näyttää neljältä lähteeltä — Ilmiöitä</title>
-  <link rel="stylesheet" href="../style.css?v=20260727">
-  <link rel="stylesheet" href="../fonts/fonts.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Huonojen uutisten hautaaminen — hyvä päivä julkaista ikävä asia — Ilmiöitä</title>
+  <link rel="stylesheet" href="style.css?v=20260725">
+  <link rel="stylesheet" href="fonts/fonts.css">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -16,7 +16,7 @@
       if (loaded) return;
       loaded = true;
       var s = document.createElement('script');
-      s.src = '../js/mermaid.min.js';
+      s.src = 'js/mermaid.min.js';
       s.onload = function () {
         mermaid.initialize({ startOnLoad: false, theme: 'base', themeVariables: { fontSize: '12px', fontFamily: "'DM Sans', system-ui, sans-serif", primaryColor: '#FBF5E0', primaryTextColor: '#1A1100', primaryBorderColor: '#C9A84C', lineColor: '#8B6914', secondaryColor: '#F5F0E5', tertiaryColor: '#FDFAF2', mainBkg: '#FBF5E0', nodeBorder: '#C9A84C', clusterBkg: '#F5F0E5', titleColor: '#3A2000', edgeLabelBackground: '#FDFAF2' } });
         mermaid.run();
@@ -74,8 +74,8 @@
       text-transform: uppercase;
     }
     /* Jokaiselle ilmiölle oma väri */
-    #keharaportointi { border-top-color: #7b1fa2; }
-    #keharaportointi .ilmio-tag { background: #7b1fa2; }
+    #huonojen-uutisten-hautaaminen { border-top-color: #4527a0; }
+    #huonojen-uutisten-hautaaminen .ilmio-tag { background: #4527a0; }
     .huomiolaatikko {
       background: #fdf6ec;
       border-left: 6px solid #e67e22;
@@ -192,7 +192,7 @@
     .kortti-breadcrumb a { color: #8B6914; text-decoration: none; }
     .kortti-breadcrumb a:hover { text-decoration: underline; }
     .kortti-breadcrumb-sep { color: #ccc; }
-    .kortti-breadcrumb-kat { color: #666; }
+    .kortti-breadcrumb .kortti-breadcrumb-kat { color: #666; }
     .kortti-random-btn {
       margin-left: auto;
       display: inline-flex;
@@ -333,18 +333,17 @@
 </style>
 
   <!-- SEO -->
-  <meta name="description" content="Kehäraportoinnissa yksi alkuperäinen väite siteerataan ketjussa eteenpäin, kunnes se näyttää monen riippumattoman lähteen vahvistamalta.">
-  <meta name="robots" content="noindex"><!-- POISTA-JULKAISTAESSA -->
-  <link rel="canonical" href="https://www.ilmiöt.fi/keharaportointi.html">
-  <meta property="og:title" content="Kehäraportointi — sama lähde neljä kertaa näyttää neljältä lähteeltä — Ilmiöitä">
-  <meta property="og:description" content="Kehäraportoinnissa yksi alkuperäinen väite siteerataan ketjussa eteenpäin, kunnes se näyttää monen riippumattoman lähteen vahvistamalta.">
-  <meta property="og:url" content="https://www.ilmiöt.fi/keharaportointi.html">
+  <meta name="description" content="Ikävä tieto julkaistaan perjantai-iltapäivänä, juhlapyhän alla tai ison uutisen varjossa — muodollisesti avoimesti, käytännössä huomaamatta.">
+  <link rel="canonical" href="https://www.ilmiöt.fi/huonojen-uutisten-hautaaminen.html">
+  <meta property="og:title" content="Huonojen uutisten hautaaminen — hyvä päivä julkaista ikävä asia — Ilmiöitä">
+  <meta property="og:description" content="Ikävä tieto julkaistaan perjantai-iltapäivänä, juhlapyhän alla tai ison uutisen varjossa — muodollisesti avoimesti, käytännössä huomaamatta.">
+  <meta property="og:url" content="https://www.ilmiöt.fi/huonojen-uutisten-hautaaminen.html">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="fi_FI">
   <meta property="og:site_name" content="Ilmiöitä — Miten valta toimii">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Kehäraportointi — sama lähde neljä kertaa näyttää neljältä lähteeltä — Ilmiöitä">
-  <meta name="twitter:description" content="Kehäraportoinnissa yksi alkuperäinen väite siteerataan ketjussa eteenpäin, kunnes se näyttää monen riippumattoman lähteen vahvistamalta.">
+  <meta name="twitter:title" content="Huonojen uutisten hautaaminen — hyvä päivä julkaista ikävä asia — Ilmiöitä">
+  <meta name="twitter:description" content="Ikävä tieto julkaistaan perjantai-iltapäivänä, juhlapyhän alla tai ison uutisen varjossa — muodollisesti avoimesti, käytännössä huomaamatta.">
   <meta property="og:image" content="https://www.ilmiöt.fi/og/brand.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -368,13 +367,13 @@
           "@type": "ListItem",
           "position": 2,
           "name": "Media ja julkisuus",
-          "item": "https://www.ilmiöt.fi/kategoria-alustatalous-ja-algoritmit.html"
+          "item": "https://www.ilmiöt.fi/kategoria-media-ja-julkisuus.html"
         },
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Kehäraportointi — sama lähde neljä kertaa näyttää neljältä lähteeltä",
-          "item": "https://www.ilmiöt.fi/keharaportointi.html"
+          "name": "Huonojen uutisten hautaaminen — hyvä päivä julkaista ikävä asia",
+          "item": "https://www.ilmiöt.fi/huonojen-uutisten-hautaaminen.html"
         }
       ]
     },
@@ -386,10 +385,10 @@
         "width": 1200,
         "height": 630
       },
-      "@id": "https://www.ilmiöt.fi/keharaportointi.html#article",
-      "url": "https://www.ilmiöt.fi/keharaportointi.html",
-      "headline": "Kehäraportointi — sama lähde neljä kertaa näyttää neljältä lähteeltä",
-      "description": "Kehäraportoinnissa yksi alkuperäinen väite siteerataan ketjussa eteenpäin, kunnes se näyttää monen riippumattoman lähteen vahvistamalta.",
+      "@id": "https://www.ilmiöt.fi/huonojen-uutisten-hautaaminen.html#article",
+      "url": "https://www.ilmiöt.fi/huonojen-uutisten-hautaaminen.html",
+      "headline": "Huonojen uutisten hautaaminen — hyvä päivä julkaista ikävä asia",
+      "description": "Ikävä tieto julkaistaan perjantai-iltapäivänä, juhlapyhän alla tai ison uutisen varjossa — muodollisesti avoimesti, käytännössä huomaamatta.",
       "inLanguage": "fi",
       "articleSection": "Media ja julkisuus",
       "isPartOf": {
@@ -415,8 +414,8 @@
         "url": "https://www.ilmiöt.fi/tietoa.html",
         "description": "Kirjoittajanimi, jonka takana on kiinnostus valtaan, vaikuttamiseen ja ihmisen päättelyn vinoumiin. Sisältö perustuu julkisiin lähteisiin ja vakiintuneeseen käsitteistöön."
       },
-      "datePublished": "2026-07-28",
-      "dateModified": "2026-07-28"
+      "datePublished": "2026-08-05",
+      "dateModified": "2026-08-05"
     }
   ]
 }
@@ -433,43 +432,43 @@
 <body>
 
   <div class="kortti-breadcrumb">
-    <a href="../index.html" class="kortti-logo" aria-label="Ilmiöitä — etusivu"><img src="../favicon.svg" alt="Ilmiöitä"></a>
-    <a href="../index.html">← Kaikki ilmiöt</a>
-    <span class="kortti-breadcrumb-sep">›</span><a href="kategoria-alustatalous-ja-algoritmit.html" class="kortti-breadcrumb-kat">Media ja julkisuus</a>
+    <a href="index.html" class="kortti-logo" aria-label="Ilmiöitä — etusivu"><img src="favicon.svg" alt="Ilmiöitä"></a>
+    <a href="index.html">← Kaikki ilmiöt</a>
+    <span class="kortti-breadcrumb-sep">›</span><a href="kategoria-media-ja-julkisuus.html" class="kortti-breadcrumb-kat">Media ja julkisuus</a>
     <button class="kortti-random-btn" onclick="randomIlmio()" title="Satunnainen ilmiö (R)">
       <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>
       <span class="btn-text">Satunnainen</span>
     </button>
   </div>
 
-  <div class="ilmio" id="keharaportointi">
-<div class="ilmio-tag">Ilmiö 121</div>
-<h1>Kehäraportointi — sama lähde neljä kertaa näyttää neljältä lähteeltä</h1>
-<p class="ilmio-byline">Kirjoittanut <a href="../tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 28.7.2026</p>
-<p><strong>Kehäraportointi</strong> (englanniksi <em>circular reporting</em>) tarkoittaa tilannetta, jossa yksi ainoa alkuperäinen lähde kiertää julkaisusta toiseen ja näyttää lopulta monelta toisistaan riippumattomalta vahvistukselta. Lukija tekee luonnollisen päätelmän: kun neljä julkaisua kertoo saman, asia on tarkistettu neljä kertaa. Todellisuudessa tarkistuksia oli nolla.</p>
+  <div class="ilmio" id="huonojen-uutisten-hautaaminen">
+<div class="ilmio-tag">Ilmiö 123</div>
+<h1>Huonojen uutisten hautaaminen — hyvä päivä julkaista ikävä asia</h1>
+<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 5.8.2026</p>
+<p><strong>Huonojen uutisten hautaaminen</strong> (englanniksi <em>burying bad news</em>) tarkoittaa ikävän tiedon julkaisemista hetkellä, jolloin sillä on pienin mahdollisuus tulla huomatuksi. Ilmiön nimesi brittiläinen erityisavustaja Jo Moore, joka lähetti 11. syyskuuta 2001 sähköpostin: nyt on erittäin hyvä päivä haudata mitä tahansa, mitä haluamme haudata. Viestin vuotaminen maksoi hänen työpaikkansa — mutta kuvasi tarkasti vakiintuneen käytännön.</p>
 <div class="mermaid">
 flowchart TD
-  A["Alkuperäinen väite\n(yksi lähde)"] --&gt; B["Julkaisu B siteeraa A:ta"]
-  B --&gt; C["Julkaisu C siteeraa B:tä"]
-  C --&gt; D["Julkaisu D:\n'useiden lähteiden mukaan'"]
-  D --&gt; E["Wikipedia lähteistää\nväitteen D:hen"]
-  E --&gt; A
-  style D fill:#fdf0f0,stroke:#c0392b
+  A["Ikävä päätös tai\ntutkimustulos valmiina"] --&gt; B{"Milloin julkaistaan?"}
+  B --&gt; C["Perjantai klo 16.45,\njuhlapyhän aatto"]
+  B --&gt; D["Samana päivänä kun\nsuuri uutinen täyttää tilan"]
+  C --&gt; E["Muodollisesti julkinen,\nkäytännössä huomaamaton"]
+  D --&gt; E
+  style E fill:#fdf0f0,stroke:#c0392b
     </div>
-<p class="kaavio-selitys">Kun ketju sulkeutuu, alkuperää ei voi enää jäljittää — jokainen viittaa toiseen.</p>
-<p>Havainnollisin todiste tehtiin vahingossa vuonna 2009: irlantilainen opiskelija Shane Fitzgerald lisäsi juuri kuolleen säveltäjän Maurice Jarren Wikipedia-artikkeliin itse keksimänsä sitaatin. Se päätyi useiden suurten lehtien muistokirjoituksiin, koska jokainen luotti edelliseen. Erikoistapaus on <em>sitogeneesi</em>, jossa Wikipedian virhe siteerataan lehtijuttuun ja lehtijuttu lisätään sitten Wikipedian lähteeksi — jolloin väite todistaa itsensä.</p>
-<p>Sama rakenne toistuu tutkimusväitteissä: alkuperäisen julkaisun sijaan siteerataan artikkelia, joka siteerasi tiedotetta, joka tiivisti tutkimuksen. Toistojen määrä alkaa tuntua näytöltä, vaikka se on vain kaikua.</p>
+<p class="kaavio-selitys">Mitään ei salata — julkisuusvelvoite täyttyy, mutta huomioarvo lähestyy nollaa.</p>
+<p>Ajoitus toimii, koska uutisvirran kapasiteetti on rajallinen ja lyhytkestoinen. Perjantai-iltana toimitukset ovat pienimmillään, seuraavan päivän lehti luetuin harvimmin, ja maanantaina aihe on jo vanha. Sama pätee juhlapyhiin, lomakausiin ja päiviin, joina jokin suuri tapahtuma vie kaiken tilan. Klassisia hautauskohteita ovat tappiolliset tulokset, palkkiopäätökset, sisäisten selvitysten loppuraportit, irtisanomiset ja hankkeiden kustannusylitykset.</p>
+<p>Tekniikkaa on vaikea todistaa yksittäistapauksessa: kaikkea on julkaistava jonain päivänä. Todistusvoima syntyy toistosta — jos saman organisaation ikävät tiedotteet osuvat järjestelmällisesti perjantai-iltapäiviin ja hyvät tiistaiaamuihin, kyse ei ole sattumasta.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Ero läheisiin käsitteisiin:</h2> <a href="../sosiaalinen-todiste.html">Sosiaalinen todiste</a> selittää, miksi toistuvuus vakuuttaa; kehäraportointi kuvaa, miten toisto syntyy ilman että kukaan huijaa tahallaan. <a href="tiedotejournalismi.html">Tiedotejournalismi</a> on ketjun tavallisin alkupää, ja <a href="../brandolinin-laki.html">Brandolinin laki</a> kertoo, miksi ketjun purkaminen on työläämpää kuin sen syntyminen.
+<h2 class="laatikko-otsikko">Ero läheisiin käsitteisiin:</h2> <a href="kuollut-kissa.html">Kuollut kissa -strategiassa</a> häiriö luodaan itse; tässä hyödynnetään olemassa olevaa melua. <a href="streisand-ilmio.html">Streisand-ilmiö</a> on käänteinen riski: aktiivinen yritys estää tiedon leviäminen kasvattaa huomiota, kun taas hautaaminen ei anna mitään, mihin tarttua.
     </div>
 <div class="huomiolaatikko">
 <h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2>
 <ul style="margin:0.5em 0 0;">
-<li>Klikkaa lähdeketju loppuun asti. Kysymys on aina sama: mikä on ensimmäinen julkaisu, jolla oli oma havainto?</li>
-<li>Katso päivämäärät. Jos kaikki "riippumattomat" jutut ovat parin päivän sisällä, kyseessä on yksi lähde.</li>
-<li>Epäile ilmauksia "useiden lähteiden mukaan" ja "kansainvälisen median mukaan" ilman nimettyä alkuperää.</li>
-<li>Wikipedia-viittauksissa tarkista, onko lähteenä oleva juttu julkaistu ennen vai jälkeen artikkelin muokkauksen.</li>
-<li>Tutkimusväitteissä etsi alkuperäisjulkaisu — älä uutista uutisesta.</li>
+<li>Katso tiedotteen kellonaika ja viikonpäivä. Perjantai klo 15–17 ja juhlapyhien aatot ovat tilastollisesti poikkeavia julkaisuhetkiä.</li>
+<li>Kerää organisaation tiedotteet vuodelta ja vertaa ajankohtia sisältöön — kuvio näkyy vasta aineistossa.</li>
+<li>Tilaa toimielinten esityslistat ja pörssitiedotteet suoraan, älä uutisvirran kautta.</li>
+<li>Palaa suuren uutispäivän jälkeen katsomaan, mitä muuta samana päivänä julkaistiin.</li>
+<li>Organisaatiossa: julkaisuajankohta on viestinnällinen valinta, jonka voi ja kannattaa kysyä ääneen kokouksessa.</li>
 </ul>
 </div>
 <div class="lue-lisaa">
@@ -477,8 +476,8 @@ flowchart TD
 <div class="lue-lisaa-rivi">
 <span class="lue-lisaa-tyyppi">Verkossa</span>
 <ul class="lue-lisaa-lista">
-<li><a href="https://en.wikipedia.org/wiki/Circular_reporting" target="_blank" rel="noopener">Wikipedia: Circular reporting (englanniksi)</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Citogenesis" target="_blank" rel="noopener">Wikipedia: Citogenesis (englanniksi)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Jo_Moore" target="_blank" rel="noopener">Wikipedia: Jo Moore ja "a good day to bury bad news" (englanniksi)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/News_dump" target="_blank" rel="noopener">Wikipedia: News dump (englanniksi)</a></li>
 </ul>
 </div>
 </div>
@@ -487,35 +486,35 @@ flowchart TD
   <aside class="liittyvat" aria-label="Liittyvät ilmiöt">
     <h2>Liittyvät ilmiöt</h2>
     <div class="liittyvat-kortit">
-    <a href="tiedotejournalismi.html" class="liittyvat-kortti" style="--c:#00796b">
-      <span class="liittyvat-numero">117</span>
+    <a href="kuollut-kissa.html" class="liittyvat-kortti" style="--c:#37474f">
+      <span class="liittyvat-numero">17</span>
       <span class="liittyvat-teksti">
-        <span class="liittyvat-nimi">Tiedotejournalismi</span>
-        <span class="liittyvat-kuvaus">Uutinen on kevyesti muokattu tiedote — lähettäjä valitsi aiheen, kulman ja sitaatit.</span>
+        <span class="liittyvat-nimi">Kuollut kissa -strategia</span>
+        <span class="liittyvat-kuvaus">Shokeeraava sivuaihe heitetään julkisuuteen, jotta vahingollisempi puheenaihe unohtuu.</span>
       </span>
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
-    <a href="vaara-tasapaino.html" class="liittyvat-kortti" style="--c:#ad1457">
-      <span class="liittyvat-numero">120</span>
+    <a href="uutiskynnys.html" class="liittyvat-kortti" style="--c:#455a64">
+      <span class="liittyvat-numero">118</span>
       <span class="liittyvat-teksti">
-        <span class="liittyvat-nimi">Väärä tasapaino</span>
-        <span class="liittyvat-kuvaus">Kaksi näkemystä samalla palstatilalla saa 97–3-tilanteen näyttämään tasaväkiseltä kiistalta.</span>
+        <span class="liittyvat-nimi">Uutiskynnys</span>
+        <span class="liittyvat-kuvaus">Uutiseksi pääsee asia, jolla on tapahtuman muoto — hidas ja rakenteellinen jää kertomatta.</span>
       </span>
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
-    <a href="../brandolinin-laki.html" class="liittyvat-kortti" style="--c:#a04000">
-      <span class="liittyvat-numero">18</span>
+    <a href="streisand-ilmio.html" class="liittyvat-kortti" style="--c:#0277bd">
+      <span class="liittyvat-numero">15</span>
       <span class="liittyvat-teksti">
-        <span class="liittyvat-nimi">Brandolinin laki</span>
-        <span class="liittyvat-kuvaus">Hölynpölyn kumoamiseen tarvitaan moninkertaisesti enemmän energiaa kuin sen tuottamiseen.</span>
+        <span class="liittyvat-nimi">Streisand-ilmiö</span>
+        <span class="liittyvat-kuvaus">Yritys poistaa tieto julkisuudesta moninkertaistaa sen saaman huomion.</span>
       </span>
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
-    <a href="../sosiaalinen-todiste.html" class="liittyvat-kortti" style="--c:#b71c1c">
-      <span class="liittyvat-numero">82</span>
+    <a href="paskuuttaminen.html" class="liittyvat-kortti" style="--c:#e74c3c">
+      <span class="liittyvat-numero">1</span>
       <span class="liittyvat-teksti">
-        <span class="liittyvat-nimi">Sosiaalinen todiste -manipulaatio</span>
-        <span class="liittyvat-kuvaus">"Muutkin jo ostivat" — epävarma ihminen matkii muita, ja kysyntä voidaan lavastaa.</span>
+        <span class="liittyvat-nimi">Paskuuttaminen</span>
+        <span class="liittyvat-kuvaus">Julkinen palvelu heikennetään tahallaan niin huonoksi, että ihmiset alkavat itse vaatia sen yksityistämistä.</span>
       </span>
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
@@ -523,15 +522,15 @@ flowchart TD
   </aside>
 
   <nav class="kortti-nav">
-    <a class="kortti-nav-btn" href="vaara-tasapaino.html">← Väärä tasapaino — kaksi näkemystä, joista toinen on kolmen prosentin</a>
+    <a class="kortti-nav-btn" href="branditurvallisuus.html">← Bränditurvallisuus — mainostaja päättää, mistä aiheista kannattaa kirjoittaa</a>
     <div class="kortti-nav-center">
-      <span class="kortti-nav-laskuri">121 / 123</span>
+      <span class="kortti-nav-laskuri">123 / 127</span>
       <span class="kortti-nav-vinkki">
         <kbd>&#8592;</kbd> <kbd>&#8594;</kbd> selaa &middot; <kbd>R</kbd> satunnainen
         <span class="touch-vinkki">&nbsp;· swipe &#8592;&#8594; tai &#8595; random</span>
       </span>
     </div>
-    <a class="kortti-nav-btn" href="gell-mannin-amnesia.html">Gell-Mannin amnesia — luet oman alasi jutun ja unohdat sen heti →</a>
+    <a class="kortti-nav-btn" href="vaara-tasapaino.html">Väärä tasapaino — kaksi näkemystä, joista toinen on kolmen prosentin →</a>
   </nav>
 
 
@@ -693,15 +692,15 @@ flowchart TD
 
   <script>
 (function () {
-  const IDS = ["paskuuttaminen", "starve-the-beast", "overton-ikkuna", "saantelijan-kaappaus", "rautainen-laki", "valta-suojelee-valtaa", "hajota-hallitse", "bkt-harha", "astroturf", "firehose-of-falsehood", "manufactured-consent", "betteridgen-laki", "inokulointiteoria", "whataboutismi", "streisand-ilmio", "trollitehdas", "kuollut-kissa", "brandolinin-laki", "poen-laki", "godwinin-laki", "backfire-effect", "darvo", "halo-efekti", "konsensus-fetissi", "omenoita-appelsiineja", "blame-game", "gaslighting", "maalitolppien-siirtaminen", "argumenttitulva", "sunk-cost-harha", "jarjestelman-puolustelu", "dunning-kruger", "hanlonin-partaveitsi", "occamin-partaveitsi", "simple-sabotage", "kafka-ilmio", "catch-22", "goodhartin-laki", "hippo-efekti", "performatiivinen-lasnaolo", "rituaalinen-raportointi", "initiointirituaalit", "portinvartija-kulttuuri", "strateginen-osaamattomuus", "fofo", "sivustakatsojan-efekti", "parkinsonin-laki", "peterin-periaate", "pareto-periaate", "brooksin-laki", "yhdeksanyhdeksan", "hofstadterin-laki", "kuolonmarssi", "tekninen-velka", "conways-laki", "bikeshedding", "scope-creep", "korkoa-korolle", "negatiivinen-korkoa", "korkokierre", "honeypot-huijaus", "bait-and-switch", "kaarmeoljy", "ponzi-pyramidi", "pump-and-dump", "pig-butchering", "ennakkomaksuhuijaus", "badger-game", "qr-koodihuijaus", "toimitusjohtajahuijaus", "rug-pull", "ilmainen-naytetyo", "exposure-maksu", "lowball-hinnoittelu", "valittajan-skimmaus", "tilipuristus", "foot-in-the-door", "door-in-the-face", "hintaankkurointi", "houkutinvaihtoehto", "vastavuoroisuuden-ansa", "sosiaalinen-todiste", "painostusclose", "shrinkflaatio", "suunniteltu-vanheneminen", "tilausansa", "doomscrolling", "kaikukammio", "ai-slop", "parasosiaalinen-suhde", "kuollut-internet", "rage-bait", "klikkiotsikko", "engagement-bait", "1-prosentin-saanto", "aanekas-vahemmisto", "viherpesu", "sinipesu", "urheilupesu", "pinkkipesu", "tekoalypesu", "hyvesignalointi", "hiljainen-irtisanoutuminen", "hiljainen-irtisanominen", "haamutyopaikat", "kaksois-y-akseli", "pinta-alaharha", "cherry-picking-aikavali", "keskiarvo-vs-mediaani", "suhteellinen-riski", "selviytymisharha", "simpsonin-paradoksi", "p-hakkerointi"];
-  const PREV = 'vaara-tasapaino.html';
-  const NEXT = 'gell-mannin-amnesia.html';
+  const IDS = ["paskuuttaminen", "starve-the-beast", "overton-ikkuna", "saantelijan-kaappaus", "rautainen-laki", "valta-suojelee-valtaa", "hajota-hallitse", "bkt-harha", "astroturf", "firehose-of-falsehood", "manufactured-consent", "betteridgen-laki", "inokulointiteoria", "whataboutismi", "streisand-ilmio", "trollitehdas", "kuollut-kissa", "brandolinin-laki", "poen-laki", "godwinin-laki", "backfire-effect", "darvo", "halo-efekti", "konsensus-fetissi", "omenoita-appelsiineja", "blame-game", "gaslighting", "maalitolppien-siirtaminen", "argumenttitulva", "sunk-cost-harha", "jarjestelman-puolustelu", "dunning-kruger", "hanlonin-partaveitsi", "occamin-partaveitsi", "simple-sabotage", "kafka-ilmio", "catch-22", "goodhartin-laki", "hippo-efekti", "performatiivinen-lasnaolo", "rituaalinen-raportointi", "initiointirituaalit", "portinvartija-kulttuuri", "strateginen-osaamattomuus", "fofo", "sivustakatsojan-efekti", "parkinsonin-laki", "peterin-periaate", "pareto-periaate", "brooksin-laki", "yhdeksanyhdeksan", "hofstadterin-laki", "kuolonmarssi", "lukittu-paatos", "strateginen-aliarviointi", "paatosperainen-todistelu", "lapi-hinnalla-milla-hyvansa", "tekninen-velka", "conways-laki", "bikeshedding", "scope-creep", "korkoa-korolle", "negatiivinen-korkoa", "korkokierre", "honeypot-huijaus", "bait-and-switch", "kaarmeoljy", "ponzi-pyramidi", "pump-and-dump", "pig-butchering", "ennakkomaksuhuijaus", "badger-game", "qr-koodihuijaus", "toimitusjohtajahuijaus", "rug-pull", "ilmainen-naytetyo", "exposure-maksu", "lowball-hinnoittelu", "valittajan-skimmaus", "tilipuristus", "foot-in-the-door", "door-in-the-face", "hintaankkurointi", "houkutinvaihtoehto", "vastavuoroisuuden-ansa", "sosiaalinen-todiste", "painostusclose", "shrinkflaatio", "suunniteltu-vanheneminen", "tilausansa", "doomscrolling", "kaikukammio", "ai-slop", "parasosiaalinen-suhde", "kuollut-internet", "rage-bait", "klikkiotsikko", "engagement-bait", "1-prosentin-saanto", "aanekas-vahemmisto", "viherpesu", "sinipesu", "urheilupesu", "pinkkipesu", "tekoalypesu", "hyvesignalointi", "hiljainen-irtisanoutuminen", "hiljainen-irtisanominen", "haamutyopaikat", "kaksois-y-akseli", "pinta-alaharha", "cherry-picking-aikavali", "keskiarvo-vs-mediaani", "suhteellinen-riski", "selviytymisharha", "simpsonin-paradoksi", "p-hakkerointi", "uutiskynnys", "uutisautiomaa", "paasyjournalismi", "tiedotejournalismi", "branditurvallisuus", "huonojen-uutisten-hautaaminen", "vaara-tasapaino", "keharaportointi", "gell-mannin-amnesia", "vihamielisen-median-harha"];
+  const PREV = 'branditurvallisuus.html';
+  const NEXT = 'vaara-tasapaino.html';
 
   function randomIlmio() {
     let id;
-    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'keharaportointi');
+    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'huonojen-uutisten-hautaaminen');
     merkitseRandomHyppy();
-    window.location.href = '../' + id + '.html';
+    window.location.href = id + '.html';
   }
   window.randomIlmio = randomIlmio;
 
@@ -745,7 +744,7 @@ flowchart TD
     var overlay = document.createElement('div');
     overlay.className = 'random-siirtyma-overlay';
     overlay.innerHTML =
-      '<img class="random-siirtyma-logo" src="../favicon.svg" alt="">' +
+      '<img class="random-siirtyma-logo" src="favicon.svg" alt="">' +
       '<span class="random-siirtyma-teksti">' + teksti + '&hellip;</span>';
     document.body.appendChild(overlay);
     requestAnimationFrame(function () {
@@ -756,9 +755,9 @@ flowchart TD
   function naytaRandomSiirtyma() {
     if (_siirtymaKaynnissa) return;
     var id;
-    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'keharaportointi');
+    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'huonojen-uutisten-hautaaminen');
     merkitseRandomHyppy();
-    naytaSiirtyma('Satunnainen ilmiö', '../' + id + '.html');
+    naytaSiirtyma('Satunnainen ilmiö', id + '.html');
   }
   window.naytaRandomSiirtyma = naytaRandomSiirtyma;
   function naytaAlasSiirtyma() {
@@ -772,7 +771,7 @@ flowchart TD
       var overlay = document.createElement('div');
       overlay.className = 'random-siirtyma-overlay';
       overlay.innerHTML =
-        '<img class="random-siirtyma-logo" src="../favicon.svg" alt="">' +
+        '<img class="random-siirtyma-logo" src="favicon.svg" alt="">' +
         '<span class="random-siirtyma-teksti">Eteenpäin&hellip;</span>';
       document.body.appendChild(overlay);
       requestAnimationFrame(function () {
@@ -793,7 +792,7 @@ flowchart TD
       var overlay = document.createElement('div');
       overlay.className = 'random-siirtyma-overlay';
       overlay.innerHTML =
-        '<img class="random-siirtyma-logo" src="../favicon.svg" alt="">' +
+        '<img class="random-siirtyma-logo" src="favicon.svg" alt="">' +
         '<span class="random-siirtyma-teksti">Takaisin&hellip;</span>';
       document.body.appendChild(overlay);
       requestAnimationFrame(function () {
@@ -909,7 +908,7 @@ flowchart TD
   </script>
 
   <footer class="ilmio-footer">
-    <p>© 2026 Ilmiöitä — Miten valta toimii · Kirjoittanut Ilmiömies · <a href="../tietoa.html">Tietoa sivustosta ja tekijästä</a></p>
+    <p>© 2026 Ilmiöitä — Miten valta toimii · Kirjoittanut Ilmiömies · <a href="tietoa.html">Tietoa sivustosta ja tekijästä</a></p>
   </footer>
 </body>
 </html>
