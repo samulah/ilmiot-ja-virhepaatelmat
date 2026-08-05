@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Media ja julkisuus — 10 syytä siihen, mitä uutisista puuttuu — Ilmiöitä</title>
-  <link rel="stylesheet" href="../style.css?v=20260727">
+  <link rel="stylesheet" href="style.css?v=20260727">
 
   <!-- SEO -->
   <meta name="description" content="Uutiskynnys, pääsyjournalismi, tiedotejournalismi, väärä tasapaino. Kymmenen julkisuuden ilmiötä — eikä yksikään niistä edellytä, että kukaan valehtelee.">
-  <meta name="robots" content="noindex"><!-- POISTA-JULKAISTAESSA -->
   <link rel="canonical" href="https://www.ilmiöt.fi/kategoria-media-ja-julkisuus.html">
   <meta property="og:title" content="Media ja julkisuus — 10 syytä siihen, mitä uutisista puuttuu — Ilmiöitä">
   <meta property="og:description" content="Uutiskynnys, pääsyjournalismi, tiedotejournalismi, väärä tasapaino. Kymmenen julkisuuden ilmiötä — eikä yksikään niistä edellytä, että kukaan valehtelee.">
@@ -75,12 +74,12 @@
         "name": "Ilmiömies",
         "url": "https://www.ilmiöt.fi/tietoa.html"
       },
-      "dateModified": "2026-07-28",
+      "dateModified": "2026-08-05",
       "about": {
         "@type": "DefinedTermSet",
         "@id": "https://www.ilmiöt.fi/kategoria-media-ja-julkisuus.html#termisto",
         "name": "Media ja julkisuus",
-        "description": "Uutiskynnys, pääsyjournalismi, tiedotejournalismi, väärä tasapaino. Kymmenen julkisuuden ilmiötä — eikä yksikään niistä edellytä, että kukaan valehtelee."
+        "description": "Miksi jostain ei uutisoida lainkaan, miksi jostain kerrotaan vinoutuneesti — ja miksi yleisö lukee lopputuloksen niin kuin lukee. Yksikään näistä ilmiöistä ei edellytä, että kukaan valehtelee: ne ovat rutiineja, kannustimia ja mittasuhdevirheitä, jotka toistuvat myös silloin kun jokainen tekee työnsä hyvin."
       },
       "mainEntity": {
         "@type": "ItemList",
@@ -193,8 +192,11 @@
       font-weight: 700; line-height: 1.1; letter-spacing: -0.015em;
       color: #fff; margin: 0; max-width: 20ch;
     }
-    .kat-alaotsikko {
-      display: block; margin-top: 0.5rem;
+    /* Oma <p> h1:n ulkopuolella. font-family toistetaan tässä, koska ulkoasu
+       periytyi aiemmin h1:ltä — nyt periytymisketju ei enää kulje sen kautta. */
+    p.kat-alaotsikko {
+      margin: 0.5rem 0 0;
+      font-family: var(--font-display, 'Spectral', Georgia, serif);
       font-size: clamp(0.95rem, 2.2vw, 1.18rem);
       font-weight: 400; font-style: italic; line-height: 1.4;
       color: rgba(255,255,255,0.6); max-width: 34ch;
@@ -351,12 +353,13 @@
     <div class="kat-masthead-sisus">
       <div class="kat-vesileima" aria-hidden="true">13</div>
       <div class="kat-masthead-teksti">
-        <a class="kat-paluu" href="../index.html">
-          <img src="../favicon.svg" alt="" width="20" height="20">Kaikki ilmiöt
+        <a class="kat-paluu" href="index.html">
+          <img src="favicon.svg" alt="" width="20" height="20">Kaikki ilmiöt
         </a>
         <p class="kat-eyebrow">Kategoria 13 / 13</p>
-        <h1 class="kat-nimi">Media ja julkisuus<span class="kat-alaotsikko">miksi jostain ei kerrota</span></h1>
-        <p class="kat-meta">10 ilmiötä<span>·</span>Ilmiöt 109&ndash;118<span>·</span>Päivitetty 28.7.2026</p>
+        <h1 class="kat-nimi">Media ja julkisuus</h1>
+        <p class="kat-alaotsikko">miksi jostain ei kerrota</p>
+        <p class="kat-meta">10 ilmiötä<span>·</span>Ilmiöt 118&ndash;127<span>·</span>Päivitetty 5.8.2026</p>
       </div>
     </div>
   </header>
@@ -372,82 +375,82 @@
 <h2>Kymmenen ilmiötä</h2>
 <div class="kat-kortit">
 <a href="uutiskynnys.html" class="hub-kortti" style="--c:#455a64">
-  <span class="hub-numero">109</span>
+  <span class="hub-numero">118</span>
   <span class="hub-teksti">
     <span class="hub-nimi">Uutiskynnys</span>
-    <span class="hub-kuvaus">Tapahtuman on oltava tuore, yllättävä ja henkilöitävä — hidas ja rakenteellinen jää kertomatta.</span>
+    <span class="hub-kuvaus">Uutiseksi pääsee asia, jolla on tapahtuman muoto — hidas ja rakenteellinen jää kertomatta.</span>
   </span>
   <span class="hub-nuoli" aria-hidden="true">›</span>
 </a>
 <a href="uutisautiomaa.html" class="hub-kortti" style="--c:#546e7a">
-  <span class="hub-numero">110</span>
+  <span class="hub-numero">119</span>
   <span class="hub-teksti">
     <span class="hub-nimi">Uutisautiomaa</span>
-    <span class="hub-kuvaus">Kun paikallislehti lakkaa, kukaan ei enää istu valtuuston kokouksessa — eikä huomaa mitään.</span>
+    <span class="hub-kuvaus">Kun paikallislehti lakkaa, valtuuston kokouksissa ei istu ketään eikä virheitä huomaa kukaan.</span>
   </span>
   <span class="hub-nuoli" aria-hidden="true">›</span>
 </a>
 <a href="paasyjournalismi.html" class="hub-kortti" style="--c:#6d4c41">
-  <span class="hub-numero">111</span>
+  <span class="hub-numero">120</span>
   <span class="hub-teksti">
     <span class="hub-nimi">Pääsyjournalismi</span>
-    <span class="hub-kuvaus">Kriittinen kysymys maksaa lähteen, joten kysymykset pehmenevät ja juttu kevenee.</span>
+    <span class="hub-kuvaus">Toimittaja on riippuvainen lähteen pääsystä, joten kriittinen kysymys maksaisi koko suhteen.</span>
   </span>
   <span class="hub-nuoli" aria-hidden="true">›</span>
 </a>
 <a href="tiedotejournalismi.html" class="hub-kortti" style="--c:#00796b">
-  <span class="hub-numero">112</span>
+  <span class="hub-numero">121</span>
   <span class="hub-teksti">
     <span class="hub-nimi">Tiedotejournalismi</span>
-    <span class="hub-kuvaus">Uutinen on kevyesti muokattu tiedote — lähettäjä valitsi aiheen, kulman ja sitaatit.</span>
+    <span class="hub-kuvaus">Uutinen on kevyesti muokattu tiedote: aiheen, kulman ja sitaatit valitsi lähettäjä.</span>
   </span>
   <span class="hub-nuoli" aria-hidden="true">›</span>
 </a>
 <a href="branditurvallisuus.html" class="hub-kortti" style="--c:#0277bd">
-  <span class="hub-numero">113</span>
+  <span class="hub-numero">122</span>
   <span class="hub-teksti">
     <span class="hub-nimi">Bränditurvallisuus</span>
-    <span class="hub-kuvaus">Mainostajan estolista tekee vakavasta aiheesta kannattamattoman — kukaan ei kiellä, raha vain katoaa.</span>
+    <span class="hub-kuvaus">Mainostajan estolista katkaisee tulon vakavista aiheista — kirjoittamisesta tulee kannattamatonta.</span>
   </span>
   <span class="hub-nuoli" aria-hidden="true">›</span>
 </a>
 <a href="huonojen-uutisten-hautaaminen.html" class="hub-kortti" style="--c:#4527a0">
-  <span class="hub-numero">114</span>
+  <span class="hub-numero">123</span>
   <span class="hub-teksti">
     <span class="hub-nimi">Huonojen uutisten hautaaminen</span>
-    <span class="hub-kuvaus">Ikävä tieto julkaistaan perjantaina klo 16.45 tai ison uutisen varjossa.</span>
+    <span class="hub-kuvaus">Ikävä tieto julkaistaan perjantai-iltapäivänä tai ison uutisen varjossa — avoimesti mutta huomaamatta.</span>
   </span>
   <span class="hub-nuoli" aria-hidden="true">›</span>
 </a>
 <a href="vaara-tasapaino.html" class="hub-kortti" style="--c:#ad1457">
-  <span class="hub-numero">115</span>
+  <span class="hub-numero">124</span>
   <span class="hub-teksti">
     <span class="hub-nimi">Väärä tasapaino</span>
-    <span class="hub-kuvaus">Kaksi näkemystä samalla palstatilalla saa 97–3-tilanteen näyttämään tasaväkiseltä kiistalta.</span>
+    <span class="hub-kuvaus">Marginaalinen näkemys saa saman palstatilan kuin valtavirta, ja kiista näyttää tasaväkiseltä.</span>
   </span>
   <span class="hub-nuoli" aria-hidden="true">›</span>
 </a>
 <a href="keharaportointi.html" class="hub-kortti" style="--c:#7b1fa2">
-  <span class="hub-numero">116</span>
+  <span class="hub-numero">125</span>
   <span class="hub-teksti">
     <span class="hub-nimi">Kehäraportointi</span>
-    <span class="hub-kuvaus">Sama alkulähde siteerattuna neljä kertaa näyttää neljältä riippumattomalta vahvistukselta.</span>
+    <span class="hub-kuvaus">Yksi väite siteerataan ketjussa eteenpäin, kunnes se näyttää neljän lähteen vahvistamalta.</span>
   </span>
   <span class="hub-nuoli" aria-hidden="true">›</span>
 </a>
 <a href="gell-mannin-amnesia.html" class="hub-kortti" style="--c:#e65100">
-  <span class="hub-numero">117</span>
+  <span class="hub-numero">126</span>
   <span class="hub-teksti">
     <span class="hub-nimi">Gell-Mannin amnesia</span>
-    <span class="hub-kuvaus">Huomaat oman alasi jutun virheet, käännät sivua ja luotat seuraavaan yhtä paljon kuin ennen.</span>
+    <span class="hub-kuvaus">Huomaat oman alasi jutussa virheet, käännät sivua ja luotat seuraavaan aivan yhtä paljon.</span>
   </span>
   <span class="hub-nuoli" aria-hidden="true">›</span>
 </a>
 <a href="vihamielisen-median-harha.html" class="hub-kortti" style="--c:#33691e">
-  <span class="hub-numero">118</span>
+  <span class="hub-numero">127</span>
   <span class="hub-teksti">
     <span class="hub-nimi">Vihamielisen median harha</span>
-    <span class="hub-kuvaus">Molemmat osapuolet lukevat saman jutun ja kokevat sen puolueelliseksi itseään vastaan.</span>
+    <span class="hub-kuvaus">Kaksi vastakkaista leiriä lukee saman jutun ja kumpikin kokee sen puolueelliseksi itseään vastaan.</span>
   </span>
   <span class="hub-nuoli" aria-hidden="true">›</span>
 </a>
@@ -459,7 +462,7 @@
 <li><strong>Bränditurvallisuus ja huonojen uutisten hautaaminen toimivat ilman kieltoa.</strong> Toinen käyttää rahaa, toinen kelloa. Kumpaakaan ei voi osoittaa yksittäistapauksesta — vain aineistosta.</li>
 <li><strong>Väärä tasapaino ja kehäraportointi ovat molemmat muodon tuottamaa uskottavuutta.</strong> Toisessa sen tuottaa palstatilan symmetria, toisessa toistojen määrä. Kummassakaan ei ole väitetty mitään, mikä olisi suoraan valheellista.</li>
 <li><strong>Gell-Mannin amnesia ja vihamielisen median harha ovat toistensa peilikuvat.</strong> Ensimmäinen saa luottamaan liikaa, toinen liian vähän — ja molemmat toimivat, koska lukija käyttää mittarina omaa tuntumaansa.</li>
-<li><strong>Kategoria kytkeytyy <a href="../manufactured-consent.html">manufactured consentiin</a> ja <a href="../kuollut-kissa.html">kuolleeseen kissaan</a>.</strong> Edellinen on rakenteellinen malli koko suodatuksesta, jälkimmäinen aktiivinen häirintätekniikka. Nämä kymmenen ovat niiden väliin jäävä arkipäivä.</li>
+<li><strong>Kategoria kytkeytyy <a href="manufactured-consent.html">manufactured consentiin</a> ja <a href="kuollut-kissa.html">kuolleeseen kissaan</a>.</strong> Edellinen on rakenteellinen malli koko suodatuksesta, jälkimmäinen aktiivinen häirintätekniikka. Nämä kymmenen ovat niiden väliin jäävä arkipäivä.</li>
 </ul>
 <h2>Mitä näistä seuraa lukijalle</h2>
 <ol>
@@ -475,25 +478,25 @@
 </div>
 <nav class="kat-naapurit" aria-label="Aiheeseen liittyvät kategoriat">
   <p class="kat-naapurit-label">Aiheeseen liittyvät kategoriat</p>
-  <a href="../kategoria-informaatio-ja-propaganda.html">Informaatio ja propaganda</a>
-  <a href="../kategoria-alustatalous-ja-algoritmit.html">Alustatalous ja algoritmit</a>
-  <a href="../kategoria-psykologia-ja-kognitio.html">Psykologia ja kognitio</a>
+  <a href="kategoria-informaatio-ja-propaganda.html">Informaatio ja propaganda</a>
+  <a href="kategoria-alustatalous-ja-algoritmit.html">Alustatalous ja algoritmit</a>
+  <a href="kategoria-psykologia-ja-kognitio.html">Psykologia ja kognitio</a>
 </nav>
 <nav class="kat-siirry" aria-label="Kategoriasta toiseen">
   <div class="kat-siirry-parit">
-    <a class="kat-siirry-kortti edellinen" href="../kategoria-tilastoilla-valehtelu.html" style="--c:#1565c0">
+    <a class="kat-siirry-kortti edellinen" href="kategoria-tilastoilla-valehtelu.html" style="--c:#1565c0">
       <span class="kat-siirry-label">Edellinen kategoria</span>
       <span class="kat-siirry-nimi">&larr; 12. Tilastoilla valehtelu</span>
     </a>
   </div>
-  <a class="kat-siirry-kaikki" href="../index.html">Kategoria <b>13 / 13</b> &middot; katso kaikki kategoriat</a>
+  <a class="kat-siirry-kaikki" href="index.html">Kategoria <b>13 / 13</b> &middot; katso kaikki kategoriat</a>
 </nav>
   </main>
 
   <footer class="kat-footer">
     <p>&copy; 2026 <strong>Ilmiöitä — Miten valta toimii</strong> · Kirjoittanut
-    <a href="../tietoa.html" rel="author">Ilmiömies</a> ·
-    <a href="../tietoa.html">Tietoa sivustosta ja tekijästä</a></p>
+    <a href="tietoa.html" rel="author">Ilmiömies</a> ·
+    <a href="tietoa.html">Tietoa sivustosta ja tekijästä</a></p>
   </footer>
 
   <script>

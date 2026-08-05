@@ -2,7 +2,7 @@
 kat_id: myyntikikat-ja-painostus
 h1: Myyntikikat ja painostus — 15 keinoa, jotka tehoavat vaikka tunnistat ne
 otsikko: Myynnin painostuskeinot — 15 tekniikkaa ja miten tunnistat ne
-kuvaus: Hintaankkurointi, foot-in-the-door, painostus-close, shrinkflaatio. Viisitoista myynnin ja neuvottelun painostuskeinoa — ja miksi tunnistaminen ei riitä, mutta auttaa silti.
+kuvaus: Hintaankkurointi, foot-in-the-door, painostus-close, shrinkflaatio. Viisitoista myynnin painostuskeinoa — ja miksi tunnistaminen ei riitä, mutta auttaa.
 vari: "#ef6c00"
 paivitetty: 2026-07-25
 naapurit:

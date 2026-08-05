@@ -16,7 +16,7 @@
       if (loaded) return;
       loaded = true;
       var s = document.createElement('script');
-      s.src = 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js';
+      s.src = 'js/mermaid.min.js';
       s.onload = function () {
         mermaid.initialize({ startOnLoad: false, theme: 'base', themeVariables: { fontSize: '12px', fontFamily: "'DM Sans', system-ui, sans-serif", primaryColor: '#FBF5E0', primaryTextColor: '#1A1100', primaryBorderColor: '#C9A84C', lineColor: '#8B6914', secondaryColor: '#F5F0E5', tertiaryColor: '#FDFAF2', mainBkg: '#FBF5E0', nodeBorder: '#C9A84C', clusterBkg: '#F5F0E5', titleColor: '#3A2000', edgeLabelBackground: '#FDFAF2' } });
         mermaid.run();
@@ -563,7 +563,7 @@
     .kortti-breadcrumb a { color: #8B6914; text-decoration: none; }
     .kortti-breadcrumb a:hover { text-decoration: underline; }
     .kortti-breadcrumb-sep { color: #ccc; }
-    .kortti-breadcrumb .kortti-breadcrumb .kortti-breadcrumb .kortti-breadcrumb-kat { color: #666; }
+    .kortti-breadcrumb .kortti-breadcrumb-kat { color: #666; }
     .kortti-random-btn {
       margin-left: auto;
       display: inline-flex;
@@ -699,7 +699,7 @@
     }
     .random-siirtyma-overlay.nakyva .random-siirtyma-teksti { opacity: 1; }
   
-.infolaatikko h2.laatikko-otsikko, .huomiolaatikko h2.laatikko-otsikko {
+.infolaatikko h2.laatikko-otsikko, .huomiolaatikko h2.laatikko-otsikko, .vaaralatikko h2.laatikko-otsikko {
   display: inline; font: inherit; font-weight: 700; color: inherit;
   margin: 0; padding: 0; letter-spacing: inherit;
 }
@@ -798,11 +798,34 @@
         "description": "Kirjoittajanimi, jonka takana on kiinnostus valtaan, vaikuttamiseen ja ihmisen päättelyn vinoumiin. Sisältö perustuu julkisiin lähteisiin ja vakiintuneeseen käsitteistöön."
       },
       "datePublished": "2026-06-19",
-      "dateModified": "2026-06-19"
+      "dateModified": "2026-08-04"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.ilmiöt.fi/sunk-cost-harha.html#faq",
+      "inLanguage": "fi",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Mikä on Concorde-harha?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sunk cost -harhan tunnetuin nimitys. Britannia ja Ranska jatkoivat Concorde-koneen rahoittamista senkin jälkeen, kun sen kannattamattomuus oli selvää — juuri siksi, että hankkeeseen oli jo sijoitettu valtavasti."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Miten sunk cost -harhan tunnistaa itsessään?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kysy: jos emme olisi vielä sijoittaneet tähän mitään, aloittaisimmeko sen nyt? Jos vastaus on ei, jatkamisen ainoa peruste on mennyt kustannus — eikä se ole peruste."
+          }
+        }
+      ]
     }
   ]
 }
-  </script>
+</script>
   <style>
     .ilmio-byline{font-size:.82rem;color:#8B6914;font-style:italic;margin:.15rem 0 1.3rem;}
     .ilmio-byline a{color:#8B6914;}
@@ -827,8 +850,12 @@
   <div class="ilmio" id="sunk-cost-harha">
 <div class="ilmio-tag">Ilmiö 30</div>
 <h1>Sunk cost -harha — upponneiden kustannusten loukku</h1>
-<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 19.6.2026</p>
+<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 4.8.2026</p>
 <p>Sunk cost -harha (suom. upponneiden kustannusten harha) on päätöksenteon kognitiivinen vinouma, jossa menneisiin, peruuttamattomiin panostuksiin — rahaan, aikaan, vaivaan — annetaan painoarvo tulevissa päätöksissä. Rationaalisen päätöksenteon kannalta menneillä kustannuksilla ei pitäisi olla merkitystä: ne ovat menneet riippumatta siitä, mitä seuraavaksi tehdään. Silti ihminen jatkaa, koska lopettaminen tuntuu tappioilta.</p>
+<div class="infolaatikko vastauslohko">
+<h2 class="laatikko-otsikko">Mikä on sunk cost -harha suomeksi?</h2>
+<p style="margin:0.4em 0 0;"><strong>Sunk cost -harha</strong> on suomeksi <strong>upponneiden kustannusten harha</strong>. Se tarkoittaa taipumusta jatkaa hanketta siksi, että siihen on jo uponnut rahaa, aikaa tai vaivaa. Mennyt panostus ei palaa jatkamallakaan, joten päätöksen pitäisi riippua vain tulevasta tuotosta.</p>
+</div>
 <p>Harha toimii tappionkaihtamisen (Kahneman &amp; Tversky, 1979) kautta: tappion tuska on noin kaksi kertaa suurempi kuin vastaavan voiton ilo. Projektin lopettaminen aktivoi "olen hävinnyt X euroa" -tunteen, vaikka jatkaminen tuottaisi lisää tappiota. Aivot laskevat menneisyyden investoinnin ja tekevät siitä perustelun jatkamiselle — vaikka se ei ole perustelu lainkaan.</p>
 <div class="mermaid">
 flowchart TD
@@ -855,7 +882,7 @@ flowchart TD
 <p><strong>Organisaatiovaikutus:</strong> Sunk cost -harha on erityisen tuhoisa organisaatioissa, koska siihen lisätään vastuuvelvollisuuden paine: projektin lopettaminen tarkoittaa myöntämistä, että alkuperäinen päätös oli virhe. Tämä aktivoi <a href="blame-game.html">The Blame Gamen</a> — kuka päätti aloittaa? — ja tekee lopettamispäätöksestä henkilökohtaisen riskin. Sunk cost -harha ja syyttelykulttuuri yhdessä lukitsevat organisaatiot huonoihin päätöksiin.</p>
 <p>Ks. myös <a href="negatiivinen-korkoa.html">Negatiivinen korkoa korolle</a>: sunk cost -harha on usein mekanismi, jolla negatiivinen kierre alkaa — "ei voida lopettaa" → lisätään rahaa → tappio kasvaa → vaikeampi lopettaa → kierretään yhä syvemmälle.</p>
 <div class="vaaralatikko">
-<strong>Vastakysymys:</strong> "Jos emme olisi vielä sijoittaneet mitään tähän projektiin — aloittaisimmeko sen nyt?" Jos vastaus on ei, jatkat sunk cost -harhan takia. Päätös pitäisi tehdä tulevaisuuden odotetun arvon perusteella, ei menneen investoinnin perusteella.
+<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> "Jos emme olisi vielä sijoittaneet mitään tähän projektiin — aloittaisimmeko sen nyt?" Jos vastaus on ei, jatkat sunk cost -harhan takia. Päätös pitäisi tehdä tulevaisuuden odotetun arvon perusteella, ei menneen investoinnin perusteella.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -925,7 +952,7 @@ flowchart TD
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="argumenttitulva.html">← Argumenttitulva — Gish Gallop</a>
     <div class="kortti-nav-center">
-      <span class="kortti-nav-laskuri">30 / 113</span>
+      <span class="kortti-nav-laskuri">30 / 127</span>
       <span class="kortti-nav-vinkki">
         <kbd>&#8592;</kbd> <kbd>&#8594;</kbd> selaa &middot; <kbd>R</kbd> satunnainen
         <span class="touch-vinkki">&nbsp;· swipe &#8592;&#8594; tai &#8595; random</span>
@@ -1102,7 +1129,7 @@ flowchart TD
 
   <script>
 (function () {
-  const IDS = ["paskuuttaminen", "starve-the-beast", "overton-ikkuna", "saantelijan-kaappaus", "rautainen-laki", "valta-suojelee-valtaa", "hajota-hallitse", "bkt-harha", "astroturf", "firehose-of-falsehood", "manufactured-consent", "betteridgen-laki", "inokulointiteoria", "whataboutismi", "streisand-ilmio", "trollitehdas", "kuollut-kissa", "brandolinin-laki", "poen-laki", "godwinin-laki", "backfire-effect", "darvo", "halo-efekti", "konsensus-fetissi", "omenoita-appelsiineja", "blame-game", "gaslighting", "maalitolppien-siirtaminen", "argumenttitulva", "sunk-cost-harha", "jarjestelman-puolustelu", "dunning-kruger", "hanlonin-partaveitsi", "occamin-partaveitsi", "simple-sabotage", "kafka-ilmio", "catch-22", "goodhartin-laki", "hippo-efekti", "performatiivinen-lasnaolo", "rituaalinen-raportointi", "initiointirituaalit", "portinvartija-kulttuuri", "strateginen-osaamattomuus", "fofo", "sivustakatsojan-efekti", "parkinsonin-laki", "peterin-periaate", "pareto-periaate", "brooksin-laki", "yhdeksanyhdeksan", "hofstadterin-laki", "kuolonmarssi", "tekninen-velka", "conways-laki", "bikeshedding", "scope-creep", "korkoa-korolle", "negatiivinen-korkoa", "korkokierre", "honeypot-huijaus", "bait-and-switch", "kaarmeoljy", "ponzi-pyramidi", "pump-and-dump", "pig-butchering", "ennakkomaksuhuijaus", "badger-game", "qr-koodihuijaus", "toimitusjohtajahuijaus", "rug-pull", "ilmainen-naytetyo", "exposure-maksu", "lowball-hinnoittelu", "valittajan-skimmaus", "tilipuristus", "foot-in-the-door", "door-in-the-face", "hintaankkurointi", "houkutinvaihtoehto", "vastavuoroisuuden-ansa", "sosiaalinen-todiste", "painostusclose", "shrinkflaatio", "suunniteltu-vanheneminen", "tilausansa", "doomscrolling", "kaikukammio", "ai-slop", "parasosiaalinen-suhde", "kuollut-internet", "rage-bait", "klikkiotsikko", "engagement-bait", "1-prosentin-saanto", "aanekas-vahemmisto", "viherpesu", "sinipesu", "urheilupesu", "pinkkipesu", "tekoalypesu", "hyvesignalointi", "hiljainen-irtisanoutuminen", "hiljainen-irtisanominen", "haamutyopaikat", "kaksois-y-akseli", "pinta-alaharha", "cherry-picking-aikavali", "keskiarvo-vs-mediaani", "suhteellinen-riski", "selviytymisharha", "simpsonin-paradoksi", "p-hakkerointi"];
+  const IDS = ["paskuuttaminen", "starve-the-beast", "overton-ikkuna", "saantelijan-kaappaus", "rautainen-laki", "valta-suojelee-valtaa", "hajota-hallitse", "bkt-harha", "astroturf", "firehose-of-falsehood", "manufactured-consent", "betteridgen-laki", "inokulointiteoria", "whataboutismi", "streisand-ilmio", "trollitehdas", "kuollut-kissa", "brandolinin-laki", "poen-laki", "godwinin-laki", "backfire-effect", "darvo", "halo-efekti", "konsensus-fetissi", "omenoita-appelsiineja", "blame-game", "gaslighting", "maalitolppien-siirtaminen", "argumenttitulva", "sunk-cost-harha", "jarjestelman-puolustelu", "dunning-kruger", "hanlonin-partaveitsi", "occamin-partaveitsi", "simple-sabotage", "kafka-ilmio", "catch-22", "goodhartin-laki", "hippo-efekti", "performatiivinen-lasnaolo", "rituaalinen-raportointi", "initiointirituaalit", "portinvartija-kulttuuri", "strateginen-osaamattomuus", "fofo", "sivustakatsojan-efekti", "parkinsonin-laki", "peterin-periaate", "pareto-periaate", "brooksin-laki", "yhdeksanyhdeksan", "hofstadterin-laki", "kuolonmarssi", "lukittu-paatos", "strateginen-aliarviointi", "paatosperainen-todistelu", "lapi-hinnalla-milla-hyvansa", "tekninen-velka", "conways-laki", "bikeshedding", "scope-creep", "korkoa-korolle", "negatiivinen-korkoa", "korkokierre", "honeypot-huijaus", "bait-and-switch", "kaarmeoljy", "ponzi-pyramidi", "pump-and-dump", "pig-butchering", "ennakkomaksuhuijaus", "badger-game", "qr-koodihuijaus", "toimitusjohtajahuijaus", "rug-pull", "ilmainen-naytetyo", "exposure-maksu", "lowball-hinnoittelu", "valittajan-skimmaus", "tilipuristus", "foot-in-the-door", "door-in-the-face", "hintaankkurointi", "houkutinvaihtoehto", "vastavuoroisuuden-ansa", "sosiaalinen-todiste", "painostusclose", "shrinkflaatio", "suunniteltu-vanheneminen", "tilausansa", "doomscrolling", "kaikukammio", "ai-slop", "parasosiaalinen-suhde", "kuollut-internet", "rage-bait", "klikkiotsikko", "engagement-bait", "1-prosentin-saanto", "aanekas-vahemmisto", "viherpesu", "sinipesu", "urheilupesu", "pinkkipesu", "tekoalypesu", "hyvesignalointi", "hiljainen-irtisanoutuminen", "hiljainen-irtisanominen", "haamutyopaikat", "kaksois-y-akseli", "pinta-alaharha", "cherry-picking-aikavali", "keskiarvo-vs-mediaani", "suhteellinen-riski", "selviytymisharha", "simpsonin-paradoksi", "p-hakkerointi", "uutiskynnys", "uutisautiomaa", "paasyjournalismi", "tiedotejournalismi", "branditurvallisuus", "huonojen-uutisten-hautaaminen", "vaara-tasapaino", "keharaportointi", "gell-mannin-amnesia", "vihamielisen-median-harha"];
   const PREV = 'argumenttitulva.html';
   const NEXT = 'jarjestelman-puolustelu.html';
 

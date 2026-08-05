@@ -3,3 +3,4 @@ scripts/__pycache__/
 .claude/worktrees/
 *:Zone.Identifier
 datalake-analysis/
+gsc/

@@ -2,7 +2,7 @@
 kat_id: pesut-ja-maineenhallinta
 h1: Pesut ja maineenhallinta — miksi mielikuva on halvempi kuin muutos
 otsikko: Viherpesu, urheilupesu ja hyvesignalointi — maineenhallinnan ilmiöt
-kuvaus: Viherpesu, sinipesu, urheilupesu, pinkkipesu, tekoälypesu, hyvesignalointi. Kuusi tapaa kiillottaa mainetta ilman että mikään muuttuu — ja yksi kysymys, joka erottaa teot viestinnästä.
+kuvaus: Viherpesu, sinipesu, urheilupesu, pinkkipesu, tekoälypesu, hyvesignalointi. Kuusi tapaa kiillottaa mainetta ilman että mikään muuttuu.
 vari: "#00838f"
 paivitetty: 2026-07-28
 naapurit:

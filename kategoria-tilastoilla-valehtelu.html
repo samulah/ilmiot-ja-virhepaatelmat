@@ -8,10 +8,10 @@
   <link rel="stylesheet" href="style.css?v=20260727">
 
   <!-- SEO -->
-  <meta name="description" content="Katkaistu akseli, valikoitu aikaväli, väärä keskiluku. Kahdeksan tapaa johtaa harhaan tilastolla joka on teknisesti oikein — ja viisi kysymystä, jotka paljastavat ne.">
+  <meta name="description" content="Katkaistu akseli, valikoitu aikaväli, väärä keskiluku. Kahdeksan tapaa johtaa harhaan tilastolla, joka on teknisesti oikein — ja viisi paljastavaa kysymystä.">
   <link rel="canonical" href="https://www.ilmiöt.fi/kategoria-tilastoilla-valehtelu.html">
   <meta property="og:title" content="Tilastoilla valehtelu — 8 tekniikkaa, joilla luvut johtavat harhaan — Ilmiöitä">
-  <meta property="og:description" content="Katkaistu akseli, valikoitu aikaväli, väärä keskiluku. Kahdeksan tapaa johtaa harhaan tilastolla joka on teknisesti oikein — ja viisi kysymystä, jotka paljastavat ne.">
+  <meta property="og:description" content="Katkaistu akseli, valikoitu aikaväli, väärä keskiluku. Kahdeksan tapaa johtaa harhaan tilastolla, joka on teknisesti oikein — ja viisi paljastavaa kysymystä.">
   <meta property="og:url" content="https://www.ilmiöt.fi/kategoria-tilastoilla-valehtelu.html">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fi_FI">
@@ -22,7 +22,7 @@
   <meta property="og:image:alt" content="Ilmiöitä — Miten valta toimii">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Tilastoilla valehtelu — 8 tekniikkaa, joilla luvut johtavat harhaan — Ilmiöitä">
-  <meta name="twitter:description" content="Katkaistu akseli, valikoitu aikaväli, väärä keskiluku. Kahdeksan tapaa johtaa harhaan tilastolla joka on teknisesti oikein — ja viisi kysymystä, jotka paljastavat ne.">
+  <meta name="twitter:description" content="Katkaistu akseli, valikoitu aikaväli, väärä keskiluku. Kahdeksan tapaa johtaa harhaan tilastolla, joka on teknisesti oikein — ja viisi paljastavaa kysymystä.">
   <meta name="twitter:image" content="https://www.ilmiöt.fi/og/brand.png">
   <script type="application/ld+json">
 {
@@ -51,7 +51,7 @@
       "url": "https://www.ilmiöt.fi/kategoria-tilastoilla-valehtelu.html",
       "name": "Tilastoilla valehtelu — miten luvuilla johdetaan harhaan valehtelematta",
       "headline": "Tilastoilla valehtelu — miten luvuilla johdetaan harhaan valehtelematta",
-      "description": "Katkaistu akseli, valikoitu aikaväli, väärä keskiluku. Kahdeksan tapaa johtaa harhaan tilastolla joka on teknisesti oikein — ja viisi kysymystä, jotka paljastavat ne.",
+      "description": "Katkaistu akseli, valikoitu aikaväli, väärä keskiluku. Kahdeksan tapaa johtaa harhaan tilastolla, joka on teknisesti oikein — ja viisi paljastavaa kysymystä.",
       "inLanguage": "fi",
       "isPartOf": {
         "@type": "WebSite",
@@ -180,8 +180,11 @@
       font-weight: 700; line-height: 1.1; letter-spacing: -0.015em;
       color: #fff; margin: 0; max-width: 20ch;
     }
-    .kat-alaotsikko {
-      display: block; margin-top: 0.5rem;
+    /* Oma <p> h1:n ulkopuolella. font-family toistetaan tässä, koska ulkoasu
+       periytyi aiemmin h1:ltä — nyt periytymisketju ei enää kulje sen kautta. */
+    p.kat-alaotsikko {
+      margin: 0.5rem 0 0;
+      font-family: var(--font-display, 'Spectral', Georgia, serif);
       font-size: clamp(0.95rem, 2.2vw, 1.18rem);
       font-weight: 400; font-style: italic; line-height: 1.4;
       color: rgba(255,255,255,0.6); max-width: 34ch;
@@ -341,9 +344,10 @@
         <a class="kat-paluu" href="index.html">
           <img src="favicon.svg" alt="" width="20" height="20">Kaikki ilmiöt
         </a>
-        <p class="kat-eyebrow">Kategoria 12 / 12</p>
-        <h1 class="kat-nimi">Tilastoilla valehtelu<span class="kat-alaotsikko">miten luvuilla johdetaan harhaan valehtelematta</span></h1>
-        <p class="kat-meta">8 ilmiötä<span>·</span>Ilmiöt 106&ndash;113<span>·</span>Päivitetty 25.7.2026</p>
+        <p class="kat-eyebrow">Kategoria 12 / 13</p>
+        <h1 class="kat-nimi">Tilastoilla valehtelu</h1>
+        <p class="kat-alaotsikko">miten luvuilla johdetaan harhaan valehtelematta</p>
+        <p class="kat-meta">8 ilmiötä<span>·</span>Ilmiöt 110&ndash;117<span>·</span>Päivitetty 25.7.2026</p>
       </div>
     </div>
   </header>
@@ -360,7 +364,7 @@
 <h2>Kahdeksan tekniikkaa</h2>
 <div class="kat-kortit">
 <a href="kaksois-y-akseli.html" class="hub-kortti" style="--c:#1565c0">
-  <span class="hub-numero">106</span>
+  <span class="hub-numero">110</span>
   <span class="hub-teksti">
     <span class="hub-nimi">Kaksois-y-akseli</span>
     <span class="hub-kuvaus">Kaksi vapaasti skaalattua asteikkoa saa mitkä tahansa käyrät kulkemaan käsi kädessä.</span>
@@ -368,7 +372,7 @@
   <span class="hub-nuoli" aria-hidden="true">›</span>
 </a>
 <a href="pinta-alaharha.html" class="hub-kortti" style="--c:#8e24aa">
-  <span class="hub-numero">107</span>
+  <span class="hub-numero">111</span>
   <span class="hub-teksti">
     <span class="hub-nimi">Pinta-alaharha</span>
     <span class="hub-kuvaus">Kaksinkertainen arvo piirretään kaksinkertaisena halkaisijana — ja näyttää nelinkertaiselta.</span>
@@ -376,7 +380,7 @@
   <span class="hub-nuoli" aria-hidden="true">›</span>
 </a>
 <a href="cherry-picking-aikavali.html" class="hub-kortti" style="--c:#2e7d32">
-  <span class="hub-numero">108</span>
+  <span class="hub-numero">112</span>
   <span class="hub-teksti">
     <span class="hub-nimi">Cherry-picking</span>
     <span class="hub-kuvaus">Aikavälin alku- ja loppupiste valitaan niin, että sama aikasarja todistaa mitä tahansa.</span>
@@ -384,7 +388,7 @@
   <span class="hub-nuoli" aria-hidden="true">›</span>
 </a>
 <a href="keskiarvo-vs-mediaani.html" class="hub-kortti" style="--c:#5d4037">
-  <span class="hub-numero">109</span>
+  <span class="hub-numero">113</span>
   <span class="hub-teksti">
     <span class="hub-nimi">Keskiarvoharha</span>
     <span class="hub-kuvaus">Vinossa jakaumassa keskiarvo ja mediaani kertovat eri tarinan — ja kertoja valitsee sopivamman.</span>
@@ -392,7 +396,7 @@
   <span class="hub-nuoli" aria-hidden="true">›</span>
 </a>
 <a href="suhteellinen-riski.html" class="hub-kortti" style="--c:#c62828">
-  <span class="hub-numero">110</span>
+  <span class="hub-numero">114</span>
   <span class="hub-teksti">
     <span class="hub-nimi">Suhteellinen riski</span>
     <span class="hub-kuvaus">”Riski kaksinkertaistui” voi tarkoittaa siirtymää yhdestä tapauksesta kahteen sataatuhatta kohden.</span>
@@ -400,7 +404,7 @@
   <span class="hub-nuoli" aria-hidden="true">›</span>
 </a>
 <a href="selviytymisharha.html" class="hub-kortti" style="--c:#37474f">
-  <span class="hub-numero">111</span>
+  <span class="hub-numero">115</span>
   <span class="hub-teksti">
     <span class="hub-nimi">Selviytymisharha</span>
     <span class="hub-kuvaus">Vain palanneet koneet lasketaan — data kertoo selviytyjistä, ei kadonneista.</span>
@@ -408,7 +412,7 @@
   <span class="hub-nuoli" aria-hidden="true">›</span>
 </a>
 <a href="simpsonin-paradoksi.html" class="hub-kortti" style="--c:#00695c">
-  <span class="hub-numero">112</span>
+  <span class="hub-numero">116</span>
   <span class="hub-teksti">
     <span class="hub-nimi">Simpsonin paradoksi</span>
     <span class="hub-kuvaus">Kokonaisuus näyttää kasvua, vaikka jokainen osaryhmä laskee — tai päinvastoin.</span>
@@ -416,7 +420,7 @@
   <span class="hub-nuoli" aria-hidden="true">›</span>
 </a>
 <a href="p-hakkerointi.html" class="hub-kortti" style="--c:#ef6c00">
-  <span class="hub-numero">113</span>
+  <span class="hub-numero">117</span>
   <span class="hub-teksti">
     <span class="hub-nimi">P-hakkerointi</span>
     <span class="hub-kuvaus">Testataan kunnes jokin näyttää merkitsevältä — ja julkaistaan vain se yksi tulos.</span>
@@ -511,8 +515,12 @@
       <span class="kat-siirry-label">Edellinen kategoria</span>
       <span class="kat-siirry-nimi">&larr; 11. Työelämän ilmiöt</span>
     </a>
+    <a class="kat-siirry-kortti seuraava" href="kategoria-media-ja-julkisuus.html" style="--c:#455a64">
+      <span class="kat-siirry-label">Seuraava kategoria</span>
+      <span class="kat-siirry-nimi">13. Media ja julkisuus &rarr;</span>
+    </a>
   </div>
-  <a class="kat-siirry-kaikki" href="index.html">Kategoria <b>12 / 12</b> &middot; katso kaikki kategoriat</a>
+  <a class="kat-siirry-kaikki" href="index.html">Kategoria <b>12 / 13</b> &middot; katso kaikki kategoriat</a>
 </nav>
   </main>
 
@@ -524,7 +532,7 @@
 
   <script>
 (function () {
-  var PREV = 'kategoria-tyoelaman-ilmiot.html', NEXT = null;
+  var PREV = 'kategoria-tyoelaman-ilmiot.html', NEXT = 'kategoria-media-ja-julkisuus.html';
   document.addEventListener('keydown', function (e) {
     if (e.metaKey || e.ctrlKey || e.altKey) return;
     var t = e.target;

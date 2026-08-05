@@ -16,7 +16,7 @@
       if (loaded) return;
       loaded = true;
       var s = document.createElement('script');
-      s.src = 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js';
+      s.src = 'js/mermaid.min.js';
       s.onload = function () {
         mermaid.initialize({ startOnLoad: false, theme: 'base', themeVariables: { fontSize: '12px', fontFamily: "'DM Sans', system-ui, sans-serif", primaryColor: '#FBF5E0', primaryTextColor: '#1A1100', primaryBorderColor: '#C9A84C', lineColor: '#8B6914', secondaryColor: '#F5F0E5', tertiaryColor: '#FDFAF2', mainBkg: '#FBF5E0', nodeBorder: '#C9A84C', clusterBkg: '#F5F0E5', titleColor: '#3A2000', edgeLabelBackground: '#FDFAF2' } });
         mermaid.run();
@@ -563,7 +563,7 @@
     .kortti-breadcrumb a { color: #8B6914; text-decoration: none; }
     .kortti-breadcrumb a:hover { text-decoration: underline; }
     .kortti-breadcrumb-sep { color: #ccc; }
-    .kortti-breadcrumb .kortti-breadcrumb .kortti-breadcrumb .kortti-breadcrumb-kat { color: #666; }
+    .kortti-breadcrumb .kortti-breadcrumb-kat { color: #666; }
     .kortti-random-btn {
       margin-left: auto;
       display: inline-flex;
@@ -699,7 +699,7 @@
     }
     .random-siirtyma-overlay.nakyva .random-siirtyma-teksti { opacity: 1; }
   
-.infolaatikko h2.laatikko-otsikko, .huomiolaatikko h2.laatikko-otsikko {
+.infolaatikko h2.laatikko-otsikko, .huomiolaatikko h2.laatikko-otsikko, .vaaralatikko h2.laatikko-otsikko {
   display: inline; font: inherit; font-weight: 700; color: inherit;
   margin: 0; padding: 0; letter-spacing: inherit;
 }
@@ -798,11 +798,34 @@
         "description": "Kirjoittajanimi, jonka takana on kiinnostus valtaan, vaikuttamiseen ja ihmisen päättelyn vinoumiin. Sisältö perustuu julkisiin lähteisiin ja vakiintuneeseen käsitteistöön."
       },
       "datePublished": "2026-06-19",
-      "dateModified": "2026-06-19"
+      "dateModified": "2026-08-04"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.ilmiöt.fi/pump-and-dump.html#faq",
+      "inLanguage": "fi",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Missä pump and dump esiintyy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Klassisesti pienissä pörssiosakkeissa, nykyään erityisesti kryptovaluutoissa ja NFT-kohteissa, joissa vaihto on ohutta ja sääntely kevyttä. Koordinointi tapahtuu usein suljetuissa Telegram- tai Discord-ryhmissä."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Onko pump and dump laitonta?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Säännellyillä arvopaperimarkkinoilla kyllä — se on markkinamanipulaatiota. Kryptomarkkinoilla oikeustila on epäselvempi ja valvonta ohuempaa, mikä on yksi syy siihen, miksi kaava on siirtynyt sinne."
+          }
+        }
+      ]
     }
   ]
 }
-  </script>
+</script>
   <style>
     .ilmio-byline{font-size:.82rem;color:#8B6914;font-style:italic;margin:.15rem 0 1.3rem;}
     .ilmio-byline a{color:#8B6914;}
@@ -825,10 +848,14 @@
   </div>
 
   <div class="ilmio" id="pump-and-dump">
-<div class="ilmio-tag">Ilmiö 65</div>
+<div class="ilmio-tag">Ilmiö 69</div>
 <h1>Pump and dump — pumppaa ja dumppaa</h1>
-<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 19.6.2026</p>
+<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 4.8.2026</p>
 <p>Pump and dump on markkinamanipulaatio, jossa jokin halpa ja vähän vaihdettu kohde (osake, kryptovaluutta, NFT) <strong>pumpataan</strong> keinotekoisesti hypellä ja koordinoidulla ostamisella, jotta hinta nousee — ja kun uudet ostajat ryntäävät mukaan, manipuloijat <strong>dumppaavat</strong> omistuksensa huipulla. Hinta romahtaa, ja myöhäiset jäävät tappiolle.</p>
+<div class="infolaatikko vastauslohko">
+<h2 class="laatikko-otsikko">Mitä pump and dump tarkoittaa?</h2>
+<p style="margin:0.4em 0 0;"><strong>Pump and dump</strong> tarkoittaa järjestettyä hinnannousua, jonka tarkoitus on tuottaa ostajia myyntihetkelle. Järjestäjä omistaa kohteen jo ennen hypeä ja myy sen huipulla niille, jotka hype toi paikalle. Tappion kantaa aina viimeisenä ostanut, ei manipuloija.</p>
+</div>
 <p>Voitto ei synny kohteen arvosta vaan ajoituksesta: sisäpiiri ostaa halvalla, luo FOMO:n (pelon jäädä paitsi) ja myy juuri ennen kuin tarina paljastuu tyhjäksi.</p>
 <div class="mermaid">
 flowchart TD
@@ -845,7 +872,7 @@ flowchart TD
 <h2 class="laatikko-otsikko">Tunnusmerkit:</h2> Äkillinen, selittämätön hintapiikki vähän tunnetussa kohteessa; koordinoitu somekampanja ("älä jää paitsi", "viimeinen mahdollisuus"); maksetut influensserit; ja kohde, jolla ei ole todellista käyttöä tai tuloa. Vrt. <a href="kaarmeoljy.html">Käärmeöljy</a> ja <a href="ponzi-pyramidi.html">Ponzi</a>: arvo on tarinassa, ei sisällössä.
     </div>
 <div class="vaaralatikko">
-<strong>Tunnistaminen ja vastakeinot:</strong> Jos joku <em>kertoo sinulle</em> mihin pitää sijoittaa nyt heti ennen kuin on myöhäistä — kysy, miksi he jakavat vinkin sen sijaan että ostaisivat itse hiljaa. Hype on tuote; sinä olet usein se, jolle dumpataan.
+<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Jos joku <em>kertoo sinulle</em> mihin pitää sijoittaa nyt heti ennen kuin on myöhäistä — kysy, miksi he jakavat vinkin sen sijaan että ostaisivat itse hiljaa. Hype on tuote; sinä olet usein se, jolle dumpataan.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -869,7 +896,7 @@ flowchart TD
     <h2>Liittyvät ilmiöt</h2>
     <div class="liittyvat-kortit">
     <a href="pig-butchering.html" class="liittyvat-kortti" style="--c:#bf360c">
-      <span class="liittyvat-numero">66</span>
+      <span class="liittyvat-numero">70</span>
       <span class="liittyvat-teksti">
         <span class="liittyvat-nimi">Pig butchering</span>
         <span class="liittyvat-kuvaus">Uhri "lihotetaan" viikkojen luottamuksella ja pikkuvoitoilla ennen kuin tili tyhjennetään.</span>
@@ -877,7 +904,7 @@ flowchart TD
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
     <a href="ennakkomaksuhuijaus.html" class="liittyvat-kortti" style="--c:#303f9f">
-      <span class="liittyvat-numero">67</span>
+      <span class="liittyvat-numero">71</span>
       <span class="liittyvat-teksti">
         <span class="liittyvat-nimi">Ennakkomaksuhuijaus (419)</span>
         <span class="liittyvat-kuvaus">Suuri summa odottaa — kunhan maksat ensin "pienen" käsittelymaksun, ja sitten seuraavan.</span>
@@ -885,7 +912,7 @@ flowchart TD
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
     <a href="badger-game.html" class="liittyvat-kortti" style="--c:#455a64">
-      <span class="liittyvat-numero">68</span>
+      <span class="liittyvat-numero">72</span>
       <span class="liittyvat-teksti">
         <span class="liittyvat-nimi">Badger game</span>
         <span class="liittyvat-kuvaus">Uhri houkutellaan kiusalliseen tilanteeseen ja kiristetään maksamaan vaikenemisesta.</span>
@@ -893,7 +920,7 @@ flowchart TD
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
     <a href="honeypot-huijaus.html" class="liittyvat-kortti" style="--c:#b8860b">
-      <span class="liittyvat-numero">61</span>
+      <span class="liittyvat-numero">65</span>
       <span class="liittyvat-teksti">
         <span class="liittyvat-nimi">Honeypot-huijaus</span>
         <span class="liittyvat-kuvaus">Ansa houkuttelee helpolla voitolla — uloskäynti sulkeutuu vasta, kun olet jo sitoutunut.</span>
@@ -901,7 +928,7 @@ flowchart TD
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
     <a href="bait-and-switch.html" class="liittyvat-kortti" style="--c:#ad1457">
-      <span class="liittyvat-numero">62</span>
+      <span class="liittyvat-numero">66</span>
       <span class="liittyvat-teksti">
         <span class="liittyvat-nimi">Bait and switch</span>
         <span class="liittyvat-kuvaus">Näyttävä tarjous houkuttelee paikalle, mutta tilalle myydäänkin jotain kalliimpaa tai huonompaa.</span>
@@ -914,7 +941,7 @@ flowchart TD
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="ponzi-pyramidi.html">← Ponzi ja pyramidihuijaus — tuotot tulevat uusilta uhreilta</a>
     <div class="kortti-nav-center">
-      <span class="kortti-nav-laskuri">65 / 113</span>
+      <span class="kortti-nav-laskuri">69 / 127</span>
       <span class="kortti-nav-vinkki">
         <kbd>&#8592;</kbd> <kbd>&#8594;</kbd> selaa &middot; <kbd>R</kbd> satunnainen
         <span class="touch-vinkki">&nbsp;· swipe &#8592;&#8594; tai &#8595; random</span>
@@ -1091,7 +1118,7 @@ flowchart TD
 
   <script>
 (function () {
-  const IDS = ["paskuuttaminen", "starve-the-beast", "overton-ikkuna", "saantelijan-kaappaus", "rautainen-laki", "valta-suojelee-valtaa", "hajota-hallitse", "bkt-harha", "astroturf", "firehose-of-falsehood", "manufactured-consent", "betteridgen-laki", "inokulointiteoria", "whataboutismi", "streisand-ilmio", "trollitehdas", "kuollut-kissa", "brandolinin-laki", "poen-laki", "godwinin-laki", "backfire-effect", "darvo", "halo-efekti", "konsensus-fetissi", "omenoita-appelsiineja", "blame-game", "gaslighting", "maalitolppien-siirtaminen", "argumenttitulva", "sunk-cost-harha", "jarjestelman-puolustelu", "dunning-kruger", "hanlonin-partaveitsi", "occamin-partaveitsi", "simple-sabotage", "kafka-ilmio", "catch-22", "goodhartin-laki", "hippo-efekti", "performatiivinen-lasnaolo", "rituaalinen-raportointi", "initiointirituaalit", "portinvartija-kulttuuri", "strateginen-osaamattomuus", "fofo", "sivustakatsojan-efekti", "parkinsonin-laki", "peterin-periaate", "pareto-periaate", "brooksin-laki", "yhdeksanyhdeksan", "hofstadterin-laki", "kuolonmarssi", "tekninen-velka", "conways-laki", "bikeshedding", "scope-creep", "korkoa-korolle", "negatiivinen-korkoa", "korkokierre", "honeypot-huijaus", "bait-and-switch", "kaarmeoljy", "ponzi-pyramidi", "pump-and-dump", "pig-butchering", "ennakkomaksuhuijaus", "badger-game", "qr-koodihuijaus", "toimitusjohtajahuijaus", "rug-pull", "ilmainen-naytetyo", "exposure-maksu", "lowball-hinnoittelu", "valittajan-skimmaus", "tilipuristus", "foot-in-the-door", "door-in-the-face", "hintaankkurointi", "houkutinvaihtoehto", "vastavuoroisuuden-ansa", "sosiaalinen-todiste", "painostusclose", "shrinkflaatio", "suunniteltu-vanheneminen", "tilausansa", "doomscrolling", "kaikukammio", "ai-slop", "parasosiaalinen-suhde", "kuollut-internet", "rage-bait", "klikkiotsikko", "engagement-bait", "1-prosentin-saanto", "aanekas-vahemmisto", "viherpesu", "sinipesu", "urheilupesu", "pinkkipesu", "tekoalypesu", "hyvesignalointi", "hiljainen-irtisanoutuminen", "hiljainen-irtisanominen", "haamutyopaikat", "kaksois-y-akseli", "pinta-alaharha", "cherry-picking-aikavali", "keskiarvo-vs-mediaani", "suhteellinen-riski", "selviytymisharha", "simpsonin-paradoksi", "p-hakkerointi"];
+  const IDS = ["paskuuttaminen", "starve-the-beast", "overton-ikkuna", "saantelijan-kaappaus", "rautainen-laki", "valta-suojelee-valtaa", "hajota-hallitse", "bkt-harha", "astroturf", "firehose-of-falsehood", "manufactured-consent", "betteridgen-laki", "inokulointiteoria", "whataboutismi", "streisand-ilmio", "trollitehdas", "kuollut-kissa", "brandolinin-laki", "poen-laki", "godwinin-laki", "backfire-effect", "darvo", "halo-efekti", "konsensus-fetissi", "omenoita-appelsiineja", "blame-game", "gaslighting", "maalitolppien-siirtaminen", "argumenttitulva", "sunk-cost-harha", "jarjestelman-puolustelu", "dunning-kruger", "hanlonin-partaveitsi", "occamin-partaveitsi", "simple-sabotage", "kafka-ilmio", "catch-22", "goodhartin-laki", "hippo-efekti", "performatiivinen-lasnaolo", "rituaalinen-raportointi", "initiointirituaalit", "portinvartija-kulttuuri", "strateginen-osaamattomuus", "fofo", "sivustakatsojan-efekti", "parkinsonin-laki", "peterin-periaate", "pareto-periaate", "brooksin-laki", "yhdeksanyhdeksan", "hofstadterin-laki", "kuolonmarssi", "lukittu-paatos", "strateginen-aliarviointi", "paatosperainen-todistelu", "lapi-hinnalla-milla-hyvansa", "tekninen-velka", "conways-laki", "bikeshedding", "scope-creep", "korkoa-korolle", "negatiivinen-korkoa", "korkokierre", "honeypot-huijaus", "bait-and-switch", "kaarmeoljy", "ponzi-pyramidi", "pump-and-dump", "pig-butchering", "ennakkomaksuhuijaus", "badger-game", "qr-koodihuijaus", "toimitusjohtajahuijaus", "rug-pull", "ilmainen-naytetyo", "exposure-maksu", "lowball-hinnoittelu", "valittajan-skimmaus", "tilipuristus", "foot-in-the-door", "door-in-the-face", "hintaankkurointi", "houkutinvaihtoehto", "vastavuoroisuuden-ansa", "sosiaalinen-todiste", "painostusclose", "shrinkflaatio", "suunniteltu-vanheneminen", "tilausansa", "doomscrolling", "kaikukammio", "ai-slop", "parasosiaalinen-suhde", "kuollut-internet", "rage-bait", "klikkiotsikko", "engagement-bait", "1-prosentin-saanto", "aanekas-vahemmisto", "viherpesu", "sinipesu", "urheilupesu", "pinkkipesu", "tekoalypesu", "hyvesignalointi", "hiljainen-irtisanoutuminen", "hiljainen-irtisanominen", "haamutyopaikat", "kaksois-y-akseli", "pinta-alaharha", "cherry-picking-aikavali", "keskiarvo-vs-mediaani", "suhteellinen-riski", "selviytymisharha", "simpsonin-paradoksi", "p-hakkerointi", "uutiskynnys", "uutisautiomaa", "paasyjournalismi", "tiedotejournalismi", "branditurvallisuus", "huonojen-uutisten-hautaaminen", "vaara-tasapaino", "keharaportointi", "gell-mannin-amnesia", "vihamielisen-median-harha"];
   const PREV = 'ponzi-pyramidi.html';
   const NEXT = 'pig-butchering.html';
 

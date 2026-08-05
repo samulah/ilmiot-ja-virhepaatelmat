@@ -16,7 +16,7 @@
       if (loaded) return;
       loaded = true;
       var s = document.createElement('script');
-      s.src = 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js';
+      s.src = 'js/mermaid.min.js';
       s.onload = function () {
         mermaid.initialize({ startOnLoad: false, theme: 'base', themeVariables: { fontSize: '12px', fontFamily: "'DM Sans', system-ui, sans-serif", primaryColor: '#FBF5E0', primaryTextColor: '#1A1100', primaryBorderColor: '#C9A84C', lineColor: '#8B6914', secondaryColor: '#F5F0E5', tertiaryColor: '#FDFAF2', mainBkg: '#FBF5E0', nodeBorder: '#C9A84C', clusterBkg: '#F5F0E5', titleColor: '#3A2000', edgeLabelBackground: '#FDFAF2' } });
         mermaid.run();
@@ -563,7 +563,7 @@
     .kortti-breadcrumb a { color: #8B6914; text-decoration: none; }
     .kortti-breadcrumb a:hover { text-decoration: underline; }
     .kortti-breadcrumb-sep { color: #ccc; }
-    .kortti-breadcrumb .kortti-breadcrumb .kortti-breadcrumb .kortti-breadcrumb-kat { color: #666; }
+    .kortti-breadcrumb .kortti-breadcrumb-kat { color: #666; }
     .kortti-random-btn {
       margin-left: auto;
       display: inline-flex;
@@ -699,7 +699,7 @@
     }
     .random-siirtyma-overlay.nakyva .random-siirtyma-teksti { opacity: 1; }
   
-.infolaatikko h2.laatikko-otsikko, .huomiolaatikko h2.laatikko-otsikko {
+.infolaatikko h2.laatikko-otsikko, .huomiolaatikko h2.laatikko-otsikko, .vaaralatikko h2.laatikko-otsikko {
   display: inline; font: inherit; font-weight: 700; color: inherit;
   margin: 0; padding: 0; letter-spacing: inherit;
 }
@@ -825,7 +825,7 @@
   </div>
 
   <div class="ilmio" id="valittajan-skimmaus">
-<div class="ilmio-tag">Ilmiö 75</div>
+<div class="ilmio-tag">Ilmiö 79</div>
 <h1>Välittäjän skimmaus — siivu molemmilta, marginaali piilossa</h1>
 <p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 19.6.2026</p>
 <p>Skimmauksessa välittäjä asettuu kahden osapuolen väliin ja <strong>ottaa osansa salaamalla todellisen marginaalin</strong>. Asiakas ei tiedä, paljonko tekijälle maksetaan; tekijä ei tiedä, paljonko asiakas maksaa. Tietoa pidetään tarkoituksella erillään, koska <strong>epäsymmetria on välittäjän tulonlähde</strong> — jos molemmat näkisivät koko summan, he saattaisivat sopia keskenään tai vaatia oikeudenmukaisempaa jakoa.</p>
@@ -851,7 +851,7 @@ flowchart TD
 <h2 class="laatikko-otsikko">Missä se esiintyy:</h2> Konsulttitalot ja resurssointifirmat data- ja IT-keikoissa (alihankkijan tuntihinnasta katoaa 30–50 % asiakkaan maksamasta), agentuurit, kiinteistö- ja rahoitusvälitys, sekä alustat, jotka ottavat suuren komission näkymättömänä. Erityisen yleistä juuri datatyössä, jossa osaajan ja loppuasiakkaan välissä on usein monta porrasta.
     </div>
 <div class="vaaralatikko">
-<strong>Tunnistaminen ja vastakeinot:</strong> Kysy suoraan: <em>paljonko loppuasiakas maksaa ja mikä on välittäjän osuus?</em> Kieltäytyminen vastaamasta on itsessään vastaus. Aito välittäjä, joka tuottaa arvoa, kestää läpinäkyvyyden. Vältä sopimuksia, jotka kieltävät puhumasta hinnoista tai estävät kaikki suorat kontaktit. Tietoasymmetria on koko mekanismin moottori — sen purkaminen poistaa skimmauksen.
+<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Kysy suoraan: <em>paljonko loppuasiakas maksaa ja mikä on välittäjän osuus?</em> Kieltäytyminen vastaamasta on itsessään vastaus. Aito välittäjä, joka tuottaa arvoa, kestää läpinäkyvyyden. Vältä sopimuksia, jotka kieltävät puhumasta hinnoista tai estävät kaikki suorat kontaktit. Tietoasymmetria on koko mekanismin moottori — sen purkaminen poistaa skimmauksen.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -875,7 +875,7 @@ flowchart TD
     <h2>Liittyvät ilmiöt</h2>
     <div class="liittyvat-kortit">
     <a href="tilipuristus.html" class="liittyvat-kortti" style="--c:#d84315">
-      <span class="liittyvat-numero">76</span>
+      <span class="liittyvat-numero">80</span>
       <span class="liittyvat-teksti">
         <span class="liittyvat-nimi">Tilipuristus</span>
         <span class="liittyvat-kuvaus">Työ otetaan vastaan, mutta maksua venytetään loputtomilla ehdoilla ja "hyväksyntäkierroksilla".</span>
@@ -883,7 +883,7 @@ flowchart TD
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
     <a href="foot-in-the-door.html" class="liittyvat-kortti" style="--c:#00897b">
-      <span class="liittyvat-numero">77</span>
+      <span class="liittyvat-numero">81</span>
       <span class="liittyvat-teksti">
         <span class="liittyvat-nimi">Foot-in-the-door</span>
         <span class="liittyvat-kuvaus">Pieni, helppo pyyntö ensin — myöntyminen tekee isomman pyynnön torjumisesta vaikeaa.</span>
@@ -891,7 +891,7 @@ flowchart TD
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
     <a href="door-in-the-face.html" class="liittyvat-kortti" style="--c:#5e4b8b">
-      <span class="liittyvat-numero">78</span>
+      <span class="liittyvat-numero">82</span>
       <span class="liittyvat-teksti">
         <span class="liittyvat-nimi">Door-in-the-face</span>
         <span class="liittyvat-kuvaus">Kohtuuton pyyntö ensin, torjunnan jälkeen "kohtuullinen" — joka oli koko ajan tavoite.</span>
@@ -899,7 +899,7 @@ flowchart TD
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
     <a href="hintaankkurointi.html" class="liittyvat-kortti" style="--c:#283593">
-      <span class="liittyvat-numero">79</span>
+      <span class="liittyvat-numero">83</span>
       <span class="liittyvat-teksti">
         <span class="liittyvat-nimi">Hintaankkurointi</span>
         <span class="liittyvat-kuvaus">Ensimmäinen esitetty luku asettaa vertailupisteen koko neuvottelulle — vaikka se olisi hatusta.</span>
@@ -907,7 +907,7 @@ flowchart TD
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
     <a href="houkutinvaihtoehto.html" class="liittyvat-kortti" style="--c:#006064">
-      <span class="liittyvat-numero">80</span>
+      <span class="liittyvat-numero">84</span>
       <span class="liittyvat-teksti">
         <span class="liittyvat-nimi">Houkutinvaihtoehto</span>
         <span class="liittyvat-kuvaus">Valikoimaan lisätään tahallaan huono vaihtoehto, joka saa kalliimman näyttämään järkevältä.</span>
@@ -920,7 +920,7 @@ flowchart TD
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="lowball-hinnoittelu.html">← Lowball — matala aloitushinta, joka nousee sitoutumisen jälkeen</a>
     <div class="kortti-nav-center">
-      <span class="kortti-nav-laskuri">75 / 113</span>
+      <span class="kortti-nav-laskuri">79 / 127</span>
       <span class="kortti-nav-vinkki">
         <kbd>&#8592;</kbd> <kbd>&#8594;</kbd> selaa &middot; <kbd>R</kbd> satunnainen
         <span class="touch-vinkki">&nbsp;· swipe &#8592;&#8594; tai &#8595; random</span>
@@ -1097,7 +1097,7 @@ flowchart TD
 
   <script>
 (function () {
-  const IDS = ["paskuuttaminen", "starve-the-beast", "overton-ikkuna", "saantelijan-kaappaus", "rautainen-laki", "valta-suojelee-valtaa", "hajota-hallitse", "bkt-harha", "astroturf", "firehose-of-falsehood", "manufactured-consent", "betteridgen-laki", "inokulointiteoria", "whataboutismi", "streisand-ilmio", "trollitehdas", "kuollut-kissa", "brandolinin-laki", "poen-laki", "godwinin-laki", "backfire-effect", "darvo", "halo-efekti", "konsensus-fetissi", "omenoita-appelsiineja", "blame-game", "gaslighting", "maalitolppien-siirtaminen", "argumenttitulva", "sunk-cost-harha", "jarjestelman-puolustelu", "dunning-kruger", "hanlonin-partaveitsi", "occamin-partaveitsi", "simple-sabotage", "kafka-ilmio", "catch-22", "goodhartin-laki", "hippo-efekti", "performatiivinen-lasnaolo", "rituaalinen-raportointi", "initiointirituaalit", "portinvartija-kulttuuri", "strateginen-osaamattomuus", "fofo", "sivustakatsojan-efekti", "parkinsonin-laki", "peterin-periaate", "pareto-periaate", "brooksin-laki", "yhdeksanyhdeksan", "hofstadterin-laki", "kuolonmarssi", "tekninen-velka", "conways-laki", "bikeshedding", "scope-creep", "korkoa-korolle", "negatiivinen-korkoa", "korkokierre", "honeypot-huijaus", "bait-and-switch", "kaarmeoljy", "ponzi-pyramidi", "pump-and-dump", "pig-butchering", "ennakkomaksuhuijaus", "badger-game", "qr-koodihuijaus", "toimitusjohtajahuijaus", "rug-pull", "ilmainen-naytetyo", "exposure-maksu", "lowball-hinnoittelu", "valittajan-skimmaus", "tilipuristus", "foot-in-the-door", "door-in-the-face", "hintaankkurointi", "houkutinvaihtoehto", "vastavuoroisuuden-ansa", "sosiaalinen-todiste", "painostusclose", "shrinkflaatio", "suunniteltu-vanheneminen", "tilausansa", "doomscrolling", "kaikukammio", "ai-slop", "parasosiaalinen-suhde", "kuollut-internet", "rage-bait", "klikkiotsikko", "engagement-bait", "1-prosentin-saanto", "aanekas-vahemmisto", "viherpesu", "sinipesu", "urheilupesu", "pinkkipesu", "tekoalypesu", "hyvesignalointi", "hiljainen-irtisanoutuminen", "hiljainen-irtisanominen", "haamutyopaikat", "kaksois-y-akseli", "pinta-alaharha", "cherry-picking-aikavali", "keskiarvo-vs-mediaani", "suhteellinen-riski", "selviytymisharha", "simpsonin-paradoksi", "p-hakkerointi"];
+  const IDS = ["paskuuttaminen", "starve-the-beast", "overton-ikkuna", "saantelijan-kaappaus", "rautainen-laki", "valta-suojelee-valtaa", "hajota-hallitse", "bkt-harha", "astroturf", "firehose-of-falsehood", "manufactured-consent", "betteridgen-laki", "inokulointiteoria", "whataboutismi", "streisand-ilmio", "trollitehdas", "kuollut-kissa", "brandolinin-laki", "poen-laki", "godwinin-laki", "backfire-effect", "darvo", "halo-efekti", "konsensus-fetissi", "omenoita-appelsiineja", "blame-game", "gaslighting", "maalitolppien-siirtaminen", "argumenttitulva", "sunk-cost-harha", "jarjestelman-puolustelu", "dunning-kruger", "hanlonin-partaveitsi", "occamin-partaveitsi", "simple-sabotage", "kafka-ilmio", "catch-22", "goodhartin-laki", "hippo-efekti", "performatiivinen-lasnaolo", "rituaalinen-raportointi", "initiointirituaalit", "portinvartija-kulttuuri", "strateginen-osaamattomuus", "fofo", "sivustakatsojan-efekti", "parkinsonin-laki", "peterin-periaate", "pareto-periaate", "brooksin-laki", "yhdeksanyhdeksan", "hofstadterin-laki", "kuolonmarssi", "lukittu-paatos", "strateginen-aliarviointi", "paatosperainen-todistelu", "lapi-hinnalla-milla-hyvansa", "tekninen-velka", "conways-laki", "bikeshedding", "scope-creep", "korkoa-korolle", "negatiivinen-korkoa", "korkokierre", "honeypot-huijaus", "bait-and-switch", "kaarmeoljy", "ponzi-pyramidi", "pump-and-dump", "pig-butchering", "ennakkomaksuhuijaus", "badger-game", "qr-koodihuijaus", "toimitusjohtajahuijaus", "rug-pull", "ilmainen-naytetyo", "exposure-maksu", "lowball-hinnoittelu", "valittajan-skimmaus", "tilipuristus", "foot-in-the-door", "door-in-the-face", "hintaankkurointi", "houkutinvaihtoehto", "vastavuoroisuuden-ansa", "sosiaalinen-todiste", "painostusclose", "shrinkflaatio", "suunniteltu-vanheneminen", "tilausansa", "doomscrolling", "kaikukammio", "ai-slop", "parasosiaalinen-suhde", "kuollut-internet", "rage-bait", "klikkiotsikko", "engagement-bait", "1-prosentin-saanto", "aanekas-vahemmisto", "viherpesu", "sinipesu", "urheilupesu", "pinkkipesu", "tekoalypesu", "hyvesignalointi", "hiljainen-irtisanoutuminen", "hiljainen-irtisanominen", "haamutyopaikat", "kaksois-y-akseli", "pinta-alaharha", "cherry-picking-aikavali", "keskiarvo-vs-mediaani", "suhteellinen-riski", "selviytymisharha", "simpsonin-paradoksi", "p-hakkerointi", "uutiskynnys", "uutisautiomaa", "paasyjournalismi", "tiedotejournalismi", "branditurvallisuus", "huonojen-uutisten-hautaaminen", "vaara-tasapaino", "keharaportointi", "gell-mannin-amnesia", "vihamielisen-median-harha"];
   const PREV = 'lowball-hinnoittelu.html';
   const NEXT = 'tilipuristus.html';
 

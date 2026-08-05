@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-  <title>Uutisautiomaa — kunta, jossa kukaan ei enää seuraa päätöksiä — Ilmiöitä</title>
-  <link rel="stylesheet" href="../style.css?v=20260727">
-  <link rel="stylesheet" href="../fonts/fonts.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Vihamielisen median harha — sama juttu on molempien mielestä puolueellinen — Ilmiöitä</title>
+  <link rel="stylesheet" href="style.css?v=20260725">
+  <link rel="stylesheet" href="fonts/fonts.css">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -16,7 +16,7 @@
       if (loaded) return;
       loaded = true;
       var s = document.createElement('script');
-      s.src = '../js/mermaid.min.js';
+      s.src = 'js/mermaid.min.js';
       s.onload = function () {
         mermaid.initialize({ startOnLoad: false, theme: 'base', themeVariables: { fontSize: '12px', fontFamily: "'DM Sans', system-ui, sans-serif", primaryColor: '#FBF5E0', primaryTextColor: '#1A1100', primaryBorderColor: '#C9A84C', lineColor: '#8B6914', secondaryColor: '#F5F0E5', tertiaryColor: '#FDFAF2', mainBkg: '#FBF5E0', nodeBorder: '#C9A84C', clusterBkg: '#F5F0E5', titleColor: '#3A2000', edgeLabelBackground: '#FDFAF2' } });
         mermaid.run();
@@ -74,8 +74,8 @@
       text-transform: uppercase;
     }
     /* Jokaiselle ilmiölle oma väri */
-    #uutisautiomaa { border-top-color: #546e7a; }
-    #uutisautiomaa .ilmio-tag { background: #546e7a; }
+    #vihamielisen-median-harha { border-top-color: #33691e; }
+    #vihamielisen-median-harha .ilmio-tag { background: #33691e; }
     .huomiolaatikko {
       background: #fdf6ec;
       border-left: 6px solid #e67e22;
@@ -192,7 +192,7 @@
     .kortti-breadcrumb a { color: #8B6914; text-decoration: none; }
     .kortti-breadcrumb a:hover { text-decoration: underline; }
     .kortti-breadcrumb-sep { color: #ccc; }
-    .kortti-breadcrumb-kat { color: #666; }
+    .kortti-breadcrumb .kortti-breadcrumb-kat { color: #666; }
     .kortti-random-btn {
       margin-left: auto;
       display: inline-flex;
@@ -333,18 +333,17 @@
 </style>
 
   <!-- SEO -->
-  <meta name="description" content="Uutisautiomaa syntyy, kun paikallislehti lakkaa: valtuuston kokouksissa ei istu ketään, virheet jäävät huomaamatta ja päätöksenteon hinta nousee.">
-  <meta name="robots" content="noindex"><!-- POISTA-JULKAISTAESSA -->
-  <link rel="canonical" href="https://www.ilmiöt.fi/uutisautiomaa.html">
-  <meta property="og:title" content="Uutisautiomaa — kunta, jossa kukaan ei enää seuraa päätöksiä — Ilmiöitä">
-  <meta property="og:description" content="Uutisautiomaa syntyy, kun paikallislehti lakkaa: valtuuston kokouksissa ei istu ketään, virheet jäävät huomaamatta ja päätöksenteon hinta nousee.">
-  <meta property="og:url" content="https://www.ilmiöt.fi/uutisautiomaa.html">
+  <meta name="description" content="Vihamielisen median harha: kaksi vastakkaista leiriä lukee saman jutun ja kumpikin kokee sen puolueelliseksi itseään vastaan.">
+  <link rel="canonical" href="https://www.ilmiöt.fi/vihamielisen-median-harha.html">
+  <meta property="og:title" content="Vihamielisen median harha — sama juttu on molempien mielestä puolueellinen — Ilmiöitä">
+  <meta property="og:description" content="Vihamielisen median harha: kaksi vastakkaista leiriä lukee saman jutun ja kumpikin kokee sen puolueelliseksi itseään vastaan.">
+  <meta property="og:url" content="https://www.ilmiöt.fi/vihamielisen-median-harha.html">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="fi_FI">
   <meta property="og:site_name" content="Ilmiöitä — Miten valta toimii">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Uutisautiomaa — kunta, jossa kukaan ei enää seuraa päätöksiä — Ilmiöitä">
-  <meta name="twitter:description" content="Uutisautiomaa syntyy, kun paikallislehti lakkaa: valtuuston kokouksissa ei istu ketään, virheet jäävät huomaamatta ja päätöksenteon hinta nousee.">
+  <meta name="twitter:title" content="Vihamielisen median harha — sama juttu on molempien mielestä puolueellinen — Ilmiöitä">
+  <meta name="twitter:description" content="Vihamielisen median harha: kaksi vastakkaista leiriä lukee saman jutun ja kumpikin kokee sen puolueelliseksi itseään vastaan.">
   <meta property="og:image" content="https://www.ilmiöt.fi/og/brand.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -368,13 +367,13 @@
           "@type": "ListItem",
           "position": 2,
           "name": "Media ja julkisuus",
-          "item": "https://www.ilmiöt.fi/kategoria-alustatalous-ja-algoritmit.html"
+          "item": "https://www.ilmiöt.fi/kategoria-media-ja-julkisuus.html"
         },
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Uutisautiomaa — kunta, jossa kukaan ei enää seuraa päätöksiä",
-          "item": "https://www.ilmiöt.fi/uutisautiomaa.html"
+          "name": "Vihamielisen median harha — sama juttu on molempien mielestä puolueellinen",
+          "item": "https://www.ilmiöt.fi/vihamielisen-median-harha.html"
         }
       ]
     },
@@ -386,10 +385,10 @@
         "width": 1200,
         "height": 630
       },
-      "@id": "https://www.ilmiöt.fi/uutisautiomaa.html#article",
-      "url": "https://www.ilmiöt.fi/uutisautiomaa.html",
-      "headline": "Uutisautiomaa — kunta, jossa kukaan ei enää seuraa päätöksiä",
-      "description": "Uutisautiomaa syntyy, kun paikallislehti lakkaa: valtuuston kokouksissa ei istu ketään, virheet jäävät huomaamatta ja päätöksenteon hinta nousee.",
+      "@id": "https://www.ilmiöt.fi/vihamielisen-median-harha.html#article",
+      "url": "https://www.ilmiöt.fi/vihamielisen-median-harha.html",
+      "headline": "Vihamielisen median harha — sama juttu on molempien mielestä puolueellinen",
+      "description": "Vihamielisen median harha: kaksi vastakkaista leiriä lukee saman jutun ja kumpikin kokee sen puolueelliseksi itseään vastaan.",
       "inLanguage": "fi",
       "articleSection": "Media ja julkisuus",
       "isPartOf": {
@@ -415,8 +414,8 @@
         "url": "https://www.ilmiöt.fi/tietoa.html",
         "description": "Kirjoittajanimi, jonka takana on kiinnostus valtaan, vaikuttamiseen ja ihmisen päättelyn vinoumiin. Sisältö perustuu julkisiin lähteisiin ja vakiintuneeseen käsitteistöön."
       },
-      "datePublished": "2026-07-28",
-      "dateModified": "2026-07-28"
+      "datePublished": "2026-08-05",
+      "dateModified": "2026-08-05"
     }
   ]
 }
@@ -433,43 +432,42 @@
 <body>
 
   <div class="kortti-breadcrumb">
-    <a href="../index.html" class="kortti-logo" aria-label="Ilmiöitä — etusivu"><img src="../favicon.svg" alt="Ilmiöitä"></a>
-    <a href="../index.html">← Kaikki ilmiöt</a>
-    <span class="kortti-breadcrumb-sep">›</span><a href="kategoria-alustatalous-ja-algoritmit.html" class="kortti-breadcrumb-kat">Media ja julkisuus</a>
+    <a href="index.html" class="kortti-logo" aria-label="Ilmiöitä — etusivu"><img src="favicon.svg" alt="Ilmiöitä"></a>
+    <a href="index.html">← Kaikki ilmiöt</a>
+    <span class="kortti-breadcrumb-sep">›</span><a href="kategoria-media-ja-julkisuus.html" class="kortti-breadcrumb-kat">Media ja julkisuus</a>
     <button class="kortti-random-btn" onclick="randomIlmio()" title="Satunnainen ilmiö (R)">
       <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>
       <span class="btn-text">Satunnainen</span>
     </button>
   </div>
 
-  <div class="ilmio" id="uutisautiomaa">
-<div class="ilmio-tag">Ilmiö 115</div>
-<h1>Uutisautiomaa — kunta, jossa kukaan ei enää seuraa päätöksiä</h1>
-<p class="ilmio-byline">Kirjoittanut <a href="../tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 28.7.2026</p>
-<p><strong>Uutisautiomaa</strong> (englanniksi <em>news desert</em>) on alue, jolla ei ole enää yhtään toimitusta seuraamassa paikallista päätöksentekoa. Termin vakiinnutti Penelope Muse Abernathyn tutkimusryhmä, joka on seurannut yhdysvaltalaisten paikallislehtien katoamista 2000-luvulta lähtien. Ilmiö ei ole amerikkalainen erikoisuus: sama logiikka toimii aina, kun ilmoitustulot siirtyvät alustoille ja toimitukset keskitetään maakuntakeskuksiin.</p>
+  <div class="ilmio" id="vihamielisen-median-harha">
+<div class="ilmio-tag">Ilmiö 127</div>
+<h1>Vihamielisen median harha — sama juttu on molempien mielestä puolueellinen</h1>
+<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 5.8.2026</p>
+<p><strong>Vihamielisen median harha</strong> (englanniksi <em>hostile media effect</em>) tarkoittaa taipumusta kokea sama uutisjuttu puolueelliseksi omaa kantaa vastaan riippumatta siitä, kummalla puolella on. Stanfordin tutkijat Robert Vallone, Lee Ross ja Mark Lepper osoittivat sen vuonna 1985: he näyttivät samat televisiouutiset Libanonin sodan tapahtumista opiskelijoille, jotka kannattivat eri osapuolia. Molemmat ryhmät arvioivat uutisoinnin vihamieliseksi omaa puoltaan kohtaan — ja pelkäsivät sen kääntävän puolueettomat katsojat vastapuolelle.</p>
 <div class="mermaid">
 flowchart TD
-  A["Ilmoitustulot\nsiirtyvät alustoille"] --&gt; B["Paikallislehti\nlakkaa tai ohenee"]
-  B --&gt; C["Kukaan ei istu\nvaltuuston kokouksessa"]
-  C --&gt; D["Päätökset, hankinnat ja\nvirheet jäävät huomaamatta"]
-  D --&gt; E["Osallistuminen ja\nlukijoiden kiinnostus laskee"]
-  E --&gt; A
+  A["Sama juttu, kaksi\nvastakkaista lukijaa"] --&gt; B["Oma kanta koetaan\nneutraaliksi lähtökohdaksi"]
+  B --&gt; C["Omaa kantaa vastaan\nsanotut kohdat jäävät mieleen"]
+  C --&gt; D["Molemmat: 'juttu on\npuolueellinen minua vastaan'"]
+  D --&gt; E["Luottamus mediaan laskee\nmolemmilla puolilla"]
   style D fill:#fdf0f0,stroke:#c0392b
     </div>
-<p class="kaavio-selitys">Kierre ruokkii itseään: mitä vähemmän paikallista uutisointia, sitä vähemmän kysyntää sille.</p>
-<p>Vaikutus ei jää symboliseksi. Yhdysvaltalaisessa tutkimuksessa <em>Financing Dies in Darkness?</em> (Gao, Lee &amp; Murphy, 2020) havaittiin, että kun kunnan paikallislehti lakkasi, kunnan lainanoton kustannukset nousivat mitattavasti — sijoittajat hinnoittelivat sen, ettei kukaan enää valvonut rahankäyttöä. Muissa tutkimuksissa on havaittu äänestysaktiivisuuden laskua, valtuustopaikkojen jäämistä ilman vastaehdokkaita ja puoluepolitiikan valtakunnallistumista: kun paikallisia asioita ei uutisoida, äänestäjä äänestää valtakunnan politiikan perusteella.</p>
-<p>Autiomaa syntyy myös hiljaa, ilman lakkautusta. Lehti voi ilmestyä edelleen, mutta sisältö tulee maakuntakeskuksesta ja kunnasta kirjoitetaan vain silloin, kun sattuu jotain poikkeuksellista. Tätä kutsutaan aavelehdeksi (<em>ghost newspaper</em>).</p>
+<p class="kaavio-selitys">Kumpikin muistaa oikein — vain eri puolet samasta jutusta.</p>
+<p>Mekanismi on kaksiosainen. Ensinnäkin oma kanta tuntuu neutraalilta lähtöpisteeltä, jolloin jokainen poikkeama siitä näyttää vinoumalta. Toiseksi muisti on valikoiva: omaa kantaa vastaan sanotut kohdat rekisteröityvät voimakkaammin kuin sitä tukevat, koska ne vaativat vastaväitteen. Lopputulos on julkisuuden kannalta epämiellyttävä — mitä tasapainoisempi juttu on, sitä useampi kokee sen vihamieliseksi.</p>
+<p>Harha ei tarkoita, ettei puolueellisuutta olisi olemassa. Se tarkoittaa, ettei oma kokemus puolueellisuudesta ole luotettava mittari sen olemassaolosta.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Ero läheisiin käsitteisiin:</h2> <a href="uutiskynnys.html">Uutiskynnyksessä</a> joku arvioi aiheen ja jättää sen tekemättä; uutisautiomaassa ei ole ketään, joka edes arvioisi. Tyhjiö ei jää tyhjäksi: se täyttyy sosiaalisen median huhuilla ja joskus poliittisesti rahoitetuilla valeverkkolehdillä, jotka jäljittelevät paikallislehden ulkoasua.
+<h2 class="laatikko-otsikko">Ero läheisiin käsitteisiin:</h2> <a href="kaikukammio.html">Kaikukammiossa</a> et kohtaa vastakkaista näkemystä lainkaan; tässä kohtaat sen ja tulkitset sen hyökkäykseksi. <a href="backfire-effect.html">Backfire effect</a> kertoo, mitä siitä seuraa: vastakkaisen tiedon kohtaaminen voi vahvistaa alkuperäistä kantaa. <a href="aanekas-vahemmisto.html">Äänekäs vähemmistö</a> selittää, miksi palaute näyttää yksipuoliselta myös toimituksen suunnasta.
     </div>
 <div class="huomiolaatikko">
 <h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2>
 <ul style="margin:0.5em 0 0;">
-<li>Tarkista, kuka kirjoittaa oman kuntasi päätöksistä. Jos jutuissa ei ole nimeä eikä paikallista haastateltavaa, sisältö tulee muualta.</li>
-<li>Lue esityslistat ja pöytäkirjat suoraan kunnan sivuilta — ne julkaistaan, vaikka niistä ei uutisoitaisi.</li>
-<li>Julkisuuslaki antaa oikeuden pyytää asiakirjoja itse; tietopyyntö on maksuton ja siihen on vastattava.</li>
-<li>Epäile "paikallista" verkkosivustoa, jolla ei ole toimitusta, osoitetta eikä nimettyjä toimittajia.</li>
-<li>Paikallisen journalismin tilaaminen on käytännössä ainoa vastakeino, joka vaikuttaa rakenteeseen eikä vain omaan tietotasoon.</li>
+<li>Älä luota muistikuvaan — laske. Montako kriittistä lausetta juttu esittää kumpaakin osapuolta kohtaan?</li>
+<li>Kysy itseltäsi: kokisiko vastapuolen edustaja tämän jutun puolueettomaksi? Jos ei, kumpi teistä on oikeassa ja millä perusteella?</li>
+<li>Erota "juttu on virheellinen" ja "juttu ei ole minun puolellani". Vain edellinen on korjattavissa oikaisulla.</li>
+<li>Jos aiot valittaa puolueellisuudesta, osoita konkreettinen virhe tai poisjätetty olennainen tieto — muuten palaute vahvistaa vain sitä, että kaikki valittavat.</li>
+<li>Toimituksessa: symmetrinen valitusvirta on merkki tasapainosta, ei sen puutteesta. Epäsymmetria on se, mitä kannattaa tutkia.</li>
 </ul>
 </div>
 <div class="lue-lisaa">
@@ -477,14 +475,13 @@ flowchart TD
 <div class="lue-lisaa-rivi">
 <span class="lue-lisaa-tyyppi">Tutkimusta</span>
 <ul class="lue-lisaa-lista">
-<li><cite>Financing Dies in Darkness? The Impact of Newspaper Closures on Public Finance</cite> — Gao, Lee &amp; Murphy (2020)</li>
-<li><cite>The Expanding News Desert</cite> — Penelope Muse Abernathy (2018)</li>
+<li><cite>The Hostile Media Phenomenon</cite> — Robert Vallone, Lee Ross &amp; Mark Lepper (1985)</li>
 </ul>
 </div>
 <div class="lue-lisaa-rivi">
 <span class="lue-lisaa-tyyppi">Verkossa</span>
 <ul class="lue-lisaa-lista">
-<li><a href="https://en.wikipedia.org/wiki/News_desert" target="_blank" rel="noopener">Wikipedia: News desert (englanniksi)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Hostile_media_effect" target="_blank" rel="noopener">Wikipedia: Hostile media effect (englanniksi)</a></li>
 </ul>
 </div>
 </div>
@@ -493,35 +490,35 @@ flowchart TD
   <aside class="liittyvat" aria-label="Liittyvät ilmiöt">
     <h2>Liittyvät ilmiöt</h2>
     <div class="liittyvat-kortit">
-    <a href="uutiskynnys.html" class="liittyvat-kortti" style="--c:#455a64">
-      <span class="liittyvat-numero">114</span>
+    <a href="gell-mannin-amnesia.html" class="liittyvat-kortti" style="--c:#e65100">
+      <span class="liittyvat-numero">126</span>
       <span class="liittyvat-teksti">
-        <span class="liittyvat-nimi">Uutiskynnys</span>
-        <span class="liittyvat-kuvaus">Tapahtuman on oltava tuore, yllättävä ja henkilöitävä — hidas ja rakenteellinen jää kertomatta.</span>
+        <span class="liittyvat-nimi">Gell-Mannin amnesia</span>
+        <span class="liittyvat-kuvaus">Huomaat oman alasi jutussa virheet, käännät sivua ja luotat seuraavaan aivan yhtä paljon.</span>
       </span>
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
-    <a href="paasyjournalismi.html" class="liittyvat-kortti" style="--c:#6d4c41">
-      <span class="liittyvat-numero">116</span>
+    <a href="kaikukammio.html" class="liittyvat-kortti" style="--c:#00838f">
+      <span class="liittyvat-numero">92</span>
       <span class="liittyvat-teksti">
-        <span class="liittyvat-nimi">Pääsyjournalismi</span>
-        <span class="liittyvat-kuvaus">Kriittinen kysymys maksaa lähteen, joten kysymykset pehmenevät ja juttu kevenee.</span>
+        <span class="liittyvat-nimi">Kaikukammio</span>
+        <span class="liittyvat-kuvaus">Ympäristö, jossa kohtaat vain omia näkemyksiäsi vahvistavaa sisältöä.</span>
       </span>
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
-    <a href="../valta-suojelee-valtaa.html" class="liittyvat-kortti" style="--c:#2c3e50">
-      <span class="liittyvat-numero">6</span>
+    <a href="backfire-effect.html" class="liittyvat-kortti" style="--c:#d35400">
+      <span class="liittyvat-numero">21</span>
       <span class="liittyvat-teksti">
-        <span class="liittyvat-nimi">Valta suojelee valtaa</span>
-        <span class="liittyvat-kuvaus">Vallassa olevat asettavat pelisäännöt, valitsevat tuomarit ja määrittelevät, mikä on laillista.</span>
+        <span class="liittyvat-nimi">Backfire effect</span>
+        <span class="liittyvat-kuvaus">Virheellisen uskomuksen korjausyritys voi vahvistaa uskomusta entisestään.</span>
       </span>
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
-    <a href="../manufactured-consent.html" class="liittyvat-kortti" style="--c:#1a5276">
-      <span class="liittyvat-numero">11</span>
+    <a href="aanekas-vahemmisto.html" class="liittyvat-kortti" style="--c:#7b241c">
+      <span class="liittyvat-numero">100</span>
       <span class="liittyvat-teksti">
-        <span class="liittyvat-nimi">Manufactured consent</span>
-        <span class="liittyvat-kuvaus">Valtamedia suodattaa uutiset omistajien ja mainostajien ehdoilla — yleisön suostumus tuotetaan.</span>
+        <span class="liittyvat-nimi">Äänekäs vähemmistö</span>
+        <span class="liittyvat-kuvaus">Kärjekkäimmät kommentoijat näkyvät eniten, kun hiljainen enemmistö ei koskaan vastaa.</span>
       </span>
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
@@ -529,15 +526,15 @@ flowchart TD
   </aside>
 
   <nav class="kortti-nav">
-    <a class="kortti-nav-btn" href="uutiskynnys.html">← Uutiskynnys — miksi tärkeä asia ei koskaan päädy uutisiin</a>
+    <a class="kortti-nav-btn" href="gell-mannin-amnesia.html">← Gell-Mannin amnesia — luet oman alasi jutun ja unohdat sen heti</a>
     <div class="kortti-nav-center">
-      <span class="kortti-nav-laskuri">115 / 123</span>
+      <span class="kortti-nav-laskuri">127 / 127</span>
       <span class="kortti-nav-vinkki">
         <kbd>&#8592;</kbd> <kbd>&#8594;</kbd> selaa &middot; <kbd>R</kbd> satunnainen
         <span class="touch-vinkki">&nbsp;· swipe &#8592;&#8594; tai &#8595; random</span>
       </span>
     </div>
-    <a class="kortti-nav-btn" href="paasyjournalismi.html">Pääsyjournalismi — kriittinen kysymys maksaa lähteen →</a>
+    <span class="kortti-nav-btn disabled">→</span>
   </nav>
 
 
@@ -699,15 +696,15 @@ flowchart TD
 
   <script>
 (function () {
-  const IDS = ["paskuuttaminen", "starve-the-beast", "overton-ikkuna", "saantelijan-kaappaus", "rautainen-laki", "valta-suojelee-valtaa", "hajota-hallitse", "bkt-harha", "astroturf", "firehose-of-falsehood", "manufactured-consent", "betteridgen-laki", "inokulointiteoria", "whataboutismi", "streisand-ilmio", "trollitehdas", "kuollut-kissa", "brandolinin-laki", "poen-laki", "godwinin-laki", "backfire-effect", "darvo", "halo-efekti", "konsensus-fetissi", "omenoita-appelsiineja", "blame-game", "gaslighting", "maalitolppien-siirtaminen", "argumenttitulva", "sunk-cost-harha", "jarjestelman-puolustelu", "dunning-kruger", "hanlonin-partaveitsi", "occamin-partaveitsi", "simple-sabotage", "kafka-ilmio", "catch-22", "goodhartin-laki", "hippo-efekti", "performatiivinen-lasnaolo", "rituaalinen-raportointi", "initiointirituaalit", "portinvartija-kulttuuri", "strateginen-osaamattomuus", "fofo", "sivustakatsojan-efekti", "parkinsonin-laki", "peterin-periaate", "pareto-periaate", "brooksin-laki", "yhdeksanyhdeksan", "hofstadterin-laki", "kuolonmarssi", "tekninen-velka", "conways-laki", "bikeshedding", "scope-creep", "korkoa-korolle", "negatiivinen-korkoa", "korkokierre", "honeypot-huijaus", "bait-and-switch", "kaarmeoljy", "ponzi-pyramidi", "pump-and-dump", "pig-butchering", "ennakkomaksuhuijaus", "badger-game", "qr-koodihuijaus", "toimitusjohtajahuijaus", "rug-pull", "ilmainen-naytetyo", "exposure-maksu", "lowball-hinnoittelu", "valittajan-skimmaus", "tilipuristus", "foot-in-the-door", "door-in-the-face", "hintaankkurointi", "houkutinvaihtoehto", "vastavuoroisuuden-ansa", "sosiaalinen-todiste", "painostusclose", "shrinkflaatio", "suunniteltu-vanheneminen", "tilausansa", "doomscrolling", "kaikukammio", "ai-slop", "parasosiaalinen-suhde", "kuollut-internet", "rage-bait", "klikkiotsikko", "engagement-bait", "1-prosentin-saanto", "aanekas-vahemmisto", "viherpesu", "sinipesu", "urheilupesu", "pinkkipesu", "tekoalypesu", "hyvesignalointi", "hiljainen-irtisanoutuminen", "hiljainen-irtisanominen", "haamutyopaikat", "kaksois-y-akseli", "pinta-alaharha", "cherry-picking-aikavali", "keskiarvo-vs-mediaani", "suhteellinen-riski", "selviytymisharha", "simpsonin-paradoksi", "p-hakkerointi"];
-  const PREV = 'uutiskynnys.html';
-  const NEXT = 'paasyjournalismi.html';
+  const IDS = ["paskuuttaminen", "starve-the-beast", "overton-ikkuna", "saantelijan-kaappaus", "rautainen-laki", "valta-suojelee-valtaa", "hajota-hallitse", "bkt-harha", "astroturf", "firehose-of-falsehood", "manufactured-consent", "betteridgen-laki", "inokulointiteoria", "whataboutismi", "streisand-ilmio", "trollitehdas", "kuollut-kissa", "brandolinin-laki", "poen-laki", "godwinin-laki", "backfire-effect", "darvo", "halo-efekti", "konsensus-fetissi", "omenoita-appelsiineja", "blame-game", "gaslighting", "maalitolppien-siirtaminen", "argumenttitulva", "sunk-cost-harha", "jarjestelman-puolustelu", "dunning-kruger", "hanlonin-partaveitsi", "occamin-partaveitsi", "simple-sabotage", "kafka-ilmio", "catch-22", "goodhartin-laki", "hippo-efekti", "performatiivinen-lasnaolo", "rituaalinen-raportointi", "initiointirituaalit", "portinvartija-kulttuuri", "strateginen-osaamattomuus", "fofo", "sivustakatsojan-efekti", "parkinsonin-laki", "peterin-periaate", "pareto-periaate", "brooksin-laki", "yhdeksanyhdeksan", "hofstadterin-laki", "kuolonmarssi", "lukittu-paatos", "strateginen-aliarviointi", "paatosperainen-todistelu", "lapi-hinnalla-milla-hyvansa", "tekninen-velka", "conways-laki", "bikeshedding", "scope-creep", "korkoa-korolle", "negatiivinen-korkoa", "korkokierre", "honeypot-huijaus", "bait-and-switch", "kaarmeoljy", "ponzi-pyramidi", "pump-and-dump", "pig-butchering", "ennakkomaksuhuijaus", "badger-game", "qr-koodihuijaus", "toimitusjohtajahuijaus", "rug-pull", "ilmainen-naytetyo", "exposure-maksu", "lowball-hinnoittelu", "valittajan-skimmaus", "tilipuristus", "foot-in-the-door", "door-in-the-face", "hintaankkurointi", "houkutinvaihtoehto", "vastavuoroisuuden-ansa", "sosiaalinen-todiste", "painostusclose", "shrinkflaatio", "suunniteltu-vanheneminen", "tilausansa", "doomscrolling", "kaikukammio", "ai-slop", "parasosiaalinen-suhde", "kuollut-internet", "rage-bait", "klikkiotsikko", "engagement-bait", "1-prosentin-saanto", "aanekas-vahemmisto", "viherpesu", "sinipesu", "urheilupesu", "pinkkipesu", "tekoalypesu", "hyvesignalointi", "hiljainen-irtisanoutuminen", "hiljainen-irtisanominen", "haamutyopaikat", "kaksois-y-akseli", "pinta-alaharha", "cherry-picking-aikavali", "keskiarvo-vs-mediaani", "suhteellinen-riski", "selviytymisharha", "simpsonin-paradoksi", "p-hakkerointi", "uutiskynnys", "uutisautiomaa", "paasyjournalismi", "tiedotejournalismi", "branditurvallisuus", "huonojen-uutisten-hautaaminen", "vaara-tasapaino", "keharaportointi", "gell-mannin-amnesia", "vihamielisen-median-harha"];
+  const PREV = 'gell-mannin-amnesia.html';
+  const NEXT = '';
 
   function randomIlmio() {
     let id;
-    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'uutisautiomaa');
+    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'vihamielisen-median-harha');
     merkitseRandomHyppy();
-    window.location.href = '../' + id + '.html';
+    window.location.href = id + '.html';
   }
   window.randomIlmio = randomIlmio;
 
@@ -751,7 +748,7 @@ flowchart TD
     var overlay = document.createElement('div');
     overlay.className = 'random-siirtyma-overlay';
     overlay.innerHTML =
-      '<img class="random-siirtyma-logo" src="../favicon.svg" alt="">' +
+      '<img class="random-siirtyma-logo" src="favicon.svg" alt="">' +
       '<span class="random-siirtyma-teksti">' + teksti + '&hellip;</span>';
     document.body.appendChild(overlay);
     requestAnimationFrame(function () {
@@ -762,9 +759,9 @@ flowchart TD
   function naytaRandomSiirtyma() {
     if (_siirtymaKaynnissa) return;
     var id;
-    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'uutisautiomaa');
+    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'vihamielisen-median-harha');
     merkitseRandomHyppy();
-    naytaSiirtyma('Satunnainen ilmiö', '../' + id + '.html');
+    naytaSiirtyma('Satunnainen ilmiö', id + '.html');
   }
   window.naytaRandomSiirtyma = naytaRandomSiirtyma;
   function naytaAlasSiirtyma() {
@@ -778,7 +775,7 @@ flowchart TD
       var overlay = document.createElement('div');
       overlay.className = 'random-siirtyma-overlay';
       overlay.innerHTML =
-        '<img class="random-siirtyma-logo" src="../favicon.svg" alt="">' +
+        '<img class="random-siirtyma-logo" src="favicon.svg" alt="">' +
         '<span class="random-siirtyma-teksti">Eteenpäin&hellip;</span>';
       document.body.appendChild(overlay);
       requestAnimationFrame(function () {
@@ -799,7 +796,7 @@ flowchart TD
       var overlay = document.createElement('div');
       overlay.className = 'random-siirtyma-overlay';
       overlay.innerHTML =
-        '<img class="random-siirtyma-logo" src="../favicon.svg" alt="">' +
+        '<img class="random-siirtyma-logo" src="favicon.svg" alt="">' +
         '<span class="random-siirtyma-teksti">Takaisin&hellip;</span>';
       document.body.appendChild(overlay);
       requestAnimationFrame(function () {
@@ -915,7 +912,7 @@ flowchart TD
   </script>
 
   <footer class="ilmio-footer">
-    <p>© 2026 Ilmiöitä — Miten valta toimii · Kirjoittanut Ilmiömies · <a href="../tietoa.html">Tietoa sivustosta ja tekijästä</a></p>
+    <p>© 2026 Ilmiöitä — Miten valta toimii · Kirjoittanut Ilmiömies · <a href="tietoa.html">Tietoa sivustosta ja tekijästä</a></p>
   </footer>
 </body>
 </html>

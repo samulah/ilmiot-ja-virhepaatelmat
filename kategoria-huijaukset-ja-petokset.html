@@ -198,8 +198,11 @@
       font-weight: 700; line-height: 1.1; letter-spacing: -0.015em;
       color: #fff; margin: 0; max-width: 20ch;
     }
-    .kat-alaotsikko {
-      display: block; margin-top: 0.5rem;
+    /* Oma <p> h1:n ulkopuolella. font-family toistetaan tässä, koska ulkoasu
+       periytyi aiemmin h1:ltä — nyt periytymisketju ei enää kulje sen kautta. */
+    p.kat-alaotsikko {
+      margin: 0.5rem 0 0;
+      font-family: var(--font-display, 'Spectral', Georgia, serif);
       font-size: clamp(0.95rem, 2.2vw, 1.18rem);
       font-weight: 400; font-style: italic; line-height: 1.4;
       color: rgba(255,255,255,0.6); max-width: 34ch;
@@ -359,9 +362,10 @@
         <a class="kat-paluu" href="index.html">
           <img src="favicon.svg" alt="" width="20" height="20">Kaikki ilmiöt
         </a>
-        <p class="kat-eyebrow">Kategoria 7 / 12</p>
-        <h1 class="kat-nimi">Huijaukset ja petokset<span class="kat-alaotsikko">sama kaava yhdestätoista eri kulmasta</span></h1>
-        <p class="kat-meta">11 ilmiötä<span>·</span>Ilmiöt 61&ndash;71<span>·</span>Päivitetty 25.7.2026</p>
+        <p class="kat-eyebrow">Kategoria 7 / 13</p>
+        <h1 class="kat-nimi">Huijaukset ja petokset</h1>
+        <p class="kat-alaotsikko">sama kaava yhdestätoista eri kulmasta</p>
+        <p class="kat-meta">11 ilmiötä<span>·</span>Ilmiöt 65&ndash;75<span>·</span>Päivitetty 25.7.2026</p>
       </div>
     </div>
   </header>
@@ -377,7 +381,7 @@
 <h2>Yksitoista mallia</h2>
 <div class="kat-kortit">
 <a href="honeypot-huijaus.html" class="hub-kortti" style="--c:#b8860b">
-  <span class="hub-numero">61</span>
+  <span class="hub-numero">65</span>
   <span class="hub-teksti">
     <span class="hub-nimi">Honeypot-huijaus</span>
     <span class="hub-kuvaus">Ansa houkuttelee helpolla voitolla — uloskäynti sulkeutuu vasta, kun olet jo sitoutunut.</span>
@@ -385,7 +389,7 @@
   <span class="hub-nuoli" aria-hidden="true">›</span>
 </a>
 <a href="bait-and-switch.html" class="hub-kortti" style="--c:#ad1457">
-  <span class="hub-numero">62</span>
+  <span class="hub-numero">66</span>
   <span class="hub-teksti">
     <span class="hub-nimi">Bait and switch</span>
     <span class="hub-kuvaus">Näyttävä tarjous houkuttelee paikalle, mutta tilalle myydäänkin jotain kalliimpaa tai huonompaa.</span>
@@ -393,7 +397,7 @@
   <span class="hub-nuoli" aria-hidden="true">›</span>
 </a>
 <a href="kaarmeoljy.html" class="hub-kortti" style="--c:#558b2f">
-  <span class="hub-numero">63</span>
+  <span class="hub-numero">67</span>
   <span class="hub-teksti">
     <span class="hub-nimi">Käärmeöljy</span>
     <span class="hub-kuvaus">Ihmetuote, joka lupaa parantaa kaiken eikä tee mitään — myyjä elää lupauksista, ei tuloksista.</span>
@@ -401,7 +405,7 @@
   <span class="hub-nuoli" aria-hidden="true">›</span>
 </a>
 <a href="ponzi-pyramidi.html" class="hub-kortti" style="--c:#c62828">
-  <span class="hub-numero">64</span>
+  <span class="hub-numero">68</span>
   <span class="hub-teksti">
     <span class="hub-nimi">Ponzi ja pyramidihuijaus</span>
     <span class="hub-kuvaus">"Tuotot" maksetaan uusien sijoittajien rahoista — kunnes uusia ei enää tule ja korttitalo romahtaa.</span>
@@ -409,7 +413,7 @@
   <span class="hub-nuoli" aria-hidden="true">›</span>
 </a>
 <a href="pump-and-dump.html" class="hub-kortti" style="--c:#5e35b1">
-  <span class="hub-numero">65</span>
+  <span class="hub-numero">69</span>
   <span class="hub-teksti">
     <span class="hub-nimi">Pump and dump</span>
     <span class="hub-kuvaus">Halpa osake tai krypto pumpataan hypellä huippuhintaan — ja dumpataan hyväuskoisten syliin.</span>
@@ -417,7 +421,7 @@
   <span class="hub-nuoli" aria-hidden="true">›</span>
 </a>
 <a href="pig-butchering.html" class="hub-kortti" style="--c:#bf360c">
-  <span class="hub-numero">66</span>
+  <span class="hub-numero">70</span>
   <span class="hub-teksti">
     <span class="hub-nimi">Pig butchering</span>
     <span class="hub-kuvaus">Uhri "lihotetaan" viikkojen luottamuksella ja pikkuvoitoilla ennen kuin tili tyhjennetään.</span>
@@ -425,7 +429,7 @@
   <span class="hub-nuoli" aria-hidden="true">›</span>
 </a>
 <a href="ennakkomaksuhuijaus.html" class="hub-kortti" style="--c:#303f9f">
-  <span class="hub-numero">67</span>
+  <span class="hub-numero">71</span>
   <span class="hub-teksti">
     <span class="hub-nimi">Ennakkomaksuhuijaus (419)</span>
     <span class="hub-kuvaus">Suuri summa odottaa — kunhan maksat ensin "pienen" käsittelymaksun, ja sitten seuraavan.</span>
@@ -433,7 +437,7 @@
   <span class="hub-nuoli" aria-hidden="true">›</span>
 </a>
 <a href="badger-game.html" class="hub-kortti" style="--c:#455a64">
-  <span class="hub-numero">68</span>
+  <span class="hub-numero">72</span>
   <span class="hub-teksti">
     <span class="hub-nimi">Badger game</span>
     <span class="hub-kuvaus">Uhri houkutellaan kiusalliseen tilanteeseen ja kiristetään maksamaan vaikenemisesta.</span>
@@ -441,7 +445,7 @@
   <span class="hub-nuoli" aria-hidden="true">›</span>
 </a>
 <a href="qr-koodihuijaus.html" class="hub-kortti" style="--c:#0d47a1">
-  <span class="hub-numero">69</span>
+  <span class="hub-numero">73</span>
   <span class="hub-teksti">
     <span class="hub-nimi">QR-koodihuijaus</span>
     <span class="hub-kuvaus">Väärennetty QR-koodi ohjaa valesivulle maksamaan — parkkimittarit ovat tyypillinen kohde.</span>
@@ -449,7 +453,7 @@
   <span class="hub-nuoli" aria-hidden="true">›</span>
 </a>
 <a href="toimitusjohtajahuijaus.html" class="hub-kortti" style="--c:#455a64">
-  <span class="hub-numero">70</span>
+  <span class="hub-numero">74</span>
   <span class="hub-teksti">
     <span class="hub-nimi">Toimitusjohtajahuijaus</span>
     <span class="hub-kuvaus">"Johtaja" vaatii sähköpostilla kiireellistä maksua — kiire ja salailu ovat tuntomerkit.</span>
@@ -457,7 +461,7 @@
   <span class="hub-nuoli" aria-hidden="true">›</span>
 </a>
 <a href="rug-pull.html" class="hub-kortti" style="--c:#4527a0">
-  <span class="hub-numero">71</span>
+  <span class="hub-numero">75</span>
   <span class="hub-teksti">
     <span class="hub-nimi">Rug pull</span>
     <span class="hub-kuvaus">Kehittäjät hypettävät kryptotokenin, keräävät sijoittajien rahat ja katoavat — arvo romahtaa nollaan.</span>
@@ -500,7 +504,7 @@
       <span class="kat-siirry-nimi">8. Myyntikikat ja painostus &rarr;</span>
     </a>
   </div>
-  <a class="kat-siirry-kaikki" href="index.html">Kategoria <b>7 / 12</b> &middot; katso kaikki kategoriat</a>
+  <a class="kat-siirry-kaikki" href="index.html">Kategoria <b>7 / 13</b> &middot; katso kaikki kategoriat</a>
 </nav>
   </main>
 

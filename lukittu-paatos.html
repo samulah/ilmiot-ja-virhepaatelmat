@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-  <title>Strateginen aliarviointi — hinta viritetään portin kokoiseksi — Ilmiöitä</title>
-  <link rel="stylesheet" href="../style.css?v=20260727">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Lukittu päätös — todellinen päätös tehtiin jo ennen kokousta — Ilmiöitä</title>
+  <link rel="stylesheet" href="style.css?v=20260725">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -15,7 +15,7 @@
       if (loaded) return;
       loaded = true;
       var s = document.createElement('script');
-      s.src = '../js/mermaid.min.js';
+      s.src = 'js/mermaid.min.js';
       s.onload = function () {
         mermaid.initialize({ startOnLoad: false, theme: 'base', themeVariables: { fontSize: '12px', fontFamily: "'DM Sans', system-ui, sans-serif", primaryColor: '#FBF5E0', primaryTextColor: '#1A1100', primaryBorderColor: '#C9A84C', lineColor: '#8B6914', secondaryColor: '#F5F0E5', tertiaryColor: '#FDFAF2', mainBkg: '#FBF5E0', nodeBorder: '#C9A84C', clusterBkg: '#F5F0E5', titleColor: '#3A2000', edgeLabelBackground: '#FDFAF2' } });
         mermaid.run();
@@ -114,8 +114,8 @@
     #yhdeksanyhdeksan          .ilmio-tag { background: #117a65; }
     #hofstadterin-laki         { border-top-color: #7d6608; }
     #hofstadterin-laki         .ilmio-tag { background: #7d6608; }
-    #strateginen-aliarviointi { border-top-color: #7a4b12; }
-    #strateginen-aliarviointi .ilmio-tag { background: #7a4b12; }
+    #lukittu-paatos { border-top-color: #3d5a6c; }
+    #lukittu-paatos .ilmio-tag { background: #3d5a6c; }
     #kuolonmarssi              { border-top-color: #78281f; }
     #kuolonmarssi              .ilmio-tag { background: #78281f; }
     #tekninen-velka            { border-top-color: #1b4f72; }
@@ -563,7 +563,7 @@
     .kortti-breadcrumb a { color: #8B6914; text-decoration: none; }
     .kortti-breadcrumb a:hover { text-decoration: underline; }
     .kortti-breadcrumb-sep { color: #ccc; }
-    .kortti-breadcrumb-kat { color: #666; }
+    .kortti-breadcrumb .kortti-breadcrumb-kat { color: #666; }
     .kortti-random-btn {
       margin-left: auto;
       display: inline-flex;
@@ -706,18 +706,17 @@
 </style>
 
   <!-- SEO -->
-  <meta name="description" content="Strateginen aliarviointi: suurhankkeiden kustannusarviot ovat pielessä systemaattisesti samaan suuntaan. Selitämme miksi rehellinen arvio häviää portilla ja mikä auttaa.">
-  <meta name="robots" content="noindex"><!-- POISTA-JULKAISTAESSA -->
-  <link rel="canonical" href="https://www.ilmiöt.fi/strateginen-aliarviointi.html">
-  <meta property="og:title" content="Strateginen aliarviointi — hinta viritetään portin kokoiseksi — Ilmiöitä">
-  <meta property="og:description" content="Strateginen aliarviointi: suurhankkeiden kustannusarviot ovat pielessä systemaattisesti samaan suuntaan. Selitämme miksi rehellinen arvio häviää portilla ja mikä auttaa.">
-  <meta property="og:url" content="https://www.ilmiöt.fi/strateginen-aliarviointi.html">
+  <meta name="description" content="Lukittu päätös: muodollinen päätös tehdään kokouksessa, todellinen vuosia aiemmin. Selitämme miksi lukittuminen maksaa rahaa ja miten tunnistat sen ajoissa.">
+  <link rel="canonical" href="https://www.ilmiöt.fi/lukittu-paatos.html">
+  <meta property="og:title" content="Lukittu päätös — todellinen päätös tehtiin jo ennen kokousta — Ilmiöitä">
+  <meta property="og:description" content="Lukittu päätös: muodollinen päätös tehdään kokouksessa, todellinen vuosia aiemmin. Selitämme miksi lukittuminen maksaa rahaa ja miten tunnistat sen ajoissa.">
+  <meta property="og:url" content="https://www.ilmiöt.fi/lukittu-paatos.html">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="fi_FI">
   <meta property="og:site_name" content="Ilmiöitä — Miten valta toimii">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Strateginen aliarviointi — hinta viritetään portin kokoiseksi — Ilmiöitä">
-  <meta name="twitter:description" content="Strateginen aliarviointi: suurhankkeiden kustannusarviot ovat pielessä systemaattisesti samaan suuntaan. Selitämme miksi rehellinen arvio häviää portilla ja mikä auttaa.">
+  <meta name="twitter:title" content="Lukittu päätös — todellinen päätös tehtiin jo ennen kokousta — Ilmiöitä">
+  <meta name="twitter:description" content="Lukittu päätös: muodollinen päätös tehdään kokouksessa, todellinen vuosia aiemmin. Selitämme miksi lukittuminen maksaa rahaa ja miten tunnistat sen ajoissa.">
   <meta property="og:image" content="https://www.ilmiöt.fi/og/brand.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -741,13 +740,13 @@
           "@type": "ListItem",
           "position": 2,
           "name": "Projekti- ja ohjelmistokehitys",
-          "item": "https://www.ilmiöt.fi/#projekti-ja-ohjelmistokehitys"
+          "item": "https://www.ilmiöt.fi/kategoria-projekti-ja-ohjelmistokehitys.html"
         },
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Strateginen aliarviointi — hinta viritetään portin kokoiseksi",
-          "item": "https://www.ilmiöt.fi/strateginen-aliarviointi.html"
+          "name": "Lukittu päätös — todellinen päätös tehtiin jo ennen kokousta",
+          "item": "https://www.ilmiöt.fi/lukittu-paatos.html"
         }
       ]
     },
@@ -759,10 +758,10 @@
         "width": 1200,
         "height": 630
       },
-      "@id": "https://www.ilmiöt.fi/strateginen-aliarviointi.html#article",
-      "url": "https://www.ilmiöt.fi/strateginen-aliarviointi.html",
-      "headline": "Strateginen aliarviointi — hinta viritetään portin kokoiseksi",
-      "description": "Suurhankkeiden kustannusarviot eivät ole satunnaisesti pielessä. Ne ovat pielessä systemaattisesti samaan suuntaan — alakanttiin. Systemaattinen virhe e…",
+      "@id": "https://www.ilmiöt.fi/lukittu-paatos.html#article",
+      "url": "https://www.ilmiöt.fi/lukittu-paatos.html",
+      "headline": "Lukittu päätös — todellinen päätös tehtiin jo ennen kokousta",
+      "description": "Virallinen päätös tehdään kokouksessa, jossa on esityslista, esittelijä ja pöytäkirja. Todellinen päätös tehtiin usein vuosia aiemmin — käytävällä, sito…",
       "inLanguage": "fi",
       "articleSection": "Projekti- ja ohjelmistokehitys",
       "isPartOf": {
@@ -783,8 +782,8 @@
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Strateginen aliarviointi — hinta viritetään portin kokoiseksi",
-        "description": "Suurhankkeiden kustannusarviot eivät ole satunnaisesti pielessä. Ne ovat pielessä systemaattisesti samaan suuntaan — alakanttiin. Systemaattinen virhe e…",
+        "name": "Lukittu päätös — todellinen päätös tehtiin jo ennen kokousta",
+        "description": "Virallinen päätös tehdään kokouksessa, jossa on esityslista, esittelijä ja pöytäkirja. Todellinen päätös tehtiin usein vuosia aiemmin — käytävällä, sito…",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
@@ -798,8 +797,8 @@
         "url": "https://www.ilmiöt.fi/tietoa.html",
         "description": "Kirjoittajanimi, jonka takana on kiinnostus valtaan, vaikuttamiseen ja ihmisen päättelyn vinoumiin. Sisältö perustuu julkisiin lähteisiin ja vakiintuneeseen käsitteistöön."
       },
-      "datePublished": "2026-07-27",
-      "dateModified": "2026-07-27"
+      "datePublished": "2026-08-05",
+      "dateModified": "2026-08-05"
     }
   ]
 }
@@ -816,54 +815,62 @@
 <body>
 
   <div class="kortti-breadcrumb">
-    <a href="../index.html" class="kortti-logo" aria-label="Ilmiöitä — etusivu"><img src="../favicon.svg" alt="Ilmiöitä"></a>
-    <a href="../index.html">← Kaikki ilmiöt</a>
-    <span class="kortti-breadcrumb-sep">›</span><span class="kortti-breadcrumb-kat">Projekti- ja ohjelmistokehitys</span>
+    <a href="index.html" class="kortti-logo" aria-label="Ilmiöitä — etusivu"><img src="favicon.svg" alt="Ilmiöitä"></a>
+    <a href="index.html">← Kaikki ilmiöt</a>
+    <span class="kortti-breadcrumb-sep">›</span><a href="kategoria-projekti-ja-ohjelmistokehitys.html" class="kortti-breadcrumb-kat">Projekti- ja ohjelmistokehitys</a>
     <button class="kortti-random-btn" onclick="randomIlmio()" title="Satunnainen ilmiö (R)">
       <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>
       <span class="btn-text">Satunnainen</span>
     </button>
   </div>
 
-  <div class="ilmio" id="strateginen-aliarviointi">
-<div class="ilmio-tag">Ilmiö 55</div>
-<h1>Strateginen aliarviointi — hinta viritetään portin kokoiseksi</h1>
-<p class="ilmio-byline">Kirjoittanut <a href="../tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 27.7.2026</p>
-<p>Suurhankkeiden kustannusarviot eivät ole satunnaisesti pielessä. Ne ovat pielessä systemaattisesti samaan suuntaan — alakanttiin. Systemaattinen virhe ei kerro osaamattomuudesta vaan kannustimesta.</p>
+  <div class="ilmio" id="lukittu-paatos">
+<div class="ilmio-tag">Ilmiö 54</div>
+<h1>Lukittu päätös — todellinen päätös tehtiin jo ennen kokousta</h1>
+<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 5.8.2026</p>
+<p>Virallinen päätös tehdään kokouksessa, jossa on esityslista, esittelijä ja pöytäkirja. Todellinen päätös tehtiin usein vuosia aiemmin — käytävällä, sitoumuksessa tai ohjelman rivillä. Kokous vain vahvistaa sen.</p>
 <div class="mermaid">
 flowchart TD
-  A["Rahoituspäätös on portti:\nvain halvin arvio menee läpi"] --&gt; B["Kustannukset alakanttiin,\nhyödyt yläkanttiin"]
-  B --&gt; C["Optimistisin arvio voittaa\nvertailun — myös rehellisen"]
-  C --&gt; D["Ylitys on sisäänrakennettu\njo ennen aloitusta"]
+  A["Todellinen päätös:\nsuunta lyödään lukkoon"] --&gt; B["Vaihtoehtoja vertaillaan,\nmutta vain yksi on elossa"]
+  B --&gt; C["Muodollinen päätös:\nvahvistetaan jo tehty"]
+  C --&gt; D["Hanke on sidottu\nvanhaan ja matalaan arvioon"]
   style A fill:#fff3cd,stroke:#f39c12
   style D fill:#fdf0f0,stroke:#c0392b
     </div>
-<p class="kaavio-selitys">Kun portti palkitsee optimismin, portista valikoituu systemaattisesti optimistisin hanke.</p>
-<p>Flyvbjerg erottaa kaksi syytä. <strong>Optimismiharha</strong> (optimism bias) on aitoa: ihmiset uskovat oman hankkeensa menevän paremmin kuin vertailukelpoiset hankkeet ovat menneet. <strong>Strateginen väärintulkinta</strong> (strategic misrepresentation) on tahallista: kustannukset aliarvioidaan ja hyödyt yliarvioidaan, koska rahoituspäätös on portti ja portista on päästävä läpi.</p>
-<p>Jälkimmäinen ei vaadi salaliittoa, vain kannustinrakenteen. Arvion laatija ei maksa ylitystä. Ja koska kilpailevat hankkeet toimivat samoin, <strong>rehellinen arvio häviää portilla</strong> — valituksi tulee järjestelmällisesti se hanke, jonka arvio oli optimistisin. Aliarviointi ei siis ole poikkeama järjestelmässä. Se on se, mitä järjestelmä palkitsee.</p>
-<div class="avainluku-rivi">
-<div class="avainluku"><div class="luku">16 000+</div><div class="selite">suurhanketta Flyvbjergin tietokannassa</div></div>
-<div class="avainluku"><div class="luku">~9/10</div><div class="selite">ylittää budjetin, aikataulun tai molemmat</div></div>
-<div class="avainluku"><div class="luku">0,5 %</div><div class="selite">osuu budjettiin, aikatauluun <em>ja</em> hyötyihin</div></div>
-</div>
-<p class="kaavio-selitys">Flyvbjerg tiivistää löydöksen suurhankkeiden <em>rautaiseksi laiksi</em>: yli budjetin, yli aikataulun, yhä uudelleen.</p>
-<p>Olkiluoto 3 tilattiin kiinteähintaisena 3,2 miljardilla eurolla ja sen piti valmistua vuonna 2009. Säännöllinen sähköntuotanto alkoi 16.4.2023, ja arviot lopullisista rakennuskustannuksista liikkuvat 8,5 ja 11 miljardin välillä riippuen siitä, lasketaanko mukaan toimittajan tappiot. Yksikään näistä luvuista ei ollut tiedossa portilla — eikä sen kuulunutkaan olla, koska portti ei kysynyt sitä.</p>
+<p class="kaavio-selitys">Lukittuminen tapahtuu ennen kuin kukaan on virallisesti päättänyt mitään — siksi sitä ei myöskään kirjata mihinkään.</p>
+<p>Chantal Cantarelli ja Bent Flyvbjerg erottavat suurhankkeiden tutkimuksessaan <em>muodollisen</em> ja <em>todellisen</em> rakentamispäätöksen (real decision to build). Ilmiön englanninkielinen nimi on <strong>lock-in</strong>.</p>
+<p>Erolla on suora hintalappu. Kun todellinen päätös syntyy aikaisin, hanke sidotaan sen hetken kustannusarvioon — ja se on tyypillisesti selvästi matalampi kuin myöhempi, tarkempi arvio. Ylitys ei siis synny rakennusvaiheessa. Se syntyy siinä hetkessä, jota kukaan ei kirjannut ylös.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Flyvbjergin vastalääke on <strong>vertailuluokkaan perustuva ennuste</strong> (reference class forecasting): älä kysy mitä <em>tämä</em> hanke maksaa, vaan mitä vastaavat jo toteutuneet hankkeet lopulta maksoivat. Alhaalta ylös rakennettu arvio on lähes aina liian matala, koska siitä puuttuvat ne asiat, joita kukaan ei osannut listata. <strong>Kysy arvion laatijalta, mikä on hänen aiempien arvioidensa osumatarkkuus</strong> — jos vastausta ei ole, arviolla ei ole näyttöä takanaan. <strong>Vaadi vaihteluväli, ei yhtä lukua</strong>: epäilyttävän tarkka arvio epävarmasta asiasta on itsessään varoitusmerkki. Ja kun vertailet ylitystä, <strong>korjaa inflaatio ja laajuuden muutos</strong> ennen kuin syytät ketään — muuten teet itse sen virheen, jota olit paljastamassa.
+<h2 class="laatikko-otsikko">Tunnusmerkit:</h2>
+<ul style="margin:0.5em 0 0;">
+<li>Vaihtoehdot vertailtiin, mutta vain yksi niistä oli koskaan aidosti elossa.</li>
+<li>Selvitys tilattiin vasta sen jälkeen, kun suunta oli jo kerrottu julkisuudessa.</li>
+<li>Lause <em>"emme voi enää palata alkuun"</em> kuullaan ennen kuin mitään on rakennettu.</li>
+<li>Kukaan ei osaa nimetä hetkeä, jolloin päätös varsinaisesti tehtiin.</li>
+</ul>
+</div>
+<p>Länsimetron rakentamispäätökset tehtiin kaupungeissa vuonna 2007 ja hankesuunnitelma valmistui 2008 kustannusarviolla 714 miljoonaa euroa, indeksikorjattuna 849 miljoonaa. Ruoholahti–Matinkylä-osuuden loppukustannus oli 1 171 miljoonaa. Osa erosta on inflaatiota ja laajuuden kasvua — mutta luku, johon hanke sidottiin, oli vuodelta jolloin suunnitelmaa ei vielä ollut.</p>
+<div class="huomiolaatikko">
+<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> <strong>Kirjaa päätöshetki ylös</strong> — päivämäärä, kustannusarvio ja se, mihin arvio perustui. Ilman kirjausta ylitystä verrataan myöhemmin siihen lukuun, joka sattuu olemaan käsillä. <strong>Vaadi että vertailtavat vaihtoehdot ovat aidosti elossa</strong>, nollavaihtoehto mukaan lukien: jos yhtäkään vaihtoehtoa ei ole varauduttu valitsemaan, vertailu on kulissi. <strong>Erota selvityksen tilaaja siitä, joka on jo ottanut julkisesti kantaa.</strong> Ja kun kuulet että on liian myöhäistä perua, kysy tarkka kysymys: <em>mikä konkreettinen asia tekee perumisesta mahdotonta juuri nyt?</em> Usein vastaus on sitoumus, ei betoni.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
 <div class="lue-lisaa-rivi">
+<span class="lue-lisaa-tyyppi">Tutkimuksia</span>
+<ul class="lue-lisaa-lista">
+<li>Cantarelli, Flyvbjerg, van Wee &amp; Molin: <cite>Lock-in and Its Influence on the Project Performance of Large-Scale Transportation Infrastructure Projects</cite> (2010)</li>
+</ul>
+</div>
+<div class="lue-lisaa-rivi">
 <span class="lue-lisaa-tyyppi">Kirjoja</span>
 <ul class="lue-lisaa-lista">
 <li><cite>How Big Things Get Done</cite> — Bent Flyvbjerg &amp; Dan Gardner (2023)</li>
-<li><cite>Megaprojects and Risk</cite> — Flyvbjerg, Bruzelius &amp; Rothengatter (2003)</li>
 </ul>
 </div>
 <div class="lue-lisaa-rivi">
 <span class="lue-lisaa-tyyppi">Verkossa</span>
 <ul class="lue-lisaa-lista">
-<li><a href="https://ti.org/pdfs/IronLawofMegaprojects.pdf" target="_blank" rel="noopener">Flyvbjerg: The Iron Law of Megaprojects (PDF, englanniksi)</a></li>
+<li><a href="https://www.lansimetro.fi/tietoa-meista/talous/ruoholahti-matinkyla/" target="_blank" rel="noopener">Länsimetro: Ruoholahti–Matinkylä, talous</a></li>
 </ul>
 </div>
 </div>
@@ -872,43 +879,43 @@ flowchart TD
   <aside class="liittyvat" aria-label="Liittyvät ilmiöt">
     <h2>Liittyvät ilmiöt</h2>
     <div class="liittyvat-kortit">
-    <a href="lukittu-paatos.html" class="liittyvat-kortti" style="--c:#3d5a6c">
-      <span class="liittyvat-numero">54</span>
+    <a href="strateginen-aliarviointi.html" class="liittyvat-kortti" style="--c:#7a4b12">
+      <span class="liittyvat-numero">55</span>
       <span class="liittyvat-teksti">
-        <span class="liittyvat-nimi">Lukittu päätös</span>
-        <span class="liittyvat-kuvaus">Virallinen päätös tehdään kokouksessa, jossa on esityslista, esittelijä ja pöytäkirja.</span>
+        <span class="liittyvat-nimi">Strateginen aliarviointi</span>
+        <span class="liittyvat-kuvaus">Suurhankkeen kustannusarvio ei ole ennuste vaan hakemus: hinta viritetään portin kokoiseksi.</span>
       </span>
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
-    <a href="paatosperainen-todistelu.html" class="liittyvat-kortti" style="--c:#5b2c6f">
-      <span class="liittyvat-numero">56</span>
+    <a href="lapi-hinnalla-milla-hyvansa.html" class="liittyvat-kortti" style="--c:#6e2c00">
+      <span class="liittyvat-numero">57</span>
       <span class="liittyvat-teksti">
-        <span class="liittyvat-nimi">Päätösperäinen todistelu</span>
-        <span class="liittyvat-kuvaus">Tietoon perustuva päätöksenteko kääntyy ympäri: ensin tehdään päätös, sitten tilataan selvitys, joka tukee sitä.</span>
+        <span class="liittyvat-nimi">Läpi hinnalla millä hyvänsä</span>
+        <span class="liittyvat-kuvaus">Kun hankkeeseen on sidottu nimi, jokainen huono uutinen uhkaa päättäjää eikä hanketta.</span>
       </span>
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
-    <a href="../hofstadterin-laki.html" class="liittyvat-kortti" style="--c:#7d6608">
-      <span class="liittyvat-numero">52</span>
+    <a href="hippo-efekti.html" class="liittyvat-kortti" style="--c:#5d4037">
+      <span class="liittyvat-numero">39</span>
       <span class="liittyvat-teksti">
-        <span class="liittyvat-nimi">Hofstadterin laki</span>
-        <span class="liittyvat-kuvaus">Kestää aina odotettua kauemmin, silloinkin kun ottaa Hofstadterin lain huomioon.</span>
+        <span class="liittyvat-nimi">HIPPO-efekti</span>
+        <span class="liittyvat-kuvaus">Kokouksen lopputuloksen määrää kovapalkkaisimman mielipide — ei data eikä asiantuntemus.</span>
       </span>
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
-    <a href="../lowball-hinnoittelu.html" class="liittyvat-kortti" style="--c:#00695c">
-      <span class="liittyvat-numero">74</span>
+    <a href="konsensus-fetissi.html" class="liittyvat-kortti" style="--c:#01579b">
+      <span class="liittyvat-numero">24</span>
       <span class="liittyvat-teksti">
-        <span class="liittyvat-nimi">Lowball-hinnoittelu</span>
-        <span class="liittyvat-kuvaus">Houkutteleva alkuhinta, joka nousee vasta kun olet jo sitoutunut.</span>
+        <span class="liittyvat-nimi">Konsensus fetissi</span>
+        <span class="liittyvat-kuvaus">Yksimielisyydestä tulee itseisarvo, ja erimielisyys aletaan nähdä ongelmana — ei tietona.</span>
       </span>
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
-    <a href="../kuolonmarssi.html" class="liittyvat-kortti" style="--c:#78281f">
+    <a href="kuolonmarssi.html" class="liittyvat-kortti" style="--c:#78281f">
       <span class="liittyvat-numero">53</span>
       <span class="liittyvat-teksti">
         <span class="liittyvat-nimi">Kuolonmarssi</span>
-        <span class="liittyvat-kuvaus">Projekti, jonka kaikki tietävät epäonnistuvan, mutta jota kukaan ei uskalla lopettaa.</span>
+        <span class="liittyvat-kuvaus">Projekti, jonka kaikki tietävät epäonnistuvan — mutta jota kukaan ei pysty pysäyttämään.</span>
       </span>
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
@@ -916,15 +923,15 @@ flowchart TD
   </aside>
 
   <nav class="kortti-nav">
-    <a class="kortti-nav-btn" href="lukittu-paatos.html">← Lukittu päätös — päätös tehtiin jo ennen kokousta</a>
+    <a class="kortti-nav-btn" href="kuolonmarssi.html">← Kuolonmarssi — projekti jota ei voi lopettaa</a>
     <div class="kortti-nav-center">
-      <span class="kortti-nav-laskuri">55 / 112</span>
+      <span class="kortti-nav-laskuri">54 / 127</span>
       <span class="kortti-nav-vinkki">
         <kbd>&#8592;</kbd> <kbd>&#8594;</kbd> selaa &middot; <kbd>R</kbd> satunnainen
         <span class="touch-vinkki">&nbsp;· swipe &#8592;&#8594; tai &#8595; random</span>
       </span>
     </div>
-    <a class="kortti-nav-btn" href="paatosperainen-todistelu.html">Päätösperäinen todistelu — vastaus valmiina →</a>
+    <a class="kortti-nav-btn" href="strateginen-aliarviointi.html">Strateginen aliarviointi — hinta portin kokoiseksi →</a>
   </nav>
 
   
@@ -1095,13 +1102,13 @@ flowchart TD
 
   <script>
 (function () {
-  const IDS = ["paskuuttaminen", "starve-the-beast", "overton-ikkuna", "saantelijan-kaappaus", "rautainen-laki", "valta-suojelee-valtaa", "hajota-hallitse", "bkt-harha", "astroturf", "firehose-of-falsehood", "manufactured-consent", "betteridgen-laki", "inokulointiteoria", "whataboutismi", "streisand-ilmio", "trollitehdas", "kuollut-kissa", "brandolinin-laki", "poen-laki", "godwinin-laki", "backfire-effect", "darvo", "halo-efekti", "konsensus-fetissi", "omenoita-appelsiineja", "blame-game", "gaslighting", "maalitolppien-siirtaminen", "argumenttitulva", "sunk-cost-harha", "jarjestelman-puolustelu", "dunning-kruger", "hanlonin-partaveitsi", "occamin-partaveitsi", "simple-sabotage", "kafka-ilmio", "catch-22", "goodhartin-laki", "hippo-efekti", "performatiivinen-lasnaolo", "rituaalinen-raportointi", "initiointirituaalit", "portinvartija-kulttuuri", "strateginen-osaamattomuus", "fofo", "sivustakatsojan-efekti", "parkinsonin-laki", "peterin-periaate", "pareto-periaate", "brooksin-laki", "yhdeksanyhdeksan", "hofstadterin-laki", "kuolonmarssi", "lukittu-paatos", "strateginen-aliarviointi", "paatosperainen-todistelu", "lapi-hinnalla-milla-hyvansa", "tekninen-velka", "conways-laki", "bikeshedding", "scope-creep", "korkoa-korolle", "negatiivinen-korkoa", "korkokierre", "honeypot-huijaus", "bait-and-switch", "kaarmeoljy", "ponzi-pyramidi", "pump-and-dump", "pig-butchering", "ennakkomaksuhuijaus", "badger-game", "qr-koodihuijaus", "toimitusjohtajahuijaus", "rug-pull", "ilmainen-naytetyo", "exposure-maksu", "lowball-hinnoittelu", "valittajan-skimmaus", "tilipuristus", "foot-in-the-door", "door-in-the-face", "hintaankkurointi", "houkutinvaihtoehto", "vastavuoroisuuden-ansa", "sosiaalinen-todiste", "painostusclose", "shrinkflaatio", "suunniteltu-vanheneminen", "tilausansa", "doomscrolling", "kaikukammio", "ai-slop", "parasosiaalinen-suhde", "kuollut-internet", "rage-bait", "1-prosentin-saanto", "aanekas-vahemmisto", "viherpesu", "tekoalypesu", "hyvesignalointi", "hiljainen-irtisanoutuminen", "hiljainen-irtisanominen", "haamutyopaikat", "kaksois-y-akseli", "pinta-alaharha", "cherry-picking-aikavali", "keskiarvo-vs-mediaani", "suhteellinen-riski", "selviytymisharha", "simpsonin-paradoksi", "p-hakkerointi"];
-  const PREV = 'lukittu-paatos.html';
-  const NEXT = 'paatosperainen-todistelu.html';
+  const IDS = ["paskuuttaminen", "starve-the-beast", "overton-ikkuna", "saantelijan-kaappaus", "rautainen-laki", "valta-suojelee-valtaa", "hajota-hallitse", "bkt-harha", "astroturf", "firehose-of-falsehood", "manufactured-consent", "betteridgen-laki", "inokulointiteoria", "whataboutismi", "streisand-ilmio", "trollitehdas", "kuollut-kissa", "brandolinin-laki", "poen-laki", "godwinin-laki", "backfire-effect", "darvo", "halo-efekti", "konsensus-fetissi", "omenoita-appelsiineja", "blame-game", "gaslighting", "maalitolppien-siirtaminen", "argumenttitulva", "sunk-cost-harha", "jarjestelman-puolustelu", "dunning-kruger", "hanlonin-partaveitsi", "occamin-partaveitsi", "simple-sabotage", "kafka-ilmio", "catch-22", "goodhartin-laki", "hippo-efekti", "performatiivinen-lasnaolo", "rituaalinen-raportointi", "initiointirituaalit", "portinvartija-kulttuuri", "strateginen-osaamattomuus", "fofo", "sivustakatsojan-efekti", "parkinsonin-laki", "peterin-periaate", "pareto-periaate", "brooksin-laki", "yhdeksanyhdeksan", "hofstadterin-laki", "kuolonmarssi", "lukittu-paatos", "strateginen-aliarviointi", "paatosperainen-todistelu", "lapi-hinnalla-milla-hyvansa", "tekninen-velka", "conways-laki", "bikeshedding", "scope-creep", "korkoa-korolle", "negatiivinen-korkoa", "korkokierre", "honeypot-huijaus", "bait-and-switch", "kaarmeoljy", "ponzi-pyramidi", "pump-and-dump", "pig-butchering", "ennakkomaksuhuijaus", "badger-game", "qr-koodihuijaus", "toimitusjohtajahuijaus", "rug-pull", "ilmainen-naytetyo", "exposure-maksu", "lowball-hinnoittelu", "valittajan-skimmaus", "tilipuristus", "foot-in-the-door", "door-in-the-face", "hintaankkurointi", "houkutinvaihtoehto", "vastavuoroisuuden-ansa", "sosiaalinen-todiste", "painostusclose", "shrinkflaatio", "suunniteltu-vanheneminen", "tilausansa", "doomscrolling", "kaikukammio", "ai-slop", "parasosiaalinen-suhde", "kuollut-internet", "rage-bait", "klikkiotsikko", "engagement-bait", "1-prosentin-saanto", "aanekas-vahemmisto", "viherpesu", "sinipesu", "urheilupesu", "pinkkipesu", "tekoalypesu", "hyvesignalointi", "hiljainen-irtisanoutuminen", "hiljainen-irtisanominen", "haamutyopaikat", "kaksois-y-akseli", "pinta-alaharha", "cherry-picking-aikavali", "keskiarvo-vs-mediaani", "suhteellinen-riski", "selviytymisharha", "simpsonin-paradoksi", "p-hakkerointi", "uutiskynnys", "uutisautiomaa", "paasyjournalismi", "tiedotejournalismi", "branditurvallisuus", "huonojen-uutisten-hautaaminen", "vaara-tasapaino", "keharaportointi", "gell-mannin-amnesia", "vihamielisen-median-harha"];
+  const PREV = 'kuolonmarssi.html';
+  const NEXT = 'strateginen-aliarviointi.html';
 
   function randomIlmio() {
     let id;
-    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'strateginen-aliarviointi');
+    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'lukittu-paatos');
     merkitseRandomHyppy();
     window.location.href = id + '.html';
   }
@@ -1147,7 +1154,7 @@ flowchart TD
     var overlay = document.createElement('div');
     overlay.className = 'random-siirtyma-overlay';
     overlay.innerHTML =
-      '<img class="random-siirtyma-logo" src="../favicon.svg" alt="">' +
+      '<img class="random-siirtyma-logo" src="favicon.svg" alt="">' +
       '<span class="random-siirtyma-teksti">' + teksti + '&hellip;</span>';
     document.body.appendChild(overlay);
     requestAnimationFrame(function () {
@@ -1158,7 +1165,7 @@ flowchart TD
   function naytaRandomSiirtyma() {
     if (_siirtymaKaynnissa) return;
     var id;
-    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'strateginen-aliarviointi');
+    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'lukittu-paatos');
     merkitseRandomHyppy();
     naytaSiirtyma('Satunnainen ilmiö', id + '.html');
   }
@@ -1174,7 +1181,7 @@ flowchart TD
       var overlay = document.createElement('div');
       overlay.className = 'random-siirtyma-overlay';
       overlay.innerHTML =
-        '<img class="random-siirtyma-logo" src="../favicon.svg" alt="">' +
+        '<img class="random-siirtyma-logo" src="favicon.svg" alt="">' +
         '<span class="random-siirtyma-teksti">Eteenpäin&hellip;</span>';
       document.body.appendChild(overlay);
       requestAnimationFrame(function () {
@@ -1195,7 +1202,7 @@ flowchart TD
       var overlay = document.createElement('div');
       overlay.className = 'random-siirtyma-overlay';
       overlay.innerHTML =
-        '<img class="random-siirtyma-logo" src="../favicon.svg" alt="">' +
+        '<img class="random-siirtyma-logo" src="favicon.svg" alt="">' +
         '<span class="random-siirtyma-teksti">Takaisin&hellip;</span>';
       document.body.appendChild(overlay);
       requestAnimationFrame(function () {
@@ -1314,7 +1321,7 @@ flowchart TD
   </script>
 
   <footer class="ilmio-footer">
-    <p>© 2026 Ilmiöitä — Miten valta toimii · Kirjoittanut Ilmiömies · <a href="../tietoa.html">Tietoa sivustosta ja tekijästä</a></p>
+    <p>© 2026 Ilmiöitä — Miten valta toimii · Kirjoittanut Ilmiömies · <a href="tietoa.html">Tietoa sivustosta ja tekijästä</a></p>
   </footer>
 </body>
 </html>

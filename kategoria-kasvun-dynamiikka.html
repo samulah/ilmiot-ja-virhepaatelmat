@@ -150,8 +150,11 @@
       font-weight: 700; line-height: 1.1; letter-spacing: -0.015em;
       color: #fff; margin: 0; max-width: 20ch;
     }
-    .kat-alaotsikko {
-      display: block; margin-top: 0.5rem;
+    /* Oma <p> h1:n ulkopuolella. font-family toistetaan tässä, koska ulkoasu
+       periytyi aiemmin h1:ltä — nyt periytymisketju ei enää kulje sen kautta. */
+    p.kat-alaotsikko {
+      margin: 0.5rem 0 0;
+      font-family: var(--font-display, 'Spectral', Georgia, serif);
       font-size: clamp(0.95rem, 2.2vw, 1.18rem);
       font-weight: 400; font-style: italic; line-height: 1.4;
       color: rgba(255,255,255,0.6); max-width: 34ch;
@@ -311,9 +314,10 @@
         <a class="kat-paluu" href="index.html">
           <img src="favicon.svg" alt="" width="20" height="20">Kaikki ilmiöt
         </a>
-        <p class="kat-eyebrow">Kategoria 6 / 12</p>
-        <h1 class="kat-nimi">Kasvun dynamiikka<span class="kat-alaotsikko">sama matematiikka molempiin suuntiin</span></h1>
-        <p class="kat-meta">3 ilmiötä<span>·</span>Ilmiöt 58&ndash;60<span>·</span>Päivitetty 25.7.2026</p>
+        <p class="kat-eyebrow">Kategoria 6 / 13</p>
+        <h1 class="kat-nimi">Kasvun dynamiikka</h1>
+        <p class="kat-alaotsikko">sama matematiikka molempiin suuntiin</p>
+        <p class="kat-meta">3 ilmiötä<span>·</span>Ilmiöt 62&ndash;64<span>·</span>Päivitetty 25.7.2026</p>
       </div>
     </div>
   </header>
@@ -329,7 +333,7 @@
 <h2>Kolme ilmiötä</h2>
 <div class="kat-kortit">
 <a href="korkoa-korolle.html" class="hub-kortti" style="--c:#2e86ab">
-  <span class="hub-numero">58</span>
+  <span class="hub-numero">62</span>
   <span class="hub-teksti">
     <span class="hub-nimi">Korkoa korolle -efekti</span>
     <span class="hub-kuvaus">Kasvu kohdistuu koko kertyneeseen pohjaan, ei vain alkupääomaan — pieni tuotto paisuu ajan myötä valtavaksi.</span>
@@ -337,7 +341,7 @@
   <span class="hub-nuoli" aria-hidden="true">›</span>
 </a>
 <a href="negatiivinen-korkoa.html" class="hub-kortti" style="--c:#a23b72">
-  <span class="hub-numero">59</span>
+  <span class="hub-numero">63</span>
   <span class="hub-teksti">
     <span class="hub-nimi">Negatiivinen korkoa korolle</span>
     <span class="hub-kuvaus">Sama kasautumislogiikka toimii alaspäin: laiminlyönti ja tappiot kiihdyttävät toisiaan.</span>
@@ -345,7 +349,7 @@
   <span class="hub-nuoli" aria-hidden="true">›</span>
 </a>
 <a href="korkokierre.html" class="hub-kortti" style="--c:#1a237e">
-  <span class="hub-numero">60</span>
+  <span class="hub-numero">64</span>
   <span class="hub-teksti">
     <span class="hub-nimi">Negatiivinen korkokierre</span>
     <span class="hub-kuvaus">Velka kasvaa samalla eksponentilla kuin sijoitus — mutta sinua vastaan.</span>
@@ -384,7 +388,7 @@
       <span class="kat-siirry-nimi">7. Huijaukset ja petokset &rarr;</span>
     </a>
   </div>
-  <a class="kat-siirry-kaikki" href="index.html">Kategoria <b>6 / 12</b> &middot; katso kaikki kategoriat</a>
+  <a class="kat-siirry-kaikki" href="index.html">Kategoria <b>6 / 13</b> &middot; katso kaikki kategoriat</a>
 </nav>
   </main>
 

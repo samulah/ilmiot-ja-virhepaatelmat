@@ -16,7 +16,7 @@
       if (loaded) return;
       loaded = true;
       var s = document.createElement('script');
-      s.src = 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js';
+      s.src = 'js/mermaid.min.js';
       s.onload = function () {
         mermaid.initialize({ startOnLoad: false, theme: 'base', themeVariables: { fontSize: '12px', fontFamily: "'DM Sans', system-ui, sans-serif", primaryColor: '#FBF5E0', primaryTextColor: '#1A1100', primaryBorderColor: '#C9A84C', lineColor: '#8B6914', secondaryColor: '#F5F0E5', tertiaryColor: '#FDFAF2', mainBkg: '#FBF5E0', nodeBorder: '#C9A84C', clusterBkg: '#F5F0E5', titleColor: '#3A2000', edgeLabelBackground: '#FDFAF2' } });
         mermaid.run();
@@ -217,7 +217,7 @@
     .kortti-breadcrumb a { color: #8B6914; text-decoration: none; }
     .kortti-breadcrumb a:hover { text-decoration: underline; }
     .kortti-breadcrumb-sep { color: #ccc; }
-    .kortti-breadcrumb .kortti-breadcrumb .kortti-breadcrumb .kortti-breadcrumb-kat { color: #666; }
+    .kortti-breadcrumb .kortti-breadcrumb-kat { color: #666; }
     .kortti-random-btn {
       margin-left: auto;
       display: inline-flex;
@@ -351,7 +351,7 @@
     }
     .random-siirtyma-overlay.nakyva .random-siirtyma-teksti { opacity: 1; }
   
-.infolaatikko h2.laatikko-otsikko, .huomiolaatikko h2.laatikko-otsikko {
+.infolaatikko h2.laatikko-otsikko, .huomiolaatikko h2.laatikko-otsikko, .vaaralatikko h2.laatikko-otsikko {
   display: inline; font: inherit; font-weight: 700; color: inherit;
   margin: 0; padding: 0; letter-spacing: inherit;
 }
@@ -467,7 +467,7 @@
   </div>
 
   <div class="ilmio" id="prosentin-saanto">
-<div class="ilmio-tag">Ilmiö 95</div>
+<div class="ilmio-tag">Ilmiö 99</div>
 <h1>1 %:n sääntö (90-9-1) — kuka verkossa oikeasti puhuu</h1>
 <p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 14.7.2026</p>
 <p><strong>1 %:n sääntö</strong> (englanniksi <em>1% rule</em> tai <em>90-9-1 rule</em>) kuvaa sitä, miten osallistuminen verkkoyhteisöissä jakautuu äärimmäisen epätasaisesti: noin <strong>90 %</strong> käyttäjistä <strong>lurkkaa</strong> — lukee ja selaa koskaan reagoimatta — noin <strong>9 %</strong> osallistuu silloin tällöin (tykkäys, jako, satunnainen kommentti), ja vain noin <strong>1 %</strong> tuottaa valtaosan varsinaisesta sisällöstä ja kommenteista. Käyttäjäkokemustutkija <strong>Jakob Nielsen</strong> nimesi ja popularisoi havainnon 2006, mutta ilmiö oli tunnettu jo 1990-luvun keskustelupalstoilta ja postituslistoilta.</p>
@@ -488,7 +488,7 @@
     </div>
 <p>Sama epäsuhta löytyy melkein jokaisesta avoimesta verkkoyhteisöstä: Wikipedian muokkauksista valtaosan tekee pieni vakiokirjoittajien joukko, suurin osa GitHub-projektien committeista tulee harvalta ydinjoukolta, ja arvostelusivustoilla harva aktiivinen arvostelija tuottaa suurimman osan tähdistä. Se on <a href="pareto-periaate.html">Pareto-periaatteen</a> ääriversio: siinä missä 80/20 on nyrkkisääntö, verkko-osallistuminen kallistuu usein vieläkin jyrkemmäksi.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Käytännön johtopäätökset:</h2>
+<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2>
 <ul style="margin:0.5em 0 0;">
 <li>Älä lue kommenttiosion sävyä yleisösi mielipiteenä — se on pienen aktiivijoukon mielipide.</li>
 <li>Jos haluat kuulla hiljaisen enemmistön, madalla osallistumisen kynnystä: yksinkertaiset äänestykset, tykkäykset ja lyhyet kyselyt tavoittavat useamman kuin avoin kommenttikenttä.</li>
@@ -525,7 +525,7 @@
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
     <a href="aanekas-vahemmisto.html" class="liittyvat-kortti" style="--c:#7b241c">
-      <span class="liittyvat-numero">96</span>
+      <span class="liittyvat-numero">100</span>
       <span class="liittyvat-teksti">
         <span class="liittyvat-nimi">Äänekäs vähemmistö</span>
         <span class="liittyvat-kuvaus">Kärjekkäimmät kommentoijat näkyvät eniten, kun hiljainen enemmistö ei koskaan vastaa.</span>
@@ -533,7 +533,7 @@
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
     <a href="kaikukammio.html" class="liittyvat-kortti" style="--c:#00838f">
-      <span class="liittyvat-numero">88</span>
+      <span class="liittyvat-numero">92</span>
       <span class="liittyvat-teksti">
         <span class="liittyvat-nimi">Kaikukammio</span>
         <span class="liittyvat-kuvaus">Ympäristö, jossa kohtaat vain omia näkemyksiäsi vahvistavaa sisältöä.</span>
@@ -541,7 +541,7 @@
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
     <a href="rage-bait.html" class="liittyvat-kortti" style="--c:#d84315">
-      <span class="liittyvat-numero">92</span>
+      <span class="liittyvat-numero">96</span>
       <span class="liittyvat-teksti">
         <span class="liittyvat-nimi">Rage bait</span>
         <span class="liittyvat-kuvaus">Sisältö on suunniteltu suututtamaan — vihainen jako on algoritmille yhtä arvokas kuin tykkäys.</span>
@@ -549,7 +549,7 @@
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
     <a href="ai-slop.html" class="liittyvat-kortti" style="--c:#311b92">
-      <span class="liittyvat-numero">89</span>
+      <span class="liittyvat-numero">93</span>
       <span class="liittyvat-teksti">
         <span class="liittyvat-nimi">AI slop</span>
         <span class="liittyvat-kuvaus">Tekoälyllä massatuotettua halpasisältöä, joka kerää klikkejä palvelematta lukijaa.</span>
@@ -562,7 +562,7 @@
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="engagement-bait.html">← Engagement bait — reaktiota pyydetään suoraan</a>
     <div class="kortti-nav-center">
-      <span class="kortti-nav-laskuri">95 / 113</span>
+      <span class="kortti-nav-laskuri">99 / 127</span>
       <span class="kortti-nav-vinkki">
         <kbd>&#8592;</kbd> <kbd>&#8594;</kbd> selaa &middot; <kbd>R</kbd> satunnainen
         <span class="touch-vinkki">&nbsp;· swipe &#8592;&#8594; tai &#8595; random</span>
@@ -730,7 +730,7 @@
 
   <script>
 (function () {
-  const IDS = ["paskuuttaminen", "starve-the-beast", "overton-ikkuna", "saantelijan-kaappaus", "rautainen-laki", "valta-suojelee-valtaa", "hajota-hallitse", "bkt-harha", "astroturf", "firehose-of-falsehood", "manufactured-consent", "betteridgen-laki", "inokulointiteoria", "whataboutismi", "streisand-ilmio", "trollitehdas", "kuollut-kissa", "brandolinin-laki", "poen-laki", "godwinin-laki", "backfire-effect", "darvo", "halo-efekti", "konsensus-fetissi", "omenoita-appelsiineja", "blame-game", "gaslighting", "maalitolppien-siirtaminen", "argumenttitulva", "sunk-cost-harha", "jarjestelman-puolustelu", "dunning-kruger", "hanlonin-partaveitsi", "occamin-partaveitsi", "simple-sabotage", "kafka-ilmio", "catch-22", "goodhartin-laki", "hippo-efekti", "performatiivinen-lasnaolo", "rituaalinen-raportointi", "initiointirituaalit", "portinvartija-kulttuuri", "strateginen-osaamattomuus", "fofo", "sivustakatsojan-efekti", "parkinsonin-laki", "peterin-periaate", "pareto-periaate", "brooksin-laki", "yhdeksanyhdeksan", "hofstadterin-laki", "kuolonmarssi", "tekninen-velka", "conways-laki", "bikeshedding", "scope-creep", "korkoa-korolle", "negatiivinen-korkoa", "korkokierre", "honeypot-huijaus", "bait-and-switch", "kaarmeoljy", "ponzi-pyramidi", "pump-and-dump", "pig-butchering", "ennakkomaksuhuijaus", "badger-game", "qr-koodihuijaus", "toimitusjohtajahuijaus", "rug-pull", "ilmainen-naytetyo", "exposure-maksu", "lowball-hinnoittelu", "valittajan-skimmaus", "tilipuristus", "foot-in-the-door", "door-in-the-face", "hintaankkurointi", "houkutinvaihtoehto", "vastavuoroisuuden-ansa", "sosiaalinen-todiste", "painostusclose", "shrinkflaatio", "suunniteltu-vanheneminen", "tilausansa", "doomscrolling", "kaikukammio", "ai-slop", "parasosiaalinen-suhde", "kuollut-internet", "rage-bait", "klikkiotsikko", "engagement-bait", "1-prosentin-saanto", "aanekas-vahemmisto", "viherpesu", "sinipesu", "urheilupesu", "pinkkipesu", "tekoalypesu", "hyvesignalointi", "hiljainen-irtisanoutuminen", "hiljainen-irtisanominen", "haamutyopaikat", "kaksois-y-akseli", "pinta-alaharha", "cherry-picking-aikavali", "keskiarvo-vs-mediaani", "suhteellinen-riski", "selviytymisharha", "simpsonin-paradoksi", "p-hakkerointi"];
+  const IDS = ["paskuuttaminen", "starve-the-beast", "overton-ikkuna", "saantelijan-kaappaus", "rautainen-laki", "valta-suojelee-valtaa", "hajota-hallitse", "bkt-harha", "astroturf", "firehose-of-falsehood", "manufactured-consent", "betteridgen-laki", "inokulointiteoria", "whataboutismi", "streisand-ilmio", "trollitehdas", "kuollut-kissa", "brandolinin-laki", "poen-laki", "godwinin-laki", "backfire-effect", "darvo", "halo-efekti", "konsensus-fetissi", "omenoita-appelsiineja", "blame-game", "gaslighting", "maalitolppien-siirtaminen", "argumenttitulva", "sunk-cost-harha", "jarjestelman-puolustelu", "dunning-kruger", "hanlonin-partaveitsi", "occamin-partaveitsi", "simple-sabotage", "kafka-ilmio", "catch-22", "goodhartin-laki", "hippo-efekti", "performatiivinen-lasnaolo", "rituaalinen-raportointi", "initiointirituaalit", "portinvartija-kulttuuri", "strateginen-osaamattomuus", "fofo", "sivustakatsojan-efekti", "parkinsonin-laki", "peterin-periaate", "pareto-periaate", "brooksin-laki", "yhdeksanyhdeksan", "hofstadterin-laki", "kuolonmarssi", "lukittu-paatos", "strateginen-aliarviointi", "paatosperainen-todistelu", "lapi-hinnalla-milla-hyvansa", "tekninen-velka", "conways-laki", "bikeshedding", "scope-creep", "korkoa-korolle", "negatiivinen-korkoa", "korkokierre", "honeypot-huijaus", "bait-and-switch", "kaarmeoljy", "ponzi-pyramidi", "pump-and-dump", "pig-butchering", "ennakkomaksuhuijaus", "badger-game", "qr-koodihuijaus", "toimitusjohtajahuijaus", "rug-pull", "ilmainen-naytetyo", "exposure-maksu", "lowball-hinnoittelu", "valittajan-skimmaus", "tilipuristus", "foot-in-the-door", "door-in-the-face", "hintaankkurointi", "houkutinvaihtoehto", "vastavuoroisuuden-ansa", "sosiaalinen-todiste", "painostusclose", "shrinkflaatio", "suunniteltu-vanheneminen", "tilausansa", "doomscrolling", "kaikukammio", "ai-slop", "parasosiaalinen-suhde", "kuollut-internet", "rage-bait", "klikkiotsikko", "engagement-bait", "1-prosentin-saanto", "aanekas-vahemmisto", "viherpesu", "sinipesu", "urheilupesu", "pinkkipesu", "tekoalypesu", "hyvesignalointi", "hiljainen-irtisanoutuminen", "hiljainen-irtisanominen", "haamutyopaikat", "kaksois-y-akseli", "pinta-alaharha", "cherry-picking-aikavali", "keskiarvo-vs-mediaani", "suhteellinen-riski", "selviytymisharha", "simpsonin-paradoksi", "p-hakkerointi", "uutiskynnys", "uutisautiomaa", "paasyjournalismi", "tiedotejournalismi", "branditurvallisuus", "huonojen-uutisten-hautaaminen", "vaara-tasapaino", "keharaportointi", "gell-mannin-amnesia", "vihamielisen-median-harha"];
   const PREV = 'engagement-bait.html';
   const NEXT = 'aanekas-vahemmisto.html';
 

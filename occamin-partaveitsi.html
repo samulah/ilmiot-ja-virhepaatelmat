@@ -16,7 +16,7 @@
       if (loaded) return;
       loaded = true;
       var s = document.createElement('script');
-      s.src = 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js';
+      s.src = 'js/mermaid.min.js';
       s.onload = function () {
         mermaid.initialize({ startOnLoad: false, theme: 'base', themeVariables: { fontSize: '12px', fontFamily: "'DM Sans', system-ui, sans-serif", primaryColor: '#FBF5E0', primaryTextColor: '#1A1100', primaryBorderColor: '#C9A84C', lineColor: '#8B6914', secondaryColor: '#F5F0E5', tertiaryColor: '#FDFAF2', mainBkg: '#FBF5E0', nodeBorder: '#C9A84C', clusterBkg: '#F5F0E5', titleColor: '#3A2000', edgeLabelBackground: '#FDFAF2' } });
         mermaid.run();
@@ -577,7 +577,7 @@
     .kortti-breadcrumb a { color: #8B6914; text-decoration: none; }
     .kortti-breadcrumb a:hover { text-decoration: underline; }
     .kortti-breadcrumb-sep { color: #ccc; }
-    .kortti-breadcrumb .kortti-breadcrumb .kortti-breadcrumb .kortti-breadcrumb-kat { color: #666; }
+    .kortti-breadcrumb .kortti-breadcrumb-kat { color: #666; }
     .kortti-random-btn {
       margin-left: auto;
       display: inline-flex;
@@ -713,7 +713,7 @@
     }
     .random-siirtyma-overlay.nakyva .random-siirtyma-teksti { opacity: 1; }
   
-.infolaatikko h2.laatikko-otsikko, .huomiolaatikko h2.laatikko-otsikko {
+.infolaatikko h2.laatikko-otsikko, .huomiolaatikko h2.laatikko-otsikko, .vaaralatikko h2.laatikko-otsikko {
   display: inline; font: inherit; font-weight: 700; color: inherit;
   margin: 0; padding: 0; letter-spacing: inherit;
 }
@@ -812,11 +812,34 @@
         "description": "Kirjoittajanimi, jonka takana on kiinnostus valtaan, vaikuttamiseen ja ihmisen päättelyn vinoumiin. Sisältö perustuu julkisiin lähteisiin ja vakiintuneeseen käsitteistöön."
       },
       "datePublished": "2026-07-10",
-      "dateModified": "2026-07-10"
+      "dateModified": "2026-08-04"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.ilmiöt.fi/occamin-partaveitsi.html#faq",
+      "inLanguage": "fi",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Kuka oli Vilhelm Occamilainen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Englantilainen fransiskaanimunkki (n. 1287–1347), jonka mukaan sääntö on nimetty. Kuuluisinta latinankielistä muotoilua entia non sunt multiplicanda praeter necessitatem ei kuitenkaan löydy hänen omista teksteistään."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mikä ero on Occamin ja Hanlonin partaveitsellä?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Occamin partaveitsi koskee selityksiä yleisesti: valitse se, joka olettaa vähiten. Hanlonin partaveitsi on sen sovellus ihmisten aikeisiin: älä oleta pahantahtoisuutta, jos huolimattomuus riittää selitykseksi."
+          }
+        }
+      ]
     }
   ]
 }
-  </script>
+</script>
   <style>
     .ilmio-byline{font-size:.82rem;color:#8B6914;font-style:italic;margin:.15rem 0 1.3rem;}
     .ilmio-byline a{color:#8B6914;}
@@ -841,8 +864,12 @@
   <div class="ilmio" id="occamin-partaveitsi">
 <div class="ilmio-tag">Ilmiö 34</div>
 <h1>Occamin partaveitsi — älä oleta enempää kuin on pakko</h1>
-<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 10.7.2026</p>
+<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 4.8.2026</p>
 <p>Occamin partaveitsi ei sano, että yksinkertaisin selitys on oikea. Se sanoo jotain paljon rajatumpaa: <em>kun kaksi selitystä selittää havainnot yhtä hyvin, valitse se, joka olettaa vähemmän.</em> Sääntö on nimetty englantilaisen fransiskaanimunkin Vilhelm Occamilaisen (n. 1287–1347) mukaan. Kuuluisinta latinankielistä muotoilua — <em>entia non sunt multiplicanda praeter necessitatem</em>, "olioita ei pidä lisätä yli tarpeen" — ei kuitenkaan löydy hänen teksteistään: se on peräisin 1600-luvulta, irlantilaiselta John Punchilta. Occam itse kirjoitti: <em>numquam ponenda est pluralitas sine necessitate</em>.</p>
+<div class="infolaatikko vastauslohko">
+<h2 class="laatikko-otsikko">Mitä Occamin partaveitsi tarkoittaa?</h2>
+<p style="margin:0.4em 0 0;"><strong>Occamin partaveitsi</strong> on valintasääntö, ei totuuden mittari. Ehto sen käytölle on tiukka: selitysten on selitettävä havainnot yhtä hyvin, ja vasta silloin vähemmän olettava voittaa. Useimmiten ehto ei täyty — ja silloin partaveitsi ei sano mitään.</p>
+</div>
 <div class="mermaid">
 flowchart TD
   A["Kaksi selitystä\nsamalle havainnolle"] --&gt; B{"Selittävätkö ne\nhavainnot\nyhtä hyvin?"}
@@ -868,7 +895,7 @@ flowchart TD
     </div>
 <p>Partaveitsi ei kuitenkaan ratkaise kysymystä siitä, kuka saa määritellä "yhtä hyvin". Sen määrittelee useimmiten se, jolla on valta nimetä, mikä on havainto ja mikä on kohinaa — mistä syystä <a href="konsensus-fetissi.html">konsensus</a> muuttuu helposti todisteeksi itsestään. Ja koska oletusten laskeminen edellyttää aiheen tuntemusta, partaveitsi on kaikkein epäluotettavin juuri niiden käsissä, jotka tuntevat aiheen huonoiten: <a href="dunning-kruger.html">Dunning–Kruger-ilmiön</a> mukaisesti oletusten määrä näyttää pieneltä, kun ei tiedä mitä on olettamassa.</p>
 <div class="vaaralatikko">
-<strong>Käytännön järjestys:</strong> Kysy ensin, selittävätkö vaihtoehdot todella havainnot yhtä hyvin. Useimmiten eivät — ja silloin partaveitsi ei ole vielä käytössä lainkaan, vaan kyse on siitä, kumpi selitys on parempi. Vasta jos selitysvoima on tasan, laske oletukset. Ja jos joku vetoaa Occamiin ennen kuin on tarkistanut ensimmäisen ehdon, hän ei käytä partaveistä vaan sen nimeä.
+<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Kysy ensin, selittävätkö vaihtoehdot todella havainnot yhtä hyvin. Useimmiten eivät — ja silloin partaveitsi ei ole vielä käytössä lainkaan, vaan kyse on siitä, kumpi selitys on parempi. Vasta jos selitysvoima on tasan, laske oletukset. Ja jos joku vetoaa Occamiin ennen kuin on tarkistanut ensimmäisen ehdon, hän ei käytä partaveistä vaan sen nimeä.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -936,7 +963,7 @@ flowchart TD
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="hanlonin-partaveitsi.html">← Hanlonin partaveitsi — älä oleta pahuutta, jos tyhmyys riittää</a>
     <div class="kortti-nav-center">
-      <span class="kortti-nav-laskuri">34 / 113</span>
+      <span class="kortti-nav-laskuri">34 / 127</span>
       <span class="kortti-nav-vinkki">
         <kbd>&#8592;</kbd> <kbd>&#8594;</kbd> selaa &middot; <kbd>R</kbd> satunnainen
         <span class="touch-vinkki">&nbsp;· swipe &#8592;&#8594; tai &#8595; random</span>
@@ -1113,7 +1140,7 @@ flowchart TD
 
   <script>
 (function () {
-  const IDS = ["paskuuttaminen", "starve-the-beast", "overton-ikkuna", "saantelijan-kaappaus", "rautainen-laki", "valta-suojelee-valtaa", "hajota-hallitse", "bkt-harha", "astroturf", "firehose-of-falsehood", "manufactured-consent", "betteridgen-laki", "inokulointiteoria", "whataboutismi", "streisand-ilmio", "trollitehdas", "kuollut-kissa", "brandolinin-laki", "poen-laki", "godwinin-laki", "backfire-effect", "darvo", "halo-efekti", "konsensus-fetissi", "omenoita-appelsiineja", "blame-game", "gaslighting", "maalitolppien-siirtaminen", "argumenttitulva", "sunk-cost-harha", "jarjestelman-puolustelu", "dunning-kruger", "hanlonin-partaveitsi", "occamin-partaveitsi", "simple-sabotage", "kafka-ilmio", "catch-22", "goodhartin-laki", "hippo-efekti", "performatiivinen-lasnaolo", "rituaalinen-raportointi", "initiointirituaalit", "portinvartija-kulttuuri", "strateginen-osaamattomuus", "fofo", "sivustakatsojan-efekti", "parkinsonin-laki", "peterin-periaate", "pareto-periaate", "brooksin-laki", "yhdeksanyhdeksan", "hofstadterin-laki", "kuolonmarssi", "tekninen-velka", "conways-laki", "bikeshedding", "scope-creep", "korkoa-korolle", "negatiivinen-korkoa", "korkokierre", "honeypot-huijaus", "bait-and-switch", "kaarmeoljy", "ponzi-pyramidi", "pump-and-dump", "pig-butchering", "ennakkomaksuhuijaus", "badger-game", "qr-koodihuijaus", "toimitusjohtajahuijaus", "rug-pull", "ilmainen-naytetyo", "exposure-maksu", "lowball-hinnoittelu", "valittajan-skimmaus", "tilipuristus", "foot-in-the-door", "door-in-the-face", "hintaankkurointi", "houkutinvaihtoehto", "vastavuoroisuuden-ansa", "sosiaalinen-todiste", "painostusclose", "shrinkflaatio", "suunniteltu-vanheneminen", "tilausansa", "doomscrolling", "kaikukammio", "ai-slop", "parasosiaalinen-suhde", "kuollut-internet", "rage-bait", "klikkiotsikko", "engagement-bait", "1-prosentin-saanto", "aanekas-vahemmisto", "viherpesu", "sinipesu", "urheilupesu", "pinkkipesu", "tekoalypesu", "hyvesignalointi", "hiljainen-irtisanoutuminen", "hiljainen-irtisanominen", "haamutyopaikat", "kaksois-y-akseli", "pinta-alaharha", "cherry-picking-aikavali", "keskiarvo-vs-mediaani", "suhteellinen-riski", "selviytymisharha", "simpsonin-paradoksi", "p-hakkerointi"];
+  const IDS = ["paskuuttaminen", "starve-the-beast", "overton-ikkuna", "saantelijan-kaappaus", "rautainen-laki", "valta-suojelee-valtaa", "hajota-hallitse", "bkt-harha", "astroturf", "firehose-of-falsehood", "manufactured-consent", "betteridgen-laki", "inokulointiteoria", "whataboutismi", "streisand-ilmio", "trollitehdas", "kuollut-kissa", "brandolinin-laki", "poen-laki", "godwinin-laki", "backfire-effect", "darvo", "halo-efekti", "konsensus-fetissi", "omenoita-appelsiineja", "blame-game", "gaslighting", "maalitolppien-siirtaminen", "argumenttitulva", "sunk-cost-harha", "jarjestelman-puolustelu", "dunning-kruger", "hanlonin-partaveitsi", "occamin-partaveitsi", "simple-sabotage", "kafka-ilmio", "catch-22", "goodhartin-laki", "hippo-efekti", "performatiivinen-lasnaolo", "rituaalinen-raportointi", "initiointirituaalit", "portinvartija-kulttuuri", "strateginen-osaamattomuus", "fofo", "sivustakatsojan-efekti", "parkinsonin-laki", "peterin-periaate", "pareto-periaate", "brooksin-laki", "yhdeksanyhdeksan", "hofstadterin-laki", "kuolonmarssi", "lukittu-paatos", "strateginen-aliarviointi", "paatosperainen-todistelu", "lapi-hinnalla-milla-hyvansa", "tekninen-velka", "conways-laki", "bikeshedding", "scope-creep", "korkoa-korolle", "negatiivinen-korkoa", "korkokierre", "honeypot-huijaus", "bait-and-switch", "kaarmeoljy", "ponzi-pyramidi", "pump-and-dump", "pig-butchering", "ennakkomaksuhuijaus", "badger-game", "qr-koodihuijaus", "toimitusjohtajahuijaus", "rug-pull", "ilmainen-naytetyo", "exposure-maksu", "lowball-hinnoittelu", "valittajan-skimmaus", "tilipuristus", "foot-in-the-door", "door-in-the-face", "hintaankkurointi", "houkutinvaihtoehto", "vastavuoroisuuden-ansa", "sosiaalinen-todiste", "painostusclose", "shrinkflaatio", "suunniteltu-vanheneminen", "tilausansa", "doomscrolling", "kaikukammio", "ai-slop", "parasosiaalinen-suhde", "kuollut-internet", "rage-bait", "klikkiotsikko", "engagement-bait", "1-prosentin-saanto", "aanekas-vahemmisto", "viherpesu", "sinipesu", "urheilupesu", "pinkkipesu", "tekoalypesu", "hyvesignalointi", "hiljainen-irtisanoutuminen", "hiljainen-irtisanominen", "haamutyopaikat", "kaksois-y-akseli", "pinta-alaharha", "cherry-picking-aikavali", "keskiarvo-vs-mediaani", "suhteellinen-riski", "selviytymisharha", "simpsonin-paradoksi", "p-hakkerointi", "uutiskynnys", "uutisautiomaa", "paasyjournalismi", "tiedotejournalismi", "branditurvallisuus", "huonojen-uutisten-hautaaminen", "vaara-tasapaino", "keharaportointi", "gell-mannin-amnesia", "vihamielisen-median-harha"];
   const PREV = 'hanlonin-partaveitsi.html';
   const NEXT = 'simple-sabotage.html';
 
