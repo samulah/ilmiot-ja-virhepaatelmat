@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <title>Vaalikeskustelun lukuohje — kahdeksan kysymystä — Ilmiöitä</title>
+  <link rel="stylesheet" href="../style.css?v=20260725">
+  <link rel="stylesheet" href="../fonts/fonts.css">
+
+  <style>
+    body {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+    .ilmio {
+      margin-bottom: 0;
+      border-radius: 0;
+      border: 1px solid #e0e4e8;
+      border-top: 5px solid #8B6914;
+      padding: 1.8rem 2rem 2rem;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+    .ilmio h1 { margin-top: 0; font-family: 'Spectral', Georgia, serif; }
+    .ilmio-tag {
+      display: inline-block;
+      font-size: 0.75em;
+      background: #8B6914;
+      color: #fff;
+      border-radius: 0;
+      padding: 0.2em 0.6em;
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .huomiolaatikko { background: #fdf6ec; }
+    .infolaatikko h2.laatikko-otsikko, .huomiolaatikko h2.laatikko-otsikko {
+      display: inline; font: inherit; font-weight: 700; color: inherit;
+      margin: 0; padding: 0; letter-spacing: inherit;
+    }
+
+    /* Murupolku (sama kuin ilmiösivuilla, ilman random-nappia) */
+    .kortti-breadcrumb {
+      font-size: 0.85em; color: #888; margin-bottom: 1.2rem;
+      display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;
+    }
+    .kortti-breadcrumb a { color: #8B6914; text-decoration: none; }
+    .kortti-breadcrumb a:hover { text-decoration: underline; }
+    .kortti-breadcrumb-sep { color: #ccc; }
+    .kortti-breadcrumb-kat { color: #666; }
+
+    /* ── Lukuohjeen omat elementit ── */
+
+    /* Katselukortti: sivun kärjessä, kahdeksan ankkurirviä */
+    .katselukortti {
+      background: #FBF5E0;
+      border: 1px solid #C9A84C;
+      border-left: 5px solid #8B6914;
+      padding: 1.2rem 1.5rem 1.3rem;
+      margin: 1.8rem 0 2.2rem;
+    }
+    .katselukortti h2 {
+      font-family: 'Spectral', Georgia, serif;
+      font-size: 1.05rem;
+      margin: 0 0 0.25rem;
+      color: #3A2000;
+    }
+    .katselukortti p.kortti-alaotsikko {
+      margin: 0 0 0.9rem;
+      font-size: 0.85em;
+      color: #8B6914;
+      font-style: italic;
+    }
+    .katselukortti ol {
+      margin: 0;
+      padding-left: 1.4rem;
+      counter-reset: none;
+    }
+    .katselukortti li { margin-bottom: 0.5rem; line-height: 1.45; }
+    .katselukortti li:last-child { margin-bottom: 0; }
+    .katselukortti a { color: #1C1400; text-decoration: none; border-bottom: 1px solid rgba(139,105,20,.35); }
+    .katselukortti a:hover { border-bottom-color: #8B6914; }
+    .katselukortti .kortti-luku {
+      display: block;
+      font-size: 0.78em;
+      color: #8B6914;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-top: 0.1rem;
+    }
+
+    /* Näytösotsikko */
+    .naytos {
+      margin: 2.6rem 0 0.4rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 2px solid #C9A84C;
+      font-family: 'Spectral', Georgia, serif;
+      font-size: 1.15rem;
+      color: #3A2000;
+    }
+    .naytos-johdanto {
+      font-size: 0.9em;
+      color: #6b5a3a;
+      font-style: italic;
+      margin: 0.5rem 0 1.4rem;
+    }
+
+    /* Lukujen otsikot */
+    .ilmio h3 {
+      font-family: 'Spectral', Georgia, serif;
+      font-size: 1.08rem;
+      margin: 1.8rem 0 0.5rem;
+      scroll-margin-top: 1rem;
+    }
+    .ilmio h3 .luku-nro {
+      color: #C9A84C;
+      font-size: 0.9em;
+      margin-right: 0.35rem;
+    }
+
+    /* Luvun päättävä kysymys */
+    .lukukysymys {
+      margin: 0.9rem 0 0;
+      padding: 0.55rem 0 0.55rem 0.9rem;
+      border-left: 3px solid #C9A84C;
+      font-family: 'Spectral', Georgia, serif;
+      font-size: 1.02rem;
+      color: #3A2000;
+    }
+
+    /* Inline-virhepäätelmät luvun sisällä */
+    .termit {
+      background: #FDFAF2;
+      border: 1px dashed rgba(139,105,20,.4);
+      padding: 0.8rem 1rem;
+      margin: 1rem 0 0;
+      font-size: 0.93em;
+      line-height: 1.6;
+    }
+    .termit .termit-otsikko {
+      display: block;
+      font-size: 0.78em;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #8B6914;
+      margin-bottom: 0.4rem;
+    }
+    .termit dl { margin: 0; }
+    .termit dt { font-weight: 700; display: inline; }
+    .termit dd { display: inline; margin: 0; }
+    .termit dd::after { content: ""; display: block; margin-bottom: 0.4rem; }
+
+    .ilmio-byline{font-size:.82rem;color:#8B6914;font-style:italic;margin:.15rem 0 1.3rem;}
+    .ilmio-byline a{color:#8B6914;}
+    .ilmio-footer{max-width:860px;margin:2.5rem auto 1.5rem;padding:1.3rem 1.5rem 0;
+      border-top:1px solid rgba(139,105,20,.28);text-align:center;
+      font-size:.8rem;color:#8B6914;line-height:1.6;}
+    .ilmio-footer a{color:#8B6914;}
+
+    @media (max-width: 480px) {
+      .kortti-breadcrumb-sep, .kortti-breadcrumb-kat { display: none; }
+      .ilmio { padding: 1.4rem 1.2rem 1.6rem; }
+      .katselukortti { padding: 1rem 1.1rem; }
+    }
+    @media print {
+      .kortti-breadcrumb, .ilmio-footer, .ilmio > p, .ilmio > h3,
+      .naytos, .naytos-johdanto, .termit, .lukukysymys, .infolaatikko { display: none; }
+      .katselukortti { display: block; border: none; padding: 0; }
+      .ilmio { border: none; box-shadow: none; padding: 0; }
+    }
+  </style>
+
+  <!-- SEO -->
+  <meta name="description" content="Kahdeksan kysymystä, joilla vaalikeskustelun voi lukea: mistä ei puhuta, mitä lupaus maksaa, mistä luku on laskettu ja mihin kysymykseen ei vastattu. Ei puoluekantaa — nimet muodoille.">
+  <meta name="robots" content="noindex"><!-- POISTA-JULKAISTAESSA -->
+  <link rel="canonical" href="https://www.ilmiöt.fi/vaalikeskustelun-lukuohje.html">
+  <meta property="og:title" content="Vaalikeskustelun lukuohje — kahdeksan kysymystä — Ilmiöitä">
+  <meta property="og:description" content="Kahdeksan kysymystä, joilla vaalikeskustelun voi lukea: mistä ei puhuta, mitä lupaus maksaa, mistä luku on laskettu ja mihin kysymykseen ei vastattu.">
+  <meta property="og:url" content="https://www.ilmiöt.fi/vaalikeskustelun-lukuohje.html">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="fi_FI">
+  <meta property="og:site_name" content="Ilmiöitä — Miten valta toimii">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Vaalikeskustelun lukuohje — kahdeksan kysymystä — Ilmiöitä">
+  <meta name="twitter:description" content="Kahdeksan kysymystä, joilla vaalikeskustelun voi lukea: mistä ei puhuta, mitä lupaus maksaa, mistä luku on laskettu ja mihin kysymykseen ei vastattu.">
+  <meta property="og:image" content="https://www.ilmiöt.fi/og/brand.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Ilmiöitä — Miten valta toimii">
+  <meta name="twitter:image" content="https://www.ilmiöt.fi/og/brand.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Ilmiöitä",
+          "item": "https://www.ilmiöt.fi/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Vaalikeskustelun lukuohje",
+          "item": "https://www.ilmiöt.fi/vaalikeskustelun-lukuohje.html"
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "@id": "https://www.ilmiöt.fi/vaalikeskustelun-lukuohje.html#article",
+      "url": "https://www.ilmiöt.fi/vaalikeskustelun-lukuohje.html",
+      "headline": "Vaalikeskustelun lukuohje — kahdeksan kysymystä",
+      "description": "Kahdeksan kysymystä, joilla vaalikeskustelun voi lukea: mistä ei puhuta, mitä lupaus maksaa, mistä luku on laskettu ja mihin kysymykseen ei vastattu.",
+      "inLanguage": "fi",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.ilmiöt.fi/og/brand.png",
+        "width": 1200,
+        "height": 630
+      },
+      "isPartOf": {
+        "@type": "CollectionPage",
+        "@id": "https://www.ilmiöt.fi/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Ilmiöitä",
+        "url": "https://www.ilmiöt.fi/",
+        "@id": "https://www.ilmiöt.fi/#organization",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.ilmiöt.fi/favicon.svg",
+          "width": 64,
+          "height": 64
+        }
+      },
+      "author": {
+        "@type": "Person",
+        "@id": "https://www.ilmiöt.fi/#ilmiomies",
+        "name": "Ilmiömies",
+        "url": "https://www.ilmiöt.fi/tietoa.html",
+        "description": "Kirjoittajanimi, jonka takana on kiinnostus valtaan, vaikuttamiseen ja ihmisen päättelyn vinoumiin. Sisältö perustuu julkisiin lähteisiin ja vakiintuneeseen käsitteistöön."
+      },
+      "datePublished": "2026-12-01",
+      "dateModified": "2026-12-01"
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <div class="kortti-breadcrumb">
+    <a href="../index.html" class="kortti-logo" aria-label="Ilmiöitä — etusivu"><img src="../favicon.svg" alt="Ilmiöitä"></a>
+    <a href="../index.html">← Kaikki ilmiöt</a>
+    <span class="kortti-breadcrumb-sep">›</span><span class="kortti-breadcrumb-kat">Lukuohje</span>
+  </div>
+
+  <div class="ilmio" id="vaalikeskustelun-lukuohje">
+    <div class="ilmio-tag">Lukuohje</div>
+    <h1>Vaalikeskustelun lukuohje — kahdeksan kysymystä</h1>
+    <p class="ilmio-byline">Kirjoittanut <a href="../tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 1.12.2026</p>
+
+    <p>Vaalikeskustelu on formaatti, ja formaatilla on säännöt, joita ei sanota ääneen. Tämä sivu ei kerro, ketä kannattaa äänestää eikä kuka puhui totta. Se antaa nimet niille muodoille, jotka toistuvat tentistä toiseen riippumatta siitä, kuka tuoleissa istuu.</p>
+
+    <p>Järjestys on lähetyksen järjestys: mitä on tapahtunut ennen kuin kukaan sanoo mitään, mitä tapahtuu studiossa, ja mitä tapahtuu sen jälkeen kun lähetys loppuu. Jokainen luku päättyy yhteen kysymykseen. Kysymykset ovat sivun tärkein osa, koska ne pysyvät käytössä silloinkin kun tämän sivun on unohtanut.</p>
+
+    <div class="katselukortti">
+      <h2>Lyhyt versio — kahdeksan riviä</h2>
+      <p class="kortti-alaotsikko">Riittää yksinään. Klikkaa riviä, jos haluat perustelun.</p>
+      <ol>
+        <li><a href="#luku1">Mistä ei puhuta tänä iltana?<span class="kortti-luku">Agenda on jo valittu</span></a></li>
+        <li><a href="#luku2">Onko tämä näyttö- vai arvokysymys?<span class="kortti-luku">Kysymyksen asettelu</span></a></li>
+        <li><a href="#luku3">Mitä vastaavat hankkeet lopulta maksoivat?<span class="kortti-luku">Lupaus</span></a></li>
+        <li><a href="#luku4">Mistä ajanjaksosta ja verrattuna mihin?<span class="kortti-luku">Luku</span></a></li>
+        <li><a href="#luku5">Mikä oli alkuperäinen kysymys?<span class="kortti-luku">Väistö</span></a></li>
+        <li><a href="#luku6">Mitä tämä syrjäytti keskustelusta?<span class="kortti-luku">Häiriö</span></a></li>
+        <li><a href="#luku7">Kuka on otos, kuka tuotanto?<span class="kortti-luku">Kuka näyttää kannattavan</span></a></li>
+        <li><a href="#luku8">Mikä muutti mieltäni — ja miksi ei mikään?<span class="kortti-luku">Oma pää</span></a></li>
+      </ol>
+    </div>
+
+    <h2 class="naytos">I · Ennen kuin kukaan sanoo mitään</h2>
+    <p class="naytos-johdanto">Tärkeimmät valinnat on tehty ennen lähetystä, eikä niitä ole tehnyt kukaan pahantahtoinen.</p>
+
+    <h3 id="luku1"><span class="luku-nro">1.</span> Agenda on jo valittu</h3>
+    <p>Illan aiheet on rajattu ennen kuin studioon syttyy valo. <a href="../uutiskynnys.html">Uutiskynnys</a> päästää läpi asian, jolla on tapahtuman muoto — hetki, tekijä, uhri, yllätys. Hidas ja rakenteellinen ei tapahdu minään päivänä eikä siksi pääse tenttiin, vaikka se koskisi useampaa ihmistä kuin illan kohu. Hoitojonot, korjausvelka ja ostovoiman rapautuminen häviävät kynnyksellä eivät siksi että ne olisivat pieniä, vaan siksi että niillä ei ole päivämäärää.</p>
+    <p>Kynnyksen tunteva viestijä osaa myös <em>rakentaa</em> asialleen tapahtuman: julkistuksen, kannanoton, avauksen, vuosipäivän. Kampanja-aika on täynnä juuri tätä. Samaan suuntaan vetävät <a href="../tiedotejournalismi.html">tiedotejournalismi</a>, joka päästää valmiiksi paketoidun aiheen läpi nopeammin kuin selvittämistä vaativan, ja <a href="../paasyjournalismi.html">pääsyjournalismi</a>, joka selittää miksi jatkokysymystä ei kysytä. <a href="../huonojen-uutisten-hautaaminen.html">Huonojen uutisten hautaaminen</a> on saman asian kalenteripuoli: ikävät päätökset siirtyvät kampanjan yli ja julkaistaan heti vaalien jälkeen. Ja siellä missä <a href="../uutisautiomaa.html">paikallislehteä ei enää ole</a>, paikallinen kysymys ei jää kynnyksen alle — se ei ehdi kenenkään arvioitavaksi.</p>
+    <p class="lukukysymys">Mistä ei puhuta, ja johtuuko se asian merkityksettömyydestä vai sen muodosta?</p>
+
+    <h2 class="naytos">II · Lähetyksen aikana</h2>
+    <p class="naytos-johdanto">Viisi lukua siinä järjestyksessä, jossa ne studiossa tulevat vastaan.</p>
+
+    <h3 id="luku2"><span class="luku-nro">2.</span> Kysymyksen asettelu</h3>
+    <p>Kehys ratkaisee vastauksen ennen kuin kukaan vastaa. <a href="../overton-ikkuna.html">Overton-ikkuna</a> on se, mitä ylipäätään voi ehdottaa näyttämättä hullulta — ja ikkunan siirtäminen on kampanjan tavoite, ei sivutuote: kun ääriehdotus esitetään tarpeeksi monta kertaa, aiemmin äärimmäinen alkaa kuulostaa kompromissilta.</p>
+    <p><a href="../vaara-tasapaino.html">Väärä tasapaino</a> on tenttiformaatin sisäänrakennettu virhe: kaksi kantaa ja sama puheaika luetaan yhtä suureksi näytöksi. Ratkaiseva erottelu on se, jota tentissä ei käytännössä koskaan tehdä — <strong>onko kyse näytöstä vai arvosta.</strong> Arvokysymyksessä kahden kannan esittäminen on oikein, se <em>on</em> politiikkaa. Näyttökysymyksessä sama symmetria on harhaanjohtava. Sekaannus näiden välillä ei suosi ketään erityisesti, mikä tekee siitä tehokkaan: sitä käyttävät kaikki. Samaan perheeseen kuuluvat <a href="../omenoita-appelsiineja.html">omenoiden vertaaminen appelsiineihin</a> ja <a href="../konsensus-fetissi.html">konsensuksen fetissi</a>, jossa erimielisyys itsessään esitetään ongelmana.</p>
+    <div class="termit">
+      <span class="termit-otsikko">Kaksi nimeä, jotka kuulet tässä kohtaa</span>
+      <dl>
+        <dt>Väärä dilemma.</dt> <dd>Vaihtoehdot esitetään kahtena, vaikka niitä on enemmän: <em>joko leikataan tai velkaannutaan.</em> Tunnistat siitä, että kolmatta vaihtoehtoa ei kielletä — sitä ei mainita.</dd>
+        <dt>Merkityksen vaihtaminen.</dt> <dd>Sama sana tarkoittaa lauseen alussa eri asiaa kuin lopussa. "Säästö" voi olla menoleikkaus tai tuottavuuden kasvu; väite kuulostaa johdonmukaiselta vain koska sana ei vaihdu.</dd>
+      </dl>
+    </div>
+    <p class="lukukysymys">Onko tämä näyttö- vai arvokysymys — ja kumpana se esitetään?</p>
+
+    <h3 id="luku3"><span class="luku-nro">3.</span> Lupaus</h3>
+    <p>Kampanjassa esitetty luku ei ole ennuste vaan hakemus. <a href="../strateginen-aliarviointi.html">Strateginen aliarviointi</a> selittää miksi: hankearvio annetaan portilla, jossa päätetään aloitetaanko, ja portti palkitsee optimismin. Liian rehellinen arvio ei koskaan pääse arvioitavaksi. <a href="../lapi-hinnalla-milla-hyvansa.html">Läpi hinnalla millä hyvänsä</a> kertoo, mitä tapahtuu kun arvio pettää mutta hanketta ei enää voi perua, ja <a href="../lukittu-paatos.html">lukittu päätös</a> sen, että hallitusohjelman rivi <em>on</em> päätös, jota myöhempi muodollinen käsittely vain vahvistaa.</p>
+    <p>"Selvitys osoittaa" on kampanjaretoriikan vakiofraasi. <a href="../paatosperainen-todistelu.html">Päätösperäinen todistelu</a> purkaa sen kolmeen kysymykseen: kuka tilasi, mikä rajattiin tarkastelun ulkopuolelle, ja montako selvitystä samasta asiasta on tehty. Neuvottelupuolelta mukaan tulevat <a href="../door-in-the-face.html">door-in-the-face</a> — ylimitoitettu avaus, jotta puolikas näyttää maltilta — ja <a href="../hintaankkurointi.html">hintaankkurointi</a>, jossa ensimmäinen mainittu luku määrää sen, mikä tuntuu kalliilta.</p>
+    <div class="termit">
+      <span class="termit-otsikko">Yksi nimi, joka kuuluu tähän kohtaan</span>
+      <dl>
+        <dt>Liukumäki.</dt> <dd>Ensimmäisestä askeleesta johdetaan lopputulos, jota kukaan ei ole ehdottanut. Väite ei ole automaattisesti virheellinen — se on virheellinen silloin, kun välivaiheita ei perustella lainkaan.</dd>
+      </dl>
+    </div>
+    <p class="lukukysymys">Mitä vastaavat, jo toteutuneet hankkeet lopulta maksoivat?</p>
+
+    <h3 id="luku4"><span class="luku-nro">4.</span> Luku</h3>
+    <p>Kun ehdokas sanoo numeron, numerossa on tehty vähintään kolme valintaa: aikaväli, vertailukohta ja yksikkö. <a href="../cherry-picking-aikavali.html">Cherry-picking</a> koskee ensimmäistä — sama kehitys nousee tai laskee sen mukaan, mistä vuodesta mittaus alkaa. <a href="../keskiarvo-vs-mediaani.html">Keskiarvoharha</a> koskee toista: keskiarvotulo ja mediaanitulo kertovat eri tarinan samasta maasta, ja puhuja valitsee kumman käyttää. <a href="../suhteellinen-riski.html">Suhteellinen riski</a> koskee kolmatta — "30 % enemmän" on tyhjä luku ennen kuin tiedetään, enemmän mitä.</p>
+    <p>Kuvassa valinnat jatkuvat: <a href="../kaksois-y-akseli.html">kaksois-y-akseli</a> tuottaa yhteyden kahden käyrän välille skaalaa säätämällä, <a href="../pinta-alaharha.html">pinta-alaharha</a> kaksinkertaistaa eron kuvan muodolla. Syvemmällä ovat <a href="../simpsonin-paradoksi.html">Simpsonin paradoksi</a> (kokonaisluku kääntyy päinvastaiseksi osaryhmissä), <a href="../selviytymisharha.html">selviytymisharha</a> (aineistossa ovat vain onnistuneet) ja <a href="../bkt-harha.html">BKT-harha</a> (mittari ei mittaa sitä, mitä sen väitetään mittaavan).</p>
+    <div class="termit">
+      <span class="termit-otsikko">Kaksi nimeä, jotka kuulet lukujen tilalla</span>
+      <dl>
+        <dt>Anekdoottiharha.</dt> <dd>Yksi tarina esitetään aineistona: <em>minulle kirjoitti eilen eräs sairaanhoitaja.</em> Tarina voi olla tosi ja silti kertoa vain siitä, kuka kirjoitti.</dd>
+        <dt>Hätiköity yleistys.</dt> <dd>Pienestä tai valikoituneesta havainnosta tehdään koko maata koskeva päätelmä. Tunnistat siitä, että otosta ei mainita — vain lopputulos.</dd>
+      </dl>
+    </div>
+    <p class="lukukysymys">Mistä ajanjaksosta, verrattuna mihin, ja kuka laski?</p>
+
+    <h3 id="luku5"><span class="luku-nro">5.</span> Väistö</h3>
+    <p>Kun kysymykseen ei vastata, väistöllä on lähes aina nimi. <a href="../whataboutismi.html">Whataboutismi</a> siirtää keskustelun vastapuolen syntiin — vastaus voi olla tosi ja silti täysin epärelevantti esitettyyn kysymykseen. <a href="../maalitolppien-siirtaminen.html">Maalitolppien siirtäminen</a> vaihtaa vaatimusta juuri kun se täyttyy. <a href="../argumenttitulva.html">Argumenttitulva</a> tuottaa enemmän väitteitä kuin vastapuoli ehtii tarkistaa; se pariutuu <a href="../brandolinin-laki.html">Brandolinin lain</a> kanssa, joka sanoo miksi tämä toimii: hölynpölyn kumoaminen vie kertaluokkaa enemmän vaivaa kuin sen tuottaminen.</p>
+    <p>Kovemmassa päässä ovat <a href="../darvo.html">DARVO</a>, jossa syytetty vaihtaa roolit uhrin kanssa, <a href="../gaslighting.html">gaslighting</a>, jossa kiistetään tapahtunut itse, ja <a href="../blame-game.html">blame game</a>, jossa vastuu siirretään edelliselle hallitukselle riippumatta siitä, kuinka kaukana se on. <a href="../godwinin-laki.html">Godwinin laki</a> kuvaa väistöistä viimeisen: vertaus, jonka jälkeen keskustelu ei enää jatku.</p>
+    <div class="termit">
+      <span class="termit-otsikko">Neljä nimeä, jotka kuulet joka tentissä</span>
+      <dl>
+        <dt>Olkiukko.</dt> <dd>Vastataan kantaan, jota kukaan ei esittänyt, mutta joka on helpompi kumota. Tunnistat siitä, että vastaus on vahvempi kuin kysymys ansaitsisi.</dd>
+        <dt>Ad hominem.</dt> <dd>Vastataan puhujaan eikä väitteeseen. Puhujan taustalla on merkitystä silloin kun kyse on luotettavuudesta — ei silloin kun kyse on luvusta.</dd>
+        <dt>Kaivon myrkyttäminen.</dt> <dd>Puhuja diskreditoidaan ennen kuin hän ehtii puhua, jolloin kaikki myöhempi kuullaan jo värittyneenä.</dd>
+        <dt>Todistustaakan siirto.</dt> <dd><em>Osoita, ettei näin ole.</em> Väitteen esittäjä siirtää näyttövelvollisuuden vastapuolelle, jolloin todistamaton väite jää voimaan kunnes se kumotaan.</dd>
+      </dl>
+    </div>
+    <p class="lukukysymys">Mikä oli alkuperäinen kysymys, ja vastattiinko siihen?</p>
+
+    <h3 id="luku6"><span class="luku-nro">6.</span> Häiriö</h3>
+    <p>Kun aihe on ehdokkaalle huono, keskustelu kannattaa vaihtaa. <a href="../kuollut-kissa.html">Kuollut kissa -strategia</a> on tämän täsmänimi: pöydälle heitetään jotain niin huomiota vaativaa, että alkuperäinen aihe unohtuu — eikä kukaan enää muista, mistä oltiin puhumassa. Tekniikan tehokkuus ei riipu siitä, onko häiriö puhujalle edullinen; riittää että se on tarpeeksi kova.</p>
+    <p><a href="../rage-bait.html">Rage bait</a> ja <a href="../klikkiotsikko.html">klikkiotsikko</a> selittävät, miksi häiriö leviää nopeammin kuin asia, ja <a href="../streisand-ilmio.html">Streisand-ilmiö</a>, miksi kiistäminen joskus kaksinkertaistaa sen. <a href="../firehose-of-falsehood.html">Firehose of falsehood</a> on sama tekniikka määränä eikä laatuna: ristiriitaisia versioita tuotetaan niin monta, ettei mihinkään jaksa suhtautua vakavasti. <a href="../keharaportointi.html">Kehäraportointi</a> antaa vastapainoksi faktantarkistuksen yksinkertaisimman säännön — <strong>jos "useiden lähteiden mukaan" -jutut ovat ilmestyneet parin päivän sisällä, lähteitä on todennäköisesti yksi.</strong></p>
+    <div class="termit">
+      <span class="termit-otsikko">Yksi nimi, joka kuuluu tähän kohtaan</span>
+      <dl>
+        <dt>Punainen silli.</dt> <dd>Vaihdetaan aiheeseen, joka <em>tuntuu</em> liittyvän mutta ei ratkaise mitään. Ero kuolleeseen kissaan on koko: punainen silli on keskustelun sisäinen sivupolku, kuollut kissa vaihtaa koko illan aiheen.</dd>
+      </dl>
+    </div>
+    <p class="lukukysymys">Mitä tämä syrjäytti keskustelusta?</p>
+
+    <h2 class="naytos">III · Lähetyksen jälkeen</h2>
+    <p class="naytos-johdanto">Illan tulkinta syntyy vasta lähetyksen loputtua — ja siihen osallistuu kaksi osapuolta, joista toinen olet sinä.</p>
+
+    <h3 id="luku7"><span class="luku-nro">7.</span> Kuka näyttää kannattavan</h3>
+    <p>Lähetyksen jälkeinen "kansan reaktio" on osittain tuotettu. <a href="../astroturf.html">Astroturf</a> on tilattua ruohonjuurta: kampanja, joka on rakennettu näyttämään spontaanilta kansalaisliikkeeltä. <a href="../trollitehdas.html">Trollitehdas</a> on sen teollinen muoto. Kumpaakaan ei tarvita siihen, että kommenttikenttä antaisi väärän kuvan — <a href="../1-prosentin-saanto.html">1 %:n sääntö</a> ja <a href="../aanekas-vahemmisto.html">äänekäs vähemmistö</a> selittävät saman ilman ketään pahantahtoista: sisältöä tuottaa muutama prosentti, eikä se prosentti ole keskimääräinen äänestäjä.</p>
+    <p>Päälle tulevat <a href="../sosiaalinen-todiste.html">sosiaalinen todiste</a> (moni muu ajattelee näin, joten se on todennäköisesti oikein), <a href="../kaikukammio.html">kaikukammio</a> (vastakkainen näkemys ei pääse kuuluviin) ja <a href="../engagement-bait.html">engagement bait</a> (jakoja kerätään sisällöllä, joka on rakennettu reaktiota eikä tietoa varten). Taustalla on <a href="../manufactured-consent.html">manufactured consent</a>: rakenteellinen malli siitä, miten hyväksyttävän mielipiteen rajat syntyvät ilman että kukaan niitä päättää.</p>
+    <p class="lukukysymys">Kuka on tässä otos ja kuka on tuotanto?</p>
+
+    <h3 id="luku8"><span class="luku-nro">8.</span> Oma pää</h3>
+    <p>Viimeinen luku kääntyy lukijaan, ja se on sivun ainoa kohta, joka on epämukava molemmille laidoille. <a href="../vihamielisen-median-harha.html">Vihamielisen median harha</a> on tämän ankkuri: kun samaa juttua näytetään kahden vastakkaisen leirin kannattajille, molemmat arvioivat sen puolueelliseksi juuri heitä vastaan. Havainto ei kumoa sitä, että puolueellisuutta on olemassa — se kumoaa yhden mittarin. <strong>Oma kokemus puolueellisuudesta ei kelpaa sen todisteeksi.</strong></p>
+    <p><a href="../backfire-effect.html">Backfire effect</a> kuvaa, miksi oikaisu voi joskus lujittaa uskomusta sen sijaan että korjaisi sen. <a href="../halo-efekti.html">Halo-efekti</a> selittää, miksi miellyttävä esiintyjä kuulostaa myös oikeassa olevalta, ja <a href="../sunk-cost-harha.html">sunk cost -harha</a>, miksi pitkään kannatettua kantaa on vaikeampi vaihtaa kuin uutta. <a href="../gell-mannin-amnesia.html">Gell-Mannin amnesia</a> on näistä salakavalin: huomaat virheet vain omalta alaltasi etkä yleistä havaintoa mihinkään.</p>
+    <p>Yksi asia tiedetään toimivan. <a href="../inokulointiteoria.html">Inokulointiteorian</a> mukaan tekniikan tunnistaminen etukäteen suojaa siltä paremmin kuin väitteen kumoaminen jälkikäteen — heikko annos vastustuskyvyn rakentamiseksi. Tämän sivun koko perustelu on siinä.</p>
+    <p class="lukukysymys">Mikä tässä illassa muutti mieltäni — ja jos ei mikään, miksi ei?</p>
+
+    <div class="infolaatikko">
+      <h2 class="laatikko-otsikko">Mitä tämä sivu ei tee:</h2> Se ei kerro, ketä kannattaa äänestää, eikä ota kantaa yhdenkään väitteen totuudellisuuteen. Se ei myöskään väitä, että tekniikoiden käyttö olisi yhden puolueen tai laidan ominaisuus — päinvastoin: nämä muodot toistuvat siksi, että ne toimivat, ja siksi niitä käyttävät kaikki. Sivu antaa nimet muodoille. Sisällöistä päättäminen on äänestäjän työ, eikä sitä voi ulkoistaa lukuohjeelle.
+    </div>
+  </div>
+
+  <footer class="ilmio-footer">
+    <a href="../index.html">Kaikki 127 ilmiötä</a> ·
+    <a href="../kategoria-media-ja-julkisuus.html">Media ja julkisuus</a> ·
+    <a href="../kategoria-tilastoilla-valehtelu.html">Tilastoilla valehtelu</a> ·
+    <a href="../tietoa.html">Tietoa sivustosta</a>
+  </footer>
+
+</body>
+</html>
