@@ -216,6 +216,8 @@ Kategoriasivu: https://www.ilmiöt.fi/kategoria-tilastoilla-valehtelu.html
 
 Miksi jostain ei uutisoida lainkaan, miksi jostain kerrotaan vinoutuneesti — ja miksi yleisö lukee lopputuloksen niin kuin lukee.
 
+Kategoriasivu: https://www.ilmiöt.fi/kategoria-media-ja-julkisuus.html
+
 - [Uutiskynnys](https://www.ilmiöt.fi/uutiskynnys.html): Uutiseksi pääsee asia, jolla on tapahtuman muoto — hidas ja rakenteellinen jää kertomatta.
 - [Uutisautiomaa](https://www.ilmiöt.fi/uutisautiomaa.html): Kun paikallislehti lakkaa, valtuuston kokouksissa ei istu ketään eikä virheitä huomaa kukaan.
 - [Pääsyjournalismi](https://www.ilmiöt.fi/paasyjournalismi.html): Toimittaja on riippuvainen lähteen pääsystä, joten kriittinen kysymys maksaisi koko suhteen.
