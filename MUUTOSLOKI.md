@@ -1,5 +1,103 @@
 # Muutosloki — Ilmiöitä (www.ilmiöt.fi)
 
+## 13.8.2026 — GSC-auditti ja geneeristen titlejen korvaus (11 sivua)
+
+Auditti `GSC-AUDIT-2026-08-13.md`, data `datalake_analysis/13082026/`.
+Jakso 18.6.–11.8.: **82 klikkiä / 3 783 näyttöä / CTR 2,17 % / sija 9,46**
+(edellinen otos 19 / 1 419 / 1,34 % / 11,1). `darvo.html` = 71 % klikeistä.
+
+**Löydös.** Sijoitusvälillä 6–12 vakioituna geneerisen titlen
+(`X — mitä se tarkoittaa?`) sivut saivat 1 597 näyttöä ja 4 klikkiä (0,25 %,
+ka. sija 9,10); kuvailevan titlen sivut 899 näyttöä ja 8 klikkiä (0,89 %,
+ka. sija 9,12). Nuo 11 sivua kantavat 42 % koko sivuston näyttökerroista.
+SERP-tarkistus vahvistaa mekanismin: haulla *hyvesignalointi* yläpuolella ovat
+fi.wikipedia, Wikisanakirja ja Urbaani Sanakirja — title lupasi täsmälleen sen,
+minkä lukija sai jo ylempää. Klikkiotos on pieni (p ≈ 0,06–0,10), näyttöotos ei.
+
+**Historia — tämä on peruutus, ei uusi koe.** Commit `fe90451` (25.7.,
+"top 15 titlemuutokset") vaihtoi 15 suurimman sivun titlet kuvailevista
+geneerisiksi (esim. "Hyvesignalointi — hyvettä yleisölle" → "— mitä se
+tarkoittaa?"). Saman erän darvo sai kuvailevan titlen ja on ainoa toimiva sivu.
+Aiempi kirjaus "28.7. title-remontti ei nostanut CTR:ää" osoittautui vääräksi
+attribuutioksi: `9f07192` ja `8748380` eivät muuttaneet **yhtäkään** title-riviä
+(0 osumaa diffissä) — niissä testattiin vastauslohkoa ja FAQPage-schemaa.
+Titleä on muutettu tasan kerran, ja väärään suuntaan.
+
+**Korjaus.** `scripts/korjaa_titlet.py` (kuivaharjoitus oletuksena,
+`--kirjoita` kirjoittaa; ohittaa sivun jos nykyinen title ei vastaa odotettua).
+Uusi title seuraa kunkin sivun omaa H1-kulmaa, joka oli jo kirjoitettu hyvin.
+`og:title` ja `twitter:title` päivitettiin samalla — 3 riviä / sivu.
+
+**Tietoisesti koskematta:** metakuvaukset, `dateModified`, näkyvä
+"Päivitetty"-päivä. Syy: seuraava GSC-otos mittaa yhtä muuttujaa, ja sitemapin
+`lastmod` pysyy totena. **Siksi `build_sitemap.py`:tä ei ajettu.**
+`build_search_index.py` ajettiin (140 sivua, 401 kt) — `search-index.js` ei
+muuttunut, indeksi ei lue `<title>`-tagia.
+
+**Kilpailija-analyysi (auditin §6b).** Haettu SERPistä termeillä, joilla sivusto
+on sijalla 7–12. Yläpuolella on kaksi ryhmää: auktoriteetit (fi.wikipedia, Yle,
+MTV) ja pitkät artikkelisivut. Lähiluettu kolme: `tietoviisas.fi` (~1 300 sanaa,
+11 kysymysotsikkoa), `yksipeli.fi` (~1 200 sanaa, 10 kysymysotsikkoa, **kasino-
+affiliate ilman tekijää ja päiväystä** — silti hyvesignaloinnissa yläpuolella),
+`diletantti.fi` (~1 150 sanaa, 3 kaaviota, linkki 1999-tutkimukseen). ilmiöt.fi
+on ~260 sanaa ja 4 otsikkoa. Sivusto voittaa sisäisessä linkityksessä (12–16
+aiheenmukaista linkkiä vs. kilpailijoiden 0–3), tekijätiedossa, lähteissä ja
+schemassa — ei riitä kompensoimaan 5-kertaista pituuseroa. **Sanamäärän normia
+ei muutettu**; jännite kirjattu audittiin päätöksentekoa varten.
+
+**Termiaukot korjattu.** Kilpailijat käyttävät suomalaisia rinnakkaistermejä,
+jotka puuttuivat. Tarkistettu 10 sivua, 17 aukkoa.
+
+- **Kirjoitusvirhe `upponneiden` → `uponneiden`, 14 esiintymää neljässä
+  tiedostossa** (11 `sunk-cost-harha.html`:ssä), myös `<title>`, `og:title`,
+  `twitter:title`, metakuvaus ja JSON-LD. Sivusto käyttää muualla oikeaa muotoa
+  (`bait-and-switch`, `lowball-hinnoittelu`, `lapi-hinnalla-milla-hyvansa`) →
+  virhe, ei tyylivalinta. GSC: *uponneet kustannukset* 21 näyttöä sijalla 26,5 —
+  sivun suomenkielinen päätermi ei ole vastannut yhtäkään hakua.
+- Lisätty ingressiin 2–4 sanan tarkennuksina: `doom scrolling` (välilyönnillä,
+  19 näyttöä sija 10,3), `ylivertaisuusharha` + `ylivertaisuusvinouma`
+  (dunning-kruger; Yle ja Target Training käyttävät), `Ockham`
+  (occamin-partaveitsi), `hyveposeeraus`, `entäskunismi`. Sanamäärät
+  483→487, 633→639, 526→529, 560→563, 608→618 — normi kestää.
+- HTML validoitu HTMLParserilla: ei sulkeutumattomia tageja, strong/em tasan.
+- `build_search_index.py` ajettu uudelleen.
+
+**Etusivun title (auditin P4).** `Ilmiöt — 127 yhteiskunnallista ilmiötä
+selitettynä | Ilmiöitä` → **`Manipulointi, propaganda ja huijaukset — 127
+ilmiötä | Ilmiöitä`** (63 merkkiä). Vanha tähtäsi sanaan *ilmiöt*, jota ei haeta
+intentiolla, ja änkytti. Päivitetty myös `og:title`, `twitter:title` ja
+`CollectionPage`in `name` — `dateModified` ja `paivitetty-btn` koskematta.
+Etusivu sai 17 näyttöä / 3 kk, joten ongelma on näyttöjen puute, ei CTR.
+Vaihtoehdot punnittu SERP-haulla: *ajattelun vinoumat* olisi kannibalisoinut
+`kategoria-psykologia-ja-kognitio.html`:n, *retoriset keinot* on lukion
+ÄI4-kysyntää eikä sivustolla ole eetos/paatos/logos-sisältöä, *ilmiösanakirja*
+on itse keksitty. Tiedostettu varaus: *manipulointi*-SERP painottuu
+narsisti/parisuhde-kulmaan.
+
+**Aihevalinta seuraavalle erälle:** `luonnokset-media/UUDET-KLUSTERIT-PLAN.md`.
+Kolme klusteria (pimeät kuviot 5, tekoälyhuijaukset 4, argumentointivirheet 5),
+kategoriasijoitukset ja päällekkäisyystarkistukset tehty. Kaksi ensimmäistä ovat
+darvon asetelma (kysyntää, ei fi-Wikipediaa); kolmas on tietoinen
+hyvesignalointi-ansa ja vaatii erillisen päätöksen. Suunnitelma sisältää myös
+kieltolistan: ei lisää myyntikikkoja (15 sivua → 74 näyttöä) eikä
+tilastotemppuja (8 → 21), eikä itse keksittyjä suomennoksia.
+
+**Ei `muutokset.html`:ään:** lukija ei saa uutta luettavaa.
+
+**Mittauspiste ~10.9.2026:** jos näiden 11 sivun CTR sijalla 6–12 ei ole
+noussut tasolle 0,7–0,9 %, hypoteesi on väärä ja titlet voi palauttaa
+skriptin taulukosta.
+
+**Kaksi hypoteesia kaatui testissä** (kirjattu ettei niitä testata uudelleen):
+*fi-Wikipedia-artikkelin olemassaolo syö klikin* — ero oli kokonaan darvo, ja
+ilman sitä 0,79 % vs. 0,57 %, ei vaikutusta; tarkistettu Wikipedia-API:lla
+kaikille 127 ilmiölle (35 artikkelia olemassa, 92 ei). *FAQ-schema nostaa
+CTR:ää* — sekoittajana sijoitus (8,90 vs. 15,15), ei schema.
+
+**Tekniikka livenä 13.8.:** kanoniset 301:t toimivat kaikista kolmesta
+varianteista, live = local (12/12 md5), 5.8. julkaistut 14 sivua 200,
+sitemap 143 URL:ää. Ei korjattavaa.
+
 ## 5.8.2026 — Suurhanke-erä (4) ja media-erä (10) julkaistu: 113 → 127 ilmiötä, 13. kategoria
 
 `luonnokset-media/ANALYYSI.md`:n julkaisujärjestyksen kaksi ensimmäistä erää

@@ -244,6 +244,12 @@ kategorioiden yli — esimerkiksi *lue vaalikeskustelua*, *lue vaalilupausta*,
 Tämä on navigointi- ja jakamiskerros, ei uusi sisältö, joten se on halpa
 toteuttaa ja helppo julkaista erillään ilmiösivuista. Suunnitellaan erikseen.
 
+> **Suunniteltu 5.8.2026:** koostesivun sisältösuunnitelma on omassa
+> tiedostossaan — `VAALIKESKUSTELU-LUKUOHJE-PLAN.md`. Ratkaisu: itsenäinen
+> opas (~1400–1800 sanaa), joka jäsentyy vaalikeskustelun kulun mukaan
+> kahdeksaan lukuun, ei linkkilista. Sivu imee myös paketti-ideat *lue
+> vaalilupausta* ja *lue gallupia*.
+
 Ensimmäisenä askeleena kannattaa harkita **koostesivua** (ei uusi ilmiö vaan navigointisivu):
 *"Vaalikeskustelun lukuohje"* — kokoaa jo julkaistut ([Overton-ikkuna](../overton-ikkuna.html),
 [astroturf](../astroturf.html), [firehose of falsehood](../firehose-of-falsehood.html),
