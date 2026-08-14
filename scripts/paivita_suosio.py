@@ -53,9 +53,16 @@ PROTO = LUONNOKSET / "etusivu-nostot.html"
 # olisi pelkkää kohinaa: 1 → 4 näyttöä on +300 %. Kolme suojaa: lattia karsii
 # yksinumeroiset sivut, Laplace-tasoitus vaimentaa pienten lukujen suhteet, ja
 # karenssi estää saman sivun toiston.
-VIIKKO_LATTIA = 20      # vähintään näin monta näyttöä kuluvassa 7 pv:n ikkunassa
+VIIKKO_LATTIA = 10      # vähintään näin monta lukukertaa kuluvassa 7 pv:n ikkunassa
 VIIKKO_TASOITUS = 5     # (nyt + t) / (ennen + t)
 VIIKKO_KARENSSI = 4     # montako edellistä valintaa pidetään poissa
+
+# Lattia kalibroitu oikeaa dataa vasten 14.8.2026: 7 pv:n ikkunassa on 171
+# lukukertaa 40 sivulle, ja vain 2 sivua ylittää 10. Sitä alempana viikkoluvut
+# ovat 3–8, jolloin kasvusuhde on kohinaa eikä signaalia — lattian laskeminen
+# ei tuo lisää ilmiöitä vaan lisää arvontaa. Nosta lattiaa kun liikenne kasvaa.
+# 30 pv vs. edellinen 30 pv olisi vakaampi mittari, mutta kannassa on dataa
+# vasta 1.7.2026 alkaen, joten vertailuikkuna täyttyy vasta ~syyskuussa 2026.
 
 HELSINKI = timezone(timedelta(hours=3))  # kesäaika; vain aikaleiman esitysmuotoon
 
@@ -323,7 +330,7 @@ def summaa(rivit, alku, loppu):
     return dict(summat)
 
 
-def valitse_viikon_ilmio(d7, edellinen7, tanaan, kirjoita):
+def valitse_viikon_ilmio(d7, edellinen7, tanaan, kirjoita, tunnetut):
     """Suhteellisesti eniten noussut sivu, lattialla ja tasoituksella suojattuna.
 
     Valinta lasketaan vain maanantaisin ja pysyy samana koko viikon — muuten
@@ -354,7 +361,10 @@ def valitse_viikon_ilmio(d7, edellinen7, tanaan, kirjoita):
     karenssissa = {v["u"] for v in historia[:VIIKKO_KARENSSI]}
     ehdokkaat = []
     for slug, nyt in d7.items():
-        if slug == "index.html" or nyt < VIIKKO_LATTIA or slug in karenssissa:
+        # Vain ilmiösivut: kanta tuntee myös etusivun, tietoa.html:n ja
+        # kategoriasivut, mutta niillä ei ole hub-korttia josta selain hakisi
+        # nimen ja kuvauksen — valinta näkyisi lukijalle piilotettuna lohkona.
+        if slug not in tunnetut or nyt < VIIKKO_LATTIA or slug in karenssissa:
             continue
         ennen = edellinen7.get(slug, 0)
         kasvu = (nyt + VIIKKO_TASOITUS) / (ennen + VIIKKO_TASOITUS)
@@ -625,7 +635,7 @@ NOSTOT_HTML = """
 <!-- NOSTOT-LOPPU -->
 """
 
-NOSTOT_JS = """
+NOSTOT_JS = r"""
 <!-- NOSTOT-ALKU — scripts/paivita_suosio.py injektoi, älä muokkaa käsin -->
 <script src="data/suosio.js" defer></script>
 <script>
@@ -1178,7 +1188,8 @@ def main():
     d30 = summaa(rivit, *ikkunat["d30"])
     edellinen7 = summaa(rivit, ed_alku, ed_loppu)
 
-    viikko, _ = valitse_viikon_ilmio(d7, edellinen7, tanaan, kirjoita and not args.demo)
+    viikko, _ = valitse_viikon_ilmio(d7, edellinen7, tanaan,
+                                     kirjoita and not args.demo, tunnetut)
 
     # ── Yhteenveto ────────────────────────────────────────────────────
     yht7 = sum(v for k, v in d7.items() if k in tunnetut)
