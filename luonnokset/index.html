@@ -181,7 +181,7 @@
   <img class="hub-logo" src="../favicon.svg" alt="Ilmiöitä-logo: punainen varoituslippu" width="36" height="36">
   <div class="hub-header-left">
     <h1>Ilmiöitä &middot; luonnokset</h1>
-    <p>1 koostesivu odottaa julkaisua</p>
+    <p>1 koostesivu odottaa julkaisua &middot; suosiodata testivaiheessa</p>
   </div>
   <a class="paluu-btn" href="../index.html">&larr; Kaikki ilmiöt</a>
 </header>
@@ -202,6 +202,23 @@ julkaistaessa molemmat puretaan.</p>
   ja ehdollinen — päätös vasta title-testin mittauspisteen (~10.9.2026) jälkeen. Ks.
   <a href="UUDET-KLUSTERIT-PLAN.md">UUDET-KLUSTERIT-PLAN.md</a> &sect; 5.
 </div>
+
+<section class="hub-kategoria">
+  <div class="hub-kat-label">Suosiodata &middot; generoitu &middot; ei versionhallinnassa</div>
+  <p class="hub-kat-desc">Molemmat sivut kirjoittaa <code>scripts/paivita_suosio.py</code>,
+  joten <strong>älä muokkaa niitä käsin</strong> — seuraava ajo ylikirjoittaa. Jos linkit eivät
+  aukea, aja skripti kerran: sivut eivät ole gitissä eivätkä siis seuraa mukana kloonissa.
+  <code>suosio.html</code> on oma analytiikkanäkymä eikä siirry palvelimelle.
+  <code>etusivu-nostot.html</code> on kopio etusivusta kolmella uudella lohkolla; julkaisu
+  tapahtuu ajamalla sama injektori lipulla <code>--tuotanto</code>, ei kopioimalla tästä.
+  Tuotannossa <code>NAYTA_LUVUT</code> kääntyy <code>false</code>:ksi, eli lukukerrat näkyvät
+  vain tässä testivaiheessa. Kannan osoite ja tunnukset ovat gitignoratussa
+  <code>.suosio.env</code>:ssä, malli on <code>.suosio.env.malli</code>.</p>
+  <div class="hub-kortit">
+    <a class="hub-kortti" style="--c:#1e7a4a" href="suosio.html"><span class="hub-numero tyhja">&there4;</span><span class="hub-nimi">Suosio <em>· ranking, nousijat, kategoriat, julkaisuerät</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#1e7a4a" href="etusivu-nostot.html"><span class="hub-numero tyhja">&there4;</span><span class="hub-nimi">Etusivun nostot <em>· viikon ilmiö, satunnainen, luetuimmat</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+  </div>
+</section>
 
 <section class="hub-kategoria">
   <div class="hub-kat-label">Koostesivu &middot; ei ilmiö &middot; julkaisu joulukuu 2026</div>

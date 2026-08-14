@@ -1,6 +1,6 @@
 # Ilmiöitä — www.ilmiöt.fi
 
-Suomenkielinen tietopankki: 113 yhteiskunnallista ilmiötä, 12 aihepiiriä. Staattinen
+Suomenkielinen tietopankki: 139 yhteiskunnallista ilmiötä, 13 aihepiiriä. Staattinen
 HTML, ei build-vaihetta — jokainen sivu on itsenäinen tiedosto repon juuressa. Osa
 tiedostoista on kuitenkin **generoituja**, eikä niitä muokata käsin (ks. alla).
 
@@ -63,9 +63,35 @@ nappi on säilytettävä — muuten sivu jää orvoksi.
 | `search-index.js` | `scripts/build_search_index.py` | sisältömuutosten jälkeen |
 | `llms.txt` (ilmiölista) | `scripts/paivita_maarat.py` | ilmiömäärän muuttuessa |
 | `kategoria-*.html` | `scripts/build_kategoriat.py` | kun `kategoriat/*.md` muuttuu |
+| `data/suosio.js` | `scripts/paivita_suosio.py` | yöllä cronista |
+| `luonnokset/suosio.html` | `scripts/paivita_suosio.py` | samalla ajolla |
+| `luonnokset/etusivu-nostot.html` | `scripts/paivita_suosio.py` | samalla ajolla |
 
 `llms.txt`:n **otsikkolohko** (rivit 1–10) on käsin ylläpidetty; vain
 ilmiölista synkronoituu skriptillä.
+
+## Suosiodata ja etusivun nostot
+
+`scripts/paivita_suosio.py` hakee liikennekannasta luetuimmat sivut ja valitsee
+viikon ilmiön. Kolme sääntöä:
+
+1. **Yöajo ei kirjoita `index.html`:ään.** Suosiodata elää erillisessä
+   `data/suosio.js`:ssä, jonka etusivu lataa `defer`-skriptinä ja joka on ainoa
+   yöllä palvelimelle siirtyvä tiedosto. Jos data kirjoitettaisiin HTML:ään,
+   joka yö työnnettäisiin 300 kt etusivu, joka voi ylikirjoittaa käsin tehtyjä
+   muutoksia — se on tämän projektin dokumentoitu pahin vikatila.
+2. **`data/suosio.js` sisältää vain slugit ja luvut.** Otsikot, kuvaukset ja
+   värit haetaan selaimessa sivun omista `.hub-kortti`-elementeistä. Älä lisää
+   niitä datatiedostoon: kaksi listaa ajautuisi erilleen.
+3. **Nostokortit eivät käytä luokkaa `hub-kortti`.** Etusivun haku,
+   nuolinäppäinnavigaatio ja `randomIlmio()` keräävät kaikki `.hub-kortti`-
+   elementit, joten duplikaatti näkyisi hakutuloksissa kahdesti.
+
+Nostolohkot injektoidaan `NOSTOT-ALKU`/`NOSTOT-LOPPU`-merkkien väliin; ajo on
+idempotentti ja poistaa edellisen injektion ensin. Oletuksena kohde on
+`luonnokset/etusivu-nostot.html`, `--tuotanto` kirjoittaa `index.html`:ään.
+Tunnukset ja kannan osoite ovat gitignoratussa `.suosio.env`:ssä
+(ks. `.suosio.env.malli`) — eivät koskaan versionhallintaan.
 
 Ilmiöiden numerointia ei koskaan korjata käsin: `scripts/lisaa_ilmiot.py` ja
 `scripts/poista_ilmio.py` numeroivat koko sivuston uudelleen ja päivittävät

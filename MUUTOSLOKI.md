@@ -1,5 +1,80 @@
 # Muutosloki — Ilmiöitä (www.ilmiöt.fi)
 
+## 14.8.2026 — Suosiodata luonnostettu: luetuimmat, viikon ilmiö, satunnainen ilmiö
+
+Uusi `scripts/paivita_suosio.py` hakee liikennekannasta sivukohtaiset lukukerrat
+ja kirjoittaa niistä kolme tiedostoa. **Mitään ei ole julkaistu** — kaikki elää
+`luonnokset/`-kansiossa haarassa `suosio-ja-nostot`, `index.html` on koskematon.
+
+**Arkkitehtuuri.** Yöajo ei kirjoita `index.html`:ään. Suosiodata on erillisessä
+`data/suosio.js`:ssä (8 kt demodatalla), jonka etusivu lataisi `defer`-skriptinä
+ja joka on ainoa yöllä siirtyvä tiedosto. Vaihtoehto — data suoraan HTML:ään —
+tarkoittaisi 300 kt etusivun työntämistä palvelimelle joka yö, eli tämän
+projektin dokumentoidun pahimman vikatilan (deploy gap) automatisointia.
+
+Datatiedostossa on vain slugit ja luvut. Nimet, kuvaukset, värit ja numerot
+haetaan selaimessa sivun omista `.hub-kortti`-elementeistä, samaan tapaan kuin
+haku tekee jo nyt. Siksi ilmiön uudelleennimeäminen tai poisto ei voi jättää
+suosiolohkoon haamurivejä, eikä toista ylläpidettävää ilmiölistaa synny.
+
+**Kolme lohkoa** injektoidaan `NOSTOT-ALKU`/`NOSTOT-LOPPU`-merkkien väliin
+katnavin jälkeen, ennen ensimmäistä kategoriaa — kategorioiden väliin sijoitettu
+lohko katkaisisi `.hub-kategoria + .hub-kategoria` -sisarussäännön. Ajo on
+idempotentti. Kohde on oletuksena `luonnokset/etusivu-nostot.html`, `--tuotanto`
+kirjoittaisi `index.html`:ään.
+
+Kortit käyttävät luokkia `.nosto-kortti` / `.nosto-rivi`, **eivät** `.hub-kortti`:a:
+`index.html:2709` kerää kaikki `.hub-kortti`-elementit ja sama taulukko ajaa
+hakua, nuolinäppäinnavigaatiota ja `randomIlmio()`:ta, joten duplikaatti näkyisi
+hakutuloksissa kahdesti ja arvonnassa kaksinkertaisella painolla. Nostolohko
+pysäyttää myös omat `keydown`-tapahtumansa, koska rivin 2813 käsittelijä
+fokusoi hakukentän jokaisesta tulostuvasta merkistä.
+
+**Viikon ilmiö** on suhteellisesti eniten noussut sivu, kolmella suojalla:
+vähintään 20 lukukertaa viikossa (lattia), järjestys tasoitettuna kaavalla
+(nyt+5)/(ennen+5), ja 4 edellistä valintaa karenssissa tilatiedostossa
+`data/.viikko-historia.json`. Ilman näitä 1 → 4 näyttöä olisi +300 % ja lista
+olisi pelkkää kohinaa. **Valinta lasketaan vain maanantaisin** ja pysyy koko
+viikon; muina öinä luvut päivittyvät mutta valinta ei. Jos yksikään sivu ei
+ylitä lattiaa, lohko piiloutuu — hiljainen tyhjä on parempi kuin arvottu nousija.
+
+**Degradaatio.** Jos `window.ILMIO_SUOSIO` puuttuu tai `paivitetty` on yli 3 vrk
+vanha, viikon ilmiö ja luetuimmat piiloutuvat itsestään; satunnainen ilmiö
+toimii silti, koska sen lähde on sivun oma korttilista. Epäonnistunut yösiirto
+ei siis näytä lukijalle viime kuun "luetuimpia 7 päivää".
+
+**Testattu selaimessa** (playwright, 34 tarkistusta): renderöinti, välilehdet,
+sekoituspussi (8 klikkausta = 8 eri ilmiötä, ei viikon ilmiötä eikä
+kärkikolmikkoa), haku ja nuolinavigaatio ehjiä, 139 korttia yhä 139, ei
+duplikaatteja hakutuloksissa, näppäimistö ei varasta fokusta, molemmat
+degradaatiotilat, mobiili 380 px ilman vaakavieritystä, konsoli puhdas.
+
+**Kaksi vikaa löytyi ja korjattiin testatessa:**
+
+- Kategoriajäsennin hukkasi viimeisen kategorian 10 korttia (139 → 129), koska
+  `hub-tyhja`-lopetin on sisennetty ja tyhjän rivin takana. Rajaus on nyt
+  sijaintipohjainen, ja jäsennin **kaatuu** jos korttimäärä ei täsmää raakaan
+  `hub-kortti`-laskuriin — sama opetus kuin `paivita_maarat.py`:n `maara`-tarkistuksessa.
+- Dashboardin "Laskijat" listasi nousseita sivuja, koska lista täyttyi loppuun
+  kun aitoja laskijoita oli vain yksi. Suunta on nyt suodatusehto, ei
+  järjestysperuste.
+
+**Kanta.** `scripts/suosio_lukijatunnus.sql` luo vain luku -roolin
+(`default_transaction_read_only`, 30 s `statement_timeout`, 3 yhteyttä).
+Kysely annetaan `.suosio.env`:n `SUOSIO_SQL`:ssä, koska tähtimallin taulunimet
+ovat kantakohtaisia; se palauttaa kolme saraketta (polku, pvm, nayttoja) ja
+kaikki ikkunointi tehdään Pythonissa missä sen voi testata. Osoite ja tunnukset
+eivät ole versionhallinnassa; `.gitignore` sai `.suosio.env`:n, generoidut
+tiedostot ja korjauksen `datalake-analysis/` → `datalake_analysis/` (väliviiva
+ei ole koskaan osunut oikeaan kansioon, joten GSC-viennit ovat gitissä).
+
+**Ei vielä tehty:** kantayhteys puuttuu, joten luvut ovat toistaiseksi
+`--demo`-tilan synteettistä dataa GSC-viennistä. Skeema selvitetään
+`--skeema`-lipulla kun lukijatunnus on luotu. Ennen tuotantoa on
+ristiintarkistettava, ettei faktataulu laske botteja: sivusto saa GSC:n mukaan
+~82 klikkiä/kk, joten kertaluokkaa suurempi summa tarkoittaa crawlereita.
+`muutokset.html`:ää ei ole päivitetty eikä pidäkään ennen julkaisua.
+
 ## 14.8.2026 — Julkaistu 12 ilmiötä: 127 → 139, neljä kategoriaa kasvoi
 
 Yksi ajo, kolme erää: vaalierä (3 sivua, luonnokset 4.8.), pimeät kuviot (5) ja
