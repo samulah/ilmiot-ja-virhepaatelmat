@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-  <title>Kannatusmittausten virhemarginaali — kahden luvun ero on epätarkempi kuin luvut — Ilmiöitä</title>
-  <link rel="stylesheet" href="../style.css?v=20260727">
-  <link rel="stylesheet" href="../fonts/fonts.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Evästeansa — hyväksyminen yhdellä klikkauksella, kieltäytyminen viidellä — Ilmiöitä</title>
+  <link rel="stylesheet" href="style.css?v=20260725">
+  <link rel="stylesheet" href="fonts/fonts.css">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -16,7 +16,7 @@
       if (loaded) return;
       loaded = true;
       var s = document.createElement('script');
-      s.src = '../js/mermaid.min.js';
+      s.src = 'js/mermaid.min.js';
       s.onload = function () {
         mermaid.initialize({ startOnLoad: false, theme: 'base', themeVariables: { fontSize: '12px', fontFamily: "'DM Sans', system-ui, sans-serif", primaryColor: '#FBF5E0', primaryTextColor: '#1A1100', primaryBorderColor: '#C9A84C', lineColor: '#8B6914', secondaryColor: '#F5F0E5', tertiaryColor: '#FDFAF2', mainBkg: '#FBF5E0', nodeBorder: '#C9A84C', clusterBkg: '#F5F0E5', titleColor: '#3A2000', edgeLabelBackground: '#FDFAF2' } });
         mermaid.run();
@@ -74,8 +74,8 @@
       text-transform: uppercase;
     }
     /* Jokaiselle ilmiölle oma väri */
-    #kannatusmittausten-virhemarginaali { border-top-color: #2e7d32; }
-    #kannatusmittausten-virhemarginaali .ilmio-tag { background: #2e7d32; }
+    #evasteansa { border-top-color: #0288d1; }
+    #evasteansa .ilmio-tag { background: #0288d1; }
     .huomiolaatikko {
       background: #fdf6ec;
       border-left: 6px solid #e67e22;
@@ -192,7 +192,7 @@
     .kortti-breadcrumb a { color: #8B6914; text-decoration: none; }
     .kortti-breadcrumb a:hover { text-decoration: underline; }
     .kortti-breadcrumb-sep { color: #ccc; }
-    .kortti-breadcrumb-kat { color: #666; }
+    .kortti-breadcrumb .kortti-breadcrumb-kat { color: #666; }
     .kortti-random-btn {
       margin-left: auto;
       display: inline-flex;
@@ -326,25 +326,24 @@
     }
     .random-siirtyma-overlay.nakyva .random-siirtyma-teksti { opacity: 1; }
   
-.infolaatikko h2.laatikko-otsikko, .huomiolaatikko h2.laatikko-otsikko {
+.infolaatikko h2.laatikko-otsikko, .huomiolaatikko h2.laatikko-otsikko, .vaaralatikko h2.laatikko-otsikko {
   display: inline; font: inherit; font-weight: 700; color: inherit;
   margin: 0; padding: 0; letter-spacing: inherit;
 }
 </style>
 
   <!-- SEO -->
-  <meta name="description" content="Gallupin virhemarginaali koskee yhtä lukua. Kahden puolueen eron marginaali on noin kaksinkertainen — siksi useimmat ohitukset ovat otsikoita ilman havaintoa.">
-  <meta name="robots" content="noindex"><!-- POISTA-JULKAISTAESSA -->
-  <link rel="canonical" href="https://www.ilmiöt.fi/kannatusmittausten-virhemarginaali.html">
-  <meta property="og:title" content="Kannatusmittausten virhemarginaali — kahden luvun ero on epätarkempi kuin luvut — Ilmiöitä">
-  <meta property="og:description" content="Gallupin virhemarginaali koskee yhtä lukua. Kahden puolueen eron marginaali on noin kaksinkertainen — siksi useimmat ohitukset ovat otsikoita ilman havaintoa.">
-  <meta property="og:url" content="https://www.ilmiöt.fi/kannatusmittausten-virhemarginaali.html">
+  <meta name="description" content="Evästeansa on evästebanneri, jossa suostumus on yksi klikkaus ja kieltäytyminen viisi. Sääntely vaatii yhtä helppoa hylkäämistä — käytännössä epäsymmetria on sääntö.">
+  <link rel="canonical" href="https://www.ilmiöt.fi/evasteansa.html">
+  <meta property="og:title" content="Evästeansa — hyväksyminen yhdellä klikkauksella, kieltäytyminen viidellä — Ilmiöitä">
+  <meta property="og:description" content="Evästeansa on evästebanneri, jossa suostumus on yksi klikkaus ja kieltäytyminen viisi. Sääntely vaatii yhtä helppoa hylkäämistä — käytännössä epäsymmetria on sääntö.">
+  <meta property="og:url" content="https://www.ilmiöt.fi/evasteansa.html">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="fi_FI">
   <meta property="og:site_name" content="Ilmiöitä — Miten valta toimii">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Kannatusmittausten virhemarginaali — kahden luvun ero on epätarkempi kuin luvut — Ilmiöitä">
-  <meta name="twitter:description" content="Gallupin virhemarginaali koskee yhtä lukua. Kahden puolueen eron marginaali on noin kaksinkertainen — siksi useimmat ohitukset ovat otsikoita ilman havaintoa.">
+  <meta name="twitter:title" content="Evästeansa — hyväksyminen yhdellä klikkauksella, kieltäytyminen viidellä — Ilmiöitä">
+  <meta name="twitter:description" content="Evästeansa on evästebanneri, jossa suostumus on yksi klikkaus ja kieltäytyminen viisi. Sääntely vaatii yhtä helppoa hylkäämistä — käytännössä epäsymmetria on sääntö.">
   <meta property="og:image" content="https://www.ilmiöt.fi/og/brand.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -367,14 +366,14 @@
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Tilastoilla valehtelu",
-          "item": "https://www.ilmiöt.fi/kategoria-tilastoilla-valehtelu.html"
+          "name": "Alustatalous ja algoritmit",
+          "item": "https://www.ilmiöt.fi/kategoria-alustatalous-ja-algoritmit.html"
         },
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Kannatusmittausten virhemarginaali — kahden luvun ero on epätarkempi kuin luvut",
-          "item": "https://www.ilmiöt.fi/kannatusmittausten-virhemarginaali.html"
+          "name": "Evästeansa — hyväksyminen yhdellä klikkauksella, kieltäytyminen viidellä",
+          "item": "https://www.ilmiöt.fi/evasteansa.html"
         }
       ]
     },
@@ -386,12 +385,12 @@
         "width": 1200,
         "height": 630
       },
-      "@id": "https://www.ilmiöt.fi/kannatusmittausten-virhemarginaali.html#article",
-      "url": "https://www.ilmiöt.fi/kannatusmittausten-virhemarginaali.html",
-      "headline": "Kannatusmittausten virhemarginaali — kahden luvun ero on epätarkempi kuin luvut",
-      "description": "Gallupin virhemarginaali koskee yhtä lukua. Kahden puolueen eron marginaali on noin kaksinkertainen — siksi useimmat ohitukset ovat otsikoita ilman havaintoa.",
+      "@id": "https://www.ilmiöt.fi/evasteansa.html#article",
+      "url": "https://www.ilmiöt.fi/evasteansa.html",
+      "headline": "Evästeansa — hyväksyminen yhdellä klikkauksella, kieltäytyminen viidellä",
+      "description": "Evästeansa on evästebanneri, jossa suostumus on yksi klikkaus ja kieltäytyminen viisi. Sääntely vaatii yhtä helppoa hylkäämistä — käytännössä epäsymmetria on sääntö.",
       "inLanguage": "fi",
-      "articleSection": "Tilastoilla valehtelu",
+      "articleSection": "Alustatalous ja algoritmit",
       "isPartOf": {
         "@type": "CollectionPage",
         "@id": "https://www.ilmiöt.fi/"
@@ -415,12 +414,35 @@
         "url": "https://www.ilmiöt.fi/tietoa.html",
         "description": "Kirjoittajanimi, jonka takana on kiinnostus valtaan, vaikuttamiseen ja ihmisen päättelyn vinoumiin. Sisältö perustuu julkisiin lähteisiin ja vakiintuneeseen käsitteistöön."
       },
-      "datePublished": "2026-08-04",
-      "dateModified": "2026-08-04"
+      "datePublished": "2026-08-14",
+      "dateModified": "2026-08-14"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.ilmiöt.fi/evasteansa.html#faq",
+      "inLanguage": "fi",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Mikä on evästeansa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evästeansa on evästebanneri, jossa suostumuksen antaminen on tehty selvästi helpommaksi kuin sen epääminen: hyväksyminen on yksi värillinen nappi, kieltäytyminen vaatii asetusvalikon, kytkinlistan ja erillisen tallennuksen. Suostumus syntyy tällöin bannerin muodosta eikä käyttäjän tahdosta."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Saako evästeiden hylkäämisen tehdä vaikeammaksi kuin hyväksymisen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ei. Tietosuoja-asetus edellyttää, että suostumus on vapaaehtoinen ja yhtä helppo perua kuin antaa. Ranskan tietosuojaviranomainen CNIL sakotti vuodenvaihteessa 2021–2022 Googlea 150 ja Facebookia 60 miljoonalla eurolla siitä, että kieltäytyminen vaati useamman klikkauksen kuin hyväksyminen."
+          }
+        }
+      ]
     }
   ]
 }
-  </script>
+</script>
   <style>
     .ilmio-byline{font-size:.82rem;color:#8B6914;font-style:italic;margin:.15rem 0 1.3rem;}
     .ilmio-byline a{color:#8B6914;}
@@ -433,62 +455,64 @@
 <body>
 
   <div class="kortti-breadcrumb">
-    <a href="../index.html" class="kortti-logo" aria-label="Ilmiöitä — etusivu"><img src="../favicon.svg" alt="Ilmiöitä"></a>
-    <a href="../index.html">← Kaikki ilmiöt</a>
-    <span class="kortti-breadcrumb-sep">›</span><a href="../kategoria-tilastoilla-valehtelu.html" class="kortti-breadcrumb-kat">Tilastoilla valehtelu</a>
+    <a href="index.html" class="kortti-logo" aria-label="Ilmiöitä — etusivu"><img src="favicon.svg" alt="Ilmiöitä"></a>
+    <a href="index.html">← Kaikki ilmiöt</a>
+    <span class="kortti-breadcrumb-sep">›</span><a href="kategoria-alustatalous-ja-algoritmit.html" class="kortti-breadcrumb-kat">Alustatalous ja algoritmit</a>
     <button class="kortti-random-btn" onclick="randomIlmio()" title="Satunnainen ilmiö (R)">
       <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>
       <span class="btn-text">Satunnainen</span>
     </button>
   </div>
 
-  <div class="ilmio" id="kannatusmittausten-virhemarginaali">
-<div class="ilmio-tag">Ilmiö 114</div>
-<h1>Kannatusmittausten virhemarginaali — kahden luvun ero on epätarkempi kuin luvut</h1>
-<p class="ilmio-byline">Kirjoittanut <a href="../tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 4.8.2026</p>
-<p>Kannatusmittaus kertoo puolueiden kannatuksen prosentteina ja ilmoittaa <strong>virhemarginaalin</strong> (englanniksi <em>margin of error</em>) — tyypillisesti noin ±1,2 prosenttiyksikköä, kun otos on parin tuhannen vastaajan luokkaa. Marginaali koskee yhtä lukua kerrallaan. Uutinen kertoo lähes aina kahden luvun erosta, ja eron epätarkkuus on selvästi suurempi kuin kummankaan luvun erikseen.</p>
+  <div class="ilmio" id="evasteansa">
+<div class="ilmio-tag">Ilmiö 107</div>
+<h1>Evästeansa — hyväksyminen yhdellä klikkauksella, kieltäytyminen viidellä</h1>
+<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 14.8.2026</p>
+<p><strong>Evästeansa</strong> (englanniksi <em>cookie consent dark pattern</em>) on evästebanneri, joka on rakennettu tuottamaan suostumus riippumatta siitä, mitä käyttäjä haluaisi. Kikka ei ole valheessa vaan epäsymmetriassa: <em>Hyväksy kaikki</em> on värillinen nappi heti ensimmäisellä näytöllä, kieltäytyminen taas vaatii asetusvalikon, kytkinlistan ja erillisen tallennuksen. Valinta on sama, hinta ei.</p>
+<div class="infolaatikko vastauslohko">
+<h2 class="laatikko-otsikko">Saako evästeiden hylkäämisen tehdä vaikeammaksi kuin hyväksymisen?</h2>
+<p style="margin:0.4em 0 0;">Ei. Tietosuoja-asetus edellyttää, että suostumus on vapaaehtoinen ja yhtä helppo perua kuin antaa. Ranskan tietosuojaviranomainen CNIL sakotti vuodenvaihteessa 2021–2022 Googlea 150 ja Facebookia 60 miljoonalla eurolla nimenomaan siitä, että kieltäytyminen vaati useamman klikkauksen kuin hyväksyminen. Suomessa evästeitä valvoo Traficomin Kyberturvallisuuskeskus ja henkilötietojen käsittelyä tietosuojavaltuutettu.</p>
+</div>
 <div class="mermaid">
 flowchart TD
-  A["Otos ~2 000 vastaajaa"] --&gt; B["Yksittäisen luvun\nmarginaali ±1,2 %-yks."]
-  B --&gt; C["Kahden puolueen eron\nmarginaali noin kaksinkertainen"]
-  C --&gt; D{"Onko ero\nsitä suurempi?"}
-  D -- ei --&gt; E["'X kiri Y:n ohi'\n— havaintoa ei ole"]
-  D -- kyllä --&gt; F["Ero on mitattu"]
-  style E fill:#fdf0f0,stroke:#c0392b
+  B["Banneri avautuu sisällön päälle"] --&gt; H["Hyväksy kaikki\n1 klikkaus, värillinen nappi"]
+  B --&gt; A["Asetukset\nharmaa tekstilinkki"]
+  A --&gt; K["Kytkinlista,\nosa valmiiksi päällä"]
+  K --&gt; T["Tallenna valinnat"]
+  T --&gt; P["Banneri palaa\nseuraavalla käynnillä"]
+  H --&gt; M["Valinta muistetaan 12 kk"]
+  style H fill:#eafaf1,stroke:#27ae60
+  style A fill:#fdf0f0,stroke:#c0392b
+  style K fill:#fdf0f0,stroke:#c0392b
     </div>
-<p class="kaavio-selitys">Kaksi epätarkkaa lukua vähennettynä toisistaan on epätarkempi kuin kumpikaan niistä.</p>
-<div class="avainluku-rivi"><div class="avainluku"><div class="luku">±1,2 %-yks.</div><div class="selite">yksittäisen luvun marginaali, kun n ≈ 2 000</div></div><div class="avainluku"><div class="luku">±2,4 %-yks.</div><div class="selite">kahden puolueen eron marginaali, karkeasti</div></div><div class="avainluku"><div class="luku">95 %</div><div class="selite">luottamustaso, jolla marginaali ilmoitetaan</div></div></div>
-<p>Marginaali kattaa lisäksi vain otantavirheen — sen, että otos ei ole koko kansa. Se ei kata katoa, kysymyksen muotoilua, painotusmenetelmää eikä sitä, että puoluekanta ja vastaamishalu korreloivat keskenään. Nämä näkyvät talovaikutuksena: sama viikko kahdella menetelmällä mitattuna tuottaa järjestelmällisesti hieman eri tuloksen.</p>
-<p>Toinen vinouma syntyy toistosta. Kun yhdeksän puolueen kannatusta mitataan kuukausittain, jokin luku poikkeaa aina edellisestä satunnaisesti — ja juuri se päätyy otsikkoon. Muuttumattomuus ei ylitä uutiskynnystä, joten julkisuuteen valikoituu järjestelmällisesti kohina.</p>
-<p>Tästä ei seuraa, että mittaukset olisivat hyödyttömiä. Yksittäinen mittaus on epätarkka; useamman peräkkäisen mittauksen suunta on huomattavasti luotettavampi kuin kumpikaan yksittäinen luku.</p>
+<p class="kaavio-selitys">Molemmat polut päätyvät valintaan. Toinen on yksi klikkaus, toinen viisi — ja vain toinen muistetaan.</p>
+<p>Epäsymmetria toimii, koska banneri on este halutun asian edessä. Käyttäjä ei ole tekemässä tietosuojavalintaa vaan lukemassa uutista, ja nopein ulospääsy voittaa. Euroopan komission vuonna 2022 julkaisema selvitys löysi vähintään yhden pimeän kuvion 97 prosentilta suosituimmista EU-sivustoista ja -sovelluksista. Evästebanneri on niistä näkyvin, koska se kohdataan uudelleen joka kerta.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Ero läheisiin käsitteisiin:</h2> <a href="../cherry-picking-aikavali.html">Cherry picking aikavälillä</a> valitsee alkupisteen, tässä valitaan yksittäinen mittaus. <a href="../p-hakkerointi.html">P-hakkerointi</a> kuvaa saman monivertailuongelman tutkimuksessa: kun vertailuja on tarpeeksi, jokin näyttää aina merkitsevältä. <a href="../kaksois-y-akseli.html">Kaksois-y-akseli</a> on visuaalinen sukulainen — sekin suurentaa eron, jota ei ole.
+<h2 class="laatikko-otsikko">Miten evästeansa eroaa läheisistä ilmiöistä?</h2> Kyse on käyttöliittymän muodosta, ei suostuttelusta: mitään ei luvata eikä kiistetä, vaan toinen polku tehdään pidemmäksi. <a href="tilausansa.html">Tilausansa</a> käyttää samaa keinoa peruuttamiseen, <a href="houkutinvaihtoehto.html">houkutinvaihtoehto</a> taas ohjaa valintaa lisäämällä vaihtoehdon eikä piilottamalla sitä.
     </div>
 <div class="huomiolaatikko">
 <h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2>
 <ul style="margin:0.5em 0 0;">
-<li>Katso otoskoko ja tiedonkeruutapa ennen lukua. Ilman niitä marginaalia ei voi arvioida.</li>
-<li>Kerro erosta puhuessasi eron marginaali, älä yksittäisen luvun: se on karkeasti kaksinkertainen.</li>
-<li>Seuraa kolmen tai neljän mittauksen liukuvaa keskiarvoa, älä uusinta lukua.</li>
-<li>Epäile verbejä "kiri", "ohitti" ja "romahti", kun ero on alle kaksi prosenttiyksikköä.</li>
-<li>Katso, onko sama talo mitannut aiemminkin — talovaikutus tekee eri mittaajien lukujen vertailusta epäluotettavaa.</li>
-<li>Muista mitä marginaali ei kata: kato, painotus ja kysymyksen muotoilu jäävät kokonaan ilmoitetun luvun ulkopuolelle.</li>
+<li>Etsi <em>Hylkää kaikki</em> ensimmäiseltä näytöltä. Jos sitä ei ole, banneri ei täytä vaatimusta yhtä helposta kieltäytymisestä.</li>
+<li>Avaa <em>oikeutettu etu</em> -välilehti erikseen: kytkimet ovat siellä usein päällä, vaikka olisit hylännyt kaiken muun.</li>
+<li>Jos banneri palaa joka käynnillä vain kieltäytyneille, kyse ei ole vahingosta vaan kannustimesta.</li>
+<li>Selaimen asetus, joka estää kolmannen osapuolen evästeet, tekee suuren osan bannerin lupauksista merkityksettömiksi.</li>
 </ul>
 </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
 <div class="lue-lisaa-rivi">
-<span class="lue-lisaa-tyyppi">Tutkimusta</span>
+<span class="lue-lisaa-tyyppi">Kirjoja ja selvityksiä</span>
 <ul class="lue-lisaa-lista">
-<li><cite>Total Survey Error: Past, Present, and Future</cite> — Robert Groves &amp; Lars Lyberg (2010)</li>
-<li><cite>An Evaluation of the 2016 Election Polls in the United States</cite> — AAPOR (2017)</li>
+<li><cite>Deceptive Patterns</cite> — Harry Brignull (2023)</li>
+<li><cite>Behavioural study on unfair commercial practices in the digital environment</cite> — Euroopan komissio (2022)</li>
 </ul>
 </div>
 <div class="lue-lisaa-rivi">
 <span class="lue-lisaa-tyyppi">Verkossa</span>
 <ul class="lue-lisaa-lista">
-<li><a href="https://en.wikipedia.org/wiki/Margin_of_error" target="_blank" rel="noopener">Wikipedia: Margin of error (englanniksi)</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Opinion_poll" target="_blank" rel="noopener">Wikipedia: Opinion poll (englanniksi)</a></li>
+<li><a href="https://www.deceptive.design/" target="_blank" rel="noopener">deceptive.design — Harry Brignullin hakemisto (englanniksi)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Dark_pattern" target="_blank" rel="noopener">Wikipedia: Dark pattern (englanniksi)</a></li>
 </ul>
 </div>
 </div>
@@ -497,35 +521,35 @@ flowchart TD
   <aside class="liittyvat" aria-label="Liittyvät ilmiöt">
     <h2>Liittyvät ilmiöt</h2>
     <div class="liittyvat-kortit">
-    <a href="../cherry-picking-aikavali.html" class="liittyvat-kortti" style="--c:#a04000">
+    <a href="oletusasetusansa.html" class="liittyvat-kortti" style="--c:#1b5e20">
+      <span class="liittyvat-numero">111</span>
+      <span class="liittyvat-teksti">
+        <span class="liittyvat-nimi">Oletusasetusansa</span>
+        <span class="liittyvat-kuvaus">Seuranta ja jakaminen ovat valmiiksi päällä, koska oletusvalinta ratkaisee useimmiten.</span>
+      </span>
+      <span class="liittyvat-nuoli" aria-hidden="true">›</span>
+    </a>
+    <a href="confirmshaming.html" class="liittyvat-kortti" style="--c:#a31545">
+      <span class="liittyvat-numero">110</span>
+      <span class="liittyvat-teksti">
+        <span class="liittyvat-nimi">Confirmshaming</span>
+        <span class="liittyvat-kuvaus">Kieltäytymisnappi kirjoitetaan itseä alentavaksi: ”Ei kiitos, en halua säästää rahaa”.</span>
+      </span>
+      <span class="liittyvat-nuoli" aria-hidden="true">›</span>
+    </a>
+    <a href="piilokulut.html" class="liittyvat-kortti" style="--c:#ff6f00">
       <span class="liittyvat-numero">108</span>
       <span class="liittyvat-teksti">
-        <span class="liittyvat-nimi">Cherry picking aikavälillä</span>
-        <span class="liittyvat-kuvaus">Alkupiste valitaan jälkikäteen niin, että käyrä kertoo halutun tarinan.</span>
+        <span class="liittyvat-nimi">Piilokulut</span>
+        <span class="liittyvat-kuvaus">Mainostettu hinta on ensimmäinen erä; loput valutetaan esiin vasta kun vertailu on tehty.</span>
       </span>
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
-    <a href="../p-hakkerointi.html" class="liittyvat-kortti" style="--c:#6a1b9a">
-      <span class="liittyvat-numero">113</span>
+    <a href="tilausansa.html" class="liittyvat-kortti" style="--c:#880e4f">
+      <span class="liittyvat-numero">94</span>
       <span class="liittyvat-teksti">
-        <span class="liittyvat-nimi">P-hakkerointi</span>
-        <span class="liittyvat-kuvaus">Kun vertailuja tehdään tarpeeksi, jokin niistä näyttää aina merkitsevältä.</span>
-      </span>
-      <span class="liittyvat-nuoli" aria-hidden="true">›</span>
-    </a>
-    <a href="../kaksois-y-akseli.html" class="liittyvat-kortti" style="--c:#01579b">
-      <span class="liittyvat-numero">106</span>
-      <span class="liittyvat-teksti">
-        <span class="liittyvat-nimi">Kaksois-y-akseli</span>
-        <span class="liittyvat-kuvaus">Kaksi eri asteikkoa samassa kuvassa saa kaksi käyrää näyttämään yhteydeltä.</span>
-      </span>
-      <span class="liittyvat-nuoli" aria-hidden="true">›</span>
-    </a>
-    <a href="uutiskynnys.html" class="liittyvat-kortti" style="--c:#ad1457">
-      <span class="liittyvat-numero">109</span>
-      <span class="liittyvat-teksti">
-        <span class="liittyvat-nimi">Uutiskynnys</span>
-        <span class="liittyvat-kuvaus">Uutiseksi pääsee se, millä on tapahtuman muoto — muuttumattomuus ei ylitä kynnystä.</span>
+        <span class="liittyvat-nimi">Tilausansa</span>
+        <span class="liittyvat-kuvaus">Tilaaminen on yhden klikkauksen helppoa, peruminen tahallaan vaikeaa.</span>
       </span>
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
@@ -533,15 +557,15 @@ flowchart TD
   </aside>
 
   <nav class="kortti-nav">
-    <a class="kortti-nav-btn" href="../p-hakkerointi.html">← P-hakkerointi</a>
+    <a class="kortti-nav-btn" href="tekoalypsykoosi.html">← Tekoälypsykoosi — chatbot, joka ei ole koskaan eri mieltä</a>
     <div class="kortti-nav-center">
-      <span class="kortti-nav-laskuri">114 / 130</span>
+      <span class="kortti-nav-laskuri">107 / 139</span>
       <span class="kortti-nav-vinkki">
         <kbd>&#8592;</kbd> <kbd>&#8594;</kbd> selaa &middot; <kbd>R</kbd> satunnainen
         <span class="touch-vinkki">&nbsp;· swipe &#8592;&#8594; tai &#8595; random</span>
       </span>
     </div>
-    <a class="kortti-nav-btn" href="uutiskynnys.html">Uutiskynnys →</a>
+    <a class="kortti-nav-btn" href="piilokulut.html">Piilokulut — hinta paljastuu erissä vasta kassalla →</a>
   </nav>
 
 
@@ -703,15 +727,15 @@ flowchart TD
 
   <script>
 (function () {
-  const IDS = ["paskuuttaminen", "starve-the-beast", "overton-ikkuna", "saantelijan-kaappaus", "rautainen-laki", "valta-suojelee-valtaa", "hajota-hallitse", "bkt-harha", "astroturf", "firehose-of-falsehood", "manufactured-consent", "betteridgen-laki", "inokulointiteoria", "whataboutismi", "streisand-ilmio", "trollitehdas", "kuollut-kissa", "brandolinin-laki", "poen-laki", "godwinin-laki", "backfire-effect", "darvo", "halo-efekti", "konsensus-fetissi", "omenoita-appelsiineja", "blame-game", "gaslighting", "maalitolppien-siirtaminen", "argumenttitulva", "sunk-cost-harha", "jarjestelman-puolustelu", "dunning-kruger", "hanlonin-partaveitsi", "occamin-partaveitsi", "simple-sabotage", "kafka-ilmio", "catch-22", "goodhartin-laki", "hippo-efekti", "performatiivinen-lasnaolo", "rituaalinen-raportointi", "initiointirituaalit", "portinvartija-kulttuuri", "strateginen-osaamattomuus", "fofo", "sivustakatsojan-efekti", "parkinsonin-laki", "peterin-periaate", "pareto-periaate", "brooksin-laki", "yhdeksanyhdeksan", "hofstadterin-laki", "kuolonmarssi", "tekninen-velka", "conways-laki", "bikeshedding", "scope-creep", "korkoa-korolle", "negatiivinen-korkoa", "korkokierre", "honeypot-huijaus", "bait-and-switch", "kaarmeoljy", "ponzi-pyramidi", "pump-and-dump", "pig-butchering", "ennakkomaksuhuijaus", "badger-game", "qr-koodihuijaus", "toimitusjohtajahuijaus", "rug-pull", "ilmainen-naytetyo", "exposure-maksu", "lowball-hinnoittelu", "valittajan-skimmaus", "tilipuristus", "foot-in-the-door", "door-in-the-face", "hintaankkurointi", "houkutinvaihtoehto", "vastavuoroisuuden-ansa", "sosiaalinen-todiste", "painostusclose", "shrinkflaatio", "suunniteltu-vanheneminen", "tilausansa", "doomscrolling", "kaikukammio", "ai-slop", "parasosiaalinen-suhde", "kuollut-internet", "rage-bait", "klikkiotsikko", "engagement-bait", "1-prosentin-saanto", "aanekas-vahemmisto", "viherpesu", "sinipesu", "urheilupesu", "pinkkipesu", "tekoalypesu", "hyvesignalointi", "hiljainen-irtisanoutuminen", "hiljainen-irtisanominen", "haamutyopaikat", "kaksois-y-akseli", "pinta-alaharha", "cherry-picking-aikavali", "keskiarvo-vs-mediaani", "suhteellinen-riski", "selviytymisharha", "simpsonin-paradoksi", "p-hakkerointi"];
-  const PREV = '../p-hakkerointi.html';
-  const NEXT = 'uutiskynnys.html';
+  const IDS = ["paskuuttaminen", "starve-the-beast", "overton-ikkuna", "saantelijan-kaappaus", "rautainen-laki", "valta-suojelee-valtaa", "hajota-hallitse", "vaalilupauksen-hinnoittelu", "bkt-harha", "astroturf", "firehose-of-falsehood", "manufactured-consent", "betteridgen-laki", "inokulointiteoria", "whataboutismi", "streisand-ilmio", "trollitehdas", "kuollut-kissa", "brandolinin-laki", "poen-laki", "godwinin-laki", "backfire-effect", "darvo", "halo-efekti", "konsensus-fetissi", "omenoita-appelsiineja", "blame-game", "gaslighting", "maalitolppien-siirtaminen", "argumenttitulva", "sunk-cost-harha", "jarjestelman-puolustelu", "dunning-kruger", "hanlonin-partaveitsi", "occamin-partaveitsi", "simple-sabotage", "kafka-ilmio", "catch-22", "goodhartin-laki", "hippo-efekti", "performatiivinen-lasnaolo", "rituaalinen-raportointi", "initiointirituaalit", "portinvartija-kulttuuri", "strateginen-osaamattomuus", "fofo", "sivustakatsojan-efekti", "parkinsonin-laki", "peterin-periaate", "pareto-periaate", "brooksin-laki", "yhdeksanyhdeksan", "hofstadterin-laki", "kuolonmarssi", "lukittu-paatos", "strateginen-aliarviointi", "paatosperainen-todistelu", "lapi-hinnalla-milla-hyvansa", "tekninen-velka", "conways-laki", "bikeshedding", "scope-creep", "korkoa-korolle", "negatiivinen-korkoa", "korkokierre", "honeypot-huijaus", "bait-and-switch", "kaarmeoljy", "ponzi-pyramidi", "pump-and-dump", "pig-butchering", "ennakkomaksuhuijaus", "badger-game", "qr-koodihuijaus", "toimitusjohtajahuijaus", "rug-pull", "aaniklooni-huijaus", "smishing", "deepfake-sijoitushuijaus", "ilmainen-naytetyo", "exposure-maksu", "lowball-hinnoittelu", "valittajan-skimmaus", "tilipuristus", "foot-in-the-door", "door-in-the-face", "hintaankkurointi", "houkutinvaihtoehto", "vastavuoroisuuden-ansa", "sosiaalinen-todiste", "painostusclose", "shrinkflaatio", "suunniteltu-vanheneminen", "tilausansa", "doomscrolling", "kaikukammio", "ai-slop", "parasosiaalinen-suhde", "kuollut-internet", "rage-bait", "klikkiotsikko", "engagement-bait", "1-prosentin-saanto", "aanekas-vahemmisto", "vaalikone-efekti", "tekoalypsykoosi", "evasteansa", "piilokulut", "pakotettu-jatkuvuus", "confirmshaming", "oletusasetusansa", "viherpesu", "sinipesu", "urheilupesu", "pinkkipesu", "tekoalypesu", "hyvesignalointi", "hiljainen-irtisanoutuminen", "hiljainen-irtisanominen", "haamutyopaikat", "kaksois-y-akseli", "pinta-alaharha", "cherry-picking-aikavali", "keskiarvo-vs-mediaani", "suhteellinen-riski", "selviytymisharha", "simpsonin-paradoksi", "p-hakkerointi", "kannatusmittausten-virhemarginaali", "uutiskynnys", "uutisautiomaa", "paasyjournalismi", "tiedotejournalismi", "branditurvallisuus", "huonojen-uutisten-hautaaminen", "vaara-tasapaino", "keharaportointi", "gell-mannin-amnesia", "vihamielisen-median-harha"];
+  const PREV = 'tekoalypsykoosi.html';
+  const NEXT = 'piilokulut.html';
 
   function randomIlmio() {
     let id;
-    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'kannatusmittausten-virhemarginaali');
+    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'evasteansa');
     merkitseRandomHyppy();
-    window.location.href = '../' + id + '.html';
+    window.location.href = id + '.html';
   }
   window.randomIlmio = randomIlmio;
 
@@ -755,7 +779,7 @@ flowchart TD
     var overlay = document.createElement('div');
     overlay.className = 'random-siirtyma-overlay';
     overlay.innerHTML =
-      '<img class="random-siirtyma-logo" src="../favicon.svg" alt="">' +
+      '<img class="random-siirtyma-logo" src="favicon.svg" alt="">' +
       '<span class="random-siirtyma-teksti">' + teksti + '&hellip;</span>';
     document.body.appendChild(overlay);
     requestAnimationFrame(function () {
@@ -766,9 +790,9 @@ flowchart TD
   function naytaRandomSiirtyma() {
     if (_siirtymaKaynnissa) return;
     var id;
-    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'kannatusmittausten-virhemarginaali');
+    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'evasteansa');
     merkitseRandomHyppy();
-    naytaSiirtyma('Satunnainen ilmiö', '../' + id + '.html');
+    naytaSiirtyma('Satunnainen ilmiö', id + '.html');
   }
   window.naytaRandomSiirtyma = naytaRandomSiirtyma;
   function naytaAlasSiirtyma() {
@@ -782,7 +806,7 @@ flowchart TD
       var overlay = document.createElement('div');
       overlay.className = 'random-siirtyma-overlay';
       overlay.innerHTML =
-        '<img class="random-siirtyma-logo" src="../favicon.svg" alt="">' +
+        '<img class="random-siirtyma-logo" src="favicon.svg" alt="">' +
         '<span class="random-siirtyma-teksti">Eteenpäin&hellip;</span>';
       document.body.appendChild(overlay);
       requestAnimationFrame(function () {
@@ -803,7 +827,7 @@ flowchart TD
       var overlay = document.createElement('div');
       overlay.className = 'random-siirtyma-overlay';
       overlay.innerHTML =
-        '<img class="random-siirtyma-logo" src="../favicon.svg" alt="">' +
+        '<img class="random-siirtyma-logo" src="favicon.svg" alt="">' +
         '<span class="random-siirtyma-teksti">Takaisin&hellip;</span>';
       document.body.appendChild(overlay);
       requestAnimationFrame(function () {
@@ -919,7 +943,7 @@ flowchart TD
   </script>
 
   <footer class="ilmio-footer">
-    <p>© 2026 Ilmiöitä — Miten valta toimii · Kirjoittanut Ilmiömies · <a href="../tietoa.html">Tietoa sivustosta ja tekijästä</a></p>
+    <p>© 2026 Ilmiöitä — Miten valta toimii · Kirjoittanut Ilmiömies · <a href="tietoa.html">Tietoa sivustosta ja tekijästä</a></p>
   </footer>
 </body>
 </html>

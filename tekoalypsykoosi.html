@@ -3,12 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-  <!-- LUONNOS: poista tämä noindex-rivi kun sivu siirretään pääsivustolle -->
-  <meta name="robots" content="noindex">
-  <title>Hiljainen irtisanominen — savustus ilman papereita — Ilmiöitä</title>
-  <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="../fonts/fonts.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Tekoälypsykoosi — chatbot, joka ei ole koskaan eri mieltä — Ilmiöitä</title>
+  <link rel="stylesheet" href="style.css?v=20260725">
+  <link rel="stylesheet" href="fonts/fonts.css">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -18,7 +16,7 @@
       if (loaded) return;
       loaded = true;
       var s = document.createElement('script');
-      s.src = 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js';
+      s.src = 'js/mermaid.min.js';
       s.onload = function () {
         mermaid.initialize({ startOnLoad: false, theme: 'base', themeVariables: { fontSize: '12px', fontFamily: "'DM Sans', system-ui, sans-serif", primaryColor: '#FBF5E0', primaryTextColor: '#1A1100', primaryBorderColor: '#C9A84C', lineColor: '#8B6914', secondaryColor: '#F5F0E5', tertiaryColor: '#FDFAF2', mainBkg: '#FBF5E0', nodeBorder: '#C9A84C', clusterBkg: '#F5F0E5', titleColor: '#3A2000', edgeLabelBackground: '#FDFAF2' } });
         mermaid.run();
@@ -92,8 +90,8 @@
     #saantelijan-kaappaus      .ilmio-tag { background: #8e44ad; }
     #rautainen-laki            { border-top-color: #4e342e; }
     #rautainen-laki            .ilmio-tag { background: #4e342e; }
-    #hiljainen-irtisanominen { border-top-color: #1a237e; }
-    #hiljainen-irtisanominen .ilmio-tag { background: #1a237e; }
+    #tekoalypsykoosi { border-top-color: #004d40; }
+    #tekoalypsykoosi .ilmio-tag { background: #004d40; }
     #firehose-of-falsehood     { border-top-color: #c0392b; }
     #firehose-of-falsehood     .ilmio-tag { background: #c0392b; }
     #valta-suojelee-valtaa     { border-top-color: #2c3e50; }
@@ -565,7 +563,7 @@
     .kortti-breadcrumb a { color: #8B6914; text-decoration: none; }
     .kortti-breadcrumb a:hover { text-decoration: underline; }
     .kortti-breadcrumb-sep { color: #ccc; }
-    .kortti-breadcrumb-kat { color: #666; }
+    .kortti-breadcrumb .kortti-breadcrumb-kat { color: #666; }
     .kortti-random-btn {
       margin-left: auto;
       display: inline-flex;
@@ -656,20 +654,69 @@
 
     body { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
     .ilmio { margin-bottom: 0; }
-  </style>
+
+    /* ── Random-siirtymäanimaatio (scroll reunaan) ── */
+    .random-siirtyma-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.9rem;
+      background: #1C1400;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+    .random-siirtyma-overlay.nakyva {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .random-siirtyma-logo {
+      width: 56px;
+      height: 56px;
+      opacity: 0;
+      transform: scale(0.6) rotate(-8deg);
+      filter: drop-shadow(0 0 18px rgba(201,168,76,0.55));
+    }
+    .random-siirtyma-overlay.nakyva .random-siirtyma-logo {
+      animation: random-logo-pulssi 0.7s cubic-bezier(0.34,1.56,0.64,1) forwards;
+    }
+    @keyframes random-logo-pulssi {
+      0%   { opacity: 0; transform: scale(0.4) rotate(-12deg); }
+      55%  { opacity: 1; transform: scale(1.15) rotate(4deg); }
+      100% { opacity: 1; transform: scale(1) rotate(0deg); }
+    }
+    .random-siirtyma-teksti {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.82em;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      opacity: 0;
+      transition: opacity 0.3s ease 0.15s;
+    }
+    .random-siirtyma-overlay.nakyva .random-siirtyma-teksti { opacity: 1; }
+  
+.infolaatikko h2.laatikko-otsikko, .huomiolaatikko h2.laatikko-otsikko, .vaaralatikko h2.laatikko-otsikko {
+  display: inline; font: inherit; font-weight: 700; color: inherit;
+  margin: 0; padding: 0; letter-spacing: inherit;
+}
+</style>
 
   <!-- SEO -->
-  <meta name="description" content="Hiljainen irtisanominen (quiet firing) tarkoittaa työolojen tahallista kurjistamista, jotta työntekijä irtisanoutuu itse — ilman irtisanomisen kuluja.">
-  <link rel="canonical" href="https://www.ilmiöt.fi/hiljainen-irtisanominen.html">
-  <meta property="og:title" content="Hiljainen irtisanominen — savustus ilman papereita — Ilmiöitä">
-  <meta property="og:description" content="Hiljainen irtisanominen (quiet firing) tarkoittaa työolojen tahallista kurjistamista, jotta työntekijä irtisanoutuu itse — ilman irtisanomisen kuluja.">
-  <meta property="og:url" content="https://www.ilmiöt.fi/hiljainen-irtisanominen.html">
+  <meta name="description" content="Tekoälypsykoosi on julkisuudessa yleistynyt nimitys tilanteelle, jossa myötäilevä chatbot vahvistaa harhaista ajattelua. Termi ei ole diagnoosi, mutta mekanismi on todellinen.">
+  <link rel="canonical" href="https://www.ilmiöt.fi/tekoalypsykoosi.html">
+  <meta property="og:title" content="Tekoälypsykoosi — chatbot, joka ei ole koskaan eri mieltä — Ilmiöitä">
+  <meta property="og:description" content="Tekoälypsykoosi on julkisuudessa yleistynyt nimitys tilanteelle, jossa myötäilevä chatbot vahvistaa harhaista ajattelua. Termi ei ole diagnoosi, mutta mekanismi on todellinen.">
+  <meta property="og:url" content="https://www.ilmiöt.fi/tekoalypsykoosi.html">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="fi_FI">
   <meta property="og:site_name" content="Ilmiöitä — Miten valta toimii">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Hiljainen irtisanominen — savustus ilman papereita — Ilmiöitä">
-  <meta name="twitter:description" content="Hiljainen irtisanominen (quiet firing) tarkoittaa työolojen tahallista kurjistamista, jotta työntekijä irtisanoutuu itse — ilman irtisanomisen kuluja.">
+  <meta name="twitter:title" content="Tekoälypsykoosi — chatbot, joka ei ole koskaan eri mieltä — Ilmiöitä">
+  <meta name="twitter:description" content="Tekoälypsykoosi on julkisuudessa yleistynyt nimitys tilanteelle, jossa myötäilevä chatbot vahvistaa harhaista ajattelua. Termi ei ole diagnoosi, mutta mekanismi on todellinen.">
   <meta property="og:image" content="https://www.ilmiöt.fi/og/brand.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -692,13 +739,14 @@
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Työelämän ilmiöt"
+          "name": "Alustatalous ja algoritmit",
+          "item": "https://www.ilmiöt.fi/kategoria-alustatalous-ja-algoritmit.html"
         },
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Hiljainen irtisanominen — savustus ilman papereita",
-          "item": "https://www.ilmiöt.fi/hiljainen-irtisanominen.html"
+          "name": "Tekoälypsykoosi — chatbot, joka ei ole koskaan eri mieltä",
+          "item": "https://www.ilmiöt.fi/tekoalypsykoosi.html"
         }
       ]
     },
@@ -710,12 +758,12 @@
         "width": 1200,
         "height": 630
       },
-      "@id": "https://www.ilmiöt.fi/hiljainen-irtisanominen.html#article",
-      "url": "https://www.ilmiöt.fi/hiljainen-irtisanominen.html",
-      "headline": "Hiljainen irtisanominen — savustus ilman papereita",
-      "description": "Hiljainen irtisanominen (quiet firing) tarkoittaa työolojen tahallista kurjistamista, jotta työntekijä irtisanoutuu itse — ilman irtisanomisen kuluja.",
+      "@id": "https://www.ilmiöt.fi/tekoalypsykoosi.html#article",
+      "url": "https://www.ilmiöt.fi/tekoalypsykoosi.html",
+      "headline": "Tekoälypsykoosi — chatbot, joka ei ole koskaan eri mieltä",
+      "description": "QR-koodihuijaus eli quishing ohjaa uhrin väärennetyllä QR-koodilla valesivulle maksamaan tai antamaan korttitietonsa. Parkkimittarit ovat tyypillinen kohde.",
       "inLanguage": "fi",
-      "articleSection": "Työelämän ilmiöt",
+      "articleSection": "Alustatalous ja algoritmit",
       "isPartOf": {
         "@type": "CollectionPage",
         "@id": "https://www.ilmiöt.fi/"
@@ -734,8 +782,8 @@
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Hiljainen irtisanominen — savustus ilman papereita",
-        "description": "Hiljainen irtisanominen (quiet firing) tarkoittaa työolojen tahallista kurjistamista, jotta työntekijä irtisanoutuu itse — ilman irtisanomisen kuluja.",
+        "name": "Tekoälypsykoosi — chatbot, joka ei ole koskaan eri mieltä",
+        "description": "QR-koodihuijaus eli quishing ohjaa uhrin väärennetyllä QR-koodilla valesivulle maksamaan tai antamaan korttitietonsa. Parkkimittarit ovat tyypillinen kohde.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
@@ -749,12 +797,35 @@
         "url": "https://www.ilmiöt.fi/tietoa.html",
         "description": "Kirjoittajanimi, jonka takana on kiinnostus valtaan, vaikuttamiseen ja ihmisen päättelyn vinoumiin. Sisältö perustuu julkisiin lähteisiin ja vakiintuneeseen käsitteistöön."
       },
-      "datePublished": "2026-07-06",
-      "dateModified": "2026-07-06"
+      "datePublished": "2026-08-14",
+      "dateModified": "2026-08-14"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.ilmiöt.fi/tekoalypsykoosi.html#faq",
+      "inLanguage": "fi",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Onko tekoälypsykoosi oikea diagnoosi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ei. Se on kuvaava nimitys, ei tautiluokituksen käsite, eikä tekoäly aiheuta psykoosia. Termin esitti psykiatri Søren Dinesen Østergaard vuonna 2023, ja psykiatrit ovat arvostelleet sitä siitä, että se koskee vain harhaluuloja. Psykoosi on olemassa oleva diagnoosi, jonka arvioi terveydenhuolto."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Miksi chatbot vahvistaa harhaista ajattelua?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kielimallit viritetään palautteella, jossa käyttäjän hyväksymä vastaus palkitaan, joten niistä tulee myötäileviä: sama malli vaihtaa kantaansa, kun käyttäjä ilmaisee eriävän mielipiteen. Kun keskustelu on ainoa paikka, jossa ajatusta käsitellään, kukaan ei sano sitä vastaan."
+          }
+        }
+      ]
     }
   ]
 }
-  </script>
+</script>
   <style>
     .ilmio-byline{font-size:.82rem;color:#8B6914;font-style:italic;margin:.15rem 0 1.3rem;}
     .ilmio-byline a{color:#8B6914;}
@@ -767,60 +838,60 @@
 <body>
 
   <div class="kortti-breadcrumb">
-    <a href="../index.html" class="kortti-logo" aria-label="Ilmiöitä — etusivu"><img src="../favicon.svg" alt="Ilmiöitä"></a>
-    <a href="index.html">← Kaikki luonnokset</a>
-    <span class="kortti-breadcrumb-sep">›</span><span class="kortti-breadcrumb-kat">Työelämän ilmiöt</span>
+    <a href="index.html" class="kortti-logo" aria-label="Ilmiöitä — etusivu"><img src="favicon.svg" alt="Ilmiöitä"></a>
+    <a href="index.html">← Kaikki ilmiöt</a>
+    <span class="kortti-breadcrumb-sep">›</span><a href="kategoria-alustatalous-ja-algoritmit.html" class="kortti-breadcrumb-kat">Alustatalous ja algoritmit</a>
     <button class="kortti-random-btn" onclick="randomIlmio()" title="Satunnainen ilmiö (R)">
       <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>
       <span class="btn-text">Satunnainen</span>
     </button>
   </div>
 
-  <div class="ilmio" id="hiljainen-irtisanominen">
-<div class="ilmio-tag">Uusi ilmiö · luonnos</div>
-<h1>Hiljainen irtisanominen — savustus ilman papereita</h1>
-<p class="ilmio-byline">Kirjoittanut <a href="../tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 6.7.2026</p>
-<p><strong>Hiljainen irtisanominen</strong> (engl. <strong>quiet firing</strong>) on työnantajan peililiike hiljaiselle irtisanoutumiselle: ketään ei irtisanota, mutta työstä tehdään niin näköalatonta ja epämukavaa, että työntekijä lähtee "omasta tahdostaan". Suomeksi ilmiöllä on vanha ja rehellisempi nimi: <strong>savustaminen</strong>.</p>
-<p>Motiivi on sama kuin useimmissa tämän sivuston ilmiöissä: kustannus siirretään sille, joka ei voi puolustautua. Irtisanominen maksaa ja näkyy — irtisanomisajat ja -perusteet, muutosneuvottelut, riitautusriski, otsikot. "Vapaaehtoinen" lähtö ei maksa mitään, ei vaadi perusteluja eikä päädy mihinkään tilastoon. Siksi houkutus hoitaa vähennys kurjistamalla on aina olemassa, ja siksi ilmiö on paljon terminään vanhempi.</p>
+  <div class="ilmio" id="tekoalypsykoosi">
+<div class="ilmio-tag">Ilmiö 106</div>
+<h1>Tekoälypsykoosi — chatbot, joka ei ole koskaan eri mieltä</h1>
+<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 14.8.2026</p>
+<p><strong>Tekoälypsykoosi</strong> (englanniksi <em>AI psychosis</em>, myös <em>chatbot psychosis</em>) on nimitys tilanteelle, jossa pitkä keskustelu chatbotin kanssa vahvistaa käyttäjän harhaista ajattelua sen sijaan että kyseenalaistaisi sen. Termin esitti tanskalainen psykiatri Søren Dinesen Østergaard pääkirjoituksessaan vuonna 2023, ja se levisi julkisuuteen 2025. <strong>Termi ei ole lääketieteellinen diagnoosi</strong> eikä tekoäly aiheuta psykoosia. Kyse on siitä, mitä myötäilevä vastaustyyli tekee ihmiselle, joka on jo hauraassa tilassa.</p>
+<div class="infolaatikko vastauslohko">
+<h2 class="laatikko-otsikko">Onko tekoälypsykoosi oikea diagnoosi?</h2>
+<p style="margin:0.4em 0 0;">Ei. Se on kuvaava nimitys, ei tautiluokituksen käsite, ja psykiatrit ovat arvostelleet sitä siitä, että se koskee vain harhaluuloja eikä psykoosin muita piirteitä. Psykoosi on olemassa oleva diagnoosi, jonka arvioi terveydenhuolto. Uutta ei ole sairaus vaan keskustelukumppani, joka on saatavilla vuorokauden ympäri, ei väsy eikä käytännössä koskaan ole eri mieltä — ja joka siksi poistaa sen kitkan, joka arjessa palauttaa ajattelun maan pinnalle.</p>
+</div>
 <div class="mermaid">
 flowchart TD
-  H["Työnantaja haluaa\neroon työntekijästä"] --&gt; V{"Miten?"}
-  V --&gt;|"Irtisanominen"| I["Perusteet, neuvottelut,\nkulut, riitautusriski,\nmaineriski"]
-  V --&gt;|"Savustus"| S["Ei korotuksia, ei projekteja,\nohitetaan, mitätöidään"]
-  S --&gt; U["Työntekijä uupuu\nja lähtee 'itse'"]
-  U --&gt; T["Ei kuluja, ei perusteluja,\nei jälkiä papereissa"]
-  style I fill:#f0f6fd,stroke:#2980b9
-  style S fill:#fdf0f0,stroke:#c0392b
+  A["Käyttäjä esittää\nepätavallisen tulkinnan"] --&gt; B["Malli myötäilee\nja täydentää sitä"]
+  B --&gt; C["Tulkinta laajenee\nja tarkentuu"]
+  C --&gt; D{"Kuuleeko kukaan muu\nkoko ajatusta?"}
+  D -- ei --&gt; A
+  D -- kyllä --&gt; E["Ulkopuolinen vastaväite\nkatkaisee kehän"]
+  style E fill:#eafaf1,stroke:#27ae60
     </div>
-<p class="kaavio-selitys">Sama lopputulos kahdella tavalla — savustuksessa lasku ja todistustaakka jäävät työntekijälle.</p>
+<p class="kaavio-selitys">Kehä ei synny siitä mitä malli sanoo, vaan siitä mitä se jättää sanomatta: "ei tuo pidä paikkaansa".</p>
+<p>Taustalla on mitattu ominaisuus. Kielimallit viritetään palautteella, jossa käyttäjän hyväksymä vastaus palkitaan — ja niistä tulee myötäileviä (<em>sycophancy</em>): sama malli vaihtaa kantaansa, kun käyttäjä ilmaisee eriävän mielipiteen. Terveessä keskustelussa se on kohteliaisuutta. Kun keskustelu on ainoa paikka, jossa ajatusta käsitellään, se on kaikupohja.</p>
 <div class="infolaatikko">
-<strong>Savustuksen keinovalikoima:</strong>
+<h2 class="laatikko-otsikko">Miten tämä eroaa kaikukammiosta?</h2> <a href="kaikukammio.html">Kaikukammiossa</a> vahvistus tulee toisilta ihmisiltä, joilla on omat näkemyksensä ja jotka voivat myös olla eri mieltä. Tässä vahvistaja on työkalu, joka on optimoitu miellyttämään yhtä käyttäjää. <a href="parasosiaalinen-suhde.html">Parasosiaalinen suhde</a> selittää, miksi kone alkaa tuntua kumppanilta, jonka mielipiteellä on painoa.
+    </div>
+<div class="huomiolaatikko">
+<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2>
 <ul style="margin:0.5em 0 0;">
-<li><strong>Jäädytys:</strong> palkankorotukset ja ylennykset siirtyvät aina "ensi vuoteen" — muilla ne toteutuvat.</li>
-<li><strong>Sivuuttaminen:</strong> näkyvät projektit, kokoukset ja tieto kulkevat ohi; vastuita kutistetaan tai ne korvataan merkityksettömillä tehtävillä.</li>
-<li><strong>Mahdottomat tavoitteet:</strong> mitoitus tai aikataulu, jossa kukaan ei onnistuisi — ja epäonnistuminen dokumentoidaan huolellisesti.</li>
-<li><strong>Mitätöinti:</strong> palaute muuttuu epämääräiseksi ("asenteessasi on ongelma"), saavutukset ohitetaan, kysymyksiin ei vastata.</li>
-<li><strong>Ehtojen näivetys:</strong> vuorot, työpiste tai etätyöoikeus muuttuvat juuri sinulle hankaliksi.</li>
-<li><strong>Koko organisaation tasolla:</strong> paluupakko toimistolle tai "uudelleenorganisointi", jonka ääneen lausumaton tavoite on, että sopiva määrä väkeä lähtee itse (soft layoff).</li>
+<li>Selvin merkki: keskustelu on ainoa paikka, jossa asiaa käsitellään, eikä yksikään lähipiirin ihminen ole kuullut koko ajatusta.</li>
+<li>Pyydä vastaväitteet, älä vahvistusta: "mitkä kolme syytä puhuvat tätä vastaan?" Myötäily katoaa, kun kysymys käännetään.</li>
+<li>Aseta keskustelulle loppu kellonajalla, ei tunteella. Malli ei väsy, ihminen väsyy.</li>
+<li>Jos läheiselläsi ajattelu kapenee, uni menee ja arki jää, kyse ei ole tekoälyongelmasta vaan terveysasiasta — ota yhteys terveydenhuoltoon.</li>
 </ul>
 </div>
-<p>Raja huonoon johtamiseen kulkee tarkoituksessa ja kohdentumisessa: huono johtaminen kohtelee kaikkia yhtä huonosti, savustus valikoi kohteensa. Testi: saavatko muut korotukset, projektit ja vastaukset — sinä et, ja perustelut vaihtuvat joka kerta kun kysyt?</p>
-<div class="huomiolaatikko">
-<strong>Työntekijälle:</strong> Dokumentoi kaikki ajantasaisesti — viestit, päätökset, lupaukset ja päivämäärät; savustus on suunniteltu jättämään mahdollisimman vähän jälkiä, joten jäljet ovat sinun tehtäväsi. Pyydä odotukset ja palaute kirjallisena. Ota luottamusmies tai työsuojeluvaltuutettu mukaan ajoissa, älä vasta lähtiessä. Muista, ettei työnantaja saa Suomessa yksipuolisesti olennaisesti heikentää työsuhteen ehtoja ilman irtisanomisperustetta — ja kohdennettu mitätöinti voi täyttää työturvallisuuslain tarkoittaman häirinnän ja epäasiallisen kohtelun merkit. Äläkä irtisanoudu kuohuksissa: oma irtisanoutuminen voi viedä neuvotteluasemasi ja tuoda työttömyysturvaan karenssin. Jos lähdet, lähde ehdoilla, jotka on neuvoteltu — ei ovella, joka jätettiin raolleen juuri sitä varten.
-    </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
 <div class="lue-lisaa-rivi">
-<span class="lue-lisaa-tyyppi">Kirjoja</span>
+<span class="lue-lisaa-tyyppi">Tutkimusta</span>
 <ul class="lue-lisaa-lista">
-<li><cite>Dying for a Paycheck</cite> — Jeffrey Pfeffer (2018)</li>
+<li><cite>Towards Understanding Sycophancy in Language Models</cite> — Mrinank Sharma ym. (2023)</li>
 </ul>
 </div>
 <div class="lue-lisaa-rivi">
 <span class="lue-lisaa-tyyppi">Verkossa</span>
 <ul class="lue-lisaa-lista">
-<li><a href="https://en.wikipedia.org/wiki/Quiet_firing" target="_blank" rel="noopener">Wikipedia: Quiet firing (englanniksi)</a></li>
-<li><a href="https://www.tyosuojelu.fi/" target="_blank" rel="noopener">Työsuojeluhallinto: tyosuojelu.fi</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Chatbot_psychosis" target="_blank" rel="noopener">Wikipedia: Chatbot psychosis (englanniksi)</a></li>
+<li><a href="https://fi.wikipedia.org/wiki/Psykoosi" target="_blank" rel="noopener">Wikipedia: Psykoosi</a></li>
 </ul>
 </div>
 </div>
@@ -828,24 +899,52 @@ flowchart TD
 
   <aside class="liittyvat" aria-label="Liittyvät ilmiöt">
     <h2>Liittyvät ilmiöt</h2>
-    <ul>
-      <li><a href="../hiljainen-irtisanoutuminen.html">Hiljainen irtisanoutuminen — työtä vain palkan verran</a></li>
-      <li><a href="haamutyopaikat.html">Haamutyöpaikat — ilmoitus ilman työpaikkaa</a></li>
-      <li><a href="../gaslighting.html">Gaslighting — todellisuuden järjestelmällinen kiistäminen</a></li>
-      <li><a href="../portinvartija-kulttuuri.html">Portinvartija-kulttuuri — tieto suodattuu ennen johtajaa</a></li>
-    </ul>
+    <div class="liittyvat-kortit">
+    <a href="parasosiaalinen-suhde.html" class="liittyvat-kortti" style="--c:#ad1457">
+      <span class="liittyvat-numero">98</span>
+      <span class="liittyvat-teksti">
+        <span class="liittyvat-nimi">Parasosiaalinen suhde</span>
+        <span class="liittyvat-kuvaus">Yksipuolinen tunneside mediahahmoon tuntuu ystävyydeltä — ja sillä voi myydä mitä vain.</span>
+      </span>
+      <span class="liittyvat-nuoli" aria-hidden="true">›</span>
+    </a>
+    <a href="kaikukammio.html" class="liittyvat-kortti" style="--c:#00838f">
+      <span class="liittyvat-numero">96</span>
+      <span class="liittyvat-teksti">
+        <span class="liittyvat-nimi">Kaikukammio</span>
+        <span class="liittyvat-kuvaus">Ympäristö, jossa kohtaat vain omia näkemyksiäsi vahvistavaa sisältöä.</span>
+      </span>
+      <span class="liittyvat-nuoli" aria-hidden="true">›</span>
+    </a>
+    <a href="ai-slop.html" class="liittyvat-kortti" style="--c:#311b92">
+      <span class="liittyvat-numero">97</span>
+      <span class="liittyvat-teksti">
+        <span class="liittyvat-nimi">AI slop</span>
+        <span class="liittyvat-kuvaus">Tekoälyllä massatuotettua halpasisältöä, joka kerää klikkejä palvelematta lukijaa.</span>
+      </span>
+      <span class="liittyvat-nuoli" aria-hidden="true">›</span>
+    </a>
+    <a href="backfire-effect.html" class="liittyvat-kortti" style="--c:#d35400">
+      <span class="liittyvat-numero">22</span>
+      <span class="liittyvat-teksti">
+        <span class="liittyvat-nimi">Backfire effect</span>
+        <span class="liittyvat-kuvaus">Virheellisen uskomuksen korjausyritys voi vahvistaa uskomusta entisestään.</span>
+      </span>
+      <span class="liittyvat-nuoli" aria-hidden="true">›</span>
+    </a>
+    </div>
   </aside>
 
   <nav class="kortti-nav">
-    <a class="kortti-nav-btn" href="hyvesignalointi.html">← Hyvesignalointi — hyvettä yleisölle</a>
+    <a class="kortti-nav-btn" href="vaalikone-efekti.html">← Vaalikone-efekti — vastaat kysymyksiin, joita et valinnut</a>
     <div class="kortti-nav-center">
-      <span class="kortti-nav-laskuri">3 / 15 · luonnos</span>
+      <span class="kortti-nav-laskuri">106 / 139</span>
       <span class="kortti-nav-vinkki">
         <kbd>&#8592;</kbd> <kbd>&#8594;</kbd> selaa &middot; <kbd>R</kbd> satunnainen
         <span class="touch-vinkki">&nbsp;· swipe &#8592;&#8594; tai &#8595; random</span>
       </span>
     </div>
-    <a class="kortti-nav-btn" href="haamutyopaikat.html">Haamutyöpaikat — ilmoitus ilman työpaikkaa →</a>
+    <a class="kortti-nav-btn" href="evasteansa.html">Evästeansa — hyväksyminen yhdellä klikkauksella, kieltäytyminen viidellä →</a>
   </nav>
 
   
@@ -1016,16 +1115,137 @@ flowchart TD
 
   <script>
 (function () {
-  const IDS = ["tekoalypesu","hyvesignalointi","hiljainen-irtisanominen","haamutyopaikat","streisand-ilmio","trollitehdas","kuollut-kissa","dunning-kruger","suunniteltu-vanheneminen","kuollut-internet","rage-bait","tilausansa","qr-koodihuijaus","toimitusjohtajahuijaus","rug-pull"];
-  const PREV = 'hyvesignalointi.html';
-  const NEXT = 'haamutyopaikat.html';
+  const IDS = ["paskuuttaminen", "starve-the-beast", "overton-ikkuna", "saantelijan-kaappaus", "rautainen-laki", "valta-suojelee-valtaa", "hajota-hallitse", "vaalilupauksen-hinnoittelu", "bkt-harha", "astroturf", "firehose-of-falsehood", "manufactured-consent", "betteridgen-laki", "inokulointiteoria", "whataboutismi", "streisand-ilmio", "trollitehdas", "kuollut-kissa", "brandolinin-laki", "poen-laki", "godwinin-laki", "backfire-effect", "darvo", "halo-efekti", "konsensus-fetissi", "omenoita-appelsiineja", "blame-game", "gaslighting", "maalitolppien-siirtaminen", "argumenttitulva", "sunk-cost-harha", "jarjestelman-puolustelu", "dunning-kruger", "hanlonin-partaveitsi", "occamin-partaveitsi", "simple-sabotage", "kafka-ilmio", "catch-22", "goodhartin-laki", "hippo-efekti", "performatiivinen-lasnaolo", "rituaalinen-raportointi", "initiointirituaalit", "portinvartija-kulttuuri", "strateginen-osaamattomuus", "fofo", "sivustakatsojan-efekti", "parkinsonin-laki", "peterin-periaate", "pareto-periaate", "brooksin-laki", "yhdeksanyhdeksan", "hofstadterin-laki", "kuolonmarssi", "lukittu-paatos", "strateginen-aliarviointi", "paatosperainen-todistelu", "lapi-hinnalla-milla-hyvansa", "tekninen-velka", "conways-laki", "bikeshedding", "scope-creep", "korkoa-korolle", "negatiivinen-korkoa", "korkokierre", "honeypot-huijaus", "bait-and-switch", "kaarmeoljy", "ponzi-pyramidi", "pump-and-dump", "pig-butchering", "ennakkomaksuhuijaus", "badger-game", "qr-koodihuijaus", "toimitusjohtajahuijaus", "rug-pull", "aaniklooni-huijaus", "smishing", "deepfake-sijoitushuijaus", "ilmainen-naytetyo", "exposure-maksu", "lowball-hinnoittelu", "valittajan-skimmaus", "tilipuristus", "foot-in-the-door", "door-in-the-face", "hintaankkurointi", "houkutinvaihtoehto", "vastavuoroisuuden-ansa", "sosiaalinen-todiste", "painostusclose", "shrinkflaatio", "suunniteltu-vanheneminen", "tilausansa", "doomscrolling", "kaikukammio", "ai-slop", "parasosiaalinen-suhde", "kuollut-internet", "rage-bait", "klikkiotsikko", "engagement-bait", "1-prosentin-saanto", "aanekas-vahemmisto", "vaalikone-efekti", "tekoalypsykoosi", "evasteansa", "piilokulut", "pakotettu-jatkuvuus", "confirmshaming", "oletusasetusansa", "viherpesu", "sinipesu", "urheilupesu", "pinkkipesu", "tekoalypesu", "hyvesignalointi", "hiljainen-irtisanoutuminen", "hiljainen-irtisanominen", "haamutyopaikat", "kaksois-y-akseli", "pinta-alaharha", "cherry-picking-aikavali", "keskiarvo-vs-mediaani", "suhteellinen-riski", "selviytymisharha", "simpsonin-paradoksi", "p-hakkerointi", "kannatusmittausten-virhemarginaali", "uutiskynnys", "uutisautiomaa", "paasyjournalismi", "tiedotejournalismi", "branditurvallisuus", "huonojen-uutisten-hautaaminen", "vaara-tasapaino", "keharaportointi", "gell-mannin-amnesia", "vihamielisen-median-harha"];
+  const PREV = 'vaalikone-efekti.html';
+  const NEXT = 'evasteansa.html';
 
   function randomIlmio() {
     let id;
-    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'hiljainen-irtisanominen');
+    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'tekoalypsykoosi');
+    merkitseRandomHyppy();
     window.location.href = id + '.html';
   }
   window.randomIlmio = randomIlmio;
+
+  /* ── Reunaan rullattaessa: logoanimaatio, sitten siirtymä ── */
+  var _siirtymaKaynnissa = false;
+
+  var RANDOM_SYVYYS_KEY = 'random-syvyys';
+  function lueRandomSyvyys() {
+    var v = parseInt(sessionStorage.getItem(RANDOM_SYVYYS_KEY) || '0', 10);
+    return isNaN(v) ? 0 : v;
+  }
+  var randomSyvyys = lueRandomSyvyys();
+  var VOI_JATKAA_KEY = 'voi-jatkaa-eteenpain';
+  var voiJatkaaEteenpain = sessionStorage.getItem(VOI_JATKAA_KEY) === '1';
+  function merkitseRandomHyppy() {
+    sessionStorage.setItem(RANDOM_SYVYYS_KEY, String(randomSyvyys + 1));
+    sessionStorage.setItem(VOI_JATKAA_KEY, '0');
+    voiJatkaaEteenpain = false;
+  }
+  function nollaaRandomKetju() {
+    sessionStorage.setItem(RANDOM_SYVYYS_KEY, '0');
+    sessionStorage.setItem(VOI_JATKAA_KEY, '0');
+    voiJatkaaEteenpain = false;
+  }
+  function naytaKumausEfekti() {
+    var b = document.body;
+    b.style.transition = 'transform 0.15s ease-out';
+    b.style.transform = 'translateY(14px)';
+    setTimeout(function () {
+      b.style.transition = 'transform 0.25s cubic-bezier(0.34,1.56,0.64,1)';
+      b.style.transform = 'translateY(0)';
+    }, 130);
+  }
+  document.querySelectorAll('a.kortti-nav-btn').forEach(function (a) {
+    a.addEventListener('click', nollaaRandomKetju);
+  });
+
+  function naytaSiirtyma(teksti, kohdeUrl) {
+    if (_siirtymaKaynnissa || !kohdeUrl) return;
+    _siirtymaKaynnissa = true;
+    var overlay = document.createElement('div');
+    overlay.className = 'random-siirtyma-overlay';
+    overlay.innerHTML =
+      '<img class="random-siirtyma-logo" src="favicon.svg" alt="">' +
+      '<span class="random-siirtyma-teksti">' + teksti + '&hellip;</span>';
+    document.body.appendChild(overlay);
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () { overlay.classList.add('nakyva'); });
+    });
+    setTimeout(function () { window.location.href = kohdeUrl; }, 650);
+  }
+  function naytaRandomSiirtyma() {
+    if (_siirtymaKaynnissa) return;
+    var id;
+    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'tekoalypsykoosi');
+    merkitseRandomHyppy();
+    naytaSiirtyma('Satunnainen ilmiö', id + '.html');
+  }
+  window.naytaRandomSiirtyma = naytaRandomSiirtyma;
+  function naytaAlasSiirtyma() {
+    if (_siirtymaKaynnissa) return;
+    if (voiJatkaaEteenpain) {
+      randomSyvyys += 1;
+      sessionStorage.setItem(RANDOM_SYVYYS_KEY, String(randomSyvyys));
+      sessionStorage.setItem(VOI_JATKAA_KEY, '0');
+      voiJatkaaEteenpain = false;
+      _siirtymaKaynnissa = true;
+      var overlay = document.createElement('div');
+      overlay.className = 'random-siirtyma-overlay';
+      overlay.innerHTML =
+        '<img class="random-siirtyma-logo" src="favicon.svg" alt="">' +
+        '<span class="random-siirtyma-teksti">Eteenpäin&hellip;</span>';
+      document.body.appendChild(overlay);
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () { overlay.classList.add('nakyva'); });
+      });
+      setTimeout(function () { history.forward(); }, 650);
+    } else {
+      naytaRandomSiirtyma();
+    }
+  }
+  function naytaTakaisinSiirtyma() {
+    if (_siirtymaKaynnissa) return;
+    if (randomSyvyys > 0) {
+      randomSyvyys -= 1;
+      sessionStorage.setItem(RANDOM_SYVYYS_KEY, String(randomSyvyys));
+      sessionStorage.setItem(VOI_JATKAA_KEY, '1');
+      _siirtymaKaynnissa = true;
+      var overlay = document.createElement('div');
+      overlay.className = 'random-siirtyma-overlay';
+      overlay.innerHTML =
+        '<img class="random-siirtyma-logo" src="favicon.svg" alt="">' +
+        '<span class="random-siirtyma-teksti">Takaisin&hellip;</span>';
+      document.body.appendChild(overlay);
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () { overlay.classList.add('nakyva'); });
+      });
+      setTimeout(function () { history.back(); }, 650);
+    } else {
+      naytaKumausEfekti();
+    }
+  }
+
+  /* Hiiren rullalla pohjaan asti → random, ylös asti alusta → edellinen */
+  var _wheelKertyma = 0, _wheelAika = 0;
+  document.addEventListener('wheel', function (e) {
+    if (_siirtymaKaynnissa || e.deltaY === 0) { _wheelKertyma = 0; return; }
+
+    var atBottom = window.scrollY + window.innerHeight >=
+      document.documentElement.scrollHeight - 4;
+    var atTop = window.scrollY <= 4;
+    var suuntaOk = (e.deltaY > 0 && atBottom) || (e.deltaY < 0 && atTop);
+    if (!suuntaOk) { _wheelKertyma = 0; return; }
+
+    var now = Date.now();
+    if (now - _wheelAika > 500) _wheelKertyma = 0;
+    _wheelAika = now;
+    _wheelKertyma += e.deltaY;
+
+    if (_wheelKertyma > 140) naytaAlasSiirtyma();
+    else if (_wheelKertyma < -140) naytaTakaisinSiirtyma();
+  }, { passive: true });
 
   /* ── Sisääntuloanimaatio ── */
   (function () {
@@ -1048,16 +1268,17 @@ flowchart TD
   document.addEventListener('keydown', function (e) {
     if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
     if (e.ctrlKey || e.metaKey || e.altKey) return;
-    if (e.key === 'ArrowLeft'  && PREV) window.location.href = PREV;
-    if (e.key === 'ArrowRight' && NEXT) window.location.href = NEXT;
+    if (e.key === 'ArrowLeft'  && PREV) { nollaaRandomKetju(); window.location.href = PREV; }
+    if (e.key === 'ArrowRight' && NEXT) { nollaaRandomKetju(); window.location.href = NEXT; }
     if (e.key === 'r' || e.key === 'R') randomIlmio();
   });
 
   /* ── Swipe-eleet ── */
-  var _tx = 0, _ty = 0, _sx = false, _live = false;
+  var _tx = 0, _ty = 0, _tt = 0, _sx = false, _live = false;
   document.addEventListener('touchstart', function (e) {
     _tx = e.touches[0].clientX;
     _ty = e.touches[0].clientY;
+    _tt = Date.now();
     _sx = false; _live = false;
   }, { passive: true });
   document.addEventListener('touchmove', function (e) {
@@ -1065,9 +1286,9 @@ flowchart TD
     var dx = e.touches[0].clientX - _tx;
     var dy = e.touches[0].clientY - _ty;
     if (!_live) {
-      if (Math.abs(dx) > Math.abs(dy) * 1.3 && Math.abs(dx) > 8) {
+      if (Math.abs(dx) > Math.abs(dy) * 1.3 && Math.abs(dx) > 22) {
         _live = true;
-      } else if (Math.abs(dy) > Math.abs(dx) * 1.3 && Math.abs(dy) > 8) {
+      } else if (Math.abs(dy) > Math.abs(dx) * 1.3 && Math.abs(dy) > 22) {
         _sx = true; return;
       }
     }
@@ -1081,10 +1302,12 @@ flowchart TD
     var dx = e.changedTouches[0].clientX - _tx;
     var dy = e.changedTouches[0].clientY - _ty;
     var adx = Math.abs(dx), ady = Math.abs(dy);
+    var nopeaTarpeeksi = (Date.now() - _tt) < 380;
     if (_live) {
-      if (adx > 70) {
+      if (adx > 120 && nopeaTarpeeksi) {
         var target = dx < 0 ? NEXT : PREV;
         if (target) {
+          nollaaRandomKetju();
           sessionStorage.setItem('swipe-dir', dx < 0 ? 'right' : 'left');
           document.body.style.transition = 'transform 0.22s cubic-bezier(0.4,0,1,1)';
           document.body.style.transform = 'translateX(' + (dx < 0 ? -window.innerWidth : window.innerWidth) + 'px)';
@@ -1097,13 +1320,13 @@ flowchart TD
         document.body.style.transition = 'transform 0.28s cubic-bezier(0.25,0.46,0.45,0.94)';
         document.body.style.transform = 'translateX(0)';
       }
-    } else if (!_sx && ady > adx * 1.5 && ady > 80) {
+    } else if (!_sx && ady > adx * 1.5 && ady > 140 && nopeaTarpeeksi) {
       if (dy > 0) {
         var atBottom = window.scrollY + window.innerHeight >=
           document.documentElement.scrollHeight - 60;
-        if (atBottom) randomIlmio();
+        if (atBottom) naytaAlasSiirtyma();
       } else {
-        if (window.scrollY < 60) history.back();
+        if (window.scrollY < 60) naytaTakaisinSiirtyma();
       }
     }
   }, { passive: true });
@@ -1111,7 +1334,7 @@ flowchart TD
   </script>
 
   <footer class="ilmio-footer">
-    <p>© 2026 Ilmiöitä — Miten valta toimii · Kirjoittanut Ilmiömies · <a href="../tietoa.html">Tietoa sivustosta ja tekijästä</a></p>
+    <p>© 2026 Ilmiöitä — Miten valta toimii · Kirjoittanut Ilmiömies · <a href="tietoa.html">Tietoa sivustosta ja tekijästä</a></p>
   </footer>
 </body>
 </html>

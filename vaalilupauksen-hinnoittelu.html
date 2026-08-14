@@ -4,11 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <title>Maksu näkyvyydellä — "tästä saat hyvää referenssiä" — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  
-  
-  
+  <title>Vaalilupauksen hinnoittelu — luvun laskee se, joka lupaa — Ilmiöitä</title>
+  <link rel="stylesheet" href="style.css?v=20260727">
+  <link rel="stylesheet" href="fonts/fonts.css">
+  <script>
+  window.addEventListener('DOMContentLoaded', function () {
+    var nodes = document.querySelectorAll('.mermaid');
+    if (!nodes.length) return;
+    var loaded = false;
+    function load() {
+      if (loaded) return;
+      loaded = true;
+      var s = document.createElement('script');
+      s.src = 'js/mermaid.min.js';
+      s.onload = function () {
+        mermaid.initialize({ startOnLoad: false, theme: 'base', themeVariables: { fontSize: '12px', fontFamily: "'DM Sans', system-ui, sans-serif", primaryColor: '#FBF5E0', primaryTextColor: '#1A1100', primaryBorderColor: '#C9A84C', lineColor: '#8B6914', secondaryColor: '#F5F0E5', tertiaryColor: '#FDFAF2', mainBkg: '#FBF5E0', nodeBorder: '#C9A84C', clusterBkg: '#F5F0E5', titleColor: '#3A2000', edgeLabelBackground: '#FDFAF2' } });
+        mermaid.run();
+      };
+      document.head.appendChild(s);
+    }
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { load(); io.disconnect(); }
+        });
+      }, { rootMargin: '200px 0px' });
+      nodes.forEach(function (n) { io.observe(n); });
+    } else {
+      load();
+    }
+  });
+  </script>
+
   <style>
 
     .mermaid svg text { font-size: 12px !important; }
@@ -47,156 +74,11 @@
       text-transform: uppercase;
     }
     /* Jokaiselle ilmiölle oma väri */
-    #paskuuttaminen            { border-top-color: #e74c3c; }
-    #paskuuttaminen            .ilmio-tag { background: #e74c3c; }
-    #starve-the-beast          { border-top-color: #e67e22; }
-    #starve-the-beast          .ilmio-tag { background: #e67e22; }
-    #simple-sabotage           { border-top-color: #c0a000; }
-    #simple-sabotage           .ilmio-tag { background: #c0a000; }
-    #tilastoilla-valehtelu     { border-top-color: #27ae60; }
-    #tilastoilla-valehtelu     .ilmio-tag { background: #27ae60; }
-    #bkt-harha                 { border-top-color: #16a085; }
-    #bkt-harha                 .ilmio-tag { background: #16a085; }
-    #overton-ikkuna            { border-top-color: #2980b9; }
-    #overton-ikkuna            .ilmio-tag { background: #2980b9; }
-    #saantelijan-kaappaus      { border-top-color: #8e44ad; }
-    #saantelijan-kaappaus      .ilmio-tag { background: #8e44ad; }
-    #rautainen-laki            { border-top-color: #4e342e; }
-    #rautainen-laki            .ilmio-tag { background: #4e342e; }
-    #astroturf                 { border-top-color: #1abc9c; }
-    #astroturf                 .ilmio-tag { background: #1abc9c; }
-    #firehose-of-falsehood     { border-top-color: #c0392b; }
-    #firehose-of-falsehood     .ilmio-tag { background: #c0392b; }
-    #valta-suojelee-valtaa     { border-top-color: #2c3e50; }
-    #valta-suojelee-valtaa     .ilmio-tag { background: #2c3e50; }
-    #backfire-effect           { border-top-color: #d35400; }
-    #backfire-effect           .ilmio-tag { background: #d35400; }
-    #kafka-ilmio               { border-top-color: #7f8c8d; }
-    #kafka-ilmio               .ilmio-tag { background: #7f8c8d; }
-    #catch-22                  { border-top-color: #6c3483; }
-    #catch-22                  .ilmio-tag { background: #6c3483; }
-    #goodhartin-laki           { border-top-color: #148f77; }
-    #goodhartin-laki           .ilmio-tag { background: #148f77; }
-    #darvo                     { border-top-color: #922b21; }
-    #darvo                     .ilmio-tag { background: #922b21; }
-    #manufactured-consent      { border-top-color: #1a5276; }
-    #manufactured-consent      .ilmio-tag { background: #1a5276; }
-    #halo-efekti               { border-top-color: #f9a825; }
-    #halo-efekti               .ilmio-tag { background: #f9a825; color: #333; }
-    #brooksin-laki             { border-top-color: #34495e; }
-    #brooksin-laki             .ilmio-tag { background: #34495e; }
-    #yhdeksanyhdeksan          { border-top-color: #117a65; }
-    #yhdeksanyhdeksan          .ilmio-tag { background: #117a65; }
-    #hofstadterin-laki         { border-top-color: #7d6608; }
-    #hofstadterin-laki         .ilmio-tag { background: #7d6608; }
-    #kuolonmarssi              { border-top-color: #78281f; }
-    #kuolonmarssi              .ilmio-tag { background: #78281f; }
-    #tekninen-velka            { border-top-color: #1b4f72; }
-    #tekninen-velka            .ilmio-tag { background: #1b4f72; }
-    #conways-laki              { border-top-color: #154360; }
-    #conways-laki              .ilmio-tag { background: #154360; }
-    #bikeshedding              { border-top-color: #4a235a; }
-    #bikeshedding              .ilmio-tag { background: #4a235a; }
-    #scope-creep               { border-top-color: #145a32; }
-    #scope-creep               .ilmio-tag { background: #145a32; }
-    #hippo-efekti              { border-top-color: #5d4037; }
-    #hippo-efekti              .ilmio-tag { background: #5d4037; }
-    #performatiivinen-lasnaolo { border-top-color: #00695c; }
-    #performatiivinen-lasnaolo .ilmio-tag { background: #00695c; }
-    #rituaalinen-raportointi   { border-top-color: #37474f; }
-    #rituaalinen-raportointi   .ilmio-tag { background: #37474f; }
-    #initiointirituaalit       { border-top-color: #4a148c; }
-    #initiointirituaalit       .ilmio-tag { background: #4a148c; }
-    #portinvartija-kulttuuri   { border-top-color: #2d6a4f; }
-    #portinvartija-kulttuuri   .ilmio-tag { background: #2d6a4f; }
-    #betteridgen-laki          { border-top-color: #006064; }
-    #betteridgen-laki          .ilmio-tag { background: #006064; }
-    #inokulointiteoria         { border-top-color: #00838f; }
-    #inokulointiteoria         .ilmio-tag { background: #00838f; }
-    #korkoa-korolle            { border-top-color: #2e86ab; }
-    #korkoa-korolle            .ilmio-tag { background: #2e86ab; }
-    #negatiivinen-korkoa       { border-top-color: #a23b72; }
-    #negatiivinen-korkoa       .ilmio-tag { background: #a23b72; }
-    #hajota-hallitse           { border-top-color: #b71c1c; }
-    #hajota-hallitse           .ilmio-tag { background: #b71c1c; }
-    #konsensus-fetissi         { border-top-color: #01579b; }
-    #konsensus-fetissi         .ilmio-tag { background: #01579b; }
-    #korkokierre               { border-top-color: #1a237e; }
-    #korkokierre               .ilmio-tag { background: #1a237e; }
-    #korkokierre               { border-top-width: 6px; background: linear-gradient(160deg,#f0f0ff 0%,#fff 60%); }
-    #omenoita-appelsiineja     { border-top-color: #6a1b9a; }
-    #omenoita-appelsiineja     .ilmio-tag { background: #6a1b9a; }
-    #honeypot-huijaus          { border-top-color: #b8860b; }
-    #honeypot-huijaus          .ilmio-tag { background: #b8860b; }
-    #bait-and-switch           { border-top-color: #ad1457; }
-    #bait-and-switch           .ilmio-tag { background: #ad1457; }
-    #kaarmeoljy                { border-top-color: #558b2f; }
-    #kaarmeoljy                .ilmio-tag { background: #558b2f; }
-    #ponzi-pyramidi            { border-top-color: #c62828; }
-    #ponzi-pyramidi            .ilmio-tag { background: #c62828; }
-    #pump-and-dump             { border-top-color: #5e35b1; }
-    #pump-and-dump             .ilmio-tag { background: #5e35b1; }
-    #pig-butchering            { border-top-color: #bf360c; }
-    #pig-butchering            .ilmio-tag { background: #bf360c; }
-    #ennakkomaksuhuijaus       { border-top-color: #303f9f; }
-    #ennakkomaksuhuijaus       .ilmio-tag { background: #303f9f; }
-    #badger-game               { border-top-color: #455a64; }
-    #badger-game               .ilmio-tag { background: #455a64; }
-    #ilmainen-naytetyo         { border-top-color: #8d6e63; }
-    #ilmainen-naytetyo         .ilmio-tag { background: #8d6e63; }
-    #exposure-maksu            { border-top-color: #00838f; }
-    #exposure-maksu            .ilmio-tag { background: #00838f; }
-    #lowball-hinnoittelu       { border-top-color: #00695c; }
-    #lowball-hinnoittelu       .ilmio-tag { background: #00695c; }
-    #valittajan-skimmaus       { border-top-color: #ef6c00; }
-    #valittajan-skimmaus       .ilmio-tag { background: #ef6c00; }
-    #tilipuristus              { border-top-color: #d84315; }
-    #tilipuristus              .ilmio-tag { background: #d84315; }
-    #foot-in-the-door          { border-top-color: #00897b; }
-    #foot-in-the-door          .ilmio-tag { background: #00897b; }
-    #door-in-the-face          { border-top-color: #5e4b8b; }
-    #door-in-the-face          .ilmio-tag { background: #5e4b8b; }
-    #hintaankkurointi          { border-top-color: #283593; }
-    #hintaankkurointi          .ilmio-tag { background: #283593; }
-    #houkutinvaihtoehto        { border-top-color: #006064; }
-    #houkutinvaihtoehto        .ilmio-tag { background: #006064; }
-    #vastavuoroisuuden-ansa    { border-top-color: #c2185b; }
-    #vastavuoroisuuden-ansa    .ilmio-tag { background: #c2185b; }
-    #sosiaalinen-todiste       { border-top-color: #b71c1c; }
-    #sosiaalinen-todiste       .ilmio-tag { background: #b71c1c; }
-    #painostusclose            { border-top-color: #827717; }
-    #painostusclose            .ilmio-tag { background: #827717; }
-    #blame-game                .ilmio-tag { background: #6d4c41; }
-    #gaslighting               .ilmio-tag { background: #880e4f; }
-    #maalitolppien-siirtaminen .ilmio-tag { background: #4527a0; }
-    #argumenttitulva           .ilmio-tag { background: #0277bd; }
-    #sunk-cost-harha           .ilmio-tag { background: #1b5e20; }
-    #jarjestelman-puolustelu   { border-top-color: #512da8; }
-    #jarjestelman-puolustelu   .ilmio-tag { background: #512da8; }
-    #strateginen-osaamattomuus .ilmio-tag { background: #e65100; }
-    #fofo                      .ilmio-tag { background: #546e7a; }
-    #sivustakatsojan-efekti    .ilmio-tag { background: #3e2723; }
-    #korkokierre               .graafi-wrapper { background: #f4f4fd; border-color: #c0c0e8; }
-    #korkokierre               .graafi-otsikko { color: #1a237e; }
-    #korkokierre               .avainluku { border-color: #c0c0e8; }
-    #korkokierre               .avainluku .luku { color: #b71c1c; }
-
-    .kkk-taulukko td:nth-child(2) { color: #888; }
-    .kkk-taulukko td:nth-child(3) { color: #2e86ab; font-weight: bold; }
-    .kkk-taulukko td:nth-child(4) { color: #1a7044; font-weight: bold; }
-    .kkk-taulukko tr:last-child td { background: #f0f6fd; }
-
+    #vaalilupauksen-hinnoittelu { border-top-color: #1565c0; }
+    #vaalilupauksen-hinnoittelu .ilmio-tag { background: #1565c0; }
     .huomiolaatikko {
       background: #fdf6ec;
       border-left: 6px solid #e67e22;
-      padding: 1em 1.2em;
-      margin: 1.5rem 0;
-      font-size: 1em;
-      border-radius: 0;
-    }
-    .vaaralatikko {
-      background: #fdf0f0;
-      border-left: 6px solid #c0392b;
       padding: 1em 1.2em;
       margin: 1.5rem 0;
       font-size: 1em;
@@ -210,17 +92,13 @@
       font-size: 1em;
       border-radius: 0;
     }
-    .sabotaasi-lista {
-      background: #1e1e1e;
-      color: #d4d4d4;
-      padding: 1.2em 1.5em;
+    .vaaralatikko {
+      background: #fdf0f0;
+      border-left: 6px solid #c0392b;
+      padding: 1em 1.2em;
+      margin: 1.5rem 0;
+      font-size: 1em;
       border-radius: 0;
-      font-family: monospace;
-      font-size: 0.88em;
-      line-height: 1.8;
-    }
-    .sabotaasi-lista .kommentti {
-      color: #6a9955;
     }
     .kaavio-selitys {
       font-size: 0.85em;
@@ -228,140 +106,12 @@
       text-align: center;
       margin-top: 0.4rem;
     }
-    .tilasto-grid {
-      display: flex;
-      gap: 2rem;
-      flex-wrap: wrap;
-      margin: 1.5rem 0;
-      align-items: flex-end;
-    }
-    .tilasto-esimerkki {
-      flex: 1 1 200px;
-      text-align: center;
-    }
-    .tilasto-esimerkki h4 {
-      margin: 0 0 0.5rem;
-      font-size: 0.9em;
-    }
-    .pylvas-wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-      gap: 0.6rem;
-      height: 120px;
-      border-bottom: 2px solid #333;
-      padding: 0 0.5rem;
-    }
-    .pylvas {
-      width: 36px;
-      background: #2980b9;
-      position: relative;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      font-size: 0.75em;
-      color: #fff;
-      padding-top: 4px;
-    }
-    .pylvas-label {
-      font-size: 0.78em;
-      color: #555;
-      margin-top: 0.3rem;
-    }
     code {
       background: #eee;
       padding: 0.1em 0.4em;
       border-radius: 0;
       font-size: 0.9em;
     }
-    .halo-grid {
-      display: flex;
-      gap: 1.5rem;
-      margin: 1.5rem 0;
-      flex-wrap: wrap;
-    }
-    .halo-puoli {
-      flex: 1 1 220px;
-      border-radius: 0;
-      padding: 1.2rem 1.4rem;
-    }
-    .halo-puoli.halo-side {
-      background: #fffde7;
-      border: 2px solid #f9a825;
-    }
-    .halo-puoli.stigma-side {
-      background: #f3f0f8;
-      border: 2px solid #7b1fa2;
-    }
-    .halo-puoli h4 {
-      margin: 0 0 0.8rem;
-      font-size: 1em;
-    }
-    .halo-puoli ul {
-      margin: 0 0 0.8rem;
-      padding-left: 1.2rem;
-      font-size: 0.88em;
-    }
-    .halo-puoli li {
-      margin-bottom: 0.25rem;
-    }
-    .halo-signaali {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-      margin-top: 0.5rem;
-    }
-    .halo-signaali span {
-      font-size: 0.78em;
-      padding: 0.2em 0.6em;
-      border-radius: 0;
-    }
-    .halo-side .halo-signaali span { background: #fff8e1; border: 1px solid #f9a825; }
-    .stigma-side .halo-signaali span { background: #ede7f6; border: 1px solid #9c27b0; }
-
-    /* Graafikortit (ilmiöt 33 & 34) */
-    #korkoa-korolle  { border-top-width: 6px; background: linear-gradient(160deg,#f0f8ff 0%,#fff 60%); }
-    #negatiivinen-korkoa { border-top-width: 6px; background: linear-gradient(160deg,#fff0f5 0%,#fff 60%); }
-    .graafi-badge {
-      display: inline-block;
-      font-size: 0.72em;
-      font-weight: bold;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      background: #2e86ab;
-      color: #fff;
-      border-radius: 0;
-      padding: 0.2em 0.7em;
-      margin-bottom: 1rem;
-    }
-    #negatiivinen-korkoa .graafi-badge { background: #a23b72; }
-    .graafi-wrapper {
-      background: #f4fafd;
-      border: 1px solid #c8e0ef;
-      border-radius: 0;
-      padding: 1.2rem 1rem 0.6rem;
-      margin: 1.5rem 0;
-      position: relative;
-    }
-    #negatiivinen-korkoa .graafi-wrapper {
-      background: #fdf4f8;
-      border-color: #e8c0d4;
-    }
-    .graafi-otsikko {
-      font-size: 0.8em;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: #2e86ab;
-      margin-bottom: 0.6rem;
-    }
-    #negatiivinen-korkoa .graafi-otsikko { color: #a23b72; }
-    .graafi-kaksois {
-      display: flex;
-      gap: 1.2rem;
-      flex-wrap: wrap;
-    }
-    .graafi-kaksois .graafi-wrapper { flex: 1 1 260px; margin: 0; }
     .avainluku-rivi {
       display: flex;
       gap: 1rem;
@@ -376,9 +126,7 @@
       padding: 0.8rem 1rem;
       text-align: center;
     }
-    #negatiivinen-korkoa .avainluku { border-color: #e8c0d4; }
     .avainluku .luku { font-size: 1.6em; font-weight: bold; color: #2e86ab; }
-    #negatiivinen-korkoa .avainluku .luku { color: #a23b72; }
     .avainluku .selite { font-size: 0.75em; color: #666; margin-top: 0.2rem; }
 
     /* Sivupalkki-asettelu */
@@ -408,14 +156,12 @@
       min-width: 0;
       padding-top: 0.5rem;
     }
-    /* Sivupalkin scrollbar häivytys */
     .sivupalkki::-webkit-scrollbar { width: 4px; }
     .sivupalkki::-webkit-scrollbar-thumb { background: #ddd; border-radius: 2px; }
     @media (max-width: 820px) {
       .sivu-layout { flex-direction: column; padding: 0 1rem 3rem; }
       .sivupalkki  { position: static; max-height: none; flex: none; width: 100%; }
     }
-    /* H1-otsikkoalue */
     .paasisu > h1 {
       font-size: 1.75em;
       font-weight: 700;
@@ -433,96 +179,6 @@
       line-height: 1.6;
     }
 
-    /* ── Jako-napit ───────────────────────────────────────────── */
-    .ilmio-jaa {
-      position: absolute;
-      top: 1.5rem;
-      right: 1.5rem;
-    }
-    .ilmio-jaa-btn {
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-      background: transparent;
-      border: 1px solid #dddbd4;
-      border-radius: 0;
-      padding: 0.26em 0.72em 0.26em 0.55em;
-      font-size: 0.72em;
-      color: #aaa;
-      cursor: pointer;
-      font-family: 'Source Sans 3', sans-serif;
-      letter-spacing: 0.04em;
-      transition: border-color 0.15s, color 0.15s, background 0.15s;
-      line-height: 1;
-    }
-    .ilmio-jaa-btn:hover {
-      border-color: #bbb;
-      color: #666;
-      background: rgba(0,0,0,0.025);
-    }
-    .ilmio-jaa-menu {
-      position: absolute;
-      top: calc(100% + 9px);
-      right: 0;
-      background: #1C1400;
-      border-radius: 0;
-      padding: 0.55rem 0.65rem;
-      display: flex;
-      gap: 0.15rem;
-      align-items: center;
-      box-shadow: 0 8px 28px rgba(0,0,0,0.24), 0 2px 6px rgba(0,0,0,0.12);
-      opacity: 0;
-      transform: translateY(-5px) scale(0.95);
-      transition: opacity 0.15s ease, transform 0.15s ease;
-      pointer-events: none;
-      z-index: 500;
-    }
-    .ilmio-jaa-menu::before {
-      content: '';
-      position: absolute;
-      top: -4px;
-      right: 13px;
-      width: 9px;
-      height: 9px;
-      background: #1C1400;
-      transform: rotate(45deg);
-      border-radius: 2px;
-    }
-    .ilmio-jaa-menu.aktiv {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-      pointer-events: all;
-    }
-    .jaa-ikoni {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 33px;
-      height: 33px;
-      border-radius: 0;
-      text-decoration: none;
-      color: rgba(255,255,255,0.72);
-      cursor: pointer;
-      border: none;
-      background: transparent;
-      transition: background 0.12s, color 0.12s;
-      flex-shrink: 0;
-    }
-    .jaa-ikoni:hover { background: rgba(255,255,255,0.11); color: #fff; }
-    .jaa-ikoni.kopioitu { color: #4ade80 !important; }
-    .jaa-erotinviiva {
-      width: 1px;
-      height: 18px;
-      background: rgba(255,255,255,0.13);
-      margin: 0 0.12rem;
-      flex-shrink: 0;
-    }
-    @media (max-width: 600px) {
-      .ilmio-jaa { top: 1.1rem; right: 1rem; }
-      .ilmio-jaa-btn span { display: none; }
-    }
-  
-
     /* Yksilösivun navigointi */
     .kortti-breadcrumb {
       font-size: 0.85em;
@@ -536,7 +192,7 @@
     .kortti-breadcrumb a { color: #8B6914; text-decoration: none; }
     .kortti-breadcrumb a:hover { text-decoration: underline; }
     .kortti-breadcrumb-sep { color: #ccc; }
-    .kortti-breadcrumb .kortti-breadcrumb-kat { color: #666; }
+    .kortti-breadcrumb-kat { color: #666; }
     .kortti-random-btn {
       margin-left: auto;
       display: inline-flex;
@@ -608,7 +264,6 @@
     }
     .touch-vinkki { display: none; }
 
-    /* ── Mobiili ── */
     @media (max-width: 560px) {
       .kortti-nav-btn { max-width: 36%; padding: 0.55rem 0.6rem; font-size: 0.8em; }
     }
@@ -620,7 +275,6 @@
     @media (pointer: coarse) {
       .touch-vinkki { display: inline; }
       .kortti-nav-vinkki kbd { display: none; }
-      /* Isommat kosketusalueet */
       .kortti-nav-btn { padding: 0.65rem 0.9rem; }
       .kortti-random-btn { padding: 0.4rem 0.8rem; }
     }
@@ -672,24 +326,24 @@
     }
     .random-siirtyma-overlay.nakyva .random-siirtyma-teksti { opacity: 1; }
   
-.infolaatikko h2.laatikko-otsikko, .huomiolaatikko h2.laatikko-otsikko, .vaaralatikko h2.laatikko-otsikko {
+.infolaatikko h2.laatikko-otsikko, .huomiolaatikko h2.laatikko-otsikko {
   display: inline; font: inherit; font-weight: 700; color: inherit;
   margin: 0; padding: 0; letter-spacing: inherit;
 }
 </style>
 
   <!-- SEO -->
-  <meta name="description" content="Maksu näkyvyydellä: 'saat hyvää referenssiä' ei maksa laskuja. Selitämme miksi näkyvyys ei ole palkkio ja miten hinnoittelet työsi ammattimaisesti.">
-  <link rel="canonical" href="https://www.ilmiöt.fi/exposure-maksu.html">
-  <meta property="og:title" content="Maksu näkyvyydellä — &quot;tästä saat hyvää referenssiä&quot; — Ilmiöitä">
-  <meta property="og:description" content="Maksu näkyvyydellä: 'saat hyvää referenssiä' ei maksa laskuja. Selitämme miksi näkyvyys ei ole palkkio ja miten hinnoittelet työsi ammattimaisesti.">
-  <meta property="og:url" content="https://www.ilmiöt.fi/exposure-maksu.html">
+  <meta name="description" content="Vaalilupauksen hinnan laskee lupaaja itse. Kun riippumatonta laskelmaa ei ole, aikajänne, brutto ja netto valitaan sen mukaan miltä luku näyttää.">
+  <link rel="canonical" href="https://www.ilmiöt.fi/vaalilupauksen-hinnoittelu.html">
+  <meta property="og:title" content="Vaalilupauksen hinnoittelu — luvun laskee se, joka lupaa — Ilmiöitä">
+  <meta property="og:description" content="Vaalilupauksen hinnan laskee lupaaja itse. Kun riippumatonta laskelmaa ei ole, aikajänne, brutto ja netto valitaan sen mukaan miltä luku näyttää.">
+  <meta property="og:url" content="https://www.ilmiöt.fi/vaalilupauksen-hinnoittelu.html">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="fi_FI">
   <meta property="og:site_name" content="Ilmiöitä — Miten valta toimii">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Maksu näkyvyydellä — &quot;tästä saat hyvää referenssiä&quot; — Ilmiöitä">
-  <meta name="twitter:description" content="Maksu näkyvyydellä: 'saat hyvää referenssiä' ei maksa laskuja. Selitämme miksi näkyvyys ei ole palkkio ja miten hinnoittelet työsi ammattimaisesti.">
+  <meta name="twitter:title" content="Vaalilupauksen hinnoittelu — luvun laskee se, joka lupaa — Ilmiöitä">
+  <meta name="twitter:description" content="Vaalilupauksen hinnan laskee lupaaja itse. Kun riippumatonta laskelmaa ei ole, aikajänne, brutto ja netto valitaan sen mukaan miltä luku näyttää.">
   <meta property="og:image" content="https://www.ilmiöt.fi/og/brand.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -712,14 +366,14 @@
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Myyntikikat ja painostus",
-          "item": "https://www.ilmiöt.fi/kategoria-myyntikikat-ja-painostus.html"
+          "name": "Vallan rakenteet",
+          "item": "https://www.ilmiöt.fi/kategoria-vallan-rakenteet.html"
         },
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Maksu näkyvyydellä — \"tästä saat hyvää referenssiä\"",
-          "item": "https://www.ilmiöt.fi/exposure-maksu.html"
+          "name": "Vaalilupauksen hinnoittelu — luvun laskee se, joka lupaa",
+          "item": "https://www.ilmiöt.fi/vaalilupauksen-hinnoittelu.html"
         }
       ]
     },
@@ -731,12 +385,12 @@
         "width": 1200,
         "height": 630
       },
-      "@id": "https://www.ilmiöt.fi/exposure-maksu.html#article",
-      "url": "https://www.ilmiöt.fi/exposure-maksu.html",
-      "headline": "Maksu näkyvyydellä — \"tästä saat hyvää referenssiä\"",
-      "description": "Exposure-maksussa työ teetetään ilman rahaa lupaamalla tilalle aineetonta vastiketta : näkyvyyttä, portfoliota, kokemusta, \"jalkaa oven väliin\" tai lupaus…",
+      "@id": "https://www.ilmiöt.fi/vaalilupauksen-hinnoittelu.html#article",
+      "url": "https://www.ilmiöt.fi/vaalilupauksen-hinnoittelu.html",
+      "headline": "Vaalilupauksen hinnoittelu — luvun laskee se, joka lupaa",
+      "description": "Vaalilupauksen hinnan laskee lupaaja itse. Kun riippumatonta laskelmaa ei ole, aikajänne, brutto ja netto valitaan sen mukaan miltä luku näyttää.",
       "inLanguage": "fi",
-      "articleSection": "Myyntikikat ja painostus",
+      "articleSection": "Vallan rakenteet",
       "isPartOf": {
         "@type": "CollectionPage",
         "@id": "https://www.ilmiöt.fi/"
@@ -753,16 +407,6 @@
           "height": 64
         }
       },
-      "about": {
-        "@type": "DefinedTerm",
-        "name": "Maksu näkyvyydellä — \"tästä saat hyvää referenssiä\"",
-        "description": "Exposure-maksussa työ teetetään ilman rahaa lupaamalla tilalle aineetonta vastiketta : näkyvyyttä, portfoliota, kokemusta, \"jalkaa oven väliin\" tai lupaus…",
-        "inDefinedTermSet": {
-          "@type": "DefinedTermSet",
-          "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
-        }
-      },
       "author": {
         "@type": "Person",
         "@id": "https://www.ilmiöt.fi/#ilmiomies",
@@ -770,8 +414,8 @@
         "url": "https://www.ilmiöt.fi/tietoa.html",
         "description": "Kirjoittajanimi, jonka takana on kiinnostus valtaan, vaikuttamiseen ja ihmisen päättelyn vinoumiin. Sisältö perustuu julkisiin lähteisiin ja vakiintuneeseen käsitteistöön."
       },
-      "datePublished": "2026-06-19",
-      "dateModified": "2026-06-19"
+      "datePublished": "2026-08-14",
+      "dateModified": "2026-08-14"
     }
   ]
 }
@@ -790,47 +434,57 @@
   <div class="kortti-breadcrumb">
     <a href="index.html" class="kortti-logo" aria-label="Ilmiöitä — etusivu"><img src="favicon.svg" alt="Ilmiöitä"></a>
     <a href="index.html">← Kaikki ilmiöt</a>
-    <span class="kortti-breadcrumb-sep">›</span><a href="kategoria-myyntikikat-ja-painostus.html" class="kortti-breadcrumb-kat">Myyntikikat ja painostus</a>
+    <span class="kortti-breadcrumb-sep">›</span><a href="kategoria-vallan-rakenteet.html" class="kortti-breadcrumb-kat">Vallan rakenteet</a>
     <button class="kortti-random-btn" onclick="randomIlmio()" title="Satunnainen ilmiö (R)">
       <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>
       <span class="btn-text">Satunnainen</span>
     </button>
   </div>
 
-  <div class="ilmio" id="exposure-maksu">
-<div class="ilmio-tag">Ilmiö 81</div>
-<h1>Maksu näkyvyydellä — "tästä saat hyvää referenssiä"</h1>
-<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 19.6.2026</p>
-<p>Exposure-maksussa työ teetetään ilman rahaa lupaamalla tilalle <strong>aineetonta vastiketta</strong>: näkyvyyttä, portfoliota, kokemusta, "jalkaa oven väliin" tai lupaus maksavista töistä myöhemmin. Ydinväite on, että korvaus tulee tulevaisuudessa tai muussa muodossa kuin rahana — käytännössä se ei tule lainkaan.</p>
-<p>Taktiikka nojaa aloittelijan epävarmuuteen ja toivoon. Mitä kokemattomampi tekijä, sitä helpommin "referenssin arvo" myydään korvauksen sijaan. Klassinen kuittaus: <em>"näkyvyydellä ei makseta vuokraa."</em></p>
+  <div class="ilmio" id="vaalilupauksen-hinnoittelu">
+<div class="ilmio-tag">Ilmiö 8</div>
+<h1>Vaalilupauksen hinnoittelu — luvun laskee se, joka lupaa</h1>
+<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 14.8.2026</p>
+<p><strong>Vaalilupauksen hinnoittelu</strong> (englanniksi <em>policy costing</em> tai <em>election costing</em>) tarkoittaa riippumatonta laskelmaa siitä, mitä luvattu toimenpide maksaa. Suomessa sellaista ei tehdä järjestelmällisesti: puolue esittää oman lukunsa, eikä sitä vastaan ole toista lukua. Siksi hinta ei ole ennuste vaan kampanja-aineistoa.</p>
+<div class="mermaid">
+flowchart TD
+  A["Lupaus esitetään\nkampanjassa"] --&gt; B["Hinnan laskee\nlupaaja itse"]
+  B --&gt; C["Aikajänne, brutto/netto ja\ndynaamiset vaikutukset valitaan"]
+  C --&gt; D["Luku jää ainoaksi luvuksi —\nvertailukohtaa ei ole"]
+  D --&gt; E["Vaalikauden lopussa\nmitataan jotain muuta"]
+  style D fill:#fdf0f0,stroke:#c0392b
+    </div>
+<p class="kaavio-selitys">Ilman toista laskelmaa ensimmäinen luku on lopullinen luku.</p>
+<p>Valinnanvaraa on kolmessa kohdassa, eikä yksikään niistä ole valehtelua. <strong>Aikajänne:</strong> sama toimenpide maksaa vuositasolla neljäsosan siitä, mitä se maksaa vaalikaudessa. <strong>Brutto vai netto:</strong> kustannuksesta voidaan vähentää arvioidut takaisinvirtaukset, jolloin luku pienenee ilman että mikään muuttuu. <strong>Dynaamiset vaikutukset:</strong> käyttäytymismuutokset lasketaan mukaan silloin kun ne auttavat ja jätetään pois silloin kun eivät.</p>
+<p>Muualla ongelma on ratkaistu laitoksella. Alankomaissa analyysilaitos CPB on laskenut puolueiden vaaliohjelmat läpi samalla menetelmällä vuodesta 1986, ja Australiassa parlamentin budjettitoimisto hinnoittelee vaalilupaukset. Suomessa valtiovarainministeriö julkaisee ennen vaaleja virkamiesarvion julkisen talouden tilasta — mutta arvio koskee lähtötilannetta, ei kenenkään lupauksia.</p>
+<p>Ero suurhankkeeseen on olennainen: hankkeen kustannusarvio joutuu edes muodollisesti portille, jossa joku katsoo sitä. Vaalilupauksella ei ole porttia lainkaan.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Tyypilliset muotoilut:</h2>
+<h2 class="laatikko-otsikko">Ero läheisiin käsitteisiin:</h2> Erona <a href="strateginen-aliarviointi.html">strategiseen aliarviointiin</a> on portti: siellä optimistisin luku voittaa vertailun, tässä vertailua ei ole. <a href="maalitolppien-siirtaminen.html">Maalitolppien siirtäminen</a> tulee myöhemmin — kun lupausta ei voi mitata alkuperäisellä luvulla, mitataan jollain muulla. <a href="paatosperainen-todistelu.html">Päätösperäinen todistelu</a> on saman asian hallintoversio.
+    </div>
+<div class="huomiolaatikko">
+<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2>
 <ul style="margin:0.5em 0 0;">
-<li><strong>"Hyvä referenssi sinulle":</strong> meidän nimemme CV:ssäsi muka korvaa palkan.</li>
-<li><strong>"Nyt budjetti on tiukka, mutta jatkossa…":</strong> ensimmäinen keikka ilmaiseksi, loput "varmasti" maksullisina.</li>
-<li><strong>"Saat näkyvyyttä yleisöllemme":</strong> seuraajamäärä tarjotaan valuuttana.</li>
-<li><strong>"Tee tämä intohimosta":</strong> rahasta puhuminen leimataan epäammattimaiseksi.</li>
+<li>Kysy aikajänne ensin: onko luku vuodessa vai vaalikaudessa? Ilman sitä mikään summa ei tarkoita mitään.</li>
+<li>Kysy, onko luku brutto vai netto — ja jos netto, mitä siitä on vähennetty ja millä oletuksella.</li>
+<li>Kysy kuka laskelman teki. Puolueen oma, ministeriön, tutkimuslaitoksen ja etujärjestön laskelma eivät ole sama asia.</li>
+<li>Erota mitä maksaa ja mistä otetaan: lupaus ilman rahoituslähdettä on puolikas lupaus.</li>
+<li>Vertaa saman puolueen edellisten vaalien lupauksia toteutuneeseen. Sarja kertoo enemmän kuin yksittäinen luku.</li>
+<li>Älä tulkitse hinnoittelemattomuutta valheeksi — se on rakenteen puute, ei yksittäisen ehdokkaan vika.</li>
 </ul>
 </div>
-<div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Miksi lupaus harvoin lunastuu:</h2> Se, joka ei maksa ensimmäisestä työstä, on jo osoittanut suhtautumisensa korvaukseen. "Jatkossa maksamme" -lupaus on ilmainen antaa eikä sido mihinkään. Näkyvyys taas hyödyttää lähes aina tilaajaa enemmän kuin tekijää — ja tilaaja, jolla on yleisöä ja brändiä, on yleensä juuri se taho, jolla olisi varaa maksaa.
-    </div>
-<div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Erota aito vaihtokauppa pelkästä lupauksesta. Joskus näkyvyys on todellista arvoa (oikea julkaisu, mitattava yleisö) — mutta silloin se on sovittavissa konkreettisesti ja kirjallisesti. Jos vastike on epämääräinen, tulevaisuuteen siirretty tai "kokemusta", pyydä rahaa. Toimiva sääntö: ottaisiko tilaaja itse vastaan palkakseen pelkkää näkyvyyttä? Liittyy läheisesti <a href="ilmainen-naytetyo.html">ilmaiseen näytetyöhön</a>.
-    </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
 <div class="lue-lisaa-rivi">
-<span class="lue-lisaa-tyyppi">Kirjoja</span>
+<span class="lue-lisaa-tyyppi">Raportteja</span>
 <ul class="lue-lisaa-lista">
-<li><cite>Pricing Creativity</cite> — Blair Enns (2018)</li>
-<li><cite>The Win Without Pitching Manifesto</cite> — Blair Enns (2010)</li>
+<li><cite>Keuzes in Kaart</cite> — CPB:n vaaliohjelmalaskelmat, Alankomaat (vuodesta 1986)</li>
+<li><cite>Election commitments report</cite> — Parliamentary Budget Office, Australia</li>
 </ul>
 </div>
 <div class="lue-lisaa-rivi">
 <span class="lue-lisaa-tyyppi">Verkossa</span>
 <ul class="lue-lisaa-lista">
-<li><a href="https://en.wikipedia.org/wiki/Unpaid_work" target="_blank" rel="noopener">Wikipedia: Unpaid work (englanniksi)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Bureau_for_Economic_Policy_Analysis" target="_blank" rel="noopener">Wikipedia: Bureau for Economic Policy Analysis (CPB, englanniksi)</a></li>
 </ul>
 </div>
 </div>
@@ -839,43 +493,35 @@
   <aside class="liittyvat" aria-label="Liittyvät ilmiöt">
     <h2>Liittyvät ilmiöt</h2>
     <div class="liittyvat-kortit">
-    <a href="lowball-hinnoittelu.html" class="liittyvat-kortti" style="--c:#00695c">
-      <span class="liittyvat-numero">82</span>
+    <a href="strateginen-aliarviointi.html" class="liittyvat-kortti" style="--c:#7a4b12">
+      <span class="liittyvat-numero">56</span>
       <span class="liittyvat-teksti">
-        <span class="liittyvat-nimi">Lowball</span>
-        <span class="liittyvat-kuvaus">Kauppa avataan houkuttelevan halvalla — hinta nousee vasta, kun olet jo sitoutunut.</span>
+        <span class="liittyvat-nimi">Strateginen aliarviointi</span>
+        <span class="liittyvat-kuvaus">Suurhankkeen kustannusarvio ei ole ennuste vaan hakemus: hinta viritetään portin kokoiseksi.</span>
       </span>
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
-    <a href="valittajan-skimmaus.html" class="liittyvat-kortti" style="--c:#ef6c00">
-      <span class="liittyvat-numero">83</span>
+    <a href="maalitolppien-siirtaminen.html" class="liittyvat-kortti" style="--c:#2c3e50">
+      <span class="liittyvat-numero">29</span>
       <span class="liittyvat-teksti">
-        <span class="liittyvat-nimi">Välittäjän skimmaus</span>
-        <span class="liittyvat-kuvaus">Välittäjä ottaa siivun molemmilta osapuolilta ja salaa todellisen marginaalinsa.</span>
+        <span class="liittyvat-nimi">Maalitolppien siirtäminen</span>
+        <span class="liittyvat-kuvaus">Onnistumisen kriteerit vaihdetaan jälkikäteen — juuri kun aiemmat vaatimukset on täytetty.</span>
       </span>
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
-    <a href="tilipuristus.html" class="liittyvat-kortti" style="--c:#d84315">
-      <span class="liittyvat-numero">84</span>
+    <a href="paatosperainen-todistelu.html" class="liittyvat-kortti" style="--c:#5b2c6f">
+      <span class="liittyvat-numero">57</span>
       <span class="liittyvat-teksti">
-        <span class="liittyvat-nimi">Tilipuristus</span>
-        <span class="liittyvat-kuvaus">Työ otetaan vastaan, mutta maksua venytetään loputtomilla ehdoilla ja "hyväksyntäkierroksilla".</span>
+        <span class="liittyvat-nimi">Päätösperäinen todistelu</span>
+        <span class="liittyvat-kuvaus">Selvitys tilataan vastaus valmiina — tutkimus etsii perustelun päätökselle eikä toisin päin.</span>
       </span>
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
-    <a href="foot-in-the-door.html" class="liittyvat-kortti" style="--c:#00897b">
-      <span class="liittyvat-numero">85</span>
+    <a href="goodhartin-laki.html" class="liittyvat-kortti" style="--c:#148f77">
+      <span class="liittyvat-numero">39</span>
       <span class="liittyvat-teksti">
-        <span class="liittyvat-nimi">Foot-in-the-door</span>
-        <span class="liittyvat-kuvaus">Pieni, helppo pyyntö ensin — myöntyminen tekee isomman pyynnön torjumisesta vaikeaa.</span>
-      </span>
-      <span class="liittyvat-nuoli" aria-hidden="true">›</span>
-    </a>
-    <a href="door-in-the-face.html" class="liittyvat-kortti" style="--c:#5e4b8b">
-      <span class="liittyvat-numero">86</span>
-      <span class="liittyvat-teksti">
-        <span class="liittyvat-nimi">Door-in-the-face</span>
-        <span class="liittyvat-kuvaus">Kohtuuton pyyntö ensin, torjunnan jälkeen "kohtuullinen" — joka oli koko ajan tavoite.</span>
+        <span class="liittyvat-nimi">Goodhartin laki</span>
+        <span class="liittyvat-kuvaus">Kun mittarista tulee tavoite, se lakkaa olemasta hyvä mittari.</span>
       </span>
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
@@ -883,18 +529,18 @@
   </aside>
 
   <nav class="kortti-nav">
-    <a class="kortti-nav-btn" href="ilmainen-naytetyo.html">← Ilmainen näytetyö — "tee koetehtävä, valitsemme parhaan"</a>
+    <a class="kortti-nav-btn" href="hajota-hallitse.html">← Hajota ja hallitse</a>
     <div class="kortti-nav-center">
-      <span class="kortti-nav-laskuri">81 / 139</span>
+      <span class="kortti-nav-laskuri">8 / 139</span>
       <span class="kortti-nav-vinkki">
         <kbd>&#8592;</kbd> <kbd>&#8594;</kbd> selaa &middot; <kbd>R</kbd> satunnainen
         <span class="touch-vinkki">&nbsp;· swipe &#8592;&#8594; tai &#8595; random</span>
       </span>
     </div>
-    <a class="kortti-nav-btn" href="lowball-hinnoittelu.html">Lowball — matala aloitushinta, joka nousee sitoutumisen jälkeen →</a>
+    <a class="kortti-nav-btn" href="bkt-harha.html">BKT-harha →</a>
   </nav>
 
-  
+
 
   <script>
 
@@ -950,17 +596,14 @@
     const wrapper = document.createElement('div');
     wrapper.className = 'ilmio-jaa';
 
-    // Nappi
     const btn = document.createElement('button');
     btn.className = 'ilmio-jaa-btn';
     btn.setAttribute('aria-label', 'Jaa tämä ilmiö');
     btn.innerHTML = SVG.share + '<span> Jaa</span>';
 
-    // Valikko
     const menu = document.createElement('div');
     menu.className = 'ilmio-jaa-menu';
 
-    // Kopioi linkki
     const copyBtn = ikoni(SVG.link, 'Kopioi linkki');
     copyBtn.addEventListener('click', e => {
       e.stopPropagation();
@@ -969,7 +612,6 @@
         copyBtn.classList.add('kopioitu');
         setTimeout(() => { copyBtn.innerHTML = SVG.link; copyBtn.classList.remove('kopioitu'); }, 1800);
       }).catch(() => {
-        // fallback
         const ta = document.createElement('textarea');
         ta.value = pageUrl(id);
         document.body.appendChild(ta);
@@ -982,7 +624,6 @@
       });
     });
 
-    // Twitter / X
     const tw = linkki(SVG.twitter, 'Jaa X:ssä');
     tw.addEventListener('click', e => {
       e.preventDefault(); e.stopPropagation();
@@ -993,7 +634,6 @@
       );
     });
 
-    // LinkedIn
     const li = linkki(SVG.linkedin, 'Jaa LinkedInissä');
     li.addEventListener('click', e => {
       e.preventDefault(); e.stopPropagation();
@@ -1003,7 +643,6 @@
       );
     });
 
-    // Facebook
     const fb = linkki(SVG.facebook, 'Jaa Facebookissa');
     fb.addEventListener('click', e => {
       e.preventDefault(); e.stopPropagation();
@@ -1013,7 +652,6 @@
       );
     });
 
-    // WhatsApp
     const wa = linkki(SVG.whatsapp, 'Jaa WhatsAppissa');
     wa.addEventListener('click', e => {
       e.preventDefault(); e.stopPropagation();
@@ -1023,7 +661,6 @@
       );
     });
 
-    // Threads
     const th = linkki(SVG.threads, 'Jaa Threadsissa');
     th.addEventListener('click', e => {
       e.preventDefault(); e.stopPropagation();
@@ -1063,12 +700,12 @@
   <script>
 (function () {
   const IDS = ["paskuuttaminen", "starve-the-beast", "overton-ikkuna", "saantelijan-kaappaus", "rautainen-laki", "valta-suojelee-valtaa", "hajota-hallitse", "vaalilupauksen-hinnoittelu", "bkt-harha", "astroturf", "firehose-of-falsehood", "manufactured-consent", "betteridgen-laki", "inokulointiteoria", "whataboutismi", "streisand-ilmio", "trollitehdas", "kuollut-kissa", "brandolinin-laki", "poen-laki", "godwinin-laki", "backfire-effect", "darvo", "halo-efekti", "konsensus-fetissi", "omenoita-appelsiineja", "blame-game", "gaslighting", "maalitolppien-siirtaminen", "argumenttitulva", "sunk-cost-harha", "jarjestelman-puolustelu", "dunning-kruger", "hanlonin-partaveitsi", "occamin-partaveitsi", "simple-sabotage", "kafka-ilmio", "catch-22", "goodhartin-laki", "hippo-efekti", "performatiivinen-lasnaolo", "rituaalinen-raportointi", "initiointirituaalit", "portinvartija-kulttuuri", "strateginen-osaamattomuus", "fofo", "sivustakatsojan-efekti", "parkinsonin-laki", "peterin-periaate", "pareto-periaate", "brooksin-laki", "yhdeksanyhdeksan", "hofstadterin-laki", "kuolonmarssi", "lukittu-paatos", "strateginen-aliarviointi", "paatosperainen-todistelu", "lapi-hinnalla-milla-hyvansa", "tekninen-velka", "conways-laki", "bikeshedding", "scope-creep", "korkoa-korolle", "negatiivinen-korkoa", "korkokierre", "honeypot-huijaus", "bait-and-switch", "kaarmeoljy", "ponzi-pyramidi", "pump-and-dump", "pig-butchering", "ennakkomaksuhuijaus", "badger-game", "qr-koodihuijaus", "toimitusjohtajahuijaus", "rug-pull", "aaniklooni-huijaus", "smishing", "deepfake-sijoitushuijaus", "ilmainen-naytetyo", "exposure-maksu", "lowball-hinnoittelu", "valittajan-skimmaus", "tilipuristus", "foot-in-the-door", "door-in-the-face", "hintaankkurointi", "houkutinvaihtoehto", "vastavuoroisuuden-ansa", "sosiaalinen-todiste", "painostusclose", "shrinkflaatio", "suunniteltu-vanheneminen", "tilausansa", "doomscrolling", "kaikukammio", "ai-slop", "parasosiaalinen-suhde", "kuollut-internet", "rage-bait", "klikkiotsikko", "engagement-bait", "1-prosentin-saanto", "aanekas-vahemmisto", "vaalikone-efekti", "tekoalypsykoosi", "evasteansa", "piilokulut", "pakotettu-jatkuvuus", "confirmshaming", "oletusasetusansa", "viherpesu", "sinipesu", "urheilupesu", "pinkkipesu", "tekoalypesu", "hyvesignalointi", "hiljainen-irtisanoutuminen", "hiljainen-irtisanominen", "haamutyopaikat", "kaksois-y-akseli", "pinta-alaharha", "cherry-picking-aikavali", "keskiarvo-vs-mediaani", "suhteellinen-riski", "selviytymisharha", "simpsonin-paradoksi", "p-hakkerointi", "kannatusmittausten-virhemarginaali", "uutiskynnys", "uutisautiomaa", "paasyjournalismi", "tiedotejournalismi", "branditurvallisuus", "huonojen-uutisten-hautaaminen", "vaara-tasapaino", "keharaportointi", "gell-mannin-amnesia", "vihamielisen-median-harha"];
-  const PREV = 'ilmainen-naytetyo.html';
-  const NEXT = 'lowball-hinnoittelu.html';
+  const PREV = 'hajota-hallitse.html';
+  const NEXT = 'bkt-harha.html';
 
   function randomIlmio() {
     let id;
-    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'exposure-maksu');
+    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'vaalilupauksen-hinnoittelu');
     merkitseRandomHyppy();
     window.location.href = id + '.html';
   }
@@ -1125,7 +762,7 @@
   function naytaRandomSiirtyma() {
     if (_siirtymaKaynnissa) return;
     var id;
-    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'exposure-maksu');
+    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'vaalilupauksen-hinnoittelu');
     merkitseRandomHyppy();
     naytaSiirtyma('Satunnainen ilmiö', id + '.html');
   }
@@ -1194,7 +831,6 @@
     else if (_wheelKertyma < -140) naytaTakaisinSiirtyma();
   }, { passive: true });
 
-  /* ── Sisääntuloanimaatio ── */
   (function () {
     var d = sessionStorage.getItem('swipe-dir');
     if (d) {
@@ -1211,7 +847,6 @@
     }
   })();
 
-  /* ── Näppäimistö ── */
   document.addEventListener('keydown', function (e) {
     if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
     if (e.ctrlKey || e.metaKey || e.altKey) return;
@@ -1220,7 +855,6 @@
     if (e.key === 'r' || e.key === 'R') randomIlmio();
   });
 
-  /* ── Swipe-eleet ── */
   var _tx = 0, _ty = 0, _tt = 0, _sx = false, _live = false;
   document.addEventListener('touchstart', function (e) {
     _tx = e.touches[0].clientX;

@@ -1,10 +1,10 @@
 ---
 kat_id: alustatalous-ja-algoritmit
 h1: Alustatalous ja algoritmit — miksi syöte näyttää siltä kuin näyttää
-otsikko: Alustatalouden ilmiöt — 10 syytä siihen, miksi syöte on tällainen
-kuvaus: Rage bait, klikkiotsikko, kaikukammio, AI slop. Kymmenen alustatalouden ilmiötä ja se, mikä niitä yhdistää: mikään näistä ei ole vahinko.
+otsikko: Alustatalouden ilmiöt — 17 syytä siihen, miksi syöte on tällainen
+kuvaus: Rage bait, klikkiotsikko, kaikukammio, dark patterns. Seitsemäntoista alustatalouden ilmiötä ja se, mikä niitä yhdistää: mikään näistä ei ole vahinko.
 vari: "#1565c0"
-paivitetty: 2026-07-28
+paivitetty: 2026-08-14
 naapurit:
   - kategoria-informaatio-ja-propaganda | Informaatio ja propaganda →
   - kategoria-psykologia-ja-kognitio | Psykologia ja kognitio →
@@ -12,11 +12,11 @@ naapurit:
   - kategoria-media-ja-julkisuus | Media ja julkisuus →
 ---
 
-Alustojen ilmiöistä puhutaan usein ongelmina, jotka pitäisi korjata. Se on väärä kehys, ja se on syy siihen miksi korjaukset eivät toimi. **Nämä kymmenen ilmiötä eivät ole vikoja järjestelmässä. Ne ovat sitä, miltä onnistunut optimointi näyttää, kun optimoitava suure on käytetty aika.**
+Alustojen ilmiöistä puhutaan usein ongelmina, jotka pitäisi korjata. Se on väärä kehys, ja se on syy siihen miksi korjaukset eivät toimi. **Nämä ilmiöt eivät ole vikoja järjestelmässä. Ne ovat sitä, miltä onnistunut optimointi näyttää, kun optimoitava suure on käytetty aika.**
 
 Suositusalgoritmia ei ole rakennettu tuottamaan raivoa. Se on rakennettu ennustamaan, mikä pitää sinut paikalla, ja se on löytänyt raivon itse. Ero on olennainen: jos kyse olisi virheestä, sen voisi korjata. Kyse on tuloksesta, ja sen korjaaminen edellyttäisi tavoitteen vaihtamista.
 
-## Neljä kerrosta
+## Viisi kerrosta
 
 **Miten huomio otetaan.** Kolme syöttiä käyttää kolmea eri vipua. [Klikkiotsikko](klikkiotsikko.html) käyttää uteliaisuutta: se kertoo, että jotain tapahtui, muttei mitä. [Rage bait](rage-bait.html) käyttää suuttumusta — vihainen jako on algoritmille yhtä arvokas kuin ihaileva, joten suuttumus on tuotantopanos. [Engagement bait](engagement-bait.html) ohittaa koko kikkailun ja pyytää reaktiota suoraan, koska algoritmi ei erottele, syntyikö vuorovaikutus kiinnostuksesta vai kehotuksesta.
 
@@ -26,9 +26,11 @@ Suositusalgoritmia ei ole rakennettu tuottamaan raivoa. Se on rakennettu ennusta
 
 **Kenen ääni kuuluu.** [1 %:n sääntö](1-prosentin-saanto.html) on empiirinen havainto verkkoyhteisöistä: 90 % lukee, 9 % osallistuu satunnaisesti ja 1 % tuottaa suurimman osan sisällöstä. [Äänekäs vähemmistö](aanekas-vahemmisto.html) on sen seuraus keskustelussa — näkyvin mielipide ei ole yleisin vaan kärkevin, koska hiljainen enemmistö ei kirjoita.
 
-Oma tapauksensa on [parasosiaalinen suhde](parasosiaalinen-suhde.html): yksipuolinen tunneside mediahahmoon, joka tuntuu ystävyydeltä. Se on vanhempi kuin sosiaalinen media mutta teollistui vasta siellä — ja se on syy, jonka vuoksi vaikuttajamarkkinointi toimii paremmin kuin mainos.
+**Miten valinta ohjataan.** Huomion jälkeen tulee päätös, ja sitä ohjataan käyttöliittymän muodolla. Näistä kuvioista käytetään suomeksi ainakin neljää nimeä — *dark patterns*, *synkät suunnittelumallit*, kuluttajaviranomaisen **pimeät käytännöt** ja alkuperäistermin keksijän Harry Brignullin nykyisin käyttämä *deceptive patterns* — mutta kyse on samasta asiasta. [Evästeansa](evasteansa.html) tekee hyväksymisestä yhden klikkauksen ja kieltäytymisestä viisi. [Piilokulut](piilokulut.html) paljastaa hinnan erissä, kun vertailu on jo tehty. [Pakotettu jatkuvuus](pakotettu-jatkuvuus.html) muuttaa ilmaisen kokeilun laskuksi ilman toista kysymystä. [Confirmshaming](confirmshaming.html) kirjoittaa kieltäytymisnapin itseä alentavaksi. [Oletusasetusansa](oletusasetusansa.html) ei kysy mitään, koska valinta on tehty valmiiksi. Yksikään ei valehtele — jokainen tekee vain toisesta polusta pidemmän.
 
-## Kymmenen ilmiötä
+Kolme sivua koskee konetta keskustelukumppanina. Oma tapauksensa on [parasosiaalinen suhde](parasosiaalinen-suhde.html): yksipuolinen tunneside mediahahmoon, joka tuntuu ystävyydeltä. Se on vanhempi kuin sosiaalinen media mutta teollistui vasta siellä — ja se on syy, jonka vuoksi vaikuttajamarkkinointi toimii paremmin kuin mainos. [Tekoälypsykoosi](tekoalypsykoosi.html) on saman asetelman kärjistymä, kun toinen osapuoli on chatbot, joka ei koskaan ole eri mieltä. [Vaalikone-efekti](vaalikone-efekti.html) siirtää kysymyksen politiikkaan: kone ei vain mittaa kantaa vaan muokkaa sitä sillä, mitä se kysyy ja miten se laskee.
+
+## Seitsemäntoista ilmiötä
 
 [[ILMIOT]]
 
@@ -38,6 +40,8 @@ Oma tapauksensa on [parasosiaalinen suhde](parasosiaalinen-suhde.html): yksipuol
 - **Rage bait ja kaikukammio ovat saman optimoinnin kaksi lopputulosta.** Algoritmi ei erottele suuttumusta ja samanmielisyyttä — molemmat ennustavat jatkamista, joten molempia tuotetaan lisää.
 - **Äänekäs vähemmistö on 1 %:n sääntö sovellettuna mielipiteisiin.** Kun 1 % tuottaa sisällön, kommenttipalsta mittaa kärkevyyttä, ei kannatusta. Tämä on syy, miksi verkkokeskustelu ja mielipidemittaus antavat eri tuloksen.
 - **AI slop ja kuollut internet ovat sama havainto eri äänensävyllä.** Toinen kuvaa mitattavan ilmiön, toinen tekee siitä salaliiton. Ero kannattaa pitää selvänä, koska aito ongelma ei tarvitse liioittelua.
+- **Pimeät kuviot ovat sama optimointi käyttöliittymässä.** Syötit optimoivat huomiota, pimeät kuviot päätöstä. Kummassakin mittari on toteutunut käyttäytyminen eikä tyytyväisyys — ja siksi kumpaakaan ei korjata ennen kuin mittari vaihdetaan.
+- **Tekoälypsykoosi on kaikukammio yhdelle.** Kaikukammiossa vahvistus tulee ihmisiltä, joilla on omat näkemyksensä; chatbotin kohdalla vahvistaja on optimoitu miellyttämään yhtä käyttäjää eikä ole koskaan eri mieltä.
 - **Parasosiaalinen suhde muuttaa [sosiaalisen todisteen](sosiaalinen-todiste.html) suositukseksi.** Tuttu ihminen suosittelee — paitsi ettei hän tunne sinua eikä suosittele ilmaiseksi.
 - **Doomscrolling on rage baitin vastaanottopää.** Sisällöntuottajan kannustin ja käyttäjän pakonomaisuus ovat sama silmukka eri puolilta katsottuna.
 - **Kaikukammio tekee [backfire effectistä](backfire-effect.html) rakenteellisen.** Kun vastakkaista näkemystä ei kohtaa muuten kuin karikatyyrinä, sen kohtaaminen vahvistaa alkuperäistä.
@@ -49,6 +53,7 @@ Oma tapauksensa on [parasosiaalinen suhde](parasosiaalinen-suhde.html): yksipuol
 3. **Muuta syötettä toiminnalla, älä mielipiteellä.** Algoritmi mittaa mihin pysähdyt, ei mitä ajattelet.
 4. **Muista, ettei hahmo tunne sinua.** Parasosiaalinen suhde on aito tunne yksipuolisessa asetelmassa — tunne ei ole väärä, asetelma on.
 5. **Älä anna reaktiota pyynnöstä.** Jos julkaisu kertoo, mitä sinun pitäisi tehdä sille, se on syötti eikä sisältö.
+6. **Lue kieltäytymisen hinta.** Jos hyväksyminen on yksi klikkaus ja kieltäytyminen viisi, ero on suunniteltu — ei tekninen välttämättömyys.
 
 :::html
 <div class="infolaatikko">

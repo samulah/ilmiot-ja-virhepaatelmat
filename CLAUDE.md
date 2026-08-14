@@ -92,5 +92,6 @@ oletuksena, kirjoitus `--kirjoita`-lipulla.
   keksityn suomennoksen sijaan. Englanninkielinen alkuperäistermi kuuluu ingressiin.
 - Jokainen ilmiösivu päättyy osioon **Tunnistaminen ja vastakeinot**. Etusivu lupaa
   tämän jokaisesta artikkelista — lupauksen on pidettävä.
-- Uudet sivut kirjoitetaan ensin luonnoksiksi omaan kansioonsa (`luonnokset*/`) ja
-  julkaistaan vasta erikseen vahvistettuna.
+- Uudet sivut kirjoitetaan ensin luonnoksiksi `luonnokset/`-kansioon (kaikki erät
+  samassa kansiossa 14.8.2026 alkaen) ja julkaistaan vasta erikseen vahvistettuna.
+  Kansion `index.html` on erien hakemisto ja julkaisun tarkistuslista.

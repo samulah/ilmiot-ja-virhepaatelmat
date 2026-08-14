@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Vaalikone-efekti — vastaat kysymyksiin, joita et valinnut — Ilmiöitä</title>
-  <link rel="stylesheet" href="../style.css?v=20260727">
-  <link rel="stylesheet" href="../fonts/fonts.css">
+  <link rel="stylesheet" href="style.css?v=20260727">
+  <link rel="stylesheet" href="fonts/fonts.css">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -16,7 +16,7 @@
       if (loaded) return;
       loaded = true;
       var s = document.createElement('script');
-      s.src = '../js/mermaid.min.js';
+      s.src = 'js/mermaid.min.js';
       s.onload = function () {
         mermaid.initialize({ startOnLoad: false, theme: 'base', themeVariables: { fontSize: '12px', fontFamily: "'DM Sans', system-ui, sans-serif", primaryColor: '#FBF5E0', primaryTextColor: '#1A1100', primaryBorderColor: '#C9A84C', lineColor: '#8B6914', secondaryColor: '#F5F0E5', tertiaryColor: '#FDFAF2', mainBkg: '#FBF5E0', nodeBorder: '#C9A84C', clusterBkg: '#F5F0E5', titleColor: '#3A2000', edgeLabelBackground: '#FDFAF2' } });
         mermaid.run();
@@ -334,7 +334,6 @@
 
   <!-- SEO -->
   <meta name="description" content="Vaalikone ei mittaa poliittista kantaasi vaan sen osan, jonka toimitus päätti kysyä. Yhteensopivuusprosentti on laskukaavan valinta, ei mittaustulos.">
-  <meta name="robots" content="noindex"><!-- POISTA-JULKAISTAESSA -->
   <link rel="canonical" href="https://www.ilmiöt.fi/vaalikone-efekti.html">
   <meta property="og:title" content="Vaalikone-efekti — vastaat kysymyksiin, joita et valinnut — Ilmiöitä">
   <meta property="og:description" content="Vaalikone ei mittaa poliittista kantaasi vaan sen osan, jonka toimitus päätti kysyä. Yhteensopivuusprosentti on laskukaavan valinta, ei mittaustulos.">
@@ -415,8 +414,8 @@
         "url": "https://www.ilmiöt.fi/tietoa.html",
         "description": "Kirjoittajanimi, jonka takana on kiinnostus valtaan, vaikuttamiseen ja ihmisen päättelyn vinoumiin. Sisältö perustuu julkisiin lähteisiin ja vakiintuneeseen käsitteistöön."
       },
-      "datePublished": "2026-08-04",
-      "dateModified": "2026-08-04"
+      "datePublished": "2026-08-14",
+      "dateModified": "2026-08-14"
     }
   ]
 }
@@ -433,9 +432,9 @@
 <body>
 
   <div class="kortti-breadcrumb">
-    <a href="../index.html" class="kortti-logo" aria-label="Ilmiöitä — etusivu"><img src="../favicon.svg" alt="Ilmiöitä"></a>
-    <a href="../index.html">← Kaikki ilmiöt</a>
-    <span class="kortti-breadcrumb-sep">›</span><a href="../kategoria-alustatalous-ja-algoritmit.html" class="kortti-breadcrumb-kat">Alustatalous ja algoritmit</a>
+    <a href="index.html" class="kortti-logo" aria-label="Ilmiöitä — etusivu"><img src="favicon.svg" alt="Ilmiöitä"></a>
+    <a href="index.html">← Kaikki ilmiöt</a>
+    <span class="kortti-breadcrumb-sep">›</span><a href="kategoria-alustatalous-ja-algoritmit.html" class="kortti-breadcrumb-kat">Alustatalous ja algoritmit</a>
     <button class="kortti-random-btn" onclick="randomIlmio()" title="Satunnainen ilmiö (R)">
       <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>
       <span class="btn-text">Satunnainen</span>
@@ -443,9 +442,9 @@
   </div>
 
   <div class="ilmio" id="vaalikone-efekti">
-<div class="ilmio-tag">Ilmiö 97</div>
+<div class="ilmio-tag">Ilmiö 105</div>
 <h1>Vaalikone-efekti — vastaat kysymyksiin, joita et valinnut</h1>
-<p class="ilmio-byline">Kirjoittanut <a href="../tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 4.8.2026</p>
+<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 14.8.2026</p>
 <p><strong>Vaalikone-efekti</strong> tarkoittaa sitä, että vaalikone ei ainoastaan mittaa äänestäjän kantaa vaan myös muokkaa sitä. Kansainvälisesti työkalusta käytetään nimeä <em>voting advice application</em> (VAA). Suomi on niiden kotimaa — Yle avasi ensimmäisen verkkovaalikoneen jo vuonna 1996 — ja käyttöaste on kansainvälisesti poikkeuksellisen korkea. Sitä suurempi on myös muotoiluvalintojen vaikutus.</p>
 <div class="mermaid">
 flowchart TD
@@ -458,10 +457,10 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Tulos on yhtä paljon kysymyslistan kuin äänestäjän kannan tuotos.</p>
 <p>Vaikutus alkaa kysymysvalinnasta: aihe, jota ei kysytä, ei voi vaikuttaa tulokseen. Kysyttäväksi valikoituu se, mikä puristuu asteikolle ja erottelee puolueita — ja arvokysymykset täyttävät nämä ehdot paremmin kuin budjettivalinnat. Koneen tuottama kuva politiikasta on siis arvopainotteisempi kuin politiikka itse.</p>
-<p>Toinen kerros on laskukaava. Thomas Louwerse ja Martin Rosema osoittivat (2014), että sama vastausaineisto tuottaa eri suosituksen sen mukaan, millä menetelmällä yhteensopivuus lasketaan ja miten tärkeyspainotus toimii. Prosenttiluku näyttää mittaustulokselta, mutta se on valinnan tulos.</p>
+<p>Toinen kerros on laskukaava. Tom Louwerse ja Martin Rosema osoittivat (2014), että sama vastausaineisto tuottaa eri suosituksen sen mukaan, millä menetelmällä yhteensopivuus lasketaan ja miten tärkeyspainotus toimii. Prosenttiluku näyttää mittaustulokselta, mutta se on valinnan tulos.</p>
 <p>Kolmas on ehdokkaan puoli. Vastaus on julkinen kampanjadokumentti, ei kanta. Kun tiedetään mitä kone palkitsee, vastauksia voi optimoida — ja koska vaalikone on monelle äänestäjälle ensimmäinen kosketus ehdokkaisiin, se toimii uutena portinvartijana.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Ero läheisiin käsitteisiin:</h2> Ilmiö on <a href="../goodhartin-laki.html">Goodhartin lain</a> vaaliversio: kun yhteensopivuusprosentista tulee tavoite, se lakkaa mittaamasta yhteensopivuutta. <a href="../portinvartija-kulttuuri.html">Portinvartijakulttuurissa</a> pääsyn ratkaisee ihminen, tässä lomake. Ero <a href="../kaikukammio.html">kaikukammioon</a>: kaikukammio näyttää vain samanmielisiä, vaalikone näyttää kaikki — mutta vain valitulla mittarilla.
+<h2 class="laatikko-otsikko">Ero läheisiin käsitteisiin:</h2> Ilmiö on <a href="goodhartin-laki.html">Goodhartin lain</a> vaaliversio: kun yhteensopivuusprosentista tulee tavoite, se lakkaa mittaamasta yhteensopivuutta. <a href="portinvartija-kulttuuri.html">Portinvartijakulttuurissa</a> pääsyn ratkaisee ihminen, tässä lomake. Ero <a href="kaikukammio.html">kaikukammioon</a>: kaikukammio näyttää vain samanmielisiä, vaalikone näyttää kaikki — mutta vain valitulla mittarilla.
     </div>
 <div class="huomiolaatikko">
 <h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2>
@@ -479,7 +478,7 @@ flowchart TD
 <div class="lue-lisaa-rivi">
 <span class="lue-lisaa-tyyppi">Tutkimusta</span>
 <ul class="lue-lisaa-lista">
-<li><cite>The design effects of voting advice applications</cite> — Thomas Louwerse &amp; Martin Rosema, Acta Politica (2014)</li>
+<li><cite>The design effects of voting advice applications</cite> — Tom Louwerse &amp; Martin Rosema, Acta Politica (2014)</li>
 <li><cite>Matching Voters with Parties and Candidates</cite> — Diego Garzia &amp; Stefan Marschall (toim., 2014)</li>
 </ul>
 </div>
@@ -496,32 +495,32 @@ flowchart TD
   <aside class="liittyvat" aria-label="Liittyvät ilmiöt">
     <h2>Liittyvät ilmiöt</h2>
     <div class="liittyvat-kortit">
-    <a href="../goodhartin-laki.html" class="liittyvat-kortti" style="--c:#01579b">
-      <span class="liittyvat-numero">38</span>
+    <a href="goodhartin-laki.html" class="liittyvat-kortti" style="--c:#148f77">
+      <span class="liittyvat-numero">39</span>
       <span class="liittyvat-teksti">
         <span class="liittyvat-nimi">Goodhartin laki</span>
         <span class="liittyvat-kuvaus">Kun mittarista tulee tavoite, se lakkaa olemasta hyvä mittari.</span>
       </span>
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
-    <a href="../portinvartija-kulttuuri.html" class="liittyvat-kortti" style="--c:#6a1b9a">
-      <span class="liittyvat-numero">43</span>
+    <a href="portinvartija-kulttuuri.html" class="liittyvat-kortti" style="--c:#2d6a4f">
+      <span class="liittyvat-numero">44</span>
       <span class="liittyvat-teksti">
-        <span class="liittyvat-nimi">Portinvartijakulttuuri</span>
-        <span class="liittyvat-kuvaus">Pääsyn ratkaisee joku muu kuin osaaminen — ja portinvartija ei näy päätöksessä.</span>
+        <span class="liittyvat-nimi">Portinvartija-kulttuuri</span>
+        <span class="liittyvat-kuvaus">Tieto suodattuu matkalla ylös: johtaja kuulee vain sen, minkä portinvartijat päästävät läpi.</span>
       </span>
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
-    <a href="../kaikukammio.html" class="liittyvat-kortti" style="--c:#ad1457">
-      <span class="liittyvat-numero">88</span>
+    <a href="kaikukammio.html" class="liittyvat-kortti" style="--c:#00838f">
+      <span class="liittyvat-numero">96</span>
       <span class="liittyvat-teksti">
         <span class="liittyvat-nimi">Kaikukammio</span>
-        <span class="liittyvat-kuvaus">Ympäristö, jossa vastakkainen näkemys ei koskaan pääse kuuluviin.</span>
+        <span class="liittyvat-kuvaus">Ympäristö, jossa kohtaat vain omia näkemyksiäsi vahvistavaa sisältöä.</span>
       </span>
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
-    <a href="../omenoita-appelsiineja.html" class="liittyvat-kortti" style="--c:#a04000">
-      <span class="liittyvat-numero">25</span>
+    <a href="omenoita-appelsiineja.html" class="liittyvat-kortti" style="--c:#6a1b9a">
+      <span class="liittyvat-numero">26</span>
       <span class="liittyvat-teksti">
         <span class="liittyvat-nimi">Omenoita ja appelsiineja</span>
         <span class="liittyvat-kuvaus">Rinnastetaan kaksi asiaa, jotka eroavat juuri siinä, mikä tekisi vertailusta mielekkään.</span>
@@ -532,15 +531,15 @@ flowchart TD
   </aside>
 
   <nav class="kortti-nav">
-    <a class="kortti-nav-btn" href="../aanekas-vahemmisto.html">← Äänekäs vähemmistö</a>
+    <a class="kortti-nav-btn" href="aanekas-vahemmisto.html">← Äänekäs vähemmistö</a>
     <div class="kortti-nav-center">
-      <span class="kortti-nav-laskuri">97 / 130</span>
+      <span class="kortti-nav-laskuri">105 / 139</span>
       <span class="kortti-nav-vinkki">
         <kbd>&#8592;</kbd> <kbd>&#8594;</kbd> selaa &middot; <kbd>R</kbd> satunnainen
         <span class="touch-vinkki">&nbsp;· swipe &#8592;&#8594; tai &#8595; random</span>
       </span>
     </div>
-    <a class="kortti-nav-btn" href="../viherpesu.html">Viherpesu →</a>
+    <a class="kortti-nav-btn" href="tekoalypsykoosi.html">Tekoälypsykoosi — chatbot, joka ei ole koskaan eri mieltä →</a>
   </nav>
 
 
@@ -702,15 +701,15 @@ flowchart TD
 
   <script>
 (function () {
-  const IDS = ["paskuuttaminen", "starve-the-beast", "overton-ikkuna", "saantelijan-kaappaus", "rautainen-laki", "valta-suojelee-valtaa", "hajota-hallitse", "bkt-harha", "astroturf", "firehose-of-falsehood", "manufactured-consent", "betteridgen-laki", "inokulointiteoria", "whataboutismi", "streisand-ilmio", "trollitehdas", "kuollut-kissa", "brandolinin-laki", "poen-laki", "godwinin-laki", "backfire-effect", "darvo", "halo-efekti", "konsensus-fetissi", "omenoita-appelsiineja", "blame-game", "gaslighting", "maalitolppien-siirtaminen", "argumenttitulva", "sunk-cost-harha", "jarjestelman-puolustelu", "dunning-kruger", "hanlonin-partaveitsi", "occamin-partaveitsi", "simple-sabotage", "kafka-ilmio", "catch-22", "goodhartin-laki", "hippo-efekti", "performatiivinen-lasnaolo", "rituaalinen-raportointi", "initiointirituaalit", "portinvartija-kulttuuri", "strateginen-osaamattomuus", "fofo", "sivustakatsojan-efekti", "parkinsonin-laki", "peterin-periaate", "pareto-periaate", "brooksin-laki", "yhdeksanyhdeksan", "hofstadterin-laki", "kuolonmarssi", "tekninen-velka", "conways-laki", "bikeshedding", "scope-creep", "korkoa-korolle", "negatiivinen-korkoa", "korkokierre", "honeypot-huijaus", "bait-and-switch", "kaarmeoljy", "ponzi-pyramidi", "pump-and-dump", "pig-butchering", "ennakkomaksuhuijaus", "badger-game", "qr-koodihuijaus", "toimitusjohtajahuijaus", "rug-pull", "ilmainen-naytetyo", "exposure-maksu", "lowball-hinnoittelu", "valittajan-skimmaus", "tilipuristus", "foot-in-the-door", "door-in-the-face", "hintaankkurointi", "houkutinvaihtoehto", "vastavuoroisuuden-ansa", "sosiaalinen-todiste", "painostusclose", "shrinkflaatio", "suunniteltu-vanheneminen", "tilausansa", "doomscrolling", "kaikukammio", "ai-slop", "parasosiaalinen-suhde", "kuollut-internet", "rage-bait", "klikkiotsikko", "engagement-bait", "1-prosentin-saanto", "aanekas-vahemmisto", "viherpesu", "sinipesu", "urheilupesu", "pinkkipesu", "tekoalypesu", "hyvesignalointi", "hiljainen-irtisanoutuminen", "hiljainen-irtisanominen", "haamutyopaikat", "kaksois-y-akseli", "pinta-alaharha", "cherry-picking-aikavali", "keskiarvo-vs-mediaani", "suhteellinen-riski", "selviytymisharha", "simpsonin-paradoksi", "p-hakkerointi"];
-  const PREV = '../aanekas-vahemmisto.html';
-  const NEXT = '../viherpesu.html';
+  const IDS = ["paskuuttaminen", "starve-the-beast", "overton-ikkuna", "saantelijan-kaappaus", "rautainen-laki", "valta-suojelee-valtaa", "hajota-hallitse", "vaalilupauksen-hinnoittelu", "bkt-harha", "astroturf", "firehose-of-falsehood", "manufactured-consent", "betteridgen-laki", "inokulointiteoria", "whataboutismi", "streisand-ilmio", "trollitehdas", "kuollut-kissa", "brandolinin-laki", "poen-laki", "godwinin-laki", "backfire-effect", "darvo", "halo-efekti", "konsensus-fetissi", "omenoita-appelsiineja", "blame-game", "gaslighting", "maalitolppien-siirtaminen", "argumenttitulva", "sunk-cost-harha", "jarjestelman-puolustelu", "dunning-kruger", "hanlonin-partaveitsi", "occamin-partaveitsi", "simple-sabotage", "kafka-ilmio", "catch-22", "goodhartin-laki", "hippo-efekti", "performatiivinen-lasnaolo", "rituaalinen-raportointi", "initiointirituaalit", "portinvartija-kulttuuri", "strateginen-osaamattomuus", "fofo", "sivustakatsojan-efekti", "parkinsonin-laki", "peterin-periaate", "pareto-periaate", "brooksin-laki", "yhdeksanyhdeksan", "hofstadterin-laki", "kuolonmarssi", "lukittu-paatos", "strateginen-aliarviointi", "paatosperainen-todistelu", "lapi-hinnalla-milla-hyvansa", "tekninen-velka", "conways-laki", "bikeshedding", "scope-creep", "korkoa-korolle", "negatiivinen-korkoa", "korkokierre", "honeypot-huijaus", "bait-and-switch", "kaarmeoljy", "ponzi-pyramidi", "pump-and-dump", "pig-butchering", "ennakkomaksuhuijaus", "badger-game", "qr-koodihuijaus", "toimitusjohtajahuijaus", "rug-pull", "aaniklooni-huijaus", "smishing", "deepfake-sijoitushuijaus", "ilmainen-naytetyo", "exposure-maksu", "lowball-hinnoittelu", "valittajan-skimmaus", "tilipuristus", "foot-in-the-door", "door-in-the-face", "hintaankkurointi", "houkutinvaihtoehto", "vastavuoroisuuden-ansa", "sosiaalinen-todiste", "painostusclose", "shrinkflaatio", "suunniteltu-vanheneminen", "tilausansa", "doomscrolling", "kaikukammio", "ai-slop", "parasosiaalinen-suhde", "kuollut-internet", "rage-bait", "klikkiotsikko", "engagement-bait", "1-prosentin-saanto", "aanekas-vahemmisto", "vaalikone-efekti", "tekoalypsykoosi", "evasteansa", "piilokulut", "pakotettu-jatkuvuus", "confirmshaming", "oletusasetusansa", "viherpesu", "sinipesu", "urheilupesu", "pinkkipesu", "tekoalypesu", "hyvesignalointi", "hiljainen-irtisanoutuminen", "hiljainen-irtisanominen", "haamutyopaikat", "kaksois-y-akseli", "pinta-alaharha", "cherry-picking-aikavali", "keskiarvo-vs-mediaani", "suhteellinen-riski", "selviytymisharha", "simpsonin-paradoksi", "p-hakkerointi", "kannatusmittausten-virhemarginaali", "uutiskynnys", "uutisautiomaa", "paasyjournalismi", "tiedotejournalismi", "branditurvallisuus", "huonojen-uutisten-hautaaminen", "vaara-tasapaino", "keharaportointi", "gell-mannin-amnesia", "vihamielisen-median-harha"];
+  const PREV = 'aanekas-vahemmisto.html';
+  const NEXT = 'tekoalypsykoosi.html';
 
   function randomIlmio() {
     let id;
     do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'vaalikone-efekti');
     merkitseRandomHyppy();
-    window.location.href = '../' + id + '.html';
+    window.location.href = id + '.html';
   }
   window.randomIlmio = randomIlmio;
 
@@ -754,7 +753,7 @@ flowchart TD
     var overlay = document.createElement('div');
     overlay.className = 'random-siirtyma-overlay';
     overlay.innerHTML =
-      '<img class="random-siirtyma-logo" src="../favicon.svg" alt="">' +
+      '<img class="random-siirtyma-logo" src="favicon.svg" alt="">' +
       '<span class="random-siirtyma-teksti">' + teksti + '&hellip;</span>';
     document.body.appendChild(overlay);
     requestAnimationFrame(function () {
@@ -767,7 +766,7 @@ flowchart TD
     var id;
     do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'vaalikone-efekti');
     merkitseRandomHyppy();
-    naytaSiirtyma('Satunnainen ilmiö', '../' + id + '.html');
+    naytaSiirtyma('Satunnainen ilmiö', id + '.html');
   }
   window.naytaRandomSiirtyma = naytaRandomSiirtyma;
   function naytaAlasSiirtyma() {
@@ -781,7 +780,7 @@ flowchart TD
       var overlay = document.createElement('div');
       overlay.className = 'random-siirtyma-overlay';
       overlay.innerHTML =
-        '<img class="random-siirtyma-logo" src="../favicon.svg" alt="">' +
+        '<img class="random-siirtyma-logo" src="favicon.svg" alt="">' +
         '<span class="random-siirtyma-teksti">Eteenpäin&hellip;</span>';
       document.body.appendChild(overlay);
       requestAnimationFrame(function () {
@@ -802,7 +801,7 @@ flowchart TD
       var overlay = document.createElement('div');
       overlay.className = 'random-siirtyma-overlay';
       overlay.innerHTML =
-        '<img class="random-siirtyma-logo" src="../favicon.svg" alt="">' +
+        '<img class="random-siirtyma-logo" src="favicon.svg" alt="">' +
         '<span class="random-siirtyma-teksti">Takaisin&hellip;</span>';
       document.body.appendChild(overlay);
       requestAnimationFrame(function () {
@@ -918,7 +917,7 @@ flowchart TD
   </script>
 
   <footer class="ilmio-footer">
-    <p>© 2026 Ilmiöitä — Miten valta toimii · Kirjoittanut Ilmiömies · <a href="../tietoa.html">Tietoa sivustosta ja tekijästä</a></p>
+    <p>© 2026 Ilmiöitä — Miten valta toimii · Kirjoittanut Ilmiömies · <a href="tietoa.html">Tietoa sivustosta ja tekijästä</a></p>
   </footer>
 </body>
 </html>

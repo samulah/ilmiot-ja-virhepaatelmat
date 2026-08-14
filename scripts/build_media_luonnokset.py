@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generoi Media ja julkisuus -kategorian (13.) sivuluonnokset — 10 kpl.
 
-Pohjana aanekas-vahemmisto.html. Tuottaa luonnokset-media/-kansioon 10 sivua,
+Pohjana aanekas-vahemmisto.html. Tuottaa luonnokset/-kansioon 10 sivua,
 joissa on noindex-meta ja ../-alkuiset polut (kansiosta katsottuna toimivat).
 Julkaistaessa: siirrä juureen, poista noindex-rivi, riisu ../-etuliitteet ja
 aja scripts/build_liittyvat.py + paivita_maarat.py + build_sitemap.py +
@@ -16,7 +16,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 TEMPLATE = ROOT / "aanekas-vahemmisto.html"
-OUT = ROOT / "luonnokset-media"
+OUT = ROOT / "luonnokset"
 
 KATEGORIA_NIMI = "Media ja julkisuus"
 KATEGORIA_ANKKURI = "#media-ja-julkisuus"
@@ -599,7 +599,7 @@ flowchart TD
 
 
 def alikansiopolut(html):
-    """Muuntaa juuren polut toimimaan luonnokset-media/-kansiosta."""
+    """Muuntaa juuren polut toimimaan luonnokset/-kansiosta."""
     korvaukset = [
         ('href="style.css', 'href="../style.css'),
         ('href="fonts/', 'href="../fonts/'),

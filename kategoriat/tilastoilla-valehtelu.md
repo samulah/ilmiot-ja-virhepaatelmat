@@ -2,9 +2,9 @@
 kat_id: tilastoilla-valehtelu-kategoria
 h1: Tilastoilla valehtelu — miten luvuilla johdetaan harhaan valehtelematta
 otsikko: Tilastoilla valehtelu — 8 tekniikkaa, joilla luvut johtavat harhaan
-kuvaus: Katkaistu akseli, valikoitu aikaväli, väärä keskiluku. Kahdeksan tapaa johtaa harhaan tilastolla, joka on teknisesti oikein — ja viisi paljastavaa kysymystä.
+kuvaus: Katkaistu akseli, valikoitu aikaväli, väärä keskiluku. Yhdeksän tapaa johtaa harhaan tilastolla, joka on teknisesti oikein — ja viisi paljastavaa kysymystä.
 vari: "#1565c0"
-paivitetty: 2026-07-25
+paivitetty: 2026-08-14
 naapurit:
   - kategoria-informaatio-ja-propaganda | Informaatio ja propaganda →
   - kategoria-psykologia-ja-kognitio | Psykologia ja kognitio →
@@ -18,17 +18,17 @@ Darrell Huff kokosi kikat kirjaan **How to Lie with Statistics** jo vuonna 1954.
 
 ## Kolme perhettä
 
-Kategorian kahdeksan ilmiötä eroavat toisistaan siinä, missä kohtaa ketjua harha syntyy. Sama jako toimii myös tarkistuslistana: kun tiedät kumpaan perheeseen väite kuuluu, tiedät mitä kysyä.
+Kategorian yhdeksän ilmiötä eroavat toisistaan siinä, missä kohtaa ketjua harha syntyy. Sama jako toimii myös tarkistuslistana: kun tiedät kumpaan perheeseen väite kuuluu, tiedät mitä kysyä.
 
 **Kuva valehtelee.** Data on kunnossa, mutta piirros vääristää sen. [Kaksois-y-akseli](kaksois-y-akseli.html) skaalaa kaksi eri suuretta päällekkäin ja tuottaa korrelaation tyhjästä. [Pinta-alaharha](pinta-alaharha.html) kasvattaa symbolin molempia mittoja, jolloin kaksinkertainen luku näyttää nelinkertaiselta. Näissä riittää yleensä, että katsoo akselin nollapisteen ennen käyrää.
 
 **Valinta valehtelee.** Luvut ovat oikein, mutta ne ovat väärä osajoukko. [Cherry-picking](cherry-picking-aikavali.html) valitsee aikavälin alku- ja loppupisteen niin, että sama aikasarja todistaa mitä tahansa. [Selviytymisharha](selviytymisharha.html) laskee vain ne, jotka pääsivät mittauspisteeseen asti. [P-hakkerointi](p-hakkerointi.html) tekee saman tieteen muodossa: testataan kunnes jokin näyttää merkitsevältä, ja julkaistaan vain se yksi tulos.
 
-**Luku itse valehtelee.** Tunnusluku on laskettu oikein, mutta se vastaa eri kysymykseen kuin lukija kuvittelee. [Keskiarvoharha](keskiarvo-vs-mediaani.html) antaa vinossa jakaumassa aivan toisen kuvan kuin mediaani. [Suhteellinen riski](suhteellinen-riski.html) kertoo muutoksen suuruuden kertomatta lähtötasoa. [Simpsonin paradoksi](simpsonin-paradoksi.html) on näistä ovelin: kokonaisluku voi kääntyä päinvastaiseksi kuin jokainen osaryhmä erikseen.
+**Luku itse valehtelee.** Tunnusluku on laskettu oikein, mutta se vastaa eri kysymykseen kuin lukija kuvittelee. [Keskiarvoharha](keskiarvo-vs-mediaani.html) antaa vinossa jakaumassa aivan toisen kuvan kuin mediaani. [Suhteellinen riski](suhteellinen-riski.html) kertoo muutoksen suuruuden kertomatta lähtötasoa. [Simpsonin paradoksi](simpsonin-paradoksi.html) on näistä ovelin: kokonaisluku voi kääntyä päinvastaiseksi kuin jokainen osaryhmä erikseen. [Kannatusmittausten virhemarginaali](kannatusmittausten-virhemarginaali.html) on saman perheen erikoistapaus: luku on oikein ja epätarkkuuskin ilmoitetaan, mutta ilmoitettu marginaali koskee yhtä lukua — ja uutinen kertoo kahden luvun erosta.
 
 Jos luet kategorian läpi kerralla, tuo on myös järkevin järjestys. Kuvatemput oppii tunnistamaan silmällä, valintatemput vaativat kysymään mitä aineistosta puuttuu, ja lukutemput vaativat ymmärtämään mitä tunnusluku oikeastaan mittaa.
 
-## Kahdeksan tekniikkaa
+## Yhdeksän tekniikkaa
 
 [[ILMIOT]]
 

@@ -312,7 +312,7 @@ todennäköisestä hakutermistä.
 1. **Loka–marras 2026** — vaalierän 3 luonnosta juureen (`ANALYYSI.md` § 4).
    Tekee lukuohjeen luvuista 3, 4 ja 7 täydellisiä.
 2. ~~Marraskuu 2026~~ **TEHTY 5.8.2026** — ensimmäinen hahmotelma on
-   `luonnokset-media/vaalikeskustelun-lukuohje.html` (1531 sanaa, 55 sisäistä
+   `luonnokset/vaalikeskustelun-lukuohje.html` (1531 sanaa, 55 sisäistä
    linkkiä, kaikki 8 lukua + katselukortti + inline-virhepäätelmät). Jäljellä:
    luvut 3, 4 ja 7 täydennetään vaalierän kolmella sivulla kun ne julkaistaan,
    ja teksti luetaan läpi § 5:n rajausten kannalta ennen julkaisua.

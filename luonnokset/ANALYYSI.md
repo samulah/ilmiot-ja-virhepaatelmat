@@ -3,6 +3,14 @@
 Laadittu 4.8.2026. Koskee tämän kansion 14 luonnossivua + kategoriasivua.
 Ei julkaisupäätös, vaan priorisointipohja: mikä kannattaa julkaista ensin ja miksi.
 
+> **Tila 14.8.2026 — vaalierä on julkaistu.** Kolme sivua meni juureen
+> (vaalilupauksen hinnoittelu 8, vaalikone-efekti 105, kannatusmittausten
+> virhemarginaali 129) osana 12 sivun erää; aikataulun kohta "loka–marras 2026"
+> toteutui kaksi kuukautta etuajassa, koska indeksointiaika on kampanjahaun
+> kannalta arvokkaampaa kuin odottaminen. Faktantarkistus löysi näiltä kolmelta
+> sivulta kolme virhettä, jotka korjattiin ennen julkaisua (`MUUTOSLOKI.md` 14.8.).
+> **Kansioon jää enää koostesivu** — sen tavoite on yhä joulukuu 2026.
+>
 > **Tila 5.8.2026 — kohdat 1 ja 2 aikataulusta on tehty.** Suurhanke-erä (4 sivua,
 > numerot 54–57) ja media-erä (10 sivua + kategoria 13, numerot 118–127) on
 > julkaistu; sivustolla on 127 ilmiötä ja 13 kategoriaa. Kansioon jää vaalierän
@@ -272,4 +280,4 @@ ylivoimainen yksittäisiin ilmiösivuihin nähden. Ajoitus: julkaistavaksi
 | Joulu 2026 | Vaalipaketit / lukuohje-koostesivu | Valmiina kun kampanjahaku alkaa |
 | Tammi 2027 | Ei uutta — sisäisen linkityksen viilaus | Sisäinen linkitys on aiemmin nostanut sijoituksia; uusi sivu ei ehdi enää nousta |
 
-Julkaisun tekninen tarkistuslista on `luonnokset-media/index.html`:ssä.
+Julkaisun tekninen tarkistuslista on `luonnokset/index.html`:ssä.

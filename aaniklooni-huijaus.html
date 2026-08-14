@@ -3,12 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-  <!-- LUONNOS: poista tämä noindex-rivi kun sivu siirretään pääsivustolle -->
-  <meta name="robots" content="noindex">
-  <title>QR-koodihuijaus — väärä koodi, oikea lasku — Ilmiöitä</title>
-  <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="../fonts/fonts.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Ääniklooni-huijaus — tuttu ääni puhelimessa ei enää todista mitään — Ilmiöitä</title>
+  <link rel="stylesheet" href="style.css?v=20260725">
+  <link rel="stylesheet" href="fonts/fonts.css">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -18,7 +16,7 @@
       if (loaded) return;
       loaded = true;
       var s = document.createElement('script');
-      s.src = 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js';
+      s.src = 'js/mermaid.min.js';
       s.onload = function () {
         mermaid.initialize({ startOnLoad: false, theme: 'base', themeVariables: { fontSize: '12px', fontFamily: "'DM Sans', system-ui, sans-serif", primaryColor: '#FBF5E0', primaryTextColor: '#1A1100', primaryBorderColor: '#C9A84C', lineColor: '#8B6914', secondaryColor: '#F5F0E5', tertiaryColor: '#FDFAF2', mainBkg: '#FBF5E0', nodeBorder: '#C9A84C', clusterBkg: '#F5F0E5', titleColor: '#3A2000', edgeLabelBackground: '#FDFAF2' } });
         mermaid.run();
@@ -92,8 +90,8 @@
     #saantelijan-kaappaus      .ilmio-tag { background: #8e44ad; }
     #rautainen-laki            { border-top-color: #4e342e; }
     #rautainen-laki            .ilmio-tag { background: #4e342e; }
-    #qr-koodihuijaus { border-top-color: #0d47a1; }
-    #qr-koodihuijaus .ilmio-tag { background: #0d47a1; }
+    #aaniklooni-huijaus { border-top-color: #7f0000; }
+    #aaniklooni-huijaus .ilmio-tag { background: #7f0000; }
     #firehose-of-falsehood     { border-top-color: #c0392b; }
     #firehose-of-falsehood     .ilmio-tag { background: #c0392b; }
     #valta-suojelee-valtaa     { border-top-color: #2c3e50; }
@@ -565,7 +563,7 @@
     .kortti-breadcrumb a { color: #8B6914; text-decoration: none; }
     .kortti-breadcrumb a:hover { text-decoration: underline; }
     .kortti-breadcrumb-sep { color: #ccc; }
-    .kortti-breadcrumb-kat { color: #666; }
+    .kortti-breadcrumb .kortti-breadcrumb-kat { color: #666; }
     .kortti-random-btn {
       margin-left: auto;
       display: inline-flex;
@@ -656,20 +654,69 @@
 
     body { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
     .ilmio { margin-bottom: 0; }
-  </style>
+
+    /* ── Random-siirtymäanimaatio (scroll reunaan) ── */
+    .random-siirtyma-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.9rem;
+      background: #1C1400;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+    .random-siirtyma-overlay.nakyva {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .random-siirtyma-logo {
+      width: 56px;
+      height: 56px;
+      opacity: 0;
+      transform: scale(0.6) rotate(-8deg);
+      filter: drop-shadow(0 0 18px rgba(201,168,76,0.55));
+    }
+    .random-siirtyma-overlay.nakyva .random-siirtyma-logo {
+      animation: random-logo-pulssi 0.7s cubic-bezier(0.34,1.56,0.64,1) forwards;
+    }
+    @keyframes random-logo-pulssi {
+      0%   { opacity: 0; transform: scale(0.4) rotate(-12deg); }
+      55%  { opacity: 1; transform: scale(1.15) rotate(4deg); }
+      100% { opacity: 1; transform: scale(1) rotate(0deg); }
+    }
+    .random-siirtyma-teksti {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.82em;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      opacity: 0;
+      transition: opacity 0.3s ease 0.15s;
+    }
+    .random-siirtyma-overlay.nakyva .random-siirtyma-teksti { opacity: 1; }
+  
+.infolaatikko h2.laatikko-otsikko, .huomiolaatikko h2.laatikko-otsikko, .vaaralatikko h2.laatikko-otsikko {
+  display: inline; font: inherit; font-weight: 700; color: inherit;
+  margin: 0; padding: 0; letter-spacing: inherit;
+}
+</style>
 
   <!-- SEO -->
-  <meta name="description" content="QR-koodihuijaus eli quishing ohjaa uhrin väärennetyllä QR-koodilla valesivulle maksamaan tai antamaan korttitietonsa. Parkkimittarit ovat tyypillinen kohde.">
-  <link rel="canonical" href="https://www.ilmiöt.fi/qr-koodihuijaus.html">
-  <meta property="og:title" content="QR-koodihuijaus — väärä koodi, oikea lasku — Ilmiöitä">
-  <meta property="og:description" content="QR-koodihuijaus eli quishing ohjaa uhrin väärennetyllä QR-koodilla valesivulle maksamaan tai antamaan korttitietonsa. Parkkimittarit ovat tyypillinen kohde.">
-  <meta property="og:url" content="https://www.ilmiöt.fi/qr-koodihuijaus.html">
+  <meta name="description" content="Ääniklooni-huijauksessa muutaman sekunnin ääninäyte riittää: soittaja kuulostaa lapselta tai toimitusjohtajalta ja pyytää rahaa kiireellä. Ääni ei enää todista henkilöllisyyttä.">
+  <link rel="canonical" href="https://www.ilmiöt.fi/aaniklooni-huijaus.html">
+  <meta property="og:title" content="Ääniklooni-huijaus — tuttu ääni puhelimessa ei enää todista mitään — Ilmiöitä">
+  <meta property="og:description" content="Ääniklooni-huijauksessa muutaman sekunnin ääninäyte riittää: soittaja kuulostaa lapselta tai toimitusjohtajalta ja pyytää rahaa kiireellä. Ääni ei enää todista henkilöllisyyttä.">
+  <meta property="og:url" content="https://www.ilmiöt.fi/aaniklooni-huijaus.html">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="fi_FI">
   <meta property="og:site_name" content="Ilmiöitä — Miten valta toimii">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="QR-koodihuijaus — väärä koodi, oikea lasku — Ilmiöitä">
-  <meta name="twitter:description" content="QR-koodihuijaus eli quishing ohjaa uhrin väärennetyllä QR-koodilla valesivulle maksamaan tai antamaan korttitietonsa. Parkkimittarit ovat tyypillinen kohde.">
+  <meta name="twitter:title" content="Ääniklooni-huijaus — tuttu ääni puhelimessa ei enää todista mitään — Ilmiöitä">
+  <meta name="twitter:description" content="Ääniklooni-huijauksessa muutaman sekunnin ääninäyte riittää: soittaja kuulostaa lapselta tai toimitusjohtajalta ja pyytää rahaa kiireellä. Ääni ei enää todista henkilöllisyyttä.">
   <meta property="og:image" content="https://www.ilmiöt.fi/og/brand.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -692,13 +739,14 @@
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Huijaukset ja petokset"
+          "name": "Huijaukset ja petokset",
+          "item": "https://www.ilmiöt.fi/kategoria-huijaukset-ja-petokset.html"
         },
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "QR-koodihuijaus — väärä koodi, oikea lasku",
-          "item": "https://www.ilmiöt.fi/qr-koodihuijaus.html"
+          "name": "Ääniklooni-huijaus — tuttu ääni puhelimessa ei enää todista mitään",
+          "item": "https://www.ilmiöt.fi/aaniklooni-huijaus.html"
         }
       ]
     },
@@ -710,9 +758,9 @@
         "width": 1200,
         "height": 630
       },
-      "@id": "https://www.ilmiöt.fi/qr-koodihuijaus.html#article",
-      "url": "https://www.ilmiöt.fi/qr-koodihuijaus.html",
-      "headline": "QR-koodihuijaus — väärä koodi, oikea lasku",
+      "@id": "https://www.ilmiöt.fi/aaniklooni-huijaus.html#article",
+      "url": "https://www.ilmiöt.fi/aaniklooni-huijaus.html",
+      "headline": "Ääniklooni-huijaus — tuttu ääni puhelimessa ei enää todista mitään",
       "description": "QR-koodihuijaus eli quishing ohjaa uhrin väärennetyllä QR-koodilla valesivulle maksamaan tai antamaan korttitietonsa. Parkkimittarit ovat tyypillinen kohde.",
       "inLanguage": "fi",
       "articleSection": "Huijaukset ja petokset",
@@ -734,7 +782,7 @@
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "QR-koodihuijaus — väärä koodi, oikea lasku",
+        "name": "Ääniklooni-huijaus — tuttu ääni puhelimessa ei enää todista mitään",
         "description": "QR-koodihuijaus eli quishing ohjaa uhrin väärennetyllä QR-koodilla valesivulle maksamaan tai antamaan korttitietonsa. Parkkimittarit ovat tyypillinen kohde.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
@@ -749,12 +797,35 @@
         "url": "https://www.ilmiöt.fi/tietoa.html",
         "description": "Kirjoittajanimi, jonka takana on kiinnostus valtaan, vaikuttamiseen ja ihmisen päättelyn vinoumiin. Sisältö perustuu julkisiin lähteisiin ja vakiintuneeseen käsitteistöön."
       },
-      "datePublished": "2026-07-06",
-      "dateModified": "2026-07-06"
+      "datePublished": "2026-08-14",
+      "dateModified": "2026-08-14"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.ilmiöt.fi/aaniklooni-huijaus.html#faq",
+      "inLanguage": "fi",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Mikä on ääniklooni-huijaus?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ääniklooni-huijauksessa soittajan ääni on tuotettu koneellisesti tunnetun ihmisen näytteestä. Tyypillisiä muotoja ovat hädässä olevaksi läheiseksi tekeytyminen ja toimitusjohtajan äänellä esitetty kiireellinen maksupyyntö. Näytteeksi riittää lyhyt julkinen puhe, esimerkiksi somevideo tai podcast."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Riittääkö tutun ääni todisteeksi puhelimessa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ei. Ääni voidaan kloonata ja näytössä näkyvä numero väärentää. Ainoa varmistus on katkaista puhelu ja soittaa takaisin numeroon, jonka olet itse hakenut — ei siihen, josta soitto tuli, eikä siihen, jonka soittaja antaa."
+          }
+        }
+      ]
     }
   ]
 }
-  </script>
+</script>
   <style>
     .ilmio-byline{font-size:.82rem;color:#8B6914;font-style:italic;margin:.15rem 0 1.3rem;}
     .ilmio-byline a{color:#8B6914;}
@@ -767,51 +838,60 @@
 <body>
 
   <div class="kortti-breadcrumb">
-    <a href="../index.html" class="kortti-logo" aria-label="Ilmiöitä — etusivu"><img src="../favicon.svg" alt="Ilmiöitä"></a>
-    <a href="index.html">← Kaikki luonnokset</a>
-    <span class="kortti-breadcrumb-sep">›</span><span class="kortti-breadcrumb-kat">Huijaukset ja petokset</span>
+    <a href="index.html" class="kortti-logo" aria-label="Ilmiöitä — etusivu"><img src="favicon.svg" alt="Ilmiöitä"></a>
+    <a href="index.html">← Kaikki ilmiöt</a>
+    <span class="kortti-breadcrumb-sep">›</span><a href="kategoria-huijaukset-ja-petokset.html" class="kortti-breadcrumb-kat">Huijaukset ja petokset</a>
     <button class="kortti-random-btn" onclick="randomIlmio()" title="Satunnainen ilmiö (R)">
       <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>
       <span class="btn-text">Satunnainen</span>
     </button>
   </div>
 
-  <div class="ilmio" id="qr-koodihuijaus">
-<div class="ilmio-tag">Uusi ilmiö · luonnos</div>
-<h1>QR-koodihuijaus — väärä koodi, oikea lasku</h1>
-<p class="ilmio-byline">Kirjoittanut <a href="../tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 6.7.2026</p>
-<p><strong>QR-koodihuijaus</strong> (engl. <strong>quishing</strong>, sanoista QR + phishing) tarkoittaa kalastelua, jossa uhri ohjataan väärennetyllä QR-koodilla huijaussivulle maksamaan, antamaan korttitietonsa tai asentamaan haittaohjelma. Huijauksen kauneusvirhe uhrin kannalta: hän tekee työn itse, omalla puhelimellaan, vapaaehtoisesti.</p>
-<p>Quishing toimii kolmesta syystä. Ensinnäkin QR-koodi on ihmissilmälle pelkkää kohinaa — linkkiä ei voi arvioida ennen skannausta, ja puhelin näyttää siitä usein vain lyhennetyn alun. Toiseksi koodi lainaa ympäristönsä luotettavuuden: virallisen näköinen tarra parkkimittarissa tai firman logolla varustettu kirje ei herätä samaa epäilystä kuin tuntemattoman lähettämä linkki. Ja kolmanneksi koodi kiertää suodattimet: sähköpostin turvaskannerit lukevat linkkejä, mutta kuvana lähetetty koodi menee monesta läpi.</p>
+  <div class="ilmio" id="aaniklooni-huijaus">
+<div class="ilmio-tag">Ilmiö 77</div>
+<h1>Ääniklooni-huijaus — tuttu ääni puhelimessa ei enää todista mitään</h1>
+<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 14.8.2026</p>
+<p><strong>Ääniklooni-huijaus</strong> (englanniksi <em>voice cloning scam</em>; puhelimitse tehdystä kalastelusta käytetään termiä <em>vishing</em>) tarkoittaa huijausta, jossa soittajan ääni on tuotettu koneellisesti tunnetun ihmisen näytteestä. Näytettä tarvitaan vähän, ja sitä on tarjolla siellä missä ihmiset puhuvat julkisesti: somevideoissa, podcasteissa, yritysten esittelyklipeissä. Vanha nyrkkisääntö "tunnistan hänen äänensä" lakkasi toimimasta.</p>
+<div class="infolaatikko vastauslohko">
+<h2 class="laatikko-otsikko">Riittääkö tutun ääni todisteeksi puhelimessa?</h2>
+<p style="margin:0.4em 0 0;">Ei. Ääni voidaan kloonata ja myös näytössä näkyvä numero väärentää, joten kumpikaan ei kerro, kuka soittaa. Ainoa varmistus on katkaista puhelu ja soittaa takaisin numeroon, jonka olet itse hakenut — ei siihen, josta soitto tuli, eikä siihen, jonka soittaja antaa. Poliisin ja pankkien ohje on sama vuodesta toiseen: kiire on huijauksen tunnusmerkki, ei kiireellisen asian.</p>
+</div>
 <div class="mermaid">
 flowchart TD
-  R["Rikollinen liimaa tarran\naidon koodin päälle:\nmittari, latausasema,\nruokalista"] --&gt; S["Uhri skannaa\nomalla puhelimellaan"]
-  S --&gt; V["Aidon näköinen\nmaksusivu"]
-  V --&gt; T["Kortti- tai pankkitiedot\nrikolliselle"]
-  T --&gt; L["Tililtä lähtee rahaa —\nuhri luulee maksaneensa\nparkkimaksun"]
-  style R fill:#fdf0f0,stroke:#c0392b
-  style V fill:#fff3cd,stroke:#f39c12
+  A["Ääninäyte julkisesta\nvideosta tai puhelusta"] --&gt; B["Ääni kloonataan"]
+  B --&gt; C["Soitto: hädässä oleva läheinen\ntai toimitusjohtajan maksupyyntö"]
+  C --&gt; D{"Soitatko takaisin\nitse hakemaasi numeroon?"}
+  D -- ei --&gt; E["Maksu lähtee minuuteissa"]
+  D -- kyllä --&gt; F["Huijaus paljastuu"]
+  style E fill:#fdf0f0,stroke:#c0392b
+  style F fill:#eafaf1,stroke:#27ae60
     </div>
-<p class="kaavio-selitys">Quishingin ydin: koodi on linkki, jota et voi lukea — mutta jonka avaat silti.</p>
+<p class="kaavio-selitys">Huijaus ei nojaa tekniikkaan vaan tunteeseen: kloonattu ääni ostaa ne minuutit, joina kukaan ei tarkista mitään.</p>
+<p>Muotoja on kaksi. Yksityishenkilölle soittaa hätääntynyt läheinen, joka on joutunut onnettomuuteen tai pidätetyksi ja tarvitsee rahaa heti; puhelu katkeaa juuri ennen kuin ehtii kysyä mitään. Yritykselle soittaa johtaja, joka pyytää poikkeuksellista maksua ja pyytää olemaan kertomatta siitä muille. Jälkimmäinen on vanha juoni: <a href="toimitusjohtajahuijaus.html">toimitusjohtajahuijaus</a> teki saman sähköpostilla jo 2010-luvulla. Ääni on siihen lisätty kerros, ei uusi rakenne.</p>
 <div class="infolaatikko">
-<strong>Missä quishing iskee:</strong>
+<h2 class="laatikko-otsikko">Miksi ääni toimii paremmin kuin sähköposti?</h2> Sähköpostiversiossa uskottavuus rakennettiin osoitteesta ja kiireestä, ja epäilijä saattoi pysähtyä lukemaan rivin uudelleen. Puhelu ei anna sitä mahdollisuutta: ääni ohittaa harkinnan ja vastaa itse siihen kysymykseen, jonka epäilijä esittäisi. <a href="deepfake-sijoitushuijaus.html">Deepfake-sijoitushuijaus</a> tekee saman kuvalla.
+    </div>
+<div class="huomiolaatikko">
+<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2>
 <ul style="margin:0.5em 0 0;">
-<li><strong>Parkkimittarit:</strong> tarra aidon koodin päällä ohjaa valemaksusivulle — muoto levisi Euroopassa 2023 alkaen, ja poliisi on varoittanut siitä Suomessakin.</li>
-<li><strong>Sähköautojen latausasemat:</strong> sama temppu, isommat summat.</li>
-<li><strong>Kirjeet ja "virhemaksut":</strong> postissa tuleva maksamaton pysäköintivirhemaksu tai paketti-ilmoitus QR-koodeineen — paperi tuntuu viralliselta.</li>
-<li><strong>Sähköpostin QR-liitteet:</strong> "monivaiheinen tunnistautumisesi vanhenee, skannaa koodi" — kuva kiertää suodattimet ja siirtää kalastelun työkoneelta suojaamattomaan puhelimeen.</li>
-<li><strong>Julkiset tilat:</strong> hyllynreunaan, julisteeseen tai pöytään liimatut kilpailu- ja alennuskoodit.</li>
+<li>Sopikaa perheen kesken turvasana, joka kysytään aina kun puhelimessa pyydetään rahaa. Se maksaa yhden keskustelun.</li>
+<li>Katkaise ja soita takaisin itse hakemaasi numeroon. Aito hätä kestää kaksi minuuttia, huijaus ei.</li>
+<li>Yrityksissä: maksun hyväksyy kaksi ihmistä eikä poikkeusta tehdä kiireeseen tai salassapitoon vedoten.</li>
+<li>Älä vahvista soittajalle nimiä, rooleja tai tilitietoja. Sekä vastauksesi että äänesi ovat aineistoa seuraavaan soittoon.</li>
 </ul>
 </div>
-<div class="huomiolaatikko">
-<strong>Suojaudu:</strong> Maksa pysäköinti sovelluksella, jonka asennat itse sovelluskaupasta — älä koodin ohjaamana. Katso koodia: onko se tarra tarran päällä, eri materiaalia kuin ympäristönsä? Lue avautuva osoite ennen jatkamista, ja jos "parkkimaksusivu" kysyy verkkopankkitunnuksia tai kortin kaikkia tietoja, sulje selain. Älä koskaan asenna sovellusta QR-koodin kehotuksesta. Nyrkkisääntö: tuntemattoman QR-koodi on tuntemattoman lähettämä linkki — kohtele sitä samoin. Organisaatiolle: tarkastakaa omat mittarit, asemat ja tarrapinnat säännöllisesti — teidän pintanne on jonkun toisen kalasteluväline.
-    </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
 <div class="lue-lisaa-rivi">
+<span class="lue-lisaa-tyyppi">Kirjoja</span>
+<ul class="lue-lisaa-lista">
+<li><cite>The Art of Deception</cite> — Kevin Mitnick (2002)</li>
+</ul>
+</div>
+<div class="lue-lisaa-rivi">
 <span class="lue-lisaa-tyyppi">Verkossa</span>
 <ul class="lue-lisaa-lista">
-<li><a href="https://www.kyberturvallisuuskeskus.fi/" target="_blank" rel="noopener">Liikenne- ja viestintävirasto Traficom: Kyberturvallisuuskeskus</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Phishing" target="_blank" rel="noopener">Wikipedia: Phishing (englanniksi)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Voice_phishing" target="_blank" rel="noopener">Wikipedia: Voice phishing (englanniksi)</a></li>
 </ul>
 </div>
 </div>
@@ -819,24 +899,52 @@ flowchart TD
 
   <aside class="liittyvat" aria-label="Liittyvät ilmiöt">
     <h2>Liittyvät ilmiöt</h2>
-    <ul>
-      <li><a href="../ennakkomaksuhuijaus.html">Ennakkomaksuhuijaus (419) — maksa vähän saadaksesi paljon</a></li>
-      <li><a href="toimitusjohtajahuijaus.html">Toimitusjohtajahuijaus — kiireellinen ja salainen maksu</a></li>
-      <li><a href="../honeypot-huijaus.html">Honeypot-huijaus — ansa josta pääsee sisään muttei ulos</a></li>
-      <li><a href="../bait-and-switch.html">Bait and switch — syötti ja vaihto</a></li>
-    </ul>
+    <div class="liittyvat-kortit">
+    <a href="toimitusjohtajahuijaus.html" class="liittyvat-kortti" style="--c:#455a64">
+      <span class="liittyvat-numero">75</span>
+      <span class="liittyvat-teksti">
+        <span class="liittyvat-nimi">Toimitusjohtajahuijaus</span>
+        <span class="liittyvat-kuvaus">"Johtaja" vaatii sähköpostilla kiireellistä maksua — kiire ja salailu ovat tuntomerkit.</span>
+      </span>
+      <span class="liittyvat-nuoli" aria-hidden="true">›</span>
+    </a>
+    <a href="smishing.html" class="liittyvat-kortti" style="--c:#0b3d91">
+      <span class="liittyvat-numero">78</span>
+      <span class="liittyvat-teksti">
+        <span class="liittyvat-nimi">Smishing</span>
+        <span class="liittyvat-kuvaus">Huijausviesti putoaa samaan ketjuun aitojen kanssa: paketti odottaa maksua, pankki pyytää vahvistusta.</span>
+      </span>
+      <span class="liittyvat-nuoli" aria-hidden="true">›</span>
+    </a>
+    <a href="deepfake-sijoitushuijaus.html" class="liittyvat-kortti" style="--c:#9c4dcc">
+      <span class="liittyvat-numero">79</span>
+      <span class="liittyvat-teksti">
+        <span class="liittyvat-nimi">Deepfake-sijoitushuijaus</span>
+        <span class="liittyvat-kuvaus">Tuttu kasvo ja tutun näköinen uutissivu mainostavat alustaa, jolla saldo nousee mutta raha ei palaa.</span>
+      </span>
+      <span class="liittyvat-nuoli" aria-hidden="true">›</span>
+    </a>
+    <a href="ennakkomaksuhuijaus.html" class="liittyvat-kortti" style="--c:#303f9f">
+      <span class="liittyvat-numero">72</span>
+      <span class="liittyvat-teksti">
+        <span class="liittyvat-nimi">Ennakkomaksuhuijaus (419)</span>
+        <span class="liittyvat-kuvaus">Suuri summa odottaa — kunhan maksat ensin "pienen" käsittelymaksun, ja sitten seuraavan.</span>
+      </span>
+      <span class="liittyvat-nuoli" aria-hidden="true">›</span>
+    </a>
+    </div>
   </aside>
 
   <nav class="kortti-nav">
-    <a class="kortti-nav-btn" href="tilausansa.html">← Tilausansa — helppo tilata, vaikea perua</a>
+    <a class="kortti-nav-btn" href="rug-pull.html">← Rug pull — matto vedetään alta</a>
     <div class="kortti-nav-center">
-      <span class="kortti-nav-laskuri">13 / 15 · luonnos</span>
+      <span class="kortti-nav-laskuri">77 / 139</span>
       <span class="kortti-nav-vinkki">
         <kbd>&#8592;</kbd> <kbd>&#8594;</kbd> selaa &middot; <kbd>R</kbd> satunnainen
         <span class="touch-vinkki">&nbsp;· swipe &#8592;&#8594; tai &#8595; random</span>
       </span>
     </div>
-    <a class="kortti-nav-btn" href="toimitusjohtajahuijaus.html">Toimitusjohtajahuijaus — kiireellinen ja salainen maksu →</a>
+    <a class="kortti-nav-btn" href="smishing.html">Smishing — tekstiviesti, joka näyttää tulevan Postilta →</a>
   </nav>
 
   
@@ -1007,16 +1115,137 @@ flowchart TD
 
   <script>
 (function () {
-  const IDS = ["tekoalypesu","hyvesignalointi","hiljainen-irtisanominen","haamutyopaikat","streisand-ilmio","trollitehdas","kuollut-kissa","dunning-kruger","suunniteltu-vanheneminen","kuollut-internet","rage-bait","tilausansa","qr-koodihuijaus","toimitusjohtajahuijaus","rug-pull"];
-  const PREV = 'tilausansa.html';
-  const NEXT = 'toimitusjohtajahuijaus.html';
+  const IDS = ["paskuuttaminen", "starve-the-beast", "overton-ikkuna", "saantelijan-kaappaus", "rautainen-laki", "valta-suojelee-valtaa", "hajota-hallitse", "vaalilupauksen-hinnoittelu", "bkt-harha", "astroturf", "firehose-of-falsehood", "manufactured-consent", "betteridgen-laki", "inokulointiteoria", "whataboutismi", "streisand-ilmio", "trollitehdas", "kuollut-kissa", "brandolinin-laki", "poen-laki", "godwinin-laki", "backfire-effect", "darvo", "halo-efekti", "konsensus-fetissi", "omenoita-appelsiineja", "blame-game", "gaslighting", "maalitolppien-siirtaminen", "argumenttitulva", "sunk-cost-harha", "jarjestelman-puolustelu", "dunning-kruger", "hanlonin-partaveitsi", "occamin-partaveitsi", "simple-sabotage", "kafka-ilmio", "catch-22", "goodhartin-laki", "hippo-efekti", "performatiivinen-lasnaolo", "rituaalinen-raportointi", "initiointirituaalit", "portinvartija-kulttuuri", "strateginen-osaamattomuus", "fofo", "sivustakatsojan-efekti", "parkinsonin-laki", "peterin-periaate", "pareto-periaate", "brooksin-laki", "yhdeksanyhdeksan", "hofstadterin-laki", "kuolonmarssi", "lukittu-paatos", "strateginen-aliarviointi", "paatosperainen-todistelu", "lapi-hinnalla-milla-hyvansa", "tekninen-velka", "conways-laki", "bikeshedding", "scope-creep", "korkoa-korolle", "negatiivinen-korkoa", "korkokierre", "honeypot-huijaus", "bait-and-switch", "kaarmeoljy", "ponzi-pyramidi", "pump-and-dump", "pig-butchering", "ennakkomaksuhuijaus", "badger-game", "qr-koodihuijaus", "toimitusjohtajahuijaus", "rug-pull", "aaniklooni-huijaus", "smishing", "deepfake-sijoitushuijaus", "ilmainen-naytetyo", "exposure-maksu", "lowball-hinnoittelu", "valittajan-skimmaus", "tilipuristus", "foot-in-the-door", "door-in-the-face", "hintaankkurointi", "houkutinvaihtoehto", "vastavuoroisuuden-ansa", "sosiaalinen-todiste", "painostusclose", "shrinkflaatio", "suunniteltu-vanheneminen", "tilausansa", "doomscrolling", "kaikukammio", "ai-slop", "parasosiaalinen-suhde", "kuollut-internet", "rage-bait", "klikkiotsikko", "engagement-bait", "1-prosentin-saanto", "aanekas-vahemmisto", "vaalikone-efekti", "tekoalypsykoosi", "evasteansa", "piilokulut", "pakotettu-jatkuvuus", "confirmshaming", "oletusasetusansa", "viherpesu", "sinipesu", "urheilupesu", "pinkkipesu", "tekoalypesu", "hyvesignalointi", "hiljainen-irtisanoutuminen", "hiljainen-irtisanominen", "haamutyopaikat", "kaksois-y-akseli", "pinta-alaharha", "cherry-picking-aikavali", "keskiarvo-vs-mediaani", "suhteellinen-riski", "selviytymisharha", "simpsonin-paradoksi", "p-hakkerointi", "kannatusmittausten-virhemarginaali", "uutiskynnys", "uutisautiomaa", "paasyjournalismi", "tiedotejournalismi", "branditurvallisuus", "huonojen-uutisten-hautaaminen", "vaara-tasapaino", "keharaportointi", "gell-mannin-amnesia", "vihamielisen-median-harha"];
+  const PREV = 'rug-pull.html';
+  const NEXT = 'smishing.html';
 
   function randomIlmio() {
     let id;
-    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'qr-koodihuijaus');
+    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'aaniklooni-huijaus');
+    merkitseRandomHyppy();
     window.location.href = id + '.html';
   }
   window.randomIlmio = randomIlmio;
+
+  /* ── Reunaan rullattaessa: logoanimaatio, sitten siirtymä ── */
+  var _siirtymaKaynnissa = false;
+
+  var RANDOM_SYVYYS_KEY = 'random-syvyys';
+  function lueRandomSyvyys() {
+    var v = parseInt(sessionStorage.getItem(RANDOM_SYVYYS_KEY) || '0', 10);
+    return isNaN(v) ? 0 : v;
+  }
+  var randomSyvyys = lueRandomSyvyys();
+  var VOI_JATKAA_KEY = 'voi-jatkaa-eteenpain';
+  var voiJatkaaEteenpain = sessionStorage.getItem(VOI_JATKAA_KEY) === '1';
+  function merkitseRandomHyppy() {
+    sessionStorage.setItem(RANDOM_SYVYYS_KEY, String(randomSyvyys + 1));
+    sessionStorage.setItem(VOI_JATKAA_KEY, '0');
+    voiJatkaaEteenpain = false;
+  }
+  function nollaaRandomKetju() {
+    sessionStorage.setItem(RANDOM_SYVYYS_KEY, '0');
+    sessionStorage.setItem(VOI_JATKAA_KEY, '0');
+    voiJatkaaEteenpain = false;
+  }
+  function naytaKumausEfekti() {
+    var b = document.body;
+    b.style.transition = 'transform 0.15s ease-out';
+    b.style.transform = 'translateY(14px)';
+    setTimeout(function () {
+      b.style.transition = 'transform 0.25s cubic-bezier(0.34,1.56,0.64,1)';
+      b.style.transform = 'translateY(0)';
+    }, 130);
+  }
+  document.querySelectorAll('a.kortti-nav-btn').forEach(function (a) {
+    a.addEventListener('click', nollaaRandomKetju);
+  });
+
+  function naytaSiirtyma(teksti, kohdeUrl) {
+    if (_siirtymaKaynnissa || !kohdeUrl) return;
+    _siirtymaKaynnissa = true;
+    var overlay = document.createElement('div');
+    overlay.className = 'random-siirtyma-overlay';
+    overlay.innerHTML =
+      '<img class="random-siirtyma-logo" src="favicon.svg" alt="">' +
+      '<span class="random-siirtyma-teksti">' + teksti + '&hellip;</span>';
+    document.body.appendChild(overlay);
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () { overlay.classList.add('nakyva'); });
+    });
+    setTimeout(function () { window.location.href = kohdeUrl; }, 650);
+  }
+  function naytaRandomSiirtyma() {
+    if (_siirtymaKaynnissa) return;
+    var id;
+    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'aaniklooni-huijaus');
+    merkitseRandomHyppy();
+    naytaSiirtyma('Satunnainen ilmiö', id + '.html');
+  }
+  window.naytaRandomSiirtyma = naytaRandomSiirtyma;
+  function naytaAlasSiirtyma() {
+    if (_siirtymaKaynnissa) return;
+    if (voiJatkaaEteenpain) {
+      randomSyvyys += 1;
+      sessionStorage.setItem(RANDOM_SYVYYS_KEY, String(randomSyvyys));
+      sessionStorage.setItem(VOI_JATKAA_KEY, '0');
+      voiJatkaaEteenpain = false;
+      _siirtymaKaynnissa = true;
+      var overlay = document.createElement('div');
+      overlay.className = 'random-siirtyma-overlay';
+      overlay.innerHTML =
+        '<img class="random-siirtyma-logo" src="favicon.svg" alt="">' +
+        '<span class="random-siirtyma-teksti">Eteenpäin&hellip;</span>';
+      document.body.appendChild(overlay);
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () { overlay.classList.add('nakyva'); });
+      });
+      setTimeout(function () { history.forward(); }, 650);
+    } else {
+      naytaRandomSiirtyma();
+    }
+  }
+  function naytaTakaisinSiirtyma() {
+    if (_siirtymaKaynnissa) return;
+    if (randomSyvyys > 0) {
+      randomSyvyys -= 1;
+      sessionStorage.setItem(RANDOM_SYVYYS_KEY, String(randomSyvyys));
+      sessionStorage.setItem(VOI_JATKAA_KEY, '1');
+      _siirtymaKaynnissa = true;
+      var overlay = document.createElement('div');
+      overlay.className = 'random-siirtyma-overlay';
+      overlay.innerHTML =
+        '<img class="random-siirtyma-logo" src="favicon.svg" alt="">' +
+        '<span class="random-siirtyma-teksti">Takaisin&hellip;</span>';
+      document.body.appendChild(overlay);
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () { overlay.classList.add('nakyva'); });
+      });
+      setTimeout(function () { history.back(); }, 650);
+    } else {
+      naytaKumausEfekti();
+    }
+  }
+
+  /* Hiiren rullalla pohjaan asti → random, ylös asti alusta → edellinen */
+  var _wheelKertyma = 0, _wheelAika = 0;
+  document.addEventListener('wheel', function (e) {
+    if (_siirtymaKaynnissa || e.deltaY === 0) { _wheelKertyma = 0; return; }
+
+    var atBottom = window.scrollY + window.innerHeight >=
+      document.documentElement.scrollHeight - 4;
+    var atTop = window.scrollY <= 4;
+    var suuntaOk = (e.deltaY > 0 && atBottom) || (e.deltaY < 0 && atTop);
+    if (!suuntaOk) { _wheelKertyma = 0; return; }
+
+    var now = Date.now();
+    if (now - _wheelAika > 500) _wheelKertyma = 0;
+    _wheelAika = now;
+    _wheelKertyma += e.deltaY;
+
+    if (_wheelKertyma > 140) naytaAlasSiirtyma();
+    else if (_wheelKertyma < -140) naytaTakaisinSiirtyma();
+  }, { passive: true });
 
   /* ── Sisääntuloanimaatio ── */
   (function () {
@@ -1039,16 +1268,17 @@ flowchart TD
   document.addEventListener('keydown', function (e) {
     if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
     if (e.ctrlKey || e.metaKey || e.altKey) return;
-    if (e.key === 'ArrowLeft'  && PREV) window.location.href = PREV;
-    if (e.key === 'ArrowRight' && NEXT) window.location.href = NEXT;
+    if (e.key === 'ArrowLeft'  && PREV) { nollaaRandomKetju(); window.location.href = PREV; }
+    if (e.key === 'ArrowRight' && NEXT) { nollaaRandomKetju(); window.location.href = NEXT; }
     if (e.key === 'r' || e.key === 'R') randomIlmio();
   });
 
   /* ── Swipe-eleet ── */
-  var _tx = 0, _ty = 0, _sx = false, _live = false;
+  var _tx = 0, _ty = 0, _tt = 0, _sx = false, _live = false;
   document.addEventListener('touchstart', function (e) {
     _tx = e.touches[0].clientX;
     _ty = e.touches[0].clientY;
+    _tt = Date.now();
     _sx = false; _live = false;
   }, { passive: true });
   document.addEventListener('touchmove', function (e) {
@@ -1056,9 +1286,9 @@ flowchart TD
     var dx = e.touches[0].clientX - _tx;
     var dy = e.touches[0].clientY - _ty;
     if (!_live) {
-      if (Math.abs(dx) > Math.abs(dy) * 1.3 && Math.abs(dx) > 8) {
+      if (Math.abs(dx) > Math.abs(dy) * 1.3 && Math.abs(dx) > 22) {
         _live = true;
-      } else if (Math.abs(dy) > Math.abs(dx) * 1.3 && Math.abs(dy) > 8) {
+      } else if (Math.abs(dy) > Math.abs(dx) * 1.3 && Math.abs(dy) > 22) {
         _sx = true; return;
       }
     }
@@ -1072,10 +1302,12 @@ flowchart TD
     var dx = e.changedTouches[0].clientX - _tx;
     var dy = e.changedTouches[0].clientY - _ty;
     var adx = Math.abs(dx), ady = Math.abs(dy);
+    var nopeaTarpeeksi = (Date.now() - _tt) < 380;
     if (_live) {
-      if (adx > 70) {
+      if (adx > 120 && nopeaTarpeeksi) {
         var target = dx < 0 ? NEXT : PREV;
         if (target) {
+          nollaaRandomKetju();
           sessionStorage.setItem('swipe-dir', dx < 0 ? 'right' : 'left');
           document.body.style.transition = 'transform 0.22s cubic-bezier(0.4,0,1,1)';
           document.body.style.transform = 'translateX(' + (dx < 0 ? -window.innerWidth : window.innerWidth) + 'px)';
@@ -1088,13 +1320,13 @@ flowchart TD
         document.body.style.transition = 'transform 0.28s cubic-bezier(0.25,0.46,0.45,0.94)';
         document.body.style.transform = 'translateX(0)';
       }
-    } else if (!_sx && ady > adx * 1.5 && ady > 80) {
+    } else if (!_sx && ady > adx * 1.5 && ady > 140 && nopeaTarpeeksi) {
       if (dy > 0) {
         var atBottom = window.scrollY + window.innerHeight >=
           document.documentElement.scrollHeight - 60;
-        if (atBottom) randomIlmio();
+        if (atBottom) naytaAlasSiirtyma();
       } else {
-        if (window.scrollY < 60) history.back();
+        if (window.scrollY < 60) naytaTakaisinSiirtyma();
       }
     }
   }, { passive: true });
@@ -1102,7 +1334,7 @@ flowchart TD
   </script>
 
   <footer class="ilmio-footer">
-    <p>© 2026 Ilmiöitä — Miten valta toimii · Kirjoittanut Ilmiömies · <a href="../tietoa.html">Tietoa sivustosta ja tekijästä</a></p>
+    <p>© 2026 Ilmiöitä — Miten valta toimii · Kirjoittanut Ilmiömies · <a href="tietoa.html">Tietoa sivustosta ja tekijästä</a></p>
   </footer>
 </body>
 </html>
