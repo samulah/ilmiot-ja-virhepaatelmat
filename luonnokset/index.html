@@ -209,7 +209,10 @@ julkaistaessa molemmat puretaan.</p>
   joten <strong>älä muokkaa niitä käsin</strong> — seuraava ajo ylikirjoittaa. Jos linkit eivät
   aukea, aja skripti kerran: sivut eivät ole gitissä eivätkä siis seuraa mukana kloonissa.
   <code>suosio.html</code> on oma analytiikkanäkymä eikä siirry palvelimelle.
-  <code>etusivu-nostot.html</code> on kopio etusivusta kolmella uudella lohkolla; julkaisu
+  <strong>Cron ajaa skriptin joka yö klo 3:10</strong> (loki <code>~/.suosio.log</code>), joten
+  luvut ovat aamulla tuoreet ilman että teet mitään. <code>--laheta</code> on pois päältä:
+  mikään ei mene livepalvelimelle.
+  <code>etusivu-nostot.html</code> on kopio etusivusta neljällä uudella lohkolla; julkaisu
   tapahtuu ajamalla sama injektori lipulla <code>--tuotanto</code>, ei kopioimalla tästä.
   Tuotannossa <code>NAYTA_LUVUT</code> kääntyy <code>false</code>:ksi, eli lukukerrat näkyvät
   vain tässä testivaiheessa. Kannan osoite ja tunnukset ovat gitignoratussa

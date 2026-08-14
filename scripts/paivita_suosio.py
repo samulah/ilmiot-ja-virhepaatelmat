@@ -223,6 +223,80 @@ def hae_kannasta(cfg, alku, loppu):
     return tulos, dict(hylatyt)
 
 
+def hae_gsc(cfg, alku, loppu):
+    """Google-haun näytöt ja klikit → [(slug, pvm, lauseke, naytot, klikit, sija)].
+
+    Eri asia kuin sivunäytöt: näyttö tarkoittaa että sivu näkyi hakutuloksissa,
+    ei että joku luki sen. Siksi järjestys poikkeaa luetuimmista, ja siksi tämä
+    kertoo mitä ihmiset etsivät eikä mitä he löysivät.
+
+    Vapaaehtoinen: ilman SUOSIO_SQL_GSC:tä googlatuimmat-lohko jää pois eikä
+    muu putki häiriinny.
+    """
+    sql = cfg.get("SUOSIO_SQL_GSC")
+    if not sql:
+        return [], {}
+    import psycopg2
+
+    yhteys = psycopg2.connect(
+        host=cfg["PGHOST"], port=cfg.get("PGPORT", "5432"),
+        dbname=cfg["PGDATABASE"], user=cfg["PGUSER"], password=cfg["PGPASSWORD"],
+        connect_timeout=10)
+    try:
+        with yhteys.cursor() as kursori:
+            kursori.execute(sql, {"alku": alku, "loppu": loppu})
+            rivit = kursori.fetchall()
+    finally:
+        yhteys.close()
+
+    tulos, hylatyt = [], defaultdict(int)
+    for polku, pvm, lauseke, naytot, klikit, sija in rivit:
+        slug = normalisoi(polku)
+        if slug is None:
+            hylatyt[str(polku)[:60]] += int(naytot or 0)
+            continue
+        if isinstance(pvm, datetime):
+            pvm = pvm.date()
+        tulos.append((slug, pvm, lauseke or "", int(naytot or 0),
+                      int(klikit or 0), float(sija or 0)))
+    return tulos, dict(hylatyt)
+
+
+def summaa_gsc(rivit, alku, loppu):
+    """GSC-rivit → {slug: {"naytot": n, "klikit": k}} annetulta väliltä."""
+    summat = defaultdict(lambda: {"naytot": 0, "klikit": 0})
+    for slug, pvm, _, naytot, klikit, _ in rivit:
+        if alku <= pvm <= loppu:
+            summat[slug]["naytot"] += naytot
+            summat[slug]["klikit"] += klikit
+    return dict(summat)
+
+
+def summaa_lausekkeet(rivit, alku, loppu):
+    """GSC-rivit → hakulausekkeet [(lauseke, slug, naytot, klikit, sija)].
+
+    Sija on näytöillä painotettu keskiarvo: pelkkä AVG antaisi yhden näytön
+    päivälle saman painon kuin sadan näytön päivälle.
+    """
+    kooste = defaultdict(lambda: {"naytot": 0, "klikit": 0, "sijasumma": 0.0,
+                                  "sivut": defaultdict(int)})
+    for slug, pvm, lauseke, naytot, klikit, sija in rivit:
+        if not (alku <= pvm <= loppu) or not lauseke:
+            continue
+        k = kooste[lauseke]
+        k["naytot"] += naytot
+        k["klikit"] += klikit
+        k["sijasumma"] += sija * naytot
+        k["sivut"][slug] += naytot
+
+    tulos = []
+    for lauseke, k in kooste.items():
+        paasivu = max(k["sivut"], key=k["sivut"].get) if k["sivut"] else None
+        tulos.append((lauseke, paasivu, k["naytot"], k["klikit"],
+                      k["sijasumma"] / k["naytot"] if k["naytot"] else 0.0))
+    return sorted(tulos, key=lambda r: (-r[2], r[0]))
+
+
 def hae_demo(alku, loppu, ilmiot):
     """Syntetisoi liikenne GSC-viennistä, jotta renderöinnin voi testata ilman kantaa.
 
@@ -395,7 +469,7 @@ def valitse_viikon_ilmio(d7, edellinen7, tanaan, kirjoita, tunnetut):
 #  data/suosio.js
 # ─────────────────────────────────────────────────────────────────────────
 
-def kirjoita_suosio_js(d7, d30, edellinen7, viikko, ikkunat, tunnetut):
+def kirjoita_suosio_js(d7, d30, edellinen7, viikko, ikkunat, tunnetut, g7, g30):
     """Slugit ja luvut. Ei otsikoita — ne haetaan selaimessa DOM-korteista."""
     def lista(summat, mukaan_edellinen):
         rivit = []
@@ -408,6 +482,15 @@ def kirjoita_suosio_js(d7, d30, edellinen7, viikko, ikkunat, tunnetut):
             rivit.append(rivi)
         return rivit
 
+    def gsc_lista(summat):
+        rivit = []
+        for slug in sorted(summat, key=lambda s: (-summat[s]["naytot"], s)):
+            if slug not in tunnetut or not summat[slug]["naytot"]:
+                continue
+            rivit.append({"u": slug, "n": summat[slug]["naytot"],
+                          "k": summat[slug]["klikit"]})
+        return rivit
+
     data = {
         "paivitetty": datetime.now(HELSINKI).isoformat(timespec="seconds"),
         "ikkunat": {
@@ -416,6 +499,8 @@ def kirjoita_suosio_js(d7, d30, edellinen7, viikko, ikkunat, tunnetut):
         },
         "d7": lista(d7, True),
         "d30": lista(d30, False),
+        "g7": gsc_lista(g7),
+        "g30": gsc_lista(g30),
         "viikonIlmio": viikko,
     }
     SUOSIO_JS.parent.mkdir(exist_ok=True)
@@ -620,17 +705,31 @@ NOSTOT_HTML = """
     </article>
   </div>
 
-  <article class="nosto" id="nosto-luetuimmat" hidden>
-    <h2 class="nosto-otsikko">
-      Luetuimmat
-      <span class="nosto-valilehdet" role="tablist" aria-label="Aikaväli">
-        <button type="button" class="nosto-valilehti" role="tab" data-ikkuna="d7" aria-selected="true">7 pv</button>
-        <button type="button" class="nosto-valilehti" role="tab" data-ikkuna="d30" aria-selected="false">30 pv</button>
-      </span>
-    </h2>
-    <ol class="nosto-lista" id="luetuimmat-lista"></ol>
-    <p class="nosto-meta" id="luetuimmat-meta"></p>
-  </article>
+  <div class="nostot-parit">
+    <article class="nosto" id="nosto-luetuimmat" hidden>
+      <h2 class="nosto-otsikko">
+        Luetuimmat
+        <span class="nosto-valilehdet" role="tablist" aria-label="Aikaväli">
+          <button type="button" class="nosto-valilehti" role="tab" data-lista="luetuimmat" data-ikkuna="d7" aria-selected="true">7 pv</button>
+          <button type="button" class="nosto-valilehti" role="tab" data-lista="luetuimmat" data-ikkuna="d30" aria-selected="false">30 pv</button>
+        </span>
+      </h2>
+      <ol class="nosto-lista" id="luetuimmat-lista"></ol>
+      <p class="nosto-meta" id="luetuimmat-meta"></p>
+    </article>
+
+    <article class="nosto" id="nosto-googlatuimmat" hidden>
+      <h2 class="nosto-otsikko">
+        Googlatuimmat
+        <span class="nosto-valilehdet" role="tablist" aria-label="Aikaväli">
+          <button type="button" class="nosto-valilehti" role="tab" data-lista="googlatuimmat" data-ikkuna="g7" aria-selected="true">7 pv</button>
+          <button type="button" class="nosto-valilehti" role="tab" data-lista="googlatuimmat" data-ikkuna="g30" aria-selected="false">30 pv</button>
+        </span>
+      </h2>
+      <ol class="nosto-lista" id="googlatuimmat-lista"></ol>
+      <p class="nosto-meta" id="googlatuimmat-meta"></p>
+    </article>
+  </div>
 </section>
 <!-- NOSTOT-LOPPU -->
 """
@@ -708,16 +807,26 @@ document.addEventListener('DOMContentLoaded', function () {
     varatut.add(v.u);
   }
 
-  // ── Luetuimmat ────────────────────────────────────────────────────
-  if (tuore && data.d7 && data.d7.length) {
-    const lista = document.getElementById('luetuimmat-lista');
-    const meta = document.getElementById('luetuimmat-meta');
-    const valilehdet = Array.from(document.querySelectorAll('.nosto-valilehti'));
+  // ── Luetuimmat ja googlatuimmat ───────────────────────────────────
+  // Sama renderöijä molemmille: ne eroavat vain datakentästä ja saatteesta.
+  // Luetuimmat = kuka oikeasti luki sivun, googlatuimmat = kuka näki sen
+  // hakutuloksissa. Järjestys poikkeaa toisistaan, ja se ero on pointti.
+  function pvm(iso) {
+    const o = iso.split('-');
+    return Number(o[2]) + '.' + Number(o[1]) + '.';
+  }
 
-    (data.d7 || []).slice(0, 3).forEach(function (r) { varatut.add(r.u); });
+  function rakennaLista(tunnus, oletusIkkuna, saate) {
+    const lohko = document.getElementById('nosto-' + tunnus);
+    const lista = document.getElementById(tunnus + '-lista');
+    const meta = document.getElementById(tunnus + '-meta');
+    if (!lohko || !lista) return null;
+    const valilehdet = Array.from(
+      document.querySelectorAll('.nosto-valilehti[data-lista="' + tunnus + '"]'));
 
     function piirra(ikkuna) {
-      const rivit = (data[ikkuna] || []).filter(function (r) { return kortit.has(r.u); }).slice(0, 6);
+      const rivit = (data[ikkuna] || [])
+        .filter(function (r) { return kortit.has(r.u); }).slice(0, 6);
       lista.textContent = '';
       rivit.forEach(function (r) {
         const tieto = kortit.get(r.u);
@@ -738,26 +847,35 @@ document.addEventListener('DOMContentLoaded', function () {
         li.appendChild(a);
         lista.appendChild(li);
       });
-      const v = data.ikkunat && data.ikkunat[ikkuna];
-      meta.textContent = v ? ('Ajalta ' + pvm(v[0]) + ' – ' + pvm(v[1])) : '';
-    }
-
-    function pvm(iso) {
-      const o = iso.split('-');
-      return Number(o[2]) + '.' + Number(o[1]) + '.';
+      // g7/g30 käyttävät samoja päivärajoja kuin d7/d30
+      const v = data.ikkunat && data.ikkunat[ikkuna.replace('g', 'd')];
+      meta.textContent = (v ? pvm(v[0]) + ' – ' + pvm(v[1]) : '') +
+                         (saate ? (v ? ' · ' : '') + saate : '');
+      return rivit.length;
     }
 
     valilehdet.forEach(function (nappi) {
       nappi.addEventListener('click', function () {
-        valilehdet.forEach(function (m) { m.setAttribute('aria-selected', String(m === nappi)); });
+        valilehdet.forEach(function (m) {
+          m.setAttribute('aria-selected', String(m === nappi));
+        });
         piirra(nappi.dataset.ikkuna);
       });
     });
 
-    piirra('d7');
     // Vain jos jotain oikeasti piirtyi: tyhjä otsikko välilehtineen on
     // huonompi kuin puuttuva lohko.
-    if (lista.children.length) document.getElementById('nosto-luetuimmat').hidden = false;
+    if (piirra(oletusIkkuna) > 0) {
+      lohko.hidden = false;
+      return true;
+    }
+    return false;
+  }
+
+  if (tuore) {
+    (data.d7 || []).slice(0, 3).forEach(function (r) { varatut.add(r.u); });
+    rakennaLista('luetuimmat', 'd7', '');
+    rakennaLista('googlatuimmat', 'g7', 'näkyi hakutuloksissa');
   }
 
   // ── Satunnainen ilmiö ─────────────────────────────────────────────
@@ -853,7 +971,7 @@ def luonnossivuksi(teksti):
 # ─────────────────────────────────────────────────────────────────────────
 
 def kirjoita_dashboard(ilmiot, d7, d30, edellinen7, viikko, ikkunat, julkaisut,
-                       hylatyt, lahde):
+                       hylatyt, lahde, g7=None, g30=None, lausekkeet=None):
     """Oma analytiikkanäkymä: koko ranking, nousijat, nollat, kategoriat, erät."""
     def e(s):
         return html.escape(str(s), quote=True)
@@ -861,13 +979,19 @@ def kirjoita_dashboard(ilmiot, d7, d30, edellinen7, viikko, ikkunat, julkaisut,
     def n(x):
         return f"{x:,}".replace(",", " ")
 
+    g7 = g7 or {}
+    g30 = g30 or {}
+    lausekkeet = lausekkeet or []
+
     rivit = []
     for i in ilmiot:
         s = i["slug"] + ".html"
         nyt, ennen, kk = d7.get(s, 0), edellinen7.get(s, 0), d30.get(s, 0)
+        gsc = g30.get(s, {"naytot": 0, "klikit": 0})
         rivit.append({**i, "d7": nyt, "ed7": ennen, "d30": kk,
                       "muutos": nyt - ennen,
                       "kasvu": (nyt + VIIKKO_TASOITUS) / (ennen + VIIKKO_TASOITUS),
+                      "g30": gsc["naytot"], "klikit30": gsc["klikit"],
                       "julkaistu": julkaisut.get(i["slug"], "—")})
 
     yht7 = sum(r["d7"] for r in rivit)
@@ -915,9 +1039,10 @@ def kirjoita_dashboard(ilmiot, d7, d30, edellinen7, viikko, ikkunat, julkaisut,
         return '<span class="nolla">0</span>'
 
     ranking = taulukko(
-        ["#", "Ilmiö", "Kategoria", "7 pv", "Δ ed. 7 pv", "30 pv", "Julkaistu"],
+        ["#", "Ilmiö", "Kategoria", "7 pv", "Δ ed. 7 pv", "30 pv",
+         "Google 30 pv", "Klikit", "Julkaistu"],
         [(r["nro"], linkki(r), e(r["kategoria"]), n(r["d7"]), merkki(r["muutos"]),
-          n(r["d30"]), e(r["julkaistu"]))
+          n(r["d30"]), n(r["g30"]), n(r["klikit30"]), e(r["julkaistu"]))
          for r in sorted(rivit, key=lambda r: (-r["d7"], -r["d30"], r["nro"]))])
 
     def suunta_taulu(rivit_, tyhja):
@@ -946,6 +1071,81 @@ def kirjoita_dashboard(ilmiot, d7, d30, edellinen7, viikko, ikkunat, julkaisut,
                  [(r["nro"], linkki(r), e(r["kategoria"]), e(r["julkaistu"]))
                   for r in sorted(nollat, key=lambda r: r["nro"])])
         if nollat else "<p class='ok'>Ei yhtään nollaliikenteen sivua.</p>")
+
+    # ── Google ─────────────────────────────────────────────────────────
+    gsc_yht = sum(r["g30"] for r in rivit)
+    gsc_klikit = sum(r["klikit30"] for r in rivit)
+
+    if gsc_yht:
+        google_taulu = taulukko(
+            ["Ilmiö", "Näytöt 30 pv", "Klikit", "CTR", "Luettu 30 pv"],
+            [(linkki(r), n(r["g30"]), n(r["klikit30"]),
+              f'{r["klikit30"] / r["g30"] * 100:.1f} %' if r["g30"] else "—",
+              n(r["d30"]))
+             for r in sorted(rivit, key=lambda r: -r["g30"])[:25] if r["g30"]])
+
+        # Näkyvyys ilman klikkejä: sivu on hakutuloksissa mutta title tai
+        # kuvaus ei myy. Tämä on suoraan seuraava CTR-työlista.
+        aukot = sorted([r for r in rivit if r["g30"] >= 30 and r["klikit30"] == 0],
+                       key=lambda r: -r["g30"])
+        aukko_taulu = (
+            taulukko(["Ilmiö", "Näytöt 30 pv", "Klikit", "Luettu 30 pv"],
+                     [(linkki(r), n(r["g30"]), n(r["klikit30"]), n(r["d30"]))
+                      for r in aukot[:20]])
+            if aukot else "<p class='ok'>Ei näkyvyysaukkoja.</p>")
+
+        # Sivut jotka saavat lukijoita muualta kuin Googlesta
+        muualta = sorted([r for r in rivit if r["d30"] >= 5 and r["g30"] < r["d30"]],
+                         key=lambda r: -(r["d30"] - r["g30"]))
+        muualta_taulu = (
+            taulukko(["Ilmiö", "Luettu 30 pv", "Google-näytöt", "Erotus"],
+                     [(linkki(r), n(r["d30"]), n(r["g30"]), n(r["d30"] - r["g30"]))
+                      for r in muualta[:15]])
+            if muualta else "<p class='selite'>Ei tällaisia sivuja.</p>")
+
+        lauseke_taulu = taulukko(
+            ["Hakulauseke", "Näytöt", "Klikit", "CTR", "Keskisija", "Sivu"],
+            [(e(l), n(nay), n(kli),
+              f"{kli / nay * 100:.1f} %" if nay else "—",
+              f"{sija:.1f}".replace(".", ","),
+              (linkki(next(r for r in rivit if r["slug"] + ".html" == slug))
+               if any(r["slug"] + ".html" == slug for r in rivit) else e(slug or "—")))
+             for l, slug, nay, kli, sija in lausekkeet[:40]])
+
+        google_osio = f"""
+<section>
+  <h2>Googlatuimmat</h2>
+  <p class="selite">Näyttö tarkoittaa että sivu näkyi hakutuloksissa, ei että joku luki sen.
+  Siksi järjestys poikkeaa luetuimmista — ja se ero on itsessään tieto. Yhteensä
+  {n(gsc_yht)} näyttöä ja {n(gsc_klikit)} klikkiä 30 päivässä.
+  <strong>Huom:</strong> Google-data laahaa 2–3 vrk, joten tuoreimmat päivät ovat vajaita.</p>
+  {google_taulu}
+</section>
+
+<section>
+  <h2>Näkyvyys ilman klikkejä</h2>
+  <p class="selite">Vähintään 30 näyttöä, nolla klikkiä. Sivu löytyy mutta title tai
+  kuvaus ei saa klikkaamaan — tai sija on liian matala. Tämä on suora CTR-työlista.</p>
+  {aukko_taulu}
+</section>
+
+<section>
+  <h2>Hakulausekkeet</h2>
+  <p class="selite">Mitä ihmiset oikeasti kirjoittavat. Suomenkieliset rinnakkaistermit
+  (&quot;suomeksi&quot;-loppuiset haut) kertovat mitä sanaa kannattaa käyttää otsikossa.</p>
+  {lauseke_taulu}
+</section>
+
+<section>
+  <h2>Lukijoita muualta kuin Googlesta</h2>
+  <p class="selite">Enemmän lukukertoja kuin Google-näyttöjä: liikenne tulee suorana,
+  sisäisistä linkeistä tai someen jaettuna. Nämä sivut eivät ole riippuvaisia hausta.</p>
+  {muualta_taulu}
+</section>"""
+    else:
+        google_osio = ('\n<section><h2>Googlatuimmat</h2><p class="selite">'
+                       'Ei Google-dataa. Aseta <code>SUOSIO_SQL_GSC</code> '
+                       '<code>.suosio.env</code>:iin.</p></section>')
 
     if viikko:
         v_nimi = next((r["nimi"] for r in rivit if r["slug"] + ".html" == viikko["u"]), viikko["u"])
@@ -1047,9 +1247,10 @@ def kirjoita_dashboard(ilmiot, d7, d30, edellinen7, viikko, ikkunat, julkaisut,
 <div class="luvut">
   <div class="luku"><b>{n(yht7)}</b><span>lukukertaa 7 pv</span></div>
   <div class="luku"><b>{n(yht30)}</b><span>lukukertaa 30 pv</span></div>
+  <div class="luku"><b>{n(gsc_yht)}</b><span>Google-näyttöä 30 pv</span></div>
+  <div class="luku"><b>{n(gsc_klikit)}</b><span>Google-klikkiä 30 pv</span></div>
   <div class="luku"><b>{len(ilmiot)}</b><span>ilmiötä</span></div>
   <div class="luku"><b>{len(nollat)}</b><span>ilman liikennettä 30 pv</span></div>
-  <div class="luku"><b>{n(round(yht30 / len(ilmiot)))}</b><span>keskiarvo per sivu</span></div>
 </div>
 
 <section>
@@ -1073,6 +1274,8 @@ def kirjoita_dashboard(ilmiot, d7, d30, edellinen7, viikko, ikkunat, julkaisut,
     {lasku_taulu}
   </section>
 </div>
+
+{google_osio}
 
 <section>
   <h2>Kategoriat</h2>
@@ -1179,14 +1382,20 @@ def main():
 
     if args.demo:
         rivit, hylatyt = hae_demo(ikkunat["d30"][0], loppu, ilmiot)
+        gsc_rivit, gsc_hylatyt = [], {}
         lahde = "demo"
     else:
         rivit, hylatyt = hae_kannasta(cfg, ikkunat["d30"][0], loppu)
+        gsc_rivit, gsc_hylatyt = hae_gsc(cfg, ikkunat["d30"][0], loppu)
+        hylatyt = {**hylatyt, **gsc_hylatyt}
         lahde = "kanta"
 
     d7 = summaa(rivit, *ikkunat["d7"])
     d30 = summaa(rivit, *ikkunat["d30"])
     edellinen7 = summaa(rivit, ed_alku, ed_loppu)
+    g7 = summaa_gsc(gsc_rivit, *ikkunat["d7"])
+    g30 = summaa_gsc(gsc_rivit, *ikkunat["d30"])
+    lausekkeet = summaa_lausekkeet(gsc_rivit, *ikkunat["d30"])
 
     viikko, _ = valitse_viikon_ilmio(d7, edellinen7, tanaan,
                                      kirjoita and not args.demo, tunnetut)
@@ -1195,6 +1404,10 @@ def main():
     yht7 = sum(v for k, v in d7.items() if k in tunnetut)
     yht30 = sum(v for k, v in d30.items() if k in tunnetut)
     nollia = len(tunnetut - {k for k, v in d30.items() if v})
+    # Aikaleima ensimmäisenä: yöajo kirjoittaa lokiin append-tilassa, ja ilman
+    # tätä peräkkäiset ajot sulautuvat toisiinsa eikä hiljaista epäonnistumista
+    # erota onnistuneesta.
+    print(f"\n=== {datetime.now(HELSINKI).strftime('%Y-%m-%d %H:%M:%S')} ===")
     print(f"Lähde        {lahde}")
     print(f"Ikkuna       {ikkunat['d30'][0]} – {loppu}  ({len(rivit)} päiväriviä)")
     print(f"Ilmiöitä     {len(ilmiot)}   ilman liikennettä 30 pv: {nollia}")
@@ -1202,10 +1415,22 @@ def main():
     if hylatyt:
         print(f"Tuntemattomia polkuja: {len(hylatyt)} kpl, "
               f"{sum(hylatyt.values())} osumaa — ks. dashboard")
-    print("\nKärki 7 pv:")
+    print("\nLuetuimmat 7 pv:")
     for slug in sorted((k for k in d7 if k in tunnetut), key=lambda s: -d7[s])[:10]:
         nimi = next(i["nimi"] for i in ilmiot if i["slug"] + ".html" == slug)
         print(f"    {d7[slug]:>7}  {nimi}")
+
+    if g30:
+        gsc_yht = sum(v["naytot"] for k, v in g30.items() if k in tunnetut)
+        gsc_klikit = sum(v["klikit"] for k, v in g30.items() if k in tunnetut)
+        print(f"\nGooglatuimmat 7 pv  (30 pv yhteensä {gsc_yht} näyttöä, "
+              f"{gsc_klikit} klikkiä, {len(lausekkeet)} hakulauseketta):")
+        for slug in sorted((k for k in g7 if k in tunnetut),
+                           key=lambda s: -g7[s]["naytot"])[:10]:
+            nimi = next(i["nimi"] for i in ilmiot if i["slug"] + ".html" == slug)
+            print(f"    {g7[slug]['naytot']:>7}  {nimi}")
+    else:
+        print("\nGooglatuimmat: ei dataa (SUOSIO_SQL_GSC puuttuu tai on tyhjä)")
     if viikko:
         nimi = next((i["nimi"] for i in ilmiot if i["slug"] + ".html" == viikko["u"]), viikko["u"])
         print(f"\nViikon ilmiö: {nimi} "
@@ -1218,12 +1443,12 @@ def main():
         return
 
     # ── Kirjoitukset ──────────────────────────────────────────────────
-    koko = kirjoita_suosio_js(d7, d30, edellinen7, viikko, ikkunat, tunnetut)
+    koko = kirjoita_suosio_js(d7, d30, edellinen7, viikko, ikkunat, tunnetut, g7, g30)
     print(f"\n{SUOSIO_JS.relative_to(ROOT)}  {koko/1024:.1f} kt")
 
     kirjoita_dashboard(ilmiot, d7, d30, edellinen7, viikko, ikkunat,
                        lue_julkaisupaivat([i["slug"] for i in ilmiot]),
-                       hylatyt, lahde)
+                       hylatyt, lahde, g7, g30, lausekkeet)
     print(f"{DASHBOARD.relative_to(ROOT)}")
 
     pohja = INDEX.read_text(encoding="utf-8")

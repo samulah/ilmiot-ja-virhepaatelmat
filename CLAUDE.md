@@ -93,6 +93,21 @@ idempotentti ja poistaa edellisen injektion ensin. Oletuksena kohde on
 Tunnukset ja kannan osoite ovat gitignoratussa `.suosio.env`:ssä
 (ks. `.suosio.env.malli`) — eivät koskaan versionhallintaan.
 
+Neljä lohkoa: **viikon ilmiö** (nousija, valitaan maanantaisin), **satunnainen
+ilmiö** (lähde on sivun oma korttilista, toimii ilman dataa), **luetuimmat**
+(sivunäytöt) ja **googlatuimmat** (Google-näytöt). Kaksi viimeistä ovat eri
+asioita eivätkä saman asian kaksi esitystä: luettu = joku avasi sivun,
+googlattu = sivu näkyi hakutuloksissa. Sivu jolla on paljon näyttöjä ja vähän
+lukukertoja on title- tai kuvausongelma, ei sisältöongelma — dashboardin
+"Näkyvyys ilman klikkejä" listaa ne suoraan.
+
+Kannan sudenkuopat, jotka on jo hoidettu kyselyssä ja jotka on syytä muistaa
+jos kyselyä muokataan: ilmiöt.fi on kannassa **kahtena** `sivusto_avain`-arvona
+(rajaa `sivusto_ryhma`, ei avainta), `http_status` sisältää runsaasti
+301-ohjauksia jotka eivät ole sivunäyttöjä, eikä faktataulussa ole bottilippua
+— ryömijät suodatetaan sillä, montako eri sivua sama kävijä avaa yhdessä
+päivässä.
+
 Ilmiöiden numerointia ei koskaan korjata käsin: `scripts/lisaa_ilmiot.py` ja
 `scripts/poista_ilmio.py` numeroivat koko sivuston uudelleen ja päivittävät
 IDS-taulukot, PREV/NEXT-ketjun ja selausnapit. Molemmat ovat kuivaharjoituksia

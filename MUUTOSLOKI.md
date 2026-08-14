@@ -1,5 +1,49 @@
 # Muutosloki — Ilmiöitä (www.ilmiöt.fi)
 
+## 14.8.2026 — Googlatuimmat mukaan ja yöajo pystyyn
+
+Neljäs lohko `fact_gsc_haku`-taulusta: **googlatuimmat**, eli sivut joilla on
+eniten näyttöjä Google-hakutuloksissa. Se ei ole luetuimpien toisinto vaan eri
+mittari — näyttö tarkoittaa että sivu näkyi hakutuloksissa, ei että joku luki
+sen — ja järjestys eroaa selvästi:
+
+| | Luetuimmat 7 pv | Googlatuimmat 7 pv |
+|---|---|---|
+| 1 | DARVO 73 | DARVO 163 |
+| 2 | Rage bait 19 | Rage bait 98 |
+| 3 | Halo-efekti 8 | Hyvesignalointi 92 |
+| 4 | Hanlonin partaveitsi 6 | Dunning–Kruger 82 |
+
+Ero on itsessään tieto. Hyvesignalointi on Googlessa kolmas mutta luetuissa
+kuudes; Dunning–Kruger ei näy luetuimmissa lainkaan. Molemmat ovat
+title/kuvaus-ongelmia, eivät sisältöongelmia.
+
+Dashboard sai neljä uutta osiota, joista käyttökelpoisin on **"Näkyvyys ilman
+klikkejä"** (≥ 30 näyttöä, 0 klikkiä 30 pv). Kärjessä *hyvesignalointi*: 236
+näyttöä, 0 klikkiä, keskisija 7,1 — vertailukohtana *darvo suomeksi* konvertoi
+15,5 % sijalta 2,7. Lisäksi hakulausekkeet (202 kpl), sivutason Google-taulukko
+ja lista sivuista jotka saavat lukijoita muualta kuin hausta. Keskisija on
+näytöillä painotettu, ei suora keskiarvo — muuten yhden näytön päivä painaisi
+yhtä paljon kuin sadan.
+
+Kysely on erillinen `SUOSIO_SQL_GSC` ja **valinnainen**: ilman sitä lohko jää
+pois eikä muu putki häiriinny.
+
+**Yöajo pystyssä** cronissa klo 3:10, `--laheta` **pois** — mikään ei mene
+livepalvelimelle, vain `luonnokset/` päivittyy. Komento testattu riisutussa
+ympäristössä (`env -i`, kotihakemisto, minimaalinen PATH), poistumiskoodi 0;
+cron ajaa kotihakemistosta, joten skriptin polku on absoluuttinen. Jokainen ajo
+kirjoittaa aikaleimallisen lohkon `~/.suosio.log`:iin, jotta hiljainen
+epäonnistuminen erottuu onnistuneesta.
+
+Testit 43/43 läpi, mukaan lukien että kahden listan välilehdet eivät vaikuta
+toisiinsa ja että googlatuimmat piiloutuu datan puuttuessa.
+
+Avoin: viikon ilmiö on nyt Rage bait, joka on myös luetuimpien #2. Päällekkäisyys
+hyväksytään toistaiseksi — algoritmi on oikein, vika on otoskoossa (7 pv:ssä on
+171 lukukertaa 40 sivulle, vain 2 sivua ylittää lattian 10). Kun liikenne kasvaa,
+sama koodi alkaa toimia ilman muutoksia.
+
 ## 14.8.2026 — Suosiodata luonnostettu: luetuimmat, viikon ilmiö, satunnainen ilmiö
 
 Uusi `scripts/paivita_suosio.py` hakee liikennekannasta sivukohtaiset lukukerrat
