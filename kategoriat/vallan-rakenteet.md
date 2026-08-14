@@ -2,15 +2,15 @@
 kat_id: vallan-rakenteet
 h1: Vallan rakenteet — miten valta keskittyy ja suojaa itseään
 otsikko: Vallan rakenteet — 7 tapaa, joilla valta keskittyy ja suojaa itseään
-kuvaus: Overton-ikkuna, sääntelijän kaappaus, paskuuttaminen. Seitsemän mekanismia, joilla valta keskittyy ja suojautuu — ja miksi ne toimivat hitaudellaan.
+kuvaus: Overton-ikkuna, sääntelijän kaappaus, paskuuttaminen. Kahdeksan mekanismia, joilla valta keskittyy ja suojautuu — ja miksi ne toimivat hitaudellaan.
 vari: "#8e44ad"
-paivitetty: 2026-07-25
+paivitetty: 2026-08-14
 naapurit:
   - kategoria-informaatio-ja-propaganda | Informaatio ja propaganda →
   - kategoria-byrokratia-ja-organisaatio | Byrokratia ja organisaatio →
 ---
 
-Valta ei nykyaikaisessa yhteiskunnassa säily pakolla. Se säilyy muokkaamalla pelisääntöjä, joiden puitteissa siitä kilpaillaan — ja sääntöjen muokkaaminen näyttää aina laillisemmalta kuin vallan käyttö. Tämän kategorian seitsemän ilmiötä ovat kaikki muunnelmia samasta havainnosta: vaikuttavin vallankäyttö kohdistuu kehykseen, ei sisältöön.
+Valta ei nykyaikaisessa yhteiskunnassa säily pakolla. Se säilyy muokkaamalla pelisääntöjä, joiden puitteissa siitä kilpaillaan — ja sääntöjen muokkaaminen näyttää aina laillisemmalta kuin vallan käyttö. Tämän kategorian kahdeksan ilmiötä ovat kaikki muunnelmia samasta havainnosta: vaikuttavin vallankäyttö kohdistuu kehykseen, ei sisältöön.
 
 Se selittää myös, miksi näitä on vaikea vastustaa. Yksittäinen päätös on aina perusteltavissa: budjettileikkaus on säästö, asiantuntijan nimitys on osaamisen hyödyntämistä, sääntömuutos on hallinnon selkeyttämistä. Vasta sarja päätöksiä paljastaa suunnan, ja siihen mennessä vastavoima on jo hajallaan.
 
@@ -22,9 +22,11 @@ Se selittää myös, miksi näitä on vaikea vastustaa. Yksittäinen päätös o
 
 **Tuhoa vaihtoehto ennen kuin siitä tulee vaihtoehto.** [Paskuuttaminen](paskuuttaminen.html) ja [starve the beast](starve-the-beast.html) ovat saman strategian kaksi vaihetta: ensin julkinen palvelu tehdään toimintakyvyttömäksi, sitten sen alasajoa perustellaan sillä, ettei se toimi. [Hajota ja hallitse](hajota-hallitse.html) hoitaa vastavoiman: kun mahdolliset haastajat riitelevät keskenään, ne eivät riitele hallitsevan tahon kanssa.
 
+Oma tapauksensa on [vaalilupauksen hinnoittelu](vaalilupauksen-hinnoittelu.html): valta määritellä luku. Kun kukaan ei laske lupauksen hintaa riippumattomasti, luvun esittäjä on samalla sen ainoa tarkistaja — ja hinta lakkaa olemasta ennuste. Alankomaissa ja Australiassa ongelma on ratkaistu laitoksella, Suomessa ei.
+
 Jos luet kategorian järjestyksessä, huomaat että se etenee näkyvästä näkymättömään. Paskuuttamisen näkee, kun palvelu ei toimi. Overton-ikkunan siirtymän huomaa vasta jälkikäteen.
 
-## Seitsemän mekanismia
+## Kahdeksan mekanismia
 
 [[ILMIOT]]
 
@@ -34,6 +36,7 @@ Jos luet kategorian järjestyksessä, huomaat että se etenee näkyvästä näky
 - **Sääntelijän kaappaus on rautaisen lain erikoistapaus.** Molemmissa asiantuntemuksen keskittyminen tuottaa vallan keskittymisen. Ero on vain siinä, kumman puolen organisaatiota tarkastellaan.
 - **Overton-ikkuna on kaikkien muiden edellytys.** Yksikään näistä mekanismeista ei toimi, jos lopputulos on julkisesti mahdoton. Siksi ikkunan siirtäminen tulee aina ensin — ja siksi se on se vaihe, jossa vastustus olisi halvinta.
 - **Hajota ja hallitse ostaa aikaa kaikille muille.** Se ei itsessään siirrä valtaa, vaan estää sen siirtymisen pois. Riittää, että vastavoimalla ei ole yhteistä nimittäjää.
+- **Vaalilupauksen hinnoittelu on kehyksen hallintaa numeroina.** Overton-ikkuna ratkaisee, mistä voi puhua; hinnoittelematon lupaus sen, millä luvulla siitä puhutaan. Kumpikin vaikuttaa ennen kuin yhtäkään päätöstä on tehty.
 - **Valta suojelee valtaa on näiden yhteenlaskettu tulos**, ei erillinen temppu. Kun ikkuna on siirretty, valvoja kaapattu ja vaihtoehdot ajettu alas, laillisuus on jo määritelty uudelleen.
 
 ## Mitä näistä seuraa lukijalle

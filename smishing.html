@@ -3,12 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-  <!-- LUONNOS: poista tämä noindex-rivi kun sivu siirretään pääsivustolle -->
-  <meta name="robots" content="noindex">
-  <title>Hyvesignalointi — hyvettä yleisölle — Ilmiöitä</title>
-  <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="../fonts/fonts.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Smishing — tekstiviesti, joka näyttää tulevan Postilta — Ilmiöitä</title>
+  <link rel="stylesheet" href="style.css?v=20260725">
+  <link rel="stylesheet" href="fonts/fonts.css">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -18,7 +16,7 @@
       if (loaded) return;
       loaded = true;
       var s = document.createElement('script');
-      s.src = 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js';
+      s.src = 'js/mermaid.min.js';
       s.onload = function () {
         mermaid.initialize({ startOnLoad: false, theme: 'base', themeVariables: { fontSize: '12px', fontFamily: "'DM Sans', system-ui, sans-serif", primaryColor: '#FBF5E0', primaryTextColor: '#1A1100', primaryBorderColor: '#C9A84C', lineColor: '#8B6914', secondaryColor: '#F5F0E5', tertiaryColor: '#FDFAF2', mainBkg: '#FBF5E0', nodeBorder: '#C9A84C', clusterBkg: '#F5F0E5', titleColor: '#3A2000', edgeLabelBackground: '#FDFAF2' } });
         mermaid.run();
@@ -92,8 +90,8 @@
     #saantelijan-kaappaus      .ilmio-tag { background: #8e44ad; }
     #rautainen-laki            { border-top-color: #4e342e; }
     #rautainen-laki            .ilmio-tag { background: #4e342e; }
-    #hyvesignalointi { border-top-color: #c62828; }
-    #hyvesignalointi .ilmio-tag { background: #c62828; }
+    #smishing { border-top-color: #0b3d91; }
+    #smishing .ilmio-tag { background: #0b3d91; }
     #firehose-of-falsehood     { border-top-color: #c0392b; }
     #firehose-of-falsehood     .ilmio-tag { background: #c0392b; }
     #valta-suojelee-valtaa     { border-top-color: #2c3e50; }
@@ -565,7 +563,7 @@
     .kortti-breadcrumb a { color: #8B6914; text-decoration: none; }
     .kortti-breadcrumb a:hover { text-decoration: underline; }
     .kortti-breadcrumb-sep { color: #ccc; }
-    .kortti-breadcrumb-kat { color: #666; }
+    .kortti-breadcrumb .kortti-breadcrumb-kat { color: #666; }
     .kortti-random-btn {
       margin-left: auto;
       display: inline-flex;
@@ -656,20 +654,69 @@
 
     body { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
     .ilmio { margin-bottom: 0; }
-  </style>
+
+    /* ── Random-siirtymäanimaatio (scroll reunaan) ── */
+    .random-siirtyma-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.9rem;
+      background: #1C1400;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+    .random-siirtyma-overlay.nakyva {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .random-siirtyma-logo {
+      width: 56px;
+      height: 56px;
+      opacity: 0;
+      transform: scale(0.6) rotate(-8deg);
+      filter: drop-shadow(0 0 18px rgba(201,168,76,0.55));
+    }
+    .random-siirtyma-overlay.nakyva .random-siirtyma-logo {
+      animation: random-logo-pulssi 0.7s cubic-bezier(0.34,1.56,0.64,1) forwards;
+    }
+    @keyframes random-logo-pulssi {
+      0%   { opacity: 0; transform: scale(0.4) rotate(-12deg); }
+      55%  { opacity: 1; transform: scale(1.15) rotate(4deg); }
+      100% { opacity: 1; transform: scale(1) rotate(0deg); }
+    }
+    .random-siirtyma-teksti {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.82em;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      opacity: 0;
+      transition: opacity 0.3s ease 0.15s;
+    }
+    .random-siirtyma-overlay.nakyva .random-siirtyma-teksti { opacity: 1; }
+  
+.infolaatikko h2.laatikko-otsikko, .huomiolaatikko h2.laatikko-otsikko, .vaaralatikko h2.laatikko-otsikko {
+  display: inline; font: inherit; font-weight: 700; color: inherit;
+  margin: 0; padding: 0; letter-spacing: inherit;
+}
+</style>
 
   <!-- SEO -->
-  <meta name="description" content="Hyvesignalointi (virtue signalling) tarkoittaa moraalisen kannan esittämistä oman imagon kiillottamiseksi — näkyvyys maksimoidaan, kustannus minimoidaan.">
-  <link rel="canonical" href="https://www.ilmiöt.fi/hyvesignalointi.html">
-  <meta property="og:title" content="Hyvesignalointi — hyvettä yleisölle — Ilmiöitä">
-  <meta property="og:description" content="Hyvesignalointi (virtue signalling) tarkoittaa moraalisen kannan esittämistä oman imagon kiillottamiseksi — näkyvyys maksimoidaan, kustannus minimoidaan.">
-  <meta property="og:url" content="https://www.ilmiöt.fi/hyvesignalointi.html">
+  <meta name="description" content="Smishing on tekstiviestillä tehtyä kalastelua: paketti odottaa maksua, pankki pyytää vahvistusta. Viesti näyttää aidolta, koska se putoaa samaan ketjuun aitojen kanssa.">
+  <link rel="canonical" href="https://www.ilmiöt.fi/smishing.html">
+  <meta property="og:title" content="Smishing — tekstiviesti, joka näyttää tulevan Postilta — Ilmiöitä">
+  <meta property="og:description" content="Smishing on tekstiviestillä tehtyä kalastelua: paketti odottaa maksua, pankki pyytää vahvistusta. Viesti näyttää aidolta, koska se putoaa samaan ketjuun aitojen kanssa.">
+  <meta property="og:url" content="https://www.ilmiöt.fi/smishing.html">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="fi_FI">
   <meta property="og:site_name" content="Ilmiöitä — Miten valta toimii">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Hyvesignalointi — hyvettä yleisölle — Ilmiöitä">
-  <meta name="twitter:description" content="Hyvesignalointi (virtue signalling) tarkoittaa moraalisen kannan esittämistä oman imagon kiillottamiseksi — näkyvyys maksimoidaan, kustannus minimoidaan.">
+  <meta name="twitter:title" content="Smishing — tekstiviesti, joka näyttää tulevan Postilta — Ilmiöitä">
+  <meta name="twitter:description" content="Smishing on tekstiviestillä tehtyä kalastelua: paketti odottaa maksua, pankki pyytää vahvistusta. Viesti näyttää aidolta, koska se putoaa samaan ketjuun aitojen kanssa.">
   <meta property="og:image" content="https://www.ilmiöt.fi/og/brand.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -692,13 +739,14 @@
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Pesut ja maineenhallinta"
+          "name": "Huijaukset ja petokset",
+          "item": "https://www.ilmiöt.fi/kategoria-huijaukset-ja-petokset.html"
         },
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Hyvesignalointi — hyvettä yleisölle",
-          "item": "https://www.ilmiöt.fi/hyvesignalointi.html"
+          "name": "Smishing — tekstiviesti, joka näyttää tulevan Postilta",
+          "item": "https://www.ilmiöt.fi/smishing.html"
         }
       ]
     },
@@ -710,12 +758,12 @@
         "width": 1200,
         "height": 630
       },
-      "@id": "https://www.ilmiöt.fi/hyvesignalointi.html#article",
-      "url": "https://www.ilmiöt.fi/hyvesignalointi.html",
-      "headline": "Hyvesignalointi — hyvettä yleisölle",
-      "description": "Hyvesignalointi (virtue signalling) tarkoittaa moraalisen kannan esittämistä oman imagon kiillottamiseksi — näkyvyys maksimoidaan, kustannus minimoidaan.",
+      "@id": "https://www.ilmiöt.fi/smishing.html#article",
+      "url": "https://www.ilmiöt.fi/smishing.html",
+      "headline": "Smishing — tekstiviesti, joka näyttää tulevan Postilta",
+      "description": "QR-koodihuijaus eli quishing ohjaa uhrin väärennetyllä QR-koodilla valesivulle maksamaan tai antamaan korttitietonsa. Parkkimittarit ovat tyypillinen kohde.",
       "inLanguage": "fi",
-      "articleSection": "Pesut ja maineenhallinta",
+      "articleSection": "Huijaukset ja petokset",
       "isPartOf": {
         "@type": "CollectionPage",
         "@id": "https://www.ilmiöt.fi/"
@@ -734,8 +782,8 @@
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Hyvesignalointi — hyvettä yleisölle",
-        "description": "Hyvesignalointi (virtue signalling) tarkoittaa moraalisen kannan esittämistä oman imagon kiillottamiseksi — näkyvyys maksimoidaan, kustannus minimoidaan.",
+        "name": "Smishing — tekstiviesti, joka näyttää tulevan Postilta",
+        "description": "QR-koodihuijaus eli quishing ohjaa uhrin väärennetyllä QR-koodilla valesivulle maksamaan tai antamaan korttitietonsa. Parkkimittarit ovat tyypillinen kohde.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
@@ -749,12 +797,35 @@
         "url": "https://www.ilmiöt.fi/tietoa.html",
         "description": "Kirjoittajanimi, jonka takana on kiinnostus valtaan, vaikuttamiseen ja ihmisen päättelyn vinoumiin. Sisältö perustuu julkisiin lähteisiin ja vakiintuneeseen käsitteistöön."
       },
-      "datePublished": "2026-07-06",
-      "dateModified": "2026-07-06"
+      "datePublished": "2026-08-14",
+      "dateModified": "2026-08-14"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.ilmiöt.fi/smishing.html#faq",
+      "inLanguage": "fi",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Mitä smishing tarkoittaa suomeksi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Vakiintunutta suomennosta ei ole. Käytössä ovat tekstiviestikalastelu ja tekstiviestihuijaus; viranomaiset puhuvat huijausviesteistä. Termi on yhdistelmä sanoista SMS ja phishing eli kalastelu, ja se tarkoittaa tekstiviestillä tehtyä tietojenkalastelua."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mitä teen, jos annoin tunnukseni huijausviestin linkkiin?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Soita heti pankkiisi ja sulje verkkopankkitunnukset. Tee rikosilmoitus poliisille ja ilmoita viestistä Kyberturvallisuuskeskukselle. Nopeus ratkaisee: mitä aiemmin tunnukset suljetaan, sitä todennäköisemmin siirto ehditään pysäyttää."
+          }
+        }
+      ]
     }
   ]
 }
-  </script>
+</script>
   <style>
     .ilmio-byline{font-size:.82rem;color:#8B6914;font-style:italic;margin:.15rem 0 1.3rem;}
     .ilmio-byline a{color:#8B6914;}
@@ -767,57 +838,53 @@
 <body>
 
   <div class="kortti-breadcrumb">
-    <a href="../index.html" class="kortti-logo" aria-label="Ilmiöitä — etusivu"><img src="../favicon.svg" alt="Ilmiöitä"></a>
-    <a href="index.html">← Kaikki luonnokset</a>
-    <span class="kortti-breadcrumb-sep">›</span><span class="kortti-breadcrumb-kat">Pesut ja maineenhallinta</span>
+    <a href="index.html" class="kortti-logo" aria-label="Ilmiöitä — etusivu"><img src="favicon.svg" alt="Ilmiöitä"></a>
+    <a href="index.html">← Kaikki ilmiöt</a>
+    <span class="kortti-breadcrumb-sep">›</span><a href="kategoria-huijaukset-ja-petokset.html" class="kortti-breadcrumb-kat">Huijaukset ja petokset</a>
     <button class="kortti-random-btn" onclick="randomIlmio()" title="Satunnainen ilmiö (R)">
       <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>
       <span class="btn-text">Satunnainen</span>
     </button>
   </div>
 
-  <div class="ilmio" id="hyvesignalointi">
-<div class="ilmio-tag">Uusi ilmiö · luonnos</div>
-<h1>Hyvesignalointi — hyvettä yleisölle</h1>
-<p class="ilmio-byline">Kirjoittanut <a href="../tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 6.7.2026</p>
-<p><strong>Hyvesignalointi</strong> (engl. <strong>virtue signalling</strong>) tarkoittaa moraalisen kannan julkista esittämistä, jonka ensisijainen tehtävä on kertoa esittäjästään hyvää — ei edistää itse asiaa. Kannanotto ajoitetaan ja muotoillaan yleisölle: näkyvyys maksimoidaan, kustannus ja sitoutuminen minimoidaan.</p>
-<p>Termin teki tunnetuksi James Bartholomew'n Spectator-kolumni 2015, mutta ilmiö on ikivanha — jo Vuorisaarna varoitti antamasta almuja "torvien soidessa". Taustalla on signalointiteorian kova ydin: moraalinen maine on arvokasta sosiaalista pääomaa, ja kun yleisö näkee vain kannanoton eikä tekoja, kannattaa investoida kannanottoon. Sanat ovat halpoja, teot kalliita — signaali irtoaa teosta aina, kun kukaan ei tarkista.</p>
+  <div class="ilmio" id="smishing">
+<div class="ilmio-tag">Ilmiö 78</div>
+<h1>Smishing — tekstiviesti, joka näyttää tulevan Postilta</h1>
+<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 14.8.2026</p>
+<p><strong>Smishing</strong> (sanoista <em>SMS</em> ja <em>phishing</em>) tarkoittaa tekstiviestillä tehtyä kalastelua. Viesti kertoo, että paketti odottaa pientä maksua, tili on lukittu tai veronpalautus vaatii vahvistuksen, ja tarjoaa linkin. Linkin takana on sivu, joka näyttää oikealta ja pyytää juuri ne tiedot, joilla rahat siirretään: verkkopankkitunnukset ja vahvistuksen.</p>
+<div class="infolaatikko vastauslohko">
+<h2 class="laatikko-otsikko">Mitä smishing tarkoittaa suomeksi?</h2>
+<p style="margin:0.4em 0 0;">Vakiintunutta suomennosta ei ole. Käytössä ovat <strong>tekstiviestikalastelu</strong> ja <em>tekstiviestihuijaus</em>; viranomaiset puhuvat huijausviesteistä. Termi on yhdistelmä sanoista SMS ja phishing eli kalastelu. Suomenkielistä Wikipedia-artikkelia ei ole, vaikka ilmiö on yksi tunnistetuimmista — käytännössä jokainen suomalainen on saanut tällaisen viestin.</p>
+</div>
 <div class="mermaid">
 flowchart TD
-  A["Moraalinen aihe\nnousee pinnalle"] --&gt; K["Julkinen kannanotto:\nhalpa ja näkyvä"]
-  K --&gt; P["Sosiaalinen palkinto:\ntykkäykset, ryhmän\nhyväksyntä, maine"]
-  P --&gt; E["Kallis osa jää tekemättä:\nraha, aika, riski"]
-  E --&gt; L["Asia ei etene —\nimago kylläkin"]
-  L --&gt; A
-  style K fill:#fff3cd,stroke:#f39c12
+  A["Viesti: paketti odottaa\n2,50 € toimitusmaksua"] --&gt; B["Linkki näyttää\nkuljetusyhtiön sivulta"]
+  B --&gt; C["Kortti- tai pankkitunnukset"]
+  C --&gt; D["Vahvistus omalla\ntunnistusvälineellä"]
+  D --&gt; E["Tililtä lähtee\nmuu kuin 2,50 €"]
   style E fill:#fdf0f0,stroke:#c0392b
     </div>
-<p class="kaavio-selitys">Signaloinnin logiikka: palkinto tulee kannanotosta, kustannus tulisi teoista — joten teot jäävät pois.</p>
+<p class="kaavio-selitys">Pieni summa ei ole huijauksen saalis vaan sen sisäänpääsy: se saa vahvistuksen tuntumaan vaarattomalta.</p>
+<p>Uskottavuus syntyy kahdesta asiasta. Ensinnäkin teema osuu ajankohtaan — pakettiviestit tulevat joulukuussa, veroviestit keväällä. Toiseksi viesti voi pudota samaan keskusteluketjuun aitojen viestien kanssa, jos lähettäjätunnus on väärennetty; silloin puhelin näyttää sen tutun nimen alla. Suomessa organisaatioiden on pitänyt luvittaa käyttämänsä lähettäjätunnukset ennakkoon toukokuusta 2026 alkaen, eikä suojattua tunnusta voi enää väärentää. Siksi huijausviesti tulee yhä useammin tavallisesta puhelinnumerosta tai muusta viestisovelluksesta.</p>
 <div class="infolaatikko">
-<strong>Tunnistettavia muotoja:</strong>
+<h2 class="laatikko-otsikko">Miten smishing eroaa QR-koodihuijauksesta?</h2> Kanava on eri, loppu sama: molemmissa uhri ohjataan väärennetylle sivulle antamaan tunnuksensa. <a href="qr-koodihuijaus.html">QR-koodihuijaus</a> odottaa fyysisessä paikassa, smishing tulee taskuun. Molemmissa suojaus on sama: mene palveluun itse, älä linkin kautta.
+    </div>
+<div class="huomiolaatikko">
+<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2>
 <ul style="margin:0.5em 0 0;">
-<li><strong>Mustat neliöt (2020):</strong> #BlackoutTuesday keräsi Instagramiin yli 20 miljoonaa mustaa neliötä — samalla neliövyöry hautasi alleen aihetunnisteen, jolla aktivistit jakoivat käytännön tietoa.</li>
-<li><strong>Sateenkaaripesu:</strong> yritys vaihtaa logonsa sateenkaarelle Pride-kuukaudeksi — paitsi markkinoilla, joilla se voisi maksaa jotain.</li>
-<li><strong>Slacktivismi:</strong> jako, reaktio tai vetoomusklikkaus korvaa lahjoituksen, vapaaehtoistyön ja äänestämisen — ja tuntuu silti osallistumiselta.</li>
-<li><strong>"Tietoisuuden lisääminen":</strong> poliitikko tai organisaatio järjestää kampanjan aiheesta, josta se voisi päättää — kampanja korvaa päätöksen.</li>
+<li>Älä avaa viestin linkkiä. Kirjoita palvelun osoite itse tai käytä sen omaa sovellusta — paketin seuranta löytyy sieltä.</li>
+<li>Pankki ei kysy tunnuslukuja eikä pyydä vahvistamaan mitään viestin linkissä. Yksikään aito toimija ei tee sitä.</li>
+<li>Epäile pientä summaa erityisesti: se on tehty näyttämään liian pieneltä tarkistettavaksi.</li>
+<li>Jos annoit tunnukset, soita heti pankkiin ja sulje ne. Tee rikosilmoitus ja ilmoita viestistä Kyberturvallisuuskeskukselle.</li>
 </ul>
 </div>
-<p>Termillä on kuitenkin kaksi terää. <strong>"Hyvesignalointi" on myös lyömäase</strong>, jolla minkä tahansa vilpittömän kannanoton voi ohittaa käsittelemättä itse asiaa: syytös arvailee motiivin ja korvaa argumentin (ad hominem). Eikä motiivien sekoittuminen tee teoista arvottomia — lahjoitus auttaa, vaikka lahjoittaja kertoisi siitä. Syytöksen viljelijä signaloi usein itsekin: kyynisyys on oman ryhmän hyve.</p>
-<div class="huomiolaatikko">
-<strong>Erottaminen:</strong> Katso kustannusta ja jatkuvuutta, älä äänenpainoja. Aito sitoutuminen maksaa jotain — rahaa, aikaa, riskin tai epäsuosion omassa viiteryhmässä — ja jatkuu, kun kamerat sammuvat. Signalointi on ilmaista, tarkasti ajoitettua ja loppuu kun huomio loppuu. Yritykseltä kannattaa verrata kampanjaa ja rivejä: lahjoitusten summat, alihankintaketju, työolot. Ja itseltä voi kysyä ennen jakonappia: teenkö tämän asian vai itseni takia? Molempia saa — mutta vain toinen muuttaa jotain.
-    </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
 <div class="lue-lisaa-rivi">
-<span class="lue-lisaa-tyyppi">Kirjoja</span>
-<ul class="lue-lisaa-lista">
-<li><cite>The Elephant in the Brain</cite> — Kevin Simler &amp; Robin Hanson (2018)</li>
-</ul>
-</div>
-<div class="lue-lisaa-rivi">
 <span class="lue-lisaa-tyyppi">Verkossa</span>
 <ul class="lue-lisaa-lista">
-<li><a href="https://en.wikipedia.org/wiki/Virtue_signalling" target="_blank" rel="noopener">Wikipedia: Virtue signalling (englanniksi)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/SMS_phishing" target="_blank" rel="noopener">Wikipedia: SMS phishing (englanniksi)</a></li>
+<li><a href="https://www.kyberturvallisuuskeskus.fi/" target="_blank" rel="noopener">Kyberturvallisuuskeskus — ajankohtaiset huijausvaroitukset</a></li>
 </ul>
 </div>
 </div>
@@ -825,24 +892,52 @@ flowchart TD
 
   <aside class="liittyvat" aria-label="Liittyvät ilmiöt">
     <h2>Liittyvät ilmiöt</h2>
-    <ul>
-      <li><a href="../viherpesu.html">Viherpesu — vihreää pintaa ilman tekoja</a></li>
-      <li><a href="../konsensus-fetissi.html">Konsensus fetissi — kun yksimielisyydestä tulee itseisarvo</a></li>
-      <li><a href="../sosiaalinen-todiste.html">Sosiaalinen todiste -manipulaatio — "muutkin jo ostivat"</a></li>
-      <li><a href="../performatiivinen-lasnaolo.html">Performatiivinen läsnäolo — näytelmä sitoutumisesta</a></li>
-    </ul>
+    <div class="liittyvat-kortit">
+    <a href="qr-koodihuijaus.html" class="liittyvat-kortti" style="--c:#0d47a1">
+      <span class="liittyvat-numero">74</span>
+      <span class="liittyvat-teksti">
+        <span class="liittyvat-nimi">QR-koodihuijaus</span>
+        <span class="liittyvat-kuvaus">Väärennetty QR-koodi ohjaa valesivulle maksamaan — parkkimittarit ovat tyypillinen kohde.</span>
+      </span>
+      <span class="liittyvat-nuoli" aria-hidden="true">›</span>
+    </a>
+    <a href="aaniklooni-huijaus.html" class="liittyvat-kortti" style="--c:#7f0000">
+      <span class="liittyvat-numero">77</span>
+      <span class="liittyvat-teksti">
+        <span class="liittyvat-nimi">Ääniklooni-huijaus</span>
+        <span class="liittyvat-kuvaus">Muutaman sekunnin näyte riittää: tuttu ääni pyytää rahaa kiireellä, eikä kuulo enää todista mitään.</span>
+      </span>
+      <span class="liittyvat-nuoli" aria-hidden="true">›</span>
+    </a>
+    <a href="deepfake-sijoitushuijaus.html" class="liittyvat-kortti" style="--c:#9c4dcc">
+      <span class="liittyvat-numero">79</span>
+      <span class="liittyvat-teksti">
+        <span class="liittyvat-nimi">Deepfake-sijoitushuijaus</span>
+        <span class="liittyvat-kuvaus">Tuttu kasvo ja tutun näköinen uutissivu mainostavat alustaa, jolla saldo nousee mutta raha ei palaa.</span>
+      </span>
+      <span class="liittyvat-nuoli" aria-hidden="true">›</span>
+    </a>
+    <a href="ennakkomaksuhuijaus.html" class="liittyvat-kortti" style="--c:#303f9f">
+      <span class="liittyvat-numero">72</span>
+      <span class="liittyvat-teksti">
+        <span class="liittyvat-nimi">Ennakkomaksuhuijaus (419)</span>
+        <span class="liittyvat-kuvaus">Suuri summa odottaa — kunhan maksat ensin "pienen" käsittelymaksun, ja sitten seuraavan.</span>
+      </span>
+      <span class="liittyvat-nuoli" aria-hidden="true">›</span>
+    </a>
+    </div>
   </aside>
 
   <nav class="kortti-nav">
-    <a class="kortti-nav-btn" href="tekoalypesu.html">← Tekoälypesu — tekoälyä puheissa, ei tuotteessa</a>
+    <a class="kortti-nav-btn" href="aaniklooni-huijaus.html">← Ääniklooni-huijaus — tuttu ääni puhelimessa ei enää todista mitään</a>
     <div class="kortti-nav-center">
-      <span class="kortti-nav-laskuri">2 / 15 · luonnos</span>
+      <span class="kortti-nav-laskuri">78 / 139</span>
       <span class="kortti-nav-vinkki">
         <kbd>&#8592;</kbd> <kbd>&#8594;</kbd> selaa &middot; <kbd>R</kbd> satunnainen
         <span class="touch-vinkki">&nbsp;· swipe &#8592;&#8594; tai &#8595; random</span>
       </span>
     </div>
-    <a class="kortti-nav-btn" href="hiljainen-irtisanominen.html">Hiljainen irtisanominen — savustus ilman papereita →</a>
+    <a class="kortti-nav-btn" href="deepfake-sijoitushuijaus.html">Deepfake-sijoitushuijaus — tuttu kasvo mainostaa alustaa, jota ei ole →</a>
   </nav>
 
   
@@ -1013,16 +1108,137 @@ flowchart TD
 
   <script>
 (function () {
-  const IDS = ["tekoalypesu","hyvesignalointi","hiljainen-irtisanominen","haamutyopaikat","streisand-ilmio","trollitehdas","kuollut-kissa","dunning-kruger","suunniteltu-vanheneminen","kuollut-internet","rage-bait","tilausansa","qr-koodihuijaus","toimitusjohtajahuijaus","rug-pull"];
-  const PREV = 'tekoalypesu.html';
-  const NEXT = 'hiljainen-irtisanominen.html';
+  const IDS = ["paskuuttaminen", "starve-the-beast", "overton-ikkuna", "saantelijan-kaappaus", "rautainen-laki", "valta-suojelee-valtaa", "hajota-hallitse", "vaalilupauksen-hinnoittelu", "bkt-harha", "astroturf", "firehose-of-falsehood", "manufactured-consent", "betteridgen-laki", "inokulointiteoria", "whataboutismi", "streisand-ilmio", "trollitehdas", "kuollut-kissa", "brandolinin-laki", "poen-laki", "godwinin-laki", "backfire-effect", "darvo", "halo-efekti", "konsensus-fetissi", "omenoita-appelsiineja", "blame-game", "gaslighting", "maalitolppien-siirtaminen", "argumenttitulva", "sunk-cost-harha", "jarjestelman-puolustelu", "dunning-kruger", "hanlonin-partaveitsi", "occamin-partaveitsi", "simple-sabotage", "kafka-ilmio", "catch-22", "goodhartin-laki", "hippo-efekti", "performatiivinen-lasnaolo", "rituaalinen-raportointi", "initiointirituaalit", "portinvartija-kulttuuri", "strateginen-osaamattomuus", "fofo", "sivustakatsojan-efekti", "parkinsonin-laki", "peterin-periaate", "pareto-periaate", "brooksin-laki", "yhdeksanyhdeksan", "hofstadterin-laki", "kuolonmarssi", "lukittu-paatos", "strateginen-aliarviointi", "paatosperainen-todistelu", "lapi-hinnalla-milla-hyvansa", "tekninen-velka", "conways-laki", "bikeshedding", "scope-creep", "korkoa-korolle", "negatiivinen-korkoa", "korkokierre", "honeypot-huijaus", "bait-and-switch", "kaarmeoljy", "ponzi-pyramidi", "pump-and-dump", "pig-butchering", "ennakkomaksuhuijaus", "badger-game", "qr-koodihuijaus", "toimitusjohtajahuijaus", "rug-pull", "aaniklooni-huijaus", "smishing", "deepfake-sijoitushuijaus", "ilmainen-naytetyo", "exposure-maksu", "lowball-hinnoittelu", "valittajan-skimmaus", "tilipuristus", "foot-in-the-door", "door-in-the-face", "hintaankkurointi", "houkutinvaihtoehto", "vastavuoroisuuden-ansa", "sosiaalinen-todiste", "painostusclose", "shrinkflaatio", "suunniteltu-vanheneminen", "tilausansa", "doomscrolling", "kaikukammio", "ai-slop", "parasosiaalinen-suhde", "kuollut-internet", "rage-bait", "klikkiotsikko", "engagement-bait", "1-prosentin-saanto", "aanekas-vahemmisto", "vaalikone-efekti", "tekoalypsykoosi", "evasteansa", "piilokulut", "pakotettu-jatkuvuus", "confirmshaming", "oletusasetusansa", "viherpesu", "sinipesu", "urheilupesu", "pinkkipesu", "tekoalypesu", "hyvesignalointi", "hiljainen-irtisanoutuminen", "hiljainen-irtisanominen", "haamutyopaikat", "kaksois-y-akseli", "pinta-alaharha", "cherry-picking-aikavali", "keskiarvo-vs-mediaani", "suhteellinen-riski", "selviytymisharha", "simpsonin-paradoksi", "p-hakkerointi", "kannatusmittausten-virhemarginaali", "uutiskynnys", "uutisautiomaa", "paasyjournalismi", "tiedotejournalismi", "branditurvallisuus", "huonojen-uutisten-hautaaminen", "vaara-tasapaino", "keharaportointi", "gell-mannin-amnesia", "vihamielisen-median-harha"];
+  const PREV = 'aaniklooni-huijaus.html';
+  const NEXT = 'deepfake-sijoitushuijaus.html';
 
   function randomIlmio() {
     let id;
-    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'hyvesignalointi');
+    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'smishing');
+    merkitseRandomHyppy();
     window.location.href = id + '.html';
   }
   window.randomIlmio = randomIlmio;
+
+  /* ── Reunaan rullattaessa: logoanimaatio, sitten siirtymä ── */
+  var _siirtymaKaynnissa = false;
+
+  var RANDOM_SYVYYS_KEY = 'random-syvyys';
+  function lueRandomSyvyys() {
+    var v = parseInt(sessionStorage.getItem(RANDOM_SYVYYS_KEY) || '0', 10);
+    return isNaN(v) ? 0 : v;
+  }
+  var randomSyvyys = lueRandomSyvyys();
+  var VOI_JATKAA_KEY = 'voi-jatkaa-eteenpain';
+  var voiJatkaaEteenpain = sessionStorage.getItem(VOI_JATKAA_KEY) === '1';
+  function merkitseRandomHyppy() {
+    sessionStorage.setItem(RANDOM_SYVYYS_KEY, String(randomSyvyys + 1));
+    sessionStorage.setItem(VOI_JATKAA_KEY, '0');
+    voiJatkaaEteenpain = false;
+  }
+  function nollaaRandomKetju() {
+    sessionStorage.setItem(RANDOM_SYVYYS_KEY, '0');
+    sessionStorage.setItem(VOI_JATKAA_KEY, '0');
+    voiJatkaaEteenpain = false;
+  }
+  function naytaKumausEfekti() {
+    var b = document.body;
+    b.style.transition = 'transform 0.15s ease-out';
+    b.style.transform = 'translateY(14px)';
+    setTimeout(function () {
+      b.style.transition = 'transform 0.25s cubic-bezier(0.34,1.56,0.64,1)';
+      b.style.transform = 'translateY(0)';
+    }, 130);
+  }
+  document.querySelectorAll('a.kortti-nav-btn').forEach(function (a) {
+    a.addEventListener('click', nollaaRandomKetju);
+  });
+
+  function naytaSiirtyma(teksti, kohdeUrl) {
+    if (_siirtymaKaynnissa || !kohdeUrl) return;
+    _siirtymaKaynnissa = true;
+    var overlay = document.createElement('div');
+    overlay.className = 'random-siirtyma-overlay';
+    overlay.innerHTML =
+      '<img class="random-siirtyma-logo" src="favicon.svg" alt="">' +
+      '<span class="random-siirtyma-teksti">' + teksti + '&hellip;</span>';
+    document.body.appendChild(overlay);
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () { overlay.classList.add('nakyva'); });
+    });
+    setTimeout(function () { window.location.href = kohdeUrl; }, 650);
+  }
+  function naytaRandomSiirtyma() {
+    if (_siirtymaKaynnissa) return;
+    var id;
+    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'smishing');
+    merkitseRandomHyppy();
+    naytaSiirtyma('Satunnainen ilmiö', id + '.html');
+  }
+  window.naytaRandomSiirtyma = naytaRandomSiirtyma;
+  function naytaAlasSiirtyma() {
+    if (_siirtymaKaynnissa) return;
+    if (voiJatkaaEteenpain) {
+      randomSyvyys += 1;
+      sessionStorage.setItem(RANDOM_SYVYYS_KEY, String(randomSyvyys));
+      sessionStorage.setItem(VOI_JATKAA_KEY, '0');
+      voiJatkaaEteenpain = false;
+      _siirtymaKaynnissa = true;
+      var overlay = document.createElement('div');
+      overlay.className = 'random-siirtyma-overlay';
+      overlay.innerHTML =
+        '<img class="random-siirtyma-logo" src="favicon.svg" alt="">' +
+        '<span class="random-siirtyma-teksti">Eteenpäin&hellip;</span>';
+      document.body.appendChild(overlay);
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () { overlay.classList.add('nakyva'); });
+      });
+      setTimeout(function () { history.forward(); }, 650);
+    } else {
+      naytaRandomSiirtyma();
+    }
+  }
+  function naytaTakaisinSiirtyma() {
+    if (_siirtymaKaynnissa) return;
+    if (randomSyvyys > 0) {
+      randomSyvyys -= 1;
+      sessionStorage.setItem(RANDOM_SYVYYS_KEY, String(randomSyvyys));
+      sessionStorage.setItem(VOI_JATKAA_KEY, '1');
+      _siirtymaKaynnissa = true;
+      var overlay = document.createElement('div');
+      overlay.className = 'random-siirtyma-overlay';
+      overlay.innerHTML =
+        '<img class="random-siirtyma-logo" src="favicon.svg" alt="">' +
+        '<span class="random-siirtyma-teksti">Takaisin&hellip;</span>';
+      document.body.appendChild(overlay);
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () { overlay.classList.add('nakyva'); });
+      });
+      setTimeout(function () { history.back(); }, 650);
+    } else {
+      naytaKumausEfekti();
+    }
+  }
+
+  /* Hiiren rullalla pohjaan asti → random, ylös asti alusta → edellinen */
+  var _wheelKertyma = 0, _wheelAika = 0;
+  document.addEventListener('wheel', function (e) {
+    if (_siirtymaKaynnissa || e.deltaY === 0) { _wheelKertyma = 0; return; }
+
+    var atBottom = window.scrollY + window.innerHeight >=
+      document.documentElement.scrollHeight - 4;
+    var atTop = window.scrollY <= 4;
+    var suuntaOk = (e.deltaY > 0 && atBottom) || (e.deltaY < 0 && atTop);
+    if (!suuntaOk) { _wheelKertyma = 0; return; }
+
+    var now = Date.now();
+    if (now - _wheelAika > 500) _wheelKertyma = 0;
+    _wheelAika = now;
+    _wheelKertyma += e.deltaY;
+
+    if (_wheelKertyma > 140) naytaAlasSiirtyma();
+    else if (_wheelKertyma < -140) naytaTakaisinSiirtyma();
+  }, { passive: true });
 
   /* ── Sisääntuloanimaatio ── */
   (function () {
@@ -1045,16 +1261,17 @@ flowchart TD
   document.addEventListener('keydown', function (e) {
     if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
     if (e.ctrlKey || e.metaKey || e.altKey) return;
-    if (e.key === 'ArrowLeft'  && PREV) window.location.href = PREV;
-    if (e.key === 'ArrowRight' && NEXT) window.location.href = NEXT;
+    if (e.key === 'ArrowLeft'  && PREV) { nollaaRandomKetju(); window.location.href = PREV; }
+    if (e.key === 'ArrowRight' && NEXT) { nollaaRandomKetju(); window.location.href = NEXT; }
     if (e.key === 'r' || e.key === 'R') randomIlmio();
   });
 
   /* ── Swipe-eleet ── */
-  var _tx = 0, _ty = 0, _sx = false, _live = false;
+  var _tx = 0, _ty = 0, _tt = 0, _sx = false, _live = false;
   document.addEventListener('touchstart', function (e) {
     _tx = e.touches[0].clientX;
     _ty = e.touches[0].clientY;
+    _tt = Date.now();
     _sx = false; _live = false;
   }, { passive: true });
   document.addEventListener('touchmove', function (e) {
@@ -1062,9 +1279,9 @@ flowchart TD
     var dx = e.touches[0].clientX - _tx;
     var dy = e.touches[0].clientY - _ty;
     if (!_live) {
-      if (Math.abs(dx) > Math.abs(dy) * 1.3 && Math.abs(dx) > 8) {
+      if (Math.abs(dx) > Math.abs(dy) * 1.3 && Math.abs(dx) > 22) {
         _live = true;
-      } else if (Math.abs(dy) > Math.abs(dx) * 1.3 && Math.abs(dy) > 8) {
+      } else if (Math.abs(dy) > Math.abs(dx) * 1.3 && Math.abs(dy) > 22) {
         _sx = true; return;
       }
     }
@@ -1078,10 +1295,12 @@ flowchart TD
     var dx = e.changedTouches[0].clientX - _tx;
     var dy = e.changedTouches[0].clientY - _ty;
     var adx = Math.abs(dx), ady = Math.abs(dy);
+    var nopeaTarpeeksi = (Date.now() - _tt) < 380;
     if (_live) {
-      if (adx > 70) {
+      if (adx > 120 && nopeaTarpeeksi) {
         var target = dx < 0 ? NEXT : PREV;
         if (target) {
+          nollaaRandomKetju();
           sessionStorage.setItem('swipe-dir', dx < 0 ? 'right' : 'left');
           document.body.style.transition = 'transform 0.22s cubic-bezier(0.4,0,1,1)';
           document.body.style.transform = 'translateX(' + (dx < 0 ? -window.innerWidth : window.innerWidth) + 'px)';
@@ -1094,13 +1313,13 @@ flowchart TD
         document.body.style.transition = 'transform 0.28s cubic-bezier(0.25,0.46,0.45,0.94)';
         document.body.style.transform = 'translateX(0)';
       }
-    } else if (!_sx && ady > adx * 1.5 && ady > 80) {
+    } else if (!_sx && ady > adx * 1.5 && ady > 140 && nopeaTarpeeksi) {
       if (dy > 0) {
         var atBottom = window.scrollY + window.innerHeight >=
           document.documentElement.scrollHeight - 60;
-        if (atBottom) randomIlmio();
+        if (atBottom) naytaAlasSiirtyma();
       } else {
-        if (window.scrollY < 60) history.back();
+        if (window.scrollY < 60) naytaTakaisinSiirtyma();
       }
     }
   }, { passive: true });
@@ -1108,7 +1327,7 @@ flowchart TD
   </script>
 
   <footer class="ilmio-footer">
-    <p>© 2026 Ilmiöitä — Miten valta toimii · Kirjoittanut Ilmiömies · <a href="../tietoa.html">Tietoa sivustosta ja tekijästä</a></p>
+    <p>© 2026 Ilmiöitä — Miten valta toimii · Kirjoittanut Ilmiömies · <a href="tietoa.html">Tietoa sivustosta ja tekijästä</a></p>
   </footer>
 </body>
 </html>

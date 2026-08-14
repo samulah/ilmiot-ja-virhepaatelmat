@@ -2,9 +2,9 @@
 kat_id: huijaukset-ja-petokset
 h1: Huijaukset ja petokset — sama kaava yhdestätoista eri kulmasta
 otsikko: Huijaustyypit — 11 klassista petosmallia ja miten ne tunnistaa
-kuvaus: Ponzi, pig butchering, rug pull, toimitusjohtajahuijaus. Yksitoista huijaustyyppiä ja se neljän vaiheen kaava, joka toistuu lähes jokaisessa.
+kuvaus: Ponzi, pig butchering, rug pull, toimitusjohtajahuijaus. Neljätoista huijaustyyppiä ja se neljän vaiheen kaava, joka toistuu lähes jokaisessa.
 vari: "#c62828"
-paivitetty: 2026-07-25
+paivitetty: 2026-08-14
 naapurit:
   - kategoria-myyntikikat-ja-painostus | Myyntikikat ja painostus →
   - kategoria-psykologia-ja-kognitio | Psykologia ja kognitio →
@@ -13,19 +13,21 @@ naapurit:
 
 Huijausten torjunnassa on yksi tehokas oivallus, ja se ei ole huijaustyyppien ulkoa opettelu. Uusia variaatioita syntyy nopeammin kuin niitä ehtii listata — QR-koodihuijaus on vanha valeostoslinkki uudella jakelutavalla, rug pull on pump and dump lohkoketjussa. **Yksittäisen tempun tunnistaminen suojaa vain siltä tempulta. Kaavan tunnistaminen suojaa myös siltä, jota et ole vielä nähnyt.**
 
-Lähes jokainen tämän kategorian yhdestätoista mallista etenee samassa neljässä vaiheessa.
+Lähes jokainen tämän kategorian neljästätoista mallista etenee samassa neljässä vaiheessa.
 
 ## Neljä vaihetta
 
-**1. Houkutin, joka on liian hyvä.** Lupaus poikkeuksellisesta tuotosta, ilmaisesta edusta tai odottamattomasta perinnöstä. [Ennakkomaksuhuijaus](ennakkomaksuhuijaus.html) on tästä puhtain esimerkki, [käärmeöljy](kaarmeoljy.html) sen tuoteversio ja [honeypot-huijaus](honeypot-huijaus.html) sen ansamuoto. [Bait and switch](bait-and-switch.html) käyttää houkutinta vain paikalle saamiseen — myytävä tuote on eri.
+**1. Houkutin, joka on liian hyvä.** Lupaus poikkeuksellisesta tuotosta, ilmaisesta edusta tai odottamattomasta perinnöstä. [Ennakkomaksuhuijaus](ennakkomaksuhuijaus.html) on tästä puhtain esimerkki, [käärmeöljy](kaarmeoljy.html) sen tuoteversio ja [honeypot-huijaus](honeypot-huijaus.html) sen ansamuoto. [Bait and switch](bait-and-switch.html) käyttää houkutinta vain paikalle saamiseen — myytävä tuote on eri. [Deepfake-sijoitushuijaus](deepfake-sijoitushuijaus.html) ei keksi houkutinta itse vaan lainaa sen tunnetuilta kasvoilta ja uutissivun ulkoasulta.
 
-**2. Luottamuksen rakentaminen.** Tässä vaiheessa erottuvat amatöörit ja ammattilaiset. [Pig butchering](pig-butchering.html) on nimensä mukaisesti pitkäjänteinen: uhria ”lihotetaan” viikkojen ajan aidolta tuntuvalla suhteella ja oikeilla pienillä voitoilla ennen kuin tili tyhjennetään. [Ponzi ja pyramidihuijaus](ponzi-pyramidi.html) rakentaa luottamuksen maksamalla ensimmäisille todellisia tuottoja — uusien sijoittajien rahoista. [Toimitusjohtajahuijaus](toimitusjohtajahuijaus.html) ei rakenna luottamusta lainkaan vaan lainaa sen valmiina organisaation hierarkiasta.
+**2. Luottamuksen rakentaminen.** Tässä vaiheessa erottuvat amatöörit ja ammattilaiset. [Pig butchering](pig-butchering.html) on nimensä mukaisesti pitkäjänteinen: uhria ”lihotetaan” viikkojen ajan aidolta tuntuvalla suhteella ja oikeilla pienillä voitoilla ennen kuin tili tyhjennetään. [Ponzi ja pyramidihuijaus](ponzi-pyramidi.html) rakentaa luottamuksen maksamalla ensimmäisille todellisia tuottoja — uusien sijoittajien rahoista. [Toimitusjohtajahuijaus](toimitusjohtajahuijaus.html) ei rakenna luottamusta lainkaan vaan lainaa sen valmiina organisaation hierarkiasta. [Ääniklooni-huijaus](aaniklooni-huijaus.html) vie saman askeleen pidemmälle ja kopioi luottamuksen suoraan äänestä, jolloin viimeinen tarkistuskohta katoaa.
 
-**3. Keinotekoinen kiire.** Tarjous umpeutuu, tili suljetaan, kurssi karkaa. Kiireen tehtävä on aina sama: estää se, että kysyisit joltakulta toiselta. [Pump and dump](pump-and-dump.html) ja [rug pull](rug-pull.html) tekevät kiireestä markkinan ominaisuuden — hinta todella nousee, ja juuri se on ansa. [QR-koodihuijaus](qr-koodihuijaus.html) käyttää arjen kiirettä sellaisenaan: parkkimittarilla ei pysähdytä tarkistamaan verkkotunnusta.
+**3. Keinotekoinen kiire.** Tarjous umpeutuu, tili suljetaan, kurssi karkaa. Kiireen tehtävä on aina sama: estää se, että kysyisit joltakulta toiselta. [Pump and dump](pump-and-dump.html) ja [rug pull](rug-pull.html) tekevät kiireestä markkinan ominaisuuden — hinta todella nousee, ja juuri se on ansa. [QR-koodihuijaus](qr-koodihuijaus.html) käyttää arjen kiirettä sellaisenaan: parkkimittarilla ei pysähdytä tarkistamaan verkkotunnusta. [Smishing](smishing.html) tuo kiireen tekstiviestinä, joka putoaa samaan ketjuun aitojen viestien kanssa.
+
+Kolme uusinta mallia ovat tekoälyn tuotantoversioita vanhoista kaavoista. Uutta ei ole juoni vaan hinta: ääninäyte, kasvot ja uskottava sivusto ovat halventuneet niin paljon, että sama huijaus kannattaa tehdä sadalle kohteelle yhden sijaan.
 
 **4. Ulospääsyn sulkeminen.** Viimeinen vaihe tekee avun pyytämisestä kalliimpaa kuin maksamisesta. [Badger game](badger-game.html) on tämän suora muoto — uhri houkutellaan kiusalliseen tilanteeseen ja kiristetään vaikenemaan. Useimmissa muissa sulkeminen on hienovaraisempaa: häpeä riittää. Se on syy, jonka vuoksi huijaukset jäävät ilmoittamatta ja sama tekijä jatkaa.
 
-## Yksitoista mallia
+## Neljätoista mallia
 
 [[ILMIOT]]
 
@@ -36,6 +38,7 @@ Lähes jokainen tämän kategorian yhdestätoista mallista etenee samassa neljä
 - **Pig butchering ja badger game käyttävät kumpikin ihmissuhdetta työkaluna** — toinen luottamuksen rakentamiseen, toinen sen räjäyttämiseen. Molempien teho perustuu siihen, ettei uhri halua kertoa tilanteesta kenellekään.
 - **Toimitusjohtajahuijaus on [portinvartija-kulttuurin](portinvartija-kulttuuri.html) hyväksikäyttöä.** Se toimii täsmälleen niissä organisaatioissa, joissa esimiehen pyyntöä ei kyseenalaisteta.
 - **Käärmeöljy ja [tekoälypesu](tekoalypesu.html) myyvät samaa asiaa eri vuosisadalla:** vaikutusmekanismia, jota ei ole. Vain sanasto on vaihtunut.
+- **Ääniklooni-huijaus on toimitusjohtajahuijaus ilman viimeistä tarkistuskohtaa.** Sähköpostin voi lukea uudelleen; puhelua ei voi. Siksi molempien vastakeino on sama ja tylsä: soita takaisin numeroon, jonka haet itse.
 - **Kaikkien taustalla on [sunk cost -harha](sunk-cost-harha.html).** Kun ensimmäinen maksu on tehty, seuraavan maksamisesta tulee helpompaa kuin tappion myöntämisestä. Siksi summat kasvavat loppua kohti.
 
 ## Mitä näistä seuraa lukijalle

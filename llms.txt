@@ -1,6 +1,6 @@
 # Ilmiöitä — Miten valta toimii
 
-> Suomenkielinen sivusto, joka selittää 127 yhteiskunnallista ilmiötä:
+> Suomenkielinen sivusto, joka selittää 139 yhteiskunnallista ilmiötä:
 > valtarakenteet, propaganda ja informaatiovaikuttaminen, kognitiiviset harhat,
 > byrokratia ja organisaatiodynamiikka, projektihallinnan lait,
 > talouden kasvuilmiöt, huijaukset ja petokset, myynti- ja painostustaktiikat,
@@ -24,6 +24,7 @@ Kategoriasivu: https://www.ilmiöt.fi/kategoria-vallan-rakenteet.html
 - [Rautainen laki oligarkiasta](https://www.ilmiöt.fi/rautainen-laki.html): Jokainen organisaatio ajautuu lopulta pienen sisäpiirin hallintaan — myös demokraattiseksi tarkoitettu.
 - [Valta suojelee valtaa](https://www.ilmiöt.fi/valta-suojelee-valtaa.html): Vallassa olevat asettavat pelisäännöt, valitsevat tuomarit ja määrittelevät, mikä on laillista.
 - [Hajota ja hallitse](https://www.ilmiöt.fi/hajota-hallitse.html): Hallitseva taho pysyy vallassa pitämällä mahdolliset vastavoimat riidoissa keskenään.
+- [Vaalilupauksen hinnoittelu](https://www.ilmiöt.fi/vaalilupauksen-hinnoittelu.html): Puolue esittää oman lukunsa, eikä sitä vastaan ole toista lukua — hinta on kampanja-aineistoa.
 
 ### Informaatio ja propaganda
 
@@ -134,6 +135,9 @@ Kategoriasivu: https://www.ilmiöt.fi/kategoria-huijaukset-ja-petokset.html
 - [QR-koodihuijaus](https://www.ilmiöt.fi/qr-koodihuijaus.html): Väärennetty QR-koodi ohjaa valesivulle maksamaan — parkkimittarit ovat tyypillinen kohde.
 - [Toimitusjohtajahuijaus](https://www.ilmiöt.fi/toimitusjohtajahuijaus.html): "Johtaja" vaatii sähköpostilla kiireellistä maksua — kiire ja salailu ovat tuntomerkit.
 - [Rug pull](https://www.ilmiöt.fi/rug-pull.html): Kehittäjät hypettävät kryptotokenin, keräävät sijoittajien rahat ja katoavat — arvo romahtaa nollaan.
+- [Ääniklooni-huijaus](https://www.ilmiöt.fi/aaniklooni-huijaus.html): Muutaman sekunnin näyte riittää: tuttu ääni pyytää rahaa kiireellä, eikä kuulo enää todista mitään.
+- [Smishing](https://www.ilmiöt.fi/smishing.html): Huijausviesti putoaa samaan ketjuun aitojen kanssa: paketti odottaa maksua, pankki pyytää vahvistusta.
+- [Deepfake-sijoitushuijaus](https://www.ilmiöt.fi/deepfake-sijoitushuijaus.html): Tuttu kasvo ja tutun näköinen uutissivu mainostavat alustaa, jolla saldo nousee mutta raha ei palaa.
 
 ### Myyntikikat ja painostus
 
@@ -173,6 +177,13 @@ Kategoriasivu: https://www.ilmiöt.fi/kategoria-alustatalous-ja-algoritmit.html
 - [Engagement bait](https://www.ilmiöt.fi/engagement-bait.html): Sisältö pyytää reaktiota suoraan, koska algoritmi palkitsee vuorovaikutuksesta riippumatta sen syystä.
 - [1 %:n sääntö (90-9-1)](https://www.ilmiöt.fi/1-prosentin-saanto.html): 90 % lurkkii, 9 % osallistuu satunnaisesti ja 1 % tuottaa suurimman osan verkkoyhteisöjen sisällöstä.
 - [Äänekäs vähemmistö](https://www.ilmiöt.fi/aanekas-vahemmisto.html): Kärjekkäimmät kommentoijat näkyvät eniten, kun hiljainen enemmistö ei koskaan vastaa.
+- [Vaalikone-efekti](https://www.ilmiöt.fi/vaalikone-efekti.html): Kone ei vain mittaa kantaasi vaan muokkaa sitä: kysymysvalinta ja laskukaava ratkaisevat tuloksen.
+- [Tekoälypsykoosi](https://www.ilmiöt.fi/tekoalypsykoosi.html): Myötäilevä chatbot ei ole koskaan eri mieltä — ja vie hauraan ajattelun loppuun asti.
+- [Evästeansa](https://www.ilmiöt.fi/evasteansa.html): Hyväksyminen on yksi klikkaus, kieltäytyminen viisi — banneri on rakennettu tuottamaan suostumus.
+- [Piilokulut](https://www.ilmiöt.fi/piilokulut.html): Mainostettu hinta on ensimmäinen erä; loput valutetaan esiin vasta kun vertailu on tehty.
+- [Pakotettu jatkuvuus](https://www.ilmiöt.fi/pakotettu-jatkuvuus.html): Ilmainen kokeilu muuttuu laskuksi automaattisesti — ilman muistutusta ja ilman uutta hyväksyntää.
+- [Confirmshaming](https://www.ilmiöt.fi/confirmshaming.html): Kieltäytymisnappi kirjoitetaan itseä alentavaksi: ”Ei kiitos, en halua säästää rahaa”.
+- [Oletusasetusansa](https://www.ilmiöt.fi/oletusasetusansa.html): Seuranta ja jakaminen ovat valmiiksi päällä, koska oletusvalinta ratkaisee useimmiten.
 
 ### Pesut ja maineenhallinta
 
@@ -211,6 +222,7 @@ Kategoriasivu: https://www.ilmiöt.fi/kategoria-tilastoilla-valehtelu.html
 - [Selviytymisharha](https://www.ilmiöt.fi/selviytymisharha.html): Vain palanneet koneet lasketaan — data kertoo selviytyjistä, ei kadonneista.
 - [Simpsonin paradoksi](https://www.ilmiöt.fi/simpsonin-paradoksi.html): Kokonaisuus näyttää kasvua, vaikka jokainen osaryhmä laskee — tai päinvastoin.
 - [P-hakkerointi](https://www.ilmiöt.fi/p-hakkerointi.html): Testataan kunnes jokin näyttää merkitsevältä — ja julkaistaan vain se yksi tulos.
+- [Kannatusmittausten virhemarginaali](https://www.ilmiöt.fi/kannatusmittausten-virhemarginaali.html): Ilmoitettu marginaali koskee yhtä lukua; uutinen kertoo kahden luvun erosta, joka on epätarkempi.
 
 ### Media ja julkisuus
 

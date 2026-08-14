@@ -47,7 +47,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SISALTO = ROOT / "kategoriat"
-LUONNOSKANSIO = ROOT / "luonnokset-media"
+LUONNOSKANSIO = ROOT / "luonnokset"
 
 DOMAIN = "https://www.ilmiöt.fi"
 CSS_VERSIO = "20260727"   # pidä samassa kuin ilmiösivuilla (ks. muisti: CSS cache-bust)

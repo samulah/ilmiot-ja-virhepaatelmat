@@ -1,5 +1,207 @@
 # Muutosloki — Ilmiöitä (www.ilmiöt.fi)
 
+## 14.8.2026 — Julkaistu 12 ilmiötä: 127 → 139, neljä kategoriaa kasvoi
+
+Yksi ajo, kolme erää: vaalierä (3 sivua, luonnokset 4.8.), pimeät kuviot (5) ja
+tekoälyhuijaukset (4). `lisaa_ilmiot.py --kirjoita` numeroi 120 vanhaa sivua
+uudelleen; pienin muuttunut numero on 9. **Koostesivu (vaalikeskustelun lukuohje)
+jätettiin julkaisematta** — se ei ole ilmiö eikä kulje `lisaa_ilmiot.py`:n läpi,
+ja sen kausiluonteinen hyöty alkaa vasta kampanjahaussa (tavoite joulukuu 2026).
+
+| Kategoria | Ennen | Jälkeen | Uudet |
+|---|---|---|---|
+| Vallan rakenteet | 7 | 8 | vaalilupauksen-hinnoittelu (8) |
+| Huijaukset ja petokset | 11 | 14 | aaniklooni-huijaus (77), smishing (78), deepfake-sijoitushuijaus (79) |
+| Alustatalous ja algoritmit | 10 | 17 | vaalikone-efekti (105), tekoalypsykoosi (106), evasteansa (107), piilokulut (108), pakotettu-jatkuvuus (109), confirmshaming (110), oletusasetusansa (111) |
+| Tilastoilla valehtelu | 8 | 9 | kannatusmittausten-virhemarginaali (129) |
+
+**Faktantarkistus ennen julkaisua — kolme virhettä löytyi.** Kaikki tarkistettavat
+väitteet ajettiin lähteitä vasten, myös vaalierän 4.8. kirjoitetuilta sivuilta:
+
+- **`kannatusmittausten-virhemarginaali`: virhemarginaali oli väärin.** Sivu
+  väitti ±1,2 prosenttiyksikköä noin 2 000 vastaajan otoksella. Ylen ja
+  Taloustutkimuksen oma menetelmäkuvaus: puoluekantansa ilmoittaa noin 1 200
+  vastaajaa, ja marginaali riippuu kannatustasosta — 20 %:n kannatuksella ±2,3,
+  10 %:n ±1,7 ja 5 %:n ±1,3. Korjattu, ja samalla sivu kertoo nyt sen mitä
+  vanha versio piilotti: **marginaali ei ole yksi luku.** Myös eron kerroin
+  tarkennettiin: "karkeasti kaksinkertainen" on oikea nyrkkisääntö kahden
+  kärkipuolueen tapauksessa, mutta Suomen monipuoluetilanteessa kerroin on
+  lähempänä 1,5:tä. Kynnysluku "alle kaksi prosenttiyksikköä" nostettiin 3–4:ään.
+- **`vaalikone-efekti`: väärä etunimi.** Tutkijan nimi on **Tom** Louwerse, ei
+  Thomas (Louwerse & Rosema, *Acta Politica* 49, 286–312, 2014). Kaksi esiintymää.
+- **`vaalilupauksen-hinnoittelu`: 404-linkki.** CPB:n Wikipedia-artikkelin nimi on
+  *Bureau for Economic Policy Analysis*, ei *CPB Netherlands Bureau…*.
+- **`deepfake-sijoitushuijaus`: 404-linkki.** fi-Wikipedian artikkeli on
+  *Syväväärennös*, ei *Syväväärennys*.
+
+Neljä tarkennusta, joissa väite oli oikea mutta epätarkka:
+
+- **CNIL:n sakot** ovat 31.12.2021 tehdyistä päätöksistä, jotka julkistettiin
+  6.1.2022 → "tammikuussa 2022" muutettiin muotoon "vuodenvaihteessa 2021–2022".
+  Summat (Google 150 M€, Facebook 60 M€) ja peruste (hylkääminen vaati useamman
+  klikkauksen kuin hyväksyminen) pitävät paikkansa.
+- **Smishing-sivun lähettäjätunnusrekisteri** oli epämääräinen. Traficomin
+  määräyksen mukaan organisaatioiden on pitänyt **luvittaa** käyttämänsä
+  lähettäjätunnukset ennakkoon 4.5.2026 alkaen. Sivu kertoo nyt tämän.
+- **Tekoälypsykoosi sai alkuperän:** termin esitti tanskalainen psykiatri Søren
+  Dinesen Østergaard pääkirjoituksessaan 2023, ja se levisi julkisuuteen 2025.
+  Lisätty myös psykiatrien esittämä kritiikki (termi koskee vain harhaluuloja) ja
+  linkki englanninkieliseen Wikipedia-artikkeliin *Chatbot psychosis*.
+- **Villin kortin ehto täyttyi.** Suunnitelma sanoi: kirjoita tekoälypsykoosi vain
+  jos termi näkyy vielä syksyllä. Sillä on nyt oma Wikipedia-artikkeli ja
+  vertaisarvioitua kirjallisuutta → julkaistiin.
+
+Vahvistetut, muuttumattomina jätetyt: EU-komission 2022 selvityksen 97 %,
+asetus 1008/2008 art. 23, kuluttajansuojalain 14 vrk etämyynnissä, Gabaix &
+Laibson (QJE 2006), Johnson & Goldstein (*Science* 2003), privacy zuckering =
+EFF:n Tim Jones 2010, Traficomin ja tietosuojavaltuutetun työnjako evästeissä,
+Finanssivalvonnan varoituslistat, Sharma ym. 2023, Yle 1996, CPB vuodesta 1986,
+Australian PBO, Groves & Lyberg 2010, AAPOR 2017. **Kaikki 18 ulkoista linkkiä
+palauttavat 200.**
+
+**Kategoriatekstit kirjoitettiin uusiksi neljälle kategorialle** (`kategoriat/*.md`).
+Määrät korjattiin otsikoita ja leipätekstiä myöten ("Kymmenen ilmiötä" →
+"Seitsemäntoista"), ja jokainen uusi sivu sai paikkansa kategorian omassa
+jäsennyksessä — alustatalous sai viidennen kerroksen ("Miten valinta ohjataan"),
+huijaukset kappaleen tekoälyn roolista kaavassa. **Dark patterns -termin neljä
+suomalaista muotoa** (*dark patterns*, *synkät suunnittelumallit*, *pimeät
+käytännöt*, *deceptive patterns*) mainitaan nyt kategoriatekstissä, kuten
+suunnitelma edellytti — yläkäsitesivua ei tehty.
+
+**Ajojärjestys:** `lisaa_ilmiot.py --kirjoita` → `build_kategoriat.py` (13 sivua)
+→ `paivita_maarat.py` (index, tietoa, llms.txt) → `build_liittyvat.py` (133/139)
+→ index.html:n nappi ja JSON-LD 14.8. → `muutokset.html` → `build_sitemap.py`
+(155 URLia) → `build_search_index.py` (152 sivua, 437 kt).
+
+**Ajautuma kiinni: etusivun `<title>` oli jäänyt 127:ään.** `paivita_maarat.py`
+päivitti näkyvät määrät, kategorialaskurit ja ItemListin, mutta ei titleä,
+`og:title`ea, `twitter:title`ea eikä JSON-LD:n `name`-kenttää — skriptin kuviot
+eivät osuneet titlen sanamuotoon "— N ilmiötä". Docstring kuitenkin lupasi, että
+ne päivittyvät. Lisättiin kuvio `maara=4`-tarkistuksella, joten sama ei toistu
+hiljaisena: jos titlen muoto muuttuu, skripti kaatuu sen sijaan että jättäisi
+luvun vanhaksi. Etusivun title on SERPin otsikko, joten virhe olisi näkynyt
+hakutuloksissa.
+
+**Tarkistettu julkaisun jälkeen:** numerot 1–139 ehjä sarja, 139 hub-korttia,
+ei jäljelle jäänyttä `noindex`-merkintää (paitsi `random.html`, jossa se kuuluu
+olla), ei `../`-polkuja, ei rikkinäisiä sisäisiä linkkejä, FAQPage-schema
+yhdeksällä uudella sivulla.
+
+## 14.8.2026 — Tekoälyhuijaukset-klusteri luonnosteltu (4 sivua, ei julkaistu)
+
+Klusteri 2 suunnitelmasta `luonnokset/UUDET-KLUSTERIT-PLAN.md` § 4. Generaattori
+`scripts/build_tekoalyhuijaukset_luonnokset.py`, pohjana `qr-koodihuijaus.html`.
+**Mitään ei julkaistu.**
+
+Sivut: **aaniklooni-huijaus** (voice cloning / vishing, 76), **smishing**
+(SMS phishing, 77), **deepfake-sijoitushuijaus** (78) ja **tekoalypsykoosi**
+(AI psychosis, 101). Rakenne sama kuin pimeissä kuvioissa: vastauslohko +
+FAQPage-schema ja kysymysmuotoiset H2:t jo luonnoksessa. Sanamäärät 278–335.
+
+**Poikkeama suunnitelmaan — kategoria.** Suunnitelma sijoitti kaikki neljä
+kategoriaan Huijaukset ja petokset (11 → 15). *Tekoälypsykoosi ei ole huijaus:*
+kukaan ei huijaa ketään, vaan myötäilevä vastaustyyli vahvistaa ajattelua.
+Se olisi huijauskategoriassa väärä lupaus lukijalle, joten se meni
+**Alustatalous ja algoritmit** -kategoriaan (`parasosiaalinen-suhde` ja
+`kaikukammio` ovat siellä). Huijaukset kasvaa 11 → 14. Generaattori osaa
+korvata kategoriakentät (murupolku, `articleSection`, kategoriasivun linkki)
+sivukohtaisesti; muilla kolmella korvausta ei tehdä, koska pohja on jo oikeassa
+kategoriassa.
+
+**Villi kortti kirjoitettiin silti.** Suunnitelma jätti *tekoälypsykoosin*
+ehdolle ("kirjoita vasta jos termi näkyy vielä syksyllä"). Luonnos ei maksa
+julkaisua, joten **ehto siirrettiin julkaisuhetkeen**. Sivu sanoo suoraan, ettei
+kyseessä ole diagnoosi, ja ohjaa terveydenhuoltoon; se on ainoa erän sivu, jossa
+aihe on terveysläheinen.
+
+**Numerointi menee päällekkäin.** Kumpikin luonnoserä on numeroitu ikään kuin se
+julkaistaisiin yksin, joten `evasteansa` ja `tekoalypsykoosi` kantavat molemmat
+numeroa 101 (kummankin paikka on Alustatalous ja algoritmit -kategorian lopussa).
+Kumpi julkaistaan ensin, se saa paikan; `lisaa_ilmiot.py` laskee loput. Kirjattu
+kansion `index.html`:ään ja suunnitelmaan.
+
+**Tarkistettavia faktaväitteitä kolme:** SMS-lähettäjätunnusrekisteri Suomessa,
+Finanssivalvonnan varoituslistat ja se, onko *tekoälypsykoosi* syksyllä yhä
+elävä termi. Loput nojaavat vakiintuneisiin lähteisiin (Sharma ym. 2023
+myötäilyvinoumasta, Mitnick 2002).
+
+## 14.8.2026 — Pimeät kuviot -klusteri luonnosteltu (5 sivua, ei julkaistu)
+
+Klusteri 1 suunnitelmasta `luonnokset/UUDET-KLUSTERIT-PLAN.md` § 3.
+Generaattori `scripts/build_pimeat_kuviot_luonnokset.py`, tuotos
+`luonnokset/` (5 sivua; erä syntyi kansioon `luonnokset-pimeat-kuviot/`, joka
+yhdistettiin samana päivänä — ks. alla).
+**Mitään ei julkaistu eikä juuren tiedostoja muutettu** — `muutokset.html`,
+sitemap ja hakuindeksi pysyvät ennallaan.
+
+Sivut: **evasteansa** (cookie consent dark pattern), **piilokulut** (drip
+pricing), **pakotettu-jatkuvuus** (forced continuity), **confirmshaming**,
+**oletusasetusansa** (privacy zuckering). Alustavat numerot 101–105,
+kategoria **Alustatalous ja algoritmit** (10 → 15). Uutta kategoriaa ei tarvita,
+joten julkaisu käy `lisaa_ilmiot.py`:llä ilman `--kortit-valmiina`-lippua.
+
+**Pohjana `aanekas-vahemmisto.html`** — sama kategoria, joten murupolkua,
+`articleSection`-kenttää tai hub-ankkuria ei tarvinnut korvata lainkaan.
+Erot media-erän generaattoriin:
+
+- **Vastauslohko ja FAQPage-schema kirjoitetaan jo luonnokseen.** Aiemmin ne
+  lisättiin jälkikäteen `seo_vastauslohko.py`:llä ja vain top-15-sivuille; uusi
+  sivu syntyi ilman. Kaksi kysymystä per sivu, sama teksti lohkossa ja schemassa.
+- **Kysymysmuotoiset H2:t alusta asti** (auditin § 6b: kilpailijoilla lähes
+  kaikki, ilmiöt.fi:llä 52/443 eli 12 %). Kolmesta H2:sta kaksi on kysymys;
+  kolmas on normin vaatima "Tunnistaminen ja vastakeinot:".
+- **Korjaus `alikansiopolut()`-listaan:** murupolun `href="kategoria-*.html"`
+  tarvitsee `../`-etuliitteen luonnoskansiossa. Media-erän generaattori ei sitä
+  tunne, koska kategorialinkit lisättiin sivuille vasta 28.7. — sama vika on
+  vaalierän sivuilla, mutta se korjaantuu julkaisussa itsestään.
+
+**Sanamäärät 311–351** (mittaus: ilmiölohko `<aside>`:en asti, "Lue lisää"
+mukaan lukien). Sivuston oma mediaani samalla mittarilla on 333 ja keskiarvo
+338, joten erä osuu keskelle jakaumaa eikä venytä normia.
+
+**Rajattu ulos tietoisesti:** yläkäsitesivua ("Mitä ovat dark patterns?") ei
+tehdä — se kilpailisi omaa kategoriasivua vastaan. `tilausansa` (roach motel),
+`painostusclose` (keinotekoinen niukkuus) ja `houkutinvaihtoehto` (decoy)
+kattavat jo oman kuvionsa; niihin linkitetään eikä niitä kirjoiteta uudestaan.
+Nimeämiskysymys (§ 3: neljä liikkeellä olevaa muotoa) ratkaistiin sivutasolla
+yksittäisten kuvioiden nimillä; **kategoriatekstiin `kategoriat/alustatalous-ja-algoritmit.md`
+kaikki neljä muotoa on vielä lisäämättä.**
+
+**Julkaisujärjestys ei muutu:** vaalierän 3 luonnosta (takaraja syksy 2026)
+julkaistaan ensin. Huomaa, että `lisaa_ilmiot.py`:n `UUDET`-taulukko sisältää yhä
+loppuun ajetun media-erän — se vaihdetaan julkaisun yhteydessä, ja taulukko
+**korvataan, ei täydennetä**.
+
+## 14.8.2026 — Luonnoskansiot yhdistetty yhdeksi
+
+`luonnokset-media/` ja `luonnokset-pimeat-kuviot/` → **`luonnokset/`**
+(12 tiedostoa: 8 ilmiöluonnosta, koostesivu, 3 suunnitelmaa). Vanhat kansiot
+poistettu. Syy: erien selaaminen, julkaisujärjestyksen näkeminen ja
+tarkistuslistojen ylläpito kolmessa kansiossa oli turhaa jakoa — kaikki erät
+kulkevat saman `lisaa_ilmiot.py`:n läpi.
+
+**Kolme `index.html`:ää yhdistetty yhdeksi.** Uudessa hakemistossa neljä osiota:
+vaalierä (3, loka–marras 2026), koostesivu (1, joulukuu 2026), pimeät kuviot (5)
+ja suunnitelmat. Yhteinen julkaisun tarkistuslista on nyt yhdessä paikassa;
+media-erän vanhentuneet kohdat (kategoria 13, laskurit x/13) poistettiin, koska
+ne on ajettu 5.8.
+
+**Skriptien vakiot osoittavat kaikki `luonnokset/`-kansioon:** `lisaa_ilmiot.py`
+(`LUONNOKSET`), `build_kategoriat.py` (`LUONNOSKANSIO`), `build_media_luonnokset.py`,
+`build_media_kategoria_luonnos.py` ja `build_pimeat_kuviot_luonnokset.py` (`OUT`).
+Generaattorit kirjoittavat vain omat sivunsa yli, joten yhteinen kansio kestää
+uudelleenajon. `build_klusteri_luonnokset.py`:n maininta on päivätty historiaa
+eikä sitä muutettu.
+
+**Sivujen sisältöä ei koskettu.** Kansiosyvyys ei muuttunut (yhä yksi taso),
+joten `../`-etuliitteet, `noindex`-merkinnät ja PREV/NEXT-ketjut ovat ennallaan.
+Juuren tiedostoihin ei koskettu — ei sitemap-, hakuindeksi- eikä
+`muutokset.html`-muutosta.
+
+**Samalla:** kansiosta poistettiin sen aiempi sisältö, 16 jo julkaistua
+luonnoskopiota heinäkuulta (`UUDET-JUTUT-PLAN.md` oli merkinnyt kansion
+turhaksi jo 28.7.). Ne ovat git-historiassa.
+
 ## 13.8.2026 — GSC-auditti ja geneeristen titlejen korvaus (11 sivua)
 
 Auditti `GSC-AUDIT-2026-08-13.md`, data `datalake_analysis/13082026/`.

@@ -8,6 +8,16 @@ Tämä täydentää `ANALYYSI.md`:tä, joka koski vaalierää. Vaalierän 3 luon
 edelleen julkaisematta ja niillä on oma takaraja (syksy 2026, ks. `ANALYYSI.md`).
 **Tämä suunnitelma tulee niiden jälkeen, ei tilalle.**
 
+> **Tila 14.8.2026 — klusterit 1 ja 2 on JULKAISTU.** Yhdeksän sivua meni
+> juureen samassa ajossa vaalierän kolmen kanssa (127 → 139 ilmiötä). Numerot:
+> pimeät kuviot 107–111, tekoälyhuijaukset 77–79 ja tekoälypsykoosi 106.
+> Faktantarkistus tehtiin ennen julkaisua ja löysi kolme virhettä (ks.
+> `MUUTOSLOKI.md` 14.8.). Kategoriatekstit päivitettiin neljälle kategorialle,
+> ja dark patterns -termin neljä muotoa ovat nyt kategoriatekstissä.
+>
+> **Jäljellä: klusteri 3 (§ 5), joka on yhä ehdollinen.** Päätös vasta
+> title-testin mittauspisteen (~10.9.2026) jälkeen.
+
 ---
 
 ## 1. Sääntö, jonka data antaa
@@ -141,6 +151,18 @@ ne kannattaa arvioida erikseen.
 
 **Huijaukset ja petokset** (11 → 15 sivua).
 
+> **Korjattu 14.8.2026 kirjoitusvaiheessa: 11 → 14.** *Tekoälypsykoosi* ei ole
+> huijaus — kukaan ei huijaa ketään, vaan myötäilevä vastaustyyli vahvistaa
+> ajattelua. Huijauskategoriassa se rikkoisi lukijalle annetun lupauksen, joten
+> se sijoitettiin **Alustatalous ja algoritmit** -kategoriaan, jossa ovat jo
+> `parasosiaalinen-suhde` ja `kaikukammio`. Kolme muuta menevät huijauksiin.
+>
+> Sivu kirjoitettiin, vaikka § 4 jätti sen villiksi kortiksi ("kirjoita vasta
+> jos termi näkyy vielä syksyllä"). Luonnos ei maksa julkaisua: **ehto siirtyy
+> julkaisuhetkeen** — jos termi on syksyllä kuollut, erä on 3 sivua ja luonnos
+> jää kansioon. Sivu sanoo suoraan, ettei kyseessä ole diagnoosi, ja ohjaa
+> terveydenhuoltoon.
+
 ---
 
 ## 5. Klusteri 3 — Argumentointivirheet ⚠ ehdollinen
@@ -202,8 +224,18 @@ ja arvioi tämä uudelleen title-testin mittauspisteen (~10.9.2026) jälkeen.
 1. **Vaalierän 3 luonnosta ensin** (`ANALYYSI.md` § 4) — niillä on takaraja
    syksy 2026, tällä suunnitelmalla ei ole.
 2. **Klusteri 1 (pimeät kuviot, 5 sivua)** — paras kysyntä/kilpailu-suhde.
+   *Luonnosteltu 14.8.2026* (`luonnokset/`). Sivujen nimiksi
+   valittiin yksittäiset kuviot, ei yläkäsite: **Evästeansa, Piilokulut,
+   Pakotettu jatkuvuus, Confirmshaming, Oletusasetusansa.** Vielä tekemättä:
+   `kategoriat/alustatalous-ja-algoritmit.md`:hen maininta kaikista neljästä
+   nimitysmuodosta (§ 3), jotta hakutermit kattautuvat ilman yläkäsitesivua.
 3. **Klusteri 2 (tekoälyhuijaukset, 4 sivua)** — tuorein kysyntä; jos
    *tekoälypsykoosi* on syksyllä kuollut termi, erä on 3 sivua.
+   *Luonnosteltu 14.8.2026* (`luonnokset/`): **Ääniklooni-huijaus, Smishing,
+   Deepfake-sijoitushuijaus** (Huijaukset ja petokset) ja **Tekoälypsykoosi**
+   (Alustatalous ja algoritmit, ks. § 4:n korjaus). Tarkistettavia
+   faktaväitteitä on kolme: lähettäjätunnusrekisteri, Finanssivalvonnan
+   varoituslistat ja *tekoälypsykoosi*-termin elinvoima.
 4. **Klusteri 3 (argumentointivirheet, 5 sivua)** — vasta erillisen päätöksen
    jälkeen (§ 5).
 

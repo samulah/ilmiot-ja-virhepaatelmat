@@ -34,36 +34,46 @@ import shutil
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-LUONNOKSET = ROOT / "luonnokset-media"
+LUONNOKSET = ROOT / "luonnokset"   # kaikkien erien yhteinen kansio (14.8.2026)
+# Kansio on jaettu: julkaistaan vain UUDET-taulukon slugit, muut erät jäävät
+# paikoilleen. Siksi kansio ei myöskään tyhjene julkaisussa.
 
 # Uudet ilmiöt: slug → (sijoita tämän kortin JÄLKEEN, väri, nimi, kuvaus).
 # Sijoituspaikka määrää sekä kategorian että numeron — kortti menee ankkurin
-# perään samaan hub-kategoria-lohkoon.
-# Media ja julkisuus (kategoria 13). Kortit on kirjoitettu index.html:ään
-# käsin, koska skripti ei osaa rakentaa uutta hub-kategoria-lohkoa → ajo
-# lipulla --kortit-valmiina, jolloin ankkuri/väri/nimi/kuvaus ovat vain
-# dokumentaatiota siitä, mitä index.html:ään kirjoitettiin.
+# perään samaan hub-kategoria-lohkoon. Ankkuri saa olla myös toinen tämän
+# taulukon slug, jolloin erä ketjuuntuu kategorian loppuun.
+#
+# 14.8.2026: vaalierä (3) + pimeät kuviot (5) + tekoälyhuijaukset (4) = 12.
+# Ei uutta kategoriaa → ei --kortit-valmiina-lippua.
 UUDET = {
-    "uutiskynnys": ("p-hakkerointi", "#455a64", "Uutiskynnys",
-        "Uutiseksi pääsee asia, jolla on tapahtuman muoto — hidas ja rakenteellinen jää kertomatta."),
-    "uutisautiomaa": ("uutiskynnys", "#546e7a", "Uutisautiomaa",
-        "Kun paikallislehti lakkaa, valtuuston kokouksissa ei istu ketään eikä virheitä huomaa kukaan."),
-    "paasyjournalismi": ("uutisautiomaa", "#6d4c41", "Pääsyjournalismi",
-        "Toimittaja on riippuvainen lähteen pääsystä, joten kriittinen kysymys maksaisi koko suhteen."),
-    "tiedotejournalismi": ("paasyjournalismi", "#00796b", "Tiedotejournalismi",
-        "Uutinen on kevyesti muokattu tiedote: aiheen, kulman ja sitaatit valitsi lähettäjä."),
-    "branditurvallisuus": ("tiedotejournalismi", "#0277bd", "Bränditurvallisuus",
-        "Mainostajan estolista katkaisee tulon vakavista aiheista — kirjoittamisesta tulee kannattamatonta."),
-    "huonojen-uutisten-hautaaminen": ("branditurvallisuus", "#4527a0", "Huonojen uutisten hautaaminen",
-        "Ikävä tieto julkaistaan perjantai-iltapäivänä tai ison uutisen varjossa — avoimesti mutta huomaamatta."),
-    "vaara-tasapaino": ("huonojen-uutisten-hautaaminen", "#ad1457", "Väärä tasapaino",
-        "Marginaalinen näkemys saa saman palstatilan kuin valtavirta, ja kiista näyttää tasaväkiseltä."),
-    "keharaportointi": ("vaara-tasapaino", "#7b1fa2", "Kehäraportointi",
-        "Yksi väite siteerataan ketjussa eteenpäin, kunnes se näyttää neljän lähteen vahvistamalta."),
-    "gell-mannin-amnesia": ("keharaportointi", "#e65100", "Gell-Mannin amnesia",
-        "Huomaat oman alasi jutussa virheet, käännät sivua ja luotat seuraavaan aivan yhtä paljon."),
-    "vihamielisen-median-harha": ("gell-mannin-amnesia", "#33691e", "Vihamielisen median harha",
-        "Kaksi vastakkaista leiriä lukee saman jutun ja kumpikin kokee sen puolueelliseksi itseään vastaan."),
+    # Vallan rakenteet 7 → 8
+    "vaalilupauksen-hinnoittelu": ("hajota-hallitse", "#1565c0", "Vaalilupauksen hinnoittelu",
+        "Puolue esittää oman lukunsa, eikä sitä vastaan ole toista lukua — hinta on kampanja-aineistoa."),
+    # Huijaukset ja petokset 11 → 14
+    "aaniklooni-huijaus": ("rug-pull", "#7f0000", "Ääniklooni-huijaus",
+        "Muutaman sekunnin näyte riittää: tuttu ääni pyytää rahaa kiireellä, eikä kuulo enää todista mitään."),
+    "smishing": ("aaniklooni-huijaus", "#0b3d91", "Smishing",
+        "Huijausviesti putoaa samaan ketjuun aitojen kanssa: paketti odottaa maksua, pankki pyytää vahvistusta."),
+    "deepfake-sijoitushuijaus": ("smishing", "#9c4dcc", "Deepfake-sijoitushuijaus",
+        "Tuttu kasvo ja tutun näköinen uutissivu mainostavat alustaa, jolla saldo nousee mutta raha ei palaa."),
+    # Alustatalous ja algoritmit 10 → 17
+    "vaalikone-efekti": ("aanekas-vahemmisto", "#00695c", "Vaalikone-efekti",
+        "Kone ei vain mittaa kantaasi vaan muokkaa sitä: kysymysvalinta ja laskukaava ratkaisevat tuloksen."),
+    "tekoalypsykoosi": ("vaalikone-efekti", "#004d40", "Tekoälypsykoosi",
+        "Myötäilevä chatbot ei ole koskaan eri mieltä — ja vie hauraan ajattelun loppuun asti."),
+    "evasteansa": ("tekoalypsykoosi", "#0288d1", "Evästeansa",
+        "Hyväksyminen on yksi klikkaus, kieltäytyminen viisi — banneri on rakennettu tuottamaan suostumus."),
+    "piilokulut": ("evasteansa", "#ff6f00", "Piilokulut",
+        "Mainostettu hinta on ensimmäinen erä; loput valutetaan esiin vasta kun vertailu on tehty."),
+    "pakotettu-jatkuvuus": ("piilokulut", "#3e2723", "Pakotettu jatkuvuus",
+        "Ilmainen kokeilu muuttuu laskuksi automaattisesti — ilman muistutusta ja ilman uutta hyväksyntää."),
+    "confirmshaming": ("pakotettu-jatkuvuus", "#a31545", "Confirmshaming",
+        "Kieltäytymisnappi kirjoitetaan itseä alentavaksi: ”Ei kiitos, en halua säästää rahaa”."),
+    "oletusasetusansa": ("confirmshaming", "#1b5e20", "Oletusasetusansa",
+        "Seuranta ja jakaminen ovat valmiiksi päällä, koska oletusvalinta ratkaisee useimmiten."),
+    # Tilastoilla valehtelu 8 → 9
+    "kannatusmittausten-virhemarginaali": ("p-hakkerointi", "#2e7d32", "Kannatusmittausten virhemarginaali",
+        "Ilmoitettu marginaali koskee yhtä lukua; uutinen kertoo kahden luvun erosta, joka on epätarkempi."),
 }
 
 KORTTI_RE = re.compile(

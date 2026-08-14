@@ -117,6 +117,11 @@ def paivita_index(raportti):
     korvaa("Sivusto selittää N ilmiötä", r"Sivusto selittää \d+ ilmiötä",
            f"Sivusto selittää {yhteensa} ilmiötä", maara=2)
     korvaa("hub-header", r"<p>\d+ ilmiötä &middot;", f"<p>{yhteensa} ilmiötä &middot;", maara=1)
+    # <title>, og:title, twitter:title ja JSON-LD name päättyvät "— N ilmiötä".
+    # Lisätty 14.8.2026: nämä neljä jäivät 127:ään, koska aiemmat kuviot eivät
+    # osuneet titlen sanamuotoon. Titleä ei generoida muualla → tarkistus tähän.
+    korvaa("title/og/twitter/JSON-LD: — N ilmiötä", r"— \d+ ilmiötä",
+           f"— {yhteensa} ilmiötä", maara=4)
     korvaa("N kategoriassa", r"\w+toista kategoriassa|kymmenessä kategoriassa",
            f"{INESSIIVI[n_kat]} kategoriassa")
     korvaa("numberOfItems", r'"numberOfItems": \d+,', f'"numberOfItems": {yhteensa},', maara=1)

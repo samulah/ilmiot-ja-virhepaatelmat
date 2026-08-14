@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-  <title>Vaalilupauksen hinnoittelu — luvun laskee se, joka lupaa — Ilmiöitä</title>
-  <link rel="stylesheet" href="../style.css?v=20260727">
-  <link rel="stylesheet" href="../fonts/fonts.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Piilokulut — hinta paljastuu erissä vasta kassalla — Ilmiöitä</title>
+  <link rel="stylesheet" href="style.css?v=20260725">
+  <link rel="stylesheet" href="fonts/fonts.css">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -16,7 +16,7 @@
       if (loaded) return;
       loaded = true;
       var s = document.createElement('script');
-      s.src = '../js/mermaid.min.js';
+      s.src = 'js/mermaid.min.js';
       s.onload = function () {
         mermaid.initialize({ startOnLoad: false, theme: 'base', themeVariables: { fontSize: '12px', fontFamily: "'DM Sans', system-ui, sans-serif", primaryColor: '#FBF5E0', primaryTextColor: '#1A1100', primaryBorderColor: '#C9A84C', lineColor: '#8B6914', secondaryColor: '#F5F0E5', tertiaryColor: '#FDFAF2', mainBkg: '#FBF5E0', nodeBorder: '#C9A84C', clusterBkg: '#F5F0E5', titleColor: '#3A2000', edgeLabelBackground: '#FDFAF2' } });
         mermaid.run();
@@ -74,8 +74,8 @@
       text-transform: uppercase;
     }
     /* Jokaiselle ilmiölle oma väri */
-    #vaalilupauksen-hinnoittelu { border-top-color: #1565c0; }
-    #vaalilupauksen-hinnoittelu .ilmio-tag { background: #1565c0; }
+    #piilokulut { border-top-color: #ff6f00; }
+    #piilokulut .ilmio-tag { background: #ff6f00; }
     .huomiolaatikko {
       background: #fdf6ec;
       border-left: 6px solid #e67e22;
@@ -192,7 +192,7 @@
     .kortti-breadcrumb a { color: #8B6914; text-decoration: none; }
     .kortti-breadcrumb a:hover { text-decoration: underline; }
     .kortti-breadcrumb-sep { color: #ccc; }
-    .kortti-breadcrumb-kat { color: #666; }
+    .kortti-breadcrumb .kortti-breadcrumb-kat { color: #666; }
     .kortti-random-btn {
       margin-left: auto;
       display: inline-flex;
@@ -326,25 +326,24 @@
     }
     .random-siirtyma-overlay.nakyva .random-siirtyma-teksti { opacity: 1; }
   
-.infolaatikko h2.laatikko-otsikko, .huomiolaatikko h2.laatikko-otsikko {
+.infolaatikko h2.laatikko-otsikko, .huomiolaatikko h2.laatikko-otsikko, .vaaralatikko h2.laatikko-otsikko {
   display: inline; font: inherit; font-weight: 700; color: inherit;
   margin: 0; padding: 0; letter-spacing: inherit;
 }
 </style>
 
   <!-- SEO -->
-  <meta name="description" content="Vaalilupauksen hinnan laskee lupaaja itse. Kun riippumatonta laskelmaa ei ole, aikajänne, brutto ja netto valitaan sen mukaan miltä luku näyttää.">
-  <meta name="robots" content="noindex"><!-- POISTA-JULKAISTAESSA -->
-  <link rel="canonical" href="https://www.ilmiöt.fi/vaalilupauksen-hinnoittelu.html">
-  <meta property="og:title" content="Vaalilupauksen hinnoittelu — luvun laskee se, joka lupaa — Ilmiöitä">
-  <meta property="og:description" content="Vaalilupauksen hinnan laskee lupaaja itse. Kun riippumatonta laskelmaa ei ole, aikajänne, brutto ja netto valitaan sen mukaan miltä luku näyttää.">
-  <meta property="og:url" content="https://www.ilmiöt.fi/vaalilupauksen-hinnoittelu.html">
+  <meta name="description" content="Piilokulut eli drip pricing: mainostettu hinta on vain ensimmäinen erä, ja lopullinen summa selviää vasta maksuvaiheessa — sen jälkeen kun vertailu on jo tehty.">
+  <link rel="canonical" href="https://www.ilmiöt.fi/piilokulut.html">
+  <meta property="og:title" content="Piilokulut — hinta paljastuu erissä vasta kassalla — Ilmiöitä">
+  <meta property="og:description" content="Piilokulut eli drip pricing: mainostettu hinta on vain ensimmäinen erä, ja lopullinen summa selviää vasta maksuvaiheessa — sen jälkeen kun vertailu on jo tehty.">
+  <meta property="og:url" content="https://www.ilmiöt.fi/piilokulut.html">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="fi_FI">
   <meta property="og:site_name" content="Ilmiöitä — Miten valta toimii">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Vaalilupauksen hinnoittelu — luvun laskee se, joka lupaa — Ilmiöitä">
-  <meta name="twitter:description" content="Vaalilupauksen hinnan laskee lupaaja itse. Kun riippumatonta laskelmaa ei ole, aikajänne, brutto ja netto valitaan sen mukaan miltä luku näyttää.">
+  <meta name="twitter:title" content="Piilokulut — hinta paljastuu erissä vasta kassalla — Ilmiöitä">
+  <meta name="twitter:description" content="Piilokulut eli drip pricing: mainostettu hinta on vain ensimmäinen erä, ja lopullinen summa selviää vasta maksuvaiheessa — sen jälkeen kun vertailu on jo tehty.">
   <meta property="og:image" content="https://www.ilmiöt.fi/og/brand.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -367,14 +366,14 @@
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Vallan rakenteet",
-          "item": "https://www.ilmiöt.fi/kategoria-vallan-rakenteet.html"
+          "name": "Alustatalous ja algoritmit",
+          "item": "https://www.ilmiöt.fi/kategoria-alustatalous-ja-algoritmit.html"
         },
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Vaalilupauksen hinnoittelu — luvun laskee se, joka lupaa",
-          "item": "https://www.ilmiöt.fi/vaalilupauksen-hinnoittelu.html"
+          "name": "Piilokulut — hinta paljastuu erissä vasta kassalla",
+          "item": "https://www.ilmiöt.fi/piilokulut.html"
         }
       ]
     },
@@ -386,12 +385,12 @@
         "width": 1200,
         "height": 630
       },
-      "@id": "https://www.ilmiöt.fi/vaalilupauksen-hinnoittelu.html#article",
-      "url": "https://www.ilmiöt.fi/vaalilupauksen-hinnoittelu.html",
-      "headline": "Vaalilupauksen hinnoittelu — luvun laskee se, joka lupaa",
-      "description": "Vaalilupauksen hinnan laskee lupaaja itse. Kun riippumatonta laskelmaa ei ole, aikajänne, brutto ja netto valitaan sen mukaan miltä luku näyttää.",
+      "@id": "https://www.ilmiöt.fi/piilokulut.html#article",
+      "url": "https://www.ilmiöt.fi/piilokulut.html",
+      "headline": "Piilokulut — hinta paljastuu erissä vasta kassalla",
+      "description": "Piilokulut eli drip pricing: mainostettu hinta on vain ensimmäinen erä, ja lopullinen summa selviää vasta maksuvaiheessa — sen jälkeen kun vertailu on jo tehty.",
       "inLanguage": "fi",
-      "articleSection": "Vallan rakenteet",
+      "articleSection": "Alustatalous ja algoritmit",
       "isPartOf": {
         "@type": "CollectionPage",
         "@id": "https://www.ilmiöt.fi/"
@@ -415,12 +414,35 @@
         "url": "https://www.ilmiöt.fi/tietoa.html",
         "description": "Kirjoittajanimi, jonka takana on kiinnostus valtaan, vaikuttamiseen ja ihmisen päättelyn vinoumiin. Sisältö perustuu julkisiin lähteisiin ja vakiintuneeseen käsitteistöön."
       },
-      "datePublished": "2026-08-04",
-      "dateModified": "2026-08-04"
+      "datePublished": "2026-08-14",
+      "dateModified": "2026-08-14"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.ilmiöt.fi/piilokulut.html#faq",
+      "inLanguage": "fi",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Mitä drip pricing tarkoittaa suomeksi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Vakiintunutta suomennosta ei ole. Käytössä ovat piilokulut, pilkottu hinnoittelu ja hinnan valuttaminen; viranomaiset puhuvat kokonaishinnan ilmoittamisesta. Kyse on hinnoittelusta, jossa mainostettu luku on vain ensimmäinen erä ja loput lisät paljastuvat vaiheittain ostoprosessin aikana."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ovatko piilokulut laillisia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Lopullinen hinta on kerrottava. EU:n lentoliikenneasetus (1008/2008) edellyttää, että hinta veroineen ja maksuineen on nähtävissä koko varausprosessin ajan, ja kuluttajansuojalaki vaatii hinnan ilmoittamista niin, ettei kokonaiskustannus jää arvailun varaan. Rajanveto koskee sitä, missä vaiheessa ja miten näkyvästi summa esitetään."
+          }
+        }
+      ]
     }
   ]
 }
-  </script>
+</script>
   <style>
     .ilmio-byline{font-size:.82rem;color:#8B6914;font-style:italic;margin:.15rem 0 1.3rem;}
     .ilmio-byline a{color:#8B6914;}
@@ -433,59 +455,61 @@
 <body>
 
   <div class="kortti-breadcrumb">
-    <a href="../index.html" class="kortti-logo" aria-label="Ilmiöitä — etusivu"><img src="../favicon.svg" alt="Ilmiöitä"></a>
-    <a href="../index.html">← Kaikki ilmiöt</a>
-    <span class="kortti-breadcrumb-sep">›</span><a href="../kategoria-vallan-rakenteet.html" class="kortti-breadcrumb-kat">Vallan rakenteet</a>
+    <a href="index.html" class="kortti-logo" aria-label="Ilmiöitä — etusivu"><img src="favicon.svg" alt="Ilmiöitä"></a>
+    <a href="index.html">← Kaikki ilmiöt</a>
+    <span class="kortti-breadcrumb-sep">›</span><a href="kategoria-alustatalous-ja-algoritmit.html" class="kortti-breadcrumb-kat">Alustatalous ja algoritmit</a>
     <button class="kortti-random-btn" onclick="randomIlmio()" title="Satunnainen ilmiö (R)">
       <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>
       <span class="btn-text">Satunnainen</span>
     </button>
   </div>
 
-  <div class="ilmio" id="vaalilupauksen-hinnoittelu">
-<div class="ilmio-tag">Ilmiö 8</div>
-<h1>Vaalilupauksen hinnoittelu — luvun laskee se, joka lupaa</h1>
-<p class="ilmio-byline">Kirjoittanut <a href="../tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 4.8.2026</p>
-<p><strong>Vaalilupauksen hinnoittelu</strong> (englanniksi <em>policy costing</em> tai <em>election costing</em>) tarkoittaa riippumatonta laskelmaa siitä, mitä luvattu toimenpide maksaa. Suomessa sellaista ei tehdä järjestelmällisesti: puolue esittää oman lukunsa, eikä sitä vastaan ole toista lukua. Siksi hinta ei ole ennuste vaan kampanja-aineistoa.</p>
+  <div class="ilmio" id="piilokulut">
+<div class="ilmio-tag">Ilmiö 108</div>
+<h1>Piilokulut — hinta paljastuu erissä vasta kassalla</h1>
+<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 14.8.2026</p>
+<p><strong>Piilokulut</strong> (englanniksi <em>drip pricing</em>) tarkoittaa hinnoittelua, jossa mainostettu luku on vain ensimmäinen erä. Lentolippu maksaa 29 euroa, kunnes mukaan tulee matkatavara, istumapaikka, maksutapalisä ja palvelumaksu. Kokonaishinta ei ole salaisuus — se vain kerrotaan vaiheittain, sen jälkeen kun vertailu vaihtoehtoihin on jo tehty.</p>
+<div class="infolaatikko vastauslohko">
+<h2 class="laatikko-otsikko">Mitä drip pricing tarkoittaa suomeksi?</h2>
+<p style="margin:0.4em 0 0;">Vakiintunutta suomennosta ei ole. Käytössä ovat <strong>piilokulut</strong>, <em>pilkottu hinnoittelu</em> ja <em>hinnan valuttaminen</em>; viranomaiset puhuvat kokonaishinnan ilmoittamisesta. EU:n lentoliikenneasetus (1008/2008) edellyttää, että lopullinen hinta veroineen ja maksuineen on nähtävissä koko varausprosessin ajan, ja kuluttajansuojalaki vaatii hinnan ilmoittamista niin, ettei kokonaiskustannus jää arvailun varaan.</p>
+</div>
 <div class="mermaid">
 flowchart TD
-  A["Lupaus esitetään\nkampanjassa"] --&gt; B["Hinnan laskee\nlupaaja itse"]
-  B --&gt; C["Aikajänne, brutto/netto ja\ndynaamiset vaikutukset valitaan"]
-  C --&gt; D["Luku jää ainoaksi luvuksi —\nvertailukohtaa ei ole"]
-  D --&gt; E["Vaalikauden lopussa\nmitataan jotain muuta"]
-  style D fill:#fdf0f0,stroke:#c0392b
+  A["Mainos: 29 €"] --&gt; B["Valinta tehty,\nvertailu ohi"]
+  B --&gt; C["+ matkatavara"]
+  C --&gt; D["+ istumapaikka"]
+  D --&gt; E["+ maksutapalisä"]
+  E --&gt; F["Maksettavaa 71 €"]
+  style A fill:#eafaf1,stroke:#27ae60
+  style F fill:#fdf0f0,stroke:#c0392b
     </div>
-<p class="kaavio-selitys">Ilman toista laskelmaa ensimmäinen luku on lopullinen luku.</p>
-<p>Valinnanvaraa on kolmessa kohdassa, eikä yksikään niistä ole valehtelua. <strong>Aikajänne:</strong> sama toimenpide maksaa vuositasolla neljäsosan siitä, mitä se maksaa vaalikaudessa. <strong>Brutto vai netto:</strong> kustannuksesta voidaan vähentää arvioidut takaisinvirtaukset, jolloin luku pienenee ilman että mikään muuttuu. <strong>Dynaamiset vaikutukset:</strong> käyttäytymismuutokset lasketaan mukaan silloin kun ne auttavat ja jätetään pois silloin kun eivät.</p>
-<p>Muualla ongelma on ratkaistu laitoksella. Alankomaissa analyysilaitos CPB on laskenut puolueiden vaaliohjelmat läpi samalla menetelmällä vuodesta 1986, ja Australiassa parlamentin budjettitoimisto hinnoittelee vaalilupaukset. Suomessa valtiovarainministeriö julkaisee ennen vaaleja virkamiesarvion julkisen talouden tilasta — mutta arvio koskee lähtötilannetta, ei kenenkään lupauksia.</p>
-<p>Ero suurhankkeeseen on olennainen: hankkeen kustannusarvio joutuu edes muodollisesti portille, jossa joku katsoo sitä. Vaalilupauksella ei ole porttia lainkaan.</p>
+<p class="kaavio-selitys">Jokainen erä on pieni suhteessa jo tehtyyn valintaan — siksi jatkaminen tuntuu halvemmalta kuin aloittaminen alusta.</p>
+<p>Mekanismi on kaksiosainen. Ensimmäinen luku jää ankkuriksi, johon kaikkia myöhempiä lisiä verrataan, ja jokainen vaihe kuluttaa aikaa, joka menetetään jos peruuttaa. Xavier Gabaix ja David Laibson osoittivat vuonna 2006, ettei kilpailu korjaa tätä itsestään: yritys, joka ilmoittaisi kokonaishinnan heti, näyttäisi vertailussa kalliimmalta kuin se on.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Ero läheisiin käsitteisiin:</h2> Erona <a href="strateginen-aliarviointi.html">strategiseen aliarviointiin</a> on portti: siellä optimistisin luku voittaa vertailun, tässä vertailua ei ole. <a href="../maalitolppien-siirtaminen.html">Maalitolppien siirtäminen</a> tulee myöhemmin — kun lupausta ei voi mitata alkuperäisellä luvulla, mitataan jollain muulla. <a href="paatosperainen-todistelu.html">Päätösperäinen todistelu</a> on saman asian hallintoversio.
+<h2 class="laatikko-otsikko">Miten piilokulut eroavat läheisistä ilmiöistä?</h2> <a href="bait-and-switch.html">Bait and switchissä</a> vaihtuu tuote, piilokuluissa vain hinnan esitystapa — luvattu asia myös toimitetaan. <a href="shrinkflaatio.html">Shrinkflaatiossa</a> hinta pysyy ja sisältö pienenee. <a href="hintaankkurointi.html">Hintaankkurointi</a> selittää, miksi ensimmäinen luku jää päähän silloinkin kun se osoittautuu vääräksi.
     </div>
 <div class="huomiolaatikko">
 <h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2>
 <ul style="margin:0.5em 0 0;">
-<li>Kysy aikajänne ensin: onko luku vuodessa vai vaalikaudessa? Ilman sitä mikään summa ei tarkoita mitään.</li>
-<li>Kysy, onko luku brutto vai netto — ja jos netto, mitä siitä on vähennetty ja millä oletuksella.</li>
-<li>Kysy kuka laskelman teki. Puolueen oma, ministeriön, tutkimuslaitoksen ja etujärjestön laskelma eivät ole sama asia.</li>
-<li>Erota mitä maksaa ja mistä otetaan: lupaus ilman rahoituslähdettä on puolikas lupaus.</li>
-<li>Vertaa saman puolueen edellisten vaalien lupauksia toteutuneeseen. Sarja kertoo enemmän kuin yksittäinen luku.</li>
-<li>Älä tulkitse hinnoittelemattomuutta valheeksi — se on rakenteen puute, ei yksittäisen ehdokkaan vika.</li>
+<li>Vertaile vasta viimeisellä ruudulla. Hakukoneen ja vertailusivuston hinnat ovat eri erästä kuin maksettava summa.</li>
+<li>Vie ostos maksusivulle asti kahdella palveluntarjoajalla ennen kuin päätät — vasta siellä luvut ovat vertailukelpoisia.</li>
+<li>Tunnista kohta, jossa hinta lakkaa muuttumasta. Jos sitä ei tule ennen korttitietoja, kyse ei ole vertailusta vaan suostuttelusta.</li>
+<li>Aika, jonka olet jo käyttänyt varaukseen, ei ole peruste jatkaa — se on <a href="sunk-cost-harha.html">uponnut kustannus</a>.</li>
 </ul>
 </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
 <div class="lue-lisaa-rivi">
-<span class="lue-lisaa-tyyppi">Raportteja</span>
+<span class="lue-lisaa-tyyppi">Tutkimusta</span>
 <ul class="lue-lisaa-lista">
-<li><cite>Keuzes in Kaart</cite> — CPB:n vaaliohjelmalaskelmat, Alankomaat (vuodesta 1986)</li>
-<li><cite>Election commitments report</cite> — Parliamentary Budget Office, Australia</li>
+<li><cite>Shrouded Attributes, Consumer Myopia, and Information Suppression in Competitive Markets</cite> — Xavier Gabaix &amp; David Laibson (2006)</li>
+<li><cite>Deceptive Patterns</cite> — Harry Brignull (2023)</li>
 </ul>
 </div>
 <div class="lue-lisaa-rivi">
 <span class="lue-lisaa-tyyppi">Verkossa</span>
 <ul class="lue-lisaa-lista">
-<li><a href="https://en.wikipedia.org/wiki/CPB_Netherlands_Bureau_for_Economic_Policy_Analysis" target="_blank" rel="noopener">Wikipedia: CPB Netherlands Bureau for Economic Policy Analysis (englanniksi)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Drip_pricing" target="_blank" rel="noopener">Wikipedia: Drip pricing (englanniksi)</a></li>
 </ul>
 </div>
 </div>
@@ -494,35 +518,35 @@ flowchart TD
   <aside class="liittyvat" aria-label="Liittyvät ilmiöt">
     <h2>Liittyvät ilmiöt</h2>
     <div class="liittyvat-kortit">
-    <a href="strateginen-aliarviointi.html" class="liittyvat-kortti" style="--c:#c0392b">
-      <span class="liittyvat-numero">55</span>
+    <a href="hintaankkurointi.html" class="liittyvat-kortti" style="--c:#283593">
+      <span class="liittyvat-numero">87</span>
       <span class="liittyvat-teksti">
-        <span class="liittyvat-nimi">Strateginen aliarviointi</span>
-        <span class="liittyvat-kuvaus">Kustannusarviot ovat pielessä systemaattisesti samaan suuntaan, koska portti palkitsee optimismin.</span>
+        <span class="liittyvat-nimi">Hintaankkurointi</span>
+        <span class="liittyvat-kuvaus">Ensimmäinen esitetty luku asettaa vertailupisteen koko neuvottelulle — vaikka se olisi hatusta.</span>
       </span>
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
-    <a href="../maalitolppien-siirtaminen.html" class="liittyvat-kortti" style="--c:#a04000">
-      <span class="liittyvat-numero">28</span>
+    <a href="bait-and-switch.html" class="liittyvat-kortti" style="--c:#ad1457">
+      <span class="liittyvat-numero">67</span>
       <span class="liittyvat-teksti">
-        <span class="liittyvat-nimi">Maalitolppien siirtäminen</span>
-        <span class="liittyvat-kuvaus">Kun tavoitetta ei saavuteta, tavoite vaihdetaan siihen, mikä on jo toteutunut.</span>
+        <span class="liittyvat-nimi">Bait and switch</span>
+        <span class="liittyvat-kuvaus">Näyttävä tarjous houkuttelee paikalle, mutta tilalle myydäänkin jotain kalliimpaa tai huonompaa.</span>
       </span>
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
-    <a href="paatosperainen-todistelu.html" class="liittyvat-kortti" style="--c:#7b1fa2">
-      <span class="liittyvat-numero">56</span>
+    <a href="pakotettu-jatkuvuus.html" class="liittyvat-kortti" style="--c:#3e2723">
+      <span class="liittyvat-numero">109</span>
       <span class="liittyvat-teksti">
-        <span class="liittyvat-nimi">Päätösperäinen todistelu</span>
-        <span class="liittyvat-kuvaus">Ensin päätös, sitten selvitys, joka tukee sitä — evidence-based policyn irvikuva.</span>
+        <span class="liittyvat-nimi">Pakotettu jatkuvuus</span>
+        <span class="liittyvat-kuvaus">Ilmainen kokeilu muuttuu laskuksi automaattisesti — ilman muistutusta ja ilman uutta hyväksyntää.</span>
       </span>
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
-    <a href="../goodhartin-laki.html" class="liittyvat-kortti" style="--c:#01579b">
-      <span class="liittyvat-numero">38</span>
+    <a href="shrinkflaatio.html" class="liittyvat-kortti" style="--c:#e65100">
+      <span class="liittyvat-numero">92</span>
       <span class="liittyvat-teksti">
-        <span class="liittyvat-nimi">Goodhartin laki</span>
-        <span class="liittyvat-kuvaus">Kun mittarista tulee tavoite, se lakkaa olemasta hyvä mittari.</span>
+        <span class="liittyvat-nimi">Shrinkflaatio</span>
+        <span class="liittyvat-kuvaus">Paketti pienenee, hinta pysyy — piilotettu hinnankorotus, jonka yksikköhinta paljastaa.</span>
       </span>
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
@@ -530,15 +554,15 @@ flowchart TD
   </aside>
 
   <nav class="kortti-nav">
-    <a class="kortti-nav-btn" href="../hajota-hallitse.html">← Hajota ja hallitse</a>
+    <a class="kortti-nav-btn" href="evasteansa.html">← Evästeansa — hyväksyminen yhdellä klikkauksella, kieltäytyminen viidellä</a>
     <div class="kortti-nav-center">
-      <span class="kortti-nav-laskuri">8 / 130</span>
+      <span class="kortti-nav-laskuri">108 / 139</span>
       <span class="kortti-nav-vinkki">
         <kbd>&#8592;</kbd> <kbd>&#8594;</kbd> selaa &middot; <kbd>R</kbd> satunnainen
         <span class="touch-vinkki">&nbsp;· swipe &#8592;&#8594; tai &#8595; random</span>
       </span>
     </div>
-    <a class="kortti-nav-btn" href="../bkt-harha.html">BKT-harha →</a>
+    <a class="kortti-nav-btn" href="pakotettu-jatkuvuus.html">Pakotettu jatkuvuus — ilmainen kokeilu, joka muuttuu laskuksi ilman kysymystä →</a>
   </nav>
 
 
@@ -700,15 +724,15 @@ flowchart TD
 
   <script>
 (function () {
-  const IDS = ["paskuuttaminen", "starve-the-beast", "overton-ikkuna", "saantelijan-kaappaus", "rautainen-laki", "valta-suojelee-valtaa", "hajota-hallitse", "bkt-harha", "astroturf", "firehose-of-falsehood", "manufactured-consent", "betteridgen-laki", "inokulointiteoria", "whataboutismi", "streisand-ilmio", "trollitehdas", "kuollut-kissa", "brandolinin-laki", "poen-laki", "godwinin-laki", "backfire-effect", "darvo", "halo-efekti", "konsensus-fetissi", "omenoita-appelsiineja", "blame-game", "gaslighting", "maalitolppien-siirtaminen", "argumenttitulva", "sunk-cost-harha", "jarjestelman-puolustelu", "dunning-kruger", "hanlonin-partaveitsi", "occamin-partaveitsi", "simple-sabotage", "kafka-ilmio", "catch-22", "goodhartin-laki", "hippo-efekti", "performatiivinen-lasnaolo", "rituaalinen-raportointi", "initiointirituaalit", "portinvartija-kulttuuri", "strateginen-osaamattomuus", "fofo", "sivustakatsojan-efekti", "parkinsonin-laki", "peterin-periaate", "pareto-periaate", "brooksin-laki", "yhdeksanyhdeksan", "hofstadterin-laki", "kuolonmarssi", "tekninen-velka", "conways-laki", "bikeshedding", "scope-creep", "korkoa-korolle", "negatiivinen-korkoa", "korkokierre", "honeypot-huijaus", "bait-and-switch", "kaarmeoljy", "ponzi-pyramidi", "pump-and-dump", "pig-butchering", "ennakkomaksuhuijaus", "badger-game", "qr-koodihuijaus", "toimitusjohtajahuijaus", "rug-pull", "ilmainen-naytetyo", "exposure-maksu", "lowball-hinnoittelu", "valittajan-skimmaus", "tilipuristus", "foot-in-the-door", "door-in-the-face", "hintaankkurointi", "houkutinvaihtoehto", "vastavuoroisuuden-ansa", "sosiaalinen-todiste", "painostusclose", "shrinkflaatio", "suunniteltu-vanheneminen", "tilausansa", "doomscrolling", "kaikukammio", "ai-slop", "parasosiaalinen-suhde", "kuollut-internet", "rage-bait", "klikkiotsikko", "engagement-bait", "1-prosentin-saanto", "aanekas-vahemmisto", "viherpesu", "sinipesu", "urheilupesu", "pinkkipesu", "tekoalypesu", "hyvesignalointi", "hiljainen-irtisanoutuminen", "hiljainen-irtisanominen", "haamutyopaikat", "kaksois-y-akseli", "pinta-alaharha", "cherry-picking-aikavali", "keskiarvo-vs-mediaani", "suhteellinen-riski", "selviytymisharha", "simpsonin-paradoksi", "p-hakkerointi"];
-  const PREV = '../hajota-hallitse.html';
-  const NEXT = '../bkt-harha.html';
+  const IDS = ["paskuuttaminen", "starve-the-beast", "overton-ikkuna", "saantelijan-kaappaus", "rautainen-laki", "valta-suojelee-valtaa", "hajota-hallitse", "vaalilupauksen-hinnoittelu", "bkt-harha", "astroturf", "firehose-of-falsehood", "manufactured-consent", "betteridgen-laki", "inokulointiteoria", "whataboutismi", "streisand-ilmio", "trollitehdas", "kuollut-kissa", "brandolinin-laki", "poen-laki", "godwinin-laki", "backfire-effect", "darvo", "halo-efekti", "konsensus-fetissi", "omenoita-appelsiineja", "blame-game", "gaslighting", "maalitolppien-siirtaminen", "argumenttitulva", "sunk-cost-harha", "jarjestelman-puolustelu", "dunning-kruger", "hanlonin-partaveitsi", "occamin-partaveitsi", "simple-sabotage", "kafka-ilmio", "catch-22", "goodhartin-laki", "hippo-efekti", "performatiivinen-lasnaolo", "rituaalinen-raportointi", "initiointirituaalit", "portinvartija-kulttuuri", "strateginen-osaamattomuus", "fofo", "sivustakatsojan-efekti", "parkinsonin-laki", "peterin-periaate", "pareto-periaate", "brooksin-laki", "yhdeksanyhdeksan", "hofstadterin-laki", "kuolonmarssi", "lukittu-paatos", "strateginen-aliarviointi", "paatosperainen-todistelu", "lapi-hinnalla-milla-hyvansa", "tekninen-velka", "conways-laki", "bikeshedding", "scope-creep", "korkoa-korolle", "negatiivinen-korkoa", "korkokierre", "honeypot-huijaus", "bait-and-switch", "kaarmeoljy", "ponzi-pyramidi", "pump-and-dump", "pig-butchering", "ennakkomaksuhuijaus", "badger-game", "qr-koodihuijaus", "toimitusjohtajahuijaus", "rug-pull", "aaniklooni-huijaus", "smishing", "deepfake-sijoitushuijaus", "ilmainen-naytetyo", "exposure-maksu", "lowball-hinnoittelu", "valittajan-skimmaus", "tilipuristus", "foot-in-the-door", "door-in-the-face", "hintaankkurointi", "houkutinvaihtoehto", "vastavuoroisuuden-ansa", "sosiaalinen-todiste", "painostusclose", "shrinkflaatio", "suunniteltu-vanheneminen", "tilausansa", "doomscrolling", "kaikukammio", "ai-slop", "parasosiaalinen-suhde", "kuollut-internet", "rage-bait", "klikkiotsikko", "engagement-bait", "1-prosentin-saanto", "aanekas-vahemmisto", "vaalikone-efekti", "tekoalypsykoosi", "evasteansa", "piilokulut", "pakotettu-jatkuvuus", "confirmshaming", "oletusasetusansa", "viherpesu", "sinipesu", "urheilupesu", "pinkkipesu", "tekoalypesu", "hyvesignalointi", "hiljainen-irtisanoutuminen", "hiljainen-irtisanominen", "haamutyopaikat", "kaksois-y-akseli", "pinta-alaharha", "cherry-picking-aikavali", "keskiarvo-vs-mediaani", "suhteellinen-riski", "selviytymisharha", "simpsonin-paradoksi", "p-hakkerointi", "kannatusmittausten-virhemarginaali", "uutiskynnys", "uutisautiomaa", "paasyjournalismi", "tiedotejournalismi", "branditurvallisuus", "huonojen-uutisten-hautaaminen", "vaara-tasapaino", "keharaportointi", "gell-mannin-amnesia", "vihamielisen-median-harha"];
+  const PREV = 'evasteansa.html';
+  const NEXT = 'pakotettu-jatkuvuus.html';
 
   function randomIlmio() {
     let id;
-    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'vaalilupauksen-hinnoittelu');
+    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'piilokulut');
     merkitseRandomHyppy();
-    window.location.href = '../' + id + '.html';
+    window.location.href = id + '.html';
   }
   window.randomIlmio = randomIlmio;
 
@@ -752,7 +776,7 @@ flowchart TD
     var overlay = document.createElement('div');
     overlay.className = 'random-siirtyma-overlay';
     overlay.innerHTML =
-      '<img class="random-siirtyma-logo" src="../favicon.svg" alt="">' +
+      '<img class="random-siirtyma-logo" src="favicon.svg" alt="">' +
       '<span class="random-siirtyma-teksti">' + teksti + '&hellip;</span>';
     document.body.appendChild(overlay);
     requestAnimationFrame(function () {
@@ -763,9 +787,9 @@ flowchart TD
   function naytaRandomSiirtyma() {
     if (_siirtymaKaynnissa) return;
     var id;
-    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'vaalilupauksen-hinnoittelu');
+    do { id = IDS[Math.floor(Math.random() * IDS.length)]; } while (id === 'piilokulut');
     merkitseRandomHyppy();
-    naytaSiirtyma('Satunnainen ilmiö', '../' + id + '.html');
+    naytaSiirtyma('Satunnainen ilmiö', id + '.html');
   }
   window.naytaRandomSiirtyma = naytaRandomSiirtyma;
   function naytaAlasSiirtyma() {
@@ -779,7 +803,7 @@ flowchart TD
       var overlay = document.createElement('div');
       overlay.className = 'random-siirtyma-overlay';
       overlay.innerHTML =
-        '<img class="random-siirtyma-logo" src="../favicon.svg" alt="">' +
+        '<img class="random-siirtyma-logo" src="favicon.svg" alt="">' +
         '<span class="random-siirtyma-teksti">Eteenpäin&hellip;</span>';
       document.body.appendChild(overlay);
       requestAnimationFrame(function () {
@@ -800,7 +824,7 @@ flowchart TD
       var overlay = document.createElement('div');
       overlay.className = 'random-siirtyma-overlay';
       overlay.innerHTML =
-        '<img class="random-siirtyma-logo" src="../favicon.svg" alt="">' +
+        '<img class="random-siirtyma-logo" src="favicon.svg" alt="">' +
         '<span class="random-siirtyma-teksti">Takaisin&hellip;</span>';
       document.body.appendChild(overlay);
       requestAnimationFrame(function () {
@@ -916,7 +940,7 @@ flowchart TD
   </script>
 
   <footer class="ilmio-footer">
-    <p>© 2026 Ilmiöitä — Miten valta toimii · Kirjoittanut Ilmiömies · <a href="../tietoa.html">Tietoa sivustosta ja tekijästä</a></p>
+    <p>© 2026 Ilmiöitä — Miten valta toimii · Kirjoittanut Ilmiömies · <a href="tietoa.html">Tietoa sivustosta ja tekijästä</a></p>
   </footer>
 </body>
 </html>

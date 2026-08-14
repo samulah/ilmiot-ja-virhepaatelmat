@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-  <title>Prioriteetti 2 -luonnokset — Ilmiöitä</title>
+  <title>Luonnokset — Ilmiöitä</title>
   <link rel="stylesheet" href="../fonts/fonts.css">
   <link rel="stylesheet" href="../fonts/spectral.css">
   <style>
@@ -26,7 +26,6 @@
       -webkit-text-size-adjust: 100%;
     }
 
-    /* ── Header ── */
     .hub-header {
       position: sticky;
       top: 0;
@@ -72,7 +71,6 @@
     }
     .paluu-btn:hover { background: rgba(201,168,76,0.3); }
 
-    /* ── Main ── */
     .hub-main {
       max-width: 1240px;
       margin: 0 auto;
@@ -98,7 +96,13 @@
       color: #3d3008;
     }
 
-    /* ── Kategoria ── */
+    .hub-intro code, .hub-huomio code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.92em;
+      background: rgba(201,168,76,0.16);
+      padding: 0.05em 0.3em;
+    }
+
     .hub-kategoria { margin-bottom: 1.8rem; }
     .hub-kat-label {
       font-size: 0.67em;
@@ -116,14 +120,12 @@
       padding-left: 0.15rem;
     }
 
-    /* ── Grid ── */
     .hub-kortit {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
       gap: 0.35rem;
     }
 
-    /* ── Kortti ── */
     .hub-kortti {
       display: flex;
       align-items: center;
@@ -164,6 +166,9 @@
     }
     .hub-kortti:hover .hub-nuoli { color: var(--c, #2c3e50); }
 
+    .hub-kortti em { font-style: normal; color: #8B6914; font-size: 0.88em; }
+    .hub-numero.tyhja { background: transparent; color: var(--c-primary-mid); border: 1.5px dashed #D4C090; }
+
     @media (max-width: 640px) {
       .hub-header { padding: 0.75rem 1rem; }
       .hub-main { padding: 1.2rem 1rem 3rem; }
@@ -176,135 +181,50 @@
   <img class="hub-logo" src="../favicon.svg" alt="Ilmiöitä-logo: punainen varoituslippu" width="36" height="36">
   <div class="hub-header-left">
     <h1>Ilmiöitä &middot; luonnokset</h1>
-    <p>Prioriteetti 2 &middot; 15 luonnosta &middot; julkaisematta</p>
+    <p>1 koostesivu odottaa julkaisua</p>
   </div>
   <a class="paluu-btn" href="../index.html">&larr; Kaikki ilmiöt</a>
 </header>
 
 <main class="hub-main">
-<p class="hub-intro">Prioriteetti 2:n luonnossivut tarkastelua varten, ryhmiteltyinä
-julkaisuerittäin ja tulevan kategoriansa mukaan.</p>
-<div class="hub-huomio">Nämä sivut ovat julkaisemattomia luonnoksia (noindex): numerointi,
-edellinen/seuraava-navigaatio ja satunnaisnappi toimivat vain tämän kansion sisällä.
-Julkaisussa sivut siirretään juureen, numeroidaan kategorioittain ja index.html, llms.txt,
-sitemap.xml ja hakuindeksi päivitetään (ks. UUDET-JUTUT-PLAN.md).</div>
-<div class="hub-kategoria">
-  <h2 class="hub-kat-label">Pesut ja maineenhallinta</h2>
-  <p class="hub-kat-desc">erä B (täydentää kategorian 3 korttiin)</p>
-  <div class="hub-kortit">
-<a href="tekoalypesu.html" class="hub-kortti" style="--c:#00695c">
-  <span class="hub-numero" aria-hidden="true">&#9998;</span>
-  <span class="hub-nimi">Tekoälypesu</span>
-  <span class="hub-nuoli" aria-hidden="true">&rsaquo;</span>
-</a>
-<a href="hyvesignalointi.html" class="hub-kortti" style="--c:#c62828">
-  <span class="hub-numero" aria-hidden="true">&#9998;</span>
-  <span class="hub-nimi">Hyvesignalointi</span>
-  <span class="hub-nuoli" aria-hidden="true">&rsaquo;</span>
-</a>
-  </div>
+<p class="hub-intro">Kaikki julkaisemattomat luonnokset yhdessä kansiossa. Sivut ovat
+<code>noindex</code>-merkittyjä ja niiden polut osoittavat <code>../</code>-etuliitteellä juureen —
+julkaistaessa molemmat puretaan.</p>
+
+<div class="hub-huomio">
+  <strong>Julkaistu 14.8.2026:</strong> vaalierä (3), pimeät kuviot (5) ja tekoälyhuijaukset (4)
+  eli yhteensä 12 ilmiötä — sivusto kasvoi 127 &rarr; 139. Erät tarkistettiin lähteitä vasten ennen
+  julkaisua; korjaukset on kirjattu <code>MUUTOSLOKI.md</code>:hen. Generaattorit
+  <code>scripts/build_pimeat_kuviot_luonnokset.py</code> ja
+  <code>scripts/build_tekoalyhuijaukset_luonnokset.py</code> kirjoittaisivat sivut uudelleen tähän
+  kansioon, joten <strong>älä aja niitä enää</strong> — julkaistut versiot ovat juuressa.
+  <br><strong>Seuraavaksi:</strong> klusteri 3 (argumentointivirheet, 5 sivua) on yhä kirjoittamatta
+  ja ehdollinen — päätös vasta title-testin mittauspisteen (~10.9.2026) jälkeen. Ks.
+  <a href="UUDET-KLUSTERIT-PLAN.md">UUDET-KLUSTERIT-PLAN.md</a> &sect; 5.
 </div>
-<div class="hub-kategoria">
-  <h2 class="hub-kat-label">Työelämän ilmiöt</h2>
-  <p class="hub-kat-desc">erä D (täydentää kategorian 3 korttiin)</p>
+
+<section class="hub-kategoria">
+  <div class="hub-kat-label">Koostesivu &middot; ei ilmiö &middot; julkaisu joulukuu 2026</div>
+  <p class="hub-kat-desc">Vaalierän kokoava opas. <strong>Ei ilmiösivu:</strong> ei numeroa, ei
+  PREV/NEXT-ketjua, ei <code>lisaa_ilmiot.py</code>:tä. Vaatii oman rivin
+  <code>build_sitemap.py</code>:hyn ja sisääntulevat linkit 8–10 ilmiösivulta, tai sivu jää orvoksi
+  ja sitemapin ulkopuolelle. Sivun sisällä olevat linkit kannattaa tarkistaa: vaalierän kolme sivua
+  ovat nyt juuressa. Suunnitelma:
+  <a href="VAALIKESKUSTELU-LUKUOHJE-PLAN.md">VAALIKESKUSTELU-LUKUOHJE-PLAN.md</a>.</p>
   <div class="hub-kortit">
-<a href="hiljainen-irtisanominen.html" class="hub-kortti" style="--c:#1a237e">
-  <span class="hub-numero" aria-hidden="true">&#9998;</span>
-  <span class="hub-nimi">Hiljainen irtisanominen</span>
-  <span class="hub-nuoli" aria-hidden="true">&rsaquo;</span>
-</a>
-<a href="haamutyopaikat.html" class="hub-kortti" style="--c:#546e7a">
-  <span class="hub-numero" aria-hidden="true">&#9998;</span>
-  <span class="hub-nimi">Haamutyöpaikat</span>
-  <span class="hub-nuoli" aria-hidden="true">&rsaquo;</span>
-</a>
+    <a class="hub-kortti" style="--c:#8B6914" href="vaalikeskustelun-lukuohje.html"><span class="hub-numero tyhja">&mdash;</span><span class="hub-nimi">Vaalikeskustelun lukuohje <em>· koostesivu, 8 lukua</em></span><span class="hub-nuoli">&rsaquo;</span></a>
   </div>
-</div>
-<div class="hub-kategoria">
-  <h2 class="hub-kat-label">Informaatio ja propaganda</h2>
-  <p class="hub-kat-desc">erä C</p>
+</section>
+
+<section class="hub-kategoria">
+  <div class="hub-kat-label">Suunnitelmat</div>
+  <p class="hub-kat-desc">Priorisointi- ja valintapohjat, eivät julkaisupäätöksiä.</p>
   <div class="hub-kortit">
-<a href="streisand-ilmio.html" class="hub-kortti" style="--c:#0277bd">
-  <span class="hub-numero" aria-hidden="true">&#9998;</span>
-  <span class="hub-nimi">Streisand-ilmiö</span>
-  <span class="hub-nuoli" aria-hidden="true">&rsaquo;</span>
-</a>
-<a href="trollitehdas.html" class="hub-kortti" style="--c:#4e342e">
-  <span class="hub-numero" aria-hidden="true">&#9998;</span>
-  <span class="hub-nimi">Trollitehdas</span>
-  <span class="hub-nuoli" aria-hidden="true">&rsaquo;</span>
-</a>
-<a href="kuollut-kissa.html" class="hub-kortti" style="--c:#37474f">
-  <span class="hub-numero" aria-hidden="true">&#9998;</span>
-  <span class="hub-nimi">Kuollut kissa -strategia</span>
-  <span class="hub-nuoli" aria-hidden="true">&rsaquo;</span>
-</a>
+    <a class="hub-kortti" style="--c:#5d4037" href="ANALYYSI.md"><span class="hub-numero tyhja">md</span><span class="hub-nimi">ANALYYSI.md <em>· vaalierän priorisointi ja aikataulu</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#5d4037" href="UUDET-KLUSTERIT-PLAN.md"><span class="hub-numero tyhja">md</span><span class="hub-nimi">UUDET-KLUSTERIT-PLAN.md <em>· kolme klusteria, 2/3 julkaistu</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#5d4037" href="VAALIKESKUSTELU-LUKUOHJE-PLAN.md"><span class="hub-numero tyhja">md</span><span class="hub-nimi">VAALIKESKUSTELU-LUKUOHJE-PLAN.md <em>· koostesivun rakenne</em></span><span class="hub-nuoli">&rsaquo;</span></a>
   </div>
-</div>
-<div class="hub-kategoria">
-  <h2 class="hub-kat-label">Psykologia ja kognitio</h2>
-  <p class="hub-kat-desc">erä E</p>
-  <div class="hub-kortit">
-<a href="dunning-kruger.html" class="hub-kortti" style="--c:#f57f17">
-  <span class="hub-numero" aria-hidden="true">&#9998;</span>
-  <span class="hub-nimi">Dunning–Kruger-ilmiö</span>
-  <span class="hub-nuoli" aria-hidden="true">&rsaquo;</span>
-</a>
-  </div>
-</div>
-<div class="hub-kategoria">
-  <h2 class="hub-kat-label">Myyntikikat ja painostus</h2>
-  <p class="hub-kat-desc">erä E</p>
-  <div class="hub-kortit">
-<a href="suunniteltu-vanheneminen.html" class="hub-kortti" style="--c:#6d4c41">
-  <span class="hub-numero" aria-hidden="true">&#9998;</span>
-  <span class="hub-nimi">Suunniteltu vanheneminen</span>
-  <span class="hub-nuoli" aria-hidden="true">&rsaquo;</span>
-</a>
-<a href="tilausansa.html" class="hub-kortti" style="--c:#880e4f">
-  <span class="hub-numero" aria-hidden="true">&#9998;</span>
-  <span class="hub-nimi">Tilausansa</span>
-  <span class="hub-nuoli" aria-hidden="true">&rsaquo;</span>
-</a>
-  </div>
-</div>
-<div class="hub-kategoria">
-  <h2 class="hub-kat-label">Alustatalous ja algoritmit</h2>
-  <p class="hub-kat-desc">erä E</p>
-  <div class="hub-kortit">
-<a href="kuollut-internet.html" class="hub-kortti" style="--c:#5e35b1">
-  <span class="hub-numero" aria-hidden="true">&#9998;</span>
-  <span class="hub-nimi">Kuollut internet -teoria</span>
-  <span class="hub-nuoli" aria-hidden="true">&rsaquo;</span>
-</a>
-<a href="rage-bait.html" class="hub-kortti" style="--c:#d84315">
-  <span class="hub-numero" aria-hidden="true">&#9998;</span>
-  <span class="hub-nimi">Rage bait</span>
-  <span class="hub-nuoli" aria-hidden="true">&rsaquo;</span>
-</a>
-  </div>
-</div>
-<div class="hub-kategoria">
-  <h2 class="hub-kat-label">Huijaukset ja petokset</h2>
-  <p class="hub-kat-desc">erä E</p>
-  <div class="hub-kortit">
-<a href="qr-koodihuijaus.html" class="hub-kortti" style="--c:#0d47a1">
-  <span class="hub-numero" aria-hidden="true">&#9998;</span>
-  <span class="hub-nimi">QR-koodihuijaus</span>
-  <span class="hub-nuoli" aria-hidden="true">&rsaquo;</span>
-</a>
-<a href="toimitusjohtajahuijaus.html" class="hub-kortti" style="--c:#455a64">
-  <span class="hub-numero" aria-hidden="true">&#9998;</span>
-  <span class="hub-nimi">Toimitusjohtajahuijaus</span>
-  <span class="hub-nuoli" aria-hidden="true">&rsaquo;</span>
-</a>
-<a href="rug-pull.html" class="hub-kortti" style="--c:#4527a0">
-  <span class="hub-numero" aria-hidden="true">&#9998;</span>
-  <span class="hub-nimi">Rug pull</span>
-  <span class="hub-nuoli" aria-hidden="true">&rsaquo;</span>
-</a>
-  </div>
-</div>
+</section>
 </main>
 </body>
 </html>

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Rakentaa Media ja julkisuus -kategoriasivun luonnoksen luonnokset-media/-kansioon.
+"""Rakentaa Media ja julkisuus -kategoriasivun luonnoksen luonnokset/-kansioon.
 
 Miksi oma skripti: build_kategoriat.py lukee ilmiökortit index.html:stä, eikä
 tätä kategoriaa ole siellä ennen kuin ilmiöt 109–118 on julkaistu. Tässä kortit
@@ -22,7 +22,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import build_kategoriat as bk                      # noqa: E402
 from build_media_luonnokset import OMAT_KORTIT     # noqa: E402
 
-OUT = ROOT / "luonnokset-media"
+OUT = ROOT / "luonnokset"
 SLUG = "media-ja-julkisuus"
 
 # 13. kategoria: viimeinen, joten seuraavaa ei ole. Edellinen on nykyinen
