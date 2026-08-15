@@ -210,7 +210,15 @@ if [ -f "$KOHDE/.suosio.env" ]; then
   PGH=$(grep -E '^PGHOST=' "$KOHDE/.suosio.env" | cut -d= -f2- | tr -d '"'"'"' ')
   PGP=$(grep -E '^PGPORT=' "$KOHDE/.suosio.env" | cut -d= -f2- | tr -d '"'"'"' ')
   PGP="${PGP:-5432}"
-  if timeout 5 bash -c "cat < /dev/null > /dev/tcp/$PGH/$PGP" 2>/dev/null; then
+  # Yhteystesti python3:lla, ei /dev/tcp:llä: jälkimmäinen on bashin
+  # ominaisuus eikä sitä ole POSIX sh:ssä lainkaan, joten se antaisi
+  # Synologyssa väärän hälytyksen "ei saada yhteyttä" täysin toimivasta
+  # kannasta. python3 on skriptin pakollinen riippuvuus muutenkin.
+  if python3 -c "import socket,sys
+try:
+    socket.create_connection((sys.argv[1], int(sys.argv[2])), 5).close()
+except Exception as e:
+    sys.exit(str(e))" "$PGH" "$PGP" 2>/dev/null; then
     vihrea "portti $PGH:$PGP vastaa"
   else
     puna "kantaan $PGH:$PGP ei saada yhteyttä tältä koneelta"
