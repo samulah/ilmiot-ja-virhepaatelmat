@@ -93,6 +93,20 @@ idempotentti ja poistaa edellisen injektion ensin. Oletuksena kohde on
 Tunnukset ja kannan osoite ovat gitignoratussa `.suosio.env`:ssä
 (ks. `.suosio.env.malli`) — eivät koskaan versionhallintaan.
 
+**Yöajo asuu NAS:illa, ei työasemalla** (15.8.2026 alkaen). Työaseman cron on
+kommentoitu pois; WSL:n cron ajaa vain kun WSL on käynnissä, ja kolme väliin
+jäänyttä yötä piilottaa lohkot etusivulta tuoreustarkistuksen takia. Pystytys
+`scripts/nas_asennus.sh`:lla, joka on idempotentti ja jossa on `--tarkista`-tila.
+NAS tekee `git pull` ennen jokaista ajoa: skripti lukee ilmiölistan
+`index.html`:stä ja julkaisupäivät sivujen JSON-LD:stä, joten vanhentunut kopio
+jättäisi uudet ilmiöt pois listoilta. Kaksi asiaa ei ole versionhallinnassa
+eikä generoitavissa, joten ne on kopioitava koneelta toiselle käsin:
+`.suosio.env` ja `data/.viikko-historia.json`.
+
+Vain yksi kone saa ajaa `--laheta`:n. Ilman sitä ajavia koneita voi olla monta —
+ne kirjoittavat vain omia paikallisia tiedostojaan — mutta kaksi lähettäjää
+tarkoittaisi kahta eri viikon ilmiötä samalla sivustolla.
+
 Viisi lohkoa: **viikon ilmiö** (nousija, valitaan maanantaisin), **satunnainen
 ilmiö** (lähde on sivun oma korttilista, toimii ilman dataa), **luetuimmat**
 (sivunäytöt), **googlatuimmat** (Google-näytöt) ja **eniten kasvua**

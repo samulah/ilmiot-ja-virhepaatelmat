@@ -98,6 +98,44 @@ testattu: nykytila (ei välilehtiä) ja simuloitu `k30` (kaksi välilehteä,
 klikkaus vaihtaa listan ja päivärajat oikein). `index.html` ei muuttunut —
 tuotantoinjektio on yhä tekemättä.
 
+### Yöajo siirretään NAS:ille
+
+`scripts/nas_asennus.sh` pystyttää ajon aina päällä olevalle Linux-NAS:ille.
+Työaseman cron on kommentoitu pois (`# SIIRRETTY NASILLE 15.8.2026`),
+varmuuskopio otettu ennen muutosta. Syy: WSL:n cron ajaa vain kun WSL on
+käynnissä, ja kolme väliin jäänyttä yötä piilottaa lohkot etusivulta
+`TUOREUS_VRK`-tarkistuksen takia.
+
+Skripti on idempotentti ja siinä on `--tarkista`-tila joka ei muuta mitään.
+Se tarkistaa esivaatimukset, kloonaa repon (GitHub-repo on julkinen, joten
+kloonaus ei tarvitse avainta), luo venvin repon **ulkopuolelle** jottei
+`git status` sotkeennu, asentaa psycopg2-binaryn, testaa TCP-yhteyden kantaan,
+luo SSH-avaimen ja lisää webhotellin `known_hosts`-tiedostoon.
+
+Kaksi yksityiskohtaa jotka olisivat muuten kaatuneet hiljaa yöllä:
+
+- **`known_hosts`.** `laheta()` käyttää `BatchMode=yes`:iä, joka ei voi kysyä
+  isäntäavaimen vahvistusta kun tty puuttuu. Tuntematon isäntä = epäonnistuminen
+  joka yö ilman että kukaan huomaa. Asennus ajaa `ssh-keyscan`:in.
+- **`git pull` ennen ajoa.** Skripti lukee ilmiölistan `index.html`:stä ja
+  julkaisupäivät sivujen JSON-LD:stä. Vanhentunut kopio jättäisi uudet ilmiöt
+  pois listoilta ja pudottaisi ne julkaisupäiväsuodattimesta.
+
+Kopioitavaa käsin on kaksi tiedostoa, koska niitä ei voi generoida eivätkä ne
+ole versionhallinnassa: `.suosio.env` ja `data/.viikko-historia.json`.
+Jälkimmäinen kantaa viikon ilmiön karenssin; ilman sitä karenssi alkaa tyhjästä.
+
+**Vain yksi kone saa ajaa `--laheta`:n.** Ilman lippua ajavia koneita voi olla
+monta, mutta kaksi lähettäjää tarkoittaisi kahta eri viikon ilmiötä.
+
+### Tuotantoon vienti kesken
+
+Livepalvelimen `index.html` on 15.8. klo 10:33 kirjoitettu, mutta tavulleen
+sama kuin injektiota edeltävä versio (md5 `7ad2675f`, 127 188 tavua) — eli
+nostoja ei ole livenä, ja etusivulla lukee yhä "Päivitetty 14.8.2026".
+Paikallinen `index.html` (145 kt) on vietävä uudelleen. Vertaa aina md5:tä,
+älä tiedoston olemassaoloa; tämä on sama deploy gap joka on purrut ennenkin.
+
 ### Nostot julkaistu etusivulle
 
 `--tuotanto` ajettu: `index.html` 127 kt → 145 kt, `NAYTA_LUVUT=false` eli
