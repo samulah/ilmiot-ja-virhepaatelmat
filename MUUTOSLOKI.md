@@ -37,9 +37,49 @@ Ensimmäinen ajo oikealla datalla 15.8.: Hanlonin partaveitsi +83 % (1 → 6),
 DARVO +79 % (29 → 56), Halo-efekti +63 % (3 → 8). Tasan kolme riviä eli
 minimissä — hiljaisemmalla viikolla lohko piiloutuu itsestään.
 
-Tarkistettu Chromiumilla 1280/900/390 px: ei JS-virheitä, 3 saraketta
-leveällä ja 1 mobiilissa, sekä `NAYTA_LUVUT` true- että false-tilassa.
-`index.html` ei muuttunut — tuotantoinjektio on yhä tekemättä.
+### 30 pv:n kasvu — kytkeytyy päälle itsestään 29.8.2026
+
+Lohko sai välilehdet kuten luetuimmat ja googlatuimmat: `k7` ja `k30`
+(`KASVU_LATTIA_30` = 10, isompi ikkuna kestää isomman lattian). Sivunäyttökysely
+haetaan nyt **60 päivältä** 30:n sijaan, jotta edellinen 30 pv:n jakso on
+ylipäätään olemassa. Rajaus tehdään Pythonissa, joten leveämpi haku ei muuta
+mitään muuta lukua.
+
+**Vertailujakso ei ole vielä katettu.** Kanta alkaa 1.7.2026; 15.8. ajettuna
+edellinen 30 pv olisi 16.6.–15.7., josta dataa on vain puolet. Jokainen sivu
+näyttäisi suunnilleen kaksinkertaistuneen. Siksi `k30` jää tyhjäksi ja
+**välilehti piiloutuu**, kunnes `min(pvm) <= ikkunan alku` — käytännössä
+29.8.2026. Ei erillistä lippua eikä muistettavaa: ajo kytkee sen itse päälle ja
+kertoo yhteenvedossa päivän.
+
+Yleistys hyödyttää muitakin: `rakennaLista()` piilottaa nyt minkä tahansa
+välilehden jonka takana ei ole rivejä, ja koko palkin jos vain yksi jää jäljelle.
+Sama suoja koskee googlatuimpien 30 pv:tä jos GSC-kysely puuttuu.
+
+Bugi matkan varrella: `.nosto-valilehdet` on `display: flex`, joka **kumoaa
+selaimen oman `[hidden]`-säännön** — palkki jäi näkyviin vaikka JS asetti
+attribuutin. Korjattu erillisellä `.nosto-valilehdet[hidden] { display: none }`
+-säännöllä, samalla tavalla kuin `.nostot[hidden]` ja `.nosto[hidden]` jo tekevät.
+
+Tarkistettu Chromiumilla 1280/900/390 px: ei JS-virheitä, 3 saraketta leveällä
+ja 1 mobiilissa, sekä `NAYTA_LUVUT` true- että false-tilassa. Molemmat haarat
+testattu: nykytila (ei välilehtiä) ja simuloitu `k30` (kaksi välilehteä,
+klikkaus vaihtaa listan ja päivärajat oikein). `index.html` ei muuttunut —
+tuotantoinjektio on yhä tekemättä.
+
+### Palvelinpolku: `/public_html/data` on väärä
+
+`https://www.ilmiöt.fi/kendom/` → 404, mutta `search-index.js` ja `style.css`
+vastaavat juuresta. Sivuston dokumenttijuuri **ei siis ole `/public_html`**,
+vaan mitä ilmeisimmin `/public_html/kendom/ilmiöt`. `index.html` lataa
+`data/suosio.js` suhteellisena, joten tiedoston on oltava `index.html`:n
+vieressä: `SFTP_POLKU=/public_html/kendom/ilmiöt/data`, ei `/public_html/data`.
+Varmistetaan ensimmäisellä siirrolla — `curl` osoitteeseen
+`https://www.ilmiöt.fi/data/suosio.js` on ainoa todiste joka kelpaa.
+
+Lisäksi `.suosio.env`:n `SFTP_KEY=/home/samu/.ssh/id_ed25519_ilmiot` osoittaa
+tiedostoon jota ei ole olemassa, joten `--laheta` ei ole koskaan ajettu
+onnistuneesti. Se on tuotantoonviennin ainoa avoin este.
 
 ## 14.8.2026 — Googlatuimmat mukaan ja yöajo pystyyn
 
