@@ -108,13 +108,22 @@ näytä samaa korttia kahdesti. Prosentti on molemmissa sama tasoitettu suhde
 (nyt+5)/(ennen+5) — jos toinen laskisi raa'an suhteen, sama sivu saisi kaksi eri
 lukua samalla sivulla. Lohko vaatii vähintään kolme riviä tai piiloutuu.
 
-Kasvulohkolla on 7 pv:n ja 30 pv:n välilehdet (`k7`, `k30`). **30 pv:n lista on
-tyhjä siihen asti kun kannassa on 60 päivää dataa** (29.8.2026): kanta alkaa
-1.7.2026, ja puolityhjää vertailujaksoa vasten jokainen sivu näyttäisi
-kaksinkertaistuneen. Sivunäyttökysely haetaan siksi 60 päivältä, ei 30:ltä.
+Kasvulohkolla on 7 pv:n ja 30 pv:n välilehdet (`k7`, `k30`); sivunäyttökysely
+haetaan siksi 60 päivältä, ei 30:ltä. Kanta alkaa 1.7.2026, joten edellinen
+30 pv on toistaiseksi vain osittain katettu: vertailuluku **skaalataan
+päivätahdiksi** (`ikkunan pituus / katetut päivät`) ja saate kertoo sen
+"(osin arvioitu)". Skaalaus pienentää kasvuprosenttia, ei kasvata, eikä se voi
+keksiä kasvua jota ei ole. Kerroin menee itsestään ykköseen kun kate on täysi.
+
+**Kasvulistat ja viikon ilmiö suodattavat julkaisupäivän mukaan**
+(`ehti_mukaan()`): sivun on oltava julkaistu ennen vertailujakson alkua. Ilman
+tätä listat täyttyvät vastajulkaistuista sivuista, jotka eivät kasvaneet vaan
+ilmestyivät — uusi sivu on aina "kasvanut nollasta". Älä poista suodatinta
+vaikka lista lyhenisi; lyhyt tosi lista on parempi kuin pitkä valheellinen.
+
 Tyhjän listan välilehti piiloutuu automaattisesti — `rakennaLista()` piilottaa
 minkä tahansa välilehden jonka takana ei ole rivejä ja koko palkin jos vain yksi
-jää jäljelle. Älä siis "korjaa" puuttuvaa 30 pv -välilehteä; se ilmestyy itse.
+jää jäljelle. Älä siis "korjaa" puuttuvaa välilehteä; se ilmestyy itse.
 
 Kannan sudenkuopat, jotka on jo hoidettu kyselyssä ja jotka on syytä muistaa
 jos kyselyä muokataan: ilmiöt.fi on kannassa **kahtena** `sivusto_avain`-arvona

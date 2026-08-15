@@ -45,12 +45,43 @@ haetaan nyt **60 päivältä** 30:n sijaan, jotta edellinen 30 pv:n jakso on
 ylipäätään olemassa. Rajaus tehdään Pythonissa, joten leveämpi haku ei muuta
 mitään muuta lukua.
 
-**Vertailujakso ei ole vielä katettu.** Kanta alkaa 1.7.2026; 15.8. ajettuna
-edellinen 30 pv olisi 16.6.–15.7., josta dataa on vain puolet. Jokainen sivu
-näyttäisi suunnilleen kaksinkertaistuneen. Siksi `k30` jää tyhjäksi ja
-**välilehti piiloutuu**, kunnes `min(pvm) <= ikkunan alku` — käytännössä
-29.8.2026. Ei erillistä lippua eikä muistettavaa: ajo kytkee sen itse päälle ja
-kertoo yhteenvedossa päivän.
+**Vertailujakso skaalataan päivätahdiksi.** Kanta alkaa 1.7.2026; 15.8.
+ajettuna edellinen 30 pv on 16.6.–15.7., josta dataa on 15 päivää eli puolet.
+Raakoja summia ei voi verrata kun toinen ikkuna on puolityhjä — jokainen sivu
+näyttäisi kaksinkertaistuneen. Vertailuluku kerrotaan siksi arvolla
+`ikkunan pituus / katetut päivät` (nyt ×2,00), ja saate sanoo
+"(osin arvioitu)". Skaalaus on **konservatiiviseen suuntaan**: vertailuluku
+kasvaa, joten kasvuprosentti pienenee — se ei voi keksiä kasvua jota ei ole.
+Kun kate on täysi, kerroin on 1,0 eikä koodi tee mitään; se lakkaa vaikuttamasta
+itsestään eikä vaadi siivousta. Alle `KASVU_KATE_MIN` = 10 päivän katteesta ei
+kerrota mitään: 3 päivästä ei ekstrapoloida kuukautta.
+
+### Julkaisupäiväsuodatin — kasvulistat valehtelivat uutuuksista
+
+Ensimmäinen 30 pv:n ajo tuotti kärkeen kolme riviä muotoa `0 → 12`:
+*1 %:n sääntö* (julkaistu 14.7.), *Viherpesu* (6.7.) ja *Keskiarvoharha*.
+Ne eivät kasvaneet vaan **ilmestyivät** — sivu jota ei ollut olemassa
+vertailujakson aikana on aina "kasvanut nollasta". Sivustolla on 26 sivua
+julkaistu 5.8. tai sen jälkeen, joten sama vika olisi täyttänyt myös 7 pv:n
+listan seuraavina viikkoina.
+
+Uusi `ehti_mukaan()` vaatii `datePublished <= vertailujakson alku`.
+Julkaisupäivät luetaan sivujen JSON-LD:stä `lue_julkaisupaivat()`:llä, joka oli
+jo olemassa dashboardia varten; kaikilla 139 sivulla päivä on olemassa, joten
+suodatin ei pudota ketään vahingossa. 30 pv:n kelpoisuusraja on jakson
+**todellinen** alku `max(ed30_alku, vanhin päivä kannassa)` = 1.7.2026, ei
+nimellinen 16.6. — vertailuluku on laskettu siitä päivästä, joten kelpoisuuskin
+on mitattava siitä.
+
+Sama suodatin lisättiin `valitse_viikon_ilmio()`:hon. Tällä viikolla se ei
+muuta valintaa (*Rage bait* on julkaistu 6.7. eli ennen vertailujaksoa 1.–7.8.),
+mutta 14.8. julkaistut 12 sivua olisivat olleet ensi maanantaina ehdolla
+pelkällä olemassaolollaan.
+
+Ero listassa on iso: skaalattu ja suodatettu 30 pv:n kärki on DARVO +89 %
+(50 → 99), Goodhartin laki +89 % (4 → 12), Välittäjän skimmaus +67 % (4 → 10) —
+kaikki sivuja jotka olivat olemassa koko vertailujakson. Alle kolmen rivin
+`k30` nollataan, jolloin välilehti piiloutuu itsestään.
 
 Yleistys hyödyttää muitakin: `rakennaLista()` piilottaa nyt minkä tahansa
 välilehden jonka takana ei ole rivejä, ja koko palkin jos vain yksi jää jäljelle.
@@ -67,19 +98,35 @@ testattu: nykytila (ei välilehtiä) ja simuloitu `k30` (kaksi välilehteä,
 klikkaus vaihtaa listan ja päivärajat oikein). `index.html` ei muuttunut —
 tuotantoinjektio on yhä tekemättä.
 
-### Palvelinpolku: `/public_html/data` on väärä
+### Nostot julkaistu etusivulle
 
-`https://www.ilmiöt.fi/kendom/` → 404, mutta `search-index.js` ja `style.css`
-vastaavat juuresta. Sivuston dokumenttijuuri **ei siis ole `/public_html`**,
-vaan mitä ilmeisimmin `/public_html/kendom/ilmiöt`. `index.html` lataa
-`data/suosio.js` suhteellisena, joten tiedoston on oltava `index.html`:n
-vieressä: `SFTP_POLKU=/public_html/kendom/ilmiöt/data`, ei `/public_html/data`.
-Varmistetaan ensimmäisellä siirrolla — `curl` osoitteeseen
-`https://www.ilmiöt.fi/data/suosio.js` on ainoa todiste joka kelpaa.
+`--tuotanto` ajettu: `index.html` 127 kt → 145 kt, `NAYTA_LUVUT=false` eli
+lukumäärät piilossa, vain järjestys ja kasvuprosentti näkyvät. Ajo on
+idempotentti — toinen peräkkäinen `--tuotanto` tuotti md5-identtisen tiedoston.
+Etusivun haku näkee yhä tasan 139 `.hub-kortti`-elementtiä eli nostokortit
+(2 kpl, luokka `.nosto-kortti`) eivät päätyneet hakutuloksiin tai arvontaan.
 
-Lisäksi `.suosio.env`:n `SFTP_KEY=/home/samu/.ssh/id_ed25519_ilmiot` osoittaa
-tiedostoon jota ei ole olemassa, joten `--laheta` ei ole koskaan ajettu
-onnistuneesti. Se on tuotantoonviennin ainoa avoin este.
+Julkaisun rutiini CLAUDE.md:n mukaan: `muutokset.html` sai merkinnän lukijan
+kielellä (mukaan lukien kappale yksityisyydestä — lokipohjaiset summat, ei
+evästeitä eikä kävijäseurantaa), `dateModified` 2026-08-15 molempiin,
+etusivun `paivitetty-btn` samaan päivään, ja `build_sitemap.py` ajettu
+(155 URLia). `search-index.js` ei muuttunut, kuten pitikin: nostot ovat
+dynaamisia eivätkä sisältöä.
+
+**Palvelinpolku korjattu.** Dokumenttijuuri on `/public_html/kendom/ilmiöt`
+(todiste: `https://www.ilmiöt.fi/kendom/` → 404 mutta `search-index.js` ja
+`style.css` vastaavat juuresta). `index.html` lataa `data/suosio.js`
+suhteellisena, joten tiedoston on oltava index.html:n vieressä:
+`SFTP_POLKU=/public_html/kendom/ilmiöt/data`. Aiempi `/public_html/data` ei näy
+verkossa lainkaan.
+
+**Avoin este: SSH-avainta ei ole.** `.suosio.env`:n
+`SFTP_KEY=/home/samu/.ssh/id_ed25519_ilmiot` osoittaa tiedostoon jota ei ole
+olemassa, joten `--laheta` ei ole koskaan ajettu onnistuneesti eikä
+`data/suosio.js` ole palvelimella. Etusivu on siihen asti turvallisesti
+puolikas: `TUOREUS_VRK`-tarkistus piilottaa neljä lohkoa datan puuttuessa ja
+satunnainen ilmiö toimii ilman dataa, joten julkaisu ei riko mitään — se vain
+ei vielä näytä listoja.
 
 ## 14.8.2026 — Googlatuimmat mukaan ja yöajo pystyyn
 

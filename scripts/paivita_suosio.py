@@ -65,6 +65,15 @@ KASVU_LATTIA = 5        # 7 pv vs. edellinen 7 pv
 KASVU_LATTIA_30 = 10    # 30 pv vs. edellinen 30 pv — isompi ikkuna, isompi lattia
 KASVU_MAX = 8
 
+# Kanta alkaa 1.7.2026, joten "edellinen 30 pv" on elokuussa vain osittain
+# katettu. Raakoja summia ei voi verrata keskenään kun toinen ikkuna on
+# puolityhjä — se tekisi jokaisesta sivusta kaksinkertaistujan. Vertailujakso
+# skaalataan siksi päivätahdiksi: summa × (ikkunan pituus / katetut päivät).
+# Skaalaus on konservatiiviseen suuntaan (vertailuluku kasvaa → kasvuprosentti
+# pienenee), joten se ei voi keksiä kasvua jota ei ole. Alle KASVU_KATE_MIN
+# päivän katteesta ei kerrota mitään: 3 päivästä ei ekstrapoloida kuukautta.
+KASVU_KATE_MIN = 10
+
 # Lattia kalibroitu oikeaa dataa vasten 14.8.2026: 7 pv:n ikkunassa on 171
 # lukukertaa 40 sivulle, ja vain 2 sivua ylittää 10. Sitä alempana viikkoluvut
 # ovat 3–8, jolloin kasvusuhde on kohinaa eikä signaalia — lattian laskeminen
@@ -412,7 +421,20 @@ def summaa(rivit, alku, loppu):
     return dict(summat)
 
 
-def valitse_viikon_ilmio(d7, edellinen7, tanaan, kirjoita, tunnetut):
+def ehti_mukaan(slug, julkaisut, viimeistaan):
+    """Oliko sivu olemassa jo koko vertailujakson ajan?
+
+    Ilman tätä kasvulistat täyttyisivät vastajulkaistuista sivuista: sivu joka
+    ilmestyi eilen on aina "kasvanut nollasta", vaikka se ei kasvanut vaan
+    syntyi. Vertailujakson aikana julkaistulla sivulla ei yksinkertaisesti ole
+    lähtötasoa, johon verrata.
+    """
+    julkaistu = julkaisut.get(slug)
+    return bool(julkaistu) and julkaistu <= viimeistaan.isoformat()
+
+
+def valitse_viikon_ilmio(d7, edellinen7, tanaan, kirjoita, tunnetut,
+                         julkaisut, viimeistaan):
     """Suhteellisesti eniten noussut sivu, lattialla ja tasoituksella suojattuna.
 
     Valinta lasketaan vain maanantaisin ja pysyy samana koko viikon — muuten
@@ -448,6 +470,9 @@ def valitse_viikon_ilmio(d7, edellinen7, tanaan, kirjoita, tunnetut):
         # nimen ja kuvauksen — valinta näkyisi lukijalle piilotettuna lohkona.
         if slug not in tunnetut or nyt < VIIKKO_LATTIA or slug in karenssissa:
             continue
+        # Vastajulkaistu sivu ei ole nousija vaan uutuus
+        if not ehti_mukaan(slug, julkaisut, viimeistaan):
+            continue
         ennen = edellinen7.get(slug, 0)
         kasvu = (nyt + VIIKKO_TASOITUS) / (ennen + VIIKKO_TASOITUS)
         ehdokkaat.append((kasvu, nyt, slug, ennen))
@@ -473,7 +498,8 @@ def valitse_viikon_ilmio(d7, edellinen7, tanaan, kirjoita, tunnetut):
     return valinta, historia
 
 
-def kasvulista(nyt_summat, ennen_summat, tunnetut, viikko, lattia):
+def kasvulista(nyt_summat, ennen_summat, tunnetut, viikko, lattia,
+               julkaisut, viimeistaan):
     """Suhteellisesti eniten nousseet sivut → [{u, n, edellinen, kasvu}].
 
     Kolme ehtoa, ja jokainen on siellä siksi ettei lista valehtelisi:
@@ -496,8 +522,13 @@ def kasvulista(nyt_summat, ennen_summat, tunnetut, viikko, lattia):
         ennen = ennen_summat.get(slug, 0)
         if slug not in tunnetut or slug == varattu or nyt < lattia or nyt <= ennen:
             continue
+        if not ehti_mukaan(slug, julkaisut, viimeistaan):
+            continue
         rivit.append({
-            "u": slug, "n": nyt, "edellinen": ennen,
+            # `ennen` voi olla skaalattu liukuluku; suhde lasketaan tarkasta
+            # arvosta, mutta rivillä näytetään kokonaisluku — "18,4 → 28"
+            # lupaisi tarkkuutta jota arviossa ei ole.
+            "u": slug, "n": nyt, "edellinen": round(ennen),
             "kasvu": round((nyt + VIIKKO_TASOITUS) / (ennen + VIIKKO_TASOITUS), 3),
         })
     rivit.sort(key=lambda r: (-r["kasvu"], -r["n"], r["u"]))
@@ -508,7 +539,8 @@ def kasvulista(nyt_summat, ennen_summat, tunnetut, viikko, lattia):
 #  data/suosio.js
 # ─────────────────────────────────────────────────────────────────────────
 
-def kirjoita_suosio_js(d7, d30, edellinen7, viikko, ikkunat, tunnetut, g7, g30, k7, k30):
+def kirjoita_suosio_js(d7, d30, edellinen7, viikko, ikkunat, tunnetut, g7, g30,
+                       k7, k30, k30_arvioitu):
     """Slugit ja luvut. Ei otsikoita — ne haetaan selaimessa DOM-korteista."""
     def lista(summat, mukaan_edellinen):
         rivit = []
@@ -542,6 +574,9 @@ def kirjoita_suosio_js(d7, d30, edellinen7, viikko, ikkunat, tunnetut, g7, g30, 
         "g30": gsc_lista(g30),
         "k7": k7,
         "k30": k30,
+        # Kertoo selaimelle että vertailujakso on skaalattu, jotta saate voi
+        # sanoa sen ääneen. Katoaa itsestään kun kanta kattaa koko jakson.
+        "k30Arvioitu": k30_arvioitu,
         "viikonIlmio": viikko,
     }
     SUOSIO_JS.parent.mkdir(exist_ok=True)
@@ -976,7 +1011,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // Kolme riviä on minimi: kahden rivin "eniten kasvua" ei ole lista vaan
     // väite kahdesta sivusta, ja hiljaisella viikolla se olisi pelkkää kohinaa.
     rakennaLista('kasvu', 'k7',
-                 { k7: 'vs. edellinen viikko', k30: 'vs. edellinen 30 pv' },
+                 { k7: 'vs. edellinen viikko',
+                   k30: 'vs. edellinen 30 pv' +
+                        (data.k30Arvioitu ? ' (osin arvioitu)' : '') },
                  function (r) {
       const p = Math.round((r.kasvu - 1) * 100);
       // Tasoitettu suhde, ei raaka: 0 → 19 ei ole ääretön kasvu vaan +380 %.
@@ -1510,21 +1547,49 @@ def main():
     g30 = summaa_gsc(gsc_rivit, *ikkunat["d30"])
     lausekkeet = summaa_lausekkeet(gsc_rivit, *ikkunat["d30"])
 
+    # Julkaisupäivät luetaan ennen valintoja: sivu joka ei ollut olemassa koko
+    # vertailujaksoa ei voi olla nousija. Avaimet .html-päätteellä, koska
+    # liikennedata tuntee sivut siinä muodossa.
+    julkaisut = lue_julkaisupaivat([i["slug"] for i in ilmiot])
+    julkaisut_html = {s + ".html": p for s, p in julkaisut.items()}
+
     viikko, _ = valitse_viikon_ilmio(d7, edellinen7, tanaan,
-                                     kirjoita and not args.demo, tunnetut)
+                                     kirjoita and not args.demo, tunnetut,
+                                     julkaisut_html, ed_alku)
 
-    k7 = kasvulista(d7, edellinen7, tunnetut, viikko, KASVU_LATTIA)
+    k7 = kasvulista(d7, edellinen7, tunnetut, viikko, KASVU_LATTIA,
+                    julkaisut_html, ed_alku)
 
-    # 30 pv:n kasvu vain jos vertailujakso on oikeasti katettu. Kanta alkaa
-    # 1.7.2026, joten vielä elokuussa "edellinen 30 pv" olisi puoliksi tyhjä ja
-    # jokainen sivu näyttäisi kaksinkertaistuneen. Vertailu kytkeytyy päälle
-    # itsestään kun dataa on 60 päivää — mieluummin puuttuva välilehti kuin
-    # välilehti joka valehtelee.
+    # 30 pv:n kasvu: vertailujakso skaalataan päivätahdiksi, jos kanta ei kata
+    # sitä kokonaan (ks. KASVU_KATE_MIN). Kun kate on täysi, kerroin on 1.0
+    # eikä skaalausta tapahdu — koodi ei siis tarvitse erillistä siivousta
+    # myöhemmin, se lakkaa vaikuttamasta itsestään.
     edellinen30 = summaa(rivit, ed30_alku, ed30_loppu)
     ensimmainen = min((p for _, p, _ in rivit), default=None)
-    vertailu_katettu = ensimmainen is not None and ensimmainen <= ed30_alku
-    k30 = (kasvulista(d30, edellinen30, tunnetut, viikko, KASVU_LATTIA_30)
-           if vertailu_katettu else [])
+    ikkuna_pv = (ed30_loppu - ed30_alku).days + 1
+    if ensimmainen is None:
+        katettu_pv = 0
+    elif ensimmainen <= ed30_alku:
+        katettu_pv = ikkuna_pv
+    else:
+        katettu_pv = (ed30_loppu - ensimmainen).days + 1
+
+    k30_arvioitu = 0 < katettu_pv < ikkuna_pv
+    if katettu_pv >= KASVU_KATE_MIN:
+        kerroin = ikkuna_pv / katettu_pv
+        vertailu30 = {s: v * kerroin for s, v in edellinen30.items()}
+        # Kelpoisuusraja on jakson todellinen alku, ei nimellinen: kun kanta
+        # kattaa jaksosta vain lopun, sivun on pitänyt olla olemassa siitä
+        # päivästä lähtien josta vertailuluku on laskettu.
+        k30_alku = max(ed30_alku, ensimmainen)
+        k30 = kasvulista(d30, vertailu30, tunnetut, viikko, KASVU_LATTIA_30,
+                         julkaisut_html, k30_alku)
+        # Alle kolmen rivin lista ei ole lista: jätetään pois, jolloin
+        # välilehtikin piiloutuu itsestään.
+        if len(k30) < 3:
+            k30 = []
+    else:
+        k30 = []
 
     # ── Yhteenveto ────────────────────────────────────────────────────
     yht7 = sum(v for k, v in d7.items() if k in tunnetut)
@@ -1575,14 +1640,14 @@ def main():
             print(f"\n{otsikko}: ei rivejä (lattia {lattia} ei ylittynyt)")
 
     tulosta_kasvu("Eniten kasvua 7 pv", k7, KASVU_LATTIA)
-    if vertailu_katettu:
-        tulosta_kasvu("Eniten kasvua 30 pv", k30, KASVU_LATTIA_30)
-    else:
-        auki = ensimmainen + timedelta(days=59) if ensimmainen else None
-        print(f"\nEniten kasvua 30 pv: välilehti piilossa — vertailujakso "
-              f"{ed30_alku} – {ed30_loppu} ei ole katettu "
-              f"(vanhin päivä kannassa {ensimmainen}). "
-              f"Kytkeytyy päälle {auki}.")
+    tulosta_kasvu("Eniten kasvua 30 pv", k30, KASVU_LATTIA_30)
+    print(f"    vertailujakso {ed30_alku} – {ed30_loppu}, katettu {katettu_pv}/"
+          f"{ikkuna_pv} pv (vanhin päivä kannassa {ensimmainen})"
+          + (f", skaalattu ×{ikkuna_pv / katettu_pv:.2f}" if k30_arvioitu else ""))
+    if katettu_pv < KASVU_KATE_MIN:
+        auki = ensimmainen + timedelta(days=30 + KASVU_KATE_MIN - 1) if ensimmainen else None
+        print(f"    kate alle {KASVU_KATE_MIN} pv → välilehti piilossa, "
+              f"kytkeytyy päälle {auki}")
 
     if not kirjoita:
         print("\n--ei-kirjoita: tiedostoja ei kirjoitettu.")
@@ -1590,11 +1655,11 @@ def main():
 
     # ── Kirjoitukset ──────────────────────────────────────────────────
     koko = kirjoita_suosio_js(d7, d30, edellinen7, viikko, ikkunat, tunnetut,
-                              g7, g30, k7, k30)
+                              g7, g30, k7, k30, k30_arvioitu)
     print(f"\n{SUOSIO_JS.relative_to(ROOT)}  {koko/1024:.1f} kt")
 
     kirjoita_dashboard(ilmiot, d7, d30, edellinen7, viikko, ikkunat,
-                       lue_julkaisupaivat([i["slug"] for i in ilmiot]),
+                       julkaisut,
                        hylatyt, lahde, g7, g30, lausekkeet)
     print(f"{DASHBOARD.relative_to(ROOT)}")
 

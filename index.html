@@ -451,7 +451,7 @@
       "name": "Manipulointi, propaganda ja huijaukset — 139 ilmiötä",
       "description": "Ilmiöt selitettynä suomeksi: 139 ilmiötä vallankäytöstä, propagandasta, harhoista, byrokratiasta ja huijauksista — esimerkit ja vastakeinot.",
       "inLanguage": "fi",
-      "dateModified": "2026-08-14",
+      "dateModified": "2026-08-15",
       "isPartOf": {
         "@id": "https://www.ilmiöt.fi/#website"
       },
@@ -1365,6 +1365,172 @@
       font-size:.8rem;color:#8B6914;line-height:1.6;}
     .ilmio-footer a{color:#8B6914;}
   </style>
+<!-- NOSTOT-ALKU --><style>
+/* Nostolohkojen tyylit — scripts/paivita_suosio.py injektoi, älä muokkaa käsin.
+   Ei style.css:ään: etusivu kantaa CSS:nsä itse ollakseen immuuni cache-bustille. */
+.nostot { margin: 0 0 1.6rem; }
+.nostot[hidden] { display: none; }
+.nostot-parit {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 0.9rem;
+  margin-bottom: 0.9rem;
+}
+/* Kolmen listan rivi mahtuu vierekkäin kapeammalla minimillä; nimet katkeavat
+   ellipsiin, joten kapea sarake ei riko taittoa. */
+.nostot-kolme { grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); }
+.nosto {
+  background: #FDFAF2;
+  border: 1.5px solid #D4C090;
+  padding: 0.85rem 0.95rem 0.9rem;
+}
+.nosto[hidden] { display: none; }
+.nosto-otsikko {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 0.67em;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--c-primary-mid);
+  margin: 0 0 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+/* Korttien luokat ovat tarkoituksella eri kuin .hub-kortti: etusivun haku,
+   nuolinäppäinnavigaatio ja randomIlmio() keräävät kaikki .hub-kortti-elementit,
+   joten duplikaatti näkyisi hakutuloksissa kahdesti ja arvonnassa
+   kaksinkertaisella painolla. */
+.nosto-kortti {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 0.6rem 0.7rem;
+  background: #fff;
+  border-left: 4px solid var(--c, #2c3e50);
+  border-top: 1px solid #E8DCBE;
+  border-right: 1px solid #E8DCBE;
+  border-bottom: 1px solid #E8DCBE;
+  text-decoration: none;
+  color: #1A1100;
+  transition: border-color 0.1s, transform 0.1s;
+}
+.nosto-kortti:hover { border-color: var(--c, #2c3e50); transform: translateX(3px); }
+.nosto-nro {
+  flex: 0 0 auto;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  display: grid;
+  place-items: center;
+  background: var(--c, #2c3e50);
+  color: #fff;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 0.7em;
+  font-weight: 700;
+  padding: 0 0.3rem;
+}
+.nosto-teksti { display: flex; flex-direction: column; gap: 0.15rem; min-width: 0; }
+.nosto-nimi {
+  font-family: 'Spectral', Georgia, serif;
+  font-size: 1.02em;
+  font-weight: 600;
+  line-height: 1.25;
+}
+.nosto-kuvaus {
+  font-size: 0.83em;
+  line-height: 1.4;
+  color: #4A3D1F;
+}
+.nosto-meta {
+  margin: 0.55rem 0 0;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 0.76em;
+  color: #6B5A2E;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+.nosto-nappi {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 0.95em;
+  font-weight: 600;
+  color: var(--c-primary-dark);
+  background: transparent;
+  border: 1.5px solid var(--c-primary);
+  padding: 0.3rem 0.7rem;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s;
+}
+.nosto-nappi:hover { background: var(--c-primary); color: #fff; }
+.nosto-nappi:focus-visible { outline: 2px solid var(--c-primary-mid); outline-offset: 2px; }
+/* display:flex kumoaisi selaimen oman [hidden]-säännön, joten se on toistettava
+   erikseen — muuten JS:n piilottama välilehtipalkki jäisi näkyviin. Sama ansa
+   kuin .nostot[hidden]:ssa ja .nosto[hidden]:ssa. */
+.nosto-valilehdet { display: flex; gap: 0.3rem; }
+.nosto-valilehdet[hidden] { display: none; }
+.nosto-valilehti {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #8B7A4E;
+  background: transparent;
+  border: 1.5px solid transparent;
+  padding: 0.15rem 0.45rem;
+  cursor: pointer;
+}
+.nosto-valilehti[aria-selected="true"] {
+  color: var(--c-primary-dark);
+  border-color: var(--c-primary);
+  background: #FBF3DC;
+}
+.nosto-lista { list-style: none; margin: 0; padding: 0; counter-reset: sija; }
+.nosto-rivi { counter-increment: sija; }
+.nosto-rivi a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  padding: 0.38rem 0.2rem;
+  border-bottom: 1px solid #EFE6CE;
+  text-decoration: none;
+  color: #1A1100;
+}
+.nosto-rivi:last-child a { border-bottom: 0; }
+.nosto-rivi a:hover { background: #FBF3DC; }
+.nosto-rivi a::before {
+  content: counter(sija);
+  flex: 0 0 1.1rem;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 0.78em;
+  font-weight: 700;
+  color: var(--c-primary-mid);
+  text-align: right;
+}
+.nosto-rivi-nimi {
+  font-weight: 600;
+  flex: 1 1 auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.nosto-rivi-luku {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 0.76em;
+  color: #6B5A2E;
+  flex: 0 0 auto;
+  font-variant-numeric: tabular-nums;
+}
+/* Kasvuprosentti näkyy myös tuotannossa: se ei paljasta liikennemäärää,
+   ja ilman lukua rivi on pelkkä nimi ilman perustetta järjestykselle. */
+#kasvu-lista .nosto-rivi-luku { color: #1e7a4a; font-weight: 600; }
+@media (max-width: 640px) {
+  .nostot-parit { grid-template-columns: 1fr; gap: 0.7rem; }
+  .nosto-kuvaus { font-size: 0.86em; }
+}
+</style><!-- NOSTOT-LOPPU -->
 </head>
 <body>
 
@@ -1372,7 +1538,7 @@
   <img class="hub-logo" src="favicon.svg" alt="Ilmiöitä-logo: punainen varoituslippu" width="36" height="36">
   <div class="hub-header-left">
     <h1>Ilmiöitä</h1>
-    <p>139 ilmiötä &middot; Miten valta toimii &middot; <a class="paivitetty-btn" href="muutokset.html" title="Mitä sivustolle on tehty">Päivitetty 14.8.2026 &rsaquo;</a></p>
+    <p>139 ilmiötä &middot; Miten valta toimii &middot; <a class="paivitetty-btn" href="muutokset.html" title="Mitä sivustolle on tehty">Päivitetty 15.8.2026 &rsaquo;</a></p>
   </div>
   <input class="hub-haku" type="search" id="haku" placeholder="Etsi ilmiötä&hellip;" autocomplete="off" spellcheck="false">
   <button class="random-btn" onclick="randomIlmio()" title="Satunnainen ilmiö (R)">
@@ -1398,6 +1564,76 @@
   <a href="#tilastoilla-valehtelu-kategoria">Tilastoilla valehtelu<span>9</span></a>
   <a href="#media-ja-julkisuus-kategoria">Media ja julkisuus<span>10</span></a>
 </nav>
+<!-- NOSTOT-ALKU — scripts/paivita_suosio.py injektoi, älä muokkaa käsin -->
+<section class="nostot" id="nostot" hidden>
+  <div class="nostot-parit">
+    <article class="nosto" id="nosto-viikko" hidden>
+      <h2 class="nosto-otsikko">Viikon ilmiö</h2>
+      <a class="nosto-kortti" id="viikko-kortti" href="#">
+        <span class="nosto-nro"></span>
+        <span class="nosto-teksti">
+          <span class="nosto-nimi"></span>
+          <span class="nosto-kuvaus"></span>
+        </span>
+      </a>
+      <p class="nosto-meta" id="viikko-meta"></p>
+    </article>
+
+    <article class="nosto" id="nosto-random">
+      <h2 class="nosto-otsikko">Satunnainen ilmiö</h2>
+      <a class="nosto-kortti" id="random-kortti" href="#">
+        <span class="nosto-nro"></span>
+        <span class="nosto-teksti">
+          <span class="nosto-nimi"></span>
+          <span class="nosto-kuvaus"></span>
+        </span>
+      </a>
+      <p class="nosto-meta">
+        <button type="button" class="nosto-nappi" id="arvo-uusi">Arvo uusi</button>
+        <span id="random-vihje">139 ilmiötä, ei mitään järjestystä</span>
+      </p>
+    </article>
+  </div>
+
+  <div class="nostot-parit nostot-kolme">
+    <article class="nosto" id="nosto-luetuimmat" hidden>
+      <h2 class="nosto-otsikko">
+        Luetuimmat
+        <span class="nosto-valilehdet" role="tablist" aria-label="Aikaväli">
+          <button type="button" class="nosto-valilehti" role="tab" data-lista="luetuimmat" data-ikkuna="d7" aria-selected="true">7 pv</button>
+          <button type="button" class="nosto-valilehti" role="tab" data-lista="luetuimmat" data-ikkuna="d30" aria-selected="false">30 pv</button>
+        </span>
+      </h2>
+      <ol class="nosto-lista" id="luetuimmat-lista"></ol>
+      <p class="nosto-meta" id="luetuimmat-meta"></p>
+    </article>
+
+    <article class="nosto" id="nosto-googlatuimmat" hidden>
+      <h2 class="nosto-otsikko">
+        Googlatuimmat
+        <span class="nosto-valilehdet" role="tablist" aria-label="Aikaväli">
+          <button type="button" class="nosto-valilehti" role="tab" data-lista="googlatuimmat" data-ikkuna="g7" aria-selected="true">7 pv</button>
+          <button type="button" class="nosto-valilehti" role="tab" data-lista="googlatuimmat" data-ikkuna="g30" aria-selected="false">30 pv</button>
+        </span>
+      </h2>
+      <ol class="nosto-lista" id="googlatuimmat-lista"></ol>
+      <p class="nosto-meta" id="googlatuimmat-meta"></p>
+    </article>
+
+    <article class="nosto" id="nosto-kasvu" hidden>
+      <h2 class="nosto-otsikko">
+        Eniten kasvua
+        <span class="nosto-valilehdet" role="tablist" aria-label="Aikaväli">
+          <button type="button" class="nosto-valilehti" role="tab" data-lista="kasvu" data-ikkuna="k7" aria-selected="true">7 pv</button>
+          <button type="button" class="nosto-valilehti" role="tab" data-lista="kasvu" data-ikkuna="k30" aria-selected="false">30 pv</button>
+        </span>
+      </h2>
+      <ol class="nosto-lista" id="kasvu-lista"></ol>
+      <p class="nosto-meta" id="kasvu-meta"></p>
+    </article>
+  </div>
+</section>
+<!-- NOSTOT-LOPPU -->
 <div class="hub-kategoria" id="vallan-rakenteet">
   <h2 class="hub-kat-label"><span class="hub-kat-nro">1</span>Vallan rakenteet<span class="hub-kat-count"> · 8 ilmiötä</span></h2>
   <p class="hub-kat-desc">Miten valta keskittyy, suojaa itseään ja muokkaa pelisäännöt edukseen. Nämä ilmiöt selittävät, miksi instituutiot ajautuvat sisäpiirien käsiin ja miten julkinen keskustelu siirretään haluttuun suuntaan — usein niin hitaasti, ettei kukaan huomaa.</p>
@@ -2817,6 +3053,229 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 
+<!-- NOSTOT-ALKU — scripts/paivita_suosio.py injektoi, älä muokkaa käsin -->
+<script src="data/suosio.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  // TESTIVAIHE: lukukerrat näkyvissä. Tuotantoon vietäessä tämä yksi rivi
+  // falseksi — data sisältää luvut joka tapauksessa, vain esitys muuttuu.
+  const NAYTA_LUVUT = false;
+
+  // Yli tämän ikäistä dataa ei näytetä: "luetuimmat 7 päivää" viime kuun
+  // luvuilla on pahempi kuin ei mitään. Jos yösiirto hajoaa, lohko katoaa itsestään.
+  const TUOREUS_VRK = 3;
+
+  const nostot = document.getElementById('nostot');
+  if (!nostot) return;
+
+  // Lähde on sivun oma korttilista, ei datatiedosto. Nimet, kuvaukset, värit ja
+  // numerot ovat aina synkassa, koska niitä on vain yksi kappale.
+  // Avaimena tiedostonimi, ei koko href: luonnoskopiossa polut ovat muotoa
+  // ../darvo.html ja juuressa darvo.html, mutta data tuntee vain sluggin.
+  const kortit = new Map();
+  document.querySelectorAll('.hub-kategoria .hub-kortti').forEach(function (k) {
+    const polku = k.getAttribute('href') || '';
+    kortit.set(polku.replace(/^.*\//, ''), {
+      avain: polku.replace(/^.*\//, ''),
+      href: polku,
+      nro: (k.querySelector('.hub-numero') || {}).textContent || '',
+      nimi: (k.querySelector('.hub-nimi') || {}).textContent || '',
+      kuvaus: (k.querySelector('.hub-kuvaus') || {}).textContent || '',
+      vari: (k.getAttribute('style') || '').replace('--c:', '').trim()
+    });
+  });
+  if (kortit.size === 0) return;
+
+  // Näppäimistökäsittelijä sivun lopussa fokusoi hakukentän jokaisesta
+  // tulostuvasta merkistä ja avaa aktiivisen kortin Enterillä. Ilman tätä
+  // nostolohkon napit tappelisivat siitä fokuksesta.
+  nostot.addEventListener('keydown', function (e) { e.stopPropagation(); });
+
+  const data = window.ILMIO_SUOSIO || null;
+  let tuore = false;
+  if (data && data.paivitetty) {
+    const ika = (Date.now() - new Date(data.paivitetty).getTime()) / 86400000;
+    tuore = ika >= 0 && ika <= TUOREUS_VRK;
+  }
+
+  function taytaKortti(el, tieto) {
+    el.setAttribute('href', tieto.href);
+    el.style.setProperty('--c', tieto.vari);
+    el.querySelector('.nosto-nro').textContent = tieto.nro;
+    el.querySelector('.nosto-nimi').textContent = tieto.nimi;
+    el.querySelector('.nosto-kuvaus').textContent = tieto.kuvaus;
+  }
+
+  function luku(n) {
+    return n.toLocaleString('fi-FI') + (n === 1 ? ' lukukerta' : ' lukukertaa');
+  }
+
+  // ── Viikon ilmiö ──────────────────────────────────────────────────
+  const varatut = new Set();
+  if (tuore && data.viikonIlmio && kortit.has(data.viikonIlmio.u)) {
+    const v = data.viikonIlmio;
+    const tieto = kortit.get(v.u);
+    taytaKortti(document.getElementById('viikko-kortti'), tieto);
+    const kasvuPros = Math.round((v.kasvu - 1) * 100);
+    const osat = [];
+    if (kasvuPros > 0) osat.push('Lukukerrat nousivat ' + kasvuPros + ' % edellisviikosta');
+    if (NAYTA_LUVUT) osat.push(luku(v.n) + ' viikossa');
+    document.getElementById('viikko-meta').textContent = osat.join(' · ');
+    document.getElementById('nosto-viikko').hidden = false;
+    varatut.add(v.u);
+  }
+
+  // ── Luetuimmat ja googlatuimmat ───────────────────────────────────
+  // Sama renderöijä molemmille: ne eroavat vain datakentästä ja saatteesta.
+  // Luetuimmat = kuka oikeasti luki sivun, googlatuimmat = kuka näki sen
+  // hakutuloksissa. Järjestys poikkeaa toisistaan, ja se ero on pointti.
+  function pvm(iso) {
+    const o = iso.split('-');
+    return Number(o[2]) + '.' + Number(o[1]) + '.';
+  }
+
+  // Googlatuimmat ja kasvu lasketaan samoista päivärajoista kuin luetuimmat;
+  // data.ikkunat sisältää vain d7:n ja d30:n, joten avain käännetään tässä.
+  const IKKUNA_RAJAT = { d7: 'd7', d30: 'd30', g7: 'd7', g30: 'd30', k7: 'd7', k30: 'd30' };
+
+  // Oletusmuotoilu: pelkkä lukumäärä, ja vain jos luvut ovat näkyvissä.
+  function lukuMuotoilu(r) {
+    return NAYTA_LUVUT ? r.n.toLocaleString('fi-FI') : '';
+  }
+
+  function rakennaLista(tunnus, oletusIkkuna, saate, muotoile, minRivit) {
+    const lohko = document.getElementById('nosto-' + tunnus);
+    const lista = document.getElementById(tunnus + '-lista');
+    const meta = document.getElementById(tunnus + '-meta');
+    if (!lohko || !lista) return null;
+    muotoile = muotoile || lukuMuotoilu;
+
+    // Välilehti jonka takana ei ole rivejä piilotetaan: tyhjä "30 pv" olisi
+    // lupaus jota klikkaus ei lunasta. Näin 30 pv:n kasvu ilmestyy itsestään
+    // sinä päivänä kun kannassa on kaksi täyttä 30 pv:n ikkunaa, eikä
+    // väliaikaa varten tarvita erillistä lippua.
+    const kaikki = Array.from(
+      document.querySelectorAll('.nosto-valilehti[data-lista="' + tunnus + '"]'));
+    kaikki.forEach(function (n) {
+      n.hidden = !((data[n.dataset.ikkuna] || []).length);
+    });
+    const valilehdet = kaikki.filter(function (n) { return !n.hidden; });
+    if (valilehdet.length < 2) {
+      const strip = kaikki.length ? kaikki[0].parentNode : null;
+      if (strip) strip.hidden = true;
+    }
+    // Jos oletusikkuna on tyhjä, käytä ensimmäistä jossa on dataa
+    if (!(data[oletusIkkuna] || []).length && valilehdet.length) {
+      oletusIkkuna = valilehdet[0].dataset.ikkuna;
+    }
+
+    function piirra(ikkuna) {
+      const rivit = (data[ikkuna] || [])
+        .filter(function (r) { return kortit.has(r.u); }).slice(0, 6);
+      lista.textContent = '';
+      rivit.forEach(function (r) {
+        const tieto = kortit.get(r.u);
+        const li = document.createElement('li');
+        li.className = 'nosto-rivi';
+        const a = document.createElement('a');
+        a.setAttribute('href', tieto.href);
+        const nimi = document.createElement('span');
+        nimi.className = 'nosto-rivi-nimi';
+        nimi.textContent = tieto.nimi;
+        a.appendChild(nimi);
+        const teksti = muotoile(r);
+        if (teksti) {
+          const arvo = document.createElement('span');
+          arvo.className = 'nosto-rivi-luku';
+          arvo.textContent = teksti;
+          a.appendChild(arvo);
+        }
+        li.appendChild(a);
+        lista.appendChild(li);
+      });
+      const v = data.ikkunat && data.ikkunat[IKKUNA_RAJAT[ikkuna]];
+      // Saate voi olla yksi teksti tai ikkunakohtainen: kasvulohkon vertailu
+      // on eri ("edellinen viikko" / "edellinen 30 pv") välilehdestä riippuen.
+      const s = typeof saate === 'string' ? saate : (saate[ikkuna] || '');
+      meta.textContent = (v ? pvm(v[0]) + ' – ' + pvm(v[1]) : '') +
+                         (s ? (v ? ' · ' : '') + s : '');
+      return rivit.length;
+    }
+
+    valilehdet.forEach(function (nappi) {
+      nappi.addEventListener('click', function () {
+        valilehdet.forEach(function (m) {
+          m.setAttribute('aria-selected', String(m === nappi));
+        });
+        piirra(nappi.dataset.ikkuna);
+      });
+    });
+
+    valilehdet.forEach(function (n) {
+      n.setAttribute('aria-selected', String(n.dataset.ikkuna === oletusIkkuna));
+    });
+
+    // Vain jos jotain oikeasti piirtyi: tyhjä otsikko välilehtineen on
+    // huonompi kuin puuttuva lohko.
+    if (piirra(oletusIkkuna) >= (minRivit || 1)) {
+      lohko.hidden = false;
+      return true;
+    }
+    return false;
+  }
+
+  if (tuore) {
+    (data.d7 || []).slice(0, 3).forEach(function (r) { varatut.add(r.u); });
+    rakennaLista('luetuimmat', 'd7', '');
+    rakennaLista('googlatuimmat', 'g7', 'näkyi hakutuloksissa');
+    // Kolme riviä on minimi: kahden rivin "eniten kasvua" ei ole lista vaan
+    // väite kahdesta sivusta, ja hiljaisella viikolla se olisi pelkkää kohinaa.
+    rakennaLista('kasvu', 'k7',
+                 { k7: 'vs. edellinen viikko',
+                   k30: 'vs. edellinen 30 pv' +
+                        (data.k30Arvioitu ? ' (osin arvioitu)' : '') },
+                 function (r) {
+      const p = Math.round((r.kasvu - 1) * 100);
+      // Tasoitettu suhde, ei raaka: 0 → 19 ei ole ääretön kasvu vaan +380 %.
+      // Sama kaava kuin viikon ilmiössä, joten luvut eivät ole ristiriidassa.
+      return '+' + p + ' %' + (NAYTA_LUVUT ? ' · ' + r.edellinen + '→' + r.n : '');
+    }, 3);
+  }
+
+  // ── Satunnainen ilmiö ─────────────────────────────────────────────
+  // Toimii aina, myös ilman suosiodataa: lähde on sivun oma korttilista.
+  const pooli = Array.from(kortit.values()).filter(function (t) { return !varatut.has(t.avain); });
+  const kortti = document.getElementById('random-kortti');
+  const vihje = document.getElementById('random-vihje');
+  vihje.textContent = kortit.size + ' ilmiötä, ei mitään järjestystä';
+
+  // Sekoituspussi: kaikki käydään läpi ennen kuin yksikään toistuu, joten
+  // viisi peräkkäistä klikkausta antaa viisi eri ilmiötä.
+  let pussi = [];
+  function arvo() {
+    if (!pussi.length) {
+      pussi = pooli.slice();
+      for (let i = pussi.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const t = pussi[i]; pussi[i] = pussi[j]; pussi[j] = t;
+      }
+    }
+    return pussi.pop();
+  }
+
+  if (pooli.length) {
+    taytaKortti(kortti, arvo());
+    document.getElementById('arvo-uusi').addEventListener('click', function () {
+      taytaKortti(kortti, arvo());
+    });
+  } else {
+    document.getElementById('nosto-random').hidden = true;
+  }
+
+  nostot.hidden = false;
+});
+</script>
+<!-- NOSTOT-LOPPU -->
   <footer class="ilmio-footer">
     <p>© 2026 Ilmiöitä — Miten valta toimii · Kirjoittanut Ilmiömies · <a href="tietoa.html">Tietoa sivustosta ja tekijästä</a> · <a href="muutokset.html">Mitä sivustolle on tehty</a></p>
   </footer>
