@@ -376,7 +376,7 @@ def tulosta_skeema(cfg):
     except ImportError:
         sys.exit("psycopg2 puuttuu: pip install psycopg2-binary")
 
-    puuttuu = [k for k in ("PGHOST", "PGDATABASE", "PGUSER", "PGPASSWORD") if k not in cfg]
+    puuttuu = [k for k in ("PGHOST", "PGDATABASE", "PGUSER", "PGPASSWORD") if not cfg.get(k)]
     if puuttuu:
         sys.exit(f".suosio.env: puuttuu {', '.join(puuttuu)} (ks. .suosio.env.malli)")
 
@@ -1467,7 +1467,7 @@ def kirjoita_dashboard(ilmiot, d7, d30, edellinen7, viikko, ikkunat, julkaisut,
 
 def laheta(cfg):
     """Yksi tiedosto SFTP:llä. Väliaikaisnimi + rename, jottei lukija näe puolikasta."""
-    puuttuu = [k for k in ("SFTP_HOST", "SFTP_USER", "SFTP_POLKU") if k not in cfg]
+    puuttuu = [k for k in ("SFTP_HOST", "SFTP_USER", "SFTP_POLKU") if not cfg.get(k)]
     if puuttuu:
         sys.exit(f".suosio.env: puuttuu {', '.join(puuttuu)}")
 
@@ -1511,6 +1511,15 @@ def main():
 
     if args.demo and args.laheta:
         sys.exit("--demo ja --laheta eivät toimi yhdessä: demodata ei kuulu palvelimelle.")
+
+    # Siirron asetukset tarkistetaan ennen kyselyä: muuten kanta ehditään
+    # kysellä ja tiedostot kirjoittaa ennen kuin siirto kaatuu tyhjään
+    # tunnukseen, ja virhe näyttää ajon lopussa kalliimmalta kuin on.
+    if args.laheta:
+        vajaat = [k for k in ("SFTP_HOST", "SFTP_USER", "SFTP_POLKU") if not cfg.get(k)]
+        if vajaat:
+            sys.exit(f".suosio.env: {', '.join(vajaat)} on tyhjä tai puuttuu — "
+                     "täytä ennen --laheta:a (ks. .suosio.env.malli)")
 
     kirjoita = not args.ei_kirjoita
 
