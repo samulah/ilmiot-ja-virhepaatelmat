@@ -61,7 +61,8 @@ VIIKKO_KARENSSI = 4     # montako edellistä valintaa pidetään poissa
 # lattiaa: yhden sivun nostaminen viikon ilmiöksi on isompi väite kuin listan
 # viides rivi. Lattialla 10 lista olisi juuri nyt kaksirivinen (ks. kalibrointi
 # alla), eikä kaksi riviä ole lista.
-KASVU_LATTIA = 5
+KASVU_LATTIA = 5        # 7 pv vs. edellinen 7 pv
+KASVU_LATTIA_30 = 10    # 30 pv vs. edellinen 30 pv — isompi ikkuna, isompi lattia
 KASVU_MAX = 8
 
 # Lattia kalibroitu oikeaa dataa vasten 14.8.2026: 7 pv:n ikkunassa on 171
@@ -472,7 +473,7 @@ def valitse_viikon_ilmio(d7, edellinen7, tanaan, kirjoita, tunnetut):
     return valinta, historia
 
 
-def kasvulista(d7, edellinen7, tunnetut, viikko):
+def kasvulista(nyt_summat, ennen_summat, tunnetut, viikko, lattia):
     """Suhteellisesti eniten nousseet sivut → [{u, n, edellinen, kasvu}].
 
     Kolme ehtoa, ja jokainen on siellä siksi ettei lista valehtelisi:
@@ -483,12 +484,17 @@ def kasvulista(d7, edellinen7, tunnetut, viikko):
         ykköstä alhaalta päin,
       * viikon ilmiö jätetään pois — se on jo omana lohkonaan saman näkymän
         yläpuolella, ja sama kortti kahdesti näyttää virheeltä.
+
+    Sama funktio palvelee sekä 7 pv:n että 30 pv:n ikkunaa: ne eroavat vain
+    lattiassa ja siinä mitkä summat annetaan. Tasoitusvakio on tarkoituksella
+    sama molemmille — jos 30 pv laskisi suhteen eri kaavalla, sama sivu saisi
+    kaksi keskenään ristiriitaista prosenttia saman lohkon kahdella välilehdellä.
     """
     varattu = viikko["u"] if viikko else None
     rivit = []
-    for slug, nyt in d7.items():
-        ennen = edellinen7.get(slug, 0)
-        if slug not in tunnetut or slug == varattu or nyt < KASVU_LATTIA or nyt <= ennen:
+    for slug, nyt in nyt_summat.items():
+        ennen = ennen_summat.get(slug, 0)
+        if slug not in tunnetut or slug == varattu or nyt < lattia or nyt <= ennen:
             continue
         rivit.append({
             "u": slug, "n": nyt, "edellinen": ennen,
@@ -502,7 +508,7 @@ def kasvulista(d7, edellinen7, tunnetut, viikko):
 #  data/suosio.js
 # ─────────────────────────────────────────────────────────────────────────
 
-def kirjoita_suosio_js(d7, d30, edellinen7, viikko, ikkunat, tunnetut, g7, g30, kasvu):
+def kirjoita_suosio_js(d7, d30, edellinen7, viikko, ikkunat, tunnetut, g7, g30, k7, k30):
     """Slugit ja luvut. Ei otsikoita — ne haetaan selaimessa DOM-korteista."""
     def lista(summat, mukaan_edellinen):
         rivit = []
@@ -534,7 +540,8 @@ def kirjoita_suosio_js(d7, d30, edellinen7, viikko, ikkunat, tunnetut, g7, g30, 
         "d30": lista(d30, False),
         "g7": gsc_lista(g7),
         "g30": gsc_lista(g30),
-        "kasvu": kasvu,
+        "k7": k7,
+        "k30": k30,
         "viikonIlmio": viikko,
     }
     SUOSIO_JS.parent.mkdir(exist_ok=True)
@@ -649,7 +656,11 @@ NOSTOT_CSS = """
 }
 .nosto-nappi:hover { background: var(--c-primary); color: #fff; }
 .nosto-nappi:focus-visible { outline: 2px solid var(--c-primary-mid); outline-offset: 2px; }
+/* display:flex kumoaisi selaimen oman [hidden]-säännön, joten se on toistettava
+   erikseen — muuten JS:n piilottama välilehtipalkki jäisi näkyviin. Sama ansa
+   kuin .nostot[hidden]:ssa ja .nosto[hidden]:ssa. */
 .nosto-valilehdet { display: flex; gap: 0.3rem; }
+.nosto-valilehdet[hidden] { display: none; }
 .nosto-valilehti {
   font-family: 'DM Sans', system-ui, sans-serif;
   font-size: 1em;
@@ -771,7 +782,13 @@ NOSTOT_HTML = """
     </article>
 
     <article class="nosto" id="nosto-kasvu" hidden>
-      <h2 class="nosto-otsikko">Eniten kasvua</h2>
+      <h2 class="nosto-otsikko">
+        Eniten kasvua
+        <span class="nosto-valilehdet" role="tablist" aria-label="Aikaväli">
+          <button type="button" class="nosto-valilehti" role="tab" data-lista="kasvu" data-ikkuna="k7" aria-selected="true">7 pv</button>
+          <button type="button" class="nosto-valilehti" role="tab" data-lista="kasvu" data-ikkuna="k30" aria-selected="false">30 pv</button>
+        </span>
+      </h2>
       <ol class="nosto-lista" id="kasvu-lista"></ol>
       <p class="nosto-meta" id="kasvu-meta"></p>
     </article>
@@ -864,7 +881,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Googlatuimmat ja kasvu lasketaan samoista päivärajoista kuin luetuimmat;
   // data.ikkunat sisältää vain d7:n ja d30:n, joten avain käännetään tässä.
-  const IKKUNA_RAJAT = { d7: 'd7', d30: 'd30', g7: 'd7', g30: 'd30', kasvu: 'd7' };
+  const IKKUNA_RAJAT = { d7: 'd7', d30: 'd30', g7: 'd7', g30: 'd30', k7: 'd7', k30: 'd30' };
 
   // Oletusmuotoilu: pelkkä lukumäärä, ja vain jos luvut ovat näkyvissä.
   function lukuMuotoilu(r) {
@@ -877,8 +894,25 @@ document.addEventListener('DOMContentLoaded', function () {
     const meta = document.getElementById(tunnus + '-meta');
     if (!lohko || !lista) return null;
     muotoile = muotoile || lukuMuotoilu;
-    const valilehdet = Array.from(
+
+    // Välilehti jonka takana ei ole rivejä piilotetaan: tyhjä "30 pv" olisi
+    // lupaus jota klikkaus ei lunasta. Näin 30 pv:n kasvu ilmestyy itsestään
+    // sinä päivänä kun kannassa on kaksi täyttä 30 pv:n ikkunaa, eikä
+    // väliaikaa varten tarvita erillistä lippua.
+    const kaikki = Array.from(
       document.querySelectorAll('.nosto-valilehti[data-lista="' + tunnus + '"]'));
+    kaikki.forEach(function (n) {
+      n.hidden = !((data[n.dataset.ikkuna] || []).length);
+    });
+    const valilehdet = kaikki.filter(function (n) { return !n.hidden; });
+    if (valilehdet.length < 2) {
+      const strip = kaikki.length ? kaikki[0].parentNode : null;
+      if (strip) strip.hidden = true;
+    }
+    // Jos oletusikkuna on tyhjä, käytä ensimmäistä jossa on dataa
+    if (!(data[oletusIkkuna] || []).length && valilehdet.length) {
+      oletusIkkuna = valilehdet[0].dataset.ikkuna;
+    }
 
     function piirra(ikkuna) {
       const rivit = (data[ikkuna] || [])
@@ -905,8 +939,11 @@ document.addEventListener('DOMContentLoaded', function () {
         lista.appendChild(li);
       });
       const v = data.ikkunat && data.ikkunat[IKKUNA_RAJAT[ikkuna]];
+      // Saate voi olla yksi teksti tai ikkunakohtainen: kasvulohkon vertailu
+      // on eri ("edellinen viikko" / "edellinen 30 pv") välilehdestä riippuen.
+      const s = typeof saate === 'string' ? saate : (saate[ikkuna] || '');
       meta.textContent = (v ? pvm(v[0]) + ' – ' + pvm(v[1]) : '') +
-                         (saate ? (v ? ' · ' : '') + saate : '');
+                         (s ? (v ? ' · ' : '') + s : '');
       return rivit.length;
     }
 
@@ -917,6 +954,10 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         piirra(nappi.dataset.ikkuna);
       });
+    });
+
+    valilehdet.forEach(function (n) {
+      n.setAttribute('aria-selected', String(n.dataset.ikkuna === oletusIkkuna));
     });
 
     // Vain jos jotain oikeasti piirtyi: tyhjä otsikko välilehtineen on
@@ -934,7 +975,9 @@ document.addEventListener('DOMContentLoaded', function () {
     rakennaLista('googlatuimmat', 'g7', 'näkyi hakutuloksissa');
     // Kolme riviä on minimi: kahden rivin "eniten kasvua" ei ole lista vaan
     // väite kahdesta sivusta, ja hiljaisella viikolla se olisi pelkkää kohinaa.
-    rakennaLista('kasvu', 'kasvu', 'vs. edellinen viikko', function (r) {
+    rakennaLista('kasvu', 'k7',
+                 { k7: 'vs. edellinen viikko', k30: 'vs. edellinen 30 pv' },
+                 function (r) {
       const p = Math.round((r.kasvu - 1) * 100);
       // Tasoitettu suhde, ei raaka: 0 → 19 ei ole ääretön kasvu vaan +380 %.
       // Sama kaava kuin viikon ilmiössä, joten luvut eivät ole ristiriidassa.
@@ -1442,16 +1485,20 @@ def main():
         "d30": (loppu - timedelta(days=29), loppu),
     }
     ed_alku, ed_loppu = loppu - timedelta(days=13), loppu - timedelta(days=7)
+    # 30 pv:n kasvu tarvitsee kaksi peräkkäistä 30 pv:n ikkunaa, joten
+    # sivunäyttökysely haetaan 60 päivältä. Kaikki rajaus tehdään Pythonissa,
+    # joten leveämpi haku ei muuta muita lukuja — se vain tuo vertailujakson.
+    ed30_alku, ed30_loppu = loppu - timedelta(days=59), loppu - timedelta(days=30)
 
     ilmiot = lue_ilmiot()
     tunnetut = {i["slug"] + ".html" for i in ilmiot}
 
     if args.demo:
-        rivit, hylatyt = hae_demo(ikkunat["d30"][0], loppu, ilmiot)
+        rivit, hylatyt = hae_demo(ed30_alku, loppu, ilmiot)
         gsc_rivit, gsc_hylatyt = [], {}
         lahde = "demo"
     else:
-        rivit, hylatyt = hae_kannasta(cfg, ikkunat["d30"][0], loppu)
+        rivit, hylatyt = hae_kannasta(cfg, ed30_alku, loppu)
         gsc_rivit, gsc_hylatyt = hae_gsc(cfg, ikkunat["d30"][0], loppu)
         hylatyt = {**hylatyt, **gsc_hylatyt}
         lahde = "kanta"
@@ -1465,7 +1512,19 @@ def main():
 
     viikko, _ = valitse_viikon_ilmio(d7, edellinen7, tanaan,
                                      kirjoita and not args.demo, tunnetut)
-    kasvu = kasvulista(d7, edellinen7, tunnetut, viikko)
+
+    k7 = kasvulista(d7, edellinen7, tunnetut, viikko, KASVU_LATTIA)
+
+    # 30 pv:n kasvu vain jos vertailujakso on oikeasti katettu. Kanta alkaa
+    # 1.7.2026, joten vielä elokuussa "edellinen 30 pv" olisi puoliksi tyhjä ja
+    # jokainen sivu näyttäisi kaksinkertaistuneen. Vertailu kytkeytyy päälle
+    # itsestään kun dataa on 60 päivää — mieluummin puuttuva välilehti kuin
+    # välilehti joka valehtelee.
+    edellinen30 = summaa(rivit, ed30_alku, ed30_loppu)
+    ensimmainen = min((p for _, p, _ in rivit), default=None)
+    vertailu_katettu = ensimmainen is not None and ensimmainen <= ed30_alku
+    k30 = (kasvulista(d30, edellinen30, tunnetut, viikko, KASVU_LATTIA_30)
+           if vertailu_katettu else [])
 
     # ── Yhteenveto ────────────────────────────────────────────────────
     yht7 = sum(v for k, v in d7.items() if k in tunnetut)
@@ -1505,14 +1564,25 @@ def main():
     else:
         print(f"\nViikon ilmiö: ei valintaa (lattia {VIIKKO_LATTIA} ei ylittynyt)")
 
-    if kasvu:
-        print(f"\nEniten kasvua (lattia {KASVU_LATTIA}, viikon ilmiö pois luettuna):")
-        for r in kasvu:
-            nimi = next(i["nimi"] for i in ilmiot if i["slug"] + ".html" == r["u"])
-            print(f"    {round((r['kasvu']-1)*100):>+6} %  {r['edellinen']:>4} → "
-                  f"{r['n']:<4}  {nimi}")
+    def tulosta_kasvu(otsikko, lista, lattia):
+        if lista:
+            print(f"\n{otsikko} (lattia {lattia}, viikon ilmiö pois luettuna):")
+            for r in lista:
+                nimi = next(i["nimi"] for i in ilmiot if i["slug"] + ".html" == r["u"])
+                print(f"    {round((r['kasvu']-1)*100):>+6} %  {r['edellinen']:>4} → "
+                      f"{r['n']:<4}  {nimi}")
+        else:
+            print(f"\n{otsikko}: ei rivejä (lattia {lattia} ei ylittynyt)")
+
+    tulosta_kasvu("Eniten kasvua 7 pv", k7, KASVU_LATTIA)
+    if vertailu_katettu:
+        tulosta_kasvu("Eniten kasvua 30 pv", k30, KASVU_LATTIA_30)
     else:
-        print(f"\nEniten kasvua: ei rivejä (lattia {KASVU_LATTIA} ei ylittynyt)")
+        auki = ensimmainen + timedelta(days=59) if ensimmainen else None
+        print(f"\nEniten kasvua 30 pv: välilehti piilossa — vertailujakso "
+              f"{ed30_alku} – {ed30_loppu} ei ole katettu "
+              f"(vanhin päivä kannassa {ensimmainen}). "
+              f"Kytkeytyy päälle {auki}.")
 
     if not kirjoita:
         print("\n--ei-kirjoita: tiedostoja ei kirjoitettu.")
@@ -1520,7 +1590,7 @@ def main():
 
     # ── Kirjoitukset ──────────────────────────────────────────────────
     koko = kirjoita_suosio_js(d7, d30, edellinen7, viikko, ikkunat, tunnetut,
-                              g7, g30, kasvu)
+                              g7, g30, k7, k30)
     print(f"\n{SUOSIO_JS.relative_to(ROOT)}  {koko/1024:.1f} kt")
 
     kirjoita_dashboard(ilmiot, d7, d30, edellinen7, viikko, ikkunat,
