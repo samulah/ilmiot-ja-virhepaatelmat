@@ -18,6 +18,7 @@ set -uo pipefail
 
 REPO_URL="${REPO_URL:-https://github.com/samulah/ilmiot-ja-virhepaatelmat.git}"
 HAARA="${HAARA:-main}"
+TGZ_URL="${TGZ_URL:-https://codeload.github.com/samulah/ilmiot-ja-virhepaatelmat/tar.gz/refs/heads/$HAARA}"
 KOHDE="${KOHDE:-$HOME/ilmiot}"
 VENV="${VENV:-$HOME/ilmiot-venv}"
 LOKI="${LOKI:-$HOME/.suosio.log}"
@@ -32,22 +33,58 @@ kelt()   { printf '\033[33m!\033[0m %s\n' "$*"; }
 puna()   { printf '\033[31m✗\033[0m %s\n' "$*"; }
 otsikko(){ printf '\n\033[1m── %s\033[0m\n' "$*"; }
 
+# Alusta ratkaisee sekä paketinhallinnan että ajastuksen. Synologyssa ei ole
+# apt:ia, ja käyttäjän crontab on siellä ansa: DSM ylikirjoittaa sen
+# päivityksissä, jolloin yöajo katoaa ilman varoitusta. Oikea paikka on
+# Task Scheduler.
+ALUSTA="linux"
+if [ -f /etc/VERSION ] && grep -qi synology /etc/VERSION 2>/dev/null; then
+  ALUSTA="synology"
+elif [ -d /volume1/@appstore ]; then
+  ALUSTA="synology"
+fi
+
+if command -v apt >/dev/null 2>&1;   then ASENNA="sudo apt install -y"
+elif command -v opkg >/dev/null 2>&1; then ASENNA="opkg install"
+else ASENNA=""
+fi
+
 PUUTTUU=0
 vaadi() {  # vaadi <komento> <asennuspaketti>
   if command -v "$1" >/dev/null 2>&1; then
     vihrea "$1 löytyy"
+    return
+  fi
+  PUUTTUU=1
+  if [ -n "$ASENNA" ]; then
+    puna "$1 puuttuu — asenna: $ASENNA $2"
+  elif [ "$ALUSTA" = synology ]; then
+    puna "$1 puuttuu. Synologyssa ei ole apt:ia — kaksi tapaa:"
+    echo "      a) Package Center → asenna Python 3 / Git Server"
+    echo "      b) Entware (opkg), jos haluat tavallisen pakettivalikoiman"
   else
-    puna "$1 puuttuu — asenna: sudo apt install -y $2"
-    PUUTTUU=1
+    puna "$1 puuttuu, eikä tunnettua paketinhallintaa löytynyt"
   fi
 }
 
 # ──────────────────────────────────────────────────────────────────────
 otsikko "1. Esivaatimukset"
-vaadi git git
 vaadi python3 python3
+vaadi curl curl
 vaadi ssh openssh-client
 vaadi sftp openssh-client
+# git on valinnainen. Repo on julkinen, joten tarball curlilla ajaa saman
+# asian eikä NAS koskaan committaa mitään — se vain lukee. Yksi riippuvuus
+# vähemmän asennettavaksi DSM:n Package Centeristä.
+# HAKUTAPA=tarball pakottaa tarballin vaikka git olisikin — hyödyllinen
+# testaamiseen ja jos NAS:in git on vanha tai rikki.
+if [ -n "${HAKUTAPA:-}" ]; then
+  vihrea "hakutapa pakotettu: $HAKUTAPA"
+elif command -v git >/dev/null 2>&1; then
+  HAKUTAPA="git"; vihrea "git löytyy — käytetään git pullia"
+else
+  HAKUTAPA="tarball"; vihrea "git puuttuu — käytetään tarballia (ei haittaa)"
+fi
 if ! python3 -c 'import venv' 2>/dev/null; then
   puna "python3-venv puuttuu — asenna: sudo apt install -y python3-venv"
   PUUTTUU=1
@@ -58,21 +95,46 @@ fi
 
 # ──────────────────────────────────────────────────────────────────────
 otsikko "2. Repo: $KOHDE (haara $HAARA)"
-if [ -d "$KOHDE/.git" ]; then
-  vihrea "repo on jo olemassa"
-  if [ "$TARKISTA" = 0 ]; then
+
+# Tarball puretaan olemassa olevan päälle, ei tyhjennettyyn kansioon. Syy:
+# .suosio.env, data/.viikko-historia.json ja generoidut tiedostot ovat
+# gitignoressa eivätkä siksi tarballissa — purku ei koske niihin. Poistettu
+# ilmiösivu jää roikkumaan levylle, mutta se on harmitonta: ilmiölista
+# luetaan aina tuoreesta index.html:stä, ei kansion sisällöstä.
+hae_tarball() {
+  tmp=$(mktemp -d) || return 1
+  # shellcheck disable=SC2064
+  trap "rm -rf '$tmp'" RETURN 2>/dev/null || true
+  if curl -sfL "$TGZ_URL" -o "$tmp/repo.tgz" \
+     && mkdir -p "$KOHDE" \
+     && tar xzf "$tmp/repo.tgz" -C "$KOHDE" --strip-components=1; then
+    rm -rf "$tmp"; return 0
+  fi
+  rm -rf "$tmp"; return 1
+}
+
+if [ "$TARKISTA" = 1 ]; then
+  if [ -f "$KOHDE/scripts/paivita_suosio.py" ]; then
+    vihrea "repo on paikallaan"
+  else
+    puna "repoa ei ole kansiossa $KOHDE"
+    PUUTTUU=1
+  fi
+elif [ "$HAKUTAPA" = git ]; then
+  if [ -d "$KOHDE/.git" ]; then
     git -C "$KOHDE" fetch --quiet origin "$HAARA" && \
     git -C "$KOHDE" checkout --quiet "$HAARA" && \
     git -C "$KOHDE" merge --quiet --ff-only "origin/$HAARA" && \
     vihrea "päivitetty: $(git -C "$KOHDE" log --oneline -1)"
+  else
+    git clone --quiet --branch "$HAARA" "$REPO_URL" "$KOHDE" \
+      && vihrea "kloonattu: $(git -C "$KOHDE" log --oneline -1)" \
+      || { puna "kloonaus epäonnistui"; exit 1; }
   fi
-elif [ "$TARKISTA" = 1 ]; then
-  puna "repoa ei ole kansiossa $KOHDE"
-  PUUTTUU=1
 else
-  git clone --quiet --branch "$HAARA" "$REPO_URL" "$KOHDE" \
-    && vihrea "kloonattu: $(git -C "$KOHDE" log --oneline -1)" \
-    || { puna "kloonaus epäonnistui"; exit 1; }
+  hae_tarball \
+    && vihrea "haettu tarballina ($(find "$KOHDE" -maxdepth 1 -name '*.html' | wc -l) sivua juuressa)" \
+    || { puna "tarballin haku epäonnistui: $TGZ_URL"; exit 1; }
 fi
 
 # ──────────────────────────────────────────────────────────────────────
@@ -94,8 +156,20 @@ if [ -x "$VENV/bin/python" ]; then
     PUUTTUU=1
   else
     "$VENV/bin/pip" install --quiet --upgrade pip
-    "$VENV/bin/pip" install --quiet psycopg2-binary \
-      && vihrea "psycopg2-binary asennettu" || puna "psycopg2-binary ei asentunut"
+    if "$VENV/bin/pip" install --quiet psycopg2-binary; then
+      vihrea "psycopg2-binary asennettu"
+    else
+      # psycopg2-binary tulee valmiina wheelinä vain osalle arkkitehtuureista.
+      # x86_64 ja aarch64 ovat katettuja, armv7 ei — ja lähdekoodista
+      # kääntäminen vaatii gcc:n ja libpq:n, joita NAS:illa harvoin on.
+      puna "psycopg2-binary ei asentunut (arkkitehtuuri $(uname -m))"
+      echo "      Todennäköisin syy: tälle arkkitehtuurille ei ole valmista"
+      echo "      wheeliä. Siistein kiertotie on Docker:"
+      echo "          docker run --rm -v $KOHDE:/repo -w /repo python:3-slim \\"
+      echo "            sh -c 'pip install -q psycopg2-binary && \\"
+      echo "                   python scripts/paivita_suosio.py --laheta'"
+      PUUTTUU=1
+    fi
   fi
 fi
 
@@ -184,8 +258,37 @@ otsikko "7. Ajastus"
 # git pull ennen ajoa: skripti lukee ilmiölistan index.html:stä ja
 # julkaisupäivät sivujen JSON-LD:stä, joten vanhentunut kopio jättäisi uudet
 # ilmiöt pois listoilta. --ff-only kaatuu mieluummin kuin tekee merge-commitin.
-RIVI="$AJOAIKA cd $KOHDE && git pull --quiet --ff-only && $VENV/bin/python scripts/paivita_suosio.py --laheta >> $LOKI 2>&1"
-if crontab -l 2>/dev/null | grep -qF "paivita_suosio.py"; then
+# Haku ennen ajoa on pakollinen osa komentoa, ei koriste: skripti lukee
+# ilmiölistan index.html:stä ja julkaisupäivät sivujen JSON-LD:stä, joten
+# vanhentunut kopio jättäisi uudet ilmiöt pois listoilta ja pudottaisi ne
+# julkaisupäiväsuodattimesta.
+if [ "$HAKUTAPA" = git ]; then
+  HAKU="git -C $KOHDE pull --quiet --ff-only"
+else
+  HAKU="curl -sfL $TGZ_URL | tar xz -C $KOHDE --strip-components=1"
+fi
+KOMENTO="$HAKU && cd $KOHDE && $VENV/bin/python scripts/paivita_suosio.py --laheta >> $LOKI 2>&1"
+RIVI="$AJOAIKA $KOMENTO"
+
+if [ "$ALUSTA" = synology ]; then
+  # DSM ylikirjoittaa käyttäjän crontabin päivityksissä, joten ajastus tehdään
+  # Task Schedulerilla. Se myös näyttää ajon tuloksen käyttöliittymässä ja osaa
+  # lähettää sähköpostin epäonnistumisesta — cronin MAILTO ei NAS:illa toimi
+  # ilman erikseen pystytettyä postinvälitystä.
+  kelt "Synology: älä käytä crontabia, DSM ylikirjoittaa sen päivityksissä."
+  echo
+  echo "  DSM → Ohjauspaneeli → Tehtävien ajoitus → Luo → Ajoitettu tehtävä →"
+  echo "  Käyttäjän määrittämä komentosarja"
+  echo
+  echo "      Käyttäjä:   $(whoami)"
+  echo "      Ajoitus:    päivittäin klo 03:10"
+  echo "      Komento:"
+  echo "$KOMENTO" | sed 's/^/          /'
+  echo
+  echo "  Laita lisäksi rasti kohtaan \"Lähetä ajon tulokset sähköpostitse\" ja"
+  echo "  valitse että viesti tulee vain virheestä — muuten hiljainen"
+  echo "  epäonnistuminen jää huomaamatta."
+elif crontab -l 2>/dev/null | grep -qF "paivita_suosio.py"; then
   vihrea "cronissa on jo suosioajo:"
   crontab -l 2>/dev/null | grep -F "paivita_suosio.py" | sed 's/^/      /'
 else
