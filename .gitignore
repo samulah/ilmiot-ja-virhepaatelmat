@@ -3,4 +3,15 @@ scripts/__pycache__/
 .claude/worktrees/
 *:Zone.Identifier
 datalake-analysis/
+datalake_analysis/
 gsc/
+
+# Suosiodata (scripts/paivita_suosio.py) — yöllisiä artefakteja, ei versionhallintaan.
+# .suosio.env sisältää kannan osoitteen ja tunnukset; suosio.js ja dashboard
+# generoidaan uudelleen joka ajossa ja sisältävät liikennelukuja.
+.suosio.env
+data/suosio.js
+data/.viikko-historia.json
+luonnokset/suosio.html
+luonnokset/etusivu-nostot.html
+.suosio.log

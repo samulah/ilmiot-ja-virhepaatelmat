@@ -1,6 +1,6 @@
 # Ilmiöitä — www.ilmiöt.fi
 
-Suomenkielinen tietopankki: 113 yhteiskunnallista ilmiötä, 12 aihepiiriä. Staattinen
+Suomenkielinen tietopankki: 139 yhteiskunnallista ilmiötä, 13 aihepiiriä. Staattinen
 HTML, ei build-vaihetta — jokainen sivu on itsenäinen tiedosto repon juuressa. Osa
 tiedostoista on kuitenkin **generoituja**, eikä niitä muokata käsin (ks. alla).
 
@@ -63,9 +63,74 @@ nappi on säilytettävä — muuten sivu jää orvoksi.
 | `search-index.js` | `scripts/build_search_index.py` | sisältömuutosten jälkeen |
 | `llms.txt` (ilmiölista) | `scripts/paivita_maarat.py` | ilmiömäärän muuttuessa |
 | `kategoria-*.html` | `scripts/build_kategoriat.py` | kun `kategoriat/*.md` muuttuu |
+| `data/suosio.js` | `scripts/paivita_suosio.py` | yöllä cronista |
+| `luonnokset/suosio.html` | `scripts/paivita_suosio.py` | samalla ajolla |
+| `luonnokset/etusivu-nostot.html` | `scripts/paivita_suosio.py` | samalla ajolla |
 
 `llms.txt`:n **otsikkolohko** (rivit 1–10) on käsin ylläpidetty; vain
 ilmiölista synkronoituu skriptillä.
+
+## Suosiodata ja etusivun nostot
+
+`scripts/paivita_suosio.py` hakee liikennekannasta luetuimmat sivut ja valitsee
+viikon ilmiön. Kolme sääntöä:
+
+1. **Yöajo ei kirjoita `index.html`:ään.** Suosiodata elää erillisessä
+   `data/suosio.js`:ssä, jonka etusivu lataa `defer`-skriptinä ja joka on ainoa
+   yöllä palvelimelle siirtyvä tiedosto. Jos data kirjoitettaisiin HTML:ään,
+   joka yö työnnettäisiin 300 kt etusivu, joka voi ylikirjoittaa käsin tehtyjä
+   muutoksia — se on tämän projektin dokumentoitu pahin vikatila.
+2. **`data/suosio.js` sisältää vain slugit ja luvut.** Otsikot, kuvaukset ja
+   värit haetaan selaimessa sivun omista `.hub-kortti`-elementeistä. Älä lisää
+   niitä datatiedostoon: kaksi listaa ajautuisi erilleen.
+3. **Nostokortit eivät käytä luokkaa `hub-kortti`.** Etusivun haku,
+   nuolinäppäinnavigaatio ja `randomIlmio()` keräävät kaikki `.hub-kortti`-
+   elementit, joten duplikaatti näkyisi hakutuloksissa kahdesti.
+
+Nostolohkot injektoidaan `NOSTOT-ALKU`/`NOSTOT-LOPPU`-merkkien väliin; ajo on
+idempotentti ja poistaa edellisen injektion ensin. Oletuksena kohde on
+`luonnokset/etusivu-nostot.html`, `--tuotanto` kirjoittaa `index.html`:ään.
+Tunnukset ja kannan osoite ovat gitignoratussa `.suosio.env`:ssä
+(ks. `.suosio.env.malli`) — eivät koskaan versionhallintaan.
+
+Viisi lohkoa: **viikon ilmiö** (nousija, valitaan maanantaisin), **satunnainen
+ilmiö** (lähde on sivun oma korttilista, toimii ilman dataa), **luetuimmat**
+(sivunäytöt), **googlatuimmat** (Google-näytöt) ja **eniten kasvua**
+(7 pv vs. edellinen 7 pv). Luetuimmat ja googlatuimmat ovat eri asioita eivätkä
+saman asian kaksi esitystä: luettu = joku avasi sivun, googlattu = sivu näkyi
+hakutuloksissa. Sivu jolla on paljon näyttöjä ja vähän lukukertoja on title- tai
+kuvausongelma, ei sisältöongelma — dashboardin "Näkyvyys ilman klikkejä" listaa
+ne suoraan.
+
+"Eniten kasvua" käyttää matalampaa lattiaa (`KASVU_LATTIA` 5) kuin viikon ilmiö
+(`VIIKKO_LATTIA` 10) ja jättää viikon ilmiön pois listalta, joten lohkot eivät
+näytä samaa korttia kahdesti. Prosentti on molemmissa sama tasoitettu suhde
+(nyt+5)/(ennen+5) — jos toinen laskisi raa'an suhteen, sama sivu saisi kaksi eri
+lukua samalla sivulla. Lohko vaatii vähintään kolme riviä tai piiloutuu.
+
+Kasvulohkolla on 7 pv:n ja 30 pv:n välilehdet (`k7`, `k30`); sivunäyttökysely
+haetaan siksi 60 päivältä, ei 30:ltä. Kanta alkaa 1.7.2026, joten edellinen
+30 pv on toistaiseksi vain osittain katettu: vertailuluku **skaalataan
+päivätahdiksi** (`ikkunan pituus / katetut päivät`) ja saate kertoo sen
+"(osin arvioitu)". Skaalaus pienentää kasvuprosenttia, ei kasvata, eikä se voi
+keksiä kasvua jota ei ole. Kerroin menee itsestään ykköseen kun kate on täysi.
+
+**Kasvulistat ja viikon ilmiö suodattavat julkaisupäivän mukaan**
+(`ehti_mukaan()`): sivun on oltava julkaistu ennen vertailujakson alkua. Ilman
+tätä listat täyttyvät vastajulkaistuista sivuista, jotka eivät kasvaneet vaan
+ilmestyivät — uusi sivu on aina "kasvanut nollasta". Älä poista suodatinta
+vaikka lista lyhenisi; lyhyt tosi lista on parempi kuin pitkä valheellinen.
+
+Tyhjän listan välilehti piiloutuu automaattisesti — `rakennaLista()` piilottaa
+minkä tahansa välilehden jonka takana ei ole rivejä ja koko palkin jos vain yksi
+jää jäljelle. Älä siis "korjaa" puuttuvaa välilehteä; se ilmestyy itse.
+
+Kannan sudenkuopat, jotka on jo hoidettu kyselyssä ja jotka on syytä muistaa
+jos kyselyä muokataan: ilmiöt.fi on kannassa **kahtena** `sivusto_avain`-arvona
+(rajaa `sivusto_ryhma`, ei avainta), `http_status` sisältää runsaasti
+301-ohjauksia jotka eivät ole sivunäyttöjä, eikä faktataulussa ole bottilippua
+— ryömijät suodatetaan sillä, montako eri sivua sama kävijä avaa yhdessä
+päivässä.
 
 Ilmiöiden numerointia ei koskaan korjata käsin: `scripts/lisaa_ilmiot.py` ja
 `scripts/poista_ilmio.py` numeroivat koko sivuston uudelleen ja päivittävät

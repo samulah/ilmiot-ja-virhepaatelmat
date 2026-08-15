@@ -1,5 +1,252 @@
 # Muutosloki — Ilmiöitä (www.ilmiöt.fi)
 
+## 15.8.2026 — Viides nostolohko: eniten kasvua
+
+`scripts/paivita_suosio.py` laskee nyt myös **eniten kasvua** -listan, joka
+näkyy `luonnokset/etusivu-nostot.html`:ssä luetuimpien ja googlatuimpien
+rinnalla. Kolmen listan rivi käyttää luokkaa `.nostot-kolme`
+(`minmax(270px, 1fr)`); ≤ 640 px:ssä se putoaa yhteen sarakkeeseen kuten ennenkin.
+
+Uusi `kasvulista()` ja kenttä `kasvu` `data/suosio.js`:ssä
+(`{u, n, edellinen, kasvu}`, enintään `KASVU_MAX` = 8 riviä). Kolme ehtoa:
+
+- **`KASVU_LATTIA` = 5**, ei viikon ilmiön 10. Yhden sivun nostaminen viikon
+  ilmiöksi on isompi väite kuin listan viides rivi, ja lattialla 10 lista olisi
+  juuri nyt kaksirivinen — kaksi riviä ei ole lista.
+- **`nyt > ennen` ehdottomana.** Pelkkä tasoitettu suhde nostaisi listalle myös
+  paikallaan pysyneitä, koska tasoitus vetää kaikki kohti ykköstä alhaalta päin.
+- **Viikon ilmiö pois.** Se on jo omana lohkonaan saman näkymän yläpuolella;
+  sama kortti kahdesti näyttää virheeltä. Suodatus tehdään Pythonissa, joten
+  `data/suosio.js` sisältää sen mitä ruudulla on.
+
+Prosentti on sama tasoitettu suhde kuin viikon ilmiössä ((nyt+5)/(ennen+5)), ei
+raaka: 0 → 19 on listalla +380 %, ei ääretön. Muuten kaksi lohkoa väittäisi
+samasta sivusta eri luvun.
+
+Prosentti näkyy **myös tuotannossa** (`NAYTA_LUVUT=false`): se ei paljasta
+liikennemäärää, ja ilman sitä rivi olisi pelkkä nimi ilman perustetta
+järjestykselle. Absoluuttiluvut (`1→6`) tulevat vain testivaiheessa.
+
+Renderöijä `rakennaLista()` sai kaksi parametria: `muotoile(r)` (palauttaa
+rivin oikean laidan tekstin tai tyhjän) ja `minRivit` (kasvulla 3 — alle sen
+lohko piiloutuu). Samalla `ikkuna.replace('g','d')` -kikka korvattiin
+eksplisiittisellä `IKKUNA_RAJAT`-taulukolla, koska `'kasvu'` ei olisi mennyt
+regexistä läpi oikein.
+
+Ensimmäinen ajo oikealla datalla 15.8.: Hanlonin partaveitsi +83 % (1 → 6),
+DARVO +79 % (29 → 56), Halo-efekti +63 % (3 → 8). Tasan kolme riviä eli
+minimissä — hiljaisemmalla viikolla lohko piiloutuu itsestään.
+
+### 30 pv:n kasvu — kytkeytyy päälle itsestään 29.8.2026
+
+Lohko sai välilehdet kuten luetuimmat ja googlatuimmat: `k7` ja `k30`
+(`KASVU_LATTIA_30` = 10, isompi ikkuna kestää isomman lattian). Sivunäyttökysely
+haetaan nyt **60 päivältä** 30:n sijaan, jotta edellinen 30 pv:n jakso on
+ylipäätään olemassa. Rajaus tehdään Pythonissa, joten leveämpi haku ei muuta
+mitään muuta lukua.
+
+**Vertailujakso skaalataan päivätahdiksi.** Kanta alkaa 1.7.2026; 15.8.
+ajettuna edellinen 30 pv on 16.6.–15.7., josta dataa on 15 päivää eli puolet.
+Raakoja summia ei voi verrata kun toinen ikkuna on puolityhjä — jokainen sivu
+näyttäisi kaksinkertaistuneen. Vertailuluku kerrotaan siksi arvolla
+`ikkunan pituus / katetut päivät` (nyt ×2,00), ja saate sanoo
+"(osin arvioitu)". Skaalaus on **konservatiiviseen suuntaan**: vertailuluku
+kasvaa, joten kasvuprosentti pienenee — se ei voi keksiä kasvua jota ei ole.
+Kun kate on täysi, kerroin on 1,0 eikä koodi tee mitään; se lakkaa vaikuttamasta
+itsestään eikä vaadi siivousta. Alle `KASVU_KATE_MIN` = 10 päivän katteesta ei
+kerrota mitään: 3 päivästä ei ekstrapoloida kuukautta.
+
+### Julkaisupäiväsuodatin — kasvulistat valehtelivat uutuuksista
+
+Ensimmäinen 30 pv:n ajo tuotti kärkeen kolme riviä muotoa `0 → 12`:
+*1 %:n sääntö* (julkaistu 14.7.), *Viherpesu* (6.7.) ja *Keskiarvoharha*.
+Ne eivät kasvaneet vaan **ilmestyivät** — sivu jota ei ollut olemassa
+vertailujakson aikana on aina "kasvanut nollasta". Sivustolla on 26 sivua
+julkaistu 5.8. tai sen jälkeen, joten sama vika olisi täyttänyt myös 7 pv:n
+listan seuraavina viikkoina.
+
+Uusi `ehti_mukaan()` vaatii `datePublished <= vertailujakson alku`.
+Julkaisupäivät luetaan sivujen JSON-LD:stä `lue_julkaisupaivat()`:llä, joka oli
+jo olemassa dashboardia varten; kaikilla 139 sivulla päivä on olemassa, joten
+suodatin ei pudota ketään vahingossa. 30 pv:n kelpoisuusraja on jakson
+**todellinen** alku `max(ed30_alku, vanhin päivä kannassa)` = 1.7.2026, ei
+nimellinen 16.6. — vertailuluku on laskettu siitä päivästä, joten kelpoisuuskin
+on mitattava siitä.
+
+Sama suodatin lisättiin `valitse_viikon_ilmio()`:hon. Tällä viikolla se ei
+muuta valintaa (*Rage bait* on julkaistu 6.7. eli ennen vertailujaksoa 1.–7.8.),
+mutta 14.8. julkaistut 12 sivua olisivat olleet ensi maanantaina ehdolla
+pelkällä olemassaolollaan.
+
+Ero listassa on iso: skaalattu ja suodatettu 30 pv:n kärki on DARVO +89 %
+(50 → 99), Goodhartin laki +89 % (4 → 12), Välittäjän skimmaus +67 % (4 → 10) —
+kaikki sivuja jotka olivat olemassa koko vertailujakson. Alle kolmen rivin
+`k30` nollataan, jolloin välilehti piiloutuu itsestään.
+
+Yleistys hyödyttää muitakin: `rakennaLista()` piilottaa nyt minkä tahansa
+välilehden jonka takana ei ole rivejä, ja koko palkin jos vain yksi jää jäljelle.
+Sama suoja koskee googlatuimpien 30 pv:tä jos GSC-kysely puuttuu.
+
+Bugi matkan varrella: `.nosto-valilehdet` on `display: flex`, joka **kumoaa
+selaimen oman `[hidden]`-säännön** — palkki jäi näkyviin vaikka JS asetti
+attribuutin. Korjattu erillisellä `.nosto-valilehdet[hidden] { display: none }`
+-säännöllä, samalla tavalla kuin `.nostot[hidden]` ja `.nosto[hidden]` jo tekevät.
+
+Tarkistettu Chromiumilla 1280/900/390 px: ei JS-virheitä, 3 saraketta leveällä
+ja 1 mobiilissa, sekä `NAYTA_LUVUT` true- että false-tilassa. Molemmat haarat
+testattu: nykytila (ei välilehtiä) ja simuloitu `k30` (kaksi välilehteä,
+klikkaus vaihtaa listan ja päivärajat oikein). `index.html` ei muuttunut —
+tuotantoinjektio on yhä tekemättä.
+
+### Nostot julkaistu etusivulle
+
+`--tuotanto` ajettu: `index.html` 127 kt → 145 kt, `NAYTA_LUVUT=false` eli
+lukumäärät piilossa, vain järjestys ja kasvuprosentti näkyvät. Ajo on
+idempotentti — toinen peräkkäinen `--tuotanto` tuotti md5-identtisen tiedoston.
+Etusivun haku näkee yhä tasan 139 `.hub-kortti`-elementtiä eli nostokortit
+(2 kpl, luokka `.nosto-kortti`) eivät päätyneet hakutuloksiin tai arvontaan.
+
+Julkaisun rutiini CLAUDE.md:n mukaan: `muutokset.html` sai merkinnän lukijan
+kielellä (mukaan lukien kappale yksityisyydestä — lokipohjaiset summat, ei
+evästeitä eikä kävijäseurantaa), `dateModified` 2026-08-15 molempiin,
+etusivun `paivitetty-btn` samaan päivään, ja `build_sitemap.py` ajettu
+(155 URLia). `search-index.js` ei muuttunut, kuten pitikin: nostot ovat
+dynaamisia eivätkä sisältöä.
+
+**Palvelinpolku korjattu.** Dokumenttijuuri on `/public_html/kendom/ilmiöt`
+(todiste: `https://www.ilmiöt.fi/kendom/` → 404 mutta `search-index.js` ja
+`style.css` vastaavat juuresta). `index.html` lataa `data/suosio.js`
+suhteellisena, joten tiedoston on oltava index.html:n vieressä:
+`SFTP_POLKU=/public_html/kendom/ilmiöt/data`. Aiempi `/public_html/data` ei näy
+verkossa lainkaan.
+
+**Avoin este: SSH-avainta ei ole.** `.suosio.env`:n
+`SFTP_KEY=/home/samu/.ssh/id_ed25519_ilmiot` osoittaa tiedostoon jota ei ole
+olemassa, joten `--laheta` ei ole koskaan ajettu onnistuneesti eikä
+`data/suosio.js` ole palvelimella. Etusivu on siihen asti turvallisesti
+puolikas: `TUOREUS_VRK`-tarkistus piilottaa neljä lohkoa datan puuttuessa ja
+satunnainen ilmiö toimii ilman dataa, joten julkaisu ei riko mitään — se vain
+ei vielä näytä listoja.
+
+## 14.8.2026 — Googlatuimmat mukaan ja yöajo pystyyn
+
+Neljäs lohko `fact_gsc_haku`-taulusta: **googlatuimmat**, eli sivut joilla on
+eniten näyttöjä Google-hakutuloksissa. Se ei ole luetuimpien toisinto vaan eri
+mittari — näyttö tarkoittaa että sivu näkyi hakutuloksissa, ei että joku luki
+sen — ja järjestys eroaa selvästi:
+
+| | Luetuimmat 7 pv | Googlatuimmat 7 pv |
+|---|---|---|
+| 1 | DARVO 73 | DARVO 163 |
+| 2 | Rage bait 19 | Rage bait 98 |
+| 3 | Halo-efekti 8 | Hyvesignalointi 92 |
+| 4 | Hanlonin partaveitsi 6 | Dunning–Kruger 82 |
+
+Ero on itsessään tieto. Hyvesignalointi on Googlessa kolmas mutta luetuissa
+kuudes; Dunning–Kruger ei näy luetuimmissa lainkaan. Molemmat ovat
+title/kuvaus-ongelmia, eivät sisältöongelmia.
+
+Dashboard sai neljä uutta osiota, joista käyttökelpoisin on **"Näkyvyys ilman
+klikkejä"** (≥ 30 näyttöä, 0 klikkiä 30 pv). Kärjessä *hyvesignalointi*: 236
+näyttöä, 0 klikkiä, keskisija 7,1 — vertailukohtana *darvo suomeksi* konvertoi
+15,5 % sijalta 2,7. Lisäksi hakulausekkeet (202 kpl), sivutason Google-taulukko
+ja lista sivuista jotka saavat lukijoita muualta kuin hausta. Keskisija on
+näytöillä painotettu, ei suora keskiarvo — muuten yhden näytön päivä painaisi
+yhtä paljon kuin sadan.
+
+Kysely on erillinen `SUOSIO_SQL_GSC` ja **valinnainen**: ilman sitä lohko jää
+pois eikä muu putki häiriinny.
+
+**Yöajo pystyssä** cronissa klo 3:10, `--laheta` **pois** — mikään ei mene
+livepalvelimelle, vain `luonnokset/` päivittyy. Komento testattu riisutussa
+ympäristössä (`env -i`, kotihakemisto, minimaalinen PATH), poistumiskoodi 0;
+cron ajaa kotihakemistosta, joten skriptin polku on absoluuttinen. Jokainen ajo
+kirjoittaa aikaleimallisen lohkon `~/.suosio.log`:iin, jotta hiljainen
+epäonnistuminen erottuu onnistuneesta.
+
+Testit 43/43 läpi, mukaan lukien että kahden listan välilehdet eivät vaikuta
+toisiinsa ja että googlatuimmat piiloutuu datan puuttuessa.
+
+Avoin: viikon ilmiö on nyt Rage bait, joka on myös luetuimpien #2. Päällekkäisyys
+hyväksytään toistaiseksi — algoritmi on oikein, vika on otoskoossa (7 pv:ssä on
+171 lukukertaa 40 sivulle, vain 2 sivua ylittää lattian 10). Kun liikenne kasvaa,
+sama koodi alkaa toimia ilman muutoksia.
+
+## 14.8.2026 — Suosiodata luonnostettu: luetuimmat, viikon ilmiö, satunnainen ilmiö
+
+Uusi `scripts/paivita_suosio.py` hakee liikennekannasta sivukohtaiset lukukerrat
+ja kirjoittaa niistä kolme tiedostoa. **Mitään ei ole julkaistu** — kaikki elää
+`luonnokset/`-kansiossa haarassa `suosio-ja-nostot`, `index.html` on koskematon.
+
+**Arkkitehtuuri.** Yöajo ei kirjoita `index.html`:ään. Suosiodata on erillisessä
+`data/suosio.js`:ssä (8 kt demodatalla), jonka etusivu lataisi `defer`-skriptinä
+ja joka on ainoa yöllä siirtyvä tiedosto. Vaihtoehto — data suoraan HTML:ään —
+tarkoittaisi 300 kt etusivun työntämistä palvelimelle joka yö, eli tämän
+projektin dokumentoidun pahimman vikatilan (deploy gap) automatisointia.
+
+Datatiedostossa on vain slugit ja luvut. Nimet, kuvaukset, värit ja numerot
+haetaan selaimessa sivun omista `.hub-kortti`-elementeistä, samaan tapaan kuin
+haku tekee jo nyt. Siksi ilmiön uudelleennimeäminen tai poisto ei voi jättää
+suosiolohkoon haamurivejä, eikä toista ylläpidettävää ilmiölistaa synny.
+
+**Kolme lohkoa** injektoidaan `NOSTOT-ALKU`/`NOSTOT-LOPPU`-merkkien väliin
+katnavin jälkeen, ennen ensimmäistä kategoriaa — kategorioiden väliin sijoitettu
+lohko katkaisisi `.hub-kategoria + .hub-kategoria` -sisarussäännön. Ajo on
+idempotentti. Kohde on oletuksena `luonnokset/etusivu-nostot.html`, `--tuotanto`
+kirjoittaisi `index.html`:ään.
+
+Kortit käyttävät luokkia `.nosto-kortti` / `.nosto-rivi`, **eivät** `.hub-kortti`:a:
+`index.html:2709` kerää kaikki `.hub-kortti`-elementit ja sama taulukko ajaa
+hakua, nuolinäppäinnavigaatiota ja `randomIlmio()`:ta, joten duplikaatti näkyisi
+hakutuloksissa kahdesti ja arvonnassa kaksinkertaisella painolla. Nostolohko
+pysäyttää myös omat `keydown`-tapahtumansa, koska rivin 2813 käsittelijä
+fokusoi hakukentän jokaisesta tulostuvasta merkistä.
+
+**Viikon ilmiö** on suhteellisesti eniten noussut sivu, kolmella suojalla:
+vähintään 20 lukukertaa viikossa (lattia), järjestys tasoitettuna kaavalla
+(nyt+5)/(ennen+5), ja 4 edellistä valintaa karenssissa tilatiedostossa
+`data/.viikko-historia.json`. Ilman näitä 1 → 4 näyttöä olisi +300 % ja lista
+olisi pelkkää kohinaa. **Valinta lasketaan vain maanantaisin** ja pysyy koko
+viikon; muina öinä luvut päivittyvät mutta valinta ei. Jos yksikään sivu ei
+ylitä lattiaa, lohko piiloutuu — hiljainen tyhjä on parempi kuin arvottu nousija.
+
+**Degradaatio.** Jos `window.ILMIO_SUOSIO` puuttuu tai `paivitetty` on yli 3 vrk
+vanha, viikon ilmiö ja luetuimmat piiloutuvat itsestään; satunnainen ilmiö
+toimii silti, koska sen lähde on sivun oma korttilista. Epäonnistunut yösiirto
+ei siis näytä lukijalle viime kuun "luetuimpia 7 päivää".
+
+**Testattu selaimessa** (playwright, 34 tarkistusta): renderöinti, välilehdet,
+sekoituspussi (8 klikkausta = 8 eri ilmiötä, ei viikon ilmiötä eikä
+kärkikolmikkoa), haku ja nuolinavigaatio ehjiä, 139 korttia yhä 139, ei
+duplikaatteja hakutuloksissa, näppäimistö ei varasta fokusta, molemmat
+degradaatiotilat, mobiili 380 px ilman vaakavieritystä, konsoli puhdas.
+
+**Kaksi vikaa löytyi ja korjattiin testatessa:**
+
+- Kategoriajäsennin hukkasi viimeisen kategorian 10 korttia (139 → 129), koska
+  `hub-tyhja`-lopetin on sisennetty ja tyhjän rivin takana. Rajaus on nyt
+  sijaintipohjainen, ja jäsennin **kaatuu** jos korttimäärä ei täsmää raakaan
+  `hub-kortti`-laskuriin — sama opetus kuin `paivita_maarat.py`:n `maara`-tarkistuksessa.
+- Dashboardin "Laskijat" listasi nousseita sivuja, koska lista täyttyi loppuun
+  kun aitoja laskijoita oli vain yksi. Suunta on nyt suodatusehto, ei
+  järjestysperuste.
+
+**Kanta.** `scripts/suosio_lukijatunnus.sql` luo vain luku -roolin
+(`default_transaction_read_only`, 30 s `statement_timeout`, 3 yhteyttä).
+Kysely annetaan `.suosio.env`:n `SUOSIO_SQL`:ssä, koska tähtimallin taulunimet
+ovat kantakohtaisia; se palauttaa kolme saraketta (polku, pvm, nayttoja) ja
+kaikki ikkunointi tehdään Pythonissa missä sen voi testata. Osoite ja tunnukset
+eivät ole versionhallinnassa; `.gitignore` sai `.suosio.env`:n, generoidut
+tiedostot ja korjauksen `datalake-analysis/` → `datalake_analysis/` (väliviiva
+ei ole koskaan osunut oikeaan kansioon, joten GSC-viennit ovat gitissä).
+
+**Ei vielä tehty:** kantayhteys puuttuu, joten luvut ovat toistaiseksi
+`--demo`-tilan synteettistä dataa GSC-viennistä. Skeema selvitetään
+`--skeema`-lipulla kun lukijatunnus on luotu. Ennen tuotantoa on
+ristiintarkistettava, ettei faktataulu laske botteja: sivusto saa GSC:n mukaan
+~82 klikkiä/kk, joten kertaluokkaa suurempi summa tarkoittaa crawlereita.
+`muutokset.html`:ää ei ole päivitetty eikä pidäkään ennen julkaisua.
+
 ## 14.8.2026 — Julkaistu 12 ilmiötä: 127 → 139, neljä kategoriaa kasvoi
 
 Yksi ajo, kolme erää: vaalierä (3 sivua, luonnokset 4.8.), pimeät kuviot (5) ja
