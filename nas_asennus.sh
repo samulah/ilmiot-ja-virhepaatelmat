@@ -288,12 +288,9 @@ if [ "$ALUSTA" = synology ]; then
   echo "  Laita lisäksi rasti kohtaan \"Lähetä ajon tulokset sähköpostitse\" ja"
   echo "  valitse että viesti tulee vain virheestä — muuten hiljainen"
   echo "  epäonnistuminen jää huomaamatta."
-# Kommentoitu rivi ei ole ajastus. Ilman tätä suodatusta skripti raportoi
-# vihreällä "cronissa on jo suosioajo" rivistä joka alkaa risuaidalla — eli
-# juuri siitä rivistä jonka joku on tarkoituksella kytkenyt pois päältä.
-elif crontab -l 2>/dev/null | grep -v '^[[:space:]]*#' | grep -qF "paivita_suosio.py"; then
+elif crontab -l 2>/dev/null | grep -qF "paivita_suosio.py"; then
   vihrea "cronissa on jo suosioajo:"
-  crontab -l 2>/dev/null | grep -v '^[[:space:]]*#' | grep -F "paivita_suosio.py" | sed 's/^/      /'
+  crontab -l 2>/dev/null | grep -F "paivita_suosio.py" | sed 's/^/      /'
 else
   kelt "cronissa ei ole suosioajoa. Lisää se komennolla:"
   echo
