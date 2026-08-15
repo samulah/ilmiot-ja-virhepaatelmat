@@ -136,6 +136,39 @@ nostoja ei ole livenä, ja etusivulla lukee yhä "Päivitetty 14.8.2026".
 Paikallinen `index.html` (145 kt) on vietävä uudelleen. Vertaa aina md5:tä,
 älä tiedoston olemassaoloa; tämä on sama deploy gap joka on purrut ennenkin.
 
+### Yöajo NAS:illa — Asustor, ei Synology
+
+Ajastus on `/var/spool/cron/crontabs/dataneuvos`:ssa, ei käyttöliittymässä.
+Laite on **Asustor ADM**: BusyBox, ei systemd:tä, ei `/etc/crontab`ia, ja
+`/usr/bin/crontab` on symlinkki busyboxiin ilman suid-bittiä — käyttäjän
+`crontab`-komento kaatuu virheeseen `must be suid to work properly`. Rivi
+kirjoitetaan siksi suoraan spooliin rootina, muodossa jossa on viisi
+aikakenttää ja komento suoraan (ei käyttäjäkenttää); tiedoston nimi määrää
+käyttäjän. BusyBoxin `crond` lataa muuttuneen tiedoston minuutin sisällä, joten
+s6-palvelua ei tarvitse käynnistää uudelleen.
+
+Merkin tunnistaminen maksoi useita kierroksia. `/volume1`-polku näytti
+Synologylta ja kirjoitin asennusskriptiin DSM:n Task Scheduler -ohjeet, mutta
+`/etc/VERSION` oli tyhjä eikä `/usr/syno`-hakemistoa ollut. Asustorin
+tunnusmerkit: `/usr/builtin`-symlinkki, `crond` s6:n valvomana
+(`s6-supervise svc-cron`), `crontab -> /bin/busybox`.
+
+Ajastuskomennossa on kaksi yksityiskohtaa jotka estävät hiljaisen yöllisen
+epäonnistumisen: **absoluuttiset polut** (BusyBoxin cron ei välttämättä aseta
+`HOME`:a, ja tyhjä `$HOME` tekisi polusta `/ilmiot`) ja **eksplisiittinen
+`PATH`** (cronin ympäristö on riisuttu, eikä `curl` tai `tar` välttämättä löydy).
+
+**Kellonaika on sidoksissa ETL:ään.** Samassa crontabissa on `0 3 * * *
+run_all_etl.sh`, joka lataa liikennedatan kantaan. Suosioajo on ajettava vasta
+sen jälkeen: kesken olevaa kantaa vasten ajo ei kaadu vaan tuottaa vaimeat
+luvut, jolloin lohkot näyttävät oikeilta mutta kertovat väärää.
+
+Putken heikoin kohta on nyt ilmoituksen puuttuminen: cronin `MAILTO` ei tässä
+laitteessa toimi, joten rikkoutunut yöajo näkyy vasta siinä että etusivun
+lohkot katoavat kolmen vuorokauden päästä.
+
+Kokonaiskuva, palvelinpolut ja sudenkuopat: `suosio_kooste.md`.
+
 ### Nostot julkaistu etusivulle
 
 `--tuotanto` ajettu: `index.html` 127 kt → 145 kt, `NAYTA_LUVUT=false` eli

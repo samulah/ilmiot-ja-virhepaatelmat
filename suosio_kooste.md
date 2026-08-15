@@ -22,7 +22,7 @@ Lukumääriä ei näytetä lukijalle, vain järjestys ja kasvuprosentti
 ## Kolme konetta ja niiden roolit
 
 ```
-   NAS 192.168.32.100                webhotelli cpanel06.webhotellit.com
+   NAS 192.168.32.100 (Asustor)      webhotelli cpanel06.webhotellit.com
    dataneuvos                        inflaati
    ┌────────────────────────┐        ┌──────────────────────────────────┐
    │ Postgres (Docker)      │        │ /home/inflaati/public_html/      │
@@ -30,7 +30,7 @@ Lukumääriä ei näytetä lukijalle, vain järjestys ja kasvuprosentti
    │                        │        │     index.html                   │
    │ ~/ilmiot   (repo)      │ SFTP   │     data/suosio.js    ← yöllä    │
    │ ~/ilmiot-venv          │───────►│                                  │
-   │ yöajo 03:10            │  vain  │                                  │
+   │ yöajo cronista         │  vain  │                                  │
    └────────────────────────┘ tämä 1 └──────────────────────────────────┘
               ▲                         ▲
               │ tarball main-haarasta   │ index.html käsin, harvoin
@@ -107,6 +107,43 @@ pitkään vanhentunutta versiota juuri siksi.
 9. **index.html palvelimelle** — käsin.
 10. **Yöajo NAS:ille** — `nas_asennus.sh`, työaseman cron pois.
 11. **Ensimmäinen SFTP-siirto** — `data/suosio.js` livenä 15.8. klo 11:20.
+12. **Ajastus NAS:in croniin** — rivi `/var/spool/cron/crontabs/dataneuvos`:iin.
+
+## Ajastus
+
+NAS on Asustor (ADM): BusyBox, ei systemd:tä, ei `/etc/crontab`ia, ja
+`/usr/bin/crontab` on symlinkki busyboxiin **ilman suid-bittiä** — käyttäjän
+`crontab`-komento ei siis toimi lainkaan (`must be suid to work properly`).
+Rivi kirjoitetaan siksi suoraan spooliin rootina:
+
+```sh
+sudo sh -c "printf '\n%s\n' '<rivi>' >> /var/spool/cron/crontabs/dataneuvos"
+```
+
+Muoto on **viisi aikakenttää ja komento suoraan**, ei käyttäjäkenttää — sama
+kuin laitteen omilla riveillä. Tiedoston nimi määrää käyttäjän. BusyBoxin
+`crond` havaitsee muuttuneen tiedoston minuutin sisällä, joten palvelua ei
+tarvitse käynnistää uudelleen; se on hyvä, koska `crontab_check` valvoo niitä.
+
+Ajettava rivi (tarkista voimassa oleva kellonaika spoolitiedostosta):
+
+```
+10 3 * * * PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin; cd /home/dataneuvos/ilmiot && curl -sfL https://codeload.github.com/samulah/ilmiot-ja-virhepaatelmat/tar.gz/refs/heads/main | tar xz --strip-components=1 && /home/dataneuvos/ilmiot-venv/bin/python scripts/paivita_suosio.py --laheta >> /home/dataneuvos/.suosio.log 2>&1
+```
+
+Kaksi yksityiskohtaa jotka estävät hiljaisen yöllisen epäonnistumisen:
+**absoluuttiset polut** (BusyBoxin cron ei välttämättä aseta `HOME`:a, ja tyhjä
+`$HOME` tekisi polusta `/ilmiot`) ja **eksplisiittinen `PATH`** (cronin ympäristö
+on riisuttu, eikä `curl` tai `tar` välttämättä löydy).
+
+### Kellonaika ja ETL
+
+Samassa crontabissa on rivi `0 3 * * * run_all_etl.sh` — se lataa liikennedatan
+kantaan. Suosioajo **on ajettava vasta ETL:n jälkeen**. Jos ETL on kesken, ajo
+ei kaadu vaan tuottaa vaimeat luvut, ja lohkot näyttävät oikeilta mutta kertovat
+väärää — pahempi vika kuin virheilmoitus. Kymmenen minuutin marginaali on ohut;
+04:00 on turvallisempi, eikä kellonajalla ole muuten mitään väliä koska data on
+päivätasoista.
 
 ## Mittareiden säännöt
 
@@ -145,15 +182,24 @@ Nämä maksoivat eniten aikaa. Kirjattu, jottei niitä tarvitse löytää uudell
 301-ohjauksia jotka eivät ole sivunäyttöjä, eikä faktataulussa ole bottilippua —
 ryömijät suodatetaan sillä, montako eri sivua sama kävijä avaa päivässä.
 
-**`/dev/tcp` on bashismi.** Asennusskriptin kantayhteystesti antoi Synologyssa
+**`/dev/tcp` on bashismi.** Asennusskriptin kantayhteystesti antoi NAS:illa
 väärän hälytyksen "ei saada yhteyttä" täysin toimivasta kannasta. `/dev/tcp` ei
 ole tiedosto vaan bashin keksintö, eikä POSIX sh:ssa ole sitä lainkaan.
 `dash -n` hyväksyy syntaksin — vika näkyy vasta ajossa. Testi tehdään nyt
 python3:lla.
 
-**Synologyssa ei ole bashia.** Eikä apt:ia. Skripti on POSIX sh:lla, ja
-ajastus tehdään Task Schedulerilla — DSM ylikirjoittaa käyttäjän crontabin
-päivityksissä, jolloin yöajo katoaisi ilman varoitusta.
+**NAS:illa ei ole bashia.** Eikä apt:ia. Skripti on siksi POSIX sh:lla.
+
+**NAS on Asustor, ei Synology.** Tämä maksoi useita kierroksia: `/volume1`-polku
+näytti Synologylta, mutta `/etc/VERSION` oli tyhjä eikä `/usr/syno`-hakemistoa
+ollut. Kaikki DSM:ää koskevat ohjeet olivat siksi pielessä. Tunnusmerkit joista
+Asustorin tunnistaa: `/usr/builtin`-symlinkki, `crond` s6:n valvomana
+(`s6-supervise svc-cron`) ja `/usr/bin/crontab -> /bin/busybox`.
+
+**`crontab: must be suid to work properly`.** Käyttäjän `crontab`-komento ei
+toimi tässä laitteessa lainkaan, koska busybox-symlinkiltä puuttuu suid-bitti.
+Rivi kirjoitetaan siksi suoraan spooliin rootina. `/etc/crontab`ia ei ole,
+eikä systemd:tä — joten ei myöskään systemd-ajastimia.
 
 **`display: flex` kumoaa `[hidden]`:in.** Välilehtipalkki jäi näkyviin vaikka
 JS asetti attribuutin. Sama ansa kuin `.nostot[hidden]`:ssa, joka oli jo
@@ -174,17 +220,21 @@ Ensimmäinen datakansio syntyi paikkaan jota ei ole verkossa olemassa.
 
 ## Avoimet asiat
 
-1. **Ajastusta ei ole vielä tehty.** DSM → Ohjauspaneeli → Tehtävien ajoitus →
-   Luo → Ajoitettu tehtävä → Käyttäjän määrittämä komentosarja, käyttäjänä
-   `dataneuvos`, päivittäin 03:10. Valmis komento tulee
-   `sh ~/ilmiot/scripts/nas_asennus.sh --tarkista`:n kohdasta 7. Laita rasti
-   sähköposti-ilmoitukseen ja valitse "vain virheestä" — se on ainoa suoja
-   hiljaista epäonnistumista vastaan, koska cronin `MAILTO` ei NAS:illa toimi.
-   **Siihen asti data päivittyy vain käsin ajettuna.**
-2. **Yksi committi on pushaamatta** (tyhjän asetuksen tunnistus). NAS hakee
-   mainista, joten se ei saa korjausta ennen pushia.
-3. **30 pv:n kasvu on osin arvioitu** 29.8.2026 asti.
-4. **Dashboard elää NAS:illa**, `~/ilmiot/luonnokset/suosio.html`. Se ei siirry
+1. **Ensimmäistä yöajoa ei ole vielä nähty.** Rivi on lisätty ja komento on
+   todistettu käsin, mutta cronin poimintaa ei ole havaittu käytännössä.
+   Tarkista aamulla: `tail -25 ~/.suosio.log` (uusi aikaleimallinen lohko ja
+   `SFTP valmis`) ja `curl -sI https://www.xn--ilmit-mua.fi/data/suosio.js |
+   grep -i last-modified`. Jos lokissa ei ole uutta lohkoa, cron ei poiminut
+   riviä; jos lohko on mutta luvut ovat nollissa, ETL oli vielä kesken.
+2. **Ei ilmoitusta epäonnistumisesta.** Cronin `MAILTO` ei tässä laitteessa
+   toimi ilman postinvälitystä, eikä ADM:ssä ole Synologyn kaltaista ajastinta
+   joka lähettäisi sähköpostin. Rikkoutunut yöajo näkyy siis vasta siinä, että
+   etusivun lohkot katoavat kolmen vuorokauden päästä tuoreustarkistuksen
+   takia. Tämä on putken heikoin kohta.
+3. **Kaksi committia on pushaamatta** (tyhjän asetuksen tunnistus ja tämä
+   kooste). NAS hakee mainista, joten se ei saa niitä ennen pushia.
+4. **30 pv:n kasvu on osin arvioitu** 29.8.2026 asti.
+5. **Dashboard elää NAS:illa**, `~/ilmiot/luonnokset/suosio.html`. Se ei siirry
    palvelimelle eikä ole versionhallinnassa. Työaseman kopio vanhenee nyt, kun
    ajo on siirtynyt pois.
 
