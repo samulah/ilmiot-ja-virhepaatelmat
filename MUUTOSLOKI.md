@@ -1,5 +1,46 @@
 # Muutosloki — Ilmiöitä (www.ilmiöt.fi)
 
+## 15.8.2026 — Viides nostolohko: eniten kasvua
+
+`scripts/paivita_suosio.py` laskee nyt myös **eniten kasvua** -listan, joka
+näkyy `luonnokset/etusivu-nostot.html`:ssä luetuimpien ja googlatuimpien
+rinnalla. Kolmen listan rivi käyttää luokkaa `.nostot-kolme`
+(`minmax(270px, 1fr)`); ≤ 640 px:ssä se putoaa yhteen sarakkeeseen kuten ennenkin.
+
+Uusi `kasvulista()` ja kenttä `kasvu` `data/suosio.js`:ssä
+(`{u, n, edellinen, kasvu}`, enintään `KASVU_MAX` = 8 riviä). Kolme ehtoa:
+
+- **`KASVU_LATTIA` = 5**, ei viikon ilmiön 10. Yhden sivun nostaminen viikon
+  ilmiöksi on isompi väite kuin listan viides rivi, ja lattialla 10 lista olisi
+  juuri nyt kaksirivinen — kaksi riviä ei ole lista.
+- **`nyt > ennen` ehdottomana.** Pelkkä tasoitettu suhde nostaisi listalle myös
+  paikallaan pysyneitä, koska tasoitus vetää kaikki kohti ykköstä alhaalta päin.
+- **Viikon ilmiö pois.** Se on jo omana lohkonaan saman näkymän yläpuolella;
+  sama kortti kahdesti näyttää virheeltä. Suodatus tehdään Pythonissa, joten
+  `data/suosio.js` sisältää sen mitä ruudulla on.
+
+Prosentti on sama tasoitettu suhde kuin viikon ilmiössä ((nyt+5)/(ennen+5)), ei
+raaka: 0 → 19 on listalla +380 %, ei ääretön. Muuten kaksi lohkoa väittäisi
+samasta sivusta eri luvun.
+
+Prosentti näkyy **myös tuotannossa** (`NAYTA_LUVUT=false`): se ei paljasta
+liikennemäärää, ja ilman sitä rivi olisi pelkkä nimi ilman perustetta
+järjestykselle. Absoluuttiluvut (`1→6`) tulevat vain testivaiheessa.
+
+Renderöijä `rakennaLista()` sai kaksi parametria: `muotoile(r)` (palauttaa
+rivin oikean laidan tekstin tai tyhjän) ja `minRivit` (kasvulla 3 — alle sen
+lohko piiloutuu). Samalla `ikkuna.replace('g','d')` -kikka korvattiin
+eksplisiittisellä `IKKUNA_RAJAT`-taulukolla, koska `'kasvu'` ei olisi mennyt
+regexistä läpi oikein.
+
+Ensimmäinen ajo oikealla datalla 15.8.: Hanlonin partaveitsi +83 % (1 → 6),
+DARVO +79 % (29 → 56), Halo-efekti +63 % (3 → 8). Tasan kolme riviä eli
+minimissä — hiljaisemmalla viikolla lohko piiloutuu itsestään.
+
+Tarkistettu Chromiumilla 1280/900/390 px: ei JS-virheitä, 3 saraketta
+leveällä ja 1 mobiilissa, sekä `NAYTA_LUVUT` true- että false-tilassa.
+`index.html` ei muuttunut — tuotantoinjektio on yhä tekemättä.
+
 ## 14.8.2026 — Googlatuimmat mukaan ja yöajo pystyyn
 
 Neljäs lohko `fact_gsc_haku`-taulusta: **googlatuimmat**, eli sivut joilla on
