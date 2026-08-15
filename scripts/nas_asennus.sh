@@ -32,13 +32,37 @@ kelt()   { printf '\033[33m!\033[0m %s\n' "$*"; }
 puna()   { printf '\033[31m✗\033[0m %s\n' "$*"; }
 otsikko(){ printf '\n\033[1m── %s\033[0m\n' "$*"; }
 
+# Alusta ratkaisee sekä paketinhallinnan että ajastuksen. Synologyssa ei ole
+# apt:ia, ja käyttäjän crontab on siellä ansa: DSM ylikirjoittaa sen
+# päivityksissä, jolloin yöajo katoaa ilman varoitusta. Oikea paikka on
+# Task Scheduler.
+ALUSTA="linux"
+if [ -f /etc/VERSION ] && grep -qi synology /etc/VERSION 2>/dev/null; then
+  ALUSTA="synology"
+elif [ -d /volume1/@appstore ]; then
+  ALUSTA="synology"
+fi
+
+if command -v apt >/dev/null 2>&1;   then ASENNA="sudo apt install -y"
+elif command -v opkg >/dev/null 2>&1; then ASENNA="opkg install"
+else ASENNA=""
+fi
+
 PUUTTUU=0
 vaadi() {  # vaadi <komento> <asennuspaketti>
   if command -v "$1" >/dev/null 2>&1; then
     vihrea "$1 löytyy"
+    return
+  fi
+  PUUTTUU=1
+  if [ -n "$ASENNA" ]; then
+    puna "$1 puuttuu — asenna: $ASENNA $2"
+  elif [ "$ALUSTA" = synology ]; then
+    puna "$1 puuttuu. Synologyssa ei ole apt:ia — kaksi tapaa:"
+    echo "      a) Package Center → asenna Python 3 / Git Server"
+    echo "      b) Entware (opkg), jos haluat tavallisen pakettivalikoiman"
   else
-    puna "$1 puuttuu — asenna: sudo apt install -y $2"
-    PUUTTUU=1
+    puna "$1 puuttuu, eikä tunnettua paketinhallintaa löytynyt"
   fi
 }
 
@@ -94,8 +118,20 @@ if [ -x "$VENV/bin/python" ]; then
     PUUTTUU=1
   else
     "$VENV/bin/pip" install --quiet --upgrade pip
-    "$VENV/bin/pip" install --quiet psycopg2-binary \
-      && vihrea "psycopg2-binary asennettu" || puna "psycopg2-binary ei asentunut"
+    if "$VENV/bin/pip" install --quiet psycopg2-binary; then
+      vihrea "psycopg2-binary asennettu"
+    else
+      # psycopg2-binary tulee valmiina wheelinä vain osalle arkkitehtuureista.
+      # x86_64 ja aarch64 ovat katettuja, armv7 ei — ja lähdekoodista
+      # kääntäminen vaatii gcc:n ja libpq:n, joita NAS:illa harvoin on.
+      puna "psycopg2-binary ei asentunut (arkkitehtuuri $(uname -m))"
+      echo "      Todennäköisin syy: tälle arkkitehtuurille ei ole valmista"
+      echo "      wheeliä. Siistein kiertotie on Docker:"
+      echo "          docker run --rm -v $KOHDE:/repo -w /repo python:3-slim \\"
+      echo "            sh -c 'pip install -q psycopg2-binary && \\"
+      echo "                   python scripts/paivita_suosio.py --laheta'"
+      PUUTTUU=1
+    fi
   fi
 fi
 
@@ -184,8 +220,28 @@ otsikko "7. Ajastus"
 # git pull ennen ajoa: skripti lukee ilmiölistan index.html:stä ja
 # julkaisupäivät sivujen JSON-LD:stä, joten vanhentunut kopio jättäisi uudet
 # ilmiöt pois listoilta. --ff-only kaatuu mieluummin kuin tekee merge-commitin.
-RIVI="$AJOAIKA cd $KOHDE && git pull --quiet --ff-only && $VENV/bin/python scripts/paivita_suosio.py --laheta >> $LOKI 2>&1"
-if crontab -l 2>/dev/null | grep -qF "paivita_suosio.py"; then
+KOMENTO="cd $KOHDE && git pull --quiet --ff-only && $VENV/bin/python scripts/paivita_suosio.py --laheta >> $LOKI 2>&1"
+RIVI="$AJOAIKA $KOMENTO"
+
+if [ "$ALUSTA" = synology ]; then
+  # DSM ylikirjoittaa käyttäjän crontabin päivityksissä, joten ajastus tehdään
+  # Task Schedulerilla. Se myös näyttää ajon tuloksen käyttöliittymässä ja osaa
+  # lähettää sähköpostin epäonnistumisesta — cronin MAILTO ei NAS:illa toimi
+  # ilman erikseen pystytettyä postinvälitystä.
+  kelt "Synology: älä käytä crontabia, DSM ylikirjoittaa sen päivityksissä."
+  echo
+  echo "  DSM → Ohjauspaneeli → Tehtävien ajoitus → Luo → Ajoitettu tehtävä →"
+  echo "  Käyttäjän määrittämä komentosarja"
+  echo
+  echo "      Käyttäjä:   $(whoami)"
+  echo "      Ajoitus:    päivittäin klo 03:10"
+  echo "      Komento:"
+  echo "$KOMENTO" | sed 's/^/          /'
+  echo
+  echo "  Laita lisäksi rasti kohtaan \"Lähetä ajon tulokset sähköpostitse\" ja"
+  echo "  valitse että viesti tulee vain virheestä — muuten hiljainen"
+  echo "  epäonnistuminen jää huomaamatta."
+elif crontab -l 2>/dev/null | grep -qF "paivita_suosio.py"; then
   vihrea "cronissa on jo suosioajo:"
   crontab -l 2>/dev/null | grep -F "paivita_suosio.py" | sed 's/^/      /'
 else
