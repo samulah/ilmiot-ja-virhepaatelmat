@@ -1,10 +1,13 @@
-#!/usr/bin/env bash
+#!/bin/sh
 # Suosiodatan yöajon pystytys NAS:ille (tavallinen Linux).
 #
 # Ajetaan NAS:illa, ei tällä koneella:
 #
-#     HAARA=suosio-ja-nostot bash nas_asennus.sh
-#     bash nas_asennus.sh --tarkista      # ei muuta mitään, kertoo mikä puuttuu
+#     HAARA=suosio-ja-nostot sh nas_asennus.sh
+#     sh nas_asennus.sh --tarkista        # ei muuta mitään, kertoo mikä puuttuu
+#
+# POSIX sh, ei bash: Synology DSM:ssä ei ole bashia lainkaan (-sh: bash: not
+# found). Siksi ei pipefailia, ei [[ ]]:ää eikä trap RETURNia.
 #
 # Skripti on idempotentti: sen voi ajaa uudelleen milloin tahansa. Se ei koskaan
 # ylikirjoita .suosio.env:iä eikä viikkohistoriaa, koska ne ovat ainoat
@@ -14,7 +17,7 @@
 # WSL:n cron ajaa vain kun WSL on käynnissä, ja jos ajo jää väliin kolmena
 # yönä, etusivun tuoreustarkistus piilottaa lohkot. NAS on aina päällä.
 
-set -uo pipefail
+set -u
 
 REPO_URL="${REPO_URL:-https://github.com/samulah/ilmiot-ja-virhepaatelmat.git}"
 HAARA="${HAARA:-main}"
@@ -85,12 +88,6 @@ elif command -v git >/dev/null 2>&1; then
 else
   HAKUTAPA="tarball"; vihrea "git puuttuu — käytetään tarballia (ei haittaa)"
 fi
-if ! python3 -c 'import venv' 2>/dev/null; then
-  puna "python3-venv puuttuu — asenna: sudo apt install -y python3-venv"
-  PUUTTUU=1
-else
-  vihrea "python3-venv löytyy"
-fi
 [ "$PUUTTUU" = 1 ] && { echo; puna "Asenna puuttuvat paketit ja aja uudelleen."; exit 1; }
 
 # ──────────────────────────────────────────────────────────────────────
@@ -103,8 +100,6 @@ otsikko "2. Repo: $KOHDE (haara $HAARA)"
 # luetaan aina tuoreesta index.html:stä, ei kansion sisällöstä.
 hae_tarball() {
   tmp=$(mktemp -d) || return 1
-  # shellcheck disable=SC2064
-  trap "rm -rf '$tmp'" RETURN 2>/dev/null || true
   if curl -sfL "$TGZ_URL" -o "$tmp/repo.tgz" \
      && mkdir -p "$KOHDE" \
      && tar xzf "$tmp/repo.tgz" -C "$KOHDE" --strip-components=1; then
@@ -138,33 +133,49 @@ else
 fi
 
 # ──────────────────────────────────────────────────────────────────────
-otsikko "3. Python-ympäristö: $VENV"
-# Oma venv repon ulkopuolella, jottei se sotke git statusta.
+otsikko "3. Python-ympäristö"
+# venv repon ulkopuolelle, jottei se sotke git statusta. DSM:n Package Centerin
+# Python on usein ilman ensurepipiä, jolloin venviä ei voi luoda lainkaan —
+# silloin pudotaan järjestelmän python3:een ja pip install --user:iin. Ero
+# näkyy vain siinä mikä tulkki päätyy ajastettuun komentoon.
+PY=""
 if [ -x "$VENV/bin/python" ]; then
-  vihrea "venv on olemassa"
+  PY="$VENV/bin/python"; vihrea "venv on olemassa"
 elif [ "$TARKISTA" = 1 ]; then
-  puna "venviä ei ole"
-  PUUTTUU=1
-else
-  python3 -m venv "$VENV" && vihrea "venv luotu"
-fi
-if [ -x "$VENV/bin/python" ]; then
-  if "$VENV/bin/python" -c 'import psycopg2' 2>/dev/null; then
-    vihrea "psycopg2 löytyy"
-  elif [ "$TARKISTA" = 1 ]; then
-    puna "psycopg2 puuttuu"
-    PUUTTUU=1
+  if python3 -c 'import psycopg2' 2>/dev/null; then
+    PY="$(command -v python3)"; vihrea "venviä ei ole, mutta järjestelmän python3 kelpaa"
   else
-    "$VENV/bin/pip" install --quiet --upgrade pip
-    if "$VENV/bin/pip" install --quiet psycopg2-binary; then
+    puna "ei venviä eikä psycopg2:ta järjestelmän python3:ssa"
+    PUUTTUU=1
+  fi
+else
+  if python3 -m venv "$VENV" 2>/dev/null && [ -x "$VENV/bin/python" ]; then
+    PY="$VENV/bin/python"; vihrea "venv luotu: $VENV"
+  else
+    kelt "venviä ei voitu luoda (DSM:n Pythonissa ei ole ensurepipiä)"
+    kelt "→ käytetään järjestelmän python3:a ja pip install --user:ia"
+    PY="$(command -v python3)"
+  fi
+fi
+
+if [ -n "$PY" ] && [ "$TARKISTA" = 0 ]; then
+  if "$PY" -c 'import psycopg2' 2>/dev/null; then
+    vihrea "psycopg2 löytyy"
+  else
+    case "$PY" in
+      "$VENV"/*) "$PY" -m pip install --quiet --upgrade pip 2>/dev/null
+                 LIPUT="" ;;
+      *)         LIPUT="--user" ;;
+    esac
+    # shellcheck disable=SC2086
+    if "$PY" -m pip install --quiet $LIPUT psycopg2-binary; then
       vihrea "psycopg2-binary asennettu"
     else
-      # psycopg2-binary tulee valmiina wheelinä vain osalle arkkitehtuureista.
-      # x86_64 ja aarch64 ovat katettuja, armv7 ei — ja lähdekoodista
-      # kääntäminen vaatii gcc:n ja libpq:n, joita NAS:illa harvoin on.
+      # Valmis wheel on olemassa x86_64:lle ja aarch64:lle, ei armv7:lle —
+      # ja lähdekoodista kääntäminen vaatii gcc:n ja libpq:n, joita NAS:illa
+      # harvoin on.
       puna "psycopg2-binary ei asentunut (arkkitehtuuri $(uname -m))"
-      echo "      Todennäköisin syy: tälle arkkitehtuurille ei ole valmista"
-      echo "      wheeliä. Siistein kiertotie on Docker:"
+      echo "      Kiertotie Dockerilla:"
       echo "          docker run --rm -v $KOHDE:/repo -w /repo python:3-slim \\"
       echo "            sh -c 'pip install -q psycopg2-binary && \\"
       echo "                   python scripts/paivita_suosio.py --laheta'"
@@ -267,7 +278,7 @@ if [ "$HAKUTAPA" = git ]; then
 else
   HAKU="curl -sfL $TGZ_URL | tar xz -C $KOHDE --strip-components=1"
 fi
-KOMENTO="$HAKU && cd $KOHDE && $VENV/bin/python scripts/paivita_suosio.py --laheta >> $LOKI 2>&1"
+KOMENTO="$HAKU && cd $KOHDE && $PY scripts/paivita_suosio.py --laheta >> $LOKI 2>&1"
 RIVI="$AJOAIKA $KOMENTO"
 
 if [ "$ALUSTA" = synology ]; then
@@ -310,10 +321,10 @@ fi
 vihrea "Esivaatimukset kunnossa."
 echo
 echo "  Koeajo ilman kirjoituksia ja ilman siirtoa:"
-echo "      cd $KOHDE && $VENV/bin/python scripts/paivita_suosio.py --ei-kirjoita"
+echo "      cd $KOHDE && $PY scripts/paivita_suosio.py --ei-kirjoita"
 echo
 echo "  Ensimmäinen oikea ajo siirtoineen (vasta kun avain on webhotellissa):"
-echo "      cd $KOHDE && $VENV/bin/python scripts/paivita_suosio.py --laheta"
+echo "      cd $KOHDE && $PY scripts/paivita_suosio.py --laheta"
 echo
 echo "  Varmistus että tiedosto meni perille:"
 echo "      curl -sI https://www.xn--ilmit-mua.fi/data/suosio.js | head -1"
