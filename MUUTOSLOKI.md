@@ -1,5 +1,47 @@
 # Muutosloki — Ilmiöitä (www.ilmiöt.fi)
 
+## 16.8.2026 — Yöajo kaatui siirtoon: sftp ei ollut cronin PATH:issa
+
+Ensimmäinen NAS:in yöajo (16.8. klo 03:10) laski kaiken oikein — 636 päiväriviä
+kannasta, `data/suosio.js` kirjoittui NAS:ille — ja kaatui vasta viimeiseen
+askeleeseen:
+
+```
+FileNotFoundError: [Errno 2] No such file or directory: 'sftp'
+```
+
+Asustorilla `sftp` on `/usr/builtin/bin/sftp`. Cron-rivin eksplisiittinen
+`PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin` ei sisällä sitä hakemistoa.
+PATH lisättiin riville nimenomaan estämään hiljainen epäonnistuminen (`curl` ja
+`tar` eivät löytyisi cronin riisutusta ympäristöstä) — ja juuri se sulki
+`sftp`:n ulos. Käsiajo toimi koko ajan, koska kirjautumisshellin PATH sisältää
+`/usr/builtin/bin`:in.
+
+`scripts/paivita_suosio.py` paikantaa nyt binäärin itse eikä jätä sitä PATH:in
+varaan. Uusi `vaadi_sftp(cfg)`: `SFTP_BIN`-asetus → `shutil.which` →
+`SFTP_POLUT`-lista (`/usr/bin`, `/usr/local/bin`, `/usr/builtin/bin`, `/bin`).
+Jos mikään ei osu, virheilmoitus kertoo sekä PATH:in että kokeillut polut.
+
+Tarkistus ajetaan `main()`:ssa **ennen kantakyselyä**, samassa kohdassa kuin
+tyhjien tunnusten tarkistus. Puuttuva binääri on sama vika samassa paikassa
+kuin puuttuva tunnus: molemmat estävät siirron, ja molemmat on parempi kertoa
+ennen kuin kanta on kyselty ja tiedostot kirjoitettu.
+
+Korjaus skriptiin eikä crontabiin, kolmesta syystä: crontab vaatii sudon, se ei
+ole versionhallinnassa, ja `nas_asennus.sh`-pystytys toistaisi vian. Vika on
+myös yleisempi kuin tämä laite — sama olisi tullut millä tahansa koneella jonka
+`sftp` on epätavallisessa paikassa.
+
+`.suosio.env.malli` sai `SFTP_BIN=`-rivin (tyhjä = etsi automaattisesti).
+
+**Todennus.** NAS:illa cronin PATH:illa ajettuna `shutil.which("sftp")` on yhä
+`None` ja `vaadi_sftp()` palauttaa `/usr/builtin/bin/sftp`.
+
+Tämä on koosteen "Avoimet asiat" -kohdan 2 ensimmäinen todellinen esiintymä:
+ajo epäonnistui hiljaa, eikä mikään ilmoittanut siitä. Vika löytyi vain siksi
+että lokia luettiin käsin. Onnistumisen aikaleima + vanhenemistarkistus on
+edelleen tekemättä.
+
 ## 15.8.2026 — Viides nostolohko: eniten kasvua
 
 `scripts/paivita_suosio.py` laskee nyt myös **eniten kasvua** -listan, joka

@@ -31,8 +31,10 @@ versionhallintaan. Ks. .suosio.env.malli.
 import argparse
 import html
 import json
+import os
 import random
 import re
+import shutil
 import subprocess
 import sys
 from collections import defaultdict
@@ -1465,6 +1467,39 @@ def kirjoita_dashboard(ilmiot, d7, d30, edellinen7, viikko, ikkunat, julkaisut,
 #  Siirto
 # ─────────────────────────────────────────────────────────────────────────
 
+# Cronin PATH on riisuttu, eikä se välttämättä sisällä sitä hakemistoa jossa
+# sftp on. Asustorilla binääri on /usr/builtin/bin/sftp, joka ei ole missään
+# tavanomaisessa PATH-listassa: 16.8.2026 yöajo laski luvut oikein ja kaatui
+# vasta siirtoon, vaikka sama komento käsin ajettuna toimi — kirjautumisshellin
+# PATH on eri kuin cronin. Siksi binääri paikannetaan itse eikä jätetä PATH:in
+# varaan.
+SFTP_POLUT = (
+    "/usr/bin/sftp",
+    "/usr/local/bin/sftp",
+    "/usr/builtin/bin/sftp",   # Asustor ADM
+    "/bin/sftp",
+)
+
+
+def vaadi_sftp(cfg):
+    """sftp:n absoluuttinen polku, tai poistuminen kertoen mistä sitä etsittiin."""
+    asetettu = cfg.get("SFTP_BIN")
+    if asetettu:
+        if os.access(asetettu, os.X_OK):
+            return asetettu
+        sys.exit(f".suosio.env: SFTP_BIN={asetettu} ei ole suoritettava tiedosto")
+
+    löytyi = shutil.which("sftp") or next(
+        (p for p in SFTP_POLUT if os.access(p, os.X_OK)), None)
+    if löytyi:
+        return löytyi
+
+    sys.exit("sftp-komentoa ei löydy.\n"
+             f"  PATH        {os.environ.get('PATH') or '(tyhjä)'}\n"
+             f"  kokeiltiin  {', '.join(SFTP_POLUT)}\n"
+             "Asenna openssh-client tai aseta SFTP_BIN .suosio.env:iin.")
+
+
 def laheta(cfg):
     """Yksi tiedosto SFTP:llä. Väliaikaisnimi + rename, jottei lukija näe puolikasta."""
     puuttuu = [k for k in ("SFTP_HOST", "SFTP_USER", "SFTP_POLKU") if not cfg.get(k)]
@@ -1476,7 +1511,7 @@ def laheta(cfg):
                 f"-rm {etä}/suosio.js\n"
                 f"rename {etä}/suosio.js.uusi {etä}/suosio.js\n"
                 "bye\n")
-    komento = ["sftp", "-b", "-", "-o", "BatchMode=yes"]
+    komento = [vaadi_sftp(cfg), "-b", "-", "-o", "BatchMode=yes"]
     if cfg.get("SFTP_KEY"):
         komento += ["-i", cfg["SFTP_KEY"]]
     if cfg.get("SFTP_PORT"):
@@ -1512,14 +1547,17 @@ def main():
     if args.demo and args.laheta:
         sys.exit("--demo ja --laheta eivät toimi yhdessä: demodata ei kuulu palvelimelle.")
 
-    # Siirron asetukset tarkistetaan ennen kyselyä: muuten kanta ehditään
+    # Siirron edellytykset tarkistetaan ennen kyselyä: muuten kanta ehditään
     # kysellä ja tiedostot kirjoittaa ennen kuin siirto kaatuu tyhjään
     # tunnukseen, ja virhe näyttää ajon lopussa kalliimmalta kuin on.
+    # Myös binääri kuuluu tähän tarkistukseen — puuttuva sftp on sama vika
+    # samassa kohdassa kuin puuttuva tunnus, ja se kaatoi 16.8.2026 yöajon.
     if args.laheta:
         vajaat = [k for k in ("SFTP_HOST", "SFTP_USER", "SFTP_POLKU") if not cfg.get(k)]
         if vajaat:
             sys.exit(f".suosio.env: {', '.join(vajaat)} on tyhjä tai puuttuu — "
                      "täytä ennen --laheta:a (ks. .suosio.env.malli)")
+        vaadi_sftp(cfg)
 
     kirjoita = not args.ei_kirjoita
 

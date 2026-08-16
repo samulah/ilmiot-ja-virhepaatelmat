@@ -180,12 +180,16 @@ Nämä on hoidettu kyselyssä ja ne on syytä muistaa jos kyselyä muokataan:
 
 ## Avoimet asiat
 
-1. **Ensimmäistä yöajoa ei ole vielä nähty.** Rivi on lisätty ja komento
-   todistettu käsin, mutta cronin poimintaa ei ole havaittu käytännössä.
-   Tarkista aamulla `tail -25 ~/.suosio.log`: uusi aikaleimallinen lohko ja
-   `SFTP valmis`. Jos lohkoa ei ole, cron ei poiminut riviä; jos lohko on mutta
-   luvut ovat nollissa, ETL oli vielä kesken.
-2. **Ei ilmoitusta epäonnistumisesta.** Cronin `MAILTO` ei tässä laitteessa
+1. **Ensimmäinen yöajo nähty 16.8. klo 03:10 — cron toimii, siirto kaatui.**
+   Data laskettiin oikein ja `data/suosio.js` kirjoittui NAS:ille, mutta `sftp`
+   ei ollut cronin PATH:issa (Asustorilla `/usr/builtin/bin/sftp`). Skripti
+   paikantaa binäärin nyt itse; ks. MUUTOSLOKI 16.8.2026. **Korjaus on
+   todennettu vain NAS:ille käsin kopioidulla skriptillä — koko yöajo on vielä
+   näkemättä korjatulla koodilla.** Tarkista aamulla `tail -25 ~/.suosio.log`
+   ja että live-tiedoston `paivitetty`-aikaleima on saman yön.
+2. **Ei ilmoitusta epäonnistumisesta.** Kohta 1 on tästä ensimmäinen todellinen
+   esiintymä: ajo epäonnistui hiljaa ja vika löytyi vain lokia lukemalla.
+   Cronin `MAILTO` ei tässä laitteessa
    toimi ilman postinvälitystä. Rikkoutunut yöajo näkyy siis vasta siinä, että
    etusivun lohkot katoavat kolmen vuorokauden päästä. Tämä on putken heikoin
    kohta ja korjattavissa esimerkiksi niin, että onnistuminen kirjoittaa
