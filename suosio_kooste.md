@@ -164,8 +164,11 @@ itsestään ykköseen 29.8.2026 eikä koodia tarvitse siivota.
 **Tuoreus.** Yli 3 vrk vanhaa dataa ei näytetä. Jos yösiirto hajoaa, neljä
 lohkoa katoaa itsestään ja satunnainen ilmiö jää — se toimii ilman dataa.
 
-**Alle kolmen rivin lista piiloutuu**, samoin välilehti jonka takana ei ole
-rivejä. Tyhjä "30 pv" olisi lupaus jota klikkaus ei lunasta.
+**Alle kolmen rivin kasvulista piiloutuu** — mutta välilehtikohtaisesti, ei
+koko lohkona. Kynnys arvioidaan jokaiselle ikkunalle erikseen, oletukseksi
+valitaan ensimmäinen joka yltää siihen, ja lohko näkyy jos yksikin yltää. Tyhjä
+tai kahden rivin "30 pv" olisi lupaus jota klikkaus ei lunasta, mutta lyhyt
+"7 pv" ei saa viedä kelvollista "30 pv":tä mukanaan.
 
 ## Kannan erityispiirteet
 

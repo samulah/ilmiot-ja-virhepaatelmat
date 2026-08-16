@@ -3149,29 +3149,44 @@ document.addEventListener('DOMContentLoaded', function () {
     const meta = document.getElementById(tunnus + '-meta');
     if (!lohko || !lista) return null;
     muotoile = muotoile || lukuMuotoilu;
+    const min = minRivit || 1;
 
-    // Välilehti jonka takana ei ole rivejä piilotetaan: tyhjä "30 pv" olisi
-    // lupaus jota klikkaus ei lunasta. Näin 30 pv:n kasvu ilmestyy itsestään
-    // sinä päivänä kun kannassa on kaksi täyttä 30 pv:n ikkunaa, eikä
-    // väliaikaa varten tarvita erillistä lippua.
+    // Rivit jotka oikeasti piirtyisivät. Data ei riitä: sivun on myös oltava
+    // olemassa korttilistassa, jottei poistettu ilmiö pidä välilehteä
+    // näkyvissä tyhjänä.
+    function kelvolliset(ikkuna) {
+      return (data[ikkuna] || [])
+        .filter(function (r) { return kortit.has(r.u); }).slice(0, 6);
+    }
+
+    // Jokainen välilehti arvioidaan erikseen samalla kynnyksellä kuin lohko:
+    // tyhjä tai liian lyhyt "30 pv" olisi lupaus jota klikkaus ei lunasta.
+    // Näin 30 pv:n kasvu ilmestyy itsestään sinä päivänä kun kannassa on kaksi
+    // täyttä 30 pv:n ikkunaa, eikä väliaikaa varten tarvita erillistä lippua.
+    //
+    // Kynnys koski aiemmin vain oletusikkunaa ja välilehti piilotettiin vasta
+    // täysin tyhjänä. Kahden rivin "7 pv" putosi silloin väliin: ei tarpeeksi
+    // tyhjä vaihtamaan oletusta, ei tarpeeksi täysi läpäisemään minimiä — ja
+    // vieressä ollut kuuden rivin "30 pv" jäi näkymättä kokonaan (16.8.2026).
     const kaikki = Array.from(
       document.querySelectorAll('.nosto-valilehti[data-lista="' + tunnus + '"]'));
     kaikki.forEach(function (n) {
-      n.hidden = !((data[n.dataset.ikkuna] || []).length);
+      n.hidden = kelvolliset(n.dataset.ikkuna).length < min;
     });
     const valilehdet = kaikki.filter(function (n) { return !n.hidden; });
     if (valilehdet.length < 2) {
       const strip = kaikki.length ? kaikki[0].parentNode : null;
       if (strip) strip.hidden = true;
     }
-    // Jos oletusikkuna on tyhjä, käytä ensimmäistä jossa on dataa
-    if (!(data[oletusIkkuna] || []).length && valilehdet.length) {
+    // Oletusikkuna kelpaa vain jos se itse yltää kynnykseen; muuten ensimmäinen
+    // joka yltää. Jos yksikään ei yllä, lohkoa ei ole mitään syytä näyttää.
+    if (kelvolliset(oletusIkkuna).length < min) {
+      if (!valilehdet.length) return false;
       oletusIkkuna = valilehdet[0].dataset.ikkuna;
     }
 
     function piirra(ikkuna) {
-      const rivit = (data[ikkuna] || [])
-        .filter(function (r) { return kortit.has(r.u); }).slice(0, 6);
+      const rivit = kelvolliset(ikkuna);
       lista.textContent = '';
       rivit.forEach(function (r) {
         const tieto = kortit.get(r.u);
@@ -3217,7 +3232,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Vain jos jotain oikeasti piirtyi: tyhjä otsikko välilehtineen on
     // huonompi kuin puuttuva lohko.
-    if (piirra(oletusIkkuna) >= (minRivit || 1)) {
+    if (piirra(oletusIkkuna) >= min) {
       lohko.hidden = false;
       return true;
     }

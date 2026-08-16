@@ -1,5 +1,63 @@
 # Muutosloki — Ilmiöitä (www.ilmiöt.fi)
 
+## 16.8.2026 — Kasvulohko piiloutui vaikka 30 pv:ssä oli kuusi riviä
+
+Ensimmäisen onnistuneen yöajon jälkeen "eniten kasvua" ei näkynyt etusivulla,
+vaikka data oli tuore. Live `index.html` oli md5-identtinen paikallisen kanssa
+ja `#nosto-kasvu` markupeineen sivulla, eli vika oli renderöinnissä.
+
+Data 16.8.: `k7` **2 riviä**, `k30` **6 riviä**. Lohkon minimi on 3, ja
+`rakennaLista()` ratkaisi koko lohkon näkyvyyden pelkästä oletusvälilehdestä
+(`k7`):
+
+```js
+if (piirra(oletusIkkuna) >= (minRivit || 1)) { lohko.hidden = false; }
+```
+
+Varajärjestely vaihtoi oletusikkunan vain jos se oli **täysin tyhjä**
+(`!(data[oletusIkkuna] || []).length`). Kaksi riviä putosi väliin: ei tarpeeksi
+tyhjä laukaisemaan vaihtoa, ei tarpeeksi täysi läpäisemään minimiä. Kuuden
+rivin `k30` oli olemassa, kelvollinen eikä nähtävissä millään.
+
+Sama koski välilehtien piilotusta: `n.hidden = !((data[…] || []).length)`
+katsoi raakaa `length`iä, joten alle kynnyksen jäävä välilehti olisi jäänyt
+näkyviin klikattavaksi ja lunastanut alle kolmen rivin listan.
+
+Miksi `k7` oli lyhyt — lista oli oikeassa, ei rikki: DARVO laski 53 → 32
+(`nyt > ennen` ei täyty), rage bait laski 14 → 5 **ja** oli viikon ilmiö,
+argumenttitulva ja hyvesignalointi jäivät alle `KASVU_LATTIA`:n (5). Kaksi
+kelvollista riviä jäi.
+
+`rakennaLista()` arvioi nyt jokaisen ikkunan erikseen samalla kynnyksellä. Uusi
+`kelvolliset(ikkuna)` palauttaa rivit jotka oikeasti piirtyisivät — `kortit`-
+suodatuksen jälkeen, ei raakaa `data[ikkuna].length` — ja sitä käyttävät sekä
+välilehtien piilotus, oletusikkunan valinta että `piirra()`. Jos yksikään
+ikkuna ei yllä kynnykseen, funktio palaa ennen piirtoa eikä jätä piilotettuun
+lohkoon vanhentuneita rivejä.
+
+Muutos on `NOSTOT_JS`-templatessa `scripts/paivita_suosio.py`:ssä, ei
+`index.html`:ssä käsin — se lohko on injektoitu. Uudelleeninjektointi
+`injektoi()`-funktiolla ilman kantakyselyä, koska JS ei riipu datasta;
+`NAYTA_LUVUT=false` juureen, `true` luonnoskopioon.
+
+**Todennus.** `rakennaLista()` poimittiin `index.html`:stä ja ajettiin Nodella
+DOM-tyngän läpi oikeaa live-dataa vasten:
+
+| | vanha | uusi |
+|---|---|---|
+| kasvulohko | piilossa, 2 riviä piirretty | **näkyy, 6 riviä** |
+| `k7`-välilehti | näkyi (2 riviä takana) | piilossa |
+| `k30`-välilehti | näkyi | näkyy |
+| välilehtipalkki | näkyi | piilossa (vain yksi jäi) |
+
+Luetuimmat ja googlatuimmat käyttäytyivät molemmilla versioilla samoin
+(6 riviä, molemmat välilehdet näkyvissä) — niiden `minRivit` on 1, joten
+muutos ei kosketa niitä. Reunatapaus jossa kumpikaan ikkuna ei yllä kolmeen:
+lohko piilossa, molemmat välilehdet piilossa, **0 riviä piirretty**.
+
+Ei merkintää `muutokset.html`:ään: nostot luvattiin lukijalle jo 15.8., eikä
+korjaus tuo mitään uutta luettavaa — se saa luvatun lohkon toimimaan.
+
 ## 16.8.2026 — Yöajo kaatui siirtoon: sftp ei ollut cronin PATH:issa
 
 Ensimmäinen NAS:in yöajo (16.8. klo 03:10) laski kaiken oikein — 636 päiväriviä

@@ -135,9 +135,15 @@ tätä listat täyttyvät vastajulkaistuista sivuista, jotka eivät kasvaneet va
 ilmestyivät — uusi sivu on aina "kasvanut nollasta". Älä poista suodatinta
 vaikka lista lyhenisi; lyhyt tosi lista on parempi kuin pitkä valheellinen.
 
-Tyhjän listan välilehti piiloutuu automaattisesti — `rakennaLista()` piilottaa
-minkä tahansa välilehden jonka takana ei ole rivejä ja koko palkin jos vain yksi
-jää jäljelle. Älä siis "korjaa" puuttuvaa välilehteä; se ilmestyy itse.
+Välilehdet piiloutuvat automaattisesti — `rakennaLista()` piilottaa minkä
+tahansa välilehden jonka takana ei ole **vähintään `minRivit` riviä** (kasvulla
+3, muilla 1) ja koko palkin jos vain yksi jää jäljelle. Oletusikkunaksi
+valitaan ensimmäinen joka yltää kynnykseen, ja lohko näkyy jos yksikin yltää.
+Älä siis "korjaa" puuttuvaa välilehteä; se ilmestyy itse.
+
+Kynnys koskee **jokaista välilehteä erikseen**, ei vain oletusikkunaa. Jos se
+katsoisi vain oletusta, kahden rivin `k7` piilottaisi myös kuuden rivin `k30`:n
+— näin kävi 16.8.2026.
 
 Kannan sudenkuopat, jotka on jo hoidettu kyselyssä ja jotka on syytä muistaa
 jos kyselyä muokataan: ilmiöt.fi on kannassa **kahtena** `sivusto_avain`-arvona
