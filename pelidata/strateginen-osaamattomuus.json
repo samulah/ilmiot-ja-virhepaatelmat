@@ -1,0 +1,54 @@
+{
+ "ilmio": "strateginen-osaamattomuus",
+ "laji": "taktiikka",
+ "kohdat": [
+  {
+   "id": "strateginen-osaamattomuus-1",
+   "teksti": "Mä yritin tehdä sen raportin mutta en saanu sitä pivotointia toimimaan. Teetkö sä sen niin se menee nopeemmin?",
+   "konteksti": "tyo",
+   "kanava": "viesti",
+   "harhauttajat": ["hiljainen-irtisanoutuminen", "simple-sabotage"],
+   "paljastus": {
+    "mita": "Osaamattomuus on valikoivaa: se ilmenee juuri niissä tehtävissä, joita ei haluta tehdä.",
+    "miksi": "Auttaminen on nopeampaa kuin opettaminen, joten tehtävä siirtyy pysyvästi — eikä kukaan kieltäytynyt mistään.",
+    "sanot": "Näytän kerran miten se tehdään, ja sitten se on sinun."
+   }
+  },
+  {
+   "id": "strateginen-osaamattomuus-2",
+   "teksti": "Mä pesin ne pyykit mutta ne meni jotenkin pilalle. Sä oot tässä paljon parempi, tee sä ne jatkossa.",
+   "konteksti": "parisuhde",
+   "kanava": "puhe",
+   "harhauttajat": ["vastavuoroisuuden-ansa", "gaslighting"],
+   "paljastus": {
+    "mita": "Huono suoritus ja kehu samassa lauseessa: kehu on se, joka siirtää tehtävän pysyvästi.",
+    "miksi": "Kiitoksen torjuminen tuntuu pikkumaiselta, joten työnjaosta ei koskaan keskustella suoraan.",
+    "sanot": "Opetellaan yhdessä. Minä en ole tähän syntynyt sen enempää kuin sinäkään."
+   }
+  },
+  {
+   "id": "strateginen-osaamattomuus-3",
+   "teksti": "En kyllä osaa sanoa tosta järjestelmästä mitään. En oo koskaan päässyt siihen sisään, vaikka olis pitäny.",
+   "konteksti": "tyo",
+   "kanava": "puhe",
+   "harhauttajat": ["hiljainen-irtisanoutuminen", "kafka-ilmio"],
+   "paljastus": {
+    "mita": "Osaamattomuus, joka on kestänyt niin kauan että siitä on tullut asiantila eikä puute.",
+    "miksi": "Toistuvasti hylätty koulutus- tai tukitarjous erottaa valinnan kyvyttömyydestä — jos tarjousta ei ole tehty, kyse voi olla oikeasti puutteesta.",
+    "sanot": "Varataan sinulle perehdytys ensi viikolle. Mikä aika sopii?"
+   }
+  },
+  {
+   "id": "strateginen-osaamattomuus-4",
+   "teksti": "Laitoin sen version sinne johonkin kansioon. En muista mihin. Etsitkö sä?",
+   "konteksti": "tyo",
+   "kanava": "viesti",
+   "harhauttajat": ["simple-sabotage", "tilipuristus"],
+   "paljastus": {
+    "mita": "Tehtävä tehtiin muodollisesti, mutta niin että lopputyö jää toiselle.",
+    "miksi": "Mitään ei jätetty tekemättä, joten siitä ei voi huomauttaa — vain lopputulos puuttuu.",
+    "sanot": "Etsi se ja laita linkki tähän. Odotan sitä."
+   }
+  }
+ ]
+}

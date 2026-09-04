@@ -1,0 +1,54 @@
+{
+ "ilmio": "hiljainen-irtisanominen",
+ "laji": "taktiikka",
+ "kohdat": [
+  {
+   "id": "hiljainen-irtisanominen-1",
+   "teksti": "Palkkakeskustelut siirtyy sun kohdalla taas ens vuoteen. Katsotaan sit uudestaan.",
+   "konteksti": "tyo",
+   "kanava": "puhe",
+   "harhauttajat": ["maalitolppien-siirtaminen", "tilipuristus"],
+   "paljastus": {
+    "mita": "Siirto ilman perustetta ja ilman uutta päivämäärää — kolmatta kertaa peräkkäin.",
+    "miksi": "Yksittäinen siirto on tavallinen. Sarja on viesti, joka on muotoiltu niin ettei siitä voi valittaa.",
+    "sanot": "Mikä on se konkreettinen ehto, jolla tämä etenee? Kirjataan se ja päivämäärä."
+   }
+  },
+  {
+   "id": "hiljainen-irtisanominen-2",
+   "teksti": "Ei tarvii tulla siihen palaveriin, se on aika teknistä. Laitan sulle jälkeenpäin muistiot.",
+   "konteksti": "tyo",
+   "kanava": "viesti",
+   "harhauttajat": ["portinvartija-kulttuuri", "strateginen-osaamattomuus"],
+   "paljastus": {
+    "mita": "Sivuuttaminen puetaan huomaavaisuudeksi: sinulta säästetään aikaa, ja samalla tieto.",
+    "miksi": "Kutsumatta jättämisestä ei voi loukkaantua ääneen ilman että kuulostaa hankalalta — se on koko muotoilun tarkoitus.",
+    "sanot": "Tulen mielelläni. Onko estettä?"
+   }
+  },
+  {
+   "id": "hiljainen-irtisanominen-3",
+   "teksti": "Sun asenteessa on ollut viime aikoina jotain. En osaa sanoa tarkemmin, mutta se näkyy.",
+   "konteksti": "tyo",
+   "kanava": "puhe",
+   "harhauttajat": ["gaslighting", "darvo"],
+   "paljastus": {
+    "mita": "Palaute, jota ei voi korjata koska sitä ei ole yksilöity — mutta joka jää dokumentiksi.",
+    "miksi": "Epämääräisyys on ominaisuus eikä puute: täsmällistä palautetta vastaan voisi puolustautua.",
+    "sanot": "Tarvitsen konkreettisen esimerkin ja päivämäärän, jotta voin korjata."
+   }
+  },
+  {
+   "id": "hiljainen-irtisanominen-4",
+   "teksti": "Uusi tavoite on 40 % korkeampi kuin viime vuonna. Muilla tiimeillä pysyy ennallaan.",
+   "konteksti": "tyo",
+   "kanava": "sahkoposti",
+   "harhauttajat": ["maalitolppien-siirtaminen", "goodhartin-laki"],
+   "paljastus": {
+    "mita": "Tavoite mitoitetaan niin, ettei siinä voi onnistua — ja epäonnistuminen kirjataan.",
+    "miksi": "Muodollisesti kyse on kunnianhimosta. Vertailu muihin tiimeihin on ainoa kohta, jossa ero näkyy.",
+    "sanot": "Mihin laskelmaan tämä luku perustuu, ja miksi se poikkeaa muista tiimeistä?"
+   }
+  }
+ ]
+}

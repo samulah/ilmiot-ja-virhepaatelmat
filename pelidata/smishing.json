@@ -1,0 +1,54 @@
+{
+ "ilmio": "smishing",
+ "laji": "taktiikka",
+ "kohdat": [
+  {
+   "id": "smishing-1",
+   "teksti": "Pakettisi odottaa toimitusta. Maksamaton tullimaksu 2,15 €. Vahvista: posti-fi-maksu.com/tulli",
+   "konteksti": "kauppa",
+   "kanava": "viesti",
+   "harhauttajat": ["ennakkomaksuhuijaus", "honeypot-huijaus"],
+   "paljastus": {
+    "mita": "Kaksi euroa on tehty näyttämään liian pieneltä tarkistettavaksi. Kohde ei ole se summa vaan pankkitunnukset.",
+    "miksi": "Viesti putoaa samaan ketjuun aitojen pakettiviestien kanssa, ja odotettu paketti tekee siitä uskottavan.",
+    "sanot": "Menen postin omaan sovellukseen ja katson seurannan sieltä."
+   }
+  },
+  {
+   "id": "smishing-2",
+   "teksti": "Pankkitunnuksesi lukitaan 24 h kuluttua epäilyttävän kirjautumisen vuoksi. Avaa lukitus: [linkki]",
+   "konteksti": "viranomainen",
+   "kanava": "viesti",
+   "harhauttajat": ["painostusclose", "aaniklooni-huijaus"],
+   "paljastus": {
+    "mita": "Uhka ja määräaika luovat kiireen, joka estää tarkistamisen.",
+    "miksi": "Pankki ei koskaan pyydä vahvistamaan mitään viestin linkissä — mutta tätä sääntöä ei ehdi muistaa, jos pelkää menettävänsä tilinsä.",
+    "sanot": "Kirjaudun pankkiin itse omalla sovelluksella. Jos jotain on, se näkyy siellä."
+   }
+  },
+  {
+   "id": "smishing-3",
+   "teksti": "Veronpalautuksesi 486,20 € odottaa. Vahvista tilinumero 7 päivän kuluessa: vero-palautus.info",
+   "konteksti": "viranomainen",
+   "kanava": "viesti",
+   "harhauttajat": ["ennakkomaksuhuijaus", "toimitusjohtajahuijaus"],
+   "paljastus": {
+    "mita": "Luvattu raha ja virallinen lähettäjä — molemmat pelkkää tekstiä viestissä.",
+    "miksi": "Rahan saaminen ei herätä samaa varovaisuutta kuin rahan menettäminen, vaikka lopputulos on sama.",
+    "sanot": "Tarkistan OmaVerosta. Linkkiä en avaa."
+   }
+  },
+  {
+   "id": "smishing-4",
+   "teksti": "Moi, tää on mun uus numero — vanha puhelin hajos. Voitko laittaa sen laskun tänne? 🙏",
+   "konteksti": "perhe",
+   "kanava": "viesti",
+   "harhauttajat": ["aaniklooni-huijaus", "pig-butchering"],
+   "paljastus": {
+    "mita": "Numeron vaihtuminen selittää sen, ettei viesti tule tutusta numerosta — ainoa asia joka muuten paljastaisi huijauksen.",
+    "miksi": "Selitys tarjotaan ennen kuin ehdit itse kysyä, jolloin epäily ei ehdi muodostua.",
+    "sanot": "Soitan vanhaan numeroon ja varmistan."
+   }
+  }
+ ]
+}

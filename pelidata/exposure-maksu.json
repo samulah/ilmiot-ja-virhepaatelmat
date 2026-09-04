@@ -1,0 +1,54 @@
+{
+ "ilmio": "exposure-maksu",
+ "laji": "taktiikka",
+ "kohdat": [
+  {
+   "id": "exposure-maksu-1",
+   "teksti": "Budjettia ei tähän ole, mutta meillä on 90 000 seuraajaa. Saat siitä valtavasti näkyvyyttä.",
+   "konteksti": "myynti",
+   "kanava": "sahkoposti",
+   "harhauttajat": ["ilmainen-naytetyo", "sosiaalinen-todiste"],
+   "paljastus": {
+    "mita": "Vastikkeeksi tarjotaan jotain, jota ei voi mitata eikä käyttää laskun maksamiseen.",
+    "miksi": "Seuraajaluku on konkreettinen ja iso, mikä saa sen kuulostamaan korvaukselta.",
+    "sanot": "Ottaisitteko itse palkkanne näkyvyytenä? Teen tämän normaalilla hinnalla."
+   }
+  },
+  {
+   "id": "exposure-maksu-2",
+   "teksti": "Tää eka keikka olis palkaton, mutta jatkossa varmasti maksullisia. Hyvä referenssi sulle.",
+   "konteksti": "tyo",
+   "kanava": "puhe",
+   "harhauttajat": ["foot-in-the-door", "lowball-hinnoittelu"],
+   "paljastus": {
+    "mita": "Korvaus siirretään tulevaisuuteen, jossa siitä ei ole sovittu mitään.",
+    "miksi": "Ensimmäinen ilmainen keikka asettaa hinnan nollaan, ja siitä ylöspäin neuvotellaan seuraavalla kerralla.",
+    "sanot": "Sovitaanko ne jatkokeikat nyt kirjallisesti, niin teen tämän ensimmäisen alennuksella?"
+   }
+  },
+  {
+   "id": "exposure-maksu-3",
+   "teksti": "Tän pitäis olla sulle intohimo, ei bisnestä. Rahasta puhuminen vähän latistaa koko jutun.",
+   "konteksti": "tyo",
+   "kanava": "puhe",
+   "harhauttajat": ["confirmshaming", "gaslighting"],
+   "paljastus": {
+    "mita": "Palkkakysymys leimataan luonteen ongelmaksi, jolloin siitä ei voi enää puhua.",
+    "miksi": "Häpeä toimii nopeammin kuin argumentti — ja se kohdistuu kysyjään, ei kysymykseen.",
+    "sanot": "Teen tätä intohimosta ja laskutan siitä. Nämä eivät ole toisensa poissulkevia."
+   }
+  },
+  {
+   "id": "exposure-maksu-4",
+   "teksti": "Saat nimesi julkaisuun ja pääset meidän verkostoon. Se on monelle avannut ovia.",
+   "konteksti": "tyo",
+   "kanava": "sahkoposti",
+   "harhauttajat": ["ilmainen-naytetyo", "sosiaalinen-todiste"],
+   "paljastus": {
+    "mita": "Aineeton vastike, joka on tarkoituksella muotoiltu niin ettei sitä voi tarkistaa.",
+    "miksi": "'Monelle' ei ole kenellekään. Jos näkyvyys olisi todellista arvoa, sen voisi sopia konkreettisesti.",
+    "sanot": "Keille se on avannut ovia? Voisinko jutella heidän kanssaan?"
+   }
+  }
+ ]
+}

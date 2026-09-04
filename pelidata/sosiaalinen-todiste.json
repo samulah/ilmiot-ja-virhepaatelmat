@@ -1,0 +1,54 @@
+{
+ "ilmio": "sosiaalinen-todiste",
+ "laji": "taktiikka",
+ "kohdat": [
+  {
+   "id": "sosiaalinen-todiste-1",
+   "teksti": "★★★★★ 4,9/5 · 2 480 arvostelua. Kaikki asiakkaamme rakastavat tätä!",
+   "konteksti": "kauppa",
+   "kanava": "kayttoliittyma",
+   "harhauttajat": ["astroturf", "painostusclose"],
+   "paljastus": {
+    "mita": "Arvosanan korkeus ja kriittisten arvostelujen puute ovat eri asioita — ja jälkimmäinen on se, joka kertoo.",
+    "miksi": "Aidossa joukossa on aina tyytymättömiä. Niiden puuttuminen on merkki suodatuksesta, ei laadusta.",
+    "sanot": "Missä ovat ne yhden tähden arvostelut? Luen ne ensin."
+   }
+  },
+  {
+   "id": "sosiaalinen-todiste-2",
+   "teksti": "Muutkin tiimit on jo ottanut tän käyttöön. Te ootte oikeestaan viimeisiä.",
+   "konteksti": "tyo",
+   "kanava": "puhe",
+   "harhauttajat": ["painostusclose", "konsensus-fetissi"],
+   "paljastus": {
+    "mita": "Muiden valinta esitetään perusteluna, vaikka perustelua ei annettu.",
+    "miksi": "Viimeiseksi jääminen tuntuu riskiltä. Se tunne korvaa kysymyksen siitä, sopiiko tämä teille.",
+    "sanot": "Ketkä ovat ottaneet ja mitä hyötyä he ovat saaneet?"
+   }
+  },
+  {
+   "id": "sosiaalinen-todiste-3",
+   "teksti": "Tän tuotteen kanssa mun elämä muuttui täysin 🙌 en oo koskaan kokenut mitään vastaavaa!!",
+   "konteksti": "some",
+   "kanava": "viesti",
+   "harhauttajat": ["kaarmeoljy", "astroturf"],
+   "paljastus": {
+    "mita": "Suosittelu esitetään spontaanina kokemuksena, vaikka mainostunnistetta ei ole eikä lähdettä voi tarkistaa.",
+    "miksi": "Yksittäinen kertomus voittaa tilaston, koska sen voi kuvitella. Tarkistettavuus katoaa samalla.",
+    "sanot": "Onko tämä maksettu yhteistyö? Ja missä ovat ne, joilla se ei toiminut?"
+   }
+  },
+  {
+   "id": "sosiaalinen-todiste-4",
+   "teksti": "Tänään varattu 38 kertaa. 6 ihmistä katsoo tätä huonetta juuri nyt.",
+   "konteksti": "kauppa",
+   "kanava": "kayttoliittyma",
+   "harhauttajat": ["painostusclose", "astroturf"],
+   "paljastus": {
+    "mita": "Reaaliaikaiselta näyttävä laskuri, jota mikään ei sido todellisuuteen.",
+    "miksi": "Luku ei ole väite jota voisi kiistää — se on tunnelma, ja se ehtii vaikuttaa ennen kuin sitä epäilee.",
+    "sanot": "Avaan saman sivun toisella laitteella ja katson, näyttääkö se samat luvut."
+   }
+  }
+ ]
+}

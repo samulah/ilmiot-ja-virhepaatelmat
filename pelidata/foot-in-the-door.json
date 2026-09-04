@@ -1,0 +1,54 @@
+{
+ "ilmio": "foot-in-the-door",
+ "laji": "taktiikka",
+ "kohdat": [
+  {
+   "id": "foot-in-the-door-1",
+   "teksti": "Voisitko vilkaista tän yhden dian? Kestää kaks minuuttia.",
+   "konteksti": "tyo",
+   "kanava": "viesti",
+   "harhauttajat": ["door-in-the-face", "vastavuoroisuuden-ansa"],
+   "paljastus": {
+    "mita": "Ensimmäinen pyyntö on tarkoituksella niin pieni, ettei siitä voi kieltäytyä. Se ei ole varsinainen pyyntö.",
+    "miksi": "Kerran myönnyttyään ihminen haluaa pysyä johdonmukaisena. Seuraavasta pyynnöstä kieltäytyminen tuntuu peruuttamiselta.",
+    "sanot": "Katson tämän. Isommista jutuista sovitaan erikseen."
+   }
+  },
+  {
+   "id": "foot-in-the-door-2",
+   "teksti": "Anna vain sähköpostiosoite, niin lähetän sen ilmaisen oppaan. Ei mitään sitoumuksia.",
+   "konteksti": "myynti",
+   "kanava": "kayttoliittyma",
+   "harhauttajat": ["vastavuoroisuuden-ansa", "evasteansa"],
+   "paljastus": {
+    "mita": "Pieni suostumus avaa kanavan, jonka kautta varsinainen pyyntö tulee myöhemmin.",
+    "miksi": "'Ei sitoumuksia' on totta juuri tällä hetkellä. Sitoumus syntyy siitä, että olet jo kerran sanonut kyllä.",
+    "sanot": "Otan oppaan. Postituslistalle en liity."
+   }
+  },
+  {
+   "id": "foot-in-the-door-3",
+   "teksti": "Ku sä nyt kuitenkin oot siellä päin, niin voisit sä samalla hakee ne avaimet? Ja jos ehdit, niin se paketti pitäis viedä postiin.",
+   "konteksti": "perhe",
+   "kanava": "viesti",
+   "harhauttajat": ["maalitolppien-siirtaminen", "vastavuoroisuuden-ansa"],
+   "paljastus": {
+    "mita": "Pyyntö kasvaa saman viestin sisällä, kun ensimmäinen osa on jo perusteltu sinun tilanteellasi.",
+    "miksi": "Ensimmäinen kohta tekee kieltäytymisestä epäjohdonmukaista: jos kerran olet siellä päin, miksi et tekisi myös tätä.",
+    "sanot": "Haen avaimet. Posti ei nyt onnistu."
+   }
+  },
+  {
+   "id": "foot-in-the-door-4",
+   "teksti": "Kokeile kuukausi yhdellä eurolla. Voit perua koska tahansa.",
+   "konteksti": "kauppa",
+   "kanava": "kayttoliittyma",
+   "harhauttajat": ["pakotettu-jatkuvuus", "lowball-hinnoittelu"],
+   "paljastus": {
+    "mita": "Halpa aloitus ei ole tarjous vaan sisäänkäynti: tavoite on jatkuva tilaus.",
+    "miksi": "Peruminen edellyttää toimenpidettä, ja tekemättä jättäminen on aina helpompaa kuin tekeminen.",
+    "sanot": "Laitan perumisen kalenteriin heti, jos otan tämän."
+   }
+  }
+ ]
+}

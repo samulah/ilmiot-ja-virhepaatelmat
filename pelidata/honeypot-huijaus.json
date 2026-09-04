@@ -1,0 +1,54 @@
+{
+ "ilmio": "honeypot-huijaus",
+ "laji": "taktiikka",
+ "kohdat": [
+  {
+   "id": "honeypot-huijaus-1",
+   "teksti": "Tän tokenin kurssi on noussut 400 % viikossa eikä kukaan ole myynyt. Kaikki uskoo pitkään nousuun.",
+   "konteksti": "some",
+   "kanava": "viesti",
+   "harhauttajat": ["pump-and-dump", "rug-pull"],
+   "paljastus": {
+    "mita": "Kukaan ei ole myynyt, koska myyminen on estetty koodissa. Nouseva kurssi on oire ansasta.",
+    "miksi": "Sama tosiasia luetaan luottamuksen merkiksi. Ansa naamioituu vahvaksi signaaliksi.",
+    "sanot": "Miten tästä pääsee ulos? Testaan pienellä summalla ennen kuin sijoitan mitään."
+   }
+  },
+  {
+   "id": "honeypot-huijaus-2",
+   "teksti": "Liittyminen vie 30 sekuntia! (Peruutus tapahtuu soittamalla asiakaspalveluun arkisin 9–11.)",
+   "konteksti": "kauppa",
+   "kanava": "kayttoliittyma",
+   "harhauttajat": ["pakotettu-jatkuvuus", "foot-in-the-door"],
+   "paljastus": {
+    "mita": "Sisäänpääsy on tehty helpoksi ja uloskäynti tarkoituksella vaikeaksi. Epäsymmetria on suunniteltu.",
+    "miksi": "Liittymishetkellä peruminen on kaukainen huoli. Kun se muuttuu ajankohtaiseksi, este on jo paikallaan.",
+    "sanot": "Miten tämän peruu? Jos se ei onnistu samalla tavalla kuin liittyminen, en liity."
+   }
+  },
+  {
+   "id": "honeypot-huijaus-3",
+   "teksti": "Ilmainen kuukausi, ei sitoumuksia! Anna vain korttitiedot vahvistusta varten.",
+   "konteksti": "kauppa",
+   "kanava": "kayttoliittyma",
+   "harhauttajat": ["foot-in-the-door", "pakotettu-jatkuvuus"],
+   "paljastus": {
+    "mita": "Kortti ei ole vahvistusta varten vaan veloitusta varten, kun kokeilu päättyy.",
+    "miksi": "'Ei sitoumuksia' on totta tänään. Sitoumus syntyy siitä, että peruminen vaatii sinulta toimen ja unohtaminen ei.",
+    "sanot": "Laitan kalenteriin muistutuksen kaksi päivää ennen veloitusta."
+   }
+  },
+  {
+   "id": "honeypot-huijaus-4",
+   "teksti": "Sun profiili osu silmään. Oon vähän ujo täällä — lähetätkö sä ekana jotain, niin uskallan minäkin?",
+   "konteksti": "some",
+   "kanava": "viesti",
+   "harhauttajat": ["badger-game", "pig-butchering"],
+   "paljastus": {
+    "mita": "Vastavuoroisuuteen puettu pyyntö aineistosta, jota käytetään myöhemmin painostukseen.",
+    "miksi": "Ujouden esittäminen kääntää roolit: sinusta tulee se, joka rohkaisee, eikä se joka arvioi riskiä.",
+    "sanot": "En lähetä. Jos siitä tulee ongelma, se kertoo kaiken tarpeellisen."
+   }
+  }
+ ]
+}

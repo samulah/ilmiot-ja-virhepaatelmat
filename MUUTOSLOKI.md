@@ -1,5 +1,217 @@
 # Muutosloki — Ilmiöitä (www.ilmiöt.fi)
 
+## 4.9.2026 — Kapea hakuaie 11 sivulle (GSC-analyysi 4.9.)
+
+Lähtötieto: `seo-suunnitelmat/gsc-analyysi-2026-09-04.md`. Sijoilla 5–11 on
+73 % kaikista näytöistä ja CTR 1,0 % — ilman DARVOa 0,33 %. Kynnys kulkee noin
+**sijan 4** kohdalla, ei sijan 10, joten sija sijalta 8 → 5 ei riitä; sen on
+mentävä kolmoseen.
+
+**Uusi skripti `scripts/seo_kapea_aie.py`** (kuivaharjoitus oletuksena,
+`--kirjoita` kirjoittaa). Käyttää samaa mekanismia kuin `seo_titlet_ctr.py`
+(title + 5 meta-kenttää) ja `seo_vastauslohko.py` (`infolaatikko vastauslohko`
++ FAQPage `@graph`-solmuun). Idempotentti.
+
+11 sivua, kolme muutosta kullekin:
+
+| Sivu | Vanha sija | Kapea aie (GSC:n oma kysely) |
+|---|---|---|
+| `bkt-harha` | 19,2 | mitä bkt mittaa — **sija 4,33** jo ennen muutosta |
+| `viherpesu` | 34,4 | viherpesun tunnistaminen |
+| `gaslighting` | 22,1 | gaslightingin tunnistaminen, esimerkit |
+| `ponzi-pyramidi` | 27,1 | ponzin ja pyramidihuijauksen ero |
+| `simple-sabotage` | 42,7 | simple sabotage field manual (kaikki kyselyt koskevat käsikirjaa) |
+| `smishing` | 38,1 | huijaustekstiviestin tunnistaminen |
+| `uutiskynnys` | 6,9 | mikä on uutiskynnys · uutiskynnys englanniksi |
+| `klikkiotsikko` | 8,4 | clickbait suomeksi |
+| `hajota-hallitse` | 10,1 | divide et impera suomeksi |
+| `parkinsonin-laki` | 10,1 | parkinsonin laki |
+| `kuollut-internet` | 11,1 | dead internet teoria |
+
+Viideltä viimeiseltä **puuttui FAQPage kokonaan**; nyt kaikilla 11:llä on se,
+ja kysymykset ovat GSC:n sanamuotoja (`mikä on uutiskynnys` 30 näyttöä,
+`uutiskynnys englanniksi` 5, `clickbait suomeksi` sija 6,5) — ei arvattuja.
+
+`gaslighting` ja `smishing` säilyttivät vanhan vastauslohkonsa (`"lohko": None`),
+koska ne vastaavat jo kyselyyn "X suomeksi". Niillä muuttuivat vain title, meta
+ja FAQ.
+
+**Mitä ei koskettu:** H1, olemassa oleva leipäteksti, Article/DefinedTerm/
+breadcrumb-schema, ilmiönumerointi. H1 on jätettävä rauhaan, koska
+`lisaa_ilmiot.py` ja `paivita_maarat.py` lukevat siitä etusivun korttinimen —
+titlen vaihto ei aiheuta driftiä, H1:n vaihto aiheuttaisi.
+
+**Sudenkuoppa, joka kaatoi ensimmäisen version:** viisi uutta vastauslohkoa
+toisti sivun ensimmäisen kappaleen lähes sanasta sanaan. `seo_vastauslohko.py`:n
+docstring varoittaa juuri tästä. Lohkot kirjoitettiin uusiksi niin, että ne
+vastaavat samaan kysymykseen mutta tuovat tiedon, jota johdannossa ei ole
+(uutiskynnys: mikä jää kynnyksen alle; klikkiotsikko: viisi vakiorakennetta;
+simple-sabotage: mitä ohje sanoo). Päällekkäisyys on nyt 6–29 % pitkistä
+sanoista.
+
+`dateModified` ja näkyvä "Päivitetty"-päivä nousivat 4.9.2026:een, koska näkyvä
+sisältö muuttui. Ajettu jälkeen: `build_search_index.py`, `build_sitemap.py`.
+
+**P2:n seula ajettu samalla.** Kaikki 139 ilmiötä tarkistettiin fi.wikipedian
+APIa vasten: **104:llä ei ole artikkelia**. "Vapaa termi" ei siis yksin riitä
+suodattimeksi — ratkaiseva yhdistelmä on vapaa termi + todistettu kysyntä +
+parannettava sija. Sellaisia on 39 (näyttöjä ≥ 20). Huom: seula antaa vääriä
+negatiivisia, kun fi.wikipedia käyttää eri suomenkielistä nimeä (rage-bait →
+*Raivosyötti*, dunning-kruger → *Ylivertaisuusvinouma*, halo-efekti →
+*Sädekehävaikutus*) — nämä kolme ovat oikeasti kilpailtuja.
+
+## 23.8.2026 — Vedätys ei käynnistynyt: defer-skripti luettiin liian aikaisin
+
+Peli oli julkaisukelvoton täysin hiljaisesti. "Pelaa päivän erä" ei tehnyt
+mitään, eikä konsoliin tullut virhettä.
+
+**Juurisyy.** `luonnokset/peli.html` latasi pankin rivillä 437
+`<script src="../data/peli-pankki.js" defer>` ja luki sen heti rivin 438
+inline-skriptin alussa:
+
+```js
+var P = window.VEDATYS_PANKKI;
+if (!P) { return; }          // ← poistui aina
+```
+
+`defer` siirtää ulkoisen skriptin ajettavaksi vasta dokumentin jäsennyksen
+jälkeen, juuri ennen `DOMContentLoaded`-tapahtumaa. Inline-skripti ajetaan
+jäsennyshetkellä, siis **ennen** sitä. `window.VEDATYS_PANKKI` oli
+määrittelemätön, IIFE poistui, eikä yhtään tapahtumakuuntelijaa rekisteröity.
+(`defer` inline-skriptissä ei auta: selain jättää sen huomiotta.)
+
+Virhe syntyi siitä, että `<script src="… " defer>` -rivi kopioitiin etusivulta
+mutta ei sitä, mikä tekee siitä toimivan: **`index.html:3059` lukee
+`window.ILMIO_SUOSIO`:n `DOMContentLoaded`-käsittelijän sisällä.**
+
+**Korjaus.** `P` ja `EPOKKI` alustetaan nulliksi moduulitasolla ja luetaan
+käsittelijän ensimmäisillä riveillä, samoin kuin etusivulla. Lisäksi puuttuva
+data ei enää epäonnistu hiljaa: `naytaLatausvirhe()` piilottaa napit ja näyttää
+aloitusruudussa laatikon, joka kertoo mitä puuttuu ja mikä komento sen korjaa.
+Hiljaisuus oli tässä pahempi vika kuin itse latausjärjestys.
+
+**Epokki 1.9.2026 → 23.8.2026.** Epokki oli 9 päivää tulevaisuudessa, jolloin
+`tamaPaiva()` palautti aina 0: "päivän erä" oli joka päivä #1 ja toisella
+pelikerralla lukisi "jo pelattu". Nyt päivälogiikka toimii oikein heti.
+Epokkia ei ole kovakoodattu sivulle — `peli.html` lukee `P.epokki`, joten
+`scripts/build_peli.py` on ainoa paikka jossa se määritellään. Sikäläinen
+kommentti "Sama luku on peli.html:ssä" oli väärä ja korjattiin.
+
+**Uusi: `scripts/testaa_peli.js`.** Node-testi, joka rakentaa minimaalisen
+DOM-tyngän, lataa oikean `peli.html`:n inline-skriptin ja pelaa erän läpi napin
+painalluksesta loppuruutuun. Ei jsdomia, ei `package.json`:ia — sivustolla ei
+ole JS-työkaluketjua eikä sellaista tuotu tämän takia.
+
+Ratkaisevaa on **suoritusjärjestys**: tynkä ajaa inline-skriptin ensin ja
+datatiedoston vasta sen jälkeen, kuten selain. Ensimmäinen versio latasi datan
+ensin, jolloin se hyväksyi myös rikkinäisen koodin — se korjattiin ja regressio
+todennettiin ajamalla testi rikottua kopiota vasten
+(`PELI_SIVU=<polku> node scripts/testaa_peli.js`): rikkinäinen versio kaatuu
+heti kohtaan "aloitusnappiin on kiinnitetty click-kuuntelija".
+
+33 väitettä: käynnistys, puuttuva data, täysi läpipeluu (5/5 ja 3/3 kun
+vastataan oikein), väärä nimi → keltainen, väärä laji → punainen, ansa ja lippu
+(osuma, ohilaukaus, ansaton erä), päivän vaihtuminen, heittävä `localStorage`,
+haastelinkki, päiväindeksi kesäajan yli, ja pankin eheys. Kohdat 9–10 poimivat
+`paivaIndeksi`- ja `sekoita`-funktiot suoraan `peli.html`:stä, eli testaavat
+julkaistavaa koodia eivätkä kopiota siitä.
+
+**Mitä testi ei kata:** ulkoasu, CSS, mobiililayout, oikea leikepöytä,
+`prefers-reduced-motion`. Ne jäävät selaintestaukseen.
+
+## 23.8.2026 — Vedätys: päivittäinen manipulaationtunnistuspeli (luonnos)
+
+Sivustolle rakennettiin peli, joka on ensimmäinen sisältö joka **käyttää**
+ilmiösivuja sen sijaan että olisi yksi niistä lisää. Luonnos on
+`luonnokset/peli.html`; julkaisu juureen `peli.html`:ksi on erikseen
+vahvistettava.
+
+**Miksi peli.** 82 klikkiä kolmessa kuukaudessa, joista `darvo.html` 71 %.
+Sisältöä on 139 sivua, mutta artikkeli ei anna kenellekään syytä palata.
+Inokulaatiotutkimus (Roozenbeek ym. 2022, *Science Advances* 8, eabo6254)
+osoittaa, että 90 sekunnin annos riittää mitattavaan vaikutukseen, ja Maertens
+ym. 2021 että vaikutus säilyy ≥3 kk vain jos testataan toistuvasti — hiipuu
+2 kuukaudessa ilman toistoa. Daily-formaatti on siis kirjallisuuden suositus,
+ei markkinointikikka. Suomeksi vastaavaa ei ole: Ylen Trollitehdas arkistoitiin
+28.10.2024.
+
+**Pisteytys mittaa erottelukykyä, ei epäluuloisuutta.** Modirrousta-Galian &
+Higham (2023, *Journal of Cognition*) osoitti signaalinhavaintoanalyysillä, että
+Bad News -peli siirsi vastetaipumusta muttei parantanut erottelukykyä: pelaajat
+epäilivät valeuutisia enemmän mutta yhtä paljon myös aitoja. Neljä riippumatonta
+tiimiä toisti tuloksen. Siksi **jokaisessa erässä on 1–2 aidosti rehellistä
+kohtaa ja väärä hälytys maksaa saman kuin ohitus**. `build_peli.py` kaatuu jos
+rehellisten osuus alittaa 25 %.
+
+**Ydinvalinta on sivuston oma teesi.** `kategoriat/psykologia-ja-kognitio.md`
+riveillä 17–21: *vinouma ei tarvitse tekijää, taktiikka tarvitsee* — ja väärä
+vastakeino pahentaa molempia. Pelaaja valitsee kolmesta: tavallinen / oma pää /
+joku tekee tämän. Vasta sen jälkeen nimeäminen.
+
+**Uudet tiedostot**
+
+| Tiedosto | Mitä |
+|---|---|
+| `luonnokset/peli.html` | koko peli, 45 kt (12,7 kt gzip): inline-CSS ja -JS |
+| `pelidata/<slug>.json` | käsin ylläpidetty pankki, 27 tiedostoa |
+| `pelidata/_rehelliset.json` | 40 rehellistä kohtaa |
+| `pelidata/TYYLI.md` | tyyliopas luonnostelulle ja kuratoinnille |
+| `pelidata/_siemen/*.md` | louhittu siemenaineisto, 27 kpl |
+| `data/peli-pankki.js` | **generoitu**, 85 kt (27 kt gzip) |
+| `scripts/build_peli.py` | validoi pankin ja kokoaa päivän erät |
+| `scripts/build_peli_siemen.py` | kertakäyttöinen louhija |
+| `scripts/lisaa_pelilinkit.py` | linkki 27 ilmiösivulle, `--kirjoita` |
+
+**Pankki.** 150 kohtaa: 110 taktiikkaa (27 ilmiötä × 4–5) + 40 rehellistä =
+27 %. Siemenaineisto louhittiin sivuilta: 148 lainausmerkeissä olevaa
+repliikkiä, 541 `<li><strong>` -alalajia ja `Tunnistaminen ja vastakeinot`
+-osio 26/27 sivulta (`hiljainen-irtisanominen` on ainoa ilman). Kohdat
+kirjoitettiin niiden pohjalta, ei tyhjästä.
+
+**Erät kootaan käännösaikana, ei ajonaikana.** 30 erää × 5 kohtaa käyttää
+jokaisen 150 kohdan täsmälleen kerran. Ahne "eniten jäljellä ensin" -jako estää
+saman ilmiön osumisen kahdesti erään; erillinen `korjaa_kontekstit()` vaihtaa
+kohtia kunnes jokaisessa erässä on ≥3 eri kontekstia. Syy käännösaikaan:
+koostumussäännöt ovat tarkistettavissa, ja **päivän erä on varmasti kaikilla
+sama** — ilman sitä tulosten vertailu ja jakaminen menettää merkityksensä.
+
+**Päiväindeksi** on Sanulin rivi-indeksointi + Wordlen kesäaikakorjaus:
+`setHours(0,0,0,0)` molemmille päiville. Ilman jälkimmäistä 25.10.2026 siirtäisi
+indeksiä yhdellä. Epokki on Vedätys #1, paikallinen keskiyö (ei UTC).
+
+**Ansat.** Joka kolmas erä (10/30) sisältää käyttöliittymän oman tempun:
+tekaistu ajastin, keksitty sosiaalinen todiste, esivalittu oletus tai
+syyllistävä ohitusnappi. Ansa ei koskaan osu ensimmäiseen kierrokseen. Pelaajalla
+on **yksi lippu per erä** — rajaus on olennainen, koska rajaton liputus tekisi
+ansan huomaamisesta ilmaista. Turha liputus ei maksa pisteitä: valppauden
+rankaiseminen opettaisi juuri sitä kyynisyyttä, jota koko pisteytys välttää.
+
+**Manipulaatioraja on rakenteellinen, ei makuasia.** Peli manipuloi pelaajaa
+opetuksessa, ei koskaan retentiossa: ei ilmoituksia, ei putkiahdistusta, ei
+pakotettua jakamista, ei ostettavia armonpäiviä (yksi automaattinen /
+30 vrk). Putken nimi on **tehoste**, koska se on rehellinen nimi vaikutuksen
+ylläpidolle.
+
+**Poikkeus suunniteltuun jakoformaattiin.** Alkuperäisessä hahmotelmassa
+jakorivi oli `🚩 huomasit ansan — 12 % huomasi`. Prosentti jätettiin pois:
+ilman backendiä lukua ei voi mitata, ja keksitty sosiaalinen todiste on yksi
+niistä tempuista, jotka peli itse opettaa tunnistamaan. Rivi on nyt pelkkä
+`🚩 huomasit ansan`.
+
+**Testaus.** `scripts/build_peli.py --tarkista` on validointiportti (14 sääntöä).
+Lisäksi ajettiin Node-testi, joka poimii `paivaIndeksi`- ja `sekoita`-funktiot
+suoraan `peli.html`:stä — siis julkaistavasta koodista, ei kopiosta — ja
+tarkistaa kesäajan rajan, erien koostumuksen, nimeämisvaihtoehdot (oikea vastaus
+mukana 110/110), ilmiölinkkien olemassaolon (56/56) ja haastekoodin. Kaikki läpi.
+`build_peli.py` on deterministinen: kaksi ajoa tuottaa byte-identtisen tuloksen.
+
+**Vielä tekemättä (julkaisuvaihe):** `noindex` ja `../`-etuliitteet pois,
+siirto juureen, `PELI`-vakio `scripts/build_sitemap.py`:hyn, sisääntulot
+`index.html`:n headeriin ja footeriin, `scripts/lisaa_pelilinkit.py --kirjoita`,
+merkintä `muutokset.html`:ään, `dateModified`-päivät ja `build_sitemap.py`.
+Selaintestaus on tekemättä: koneella ei ole selainta eikä jsdomia.
+(Automaattinen läpipeluutesti lisättiin myöhemmin samana päivänä, ks. ylin merkintä.)
+
 ## 16.8.2026 — Kasvulohko piiloutui vaikka 30 pv:ssä oli kuusi riviä
 
 Ensimmäisen onnistuneen yöajon jälkeen "eniten kasvua" ei näkynyt etusivulla,

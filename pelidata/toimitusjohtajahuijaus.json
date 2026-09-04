@@ -1,0 +1,54 @@
+{
+ "ilmio": "toimitusjohtajahuijaus",
+ "laji": "taktiikka",
+ "kohdat": [
+  {
+   "id": "toimitusjohtajahuijaus-1",
+   "teksti": "Olen kokouksessa enkä pysty puhumaan. Tarvitsen sinun hoitavan yhden maksun tänään. Älä keskustele tästä muiden kanssa vielä.",
+   "konteksti": "tyo",
+   "kanava": "sahkoposti",
+   "harhauttajat": ["aaniklooni-huijaus", "painostusclose"],
+   "paljastus": {
+    "mita": "Kiire, tavoittamattomuus ja salassapito samassa viestissä — kolme prosessin ohitusta kerralla.",
+    "miksi": "Jokainen niistä yksinään on tavallinen. Yhdessä ne poistavat juuri ne kolme kohtaa, joissa huijaus paljastuisi.",
+    "sanot": "Varmistan tämän soittamalla numeroon, joka minulla on ennestään."
+   }
+  },
+  {
+   "id": "toimitusjohtajahuijaus-2",
+   "teksti": "Hei, laskutustietomme ovat päivittyneet. Uusi tilinumero alla — käyttäisittekö sitä jatkossa. Kiitos yhteistyöstä!",
+   "konteksti": "tyo",
+   "kanava": "sahkoposti",
+   "harhauttajat": ["smishing", "aaniklooni-huijaus"],
+   "paljastus": {
+    "mita": "Tilinumeron vaihto tulee aidosta osoitteesta, aidossa ketjussa, aidolta kumppanilta.",
+    "miksi": "Mikään viestissä ei ole väärennettyä paitsi tilinumero — sähköpostitili on kaapattu, joten tarkistus viestistä epäonnistuu aina.",
+    "sanot": "Vahvistamme tilinumeron muutokset aina puhelimitse. Soitan teille tuttuun numeroon."
+   }
+  },
+  {
+   "id": "toimitusjohtajahuijaus-3",
+   "teksti": "Voisitko käydä ostamassa lahjakortteja asiakaslahjoiksi ja lähettää koodit mulle? Kuluista sovitaan huomenna.",
+   "konteksti": "tyo",
+   "kanava": "viesti",
+   "harhauttajat": ["ennakkomaksuhuijaus", "smishing"],
+   "paljastus": {
+    "mita": "Sama rakenne pienemmällä summalla: kiire, henkilökohtainen pyyntö, peruuttamaton maksuväline.",
+    "miksi": "Summa on tarkoituksella niin pieni, ettei sitä kannata varmistaa — ja lahjakorttikoodia ei saa takaisin.",
+    "sanot": "Soitan sinulle varmistaakseni. Mikä numero?"
+   }
+  },
+  {
+   "id": "toimitusjohtajahuijaus-4",
+   "teksti": "Hoidan yrityskauppaanne toimeksiannosta. Asia on luottamuksellinen, joten en voi vielä kertoa yksityiskohtia sisäisesti.",
+   "konteksti": "tyo",
+   "kanava": "sahkoposti",
+   "harhauttajat": ["badger-game", "painostusclose"],
+   "paljastus": {
+    "mita": "Salassapito ulkoistetaan uskottavalle ulkopuoliselle, jolloin sisäinen varmistus estyy muodollisesti.",
+    "miksi": "Luottamuksellisuus on liike-elämässä normaalia, joten sen kyseenalaistaminen tuntuu epäammattimaiselta.",
+    "sanot": "Kaikki maksut kulkevat meillä kahden hyväksynnän kautta, myös luottamukselliset."
+   }
+  }
+ ]
+}

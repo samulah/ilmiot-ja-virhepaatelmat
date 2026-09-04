@@ -1,0 +1,54 @@
+{
+ "ilmio": "badger-game",
+ "laji": "taktiikka",
+ "kohdat": [
+  {
+   "id": "badger-game-1",
+   "teksti": "Meillä on tallenne eilisillasta. 5 000 euroa, niin se ei päädy kenellekään. Vastaa tunnin sisällä.",
+   "konteksti": "viranomainen",
+   "kanava": "viesti",
+   "harhauttajat": ["honeypot-huijaus", "painostusclose"],
+   "paljastus": {
+    "mita": "Kiristys yhdistää häpeän ja kiireen niin, ettei uhri ehdi kertoa kenellekään.",
+    "miksi": "Salailu on koko mekanismi. Maksaminen ei lopeta kiristystä vaan todistaa, että kohde maksaa.",
+    "sanot": "Tähän ei vastata eikä makseta. Tämä menee poliisille tänään."
+   }
+  },
+  {
+   "id": "badger-game-2",
+   "teksti": "Konferenssin baarissa: \"Sä oot kyllä ainoa täällä joka puhuu järkeä. Mennäänkö jatkamaan jonnekin rauhallisempaan?\"",
+   "konteksti": "tyo",
+   "kanava": "puhe",
+   "harhauttajat": ["honeypot-huijaus", "halo-efekti"],
+   "paljastus": {
+    "mita": "Nopea, imarteleva kiinnostus vieraalla paikkakunnalla, ja siirtymä pois julkisesta tilasta.",
+    "miksi": "Valta-asema saa uskomaan, että kiinnostus on ansaittua. Juuri se tekee lavastuksesta helpon.",
+    "sanot": "Jatketaan täällä. Minä pysyn tässä porukassa."
+   }
+  },
+  {
+   "id": "badger-game-3",
+   "teksti": "Hoidetaan tää nyt hiljaa keskenämme. Ei kannata sun eikä yhtiön kannalta, että tästä tulee iso juttu.",
+   "konteksti": "tyo",
+   "kanava": "puhe",
+   "harhauttajat": ["darvo", "toimitusjohtajahuijaus"],
+   "paljastus": {
+    "mita": "Kiristäjä tarjoutuu suojelemaan sinua siltä vahingolta, jonka hän itse aiheuttaa.",
+    "miksi": "Yhtiön etuun vetoaminen antaa salailulle jalon syyn — ja salailu on ainoa asia, jota kiristäjä tarvitsee.",
+    "sanot": "Ilmoitan tästä itse eteenpäin tänään. Se on ainoa tie ulos."
+   }
+  },
+  {
+   "id": "badger-game-4",
+   "teksti": "En halua rahaa. Haluan vain tietää, mitä hallituksessa päätettiin siitä hankinnasta.",
+   "konteksti": "tyo",
+   "kanava": "viesti",
+   "harhauttajat": ["honeypot-huijaus", "portinvartija-kulttuuri"],
+   "paljastus": {
+    "mita": "Kiristyksen kohteena ei ole raha vaan pääsy — tieto, ääni tai päätös.",
+    "miksi": "Pyyntö kuulostaa lievemmältä kuin rahavaatimus, joten siihen on helpompi suostua. Se on kalliimpi.",
+    "sanot": "En kerro mitään. Ilmoitan tästä turvallisuusjohdolle ja poliisille."
+   }
+  }
+ ]
+}

@@ -1,0 +1,54 @@
+{
+ "ilmio": "maalitolppien-siirtaminen",
+ "laji": "taktiikka",
+ "kohdat": [
+  {
+   "id": "maalitolppien-siirtaminen-1",
+   "teksti": "Hienoa että luvut tulivat täyteen. Katsotaan ylennystä sitten kun saadaan vielä yksi kvartaali näyttöä.",
+   "konteksti": "tyo",
+   "kanava": "puhe",
+   "harhauttajat": ["hiljainen-irtisanominen", "foot-in-the-door"],
+   "paljastus": {
+    "mita": "Ehto täyttyi, joten tilalle asetettiin uusi. Vanhan täyttymistä ei myönnetä ääneen.",
+    "miksi": "Jokainen uusi ehto kuulostaa yksinään kohtuulliselta. Vasta sarjana näkyy, ettei maaliviivaa ole.",
+    "sanot": "Mikä tarkalleen ottaen riittäisi? Kirjataan se nyt ylös."
+   }
+  },
+  {
+   "id": "maalitolppien-siirtaminen-2",
+   "teksti": "Okei, sait ne paperit. Mutta ethän sä ole vielä osoittanut, että tämä pysyy pitkässä juoksussa.",
+   "konteksti": "parisuhde",
+   "kanava": "puhe",
+   "harhauttajat": ["gaslighting", "darvo"],
+   "paljastus": {
+    "mita": "Saavutus kuitataan yhdellä sanalla ja vaatimus siirretään sinne, mistä ei voi palata todisteen kanssa.",
+    "miksi": "'Pitkä juoksu' ei ole mitattava ehto, joten sitä ei voi täyttää — eikä siitä voi myöskään kiistellä.",
+    "sanot": "Sovitaan konkreettinen mittari ja aika. Mikä se on?"
+   }
+  },
+  {
+   "id": "maalitolppien-siirtaminen-3",
+   "teksti": "Kiitos selvityksestä. Tämä vastaa siihen kysymykseen, mutta herättää kyllä kaksi uutta.",
+   "konteksti": "tyo",
+   "kanava": "sahkoposti",
+   "harhauttajat": ["argumenttitulva", "brandolinin-laki"],
+   "paljastus": {
+    "mita": "Jokainen vastaus tuottaa uuden kysymyksen, eikä yksikään sulkeudu.",
+    "miksi": "Kohteliaisuus peittää rakenteen: koska jokainen kysymys on erikseen järkevä, sarjaa ei huomaa.",
+    "sanot": "Merkitäänkö tämä ensin käsitellyksi, ennen kuin siirrytään uusiin?"
+   }
+  },
+  {
+   "id": "maalitolppien-siirtaminen-4",
+   "teksti": "No niin, nyt kun toi on kunnossa, niin otetaanko vielä se toinen juttu samalla?",
+   "konteksti": "perhe",
+   "kanava": "viesti",
+   "harhauttajat": ["foot-in-the-door", "vastavuoroisuuden-ansa"],
+   "paljastus": {
+    "mita": "Valmistuminen käytetään siltana seuraavaan vaatimukseen, jolloin urakka ei koskaan pääty.",
+    "miksi": "Kieltäytyminen tuntuu oudolta juuri onnistumisen jälkeen — hyvä fiilis on osa mekanismia.",
+    "sanot": "Tämä on nyt tehty. Sovitaan se toinen erikseen."
+   }
+  }
+ ]
+}

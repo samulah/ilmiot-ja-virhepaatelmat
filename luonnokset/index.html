@@ -181,7 +181,7 @@
   <img class="hub-logo" src="../favicon.svg" alt="Ilmiöitä-logo: punainen varoituslippu" width="36" height="36">
   <div class="hub-header-left">
     <h1>Ilmiöitä &middot; luonnokset</h1>
-    <p>1 koostesivu odottaa julkaisua &middot; suosiodata testivaiheessa</p>
+    <p>1 peli + 1 koostesivu odottaa julkaisua &middot; suosiodata testivaiheessa</p>
   </div>
   <a class="paluu-btn" href="../index.html">&larr; Kaikki ilmiöt</a>
 </header>
@@ -220,6 +220,39 @@ julkaistaessa molemmat puretaan.</p>
   <div class="hub-kortit">
     <a class="hub-kortti" style="--c:#1e7a4a" href="suosio.html"><span class="hub-numero tyhja">&there4;</span><span class="hub-nimi">Suosio <em>· ranking, nousijat, kategoriat, julkaisuerät</em></span><span class="hub-nuoli">&rsaquo;</span></a>
     <a class="hub-kortti" style="--c:#1e7a4a" href="etusivu-nostot.html"><span class="hub-numero tyhja">&there4;</span><span class="hub-nimi">Etusivun nostot <em>· viikon ilmiö, satunnainen, luetuimmat</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+  </div>
+</section>
+
+<section class="hub-kategoria">
+  <div class="hub-kat-label">Peli &middot; ei ilmi&ouml; &middot; odottaa julkaisupäätöstä</div>
+  <p class="hub-kat-desc"><strong>Vedätys</strong> &mdash; päivittäinen manipulaationtunnistuspeli.
+  Viisi kohtaa, ~90 sekuntia. Sisältö tulee <code>pelidata/*.json</code>:ista, jotka
+  <code>scripts/build_peli.py</code> validoi ja kääntää tiedostoksi
+  <code>data/peli-pankki.js</code> &mdash; <strong>älä muokkaa datatiedostoa käsin</strong>.
+  Vaiheessa 1 mukana on 27 vuorovaikutusilmiötä ja 150 kohtaa (110 temppua + 40 rehellistä),
+  eli 30 päivän erät. <strong>Ei ilmiösivu:</strong> ei numeroa, ei PREV/NEXT-ketjua, ei
+  <code>lisaa_ilmiot.py</code>:tä, eikä luokkaa <code>hub-kortti</code>.
+  Säännöt ja perustelut ovat <code>CLAUDE.md</code>:n osiossa &rdquo;Vedätys&rdquo;.
+  <br><strong>Julkaisun tarkistuslista:</strong>
+  (1) <code>noindex</code> pois ja <code>../</code>-etuliitteet pois &mdash; myös JS:n
+  <code>lueLinkki</code>- ja kertauslistan linkeistä;
+  (2) siirto juureen nimellä <code>peli.html</code>;
+  (3) vakio <code>PELI = ("peli.html", "0.6", "monthly")</code> tiedostoon
+  <code>scripts/build_sitemap.py</code> ja rivi <code>rakenna()</code>-funktioon;
+  (4) sisääntulot <code>index.html</code>:n headeriin ja footeriin &mdash; ilman niitä sivu jää orvoksi;
+  (5) <code>python3 scripts/lisaa_pelilinkit.py --kirjoita</code> (27 ilmiösivua);
+  (6) merkintä <code>muutokset.html</code>:ään ja <code>dateModified</code>-päivät kuntoon;
+  (7) <code>python3 scripts/build_sitemap.py</code> ja
+  <code>PELI_SIVU=peli.html node scripts/testaa_peli.js</code> julkaistua kopiota vasten;
+  (8) siirto palvelimelle käsin &mdash; peli tarvitsee <em>sekä</em> <code>peli.html</code>:n
+  <em>että</em> <code>data/peli-pankki.js</code>:n, ja ilman jälkimmäistä sivu on tyhjä.
+  <br><strong>Testaus:</strong> <code>node scripts/testaa_peli.js</code> pelaa erän läpi
+  DOM-tyngällä ja on ajettava jokaisen muutoksen jälkeen (33 väitettä: käynnistys, läpipeluu,
+  pisteytys, ansa ja lippu, päivän vaihtuminen, heittävä localStorage, haastelinkki, päiväindeksi
+  kesäajan yli, pankin eheys). Testi <em>ei</em> kata ulkoasua, CSS:ää, mobiililayoutia eikä
+  leikepöytää &mdash; <strong>selaintestaus on yhä tekemättä</strong>.</p>
+  <div class="hub-kortit">
+    <a class="hub-kortti" style="--c:#b03a2e" href="peli.html"><span class="hub-numero tyhja">&#9873;</span><span class="hub-nimi">Vedätys <em>&middot; päivän erä, 5 kohtaa, 27 ilmiötä</em></span><span class="hub-nuoli">&rsaquo;</span></a>
   </div>
 </section>
 

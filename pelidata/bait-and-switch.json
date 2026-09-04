@@ -1,0 +1,54 @@
+{
+ "ilmio": "bait-and-switch",
+ "laji": "taktiikka",
+ "kohdat": [
+  {
+   "id": "bait-and-switch-1",
+   "teksti": "Se mainoksen malli meni valitettavasti juuri äsken. Mutta tässä vieressä on parempi versio, vain vähän kalliimpi.",
+   "konteksti": "kauppa",
+   "kanava": "puhe",
+   "harhauttajat": ["painostusclose", "hintaankkurointi"],
+   "paljastus": {
+    "mita": "Syötti loppuu täsmälleen silloin kun olet paikalla — ja vaihtoehto on valmiina vieressä.",
+    "miksi": "Matka kauppaan on jo tehty. Tyhjin käsin lähteminen tuntuu tappiolta, vaikka mitään ei ole menetetty.",
+    "sanot": "Otan sen mainostetun tuotteen kun se palaa. Laittakaa viestiä."
+   }
+  },
+  {
+   "id": "bait-and-switch-2",
+   "teksti": "Ilmoituksen 3 200 oli koko haarukan yläpää. Tähän rooliin se olisi 2 700, mutta tehtävä on kyllä laajempi kuin ilmoituksessa.",
+   "konteksti": "tyo",
+   "kanava": "puhe",
+   "harhauttajat": ["lowball-hinnoittelu", "painostusclose"],
+   "paljastus": {
+    "mita": "Ilmoitettu tehtävä ja palkka muuttuivat molemmat vasta haastattelussa — huonompaan suuntaan.",
+    "miksi": "Prosessiin on jo käytetty viikkoja. Uponnut aika saa neuvottelemaan alaspäin sen sijaan että lähtisi.",
+    "sanot": "Hain ilmoituksen mukaista tehtävää. Kumpi näistä on nyt se, josta puhutaan?"
+   }
+  },
+  {
+   "id": "bait-and-switch-3",
+   "teksti": "Tuo hinta koski viikonloppulähtöjä marraskuussa. Sinun päivillesi se on 340 € enemmän.",
+   "konteksti": "kauppa",
+   "kanava": "kayttoliittyma",
+   "harhauttajat": ["piilokulut", "hintaankkurointi"],
+   "paljastus": {
+    "mita": "Mainostettu hinta on olemassa, mutta ehdoin joita kukaan ei voi käyttää.",
+    "miksi": "Muodollinen totuus riittää mainokseen, ja vertailun ankkuri on jo asetettu ennen kuin ehdot näkyvät.",
+    "sanot": "Näytä hinta niillä päivillä joita etsin. Vertailen vasta sitten."
+   }
+  },
+  {
+   "id": "bait-and-switch-4",
+   "teksti": "Tämä hinta koskee perusversiota. Se ominaisuus jonka takia tulit on Pro-paketissa.",
+   "konteksti": "kauppa",
+   "kanava": "kayttoliittyma",
+   "harhauttajat": ["lowball-hinnoittelu", "hintaankkurointi"],
+   "paljastus": {
+    "mita": "Mainostettu tuote ei sisällä sitä, minkä takia se mainostettiin.",
+    "miksi": "Vertailu on jo tehty halvimmalla hinnalla, ja siirtyminen ylöspäin tuntuu pieneltä lisäykseltä.",
+    "sanot": "Mikä on hinta sillä kokoonpanolla, jota alun perin mainostettiin?"
+   }
+  }
+ ]
+}

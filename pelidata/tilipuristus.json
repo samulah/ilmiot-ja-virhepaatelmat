@@ -1,0 +1,54 @@
+{
+ "ilmio": "tilipuristus",
+ "laji": "taktiikka",
+ "kohdat": [
+  {
+   "id": "tilipuristus-1",
+   "teksti": "Me maksetaan sulle heti kun asiakas maksaa meille. Toivottavasti ymmärrät.",
+   "konteksti": "tyo",
+   "kanava": "sahkoposti",
+   "harhauttajat": ["lowball-hinnoittelu", "exposure-maksu"],
+   "paljastus": {
+    "mita": "Riski, johon sinä et voi vaikuttaa, siirretään sinun kannettavaksesi jälkikäteen.",
+    "miksi": "Ehto esitetään vasta työn jälkeen, jolloin ainoa vaihtoehto on suostua tai periä.",
+    "sanot": "Sopimuksessa lukee 14 päivää. Heidän maksuaikataulunsa ei ole minun sopimukseni."
+   }
+  },
+  {
+   "id": "tilipuristus-2",
+   "teksti": "Vielä yksi pieni korjaus, niin päästään hyväksymään. Sen jälkeen lasku menee heti eteenpäin.",
+   "konteksti": "tyo",
+   "kanava": "viesti",
+   "harhauttajat": ["scope-creep", "maalitolppien-siirtaminen"],
+   "paljastus": {
+    "mita": "Hyväksyntä on ehto laskutukselle, ja hyväksyntää siirretään yhdellä pikkukorjauksella kerrallaan.",
+    "miksi": "Kukin korjaus on liian pieni riidan aiheeksi. Sarja on se, joka maksaa.",
+    "sanot": "Laskutan tehdyn työn nyt. Korjaukset sovitaan erikseen."
+   }
+  },
+  {
+   "id": "tilipuristus-3",
+   "teksti": "Maksuehto meillä on 90 päivää netto. Se on ihan alan standardi.",
+   "konteksti": "tyo",
+   "kanava": "sahkoposti",
+   "harhauttajat": ["sosiaalinen-todiste", "lowball-hinnoittelu"],
+   "paljastus": {
+    "mita": "Pitkä maksuehto on koroton laina sinulta tilaajalle, ja se perustellaan tavanomaisuudella.",
+    "miksi": "'Alan standardi' on väite jota harva tarkistaa, ja se siirtää keskustelun pois neuvoteltavista asioista.",
+    "sanot": "Minulla ehto on 14 päivää. Jos 90 on pakko, hinta muuttuu."
+   }
+  },
+  {
+   "id": "tilipuristus-4",
+   "teksti": "Loppuerä 30 % pidätetään toistaiseksi, kunnes nähdään miten tää toimii tuotannossa.",
+   "konteksti": "tyo",
+   "kanava": "sahkoposti",
+   "harhauttajat": ["maalitolppien-siirtaminen", "lowball-hinnoittelu"],
+   "paljastus": {
+    "mita": "Osa korvauksesta jää roikkumaan ehdon varaan, jolla ei ole päättymispäivää.",
+    "miksi": "'Toistaiseksi' ja 'nähdään' eivät ole ehtoja vaan niiden puuttumista — ja siksi niitä ei voi täyttää.",
+    "sanot": "Mikä on hyväksymiskriteeri ja mihin päivämäärään mennessä se todetaan?"
+   }
+  }
+ ]
+}

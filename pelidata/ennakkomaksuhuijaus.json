@@ -1,0 +1,54 @@
+{
+ "ilmio": "ennakkomaksuhuijaus",
+ "laji": "taktiikka",
+ "kohdat": [
+  {
+   "id": "ennakkomaksuhuijaus-1",
+   "teksti": "Onnittelut! Voittonne 45 000 € on valmis tilitettäväksi. Tilitysmaksu 39 € on suoritettava ennen siirtoa.",
+   "konteksti": "kauppa",
+   "kanava": "sahkoposti",
+   "harhauttajat": ["pig-butchering", "honeypot-huijaus"],
+   "paljastus": {
+    "mita": "Iso luvattu summa ja pieni pakollinen maksu — ja vain jälkimmäinen on todellinen.",
+    "miksi": "39 euroa suhteessa 45 000:een tuntuu riskittömältä. Suhde on koko huijauksen matemaattinen ydin.",
+    "sanot": "Oikeaa rahaa ei tarvitse lunastaa maksamalla rahaa etukäteen."
+   }
+  },
+  {
+   "id": "ennakkomaksuhuijaus-2",
+   "teksti": "Siirto pysähtyi valuutanvaihtoon. Tarvitaan vielä 210 € kuluihin, sitten se on lopullisesti läpi.",
+   "konteksti": "kauppa",
+   "kanava": "viesti",
+   "harhauttajat": ["pig-butchering", "sunk-cost-harha"],
+   "paljastus": {
+    "mita": "Uusi este ilmestyy heti edellisen maksun jälkeen. Esteitä on rajattomasti.",
+    "miksi": "Jo maksettu raha tekee lopettamisesta tappion tunnustamista. Juuri siksi ensimmäinen maksu oli pieni.",
+    "sanot": "Aiemmin maksettu on mennyttä joka tapauksessa. Tämä on uusi päätös, ja se on ei."
+   }
+  },
+  {
+   "id": "ennakkomaksuhuijaus-3",
+   "teksti": "Isoisäsi jätti ulkomaisen tilin, jolle sinä olet lähin perillinen. Notaarin palkkio on maksettava ennen luovutusta.",
+   "konteksti": "kauppa",
+   "kanava": "sahkoposti",
+   "harhauttajat": ["kaarmeoljy", "honeypot-huijaus"],
+   "paljastus": {
+    "mita": "Klassinen perintöversio: uskomaton tarina ja täysin uskottava pieni maksu.",
+    "miksi": "Tarinan epäuskottavuus on tarkoituksellista — se karsii kaikki paitsi ne, jotka maksavat myös seuraavalla kerralla.",
+    "sanot": "Perintöasiat hoituvat viranomaisen kautta, eivät sähköpostilla."
+   }
+  },
+  {
+   "id": "ennakkomaksuhuijaus-4",
+   "teksti": "Työpaikka on sinun. Ennen aloitusta tarvitsemme 95 € turvallisuusselvityksestä ja työvälineistä.",
+   "konteksti": "tyo",
+   "kanava": "viesti",
+   "harhauttajat": ["bait-and-switch", "haamutyopaikat"],
+   "paljastus": {
+    "mita": "Työnhakija maksaa työnantajalle — suunta on väärä, ja se on ainoa mitä tarvitsee huomata.",
+    "miksi": "Ilo saadusta paikasta on tunne, jonka aikana maksupyyntö näyttää muodollisuudelta.",
+    "sanot": "Työnantaja ei laskuta työntekijää aloittamisesta."
+   }
+  }
+ ]
+}

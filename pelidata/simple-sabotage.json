@@ -1,0 +1,54 @@
+{
+ "ilmio": "simple-sabotage",
+ "laji": "taktiikka",
+ "kohdat": [
+  {
+   "id": "simple-sabotage-1",
+   "teksti": "Tää on iso asia. Ehdotan että perustetaan työryhmä valmistelemaan sitä huolella.",
+   "konteksti": "tyo",
+   "kanava": "puhe",
+   "harhauttajat": ["bikeshedding", "kafka-ilmio"],
+   "paljastus": {
+    "mita": "Päätös siirtyy elimelle, jolla ei ole päätösvaltaa eikä määräaikaa.",
+    "miksi": "Huolellisuus on aina puolustettavissa, joten hidastamista ei voi vastustaa näyttämättä huolimattomalta.",
+    "sanot": "Kuka omistaa tämän ja mihin päivään mennessä se on päätetty?"
+   }
+  },
+  {
+   "id": "simple-sabotage-2",
+   "teksti": "Onko tästä kysytty lakiosastolta? Ja viestinnältä? Ehkä kannattaisi vielä varmistaa.",
+   "konteksti": "tyo",
+   "kanava": "puhe",
+   "harhauttajat": ["kafka-ilmio", "portinvartija-kulttuuri"],
+   "paljastus": {
+    "mita": "Lisäselvitys ilman perustelua ja ilman määräpäivää — kierros, joka ei sulkeudu.",
+    "miksi": "Kysymys näyttää vastuulliselta. Sen hinta on aika, eikä aikaa laskuteta keneltäkään.",
+    "sanot": "Mitä riskiä varmistamme? Pyydetään kommentit perjantaihin mennessä."
+   }
+  },
+  {
+   "id": "simple-sabotage-3",
+   "teksti": "Palataan vielä hetkeksi siihen edelliseen kohtaan. Haluaisin varmistaa, että kaikki ymmärsivät sen samoin.",
+   "konteksti": "tyo",
+   "kanava": "puhe",
+   "harhauttajat": ["bikeshedding", "argumenttitulva"],
+   "paljastus": {
+    "mita": "Käsitellyn asian avaaminen uudelleen kokouksen loppupuolella, jolloin loput jäävät käsittelemättä.",
+    "miksi": "Yhteisymmärryksen varmistaminen on hyve, joten toistoa ei voi katkaista ilman että vaikuttaa kärsimättömältä.",
+    "sanot": "Tuo on kirjattu päätetyksi. Palataan siihen erikseen, jos joku on eri mieltä."
+   }
+  },
+  {
+   "id": "simple-sabotage-4",
+   "teksti": "Muistutan vielä, että ohjeen mukaan tähän tarvitaan kirjallinen pyyntö esihenkilöltä. Ei se minusta, mutta säännöt on säännöt.",
+   "konteksti": "tyo",
+   "kanava": "sahkoposti",
+   "harhauttajat": ["kafka-ilmio", "portinvartija-kulttuuri"],
+   "paljastus": {
+    "mita": "Sääntöä tulkitaan kirjaimellisimmalla mahdollisella tavalla, ja vastuu siirretään säännölle.",
+    "miksi": "Muodollinen oikeassa oleminen tekee vastustamisesta mahdotonta — vaikka harkintaan olisi lupa.",
+    "sanot": "Kenellä on valta tulkita tätä? Kysytään häneltä suoraan."
+   }
+  }
+ ]
+}

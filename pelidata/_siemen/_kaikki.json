@@ -1,0 +1,1447 @@
+[
+ {
+  "slug": "darvo",
+  "nro": 23,
+  "nimi": "DARVO",
+  "kuvaus": "Kiinni jäänyt kääntää roolit: kiistä, hyökkää ja esitä itsesi uhrina — Deny, Attack, Reverse Victim & Offender.",
+  "vari": "#922b21",
+  "kategoria": "Psykologia ja kognitio",
+  "ingressi": "DARVO (Deny, Attack, Reverse Victim and Offender) on psykologi Jennifer Freydin vuonna 1997 kuvaama reaktiostrategia, jota käyttävät henkilöt tai instituutiot joita pidetään vastuullisina väärinkäytöksestä. Strategia koostuu kolmesta vaiheesta: kiistä, hyökkää, käännä roolit.",
+  "vastauslohko": "DARVO on lyhenne sanoista Deny, Attack, Reverse Victim and Offender — suomeksi kiistä, hyökkää, käännä uhrin ja syyttäjän roolit . Vakiintunutta suomenkielistä lyhennettä ei ole, joten termi esiintyy suomeksikin muodossa DARVO. Psykologi Jennifer Freyd kuvasi mallin vuonna 1997.",
+  "vastakeinot": "DARVO onnistuu, koska jokainen vaihe erikseen kuulostaa oikeutetulta — on laillista kiistää syytös, on sallittua kyseenalaistaa syyttäjä, on inhimillistä kertoa miten syytös vaikuttaa itseen. Strategian tunnistaa siitä, että nämä tapahtuvat nopeasti peräkkäin ja alkuperäinen kysymys jää vastaamatta.",
+  "laatikot": [
+   {
+    "otsikko": "Mitä DARVO tarkoittaa suomeksi?",
+    "teksti": "DARVO on lyhenne sanoista Deny, Attack, Reverse Victim and Offender — suomeksi kiistä, hyökkää, käännä uhrin ja syyttäjän roolit . Vakiintunutta suomenkielistä lyhennettä ei ole, joten termi esiintyy suomeksikin muodossa DARVO. Psykologi Jennifer Freyd kuvasi mallin vuonna 1997."
+   },
+   {
+    "otsikko": "Kolme vaihetta käytännössä:",
+    "teksti": "Deny (kiistä): Tapahtuma rekonstruoidaan. \"En uhannut, annoin neuvon.\" \"En syrjinyt, sovelsin sääntöjä.\" Attack (hyökkää): Syyttäjän motiivit, luonne tai uskottavuus kyseenalaistetaan. Huomio siirtyy teosta tekijään. Reverse (käännä): Vastuuseen vaatiminen esitetään hyökkäyksenä — syyttäjästä tulee tekijä, syytetystä uhri. \"Hänen syytöksensä tuhoavat maineen ja perheen.\""
+   },
+   {
+    "otsikko": "Tunnistaminen ja vastakeinot:",
+    "teksti": "DARVO onnistuu, koska jokainen vaihe erikseen kuulostaa oikeutetulta — on laillista kiistää syytös, on sallittua kyseenalaistaa syyttäjä, on inhimillistä kertoa miten syytös vaikuttaa itseen. Strategian tunnistaa siitä, että nämä tapahtuvat nopeasti peräkkäin ja alkuperäinen kysymys jää vastaamatta."
+   }
+  ],
+  "listat": [
+   {
+    "nimi": "Deny (kiistä)",
+    "selitys": "Tapahtuma rekonstruoidaan. \"En uhannut, annoin neuvon.\" \"En syrjinyt, sovelsin sääntöjä.\""
+   },
+   {
+    "nimi": "Attack (hyökkää)",
+    "selitys": "Syyttäjän motiivit, luonne tai uskottavuus kyseenalaistetaan. Huomio siirtyy teosta tekijään."
+   },
+   {
+    "nimi": "Reverse (käännä)",
+    "selitys": "Vastuuseen vaatiminen esitetään hyökkäyksenä — syyttäjästä tulee tekijä, syytetystä uhri. \"Hänen syytöksensä tuhoavat maineen ja perheen.\""
+   }
+  ],
+  "repliikit": [
+   "En uhannut, annoin neuvon.",
+   "En syrjinyt, sovelsin sääntöjä.",
+   "Hänen syytöksensä tuhoavat maineen ja perheen.",
+   "sääntelybyrokratian uhreina",
+   "poliittisen vainon"
+  ],
+  "liittyvat": [
+   "halo-efekti",
+   "konsensus-fetissi",
+   "omenoita-appelsiineja",
+   "blame-game",
+   "gaslighting",
+   "whataboutismi"
+  ]
+ },
+ {
+  "slug": "gaslighting",
+  "nro": 28,
+  "nimi": "Gaslighting",
+  "kuvaus": "Uhrin havainnot ja muisti kiistetään järjestelmällisesti, kunnes hän epäilee omaa todellisuudentajuaan.",
+  "vari": "#2c3e50",
+  "kategoria": "Psykologia ja kognitio",
+  "ingressi": "Gaslighting on psykologinen manipulaatiostrategia, jossa toisen ihmisen havaintoja, muistia ja todellisuuden tulkintaa kyseenalaistetaan tai kumotaan järjestelmällisesti. Termi tulee George Cukorin vuoden 1944 elokuvasta Gaslight , jossa mies manipuloi vaimoaan uskomaan tämän menettävän järkensä — sammuttamalla kaasuvalot ja kiistämällä niiden himmenemisen.",
+  "vastauslohko": "Gaslighting on suomeksi kaasuvalotus . Se tarkoittaa manipulaatiota, jossa toisen havainnot ja muisti kiistetään järjestelmällisesti, kunnes hän alkaa epäillä omaa arvostelukykyään. Nimi tulee näytelmästä Gas Light (1938), jossa aviomies himmentää kaasuvaloja ja kiistää vaimonsa havainnon.",
+  "vastakeinot": "Jatkuva epäily omista muistoista, tunteista ja reaktioista — etenkin kun epäily kohdistuu tiettyihin ihmisiin tai tilanteisiin — on varoitusmerkki. Käytännön testi: kirjaa tapahtumat heti niiden jälkeen. Gaslighting onnistuu manipulaattorin muistiyksinoikeudella — dokumentaatio rikkoo sen.",
+  "laatikot": [
+   {
+    "otsikko": "Mikä on gaslighting suomeksi?",
+    "teksti": "Gaslighting on suomeksi kaasuvalotus . Se tarkoittaa manipulaatiota, jossa toisen havainnot ja muisti kiistetään järjestelmällisesti, kunnes hän alkaa epäillä omaa arvostelukykyään. Nimi tulee näytelmästä Gas Light (1938), jossa aviomies himmentää kaasuvaloja ja kiistää vaimonsa havainnon."
+   },
+   {
+    "otsikko": "Kolme tasoa:",
+    "teksti": "Yksittäinen tilanne: Tapahtuma rekonstruoidaan jälkikäteen. \"Et sanonut niin\" vaikka sanoit. Toimii yksittäisenä tapauksena — kehittyy ajan myötä rakenteeksi. Tunteiden mitätöinti: \"Sinulla ei ole syytä olla loukkaantunut.\" \"Olet liian herkkä.\" Kohde oppii, ettei hänen tunnereaktion validiteettiin voi luottaa. Institutionaalinen taso: Organisaatiot voivat harjoittaa gaslightingia kollektiivisesti — \"Teillä menee hyvin, miksi olette tyytymättömiä?\" virallisten mittareiden kiistäessä henkilökohtaisen kokemuksen."
+   },
+   {
+    "otsikko": "Tunnistaminen ja vastakeinot:",
+    "teksti": "Jatkuva epäily omista muistoista, tunteista ja reaktioista — etenkin kun epäily kohdistuu tiettyihin ihmisiin tai tilanteisiin — on varoitusmerkki. Käytännön testi: kirjaa tapahtumat heti niiden jälkeen. Gaslighting onnistuu manipulaattorin muistiyksinoikeudella — dokumentaatio rikkoo sen."
+   }
+  ],
+  "listat": [
+   {
+    "nimi": "Yksittäinen tilanne",
+    "selitys": "Tapahtuma rekonstruoidaan jälkikäteen. \"Et sanonut niin\" vaikka sanoit. Toimii yksittäisenä tapauksena — kehittyy ajan myötä rakenteeksi."
+   },
+   {
+    "nimi": "Tunteiden mitätöinti",
+    "selitys": "\"Sinulla ei ole syytä olla loukkaantunut.\" \"Olet liian herkkä.\" Kohde oppii, ettei hänen tunnereaktion validiteettiin voi luottaa."
+   },
+   {
+    "nimi": "Institutionaalinen taso",
+    "selitys": "Organisaatiot voivat harjoittaa gaslightingia kollektiivisesti — \"Teillä menee hyvin, miksi olette tyytymättömiä?\" virallisten mittareiden kiistäessä henkilökohtaisen kokemuksen."
+   }
+  ],
+  "repliikit": [
+   "Noin ei tapahtunut.",
+   "Sinä loit riidan tyhjästä.",
+   "Olet yliherkkä.",
+   "Et sanonut niin",
+   "Sinulla ei ole syytä olla loukkaantunut.",
+   "Olet liian herkkä.",
+   "Teillä menee hyvin, miksi olette tyytymättömiä?",
+   "havainnon omistajuus"
+  ],
+  "liittyvat": [
+   "maalitolppien-siirtaminen",
+   "argumenttitulva",
+   "sunk-cost-harha",
+   "jarjestelman-puolustelu",
+   "backfire-effect"
+  ]
+ },
+ {
+  "slug": "whataboutismi",
+  "nro": 15,
+  "nimi": "Whataboutismi",
+  "kuvaus": "Syytökseen vastataan vastasyytöksellä: \"entäs kun te…\" — itse asia jää käsittelemättä.",
+  "vari": "#7b1fa2",
+  "kategoria": "Informaatio ja propaganda",
+  "ingressi": "Whataboutismi (engl. whataboutism, suomeksi entäs-argumentti tai entäskunismi ) tarkoittaa syytökseen tai kritiikkiin vastaamista vastasyytöksellä: \"Entäs te itse?\" Itse asiaan ei vastata mitään — keskustelu siirretään arvostelijan tai jonkun kolmannen todellisiin tai väitettyihin virheisiin.",
+  "vastauslohko": "Whataboutismi on jo suomenkielinen muoto englannin sanasta whataboutism . Samasta ilmiöstä käytetään myös nimityksiä entäs-argumentti ja mutkuttelu . Kaikki tarkoittavat samaa: esitettyyn kritiikkiin ei vastata, vaan vastataan vastasyytöksellä — \"entäs te itse?\"",
+  "vastakeinot": "Nimeä siirto ja palauta kysymys: \"Tuo on eri keskustelu, ja se voidaan käydä — mutta ensin: mitä vastaat alkuperäiseen kysymykseen?\" Älä lähde puolustamaan kolmatta osapuolta, johon vastasyytös osoittaa — juuri sinne sinut yritetään saada. Ja pidä itse mielessä: kaksi asiaa voi olla tuomittavia yhtä aikaa. Toisen vääryys ei ole toisen puolustus.",
+  "laatikot": [
+   {
+    "otsikko": "Mikä on whataboutismi suomeksi?",
+    "teksti": "Whataboutismi on jo suomenkielinen muoto englannin sanasta whataboutism . Samasta ilmiöstä käytetään myös nimityksiä entäs-argumentti ja mutkuttelu . Kaikki tarkoittavat samaa: esitettyyn kritiikkiin ei vastata, vaan vastataan vastasyytöksellä — \"entäs te itse?\""
+   },
+   {
+    "otsikko": "Milloin \"entäs\" on aiheellinen?",
+    "teksti": "Tekopyhyyden ja kaksoisstandardien osoittaminen kuuluu joskus asiaan: jos lahjonnasta saarnaava ottaa itse lahjuksia, ristiriita on relevantti tieto. Raja kulkee käyttötarkoituksessa. Johdonmukaisuuskritiikki lisää keskusteluun tietoa — whataboutismi käyttää sitä väistöliikkeenä , jottei alkuperäiseen asiaan tarvitse vastata. Testi: jääkö alkuperäinen kysymys elämään, vai kuoliko se vastasyytökseen?"
+   },
+   {
+    "otsikko": "Tunnistaminen ja vastakeinot:",
+    "teksti": "Nimeä siirto ja palauta kysymys: \"Tuo on eri keskustelu, ja se voidaan käydä — mutta ensin: mitä vastaat alkuperäiseen kysymykseen?\" Älä lähde puolustamaan kolmatta osapuolta, johon vastasyytös osoittaa — juuri sinne sinut yritetään saada. Ja pidä itse mielessä: kaksi asiaa voi olla tuomittavia yhtä aikaa. Toisen vääryys ei ole toisen puolustus."
+   }
+  ],
+  "listat": [],
+  "repliikit": [
+   "Entäs te itse?",
+   "entäs te itse?",
+   ") teollinen versio, ja sen suurvalta oli Neuvostoliitto. Kun länsi arvosteli vankileirejä, vakiovastaus kuului:",
+   "kaikki valehtelevat, kaikki sortavat — joten mistään ei voi sanoa mitään.",
+   "Kato, orava!",
+   "Look, a squirrel!",
+   "Tuo on eri keskustelu, ja se voidaan käydä — mutta ensin: mitä vastaat alkuperäiseen kysymykseen?"
+  ],
+  "liittyvat": [
+   "darvo",
+   "maalitolppien-siirtaminen",
+   "argumenttitulva",
+   "blame-game",
+   "godwinin-laki"
+  ]
+ },
+ {
+  "slug": "maalitolppien-siirtaminen",
+  "nro": 29,
+  "nimi": "Maalitolppien siirtäminen",
+  "kuvaus": "Onnistumisen kriteerit vaihdetaan jälkikäteen — juuri kun aiemmat vaatimukset on täytetty.",
+  "vari": "#2c3e50",
+  "kategoria": "Psykologia ja kognitio",
+  "ingressi": "Maalitolppien siirtäminen (eng. moving the goalposts ) on retorinen ja strateginen taktiikka, jossa onnistumisen kriteerejä muutetaan jälkikäteen — juuri kun alkuperäinen ehto on täytetty tai lähellä täyttymistä. Tavoitteena ei ole parempi tulos: se on pitää toinen osapuoli ikuisessa suoritustilassa ilman koskaan saavutettavaa maalilinjaa.",
+  "vastauslohko": "Maalitolppien siirtäminen tarkoittaa, että ehto vaihdetaan sen jälkeen kun se on täytetty. Rehellisestä kriteerin tarkennuksesta sen erottaa ajoitus ja vaikeneminen: uusi vaatimus ilmestyy vasta kun vanha on menossa läpi, eikä vanhan täyttymistä myönnetä ääneen.",
+  "vastakeinot": "Kirjaa sopimukset ja kriteerit ennen suoritusta — ei jälkikäteen. Jos kriteerit muuttuvat toistuvasti saavuttamisen jälkeen, kyse ei ole standardien nostamisesta vaan maaliviivan poistamisesta. Kysymys joka paljastaa ilmiön: \"Mikä tarkalleen ottaen riittäisi?\"",
+  "laatikot": [
+   {
+    "otsikko": "Mitä maalitolppien siirtäminen tarkoittaa?",
+    "teksti": "Maalitolppien siirtäminen tarkoittaa, että ehto vaihdetaan sen jälkeen kun se on täytetty. Rehellisestä kriteerin tarkennuksesta sen erottaa ajoitus ja vaikeneminen: uusi vaatimus ilmestyy vasta kun vanha on menossa läpi, eikä vanhan täyttymistä myönnetä ääneen."
+   },
+   {
+    "otsikko": "Missä ilmiö esiintyy:",
+    "teksti": "Työelämä: Bonus tai ylennys luvataan tietyn tuloksen jälkeen — saavutettu, mutta palkka ei seuraa. \"Tarvitaan vielä yksi kvartaali.\" Politiikka: Oppositio asettaa hallitukselle ehtoja — hallitus täyttää ne — oppositio vaatii lisää. Kritiikki jatkuu ehdon sisällöstä riippumatta. Tiede vs. skeptisismi: \"Missä on todiste X:stä?\" → todiste esitetään → \"Mutta Y ei ole todistettu.\" Jokainen tutkimus avaa uuden aukon. Ihmissuhteet: \"Kun olet muuttunut, voidaan puhua\" → muutos tapahtuu → uusi muutos vaaditaan."
+   },
+   {
+    "otsikko": "Tunnistaminen ja vastakeinot:",
+    "teksti": "Kirjaa sopimukset ja kriteerit ennen suoritusta — ei jälkikäteen. Jos kriteerit muuttuvat toistuvasti saavuttamisen jälkeen, kyse ei ole standardien nostamisesta vaan maaliviivan poistamisesta. Kysymys joka paljastaa ilmiön: \"Mikä tarkalleen ottaen riittäisi?\""
+   }
+  ],
+  "listat": [
+   {
+    "nimi": "Työelämä",
+    "selitys": "Bonus tai ylennys luvataan tietyn tuloksen jälkeen — saavutettu, mutta palkka ei seuraa. \"Tarvitaan vielä yksi kvartaali.\""
+   },
+   {
+    "nimi": "Politiikka",
+    "selitys": "Oppositio asettaa hallitukselle ehtoja — hallitus täyttää ne — oppositio vaatii lisää. Kritiikki jatkuu ehdon sisällöstä riippumatta."
+   },
+   {
+    "nimi": "Tiede vs. skeptisismi",
+    "selitys": "\"Missä on todiste X:stä?\" → todiste esitetään → \"Mutta Y ei ole todistettu.\" Jokainen tutkimus avaa uuden aukon."
+   },
+   {
+    "nimi": "Ihmissuhteet",
+    "selitys": "\"Kun olet muuttunut, voidaan puhua\" → muutos tapahtuu → uusi muutos vaaditaan."
+   }
+  ],
+  "repliikit": [
+   "Olen jo tyytyväinen kunhan teet X",
+   "Nyt täytyy myös Y.",
+   "vähän enemmän",
+   "Tarvitaan vielä yksi kvartaali.",
+   "Missä on todiste X:stä?",
+   "Mutta Y ei ole todistettu.",
+   "Kun olet muuttunut, voidaan puhua",
+   "nostaa rimaa",
+   "Mikä tarkalleen ottaen riittäisi?"
+  ],
+  "liittyvat": [
+   "argumenttitulva",
+   "sunk-cost-harha",
+   "jarjestelman-puolustelu",
+   "backfire-effect",
+   "darvo",
+   "godwinin-laki",
+   "whataboutismi"
+  ]
+ },
+ {
+  "slug": "argumenttitulva",
+  "nro": 30,
+  "nimi": "Argumenttitulva",
+  "kuvaus": "Väitteitä syydetään niin paljon kerralla, ettei kaikkia ehdi kumota — kumoamatta jäänyt näyttää voitolta.",
+  "vari": "#2c3e50",
+  "kategoria": "Psykologia ja kognitio",
+  "ingressi": "Argumenttitulva (eng. Gish Gallop , nimetty kreationistidebatisti Duane Gishin mukaan) on retorinen taktiikka, jossa esitetään mahdollisimman monta argumenttia niin nopeasti tai tiheästi, että vastapuolella ei ole aikaa tai resursseja vastata kaikkiin. Yksittäisten väitteiden laadulla tai todenperäisyydellä ei ole merkitystä — tavoitteena on kuormittaa, ei vakuuttaa.",
+  "vastauslohko": "Gish Gallop on suomeksi argumenttitulva . Siinä esitetään niin monta väitettä niin nopeasti, ettei vastapuoli ehdi vastata kaikkiin. Väitteiden todenperäisyydellä ei ole merkitystä, eikä niiden ole tarkoituskaan kestää tarkastelua: tavoite on kuormittaa vastustaja, ei vakuuttaa yleisöä.",
+  "vastakeinot": "Väittelytilanteessa, jossa et pysty vastaamaan kaikkiin esitettyihin kohtiin — kysy ensin: onko kyse tiedon puutteesta vai volyymista? Jos esittäjä lisää uusia argumentteja jo ennen kuin aiemmat on käsitelty, kyse on strategiasta eikä aidosta evidenssistä.",
+  "laatikot": [
+   {
+    "otsikko": "Mikä on Gish Gallop suomeksi?",
+    "teksti": "Gish Gallop on suomeksi argumenttitulva . Siinä esitetään niin monta väitettä niin nopeasti, ettei vastapuoli ehdi vastata kaikkiin. Väitteiden todenperäisyydellä ei ole merkitystä, eikä niiden ole tarkoituskaan kestää tarkastelua: tavoite on kuormittaa vastustaja, ei vakuuttaa yleisöä."
+   },
+   {
+    "otsikko": "Kaksi päämuotoa:",
+    "teksti": "Debattimuoto: Julkisessa väittelyssä tai somessa esitetään nopea sarja väitteitä joihin ei odoteta faktista vastausta — ne luovat vaikutelman laajasta tietämyksestä. Ks. Firehose of Falsehood : valtiollinen versio samasta logiikasta. Henkilökohtainen muoto: Selitetään niin paljon, niin pitkään ja niin monimutkaisesti, että vastapuoli antaa periksi väsymisestä — vaikka ei ole vakuuttunut. Käytetään neuvotteluissa, parisuhteissa, hierarkkisissa suhteissa."
+   },
+   {
+    "otsikko": "Tunnistaminen ja vastakeinot:",
+    "teksti": "Väittelytilanteessa, jossa et pysty vastaamaan kaikkiin esitettyihin kohtiin — kysy ensin: onko kyse tiedon puutteesta vai volyymista? Jos esittäjä lisää uusia argumentteja jo ennen kuin aiemmat on käsitelty, kyse on strategiasta eikä aidosta evidenssistä."
+   }
+  ],
+  "listat": [
+   {
+    "nimi": "Debattimuoto",
+    "selitys": "Julkisessa väittelyssä tai somessa esitetään nopea sarja väitteitä joihin ei odoteta faktista vastausta — ne luovat vaikutelman laajasta tietämyksestä. Ks. Firehose of Falsehood : valtiollinen versio samasta logiikasta."
+   },
+   {
+    "nimi": "Henkilökohtainen muoto",
+    "selitys": "Selitetään niin paljon, niin pitkään ja niin monimutkaisesti, että vastapuoli antaa periksi väsymisestä — vaikka ei ole vakuuttunut. Käytetään neuvotteluissa, parisuhteissa, hierarkkisissa suhteissa."
+   }
+  ],
+  "repliikit": [
+   "tässä käytetään Gish Gallopta",
+   "En aio vastailla 14 väitteeseen — mutta väite X on keskeinen, ja se on väärä siksi että..."
+  ],
+  "liittyvat": [
+   "sunk-cost-harha",
+   "jarjestelman-puolustelu",
+   "backfire-effect",
+   "darvo",
+   "halo-efekti",
+   "brandolinin-laki",
+   "whataboutismi"
+  ]
+ },
+ {
+  "slug": "omenoita-appelsiineja",
+  "nro": 26,
+  "nimi": "Omenoita ja appelsiineja",
+  "kuvaus": "Rinnastetaan kaksi asiaa, jotka eroavat juuri siinä, mikä tekisi vertailusta mielekkään.",
+  "vari": "#6a1b9a",
+  "kategoria": "Psykologia ja kognitio",
+  "ingressi": "Vertailuharha syntyy, kun rinnastetaan kaksi asiaa, jotka näyttävät samanlaisilta mutta eroavat juuri niissä ominaisuuksissa, jotka tekevät vertailusta merkityksellisen. Teknisesti vertailu on mahdollinen — molemmilla on hinta, molemmat ovat hedelmiä — mutta käytännössä se johtaa harhaan, koska vertailtavat kohteet eivät ole samalla tasolla tai samassa kontekstissa.",
+  "vastauslohko": "",
+  "vastakeinot": "Kun kuulet vertailun, käy läpi neljä kysymystä: Sama mittari? (bruttopalkka vai nettopalkka, eurot vai BKT-prosentti) Sama ajanjakso? (noususuhdanne vai kriisivuosi, päivä vai vuosikymmenten trendi) Sama populaatio? (koko väestö vai valikoitunut ryhmä, sama potilasryhmä vai paras vs. pahin) Sama kirjaamistapa? (lasketaanko molemmissa maissa sama asia samalla tavalla). Yksikin \"ei\" tekee vertailusta omenoita ja appelsiineja. Ja kysy lopuksi: kuka valitsi juuri tämän metriikan ja miksi — reilu vertailu pysyy samana riippumatta siitä, kumpi osapuoli näyttää paremmalta.",
+  "laatikot": [
+   {
+    "otsikko": "Konkreettisia esimerkkejä:",
+    "teksti": "Julkinen vs. yksityinen terveydenhuolto: \"Yksityinen on nopeampaa\" — vertaillaan yksityisen sektorin parhaita palveluja julkisen sektorin pahimpaan ruuhkaan. Oikea vertailu olisi sama potilasryhmä, sama vaiva, samalla kiireellisyydellä. Sotilasmenot: \"Suomi käyttää puolustukseen enemmän kuin Norja\" (absoluuttisina euroina) — mutta Norjan BKT on suurempi. Oikea metriikka on BKT-prosentti. Tai päinvastoin: BKT-prosentti voi piilottaa absoluuttisen resurssieron. Palkat maiden välillä: \"Suomessa palkat ovat korkeammat kuin Puolassa\" — nimellisesti kyllä, mutta ostovoimapariteetti ja verotus muuttavat kuvan. Mitä verrataan: bruttopalkka, nettopalkka vai ostoskorin arvo? Poliittinen talouspolitiikka: \"Hallitus A jätti ylijäämän, hallitus B alijäämän\" — mutta A toimi noususuhdanteessa ja B finanssikriisin aikana. Suhdannetilanne tekee suorasta vertailusta epäreilun. Koulutus: \"Maamme PISA-tulokset ovat paremmat kuin naapurimaalla\" — mutta PISA mittaa lukutaitoa 15-vuotiailla. Se ei mittaa korkeakoulutuksen tasoa, ammatillista koulutusta tai koulutuksen tasa-arvoisuutta."
+   },
+   {
+    "otsikko": "Poliittinen käyttö:",
+    "teksti": "Vertailuharhaa käytetään systemaattisesti silloin, kun halutaan tehdä epäsuotuisasta asiasta suotuisa tai päinvastoin. Tunnusmerkki: metriikka vaihtuu aina kun se alkaa osoittaa väärään suuntaan. \"Emme vertaa BKT:tä vaan asukasta kohden\" — ja kun sekin on epäsuotuisa, siirrytään ostovoimapariteettiin. Oikea vertailu on se, joka pysyy samana riippumatta siitä, kumpi osapuoli näyttää paremmalta."
+   },
+   {
+    "otsikko": "Kolme tyypillistä muotoa:",
+    "teksti": "Kontekstiton absoluuttiluku: \"Ruotsi käyttää puolustukseen 10 miljardia, Suomi 6 miljardia\" — ei mainita, että Ruotsin väestö on lähes kaksinkertainen. Eri mittarit samaan lauseeseen: \"Suomessa sairaalapaikkoja on vähemmän kuin Saksassa\" — mainitsematta, että Saksa laskee hoivakodit ja Suomi ei. Eri aikajakso tai ryhmä: \"Tänään on kylmempää kuin eilen\" todistusmateriaali ilmastonmuutosta vastaan — yksittäinen päivä vs. vuosikymmenten trendi."
+   },
+   {
+    "otsikko": "Suomalaisia esimerkkejä:",
+    "teksti": "Veroaste: \"Suomen veroaste on Euroopan korkein\" — ilman mainintaa, mitä verorahoilla saa (ilmainen koulutus, terveydenhuolto, lastenhoidon tuki). Vertailu USA:han ilman palveluerojen huomiointia on omenoita ja appelsiineja. Rikostilastot: Maahanmuuttajien rikollisuusluvut eri maissa eivät ole vertailukelpoisia, koska rikosten kirjaamistavat, laillisuusmääritelmät ja demografiat vaihtelevat. Koulutus: PISA-pisteiden vertailu maiden välillä ilman sosioekonomisten taustatekijöiden vakiointia — Suomessa ja Singaporessa koululaiset ovat eri lähtökohdista."
+   },
+   {
+    "otsikko": "Tunnistaminen — vertailun tarkistuslista:",
+    "teksti": "Kun kuulet vertailun, käy läpi neljä kysymystä: Sama mittari? (bruttopalkka vai nettopalkka, eurot vai BKT-prosentti) Sama ajanjakso? (noususuhdanne vai kriisivuosi, päivä vai vuosikymmenten trendi) Sama populaatio? (koko väestö vai valikoitunut ryhmä, sama potilasryhmä vai paras vs. pahin) Sama kirjaamistapa? (lasketaanko molemmissa maissa sama asia samalla tavalla). Yksikin \"ei\" tekee vertailusta omenoita ja appelsiineja. Ja kysy lopuksi: kuka valitsi juuri tämän metriikan ja miksi — reilu vertailu pysyy samana riippumatta siitä, kumpi osapuoli näyttää paremmalta."
+   }
+  ],
+  "listat": [
+   {
+    "nimi": "Julkinen vs. yksityinen terveydenhuolto",
+    "selitys": "\"Yksityinen on nopeampaa\" — vertaillaan yksityisen sektorin parhaita palveluja julkisen sektorin pahimpaan ruuhkaan. Oikea vertailu olisi sama potilasryhmä, sama vaiva, samalla kiireellisyydellä."
+   },
+   {
+    "nimi": "Sotilasmenot",
+    "selitys": "\"Suomi käyttää puolustukseen enemmän kuin Norja\" (absoluuttisina euroina) — mutta Norjan BKT on suurempi. Oikea metriikka on BKT-prosentti. Tai päinvastoin: BKT-prosentti voi piilottaa absoluuttisen resurssieron."
+   },
+   {
+    "nimi": "Palkat maiden välillä",
+    "selitys": "\"Suomessa palkat ovat korkeammat kuin Puolassa\" — nimellisesti kyllä, mutta ostovoimapariteetti ja verotus muuttavat kuvan. Mitä verrataan: bruttopalkka, nettopalkka vai ostoskorin arvo?"
+   },
+   {
+    "nimi": "Poliittinen talouspolitiikka",
+    "selitys": "\"Hallitus A jätti ylijäämän, hallitus B alijäämän\" — mutta A toimi noususuhdanteessa ja B finanssikriisin aikana. Suhdannetilanne tekee suorasta vertailusta epäreilun."
+   },
+   {
+    "nimi": "Koulutus",
+    "selitys": "\"Maamme PISA-tulokset ovat paremmat kuin naapurimaalla\" — mutta PISA mittaa lukutaitoa 15-vuotiailla. Se ei mittaa korkeakoulutuksen tasoa, ammatillista koulutusta tai koulutuksen tasa-arvoisuutta."
+   },
+   {
+    "nimi": "Kontekstiton absoluuttiluku",
+    "selitys": "\"Ruotsi käyttää puolustukseen 10 miljardia, Suomi 6 miljardia\" — ei mainita, että Ruotsin väestö on lähes kaksinkertainen."
+   },
+   {
+    "nimi": "Eri mittarit samaan lauseeseen",
+    "selitys": "\"Suomessa sairaalapaikkoja on vähemmän kuin Saksassa\" — mainitsematta, että Saksa laskee hoivakodit ja Suomi ei."
+   },
+   {
+    "nimi": "Eri aikajakso tai ryhmä",
+    "selitys": "\"Tänään on kylmempää kuin eilen\" todistusmateriaali ilmastonmuutosta vastaan — yksittäinen päivä vs. vuosikymmenten trendi."
+   },
+   {
+    "nimi": "Veroaste",
+    "selitys": "\"Suomen veroaste on Euroopan korkein\" — ilman mainintaa, mitä verorahoilla saa (ilmainen koulutus, terveydenhuolto, lastenhoidon tuki). Vertailu USA:han ilman palveluerojen huomiointia on omenoita ja appelsiineja."
+   },
+   {
+    "nimi": "Rikostilastot",
+    "selitys": "Maahanmuuttajien rikollisuusluvut eri maissa eivät ole vertailukelpoisia, koska rikosten kirjaamistavat, laillisuusmääritelmät ja demografiat vaihtelevat."
+   },
+   {
+    "nimi": "Koulutus",
+    "selitys": "PISA-pisteiden vertailu maiden välillä ilman sosioekonomisten taustatekijöiden vakiointia — Suomessa ja Singaporessa koululaiset ovat eri lähtökohdista."
+   }
+  ],
+  "repliikit": [
+   "se on kuin vertaisi omenoita appelsiineihin",
+   "Yksityinen on nopeampaa",
+   "Suomi käyttää puolustukseen enemmän kuin Norja",
+   "Suomessa palkat ovat korkeammat kuin Puolassa",
+   "Hallitus A jätti ylijäämän, hallitus B alijäämän",
+   "Maamme PISA-tulokset ovat paremmat kuin naapurimaalla",
+   "Emme vertaa BKT:tä vaan asukasta kohden",
+   "Ruotsi käyttää puolustukseen 10 miljardia, Suomi 6 miljardia",
+   "Suomessa sairaalapaikkoja on vähemmän kuin Saksassa",
+   "Tänään on kylmempää kuin eilen",
+   "Suomen veroaste on Euroopan korkein"
+  ],
+  "liittyvat": [
+   "blame-game",
+   "gaslighting",
+   "maalitolppien-siirtaminen",
+   "argumenttitulva",
+   "sunk-cost-harha",
+   "godwinin-laki",
+   "whataboutismi"
+  ]
+ },
+ {
+  "slug": "strateginen-osaamattomuus",
+  "nro": 45,
+  "nimi": "Strateginen osaamattomuus",
+  "kuvaus": "Tehtävä tehdään tahallaan huonosti, jotta sitä ei pyydettäisi enää koskaan.",
+  "vari": "#2c3e50",
+  "kategoria": "Byrokratia ja organisaatio",
+  "ingressi": "Strateginen osaamattomuus (eng. weaponized incompetence ) on käyttäytymisstrategia, jossa tehtävä suoritetaan tahallisen huonosti — ei siitä syystä, ettei osata, vaan jotta tehtävää ei enää annettaisi. Epäpätevyys on ase: se siirtää vastuun toiselle osapuolelle ilman avointa kieltäytymistä.",
+  "vastauslohko": "",
+  "vastakeinot": "Selektiivinen epäpätevyys — hyvä jossakin, toistuvasti huono tietyssä kategoriassa — on varoitusmerkki. Kysymys: onko epäpätevyys tehtäväkohtaista vai yleistä? Jos koulutus- ja tukitarjoukset hylätään toistuvasti, kyse on valinnasta eikä kyvykkyydestä.",
+  "laatikot": [
+   {
+    "otsikko": "Kolme organisatorista muotoa:",
+    "teksti": "Tehtävän välttely: Raportit toimitetaan niin myöhässä tai puutteellisina, ettei niitä enää pyydetä. \"Minulla on muita prioriteetteja\" sanomatta suoraan. Osaamisen piilottaminen: Henkilö tietää olevansa hyvä jossakin mutta ei näytä sitä, koska osaaminen johtaisi lisätehtäviin ilman lisäkorvausta. Vastuun delegointi ylöspäin: Tehtävät tehdään niin puutteellisesti, että esimies joutuu tekemään merkittävän osan — \"yläkannanotto\" ilman avointa kieltäytymistä."
+   },
+   {
+    "otsikko": "Tunnistaminen johtajana:",
+    "teksti": "Selektiivinen epäpätevyys — hyvä jossakin, toistuvasti huono tietyssä kategoriassa — on varoitusmerkki. Kysymys: onko epäpätevyys tehtäväkohtaista vai yleistä? Jos koulutus- ja tukitarjoukset hylätään toistuvasti, kyse on valinnasta eikä kyvykkyydestä."
+   }
+  ],
+  "listat": [
+   {
+    "nimi": "Tehtävän välttely",
+    "selitys": "Raportit toimitetaan niin myöhässä tai puutteellisina, ettei niitä enää pyydetä. \"Minulla on muita prioriteetteja\" sanomatta suoraan."
+   },
+   {
+    "nimi": "Osaamisen piilottaminen",
+    "selitys": "Henkilö tietää olevansa hyvä jossakin mutta ei näytä sitä, koska osaaminen johtaisi lisätehtäviin ilman lisäkorvausta."
+   },
+   {
+    "nimi": "Vastuun delegointi ylöspäin",
+    "selitys": "Tehtävät tehdään niin puutteellisesti, että esimies joutuu tekemään merkittävän osan — \"yläkannanotto\" ilman avointa kieltäytymistä."
+   }
+  ],
+  "repliikit": [
+   "en halua pestä astioita",
+   "En ole taulukkolaskennan kanssa hyvä",
+   "Minulla on muita prioriteetteja",
+   "yläkannanotto"
+  ],
+  "liittyvat": [
+   "fofo",
+   "sivustakatsojan-efekti",
+   "simple-sabotage",
+   "kafka-ilmio",
+   "catch-22",
+   "hanlonin-partaveitsi",
+   "peterin-periaate"
+  ]
+ },
+ {
+  "slug": "hiljainen-irtisanominen",
+  "nro": 119,
+  "nimi": "Hiljainen irtisanominen",
+  "kuvaus": "Työolot kurjistetaan tahallaan, jotta työntekijä lähtee itse — ilman irtisanomisen kuluja.",
+  "vari": "#1a237e",
+  "kategoria": "Työelämän ilmiöt",
+  "ingressi": "Hiljainen irtisanominen (engl. quiet firing ) on työnantajan peililiike hiljaiselle irtisanoutumiselle : ketään ei irtisanota, mutta työstä tehdään niin näköalatonta ja epämukavaa, että työntekijä lähtee \"omasta tahdostaan\". Aloite on siis työnantajan — siinä missä hiljaisessa irtisanoutumisessa se on työntekijän. Suomeksi ilmiöllä on vanha ja rehellisempi nimi: savustaminen .",
+  "vastauslohko": "",
+  "vastakeinot": "",
+  "laatikot": [
+   {
+    "otsikko": "Savustuksen keinovalikoima:",
+    "teksti": "Jäädytys: palkankorotukset ja ylennykset siirtyvät aina \"ensi vuoteen\" — muilla ne toteutuvat. Sivuuttaminen: näkyvät projektit, kokoukset ja tieto kulkevat ohi; vastuita kutistetaan tai ne korvataan merkityksettömillä tehtävillä. Mahdottomat tavoitteet: mitoitus tai aikataulu, jossa kukaan ei onnistuisi — ja epäonnistuminen dokumentoidaan huolellisesti. Mitätöinti: palaute muuttuu epämääräiseksi (\"asenteessasi on ongelma\"), saavutukset ohitetaan, kysymyksiin ei vastata. Ehtojen näivetys: vuorot, työpiste tai etätyöoikeus muuttuvat juuri sinulle hankaliksi. Koko organisaation tasolla: paluupakko toimistolle tai \"uudelleenorganisointi\", jonka ääneen lausumaton tavoite on, että sopiva määrä väkeä lähtee itse (soft layoff)."
+   },
+   {
+    "otsikko": "Työntekijälle:",
+    "teksti": "Dokumentoi kaikki ajantasaisesti — viestit, päätökset, lupaukset ja päivämäärät; savustus on suunniteltu jättämään mahdollisimman vähän jälkiä, joten jäljet ovat sinun tehtäväsi. Pyydä odotukset ja palaute kirjallisena. Ota luottamusmies tai työsuojeluvaltuutettu mukaan ajoissa, älä vasta lähtiessä. Muista, ettei työnantaja saa Suomessa yksipuolisesti olennaisesti heikentää työsuhteen ehtoja ilman irtisanomisperustetta — ja kohdennettu mitätöinti voi täyttää työturvallisuuslain tarkoittaman häirinnän ja epäasiallisen kohtelun merkit. Äläkä irtisanoudu kuohuksissa: oma irtisanoutuminen voi viedä neuvotteluasemasi ja tuoda työttömyysturvaan karenssin. Jos lähdet, lähde ehdoilla, jotka on neuvoteltu — ei ovella, joka jätettiin raolleen juuri sitä varten."
+   }
+  ],
+  "listat": [
+   {
+    "nimi": "Jäädytys",
+    "selitys": "palkankorotukset ja ylennykset siirtyvät aina \"ensi vuoteen\" — muilla ne toteutuvat."
+   },
+   {
+    "nimi": "Sivuuttaminen",
+    "selitys": "näkyvät projektit, kokoukset ja tieto kulkevat ohi; vastuita kutistetaan tai ne korvataan merkityksettömillä tehtävillä."
+   },
+   {
+    "nimi": "Mahdottomat tavoitteet",
+    "selitys": "mitoitus tai aikataulu, jossa kukaan ei onnistuisi — ja epäonnistuminen dokumentoidaan huolellisesti."
+   },
+   {
+    "nimi": "Mitätöinti",
+    "selitys": "palaute muuttuu epämääräiseksi (\"asenteessasi on ongelma\"), saavutukset ohitetaan, kysymyksiin ei vastata."
+   },
+   {
+    "nimi": "Ehtojen näivetys",
+    "selitys": "vuorot, työpiste tai etätyöoikeus muuttuvat juuri sinulle hankaliksi."
+   },
+   {
+    "nimi": "Koko organisaation tasolla",
+    "selitys": "paluupakko toimistolle tai \"uudelleenorganisointi\", jonka ääneen lausumaton tavoite on, että sopiva määrä väkeä lähtee itse (soft layoff)."
+   }
+  ],
+  "repliikit": [
+   "omasta tahdostaan",
+   "Vapaaehtoinen",
+   "ensi vuoteen",
+   "asenteessasi on ongelma",
+   "uudelleenorganisointi"
+  ],
+  "liittyvat": [
+   "hiljainen-irtisanoutuminen",
+   "haamutyopaikat",
+   "gaslighting",
+   "portinvartija-kulttuuri",
+   "peterin-periaate"
+  ]
+ },
+ {
+  "slug": "foot-in-the-door",
+  "nro": 85,
+  "nimi": "Foot-in-the-door",
+  "kuvaus": "Pieni, helppo pyyntö ensin — myöntyminen tekee isomman pyynnön torjumisesta vaikeaa.",
+  "vari": "#00897b",
+  "kategoria": "Myyntikikat ja painostus",
+  "ingressi": "Foot-in-the-door (suom. \"jalka oven väliin\") on suostuttelutekniikka, jossa esitetään ensin pieni, helposti hyväksyttävä pyyntö ja vasta sen jälkeen varsinainen, suurempi pyyntö. Kun ihminen on kerran sanonut \"kyllä\", hän myöntyy todennäköisemmin seuraavaankin — koska haluaa pysyä johdonmukaisena aiemman valintansa kanssa.",
+  "vastauslohko": "",
+  "vastakeinot": "Huomaa, kun \"pikkujuttuun\" suostuminen muuttaa asetelmaa. Arvioi jokainen pyyntö itsenäisesti — kysymys ei ole \"olenko jo sanonut kyllä\", vaan \"haluanko tämän nyt\". Aiempi myönnytys ei velvoita seuraavaan. Vastapari on door-in-the-face , jossa järjestys on käännetty.",
+  "laatikot": [
+   {
+    "otsikko": "Missä se esiintyy:",
+    "teksti": "Myynti: \"ilmainen kokeilu\" tai pieni tilaus, joka johtaa kestotilaukseen. Keikkatyö: \"tee vain tämä pieni juttu\" laajenee jatkuviksi lisäpyynnöiksi. Varainkeruu ja vetoomukset: ensin allekirjoitus, sitten lahjoituspyyntö. Markkinointi: sähköpostiosoite \"ilmaista opasta\" vastaan, sitten myyntiputki."
+   },
+   {
+    "otsikko": "Tunnistaminen ja vastakeinot:",
+    "teksti": "Huomaa, kun \"pikkujuttuun\" suostuminen muuttaa asetelmaa. Arvioi jokainen pyyntö itsenäisesti — kysymys ei ole \"olenko jo sanonut kyllä\", vaan \"haluanko tämän nyt\". Aiempi myönnytys ei velvoita seuraavaan. Vastapari on door-in-the-face , jossa järjestys on käännetty."
+   }
+  ],
+  "listat": [
+   {
+    "nimi": "Myynti",
+    "selitys": "\"ilmainen kokeilu\" tai pieni tilaus, joka johtaa kestotilaukseen."
+   },
+   {
+    "nimi": "Keikkatyö",
+    "selitys": "\"tee vain tämä pieni juttu\" laajenee jatkuviksi lisäpyynnöiksi."
+   },
+   {
+    "nimi": "Varainkeruu ja vetoomukset",
+    "selitys": "ensin allekirjoitus, sitten lahjoituspyyntö."
+   },
+   {
+    "nimi": "Markkinointi",
+    "selitys": "sähköpostiosoite \"ilmaista opasta\" vastaan, sitten myyntiputki."
+   }
+  ],
+  "repliikit": [
+   "jalka oven väliin",
+   "olen sellainen joka auttaa / on mukana",
+   "ilmainen kokeilu",
+   "tee vain tämä pieni juttu",
+   "ilmaista opasta",
+   "pikkujuttuun",
+   "olenko jo sanonut kyllä",
+   "haluanko tämän nyt"
+  ],
+  "liittyvat": [
+   "door-in-the-face",
+   "hintaankkurointi",
+   "houkutinvaihtoehto",
+   "vastavuoroisuuden-ansa",
+   "sosiaalinen-todiste"
+  ]
+ },
+ {
+  "slug": "door-in-the-face",
+  "nro": 86,
+  "nimi": "Door-in-the-face",
+  "kuvaus": "Kohtuuton pyyntö ensin, torjunnan jälkeen \"kohtuullinen\" — joka oli koko ajan tavoite.",
+  "vari": "#5e4b8b",
+  "kategoria": "Myyntikikat ja painostus",
+  "ingressi": "Door-in-the-face on foot-in-the-doorin peilikuva: esitetään ensin tahallaan ylimitoitettu pyyntö , joka torjutaan, ja heti perään \"kohtuullisempi\" pyyntö — joka oli koko ajan tavoite. Torjutun jättihinnan jälkeen toinen tarjous näyttää myönnytykseltä ja kohtuulliselta, vaikka se olisi yksinään esitettynä liian korkea.",
+  "vastauslohko": "",
+  "vastakeinot": "Älä arvioi tarjousta suhteessa edelliseen tarjoukseen, vaan suhteessa todelliseen arvoon ja markkinahintaan . Kysy: olisinko hyväksynyt tämän hinnan, jos se olisi esitetty ensimmäisenä? Ensimmäisen luvun tehtävä on ankkuroida (ks. hintaankkurointi ); kun tunnistat ankkurin, sen vaikutus heikkenee.",
+  "laatikot": [
+   {
+    "otsikko": "Missä se esiintyy:",
+    "teksti": "Neuvottelu ja myynti: ensin kallein paketti, sitten \"edullisempi\" keskivaihtoehto. Tinkiminen: ylihinta avauksena, jotta \"alennettu\" hinta tuntuu voitolta. Projektien laajuus: valtava ehdotus, jonka karsittu versio hyväksytään helpommin."
+   },
+   {
+    "otsikko": "Tunnistaminen ja vastakeinot:",
+    "teksti": "Älä arvioi tarjousta suhteessa edelliseen tarjoukseen, vaan suhteessa todelliseen arvoon ja markkinahintaan . Kysy: olisinko hyväksynyt tämän hinnan, jos se olisi esitetty ensimmäisenä? Ensimmäisen luvun tehtävä on ankkuroida (ks. hintaankkurointi ); kun tunnistat ankkurin, sen vaikutus heikkenee."
+   }
+  ],
+  "listat": [
+   {
+    "nimi": "Neuvottelu ja myynti",
+    "selitys": "ensin kallein paketti, sitten \"edullisempi\" keskivaihtoehto."
+   },
+   {
+    "nimi": "Tinkiminen",
+    "selitys": "ylihinta avauksena, jotta \"alennettu\" hinta tuntuu voitolta."
+   },
+   {
+    "nimi": "Projektien laajuus",
+    "selitys": "valtava ehdotus, jonka karsittu versio hyväksytään helpommin."
+   }
+  ],
+  "repliikit": [
+   "kohtuullinen",
+   "kohtuullisempi",
+   "perääntyminen"
+  ],
+  "liittyvat": [
+   "hintaankkurointi",
+   "houkutinvaihtoehto",
+   "vastavuoroisuuden-ansa",
+   "sosiaalinen-todiste",
+   "painostusclose"
+  ]
+ },
+ {
+  "slug": "painostusclose",
+  "nro": 91,
+  "nimi": "Painostus-close",
+  "kuvaus": "Keinotekoinen kiire ja niukkuus pakottavat päättämään ennen kuin ehdit harkita.",
+  "vari": "#827717",
+  "kategoria": "Myyntikikat ja painostus",
+  "ingressi": "Painostus-close on myyntipuheen päätösvaihe, jossa ostajalle luodaan keinotekoinen kiire ja niukkuus , jotta hän päättäisi ennen kuin ehtii harkita tai vertailla. \"Vain 2 paikkaa jäljellä\", \"tarjous päättyy tänään\", \"hinta nousee huomenna\", \"minulla on toinenkin kiinnostunut\" — kaikki tähtäävät samaan: estää harkinta, jonka aikana kauppa saattaisi kariutua.",
+  "vastauslohko": "",
+  "vastakeinot": "Tee kiireestä itsessään varoitusmerkki: mitä kovempi paine päättää heti, sitä suurempi syy ottaa aikalisä. Aito hyvä diili kestää yön yli nukkumisen. Pyydä tarjous kirjallisena ja voimassaoloaika perusteltuna — keksitty määräaika harvoin kestää tätä. Sama kiireen logiikka esiintyy bait and switchissä ja käärmeöljyssä ; tunnistettuna se menettää tehonsa.",
+  "laatikot": [
+   {
+    "otsikko": "Painostuksen vakiofraasit:",
+    "teksti": "Aikaraja: \"vain tänään\", \"tarjous voimassa 15 minuuttia\", takaa laskeva kello. Määräniukkuus: \"viimeiset kappaleet\", \"vain 3 paikkaa\". Kilpaileva ostaja: \"toinenkin on kiinnostunut, päätä nopeasti\". Nyt-tai-ei-koskaan: \"tätä hintaa ei saa enää myöhemmin\". Syyllistäminen empimisestä: \"vakavasti otettavat ostajat päättävät heti\"."
+   },
+   {
+    "otsikko": "Tunnistaminen ja vastakeinot:",
+    "teksti": "Tee kiireestä itsessään varoitusmerkki: mitä kovempi paine päättää heti, sitä suurempi syy ottaa aikalisä. Aito hyvä diili kestää yön yli nukkumisen. Pyydä tarjous kirjallisena ja voimassaoloaika perusteltuna — keksitty määräaika harvoin kestää tätä. Sama kiireen logiikka esiintyy bait and switchissä ja käärmeöljyssä ; tunnistettuna se menettää tehonsa."
+   }
+  ],
+  "listat": [
+   {
+    "nimi": "Aikaraja",
+    "selitys": "\"vain tänään\", \"tarjous voimassa 15 minuuttia\", takaa laskeva kello."
+   },
+   {
+    "nimi": "Määräniukkuus",
+    "selitys": "\"viimeiset kappaleet\", \"vain 3 paikkaa\"."
+   },
+   {
+    "nimi": "Kilpaileva ostaja",
+    "selitys": "\"toinenkin on kiinnostunut, päätä nopeasti\"."
+   },
+   {
+    "nimi": "Nyt-tai-ei-koskaan",
+    "selitys": "\"tätä hintaa ei saa enää myöhemmin\"."
+   },
+   {
+    "nimi": "Syyllistäminen empimisestä",
+    "selitys": "\"vakavasti otettavat ostajat päättävät heti\"."
+   }
+  ],
+  "repliikit": [
+   "nyt tai ei koskaan",
+   "Vain 2 paikkaa jäljellä",
+   "tarjous päättyy tänään",
+   "hinta nousee huomenna",
+   "minulla on toinenkin kiinnostunut",
+   "tarjous voimassa 15 minuuttia",
+   "viimeiset kappaleet",
+   "vain 3 paikkaa",
+   "toinenkin on kiinnostunut, päätä nopeasti",
+   "tätä hintaa ei saa enää myöhemmin",
+   "vakavasti otettavat ostajat päättävät heti"
+  ],
+  "liittyvat": [
+   "ilmainen-naytetyo",
+   "exposure-maksu",
+   "lowball-hinnoittelu",
+   "valittajan-skimmaus",
+   "tilipuristus"
+  ]
+ },
+ {
+  "slug": "hintaankkurointi",
+  "nro": 87,
+  "nimi": "Hintaankkurointi",
+  "kuvaus": "Ensimmäinen esitetty luku asettaa vertailupisteen koko neuvottelulle — vaikka se olisi hatusta.",
+  "vari": "#283593",
+  "kategoria": "Myyntikikat ja painostus",
+  "ingressi": "Ankkurointi tarkoittaa, että ensimmäinen esitetty numero asettaa vertailupisteen , johon kaikkia myöhempiä lukuja peilataan — vaikka tuo ensimmäinen luku olisi mielivaltainen tai keinotekoinen. Hinnoittelussa tämä tarkoittaa, että avaushinta määrää, miltä \"halpa\" ja \"kallis\" tuntuvat, riippumatta tuotteen todellisesta arvosta.",
+  "vastauslohko": "",
+  "vastakeinot": "Selvitä tuotteen tai työn arvo ennen kuin kuulet myyjän luvun — silloin sinulla on oma ankkuri. Kysy itseltäsi, mihin riippumattomaan tietoon vertailuhinta perustuu. Jos ainoa peruste \"edullisuudelle\" on toinen, korkeampi luku samalta myyjältä, kyseessä on ankkuri eikä arvo. Ankkurointi on door-in-the-facen ja houkutinvaihtoehdon taustamekanismi.",
+  "laatikot": [
+   {
+    "otsikko": "Ankkurin muotoja hinnoittelussa:",
+    "teksti": "Yliviivattu \"ovh\": 199 € → 99 € — alkuperäishinta on ankkuri, ei välttämättä totta. Premium-paketti houkuttimena: kallein vaihtoehto saa keskimmäisen näyttämään järkevältä. Korkea avaus neuvottelussa: myyjä nimeää ensin suuren summan. \"Vastaava ratkaisu maksaa muualla X\": ulkoinen vertailuluku istutetaan ankkuriksi."
+   },
+   {
+    "otsikko": "Freelance- ja datatyössä:",
+    "teksti": "Se osapuoli, joka nimeää hinnan ensin, ankkuroi neuvottelun. Jos tilaaja sanoo \"budjetti on 1500 €\", luku jää kummittelemaan, vaikka työ olisi 4000 €:n arvoinen. Kääntäen: harkittu, perusteltu avaushinta omasta suusta suojaa sinua tilaajan matalalta ankkurilta."
+   },
+   {
+    "otsikko": "Tunnistaminen ja vastakeinot:",
+    "teksti": "Selvitä tuotteen tai työn arvo ennen kuin kuulet myyjän luvun — silloin sinulla on oma ankkuri. Kysy itseltäsi, mihin riippumattomaan tietoon vertailuhinta perustuu. Jos ainoa peruste \"edullisuudelle\" on toinen, korkeampi luku samalta myyjältä, kyseessä on ankkuri eikä arvo. Ankkurointi on door-in-the-facen ja houkutinvaihtoehdon taustamekanismi."
+   }
+  ],
+  "listat": [
+   {
+    "nimi": "Yliviivattu \"ovh\"",
+    "selitys": "199 € → 99 € — alkuperäishinta on ankkuri, ei välttämättä totta."
+   },
+   {
+    "nimi": "Premium-paketti houkuttimena",
+    "selitys": "kallein vaihtoehto saa keskimmäisen näyttämään järkevältä."
+   },
+   {
+    "nimi": "Korkea avaus neuvottelussa",
+    "selitys": "myyjä nimeää ensin suuren summan."
+   },
+   {
+    "nimi": "\"Vastaava ratkaisu maksaa muualla X\"",
+    "selitys": "ulkoinen vertailuluku istutetaan ankkuriksi."
+   }
+  ],
+  "repliikit": [
+   "Vastaava ratkaisu maksaa muualla X",
+   "budjetti on 1500 €",
+   "edullisuudelle"
+  ],
+  "liittyvat": [
+   "houkutinvaihtoehto",
+   "vastavuoroisuuden-ansa",
+   "sosiaalinen-todiste",
+   "painostusclose",
+   "ilmainen-naytetyo"
+  ]
+ },
+ {
+  "slug": "vastavuoroisuuden-ansa",
+  "nro": 89,
+  "nimi": "Vastavuoroisuuden ansa",
+  "kuvaus": "Ilmainen lahja tai palvelus luo velvollisuudentunteen, joka lunastetaan myöhemmin kalliisti.",
+  "vari": "#c2185b",
+  "kategoria": "Myyntikikat ja painostus",
+  "ingressi": "Vastavuoroisuuden normi on ihmisen syvä taipumus maksaa saatu palvelus takaisin . Suostuttelussa tätä käytetään aseena: annetaan ensin jotain \"ilmaiseksi\" — lahja, näyte, palvelus, ilmainen konsultaatio — jolloin vastaanottajalle syntyy psykologinen velka, joka puretaan myöntymällä myöhempään pyyntöön. Lahja ei ollut anteliaisuutta vaan sijoitus.",
+  "vastauslohko": "",
+  "vastakeinot": "Erota aito anteliaisuus strategisesta lahjasta: liittyykö \"lahjaan\" pian pyyntö? Saatu palvelus ei velvoita sinua huonoon kauppaan — voit ottaa lahjan vastaan ja silti kieltäytyä, tai kieltäytyä lahjasta heti. Velka on todellinen vain, jos hyväksyt sen säännöt. Vastavuoroisuus on myös door-in-the-facen taustavoima.",
+  "laatikot": [
+   {
+    "otsikko": "Tyypilliset muodot:",
+    "teksti": "Ilmainen kartoitus tai konsultaatio: \"katsotaan tilanteenne veloituksetta\" — jonka jälkeen on epäkohteliasta kieltäytyä tarjouksesta. Näytteet ja kokeilut: ilmainen näyte velvoittaa moraalisesti ostamaan. Pieni lahja ennen pyyntöä: kahvi, lounas tai liike-lahja ennen kauppaa. \"Teen sinulle palveluksen\": myyjä \"joustaa\" ensin, jotta voi pyytää joustoa takaisin."
+   },
+   {
+    "otsikko": "Datatyössä ja välittäjädiileissä:",
+    "teksti": "\"Teen tämän ensimmäisen analyysin ilmaiseksi\" tai \"hommaan sinut tähän projektiin\" voi olla aito ele — tai velkasiteen rakentamista, joka myöhemmin lunastetaan ylihintaisina jatkotöinä, sitoutumisena tai vaikenemisena epäreilusta jaosta."
+   },
+   {
+    "otsikko": "Tunnistaminen ja vastakeinot:",
+    "teksti": "Erota aito anteliaisuus strategisesta lahjasta: liittyykö \"lahjaan\" pian pyyntö? Saatu palvelus ei velvoita sinua huonoon kauppaan — voit ottaa lahjan vastaan ja silti kieltäytyä, tai kieltäytyä lahjasta heti. Velka on todellinen vain, jos hyväksyt sen säännöt. Vastavuoroisuus on myös door-in-the-facen taustavoima."
+   }
+  ],
+  "listat": [
+   {
+    "nimi": "Ilmainen kartoitus tai konsultaatio",
+    "selitys": "\"katsotaan tilanteenne veloituksetta\" — jonka jälkeen on epäkohteliasta kieltäytyä tarjouksesta."
+   },
+   {
+    "nimi": "Näytteet ja kokeilut",
+    "selitys": "ilmainen näyte velvoittaa moraalisesti ostamaan."
+   },
+   {
+    "nimi": "Pieni lahja ennen pyyntöä",
+    "selitys": "kahvi, lounas tai liike-lahja ennen kauppaa."
+   },
+   {
+    "nimi": "\"Teen sinulle palveluksen\"",
+    "selitys": "myyjä \"joustaa\" ensin, jotta voi pyytää joustoa takaisin."
+   }
+  ],
+  "repliikit": [
+   "ilmainen kartoitus",
+   "katsotaan tilanteenne veloituksetta",
+   "Teen sinulle palveluksen",
+   "Teen tämän ensimmäisen analyysin ilmaiseksi",
+   "hommaan sinut tähän projektiin"
+  ],
+  "liittyvat": [
+   "sosiaalinen-todiste",
+   "painostusclose",
+   "ilmainen-naytetyo",
+   "exposure-maksu",
+   "lowball-hinnoittelu"
+  ]
+ },
+ {
+  "slug": "lowball-hinnoittelu",
+  "nro": 82,
+  "nimi": "Lowball",
+  "kuvaus": "Kauppa avataan houkuttelevan halvalla — hinta nousee vasta, kun olet jo sitoutunut.",
+  "vari": "#00695c",
+  "kategoria": "Myyntikikat ja painostus",
+  "ingressi": "Lowball-taktiikassa kauppa avataan houkuttelevan matalalla hinnalla , jotta toinen osapuoli sitoutuu. Kun sitoutuminen on tapahtunut — sopimus allekirjoitettu, projekti aloitettu, aika varattu — hinta nousee: tulee lisämaksuja, \"ehtoja joita ei mainittu\", tai sovittu laajuus paljastuu riittämättömäksi. Asiakas jää, koska on jo sijoittanut aikaa ja vaivaa eikä halua aloittaa alusta.",
+  "vastauslohko": "",
+  "vastakeinot": "Vaadi kiinteä, kirjallinen kokonaishinta ja täsmällinen laajuus ennen sitoutumista — sekä selkeä sopimus siitä, miten lisätyöt hinnoitellaan. Jos hinta on epäilyttävän matala kilpailijoihin nähden, kysy mitä se ei sisällä. Älä anna jo sijoittamasi ajan ratkaista: uponneet kustannukset ovat mennyttä, merkitsee vain tästä eteenpäin koituva kustannus.",
+  "laatikot": [
+   {
+    "otsikko": "Missä se esiintyy:",
+    "teksti": "Freelance-toimeksiannot: houkutteleva kiinteä hinta, joka muuttuu tuntilaskutukseksi heti kun \"vaatimukset tarkentuvat\" — sukua scope creepille . Remontit ja urakat: alhainen tarjous, jonka päälle kertyy lisätöitä. Ohjelmistot ja tilaukset: halpa sisäänheittohinta, joka nousee \"käyttöönoton\", \"integraatioiden\" tai uusimisen yhteydessä. Autokauppa: sovittu hinta, johon ilmestyy toimitus-, käsittely- ja lisävarustemaksuja."
+   },
+   {
+    "otsikko": "Tunnistaminen ja vastakeinot:",
+    "teksti": "Vaadi kiinteä, kirjallinen kokonaishinta ja täsmällinen laajuus ennen sitoutumista — sekä selkeä sopimus siitä, miten lisätyöt hinnoitellaan. Jos hinta on epäilyttävän matala kilpailijoihin nähden, kysy mitä se ei sisällä. Älä anna jo sijoittamasi ajan ratkaista: uponneet kustannukset ovat mennyttä, merkitsee vain tästä eteenpäin koituva kustannus."
+   }
+  ],
+  "listat": [
+   {
+    "nimi": "Freelance-toimeksiannot",
+    "selitys": "houkutteleva kiinteä hinta, joka muuttuu tuntilaskutukseksi heti kun \"vaatimukset tarkentuvat\" — sukua scope creepille ."
+   },
+   {
+    "nimi": "Remontit ja urakat",
+    "selitys": "alhainen tarjous, jonka päälle kertyy lisätöitä."
+   },
+   {
+    "nimi": "Ohjelmistot ja tilaukset",
+    "selitys": "halpa sisäänheittohinta, joka nousee \"käyttöönoton\", \"integraatioiden\" tai uusimisen yhteydessä."
+   },
+   {
+    "nimi": "Autokauppa",
+    "selitys": "sovittu hinta, johon ilmestyy toimitus-, käsittely- ja lisävarustemaksuja."
+   }
+  ],
+  "repliikit": [
+   "ehtoja joita ei mainittu",
+   "vaatimukset tarkentuvat",
+   "käyttöönoton",
+   "integraatioiden"
+  ],
+  "liittyvat": [
+   "valittajan-skimmaus",
+   "tilipuristus",
+   "foot-in-the-door",
+   "door-in-the-face",
+   "hintaankkurointi"
+  ]
+ },
+ {
+  "slug": "ilmainen-naytetyo",
+  "nro": 80,
+  "nimi": "Ilmainen näytetyö",
+  "kuvaus": "\"Tee koetehtävä, valitsemme parhaan\" — oikeaa työtä teetetään ilmaiseksi näytteen varjolla.",
+  "vari": "#8d6e63",
+  "kategoria": "Myyntikikat ja painostus",
+  "ingressi": "Ilmaisessa näytetyössä (engl. spec work ) freelanceria tai hakijaa pyydetään tekemään oikeaa, käyttökelpoista työtä korvauksetta — muka näytteeksi osaamisesta tai osana \"valintaprosessia\". Tunnusmerkki on, että tehtävä ei ole keinotekoinen harjoitus vaan ratkaisee toimeksiantajan todellisen ongelman: valmis analyysi, datasetin siivous, koodattu prototyyppi tai suunnitelma, jota voidaan käyttää sellaisenaan.",
+  "vastauslohko": "",
+  "vastakeinot": "Kysy: käytetäänkö tulosta liiketoiminnassa? Jos kyllä, se on työtä ja siitä kuuluu maksaa. Aito osaamisen arviointi on rajattu, palkallinen tai selvästi keinotekoinen (julkinen portfolio, lyhyt tehtävä kuvitteellisella datalla, keskustelu ratkaisutavasta). Tarjoa palkallista pilottia tai näytä olemassa olevaa portfoliota — älä tee uutta tuotantotyötä ilmaiseksi. Mitä useampi hakija tekee saman tehtävän, sitä varmemmin kyse on ilmaistyön keräämisestä.",
+  "laatikot": [
+   {
+    "otsikko": "Näin sen erottaa aidosta osaamisen arvioinnista:",
+    "teksti": "Tehtävä tuottaa valmista jälkeä: tulos on suoraan hyödynnettävissä, ei abstrakti pulma. Laajuus ylittää näytteen: tunteja tai päiviä työtä, ei parin tunnin demo. Sama tehtävä monelle: \"haastattelukierroksella mukana useita\". Ei palautetta vaan tuotos: halutaan lopputulos, ei nähdä ajatteluasi. Oikeaa dataa: sinulle annetaan toimeksiantajan todellinen aineisto, ei kuvitteellinen esimerkki."
+   },
+   {
+    "otsikko": "Missä se esiintyy:",
+    "teksti": "Datatyö: \"puhdista ja analysoi tämä otos näytteeksi\" — otos on tuotantodataa. Suunnittelu ja koodi: \"tee meille pieni prototyyppi / logoehdotus / kampanjasuunnitelma\". Konsultointi: \"kirjoita lyhyt esitys siitä, miten ratkaisisit ongelmamme\". Kilpailut: avoin \"haaste\", jossa sadat tekevät ilmaista työtä yhdestä palkinnosta."
+   },
+   {
+    "otsikko": "Tunnistaminen ja vastakeinot:",
+    "teksti": "Kysy: käytetäänkö tulosta liiketoiminnassa? Jos kyllä, se on työtä ja siitä kuuluu maksaa. Aito osaamisen arviointi on rajattu, palkallinen tai selvästi keinotekoinen (julkinen portfolio, lyhyt tehtävä kuvitteellisella datalla, keskustelu ratkaisutavasta). Tarjoa palkallista pilottia tai näytä olemassa olevaa portfoliota — älä tee uutta tuotantotyötä ilmaiseksi. Mitä useampi hakija tekee saman tehtävän, sitä varmemmin kyse on ilmaistyön keräämisestä."
+   }
+  ],
+  "listat": [
+   {
+    "nimi": "Tehtävä tuottaa valmista jälkeä",
+    "selitys": "tulos on suoraan hyödynnettävissä, ei abstrakti pulma."
+   },
+   {
+    "nimi": "Laajuus ylittää näytteen",
+    "selitys": "tunteja tai päiviä työtä, ei parin tunnin demo."
+   },
+   {
+    "nimi": "Sama tehtävä monelle",
+    "selitys": "\"haastattelukierroksella mukana useita\"."
+   },
+   {
+    "nimi": "Ei palautetta vaan tuotos",
+    "selitys": "halutaan lopputulos, ei nähdä ajatteluasi."
+   },
+   {
+    "nimi": "Oikeaa dataa",
+    "selitys": "sinulle annetaan toimeksiantajan todellinen aineisto, ei kuvitteellinen esimerkki."
+   },
+   {
+    "nimi": "Datatyö",
+    "selitys": "\"puhdista ja analysoi tämä otos näytteeksi\" — otos on tuotantodataa."
+   },
+   {
+    "nimi": "Suunnittelu ja koodi",
+    "selitys": "\"tee meille pieni prototyyppi / logoehdotus / kampanjasuunnitelma\"."
+   },
+   {
+    "nimi": "Konsultointi",
+    "selitys": "\"kirjoita lyhyt esitys siitä, miten ratkaisisit ongelmamme\"."
+   },
+   {
+    "nimi": "Kilpailut",
+    "selitys": "avoin \"haaste\", jossa sadat tekevät ilmaista työtä yhdestä palkinnosta."
+   }
+  ],
+  "repliikit": [
+   "tee koetehtävä, valitsemme parhaan",
+   "valintaprosessia",
+   "muutkin tekevät sen",
+   "haastattelukierroksella mukana useita",
+   "puhdista ja analysoi tämä otos näytteeksi",
+   "tee meille pieni prototyyppi / logoehdotus / kampanjasuunnitelma",
+   "kirjoita lyhyt esitys siitä, miten ratkaisisit ongelmamme"
+  ],
+  "liittyvat": [
+   "exposure-maksu",
+   "lowball-hinnoittelu",
+   "valittajan-skimmaus",
+   "tilipuristus",
+   "foot-in-the-door"
+  ]
+ },
+ {
+  "slug": "exposure-maksu",
+  "nro": 81,
+  "nimi": "Maksu näkyvyydellä",
+  "kuvaus": "Työ teetetään ilman rahaa lupaamalla näkyvyyttä, referenssiä tai \"jalkaa oven väliin\".",
+  "vari": "#00838f",
+  "kategoria": "Myyntikikat ja painostus",
+  "ingressi": "Exposure-maksussa työ teetetään ilman rahaa lupaamalla tilalle aineetonta vastiketta : näkyvyyttä, portfoliota, kokemusta, \"jalkaa oven väliin\" tai lupaus maksavista töistä myöhemmin. Ydinväite on, että korvaus tulee tulevaisuudessa tai muussa muodossa kuin rahana — käytännössä se ei tule lainkaan.",
+  "vastauslohko": "",
+  "vastakeinot": "Erota aito vaihtokauppa pelkästä lupauksesta. Joskus näkyvyys on todellista arvoa (oikea julkaisu, mitattava yleisö) — mutta silloin se on sovittavissa konkreettisesti ja kirjallisesti. Jos vastike on epämääräinen, tulevaisuuteen siirretty tai \"kokemusta\", pyydä rahaa. Toimiva sääntö: ottaisiko tilaaja itse vastaan palkakseen pelkkää näkyvyyttä? Liittyy läheisesti ilmaiseen näytetyöhön .",
+  "laatikot": [
+   {
+    "otsikko": "Tyypilliset muotoilut:",
+    "teksti": "\"Hyvä referenssi sinulle\": meidän nimemme CV:ssäsi muka korvaa palkan. \"Nyt budjetti on tiukka, mutta jatkossa…\": ensimmäinen keikka ilmaiseksi, loput \"varmasti\" maksullisina. \"Saat näkyvyyttä yleisöllemme\": seuraajamäärä tarjotaan valuuttana. \"Tee tämä intohimosta\": rahasta puhuminen leimataan epäammattimaiseksi."
+   },
+   {
+    "otsikko": "Miksi lupaus harvoin lunastuu:",
+    "teksti": "Se, joka ei maksa ensimmäisestä työstä, on jo osoittanut suhtautumisensa korvaukseen. \"Jatkossa maksamme\" -lupaus on ilmainen antaa eikä sido mihinkään. Näkyvyys taas hyödyttää lähes aina tilaajaa enemmän kuin tekijää — ja tilaaja, jolla on yleisöä ja brändiä, on yleensä juuri se taho, jolla olisi varaa maksaa."
+   },
+   {
+    "otsikko": "Tunnistaminen ja vastakeinot:",
+    "teksti": "Erota aito vaihtokauppa pelkästä lupauksesta. Joskus näkyvyys on todellista arvoa (oikea julkaisu, mitattava yleisö) — mutta silloin se on sovittavissa konkreettisesti ja kirjallisesti. Jos vastike on epämääräinen, tulevaisuuteen siirretty tai \"kokemusta\", pyydä rahaa. Toimiva sääntö: ottaisiko tilaaja itse vastaan palkakseen pelkkää näkyvyyttä? Liittyy läheisesti ilmaiseen näytetyöhön ."
+   }
+  ],
+  "listat": [
+   {
+    "nimi": "\"Hyvä referenssi sinulle\"",
+    "selitys": "meidän nimemme CV:ssäsi muka korvaa palkan."
+   },
+   {
+    "nimi": "\"Nyt budjetti on tiukka, mutta jatkossa…\"",
+    "selitys": "ensimmäinen keikka ilmaiseksi, loput \"varmasti\" maksullisina."
+   },
+   {
+    "nimi": "\"Saat näkyvyyttä yleisöllemme\"",
+    "selitys": "seuraajamäärä tarjotaan valuuttana."
+   },
+   {
+    "nimi": "\"Tee tämä intohimosta\"",
+    "selitys": "rahasta puhuminen leimataan epäammattimaiseksi."
+   }
+  ],
+  "repliikit": [
+   "tästä saat hyvää referenssiä",
+   "jalkaa oven väliin",
+   "referenssin arvo",
+   "näkyvyydellä ei makseta vuokraa.",
+   "Hyvä referenssi sinulle",
+   "Nyt budjetti on tiukka, mutta jatkossa…",
+   "Saat näkyvyyttä yleisöllemme",
+   "Tee tämä intohimosta",
+   "Jatkossa maksamme"
+  ],
+  "liittyvat": [
+   "lowball-hinnoittelu",
+   "valittajan-skimmaus",
+   "tilipuristus",
+   "foot-in-the-door",
+   "door-in-the-face"
+  ]
+ },
+ {
+  "slug": "tilipuristus",
+  "nro": 84,
+  "nimi": "Tilipuristus",
+  "kuvaus": "Työ otetaan vastaan, mutta maksua venytetään loputtomilla ehdoilla ja \"hyväksyntäkierroksilla\".",
+  "vari": "#d84315",
+  "kategoria": "Myyntikikat ja painostus",
+  "ingressi": "Tilipuristuksessa työ vastaanotetaan mutta maksua venytetään — pitkillä maksuehdoilla, jatkuvilla \"hyväksyntäkierroksilla\", katoavilla laskuilla tai ehdolla \"maksamme kun asiakas maksaa meille\". Tekijä on jo tehnyt työn, joten neuvotteluvoima on kääntynyt: hän tarvitsee rahansa kipeämmin kuin maksaja tarvitsee häntä. Viivytys muuttuu painostusvälineeksi, jolla saadaan alennuksia, lisätöitä tai myöntyvyyttä.",
+  "vastauslohko": "",
+  "vastakeinot": "Rakenna suoja sopimukseen ennen työtä: ennakkomaksu tai osalaskutus virstanpylväittäin, selkeät maksuehdot, viivästyskorko ja omistusoikeuden siirtyminen vasta maksun jälkeen. Älä luovuta lopullisia tiedostoja ennen maksua. \"Maksamme kun saamme itse maksun\" ei ole sinun riskisi kannettavaksi. Mitä isompi ja hitaampi maksaja, sitä tärkeämpää on, ettei koko korvaus ole loppuerän varassa.",
+  "laatikot": [
+   {
+    "otsikko": "Tyypilliset muodot:",
+    "teksti": "\"Maksamme kun asiakas maksaa\": tekijälle siirretään riski, johon hän ei voi vaikuttaa. Venyvät maksuehdot: 60, 90 tai 120 päivää netto — koroton laina tilaajalle. Ikuinen hyväksyntä: \"pieni korjaus vielä\" estää laskutuksen toistuvasti. Loppuerän panttaus: viimeinen 30 % \"pidätetään\" epämääräisin perustein. Hyvitysvaatimus: myöhässä oleva maksaja vaatii vielä alennusta vastineeksi maksamisesta."
+   },
+   {
+    "otsikko": "Tunnistaminen ja vastakeinot:",
+    "teksti": "Rakenna suoja sopimukseen ennen työtä: ennakkomaksu tai osalaskutus virstanpylväittäin, selkeät maksuehdot, viivästyskorko ja omistusoikeuden siirtyminen vasta maksun jälkeen. Älä luovuta lopullisia tiedostoja ennen maksua. \"Maksamme kun saamme itse maksun\" ei ole sinun riskisi kannettavaksi. Mitä isompi ja hitaampi maksaja, sitä tärkeämpää on, ettei koko korvaus ole loppuerän varassa."
+   }
+  ],
+  "listat": [
+   {
+    "nimi": "\"Maksamme kun asiakas maksaa\"",
+    "selitys": "tekijälle siirretään riski, johon hän ei voi vaikuttaa."
+   },
+   {
+    "nimi": "Venyvät maksuehdot",
+    "selitys": "60, 90 tai 120 päivää netto — koroton laina tilaajalle."
+   },
+   {
+    "nimi": "Ikuinen hyväksyntä",
+    "selitys": "\"pieni korjaus vielä\" estää laskutuksen toistuvasti."
+   },
+   {
+    "nimi": "Loppuerän panttaus",
+    "selitys": "viimeinen 30 % \"pidätetään\" epämääräisin perustein."
+   },
+   {
+    "nimi": "Hyvitysvaatimus",
+    "selitys": "myöhässä oleva maksaja vaatii vielä alennusta vastineeksi maksamisesta."
+   }
+  ],
+  "repliikit": [
+   "hyväksyntäkierroksilla",
+   "maksamme kun asiakas maksaa meille",
+   "Maksamme kun asiakas maksaa",
+   "pieni korjaus vielä",
+   "Maksamme kun saamme itse maksun"
+  ],
+  "liittyvat": [
+   "foot-in-the-door",
+   "door-in-the-face",
+   "hintaankkurointi",
+   "houkutinvaihtoehto",
+   "vastavuoroisuuden-ansa"
+  ]
+ },
+ {
+  "slug": "bait-and-switch",
+  "nro": 67,
+  "nimi": "Bait and switch",
+  "kuvaus": "Näyttävä tarjous houkuttelee paikalle, mutta tilalle myydäänkin jotain kalliimpaa tai huonompaa.",
+  "vari": "#ad1457",
+  "kategoria": "Huijaukset ja petokset",
+  "ingressi": "Bait and switch on myyntihuijaus, jossa houkutellaan näyttävällä syötillä (poikkeuksellisen halpa tai hyvä tarjous) ja kun asiakas on jo paikalla tai sitoutunut, syötti \"loppuu\" tai osoittautuu kelvottomaksi — ja tilalle tarjotaan kalliimpaa, huonompaa tai täysin eri tuotetta.",
+  "vastauslohko": "",
+  "vastakeinot": "Jos houkutteleva tarjous \"sattuu juuri loppumaan\" sillä hetkellä kun olet valmis tarttumaan siihen, ja tilalle työnnetään kalliimpaa — se ei ole sattuma. Pyydä syötti kirjallisena tai jätä koko kauppa. Älä anna jo sijoittamasi ajan tai vaivan ratkaista (ks. uponneet kustannukset).",
+  "laatikot": [
+   {
+    "otsikko": "Missä se esiintyy:",
+    "teksti": "Vähittäiskauppa: Mainostettu erikoistarjous \"on loppuunmyyty\", mutta vieressä on kalliimpi malli. Asunnot ja matkat: Houkutushinta verkossa, mutta \"juuri se kohde varattiin\" — tarjolla on kalliimpia. Rekrytointi: Ilmoitettu tehtävä ja palkka muuttuvat haastattelussa toisiksi. Politiikka: Vaalilupaus on syötti; hallitusohjelmassa se on vaihtunut päinvastaiseksi."
+   },
+   {
+    "otsikko": "Tunnistaminen ja vastakeinot:",
+    "teksti": "Jos houkutteleva tarjous \"sattuu juuri loppumaan\" sillä hetkellä kun olet valmis tarttumaan siihen, ja tilalle työnnetään kalliimpaa — se ei ole sattuma. Pyydä syötti kirjallisena tai jätä koko kauppa. Älä anna jo sijoittamasi ajan tai vaivan ratkaista (ks. uponneet kustannukset)."
+   }
+  ],
+  "listat": [
+   {
+    "nimi": "Vähittäiskauppa",
+    "selitys": "Mainostettu erikoistarjous \"on loppuunmyyty\", mutta vieressä on kalliimpi malli."
+   },
+   {
+    "nimi": "Asunnot ja matkat",
+    "selitys": "Houkutushinta verkossa, mutta \"juuri se kohde varattiin\" — tarjolla on kalliimpia."
+   },
+   {
+    "nimi": "Rekrytointi",
+    "selitys": "Ilmoitettu tehtävä ja palkka muuttuvat haastattelussa toisiksi."
+   },
+   {
+    "nimi": "Politiikka",
+    "selitys": "Vaalilupaus on syötti; hallitusohjelmassa se on vaihtunut päinvastaiseksi."
+   }
+  ],
+  "repliikit": [
+   "on loppuunmyyty",
+   "juuri se kohde varattiin",
+   "sattuu juuri loppumaan"
+  ],
+  "liittyvat": [
+   "kaarmeoljy",
+   "ponzi-pyramidi",
+   "pump-and-dump",
+   "pig-butchering",
+   "ennakkomaksuhuijaus"
+  ]
+ },
+ {
+  "slug": "sosiaalinen-todiste",
+  "nro": 90,
+  "nimi": "Sosiaalinen todiste -manipulaatio",
+  "kuvaus": "\"Muutkin jo ostivat\" — epävarma ihminen matkii muita, ja kysyntä voidaan lavastaa.",
+  "vari": "#b71c1c",
+  "kategoria": "Myyntikikat ja painostus",
+  "ingressi": "Ihminen päättelee epävarmassa tilanteessa oikean toiminnan katsomalla, mitä muut tekevät . Sosiaalinen todiste on tämä taipumus — ja sitä manipuloidaan keinotekoisesti: tekaistuilla arvosteluilla, ostetuilla seuraajilla, \"X muuta katsoo tätä juuri nyt\" -ilmoituksilla ja väärennetyillä suosittu-leimoilla. Kun aito todiste korvataan lavastetulla, signaali kääntyy harhautukseksi.",
+  "vastauslohko": "",
+  "vastakeinot": "Kysy, onko todiste tarkistettavissa ja riippumaton . Etsi kriittisiä arvosteluita — niiden puuttuminen on varoitusmerkki, ei laadun tae. Suhtaudu reaaliaikalaskureihin ja \"vain harva jäljellä\" -viesteihin myyntikikkana, kunnes toisin todistetaan. Aito sosiaalinen todiste kestää tarkastelun; lavastettu hajoaa heti, kun lähdettä kysyy. Liittyy kiireen luomiseen .",
+  "laatikot": [
+   {
+    "otsikko": "Lavastetun sosiaalisen todisteen merkit:",
+    "teksti": "Liian yhdenmukaiset arvostelut: pelkkiä 5 tähden kehuja, samaa kieltä, samaan aikaan jätettyjä. \"23 ihmistä katsoo tätä nyt\": tarkistamaton reaaliaikalaskuri, joka luo kiirettä. Ostetut seuraajat ja tykkäykset: suuri yleisö, vähän aitoa vuorovaikutusta. Nimettömät suosittelut: \"asiakkaamme rakastavat tätä\" ilman tarkistettavaa lähdettä. Vaikuttajamarkkinointi ilman merkintää: maksettu suosittelu esitetään spontaanina."
+   },
+   {
+    "otsikko": "Tunnistaminen ja vastakeinot:",
+    "teksti": "Kysy, onko todiste tarkistettavissa ja riippumaton . Etsi kriittisiä arvosteluita — niiden puuttuminen on varoitusmerkki, ei laadun tae. Suhtaudu reaaliaikalaskureihin ja \"vain harva jäljellä\" -viesteihin myyntikikkana, kunnes toisin todistetaan. Aito sosiaalinen todiste kestää tarkastelun; lavastettu hajoaa heti, kun lähdettä kysyy. Liittyy kiireen luomiseen ."
+   }
+  ],
+  "listat": [
+   {
+    "nimi": "Liian yhdenmukaiset arvostelut",
+    "selitys": "pelkkiä 5 tähden kehuja, samaa kieltä, samaan aikaan jätettyjä."
+   },
+   {
+    "nimi": "\"23 ihmistä katsoo tätä nyt\"",
+    "selitys": "tarkistamaton reaaliaikalaskuri, joka luo kiirettä."
+   },
+   {
+    "nimi": "Ostetut seuraajat ja tykkäykset",
+    "selitys": "suuri yleisö, vähän aitoa vuorovaikutusta."
+   },
+   {
+    "nimi": "Nimettömät suosittelut",
+    "selitys": "\"asiakkaamme rakastavat tätä\" ilman tarkistettavaa lähdettä."
+   },
+   {
+    "nimi": "Vaikuttajamarkkinointi ilman merkintää",
+    "selitys": "maksettu suosittelu esitetään spontaanina."
+   }
+  ],
+  "repliikit": [
+   "muutkin jo ostivat",
+   "X muuta katsoo tätä juuri nyt",
+   "näkyy tekevän valinta, sitä turvallisemmalta se tuntuu — vaikka",
+   "23 ihmistä katsoo tätä nyt",
+   "asiakkaamme rakastavat tätä",
+   "vain harva jäljellä"
+  ],
+  "liittyvat": [
+   "painostusclose",
+   "ilmainen-naytetyo",
+   "exposure-maksu",
+   "lowball-hinnoittelu",
+   "valittajan-skimmaus",
+   "hyvesignalointi",
+   "pinkkipesu"
+  ]
+ },
+ {
+  "slug": "pig-butchering",
+  "nro": 71,
+  "nimi": "Pig butchering",
+  "kuvaus": "Uhri \"lihotetaan\" viikkojen luottamuksella ja pikkuvoitoilla ennen kuin tili tyhjennetään.",
+  "vari": "#bf360c",
+  "kategoria": "Huijaukset ja petokset",
+  "ingressi": "Pig butchering (kiin. shā zhū pán , \"sian teurastuslautanen\") on pitkäkestoinen huijaus, jossa uhri ensin \"lihotetaan\" luottamuksella ja pienillä näennäisvoitoilla, ja vasta sitten \"teurastetaan\" tyhjentämällä koko omaisuus. Ero pikahuijaukseen on aika: rakennusvaihe voi kestää viikkoja tai kuukausia.",
+  "vastauslohko": "",
+  "vastakeinot": "Varoitusmerkkejä: tuntematon, joka siirtää keskustelun nopeasti alustalle pois julkisesta; sijoitusvinkki osana romanttista tai ystävällistä suhdetta; alusta jota et löytänyt itse; ja \"voitto\" jonka nostamiseksi pitää ensin maksaa lisää. Oikea sijoitusalusta ei vaadi maksamaan päästäkseen käsiksi omiin rahoihinsa.",
+  "laatikot": [
+   {
+    "otsikko": "Miksi se toimii:",
+    "teksti": "Hidas tahti ohittaa varovaisuuden — kun luottamus on rakennettu kuukausia, sijoitus tuntuu neuvolta ystävältä, ei myyntipuheelta. Näennäisvoitot ja toimivat pikkunostot vahvistavat uskottavuutta . Lopun \"verot ja maksut ennen nostoa\" ovat ennakkomaksuhuijauksen jatke."
+   },
+   {
+    "otsikko": "Tunnistaminen ja vastakeinot:",
+    "teksti": "Varoitusmerkkejä: tuntematon, joka siirtää keskustelun nopeasti alustalle pois julkisesta; sijoitusvinkki osana romanttista tai ystävällistä suhdetta; alusta jota et löytänyt itse; ja \"voitto\" jonka nostamiseksi pitää ensin maksaa lisää. Oikea sijoitusalusta ei vaadi maksamaan päästäkseen käsiksi omiin rahoihinsa."
+   }
+  ],
+  "listat": [],
+  "repliikit": [
+   "sian teurastuslautanen",
+   "luottamuksella ja pienillä näennäisvoitoilla, ja vasta sitten",
+   "alustan toimivan",
+   "verot ja maksut ennen nostoa"
+  ],
+  "liittyvat": [
+   "ennakkomaksuhuijaus",
+   "badger-game",
+   "honeypot-huijaus",
+   "bait-and-switch",
+   "kaarmeoljy"
+  ]
+ },
+ {
+  "slug": "toimitusjohtajahuijaus",
+  "nro": 75,
+  "nimi": "Toimitusjohtajahuijaus",
+  "kuvaus": "\"Johtaja\" vaatii sähköpostilla kiireellistä maksua — kiire ja salailu ovat tuntomerkit.",
+  "vari": "#455a64",
+  "kategoria": "Huijaukset ja petokset",
+  "ingressi": "Toimitusjohtajahuijaus (engl. CEO fraud ; laajempi kattotermi BEC , business email compromise) tarkoittaa huijausta, jossa rikollinen esiintyy sähköpostissa — tai yhä useammin puhelussa ja videolla — yrityksen johtajana, toimittajana tai kumppanina ja saa talousosaston siirtämään rahaa tai vaihtamaan laskutustilin. Huijaus ei murtaudu järjestelmiin: se murtautuu organisaatiokaavioon.",
+  "vastauslohko": "",
+  "vastakeinot": "Sopikaa takaisinsoittosääntö: jokainen tilinumeron muutos ja jokainen kiireellinen poikkeava maksu varmistetaan soittamalla tunnettuun numeroon — ei viestissä annettuun. Vaadi kahden ihmisen hyväksyntä isoille maksuille poikkeuksetta — myös ja erityisesti \"toimitusjohtajan\" pyynnöille; oikea johtaja kiittää prosessista. Tehkää säännöstä julkinen: kun huijari tietää, ettei ohituskaistaa ole, hän siirtyy seuraavaan kohteeseen. Ja jos maksu ehti lähteä: soita heti omaan pankkiin ja poliisille — takaisinperintä on minuuttipeli.",
+  "laatikot": [
+   {
+    "otsikko": "Saman perheen muunnelmat:",
+    "teksti": "Laskutushuijaus: aito toimittaja, aidon näköinen lasku — mutta \"päivitetty tilinumero\". Usein jatkona kaapattuun sähköpostiketjuun, jolloin viesti tulee oikeasta osoitteesta. Palkanmaksuhuijaus: \"työntekijä\" ilmoittaa HR:lle uuden tilinumeron ennen palkkapäivää. Asianajajahuijaus: \"hoidan yrityskauppaanne, asia on luottamuksellinen\" — salailuvipu ulkoistettuna. Lahjakorttihuijaus: pienyrityksissä \"pomo\" pyytää ostamaan lahjakortteja ja lähettämään koodit. Sama rakenne, pienempi summa. Suomessakin yritykset ja kunnat ovat menettäneet miljoonia laskutus- ja toimitusjohtajahuijauksiin, ja poliisi ja Kyberturvallisuuskeskus varoittavat aallosta säännöllisesti."
+   },
+   {
+    "otsikko": "Tunnistaminen ja vastakeinot:",
+    "teksti": "Sopikaa takaisinsoittosääntö: jokainen tilinumeron muutos ja jokainen kiireellinen poikkeava maksu varmistetaan soittamalla tunnettuun numeroon — ei viestissä annettuun. Vaadi kahden ihmisen hyväksyntä isoille maksuille poikkeuksetta — myös ja erityisesti \"toimitusjohtajan\" pyynnöille; oikea johtaja kiittää prosessista. Tehkää säännöstä julkinen: kun huijari tietää, ettei ohituskaistaa ole, hän siirtyy seuraavaan kohteeseen. Ja jos maksu ehti lähteä: soita heti omaan pankkiin ja poliisille — takaisinperintä on minuuttipeli."
+   }
+  ],
+  "listat": [
+   {
+    "nimi": "Laskutushuijaus",
+    "selitys": "aito toimittaja, aidon näköinen lasku — mutta \"päivitetty tilinumero\". Usein jatkona kaapattuun sähköpostiketjuun, jolloin viesti tulee oikeasta osoitteesta."
+   },
+   {
+    "nimi": "Palkanmaksuhuijaus",
+    "selitys": "\"työntekijä\" ilmoittaa HR:lle uuden tilinumeron ennen palkkapäivää."
+   },
+   {
+    "nimi": "Asianajajahuijaus",
+    "selitys": "\"hoidan yrityskauppaanne, asia on luottamuksellinen\" — salailuvipu ulkoistettuna."
+   },
+   {
+    "nimi": "Lahjakorttihuijaus",
+    "selitys": "pienyrityksissä \"pomo\" pyytää ostamaan lahjakortteja ja lähettämään koodit. Sama rakenne, pienempi summa."
+   }
+  ],
+  "repliikit": [
+   "kauppa kaatuu, jos maksu ei lähde tänään",
+   "Yrityskauppa on kesken, älä puhu tästä kenellekään",
+   "talousjohtaja",
+   "konsernijohtajansa",
+   "päivitetty tilinumero",
+   "hoidan yrityskauppaanne, asia on luottamuksellinen",
+   "toimitusjohtajan"
+  ],
+  "liittyvat": [
+   "ennakkomaksuhuijaus",
+   "qr-koodihuijaus",
+   "painostusclose"
+  ]
+ },
+ {
+  "slug": "aaniklooni-huijaus",
+  "nro": 77,
+  "nimi": "Ääniklooni-huijaus",
+  "kuvaus": "Muutaman sekunnin näyte riittää: tuttu ääni pyytää rahaa kiireellä, eikä kuulo enää todista mitään.",
+  "vari": "#7f0000",
+  "kategoria": "Huijaukset ja petokset",
+  "ingressi": "Ääniklooni-huijaus (englanniksi voice cloning scam ; puhelimitse tehdystä kalastelusta käytetään termiä vishing ) tarkoittaa huijausta, jossa soittajan ääni on tuotettu koneellisesti tunnetun ihmisen näytteestä. Näytettä tarvitaan vähän, ja sitä on tarjolla siellä missä ihmiset puhuvat julkisesti: somevideoissa, podcasteissa, yritysten esittelyklipeissä. Vanha nyrkkisääntö \"tunnistan hänen äänensä\" lakkasi toimimasta.",
+  "vastauslohko": "Ei. Ääni voidaan kloonata ja myös näytössä näkyvä numero väärentää, joten kumpikaan ei kerro, kuka soittaa. Ainoa varmistus on katkaista puhelu ja soittaa takaisin numeroon, jonka olet itse hakenut — ei siihen, josta soitto tuli, eikä siihen, jonka soittaja antaa. Poliisin ja pankkien ohje on sama vuodesta toiseen: kiire on huijauksen tunnusmerkki, ei kiireellisen asian.",
+  "vastakeinot": "Sopikaa perheen kesken turvasana, joka kysytään aina kun puhelimessa pyydetään rahaa. Se maksaa yhden keskustelun. Katkaise ja soita takaisin itse hakemaasi numeroon. Aito hätä kestää kaksi minuuttia, huijaus ei. Yrityksissä: maksun hyväksyy kaksi ihmistä eikä poikkeusta tehdä kiireeseen tai salassapitoon vedoten. Älä vahvista soittajalle nimiä, rooleja tai tilitietoja. Sekä vastauksesi että äänesi ovat aineistoa seuraavaan soittoon.",
+  "laatikot": [
+   {
+    "otsikko": "Riittääkö tutun ääni todisteeksi puhelimessa?",
+    "teksti": "Ei. Ääni voidaan kloonata ja myös näytössä näkyvä numero väärentää, joten kumpikaan ei kerro, kuka soittaa. Ainoa varmistus on katkaista puhelu ja soittaa takaisin numeroon, jonka olet itse hakenut — ei siihen, josta soitto tuli, eikä siihen, jonka soittaja antaa. Poliisin ja pankkien ohje on sama vuodesta toiseen: kiire on huijauksen tunnusmerkki, ei kiireellisen asian."
+   },
+   {
+    "otsikko": "Miksi ääni toimii paremmin kuin sähköposti?",
+    "teksti": "Sähköpostiversiossa uskottavuus rakennettiin osoitteesta ja kiireestä, ja epäilijä saattoi pysähtyä lukemaan rivin uudelleen. Puhelu ei anna sitä mahdollisuutta: ääni ohittaa harkinnan ja vastaa itse siihen kysymykseen, jonka epäilijä esittäisi. Deepfake-sijoitushuijaus tekee saman kuvalla."
+   },
+   {
+    "otsikko": "Tunnistaminen ja vastakeinot:",
+    "teksti": "Sopikaa perheen kesken turvasana, joka kysytään aina kun puhelimessa pyydetään rahaa. Se maksaa yhden keskustelun. Katkaise ja soita takaisin itse hakemaasi numeroon. Aito hätä kestää kaksi minuuttia, huijaus ei. Yrityksissä: maksun hyväksyy kaksi ihmistä eikä poikkeusta tehdä kiireeseen tai salassapitoon vedoten. Älä vahvista soittajalle nimiä, rooleja tai tilitietoja. Sekä vastauksesi että äänesi ovat aineistoa seuraavaan soittoon."
+   }
+  ],
+  "listat": [],
+  "repliikit": [
+   "tunnistan hänen äänensä"
+  ],
+  "liittyvat": [
+   "toimitusjohtajahuijaus",
+   "smishing",
+   "deepfake-sijoitushuijaus",
+   "ennakkomaksuhuijaus"
+  ]
+ },
+ {
+  "slug": "ennakkomaksuhuijaus",
+  "nro": 72,
+  "nimi": "Ennakkomaksuhuijaus (419)",
+  "kuvaus": "Suuri summa odottaa — kunhan maksat ensin \"pienen\" käsittelymaksun, ja sitten seuraavan.",
+  "vari": "#303f9f",
+  "kategoria": "Huijaukset ja petokset",
+  "ingressi": "Ennakkomaksuhuijauksessa uhrille luvataan suuri summa — perintö, voitto, sijoituksen tuotto tai jumiin jäänyt varallisuus — jonka saamiseksi pitää ensin maksaa pieni etukäteismaksu : vero, käsittelykulu, lahjus tai vakuus. Maksun jälkeen ilmaantuu uusi este ja uusi maksu, ja niin edelleen — luvattua summaa ei ole olemassa.",
+  "vastauslohko": "",
+  "vastakeinot": "Perussääntö: oikeaa rahaa ei tarvitse lunastaa maksamalla rahaa etukäteen. Jos sinun on ensin maksettava saadaksesi luvatun summan — vero, kulu, vakuus tai lahjus — kyseessä on huijaus. Mitä useampi \"viimeinen este\" ilmaantuu, sitä varmempaa se on.",
+  "laatikot": [
+   {
+    "otsikko": "Moderneja muotoja:",
+    "teksti": "Voittoilmoitukset arpajaisista, joihin et osallistunut; \"perintö tuntemattomalta sukulaiselta\"; työtarjous, joka vaatii maksamaan koulutuksesta tai varusteista etukäteen; sekä romanssihuijari, joka tarvitsee rahaa \"matkalippuun\" tai \"tullimaksuun\" päästäkseen tapaamaan. Sama rakenne toistuu pig butchering -huijauksen loppuvaiheessa."
+   },
+   {
+    "otsikko": "Tunnistaminen ja vastakeinot:",
+    "teksti": "Perussääntö: oikeaa rahaa ei tarvitse lunastaa maksamalla rahaa etukäteen. Jos sinun on ensin maksettava saadaksesi luvatun summan — vero, kulu, vakuus tai lahjus — kyseessä on huijaus. Mitä useampi \"viimeinen este\" ilmaantuu, sitä varmempaa se on."
+   }
+  ],
+  "listat": [],
+  "repliikit": [
+   "nigerialaiskirje",
+   "perintö tuntemattomalta sukulaiselta",
+   "matkalippuun",
+   "tullimaksuun",
+   "viimeinen este"
+  ],
+  "liittyvat": [
+   "badger-game",
+   "honeypot-huijaus",
+   "bait-and-switch",
+   "kaarmeoljy",
+   "ponzi-pyramidi"
+  ]
+ },
+ {
+  "slug": "smishing",
+  "nro": 78,
+  "nimi": "Smishing",
+  "kuvaus": "Huijausviesti putoaa samaan ketjuun aitojen kanssa: paketti odottaa maksua, pankki pyytää vahvistusta.",
+  "vari": "#0b3d91",
+  "kategoria": "Huijaukset ja petokset",
+  "ingressi": "Smishing (sanoista SMS ja phishing ) tarkoittaa tekstiviestillä tehtyä kalastelua. Viesti kertoo, että paketti odottaa pientä maksua, tili on lukittu tai veronpalautus vaatii vahvistuksen, ja tarjoaa linkin. Linkin takana on sivu, joka näyttää oikealta ja pyytää juuri ne tiedot, joilla rahat siirretään: verkkopankkitunnukset ja vahvistuksen.",
+  "vastauslohko": "Vakiintunutta suomennosta ei ole. Käytössä ovat tekstiviestikalastelu ja tekstiviestihuijaus ; viranomaiset puhuvat huijausviesteistä. Termi on yhdistelmä sanoista SMS ja phishing eli kalastelu. Suomenkielistä Wikipedia-artikkelia ei ole, vaikka ilmiö on yksi tunnistetuimmista — käytännössä jokainen suomalainen on saanut tällaisen viestin.",
+  "vastakeinot": "Älä avaa viestin linkkiä. Kirjoita palvelun osoite itse tai käytä sen omaa sovellusta — paketin seuranta löytyy sieltä. Pankki ei kysy tunnuslukuja eikä pyydä vahvistamaan mitään viestin linkissä. Yksikään aito toimija ei tee sitä. Epäile pientä summaa erityisesti: se on tehty näyttämään liian pieneltä tarkistettavaksi. Jos annoit tunnukset, soita heti pankkiin ja sulje ne. Tee rikosilmoitus ja ilmoita viestistä Kyberturvallisuuskeskukselle.",
+  "laatikot": [
+   {
+    "otsikko": "Mitä smishing tarkoittaa suomeksi?",
+    "teksti": "Vakiintunutta suomennosta ei ole. Käytössä ovat tekstiviestikalastelu ja tekstiviestihuijaus ; viranomaiset puhuvat huijausviesteistä. Termi on yhdistelmä sanoista SMS ja phishing eli kalastelu. Suomenkielistä Wikipedia-artikkelia ei ole, vaikka ilmiö on yksi tunnistetuimmista — käytännössä jokainen suomalainen on saanut tällaisen viestin."
+   },
+   {
+    "otsikko": "Miten smishing eroaa QR-koodihuijauksesta?",
+    "teksti": "Kanava on eri, loppu sama: molemmissa uhri ohjataan väärennetylle sivulle antamaan tunnuksensa. QR-koodihuijaus odottaa fyysisessä paikassa, smishing tulee taskuun. Molemmissa suojaus on sama: mene palveluun itse, älä linkin kautta."
+   },
+   {
+    "otsikko": "Tunnistaminen ja vastakeinot:",
+    "teksti": "Älä avaa viestin linkkiä. Kirjoita palvelun osoite itse tai käytä sen omaa sovellusta — paketin seuranta löytyy sieltä. Pankki ei kysy tunnuslukuja eikä pyydä vahvistamaan mitään viestin linkissä. Yksikään aito toimija ei tee sitä. Epäile pientä summaa erityisesti: se on tehty näyttämään liian pieneltä tarkistettavaksi. Jos annoit tunnukset, soita heti pankkiin ja sulje ne. Tee rikosilmoitus ja ilmoita viestistä Kyberturvallisuuskeskukselle."
+   }
+  ],
+  "listat": [],
+  "repliikit": [],
+  "liittyvat": [
+   "qr-koodihuijaus",
+   "aaniklooni-huijaus",
+   "deepfake-sijoitushuijaus",
+   "ennakkomaksuhuijaus"
+  ]
+ },
+ {
+  "slug": "badger-game",
+  "nro": 73,
+  "nimi": "Badger game",
+  "kuvaus": "Uhri houkutellaan kiusalliseen tilanteeseen ja kiristetään maksamaan vaikenemisesta.",
+  "vari": "#455a64",
+  "kategoria": "Huijaukset ja petokset",
+  "ingressi": "Badger game on klassinen kiristyshuijaus, jossa uhri houkutellaan kiusalliseen tai mainetta vaarantavaan tilanteeseen — tyypillisesti seksuaaliseen kohtaamiseen houkuttimen kanssa — ja juuri oikealla hetkellä paikalle \"saapuu\" rikoskumppani: raivostunut puoliso, väitetty poliisi, yksityisetsivä tai isä. Uhrille tarjotaan ulospääsyä vain yhdellä tavalla: maksamalla vaikenemisesta.",
+  "vastauslohko": "",
+  "vastakeinot": "Epäilyttävän nopea, imarteleva kiinnostus tuntemattomalta — erityisesti matkalla tai valta-aseman ympärillä — on varoitusmerkki. Tärkein sääntö: kiristäjälle ei makseta. Maksaminen ei lopeta kiristystä vaan todistaa kohteen maksukykyiseksi ja -haluiseksi. Ainoa voittava siirto on katkaista häpeän valta: ilmoittaa heti yhtiön turvallisuusjohdolle, hallitukselle ja poliisille. Organisaatiotasolla suojaa antaa selkeä ohjeistus siitä, että kiristysyrityksestä raportoidaan eikä siitä rangaista — koska salailu on juuri se mekanismi, jolla huijaus elää.",
+  "laatikot": [
+   {
+    "otsikko": "Miksi hallitusten jäsenet ja johtajat ovat ihanteellisia kohteita:",
+    "teksti": "Menetettävää on paljon: maine, ura, perhe ja pörssiyhtiön luottamus ovat arvokkaampia kuin kiristyssumma — juuri se tekee maksamisesta \"järkevää\". Näkyvyys ja ennakoitavuus: johtajien matkat, konferenssit, hotellit ja kalenterit ovat osin julkisia. Kohde on helppo paikantaa ja lähestyä vieraalla paikkakunnalla, poissa tutusta ympäristöstä. Status ruokkii itseluottamusta: valta-asema saa uskomaan, että äkillinen kiinnostus on ansaittua eikä lavastettua (vrt. Halo-efekti ). Taipumus hoitaa hiljaa: johtaja pelkää skandaalia ja yhtiön kurssireaktiota, joten hän maksaa itse sen sijaan että ilmoittaisi turvallisuusosastolle tai hallitukselle. Pääsy on itse palkinto: kiristyksen kohteena ei aina ole raha vaan tieto ja päätösvalta — sisäpiiritieto, hankintapäätös, hallituksen ääni tai liikesalaisuus. Tällöin badger game on yritysvakoilun työkalu."
+   },
+   {
+    "otsikko": "Moderni, digitaalinen muoto:",
+    "teksti": "Klassinen \"puoliso astuu ovesta\" on muuttunut etäkiristykseksi. Kohde houkutellaan videopuheluun tai lähettämään arkaluontoista materiaalia (sextortion), tilanne tallennetaan, ja joskus käytetään deepfake-väärennöksiä , joissa uhri esitetään tilanteessa, jota ei koskaan tapahtunut. Lähestyminen tulee usein LinkedInin, treffisovelluksen tai konferenssikontaktin kautta — ja sulautuu pig butchering - ja honeypot -kuvioihin."
+   },
+   {
+    "otsikko": "Tunnistaminen ja vastakeinot:",
+    "teksti": "Epäilyttävän nopea, imarteleva kiinnostus tuntemattomalta — erityisesti matkalla tai valta-aseman ympärillä — on varoitusmerkki. Tärkein sääntö: kiristäjälle ei makseta. Maksaminen ei lopeta kiristystä vaan todistaa kohteen maksukykyiseksi ja -haluiseksi. Ainoa voittava siirto on katkaista häpeän valta: ilmoittaa heti yhtiön turvallisuusjohdolle, hallitukselle ja poliisille. Organisaatiotasolla suojaa antaa selkeä ohjeistus siitä, että kiristysyrityksestä raportoidaan eikä siitä rangaista — koska salailu on juuri se mekanismi, jolla huijaus elää."
+   }
+  ],
+  "listat": [
+   {
+    "nimi": "Menetettävää on paljon",
+    "selitys": "maine, ura, perhe ja pörssiyhtiön luottamus ovat arvokkaampia kuin kiristyssumma — juuri se tekee maksamisesta \"järkevää\"."
+   },
+   {
+    "nimi": "Näkyvyys ja ennakoitavuus",
+    "selitys": "johtajien matkat, konferenssit, hotellit ja kalenterit ovat osin julkisia. Kohde on helppo paikantaa ja lähestyä vieraalla paikkakunnalla, poissa tutusta ympäristöstä."
+   },
+   {
+    "nimi": "Status ruokkii itseluottamusta",
+    "selitys": "valta-asema saa uskomaan, että äkillinen kiinnostus on ansaittua eikä lavastettua (vrt. Halo-efekti )."
+   },
+   {
+    "nimi": "Taipumus hoitaa hiljaa",
+    "selitys": "johtaja pelkää skandaalia ja yhtiön kurssireaktiota, joten hän maksaa itse sen sijaan että ilmoittaisi turvallisuusosastolle tai hallitukselle."
+   },
+   {
+    "nimi": "Pääsy on itse palkinto",
+    "selitys": "kiristyksen kohteena ei aina ole raha vaan tieto ja päätösvalta — sisäpiiritieto, hankintapäätös, hallituksen ääni tai liikesalaisuus. Tällöin badger game on yritysvakoilun työkalu."
+   }
+  ],
+  "repliikit": [
+   "puoliso astuu ovesta"
+  ],
+  "liittyvat": [
+   "honeypot-huijaus",
+   "bait-and-switch",
+   "kaarmeoljy",
+   "ponzi-pyramidi",
+   "pump-and-dump"
+  ]
+ },
+ {
+  "slug": "honeypot-huijaus",
+  "nro": 66,
+  "nimi": "Honeypot-huijaus",
+  "kuvaus": "Ansa houkuttelee helpolla voitolla — uloskäynti sulkeutuu vasta, kun olet jo sitoutunut.",
+  "vari": "#b8860b",
+  "kategoria": "Huijaukset ja petokset",
+  "ingressi": "Honeypot (\"hunajapurkki\") on ansa, joka houkuttelee uhrin sisään näennäisen helpolla voitolla — ja sulkee uloskäynnin vasta kun uhri on jo sitoutunut. Olennaista ei ole houkutin vaan epäsymmetria sisään- ja ulospääsyn välillä: ovi aukeaa vain yhteen suuntaan.",
+  "vastauslohko": "Honeypot on suomeksi hunajapurkki . Huijauksena se tarkoittaa ansaa, joka houkuttelee uhrin sisään näennäisen helpolla voitolla ja sulkee uloskäynnin vasta kun uhri on jo sitoutunut. Olennaista ei ole houkutin vaan se, ettei poispääsy ole enää uhrin päätettävissä.",
+  "vastakeinot": "Ennen kuin astut sisään, kysy aina miten pääsen ulos? Jos sisäänpääsy on helppoa mutta uloskäyntiä ei selitetä — tai sen olemassaolosta ei ole takeita — kyseessä on todennäköisesti honeypot. Testaa uloskäynti pienellä summalla ennen kuin sitoudut suurella.",
+  "laatikot": [
+   {
+    "otsikko": "Mikä on honeypot suomeksi?",
+    "teksti": "Honeypot on suomeksi hunajapurkki . Huijauksena se tarkoittaa ansaa, joka houkuttelee uhrin sisään näennäisen helpolla voitolla ja sulkee uloskäynnin vasta kun uhri on jo sitoutunut. Olennaista ei ole houkutin vaan se, ettei poispääsy ole enää uhrin päätettävissä."
+   },
+   {
+    "otsikko": "Tyypillisiä muotoja:",
+    "teksti": "Krypto-honeypot: Älysopimus, jonka voi ostaa mutta jonka koodi estää myynnin . Hinta näyttää nousevan (kukaan ei voi myydä), mikä houkuttelee lisää ostajia — kunnes tekijä tyhjentää likviditeetin. Romanssi-/kiristysansa (honeytrap): Houkutteleva tuntematon luo luottamuksen tai saa uhrin lähettämään arkaluontoista materiaalia, jota käytetään kiristykseen. \"Ilmainen\" tilaus: Maksuton kokeilu, jonka peruuttaminen on tahallaan tehty lähes mahdottomaksi (ks. Käärmeöljy ja tilausloukut)."
+   },
+   {
+    "otsikko": "Tunnistaminen ja vastakeinot:",
+    "teksti": "Ennen kuin astut sisään, kysy aina miten pääsen ulos? Jos sisäänpääsy on helppoa mutta uloskäyntiä ei selitetä — tai sen olemassaolosta ei ole takeita — kyseessä on todennäköisesti honeypot. Testaa uloskäynti pienellä summalla ennen kuin sitoudut suurella."
+   }
+  ],
+  "listat": [
+   {
+    "nimi": "Krypto-honeypot",
+    "selitys": "Älysopimus, jonka voi ostaa mutta jonka koodi estää myynnin . Hinta näyttää nousevan (kukaan ei voi myydä), mikä houkuttelee lisää ostajia — kunnes tekijä tyhjentää likviditeetin."
+   },
+   {
+    "nimi": "Romanssi-/kiristysansa (honeytrap)",
+    "selitys": "Houkutteleva tuntematon luo luottamuksen tai saa uhrin lähettämään arkaluontoista materiaalia, jota käytetään kiristykseen."
+   },
+   {
+    "nimi": "\"Ilmainen\" tilaus",
+    "selitys": "Maksuton kokeilu, jonka peruuttaminen on tahallaan tehty lähes mahdottomaksi (ks. Käärmeöljy ja tilausloukut)."
+   }
+  ],
+  "repliikit": [
+   "hunajapurkki"
+  ],
+  "liittyvat": [
+   "bait-and-switch",
+   "kaarmeoljy",
+   "ponzi-pyramidi",
+   "pump-and-dump",
+   "pig-butchering"
+  ]
+ },
+ {
+  "slug": "simple-sabotage",
+  "nro": 36,
+  "nimi": "Simple Sabotage Field Manual (1944)",
+  "kuvaus": "CIA:n edeltäjän ohjekirja: miten organisaatio halvaannutetaan kokouksilla, komiteoilla ja pykälillä.",
+  "vari": "#c0a000",
+  "kategoria": "Byrokratia ja organisaatio",
+  "ingressi": "Yhdysvaltain tiedusteluvirasto OSS (Office of Strategic Services, nykyisen CIA:n edeltäjä) julkaisi vuonna 1944 käsikirjan, joka opetti siviileitä sabotoimaan vihollisen organisaatioita sisältäpäin. Asiakirja on nyt CIA:n toimesta julkisesti saatavilla.",
+  "vastauslohko": "",
+  "vastakeinot": "Manuaali toimii peilinä: käy lista läpi ja kysy jokaisesta kohdasta, missä oma organisaatiosi tekee tätä \"ihan normaalina prosessina\". Löydöksiin tepsivät täsmäkorjaukset: päätökset komitealta yhdelle nimetylle omistajalle, kokouksiin päätösagenda ja aikaraja, \"lisäselvitykseen\" lähettäminen vaatii perustelun ja määräpäivän, ja sääntöjen tulkintaan lupa käyttää harkintaa. Käytäntöä ei tarvitse todistaa pahantahtoiseksi — riittää, että sen purkaa.",
+  "laatikot": [
+   {
+    "otsikko": "Huomio:",
+    "teksti": "Käsikirja oli tarkoitettu sabotoimaan vihollisen organisaatioita. Mutta samat tekniikat toimivat missä tahansa hierarkkisessa organisaatiossa — ja monet niistä esiintyvät täysin luonnollisina prosesseina täysin normaalisti toimivissa instituutioissa."
+   },
+   {
+    "otsikko": "Vastakeino — käännä käsikirja tarkistuslistaksi:",
+    "teksti": "Manuaali toimii peilinä: käy lista läpi ja kysy jokaisesta kohdasta, missä oma organisaatiosi tekee tätä \"ihan normaalina prosessina\". Löydöksiin tepsivät täsmäkorjaukset: päätökset komitealta yhdelle nimetylle omistajalle, kokouksiin päätösagenda ja aikaraja, \"lisäselvitykseen\" lähettäminen vaatii perustelun ja määräpäivän, ja sääntöjen tulkintaan lupa käyttää harkintaa. Käytäntöä ei tarvitse todistaa pahantahtoiseksi — riittää, että sen purkaa."
+   }
+  ],
+  "listat": [],
+  "repliikit": [
+   "asianmukaisen menettelyn",
+   "lisäselvitykseen",
+   "ihan normaalina prosessina"
+  ],
+  "liittyvat": [
+   "kafka-ilmio",
+   "catch-22",
+   "goodhartin-laki",
+   "hippo-efekti",
+   "performatiivinen-lasnaolo"
+  ]
+ }
+]

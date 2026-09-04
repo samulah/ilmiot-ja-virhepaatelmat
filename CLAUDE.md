@@ -66,6 +66,7 @@ nappi on säilytettävä — muuten sivu jää orvoksi.
 | `data/suosio.js` | `scripts/paivita_suosio.py` | yöllä cronista |
 | `luonnokset/suosio.html` | `scripts/paivita_suosio.py` | samalla ajolla |
 | `luonnokset/etusivu-nostot.html` | `scripts/paivita_suosio.py` | samalla ajolla |
+| `data/peli-pankki.js` | `scripts/build_peli.py` | kun `pelidata/*.json` muuttuu |
 
 `llms.txt`:n **otsikkolohko** (rivit 1–10) on käsin ylläpidetty; vain
 ilmiölista synkronoituu skriptillä.
@@ -156,6 +157,62 @@ Ilmiöiden numerointia ei koskaan korjata käsin: `scripts/lisaa_ilmiot.py` ja
 `scripts/poista_ilmio.py` numeroivat koko sivuston uudelleen ja päivittävät
 IDS-taulukot, PREV/NEXT-ketjun ja selausnapit. Molemmat ovat kuivaharjoituksia
 oletuksena, kirjoitus `--kirjoita`-lipulla.
+
+## Vedätys — päivittäinen peli (`peli.html`)
+
+Ensimmäinen sivu, joka **käyttää** ilmiösivuja sen sijaan että olisi yksi niistä
+lisää. Sisältö tulee `pelidata/*.json`:ista, jotka `scripts/build_peli.py`
+validoi ja kääntää tiedostoksi `data/peli-pankki.js`. Viisi sääntöä, joita ei
+saa rikkoa:
+
+1. **Päivän erä on kaikille sama.** Erät kootaan käännösaikana, ei selaimessa.
+   Ilman tätä tulosten vertailu ja jakaminen menettää merkityksensä — ja se on
+   ainoa syy, jonka takia kukaan kertoo pelistä eteenpäin.
+2. **Jokaisessa erässä on 1–2 rehellistä kohtaa, ja väärä hälytys maksaa saman
+   kuin ohitus.** Tämä ei ole tasapainotusta vaan korjaus Bad News -pelin
+   replikaatiokritiikkiin (Modirrousta-Galian & Higham 2023): pelkkä epäilyn
+   lisääminen siirtää vastetaipumusta eikä paranna erottelukykyä, eli opettaa
+   kyynisyyttä. `--tarkista` kaatuu jos rehellisiä on alle 25 % pankista.
+   Samasta syystä turha 🚩-liputus ei maksa pisteitä.
+3. **Peli manipuloi pelaajaa opetuksessa, ei koskaan retentiossa.** Ansat
+   (tekaistu ajastin, keksitty sosiaalinen todiste, esivalittu oletus,
+   syyllistävä nappi) ovat sallittuja ja paljastetaan erän lopussa. Ilmoitukset,
+   putkiahdistus, pakotettu jakaminen ja ostettavat armonpäivät eivät ole.
+   Raja lukee pelin säännöissä ääneen — se on osa tuotetta, ei sisäinen ohje.
+   Älä myöskään keksi lukuja: sivu ei mittaa mitään, joten se ei myöskään
+   väitä mittaavansa.
+4. **Ydinvalinta on vinouma vai taktiikka**, ei "mikä näistä 139 ilmiöstä".
+   Peruste on `kategoriat/psykologia-ja-kognitio.md` riveillä 17–21. Nimeäminen
+   on erillinen toinen vaihe, koska ihminen voi selvitä tilanteesta oikein
+   tunnistamatta tekniikkaa — ja nimeäminen on se osa, joka yleistyy.
+5. **Pelisivu ei ole ilmiö.** Ei numeroa, ei `const IDS`-taulukkoa, ei
+   PREV/NEXT-ketjua, **eikä luokkaa `hub-kortti`**. Sitemapiin se vaatii oman
+   vakion `scripts/build_sitemap.py`:hyn; hakuindeksiin sitä ei lisätä.
+
+Päiväindeksi lasketaan epokista (23.8.2026 = Vedätys #1) **paikallisen**
+keskiyön mukaan, ja `setHours(0,0,0,0)` ajetaan molemmille päiville. Ilman
+jälkimmäistä kesäajan vaihtuminen siirtää indeksiä yhdellä. Epokki määritellään
+**vain** `scripts/build_peli.py`:ssä; `peli.html` lukee sen datasta
+(`P.epokki`), joten sitä ei kovakoodata sivulle.
+
+**`data/peli-pankki.js` on defer-skripti, joten sitä ei saa lukea
+moduulitasolla.** `peli.html`:n inline-skripti ajetaan jäsennyshetkellä, siis
+*ennen* deferoitua datatiedostoa. Pankki luetaan `DOMContentLoaded`-
+käsittelijässä, samoin kuin etusivu lukee `window.ILMIO_SUOSIO`:n
+(`index.html:3059`). Tästä syntyi 23.8.2026 vika, jossa koko peli poistui
+hiljaa eikä yhtään nappia kytketty; siksi puuttuva data näyttää nyt myös
+näkyvän virheilmoituksen.
+
+`node scripts/testaa_peli.js` pelaa erän läpi DOM-tyngällä ja on ajettava
+jokaisen `peli.html`- tai pankkimuutoksen jälkeen. Tynkä ajaa inline-skriptin
+ennen datatiedostoa nimenomaan siksi, että yllä kuvattu vika jäisi kiinni —
+älä käännä järjestystä. `PELI_SIVU=<polku>` ajaa testin muuta kopiota vasten.
+
+Uudet kohdat kirjoitetaan `pelidata/TYYLI.md`:n mukaan ja
+`pelidata/_siemen/<slug>.md`:n pohjalta — siemenaineisto on louhittu
+ilmiösivuilta (`scripts/build_peli_siemen.py`), jotta pelin ääni on sivuston
+ääni. Rehelliset kohdat ovat pankin vaikeimmat: niiden on oltava uskottavan
+epäilyttäviä mutta oikeasti kunnossa.
 
 ## Sivujen tyyli
 

@@ -1,0 +1,54 @@
+{
+ "ilmio": "ilmainen-naytetyo",
+ "laji": "taktiikka",
+ "kohdat": [
+  {
+   "id": "ilmainen-naytetyo-1",
+   "teksti": "Viimeisenä vaiheena pyydämme sinua analysoimaan liitteen aineiston ja esittämään suositukset. Varaa noin 8 tuntia.",
+   "konteksti": "tyo",
+   "kanava": "sahkoposti",
+   "harhauttajat": ["exposure-maksu", "foot-in-the-door"],
+   "paljastus": {
+    "mita": "Tehtävä ratkaisee tilaajan todellisen ongelman todellisella datalla — se on työtä, ei näyte.",
+    "miksi": "Rekrytoinnin kehys tekee kieltäytymisestä riskin: kilpailijat tekevät sen, joten sinäkin teet.",
+    "sanot": "Teen tämän mielelläni palkallisena pilottina. Näytteeksi lähetän aiemman työn."
+   }
+  },
+  {
+   "id": "ilmainen-naytetyo-2",
+   "teksti": "Tee vaan kolme logoluonnosta, niin katsotaan mikä puree. Sit puhutaan hinnasta.",
+   "konteksti": "myynti",
+   "kanava": "viesti",
+   "harhauttajat": ["exposure-maksu", "lowball-hinnoittelu"],
+   "paljastus": {
+    "mita": "Työ tehdään ennen kuin hinnasta on sovittu mitään — ja hinta neuvotellaan valmiin työn äärellä.",
+    "miksi": "Kun luonnokset ovat pöydällä, tilaajalla on jo se mitä hän halusi, ja sinun neuvotteluvoimasi on nolla.",
+    "sanot": "Hinta ensin, luonnokset sitten. Teen maksullisen konseptivaiheen."
+   }
+  },
+  {
+   "id": "ilmainen-naytetyo-3",
+   "teksti": "Avoin haaste kaikille! Paras ratkaisu palkitaan — ja voittajan työ otetaan käyttöön.",
+   "konteksti": "myynti",
+   "kanava": "kayttoliittyma",
+   "harhauttajat": ["exposure-maksu", "sosiaalinen-todiste"],
+   "paljastus": {
+    "mita": "Sadat tekevät työn, yksi saa palkinnon, tilaaja saa kaikkien ideat.",
+    "miksi": "Kilpailun muoto siirtää riskin kokonaan tekijöille ja tekee siitä samalla vapaaehtoista.",
+    "sanot": "Osallistun jos työt palautetaan käyttämättöminä. Muuten tämä on tilaustyö."
+   }
+  },
+  {
+   "id": "ilmainen-naytetyo-4",
+   "teksti": "Pieni koetehtävä ennen sopimusta: siivoa tää asiakasdata ja tee siitä yhteenveto. Kestää varmaan tunnin pari.",
+   "konteksti": "tyo",
+   "kanava": "viesti",
+   "harhauttajat": ["exposure-maksu", "tilipuristus"],
+   "paljastus": {
+    "mita": "Oikea asiakasdata paljastaa, ettei kyse ole harjoituksesta.",
+    "miksi": "Arvio 'tunnin pari' tekee pyynnöstä pienen, ja pieni pyyntö on helppo hyväksyä ilman että ehtoja miettii.",
+    "sanot": "Käytättekö tuloksen liiketoiminnassa? Jos kyllä, se on työtä ja laskutan siitä."
+   }
+  }
+ ]
+}

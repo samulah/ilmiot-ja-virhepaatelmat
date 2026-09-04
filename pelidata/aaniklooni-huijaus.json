@@ -1,0 +1,54 @@
+{
+ "ilmio": "aaniklooni-huijaus",
+ "laji": "taktiikka",
+ "kohdat": [
+  {
+   "id": "aaniklooni-huijaus-1",
+   "teksti": "Äiti, mä oon kolaroinu enkä uskalla soittaa isälle. Voitko sä siirtää heti 1 500? Selitän myöhemmin.",
+   "konteksti": "perhe",
+   "kanava": "puhe",
+   "harhauttajat": ["toimitusjohtajahuijaus", "ennakkomaksuhuijaus"],
+   "paljastus": {
+    "mita": "Tuttu ääni, hätä ja kielto ottaa yhteyttä kolmanteen ihmiseen — juuri siihen joka paljastaisi asian.",
+    "miksi": "Ääni oli aiemmin todiste. Muutaman sekunnin näyte julkisesta videosta riittää nyt kloonaukseen, joten kuulo ei enää todista.",
+    "sanot": "Katkaisen ja soitan sinulle takaisin siihen numeroon joka minulla on."
+   }
+  },
+  {
+   "id": "aaniklooni-huijaus-2",
+   "teksti": "Soitto näyttää tulevan pankkisi numerosta. \"Havaitsimme epäilyttävää toimintaa. Vahvista henkilöllisyytesi tunnuslukusovelluksella.\"",
+   "konteksti": "puhelin",
+   "kanava": "puhe",
+   "harhauttajat": ["smishing", "toimitusjohtajahuijaus"],
+   "paljastus": {
+    "mita": "Näytöllä näkyvä numero on väärennettävissä yhtä helposti kuin ääni.",
+    "miksi": "Kaksi tuttua signaalia — oikea numero ja asiallinen puhe — korvaavat sen tarkistuksen, jota ei tehdä.",
+    "sanot": "Katkaisen ja soitan pankin numeroon, jonka haen itse."
+   }
+  },
+  {
+   "id": "aaniklooni-huijaus-3",
+   "teksti": "Tässä on toimitusjohtaja. Olen videoyhteydessä matkalla — hyväksy tämä siirto nyt, kerron taustat myöhemmin.",
+   "konteksti": "tyo",
+   "kanava": "puhe",
+   "harhauttajat": ["toimitusjohtajahuijaus", "painostusclose"],
+   "paljastus": {
+    "mita": "Video ja ääni yhdessä eivät ole tunnistautuminen, vaikka ne siltä tuntuvat.",
+    "miksi": "Aiemmin kasvot ja ääni yhdessä olivat riittävä varmuus. Sääntö on vanhentunut, mutta tunne ei ole.",
+    "sanot": "Meillä maksun hyväksyy kaksi ihmistä. Se koskee myös sinua."
+   }
+  },
+  {
+   "id": "aaniklooni-huijaus-4",
+   "teksti": "Ei ehdi selittää, tää on kiireellinen. Älä kerro kellekään ennen kuin oon soittanu takaisin.",
+   "konteksti": "perhe",
+   "kanava": "puhe",
+   "harhauttajat": ["badger-game", "painostusclose"],
+   "paljastus": {
+    "mita": "Kiire ja salaaminen ovat huijauksen tunnusmerkkejä, eivät kiireellisen asian.",
+    "miksi": "Aito hätä kestää kaksi minuuttia ja soiton läheiselle. Huijaus ei kestä kumpaakaan.",
+    "sanot": "Mikä on se turvasana, josta sovittiin?"
+   }
+  }
+ ]
+}

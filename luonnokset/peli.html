@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <title>Vedätys — päivän manipulaatiopeli | Ilmiöitä</title>
+  <link rel="stylesheet" href="../fonts/fonts.css">
+  <link rel="stylesheet" href="../fonts/spectral.css">
+
+  <meta name="description" content="Vedätys on päivittäinen peli, jossa tunnistat viidestä viestistä ne, joissa sinua yritetään ohjata — ja ne, jotka ovat ihan tavallisia. Kestää puolitoista minuuttia.">
+  <link rel="canonical" href="https://www.ilmiöt.fi/peli.html">
+  <meta property="og:title" content="Vedätys — päivän manipulaatiopeli">
+  <meta property="og:description" content="Viisi viestiä päivässä. Kumpi on temppu, kumpi tavallinen? Puolitoista minuuttia.">
+  <meta property="og:url" content="https://www.ilmiöt.fi/peli.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fi_FI">
+  <meta property="og:site_name" content="Ilmiöitä — Miten valta toimii">
+  <meta property="og:image" content="https://www.ilmiöt.fi/og/brand.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Ilmiöitä — Miten valta toimii">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Vedätys — päivän manipulaatiopeli">
+  <meta name="twitter:description" content="Viisi viestiä päivässä. Kumpi on temppu, kumpi tavallinen?">
+  <meta name="twitter:image" content="https://www.ilmiöt.fi/og/brand.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://www.ilmiöt.fi/peli.html#peli",
+      "name": "Vedätys",
+      "url": "https://www.ilmiöt.fi/peli.html",
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "Selain",
+      "inLanguage": "fi",
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+      "description": "Päivittäinen peli, jossa tunnistetaan manipulaatiotekniikoita lyhyistä suomenkielisistä viesteistä. Mukana on aina myös tavallisia viestejä, joissa ei ole mitään vikaa.",
+      "dateModified": "2026-08-23",
+      "author": { "@id": "https://www.ilmiöt.fi/#ilmiomies" },
+      "publisher": { "@id": "https://www.ilmiöt.fi/#organization" },
+      "isPartOf": { "@id": "https://www.ilmiöt.fi/#website" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Ilmiöitä", "item": "https://www.ilmiöt.fi/" },
+        { "@type": "ListItem", "position": 2, "name": "Vedätys" }
+      ]
+    }
+  ]
+}
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --c-primary: #C9A84C;
+      --c-primary-dark: #1C1400;
+      --c-primary-mid: #8B6914;
+      --c-primary-pale: #FBF5E0;
+      --c-bg: #F5F0E5;
+      --c-surface: #FDFAF2;
+      --c-border: #D4C090;
+      --c-oikein: #2e7d52;
+      --c-osin: #b8860b;
+      --c-vaarin: #b03a2e;
+    }
+    body {
+      font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+      background: var(--c-bg);
+      color: #1A1100;
+      line-height: 1.7;
+      -webkit-text-size-adjust: 100%;
+    }
+    /* [hidden] ei tehoa jos elementillä on display:flex/grid — toistetaan se.
+       Tämä on dokumentoitu sudenkuoppa (index.html:1468). */
+    [hidden] { display: none !important; }
+
+    /* ── Header (sama rakenne kuin index.html:ssä ja muutokset.html:ssä) ── */
+    .hub-header {
+      position: sticky; top: 0; z-index: 20;
+      background: var(--c-primary-dark);
+      padding: 0.85rem 1.5rem;
+      display: flex; align-items: center; gap: 0.75rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.28);
+    }
+    .hub-logo { width: 36px; height: 36px; flex-shrink: 0; }
+    .hub-header-left { flex-shrink: 0; margin-right: 0.25rem; }
+    .hub-header-left h1 {
+      font-size: 1rem; font-weight: 700; color: #fff; line-height: 1.2;
+      letter-spacing: -0.01em; font-family: 'Spectral', Georgia, serif;
+    }
+    .hub-header-left p {
+      font-size: 0.72em; color: rgba(255,255,255,0.48);
+      margin-top: 0.1em; letter-spacing: 0.01em;
+    }
+    .takaisin-btn {
+      flex-shrink: 0; margin-left: auto;
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: rgba(201,168,76,0.18); color: #fff;
+      border: 1px solid rgba(201,168,76,0.4);
+      padding: 0.35rem 0.7rem; font-size: 0.82em; font-weight: 600;
+      text-decoration: none; font-family: inherit;
+    }
+    .takaisin-btn:hover { background: rgba(201,168,76,0.34); }
+    .takaisin-btn:focus-visible { outline: 2px solid var(--c-primary); outline-offset: 2px; }
+
+    main { max-width: 42rem; margin: 0 auto; padding: 1.5rem 1.1rem 4rem; }
+
+    /* ── Yhteiset ── */
+    .nappi {
+      font-family: inherit; font-size: 0.95em; font-weight: 600;
+      color: var(--c-primary-dark); background: transparent;
+      border: 1.5px solid var(--c-primary);
+      padding: 0.45rem 0.9rem; cursor: pointer;
+      transition: background 0.12s, color 0.12s;
+    }
+    .nappi:hover { background: var(--c-primary); color: #fff; }
+    .nappi:focus-visible { outline: 2px solid var(--c-primary-mid); outline-offset: 2px; }
+    .nappi-iso { font-size: 1.05em; padding: 0.7rem 1.4rem; }
+    .nappi-tumma { background: var(--c-primary-dark); color: #fff; border-color: var(--c-primary-dark); }
+    .nappi-tumma:hover { background: #000; color: #fff; }
+    .laatikko {
+      background: var(--c-surface); border: 1.5px solid var(--c-border);
+      padding: 1rem 1.1rem; margin-bottom: 1.2rem;
+    }
+    .osio-otsikko {
+      font-size: 0.72em; font-weight: 700; letter-spacing: 0.13em;
+      text-transform: uppercase; color: var(--c-primary-mid); margin-bottom: 0.5rem;
+    }
+    h2 { font-family: 'Spectral', Georgia, serif; font-size: 1.5rem; line-height: 1.25; margin-bottom: 0.6rem; }
+    p + p { margin-top: 0.7rem; }
+    a { color: var(--c-primary-mid); }
+
+    /* ── Aloitusruutu ── */
+    .aloitus-kuva {
+      font-family: 'Spectral', Georgia, serif;
+      font-size: clamp(2.4rem, 11vw, 3.6rem); line-height: 1;
+      letter-spacing: -0.03em; margin-bottom: 0.3rem;
+    }
+    .aloitus-alku { color: var(--c-muted, #6B5020); margin-bottom: 1.4rem; }
+    .tehoste-rivi {
+      display: flex; flex-wrap: wrap; gap: 0.5rem 1.4rem;
+      font-size: 0.9em; margin-bottom: 1.2rem;
+    }
+    .tehoste-rivi b { font-size: 1.3em; font-family: 'Spectral', Georgia, serif; }
+    .saannot li { margin-left: 1.1rem; margin-bottom: 0.35rem; }
+    .raja-laatikko {
+      border-left: 3px solid var(--c-primary); background: var(--c-primary-pale);
+      padding: 0.8rem 1rem; font-size: 0.94em; margin-bottom: 1.4rem;
+    }
+
+    /* ── Pelinäkymä ── */
+    .edistyminen { display: flex; gap: 0.4rem; margin-bottom: 1rem; align-items: center; }
+    .piste {
+      width: 1.55rem; height: 0.42rem; background: var(--c-border);
+      border-radius: 1px;
+    }
+    .piste.g { background: var(--c-oikein); }
+    .piste.y { background: var(--c-osin); }
+    .piste.r { background: var(--c-vaarin); }
+    .piste.nyt { outline: 2px solid var(--c-primary-dark); outline-offset: 2px; }
+    .era-nro { margin-left: auto; font-size: 0.8em; color: var(--c-primary-mid); font-weight: 600; }
+
+    .kortti {
+      background: #fff; border: 1.5px solid var(--c-border);
+      padding: 1.1rem 1.2rem; margin-bottom: 0.35rem;
+      font-size: 1.12em; line-height: 1.55;
+    }
+    .kortti-meta {
+      font-size: 0.72em; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--c-primary-mid); font-weight: 700; margin-bottom: 0.5rem;
+    }
+    .kortti.viesti { border-radius: 0 14px 14px 14px; }
+    .kortti.puhe { font-style: italic; }
+    .kortti.kayttoliittyma { font-family: 'DM Sans', sans-serif; background: #f4f4f6; border-color: #c9c9d1; }
+    .kortti.sahkoposti { border-left: 4px solid var(--c-primary-mid); }
+
+    .kysymys { font-weight: 600; margin: 1.1rem 0 0.6rem; }
+    .valinnat { display: grid; gap: 0.5rem; }
+    .valinta {
+      text-align: left; font-family: inherit; font-size: 1em;
+      background: var(--c-surface); border: 1.5px solid var(--c-border);
+      padding: 0.7rem 0.9rem; cursor: pointer; line-height: 1.4;
+      transition: border-color 0.12s, background 0.12s;
+    }
+    .valinta:hover { border-color: var(--c-primary); background: #fff; }
+    .valinta:focus-visible { outline: 2px solid var(--c-primary-mid); outline-offset: 2px; }
+    .valinta b { display: block; }
+    .valinta span { font-size: 0.86em; color: #6B5020; }
+    .valinta kbd {
+      float: right; font-family: inherit; font-size: 0.78em;
+      color: var(--c-primary-mid); border: 1px solid var(--c-border);
+      padding: 0 0.32rem; margin-left: 0.5rem;
+    }
+    .valinta.suositeltu { border-color: var(--c-primary); background: var(--c-primary-pale); }
+    .suositeltu-merkki {
+      font-size: 0.72em; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--c-primary-mid); font-weight: 700;
+    }
+
+    /* ── Paljastus ── */
+    .paljastus { border-top: 3px solid var(--c-primary-dark); padding-top: 0.9rem; margin-top: 1.1rem; }
+    .tuomio { font-family: 'Spectral', Georgia, serif; font-size: 1.35rem; margin-bottom: 0.6rem; }
+    .tuomio.g { color: var(--c-oikein); }
+    .tuomio.y { color: var(--c-osin); }
+    .tuomio.r { color: var(--c-vaarin); }
+    .paljastus dl { margin-bottom: 0.9rem; }
+    .paljastus dt {
+      font-size: 0.72em; font-weight: 700; letter-spacing: 0.13em;
+      text-transform: uppercase; color: var(--c-primary-mid); margin-top: 0.7rem;
+    }
+    .paljastus dd { margin-left: 0; }
+    .sanot-laatikko {
+      background: var(--c-primary-dark); color: #fff;
+      padding: 0.8rem 1rem; margin-top: 0.8rem; font-size: 1.05em;
+    }
+    .sanot-laatikko .osio-otsikko { color: var(--c-primary); }
+    .lue-linkki { display: inline-block; margin-top: 0.8rem; font-weight: 600; }
+
+    /* ── Lippu ── */
+    .lippu-palkki {
+      position: sticky; bottom: 0; background: var(--c-bg);
+      padding: 0.7rem 0 0.4rem; margin-top: 1.4rem;
+      border-top: 1px dashed var(--c-border);
+      display: flex; align-items: center; gap: 0.7rem; flex-wrap: wrap;
+    }
+    .lippu-nappi {
+      font-family: inherit; font-size: 0.9em; font-weight: 600; cursor: pointer;
+      background: transparent; border: 1.5px dashed var(--c-primary-mid);
+      color: var(--c-primary-dark); padding: 0.4rem 0.8rem;
+    }
+    .lippu-nappi:hover { background: var(--c-primary-pale); }
+    .lippu-nappi:focus-visible { outline: 2px solid var(--c-primary-mid); outline-offset: 2px; }
+    .lippu-nappi[disabled] { opacity: 0.4; cursor: default; }
+    .lippu-selite { font-size: 0.82em; color: #6B5020; }
+
+    /* ── Ansat ── */
+    .ansa-ajastin {
+      display: flex; align-items: center; gap: 0.6rem;
+      font-size: 0.85em; font-weight: 700; color: var(--c-vaarin);
+      margin-bottom: 0.5rem;
+    }
+    .ansa-palkki { flex: 1; height: 5px; background: #e4d9bd; overflow: hidden; }
+    .ansa-palkki i { display: block; height: 100%; background: var(--c-vaarin); width: 100%; }
+    @media (prefers-reduced-motion: no-preference) {
+      .ansa-palkki i { transition: width 1s linear; }
+    }
+    .ansa-todiste { font-size: 0.85em; color: var(--c-primary-mid); margin-bottom: 0.5rem; font-weight: 600; }
+    .ansa-syyllistys {
+      background: none; border: none; padding: 0.3rem 0; cursor: pointer;
+      font-family: inherit; font-size: 0.82em; color: #9a8a6a;
+      text-decoration: underline; text-underline-offset: 2px;
+    }
+
+    /* ── Loppuruutu ── */
+    .tulos-luvut { display: flex; gap: 1.8rem; flex-wrap: wrap; margin-bottom: 1rem; }
+    .tulos-luku b { display: block; font-family: 'Spectral', Georgia, serif; font-size: 2.1rem; line-height: 1; }
+    .tulos-luku span { font-size: 0.8em; color: #6B5020; }
+    .ruudukko { font-size: 1.5rem; letter-spacing: 0.1em; margin: 0.4rem 0 1rem; }
+    .jako-esikatselu {
+      font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.85em;
+      background: var(--c-surface); border: 1px solid var(--c-border);
+      padding: 0.7rem 0.9rem; white-space: pre-wrap; margin: 0.6rem 0 0.9rem;
+      overflow-x: auto;
+    }
+    .napit-rivi { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1.4rem; }
+    .ansa-raportti li { margin-left: 1.1rem; margin-bottom: 0.3rem; }
+    .kertaus li { margin-bottom: 0.45rem; }
+
+    .haaste-laatikko {
+      border-left: 3px solid var(--c-primary-mid); background: #fff;
+      padding: 0.7rem 1rem; margin-bottom: 1.2rem; font-size: 0.94em;
+    }
+
+    footer {
+      border-top: 1px solid var(--c-border); margin-top: 2.5rem;
+      padding: 1.2rem 1.1rem; text-align: center;
+      font-size: 0.82em; color: #6B5020;
+    }
+    footer a { color: var(--c-primary-mid); }
+
+    @media (max-width: 640px) {
+      .hub-header { padding: 0.7rem 0.9rem; gap: 0.5rem; }
+      .hub-header-left h1 { font-size: 0.92rem; }
+      main { padding: 1.1rem 0.85rem 3.5rem; }
+      .kortti { font-size: 1.05em; }
+      .tulos-luvut { gap: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="hub-header">
+  <img class="hub-logo" src="../favicon.svg" alt="Ilmiöitä" width="36" height="36">
+  <div class="hub-header-left">
+    <h1>Vedätys</h1>
+    <p>Päivän erä · Ilmiöitä</p>
+  </div>
+  <a class="takaisin-btn" href="../index.html">← Kaikki ilmiöt</a>
+</header>
+
+<main>
+  <!-- ══ Aloitus ══ -->
+  <section id="aloitus">
+    <p class="aloitus-kuva">Kumpi näistä<br>on temppu?</p>
+    <p class="aloitus-alku">Viisi viestiä. Osassa sinua ohjataan, osa on ihan tavallisia. Puolitoista minuuttia.</p>
+
+    <div class="tehoste-rivi" id="tehosteRivi" hidden>
+      <div><b id="tehosteLuku">0</b> tehostepäivää putkeen</div>
+      <div><b id="tarkkuusLuku">–</b> tunnistustarkkuus</div>
+    </div>
+
+    <div class="haaste-laatikko" id="haasteLaatikko" hidden></div>
+    <p class="haaste-laatikko" id="jopelattu" hidden>Tämän päivän erä on jo pelattu. Voit pelata sen
+      uudelleen, mutta tilastoihin se ei enää vaikuta — huominen erä avautuu keskiyöllä.</p>
+
+    <p class="raja-laatikko" id="latausvirhe" hidden style="border-color:#b03a2e;background:#fdf0ef">
+      <b>Pelin data ei latautunut.</b> Tiedosto <code>data/peli-pankki.js</code> puuttuu tai sitä ei
+      ehditty ajaa. Ilman sitä peliä ei voi käynnistää. Aja <code>python3 scripts/build_peli.py</code>
+      ja lataa sivu uudelleen.</p>
+
+    <div class="napit-rivi">
+      <button class="nappi nappi-iso nappi-tumma" id="aloitaNappi">Pelaa päivän erä</button>
+      <button class="nappi nappi-iso" id="harjoitteleNappi">Harjoittele</button>
+    </div>
+
+    <div class="laatikko">
+      <p class="osio-otsikko">Miten tämä toimii</p>
+      <ul class="saannot">
+        <li>Jokaisesta viestistä valitset: <b>tavallinen</b>, <b>oma pää</b> vai <b>joku tekee tämän</b>.</li>
+        <li>Väärä hälytys maksaa saman kuin ohitus. Epäluuloisuus ei ole taito — <b>erottelu on</b>.</li>
+        <li>Jos tunnistat tempun, saat nimetä sen. Nimeäminen on se osa, joka siirtyy uusiin tilanteisiin.</li>
+        <li>Sinulla on <b>yksi lippu 🚩</b> per erä. Käytä se, jos epäilet että <b>peli itse</b> tekee sinulle tempun.</li>
+      </ul>
+    </div>
+
+    <div class="raja-laatikko">
+      <p><b>Tämä peli huijaa sinua vain siellä missä se opettaa, ei siellä missä se hyötyy.</b></p>
+      <p>Osassa eristä käyttöliittymä tekee sinulle tempun ja kertoo sen heti perään. Sen sijaan täältä ei löydy
+        ilmoituksia, putkiahdistusta, pakotettua jakamista eikä ostettavia armonpäiviä. Mitään ei myöskään lähetetä
+        minnekään: tulokset ovat vain sinun selaimessasi.</p>
+      <p>Putkea kutsutaan <b>tehosteeksi</b>, koska se on rehellinen nimi. Tunnistuskyky hiipuu noin kahdessa
+        kuukaudessa, ellei sitä testaa toistuvasti — toisto on ainoa syy tulla takaisin, ja se riittää.</p>
+    </div>
+
+    <p style="font-size:.9em;color:#6B5020">Kaikki 27 ilmiötä löytyvät myös luettavina:
+      <a href="../index.html">selaa tietopankkia</a>.</p>
+  </section>
+
+  <!-- ══ Peli ══ -->
+  <section id="peli" hidden>
+    <div class="edistyminen" id="edistyminen"></div>
+
+    <div id="ansaAjastin" class="ansa-ajastin" hidden>
+      <span id="ansaKello">0:10</span>
+      <span class="ansa-palkki"><i id="ansaPalkki"></i></span>
+      <span>päätä nopeasti</span>
+    </div>
+    <div id="ansaTodiste" class="ansa-todiste" hidden></div>
+
+    <div class="kortti" id="kortti">
+      <div class="kortti-meta" id="korttiMeta"></div>
+      <div id="korttiTeksti"></div>
+    </div>
+
+    <p class="kysymys" id="kysymys">Mistä tässä on kyse?</p>
+    <div class="valinnat" id="valinnat"></div>
+    <button class="ansa-syyllistys" id="ansaSyyllistys" hidden>ohita — en jaksa miettiä näitä</button>
+
+    <div class="paljastus" id="paljastus" hidden>
+      <p class="tuomio" id="tuomio"></p>
+      <dl>
+        <dt>Mitä tapahtuu</dt><dd id="pMita"></dd>
+        <dt>Miksi se toimii</dt><dd id="pMiksi"></dd>
+      </dl>
+      <div class="sanot-laatikko" id="sanotLaatikko" hidden>
+        <p class="osio-otsikko">Mitä sanot</p>
+        <p id="pSanot"></p>
+      </div>
+      <a class="lue-linkki" id="lueLinkki" href="#" hidden></a>
+      <div class="napit-rivi" style="margin-top:1rem">
+        <button class="nappi nappi-tumma" id="seuraavaNappi">Seuraava →</button>
+      </div>
+    </div>
+
+    <div class="lippu-palkki">
+      <button class="lippu-nappi" id="lippuNappi">🚩 Tässä tehdään temppu</button>
+      <span class="lippu-selite" id="lippuSelite">Yksi lippu per erä.</span>
+    </div>
+  </section>
+
+  <!-- ══ Loppu ══ -->
+  <section id="loppu" hidden>
+    <h2 id="loppuOtsikko">Erä 1</h2>
+    <div class="tulos-luvut">
+      <div class="tulos-luku"><b id="tLuokitus">0/5</b><span>tunnistus</span></div>
+      <div class="tulos-luku"><b id="tNimeaminen">0/0</b><span>nimeäminen</span></div>
+      <div class="tulos-luku"><b id="tTehoste">1</b><span>tehostepäivää</span></div>
+    </div>
+    <div class="ruudukko" id="ruudukko"></div>
+
+    <div class="laatikko" id="ansaRaportti" hidden>
+      <p class="osio-otsikko">Mitä sinulle tehtiin tässä erässä</p>
+      <ul class="ansa-raportti" id="ansaLista"></ul>
+    </div>
+
+    <div id="vertailu" hidden class="haaste-laatikko"></div>
+
+    <p class="osio-otsikko">Jaa tulos ja haasta</p>
+    <div class="jako-esikatselu" id="jakoTeksti"></div>
+    <div class="napit-rivi">
+      <button class="nappi nappi-tumma" id="jakoNappi">Kopioi leikepöydälle</button>
+      <button class="nappi" id="harjoitteleLoppu">Harjoittele lisää</button>
+      <button class="nappi" id="arkistoNappi">Arkisto</button>
+    </div>
+
+    <div class="laatikko">
+      <p class="osio-otsikko">Tämän erän ilmiöt</p>
+      <ul class="kertaus" id="kertausLista"></ul>
+    </div>
+
+    <div id="arkistoLista" hidden class="laatikko">
+      <p class="osio-otsikko">Arkisto</p>
+      <p id="arkistoSisalto" style="font-size:.95em"></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© 2026 Ilmiöitä — Miten valta toimii · Kirjoittanut Ilmiömies ·
+    <a href="../tietoa.html">Tietoa sivustosta ja tekijästä</a> ·
+    <a href="../muutokset.html">Mitä sivustolle on tehty</a></p>
+</footer>
+
+<script src="../data/peli-pankki.js" defer></script>
+<script>
+(function () {
+  'use strict';
+
+  // ══════════════════════════════════════════════════════════════════
+  //  Vedätys — päivän manipulaationtunnistuspeli
+  //
+  //  Kaikki tapahtuu selaimessa. Ei verkkopyyntöjä, ei evästeitä, ei
+  //  analytiikkaa. Tulokset elävät localStoragessa ja vain siellä.
+  //
+  //  Kaksi sääntöä, jotka on syytä muistaa jos tätä muokkaa:
+  //
+  //  1. PÄIVÄN ERÄ ON KAIKILLE SAMA. Erät on koottu käännösaikana
+  //     (scripts/build_peli.py), eikä tässä arvota mitään päivän erään.
+  //     Ilman tätä tulosten vertailu ja jakaminen menettää merkityksensä.
+  //  2. VÄÄRÄ HÄLYTYS MAKSAA SAMAN KUIN OHITUS. Pisteytys mittaa
+  //     erottelukykyä, ei epäluuloisuutta. Tämä on koko pelin tarkoitus:
+  //     Bad News -pelin replikaatiot osoittivat, että pelkkä epäilyn
+  //     lisääminen opettaa kyynisyyttä eikä tunnistamista.
+  // ══════════════════════════════════════════════════════════════════
+
+  // data/peli-pankki.js on defer-skripti: se ajetaan vasta dokumentin
+  // jäsennyksen jälkeen, siis MYÖHEMMIN kuin tämä inline-skripti. Siksi
+  // pankkia ei saa lukea tässä — se luetaan DOMContentLoadedissa, samalla
+  // tavalla kuin etusivu lukee window.ILMIO_SUOSIO:n (index.html:3059).
+  // Aiemmin tässä oli "var P = window.VEDATYS_PANKKI; if (!P) return;",
+  // jolloin koko peli poistui hiljaa eikä yhtään nappia kytketty.
+  var P = null;
+  var EPOKKI = null;
+
+  var VRK = 864e5;
+  var AVAIN_TILASTOT = 'peli-tilastot';
+  var AVAIN_NAHTY = 'peli-nahty';
+
+  var LAJIT = [
+    { koodi: 'rehellinen', nimi: 'Tavallinen viesti', selite: 'Ei mitään vikaa.' },
+    { koodi: 'vinouma', nimi: 'Oma pää', selite: 'Minun päättelyni vinoutuu — kukaan ei tee tätä minulle.' },
+    { koodi: 'taktiikka', nimi: 'Joku tekee tämän', selite: 'Tämän takana on valinta. Vastakeino on nimeäminen.' }
+  ];
+
+  var KANAVAT = {
+    viesti: 'Viesti', puhe: 'Puhelu', sahkoposti: 'Sähköposti',
+    kayttoliittyma: 'Ruudulla', ajatus: 'Oma ajatus'
+  };
+  var KONTEKSTIT = {
+    tyo: 'työ', parisuhde: 'parisuhde', perhe: 'perhe', myynti: 'myynti',
+    puhelin: 'puhelin', some: 'some', kauppa: 'kauppa',
+    viranomainen: 'viranomainen', vuokra: 'vuokra', ajatus: 'ajatus'
+  };
+
+  // ── Päivämäärät ────────────────────────────────────────────────────
+  // Paikallinen keskiyö, ei UTC: tämä on aamukahvipeli suomalaiselle
+  // yleisölle. setHours(0,0,0,0) MOLEMMILLE päiville on pakollinen —
+  // ilman sitä kesäajan vaihtuminen siirtää päiväindeksiä yhdellä.
+  function uusiPvm(iso) {
+    var o = iso.split('-');
+    return new Date(+o[0], +o[1] - 1, +o[2], 0, 0, 0, 0);
+  }
+  function paivaIndeksi(d) {
+    var a = new Date(EPOKKI.getTime()).setHours(0, 0, 0, 0);
+    var b = new Date(d.getTime()).setHours(0, 0, 0, 0);
+    return Math.round((b - a) / VRK);
+  }
+  function tamaPaiva() { return Math.max(0, paivaIndeksi(new Date())); }
+
+  // ── Talletus (aina try/catch: yksityinen ikkuna heittää) ───────────
+  function lue(avain, oletus) {
+    try {
+      var s = window.localStorage.getItem(avain);
+      return s ? JSON.parse(s) : oletus;
+    } catch (e) { return oletus; }
+  }
+  function talleta(avain, arvo) {
+    try { window.localStorage.setItem(avain, JSON.stringify(arvo)); } catch (e) { /* ei mitään */ }
+  }
+
+  // ── Siemennetty sekoitus ───────────────────────────────────────────
+  // Vaihtoehtojen järjestyksen on oltava kaikilla pelaajilla sama, jotta
+  // "kolmas vaihtoehto" tarkoittaa samaa asiaa kaverin kanssa puhuttaessa.
+  function arpoja(siemen) {
+    var a = siemen >>> 0;
+    return function () {
+      a += 0x6D2B79F5;
+      var t = a;
+      t = Math.imul(t ^ (t >>> 15), t | 1);
+      t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+  function sekoita(lista, siemen) {
+    var r = arpoja(siemen), t = lista.slice(), i, j, x;
+    for (i = t.length - 1; i > 0; i--) {
+      j = Math.floor(r() * (i + 1));
+      x = t[i]; t[i] = t[j]; t[j] = x;
+    }
+    return t;
+  }
+
+  // ── DOM ────────────────────────────────────────────────────────────
+  function $(id) { return document.getElementById(id); }
+  function tyhjenna(el) { while (el.firstChild) { el.removeChild(el.firstChild); } }
+  function naytaOsio(nimi) {
+    ['aloitus', 'peli', 'loppu'].forEach(function (x) { $(x).hidden = (x !== nimi); });
+    window.scrollTo(0, 0);
+  }
+
+  // ── Pelitila ───────────────────────────────────────────────────────
+  var tila = null;
+
+  function eraIndeksi(paiva) { return paiva % P.erat.length; }
+
+  function aloitaEra(paiva, harjoittelu) {
+    var era = P.erat[eraIndeksi(paiva)];
+    var kohdat;
+    if (harjoittelu) {
+      kohdat = valitseHarjoitus();
+    } else {
+      kohdat = era.k.map(function (i) { return P.kohdat[i]; });
+    }
+    tila = {
+      paiva: paiva,
+      harjoittelu: !!harjoittelu,
+      kohdat: kohdat,
+      ansa: harjoittelu ? null : (era.a || null),
+      nyt: 0,
+      merkit: [],
+      luokitusOikein: 0,
+      nimiOikein: 0,
+      nimiYritetty: 0,
+      lippuKaytetty: false,
+      lippuOsui: false,
+      valmis: false
+    };
+    naytaOsio('peli');
+    piirraKierros();
+  }
+
+  // Harjoittelu käyttää välijättötoistoa: väärin menneet ilmiöt palaavat
+  // 3, 7 ja 21 päivän päästä. Tämä EI koske päivän erää — se on kaikille
+  // sama, eikä henkilökohtainen historia saa muuttaa sitä.
+  function valitseHarjoitus() {
+    var nahty = lue(AVAIN_NAHTY, {});
+    var paiva = tamaPaiva();
+    var siemen = paiva * 7 + 13 + Math.floor(Date.now() / 1000) % 997;
+
+    // Temput järjestetään sen mukaan, kuinka kipeästi ne pitäisi kerrata:
+    // näkemätön ensin, sitten ne joiden väli (3/7/21 vrk) on umpeutunut.
+    var temput = P.kohdat.filter(function (k) { return k.l !== 'rehellinen'; });
+    var pisteytetyt = temput.map(function (k, i) {
+      var h = nahty[k.i];
+      var ika = h ? paiva - h.p : 999;
+      var vali = h ? [3, 7, 21][Math.min(h.v || 0, 2)] : 0;
+      return { i: i, k: k, pisteet: h ? (ika - vali) : 500 };
+    });
+    pisteytetyt.sort(function (a, b) {
+      if (b.pisteet !== a.pisteet) { return b.pisteet - a.pisteet; }
+      return a.i - b.i;
+    });
+    var kiireiset = sekoita(pisteytetyt.slice(0, 20).map(function (x) { return x.k; }), siemen);
+
+    // Rehellisiä on mukana sama osuus kuin päivän erässä. Ilman niitä
+    // harjoittelu opettaisi juuri sitä kyynisyyttä, jota peli välttää.
+    var rehelliset = sekoita(
+      P.kohdat.filter(function (k) { return k.l === 'rehellinen'; }), siemen + 1);
+
+    var era = kiireiset.slice(0, 4).concat(rehelliset.slice(0, 1));
+    return sekoita(era, siemen + 2);
+  }
+
+  function merkitseNahty(kohta, oikein) {
+    if (!kohta.i) { return; }
+    var nahty = lue(AVAIN_NAHTY, {});
+    var h = nahty[kohta.i] || { p: 0, v: 0 };
+    h.p = tamaPaiva();
+    h.v = oikein ? Math.min((h.v || 0) + 1, 2) : 0;
+    nahty[kohta.i] = h;
+    talleta(AVAIN_NAHTY, nahty);
+  }
+
+  // ── Kierroksen piirto ──────────────────────────────────────────────
+  var ajastinId = null;
+
+  function piirraEdistyminen() {
+    var el = $('edistyminen');
+    tyhjenna(el);
+    for (var i = 0; i < tila.kohdat.length; i++) {
+      var d = document.createElement('span');
+      d.className = 'piste' + (tila.merkit[i] ? ' ' + tila.merkit[i] : '') +
+        (i === tila.nyt ? ' nyt' : '');
+      el.appendChild(d);
+    }
+    var nro = document.createElement('span');
+    nro.className = 'era-nro';
+    nro.textContent = tila.harjoittelu ? 'Harjoittelu' : 'Vedätys #' + (tila.paiva + 1);
+    el.appendChild(nro);
+  }
+
+  function piirraKierros() {
+    var k = tila.kohdat[tila.nyt];
+    piirraEdistyminen();
+
+    $('kortti').className = 'kortti ' + (k.kn || '');
+    $('korttiMeta').textContent =
+      (KANAVAT[k.kn] || '') + (k.kt ? ' · ' + (KONTEKSTIT[k.kt] || k.kt) : '');
+    $('korttiTeksti').textContent = k.t;
+
+    $('paljastus').hidden = true;
+    $('kysymys').hidden = false;
+    $('kysymys').textContent = 'Mistä tässä on kyse?';
+    $('valinnat').hidden = false;
+
+    piirraLajivalinnat(k);
+    pystytaAnsa(k);
+
+    $('lippuNappi').disabled = tila.lippuKaytetty;
+    $('lippuSelite').textContent = tila.lippuKaytetty
+      ? 'Lippu käytetty tässä erässä.'
+      : 'Yksi lippu per erä.';
+  }
+
+  function piirraLajivalinnat(k) {
+    var el = $('valinnat');
+    tyhjenna(el);
+    LAJIT.forEach(function (laji, n) {
+      var b = document.createElement('button');
+      b.className = 'valinta';
+      b.type = 'button';
+      var kbd = document.createElement('kbd');
+      kbd.textContent = String(n + 1);
+      b.appendChild(kbd);
+      var vahva = document.createElement('b');
+      vahva.textContent = laji.nimi;
+      b.appendChild(vahva);
+      var sel = document.createElement('span');
+      sel.textContent = laji.selite;
+      b.appendChild(sel);
+      // Ansa "oletus": yksi vaihtoehto on valmiiksi korostettu ja merkitty
+      // suositelluksi. Mikään ei suosittele sitä — se on koko temppu.
+      if (tila.ansa && tila.ansa.t === 'oletus' && tila.ansa.r === tila.nyt &&
+          laji.koodi === 'taktiikka') {
+        b.className += ' suositeltu';
+        var merkki = document.createElement('span');
+        merkki.className = 'suositeltu-merkki';
+        merkki.textContent = ' · suositeltu';
+        vahva.appendChild(merkki);
+      }
+      b.addEventListener('click', function () { vastaaLaji(laji.koodi); });
+      el.appendChild(b);
+    });
+  }
+
+  function pystytaAnsa(k) {
+    pysaytaAjastin();
+    $('ansaAjastin').hidden = true;
+    $('ansaTodiste').hidden = true;
+    $('ansaSyyllistys').hidden = true;
+    if (!tila.ansa || tila.ansa.r !== tila.nyt) { return; }
+
+    if (tila.ansa.t === 'ajastin') {
+      $('ansaAjastin').hidden = false;
+      kaynnistaAjastin(10);
+    } else if (tila.ansa.t === 'todiste') {
+      // Luku on keksitty. Se kerrotaan erän lopussa.
+      var pros = 60 + ((tila.paiva * 7 + tila.nyt * 13) % 35);
+      $('ansaTodiste').hidden = false;
+      $('ansaTodiste').textContent = pros + ' % vastasi tähän oikein.';
+    } else if (tila.ansa.t === 'syyllistys') {
+      $('ansaSyyllistys').hidden = false;
+    }
+  }
+
+  function kaynnistaAjastin(sekunnit) {
+    var jaljella = sekunnit;
+    $('ansaPalkki').style.width = '100%';
+    $('ansaKello').textContent = '0:' + (jaljella < 10 ? '0' : '') + jaljella;
+    ajastinId = window.setInterval(function () {
+      jaljella--;
+      if (jaljella <= 0) {
+        pysaytaAjastin();
+        // Kello ei tee mitään. Se ei ole koskaan tehnyt.
+        $('ansaKello').textContent = '0:00';
+        $('ansaPalkki').style.width = '0%';
+        return;
+      }
+      $('ansaKello').textContent = '0:' + (jaljella < 10 ? '0' : '') + jaljella;
+      $('ansaPalkki').style.width = (jaljella / sekunnit * 100) + '%';
+    }, 1000);
+  }
+  function pysaytaAjastin() {
+    if (ajastinId) { window.clearInterval(ajastinId); ajastinId = null; }
+  }
+
+  // ── Vastaaminen ────────────────────────────────────────────────────
+  function vastaaLaji(valittu) {
+    pysaytaAjastin();
+    $('ansaAjastin').hidden = true;
+    $('ansaSyyllistys').hidden = true;
+    var k = tila.kohdat[tila.nyt];
+    var oikein = (valittu === k.l);
+    tila.valittuLaji = valittu;
+
+    if (oikein) { tila.luokitusOikein++; }
+
+    // Nimeämisvaihe vain jos kohta on oikeasti temppu JA pelaaja tunnisti
+    // sen tempuksi. Väärä hälytys maksaa luokituksessa, ei nimeämisessä —
+    // muuten sama virhe rankaistaisiin kahdesti.
+    if (k.l !== 'rehellinen' && valittu !== 'rehellinen') {
+      naytaNimeaminen(k, oikein);
+    } else {
+      naytaPaljastus(k, oikein, null);
+    }
+  }
+
+  function naytaNimeaminen(k, luokitusOikein) {
+    $('kysymys').textContent = 'Mikä temppu tämä on?';
+    var vaihtoehdot = sekoita([k.i].concat(k.h), tila.paiva * 101 + tila.nyt * 7);
+    var el = $('valinnat');
+    tyhjenna(el);
+    vaihtoehdot.forEach(function (slug, n) {
+      var tiedot = P.ilmiot[slug] || { n: slug, k: '' };
+      var b = document.createElement('button');
+      b.className = 'valinta';
+      b.type = 'button';
+      var kbd = document.createElement('kbd');
+      kbd.textContent = String(n + 1);
+      b.appendChild(kbd);
+      var vahva = document.createElement('b');
+      vahva.textContent = tiedot.n;
+      b.appendChild(vahva);
+      var sel = document.createElement('span');
+      sel.textContent = tiedot.k;
+      b.appendChild(sel);
+      b.addEventListener('click', function () {
+        tila.nimiYritetty++;
+        var nimiOikein = (slug === k.i);
+        if (nimiOikein) { tila.nimiOikein++; }
+        naytaPaljastus(k, luokitusOikein, nimiOikein);
+      });
+      el.appendChild(b);
+    });
+  }
+
+  function naytaPaljastus(k, luokitusOikein, nimiOikein) {
+    var merkki = !luokitusOikein ? 'r' : (nimiOikein === false ? 'y' : 'g');
+    tila.merkit[tila.nyt] = merkki;
+    merkitseNahty(k, luokitusOikein && nimiOikein !== false);
+
+    $('kysymys').hidden = true;
+    $('valinnat').hidden = true;
+    $('paljastus').hidden = false;
+    piirraEdistyminen();
+
+    var t = $('tuomio');
+    t.className = 'tuomio ' + merkki;
+    if (merkki === 'g') {
+      t.textContent = k.l === 'rehellinen' ? 'Oikein — tässä ei ollut mitään vikaa.' : 'Osui.';
+    } else if (merkki === 'y') {
+      t.textContent = 'Tunnistit tempun, mutta nimi meni väärin.';
+    } else if (k.l === 'rehellinen') {
+      t.textContent = 'Väärä hälytys. Tämä oli tavallinen viesti.';
+    } else {
+      t.textContent = 'Meni ohi.';
+    }
+
+    $('pMita').textContent = k.p[0];
+    $('pMiksi').textContent = k.p[1];
+    var sanot = k.p[2] && k.p[2].trim();
+    $('sanotLaatikko').hidden = !sanot;
+    if (sanot) { $('pSanot').textContent = '"' + sanot + '"'; }
+
+    var linkki = $('lueLinkki');
+    if (k.i && P.ilmiot[k.i]) {
+      linkki.hidden = false;
+      linkki.href = '../' + k.i + '.html';
+      linkki.textContent = 'Lue lisää: ' + P.ilmiot[k.i].n + ' →';
+    } else {
+      linkki.hidden = true;
+    }
+
+    $('seuraavaNappi').textContent =
+      (tila.nyt + 1 >= tila.kohdat.length) ? 'Katso tulos →' : 'Seuraava →';
+    $('seuraavaNappi').focus();
+  }
+
+  function seuraava() {
+    tila.nyt++;
+    if (tila.nyt >= tila.kohdat.length) { paataEra(); } else { piirraKierros(); }
+  }
+
+  // ── Lippu ──────────────────────────────────────────────────────────
+  function nostaLippu() {
+    if (tila.lippuKaytetty) { return; }
+    tila.lippuKaytetty = true;
+    $('lippuNappi').disabled = true;
+    var osui = !!(tila.ansa && tila.ansa.r === tila.nyt);
+    if (osui) {
+      tila.lippuOsui = true;
+      $('lippuSelite').textContent = '🚩 Osui. ' + tila.ansa.n + ' — selitys erän lopussa.';
+    } else {
+      // Turha liputus ei maksa pisteitä. Valppauden rankaiseminen opettaisi
+      // juuri sitä kyynisyyttä, jota tämä peli yrittää välttää.
+      $('lippuSelite').textContent = 'Ei tällä kertaa — mutta hyvä että katsoit. Lippu meni.';
+    }
+  }
+
+  // ── Erän päätös ────────────────────────────────────────────────────
+  function paataEra() {
+    pysaytaAjastin();
+    tila.valmis = true;
+    var n = tila.kohdat.length;
+
+    if (!tila.harjoittelu) { paivitaTilastot(); }
+
+    $('loppuOtsikko').textContent = tila.harjoittelu
+      ? 'Harjoittelu' : 'Vedätys #' + (tila.paiva + 1);
+    $('tLuokitus').textContent = tila.luokitusOikein + '/' + n;
+    $('tNimeaminen').textContent = tila.nimiOikein + '/' + tila.nimiYritetty;
+    var tilastot = lue(AVAIN_TILASTOT, null);
+    $('tTehoste').textContent = (tilastot && tilastot.tehoste) || (tila.harjoittelu ? '–' : 1);
+    $('ruudukko').textContent = tila.merkit.map(ruutu).join('');
+
+    piirraAnsaRaportti();
+    piirraKertaus();
+    piirraJako();
+    piirraVertailu();
+    $('arkistoLista').hidden = true;
+    naytaOsio('loppu');
+  }
+
+  function ruutu(m) { return m === 'g' ? '🟩' : (m === 'y' ? '🟨' : '🟥'); }
+
+  function piirraAnsaRaportti() {
+    var el = $('ansaRaportti');
+    if (!tila.ansa) {
+      el.hidden = !tila.lippuKaytetty;
+      if (!el.hidden) {
+        tyhjenna($('ansaLista'));
+        var li0 = document.createElement('li');
+        li0.textContent = 'Ei mitään. Tässä erässä käyttöliittymä ei tehnyt sinulle temppua — ' +
+          'ja se on osa peliä sekin. Aina ei ole ansaa.';
+        $('ansaLista').appendChild(li0);
+      }
+      return;
+    }
+    el.hidden = false;
+    var lista = $('ansaLista');
+    tyhjenna(lista);
+    var li = document.createElement('li');
+    var b = document.createElement('b');
+    b.textContent = tila.ansa.n + (tila.lippuOsui ? ' — huomasit sen 🚩' : ' — meni ohi');
+    li.appendChild(b);
+    li.appendChild(document.createTextNode(' ' + tila.ansa.s));
+    if (tila.ansa.i && P.ilmiot[tila.ansa.i]) {
+      li.appendChild(document.createTextNode(' '));
+      var a = document.createElement('a');
+      a.href = '../' + tila.ansa.i + '.html';
+      a.textContent = P.ilmiot[tila.ansa.i].n + ' →';
+      li.appendChild(a);
+    }
+    lista.appendChild(li);
+  }
+
+  function piirraKertaus() {
+    var lista = $('kertausLista');
+    tyhjenna(lista);
+    tila.kohdat.forEach(function (k, i) {
+      var li = document.createElement('li');
+      li.appendChild(document.createTextNode(ruutu(tila.merkit[i]) + ' '));
+      if (k.i && P.ilmiot[k.i]) {
+        var a = document.createElement('a');
+        a.href = '../' + k.i + '.html';
+        a.textContent = P.ilmiot[k.i].n;
+        li.appendChild(a);
+        li.appendChild(document.createTextNode(' — ' + P.ilmiot[k.i].k));
+      } else {
+        var b = document.createElement('b');
+        b.textContent = 'Tavallinen viesti';
+        li.appendChild(b);
+        li.appendChild(document.createTextNode(' — ei mitään vikaa.'));
+      }
+      lista.appendChild(li);
+    });
+  }
+
+  // ── Tilastot ja tehoste ────────────────────────────────────────────
+  function paivitaTilastot() {
+    var t = lue(AVAIN_TILASTOT, {
+      pelatut: 0, kohtia: 0, luokitusOikein: 0,
+      nimiOikein: 0, nimiYritetty: 0,
+      tehoste: 0, tehosteParas: 0, viimeisin: -99, armonpaiva: -99
+    });
+    if (t.viimeisin === tila.paiva) { return; }   // sama päivä jo pelattu
+
+    var ero = tila.paiva - t.viimeisin;
+    if (ero === 1) {
+      t.tehoste++;
+    } else if (ero === 2 && tila.paiva - t.armonpaiva >= 30) {
+      // Yksi automaattinen armonpäivä kuukaudessa. Ei ostettavissa, ei
+      // pyydettävissä — ja siitä kerrotaan. Streak-ahdistus on pimeä kuvio.
+      t.tehoste++;
+      t.armonpaiva = tila.paiva;
+    } else {
+      t.tehoste = 1;
+    }
+    if (t.tehoste > t.tehosteParas) { t.tehosteParas = t.tehoste; }
+    t.viimeisin = tila.paiva;
+    t.pelatut++;
+    t.kohtia += tila.kohdat.length;
+    t.luokitusOikein += tila.luokitusOikein;
+    t.nimiOikein += tila.nimiOikein;
+    t.nimiYritetty += tila.nimiYritetty;
+    talleta(AVAIN_TILASTOT, t);
+  }
+
+  function piirraTehoste() {
+    var t = lue(AVAIN_TILASTOT, null);
+    if (!t || !t.pelatut) { $('tehosteRivi').hidden = true; return; }
+    $('tehosteRivi').hidden = false;
+    $('tehosteLuku').textContent = t.tehoste;
+    $('tarkkuusLuku').textContent = t.kohtia
+      ? Math.round(t.luokitusOikein / t.kohtia * 100) + ' %' : '–';
+  }
+
+  // ── Jako ja haaste ─────────────────────────────────────────────────
+  // Linkki koodaa LÄHETTÄJÄN TULOKSEN, ei vastauksia. Vastaanottaja pelaa
+  // saman erän itse ja näkee vertailun vasta lopussa.
+  function haasteKoodi() {
+    return tila.merkit.map(function (m) {
+      return m === 'g' ? 'G' : (m === 'y' ? 'Y' : 'R');
+    }).join('') + (tila.lippuOsui ? '1' : '0');
+  }
+
+  function jakoTeksti() {
+    var rivit = [];
+    rivit.push('Vedätys #' + (tila.paiva + 1) + '   ' +
+      tila.luokitusOikein + '/' + tila.kohdat.length +
+      ' · nimesit ' + tila.nimiOikein + '/' + tila.nimiYritetty);
+    rivit.push(tila.merkit.map(ruutu).join(''));
+    if (tila.lippuOsui) { rivit.push('🚩 huomasit ansan'); }
+    rivit.push('https://www.ilmiöt.fi/peli.html?p=' + tila.paiva + '&t=' + haasteKoodi());
+    return rivit.join('\n');
+  }
+
+  function piirraJako() {
+    $('jakoTeksti').textContent = tila.harjoittelu
+      ? 'Harjoittelutuloksia ei jaeta — päivän erä on se, joka on kaikilla sama.'
+      : jakoTeksti();
+    $('jakoNappi').hidden = tila.harjoittelu;
+  }
+
+  function kopioi() {
+    var teksti = jakoTeksti();
+    function onnistui() {
+      $('jakoNappi').textContent = 'Kopioitu ✓';
+      window.setTimeout(function () {
+        $('jakoNappi').textContent = 'Kopioi leikepöydälle';
+      }, 2000);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(teksti).then(onnistui, varakopio);
+    } else { varakopio(); }
+    function varakopio() {
+      var ta = document.createElement('textarea');
+      ta.value = teksti;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'absolute';
+      ta.style.left = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); onnistui(); } catch (e) { /* ei mitään */ }
+      document.body.removeChild(ta);
+    }
+  }
+
+  function lueHaaste() {
+    var p = new URLSearchParams(window.location.search);
+    var paiva = p.get('p'), koodi = p.get('t');
+    if (paiva === null || !koodi || !/^[GYR]{1,12}[01]$/.test(koodi)) { return null; }
+    var merkit = koodi.slice(0, -1).split('');
+    return {
+      paiva: Math.max(0, parseInt(paiva, 10) || 0),
+      merkit: merkit,
+      lippu: koodi.slice(-1) === '1',
+      oikein: merkit.filter(function (m) { return m === 'G'; }).length,
+      maara: merkit.length
+    };
+  }
+
+  var haaste = null;
+
+  function piirraHaasteKutsu() {
+    if (!haaste) { return; }
+    var el = $('haasteLaatikko');
+    el.hidden = false;
+    tyhjenna(el);
+    var p = document.createElement('p');
+    var b = document.createElement('b');
+    b.textContent = 'Sinut haastettiin erään #' + (haaste.paiva + 1) + '.';
+    p.appendChild(b);
+    p.appendChild(document.createTextNode(
+      ' Haastaja sai ' + haaste.oikein + '/' + haaste.maara +
+      (haaste.lippu ? ' ja huomasi ansan.' : '.') +
+      ' Vastaukset eivät ole linkissä — pelaa itse.'));
+    el.appendChild(p);
+    $('aloitaNappi').textContent = 'Pelaa erä #' + (haaste.paiva + 1);
+  }
+
+  function piirraVertailu() {
+    var el = $('vertailu');
+    if (!haaste || haaste.paiva !== tila.paiva || tila.harjoittelu) {
+      el.hidden = true; return;
+    }
+    el.hidden = false;
+    tyhjenna(el);
+    var p = document.createElement('p');
+    p.textContent = 'Sinä ' + tila.luokitusOikein + '/' + tila.kohdat.length +
+      ' · haastaja ' + haaste.oikein + '/' + haaste.maara + '.';
+    el.appendChild(p);
+    var r = document.createElement('p');
+    r.className = 'ruudukko';
+    r.style.margin = '0.3rem 0 0';
+    r.textContent = haaste.merkit.map(function (m) {
+      return m === 'G' ? '🟩' : (m === 'Y' ? '🟨' : '🟥');
+    }).join('');
+    el.appendChild(r);
+  }
+
+  // ── Arkisto ────────────────────────────────────────────────────────
+  function piirraArkisto() {
+    var el = $('arkistoLista');
+    el.hidden = !el.hidden;
+    if (el.hidden) { return; }
+    var sisalto = $('arkistoSisalto');
+    tyhjenna(sisalto);
+    var tanaan = tamaPaiva();
+    var alku = Math.max(0, tanaan - 20);
+    for (var i = tanaan; i >= alku; i--) {
+      var a = document.createElement('a');
+      a.href = '?paiva=' + i;
+      a.textContent = '#' + (i + 1);
+      a.style.marginRight = '0.7rem';
+      a.style.display = 'inline-block';
+      sisalto.appendChild(a);
+    }
+  }
+
+  // ── Näppäimistö ────────────────────────────────────────────────────
+  document.addEventListener('keydown', function (e) {
+    if ($('peli').hidden) { return; }
+    if (e.ctrlKey || e.metaKey || e.altKey) { return; }
+    if (!$('paljastus').hidden) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); seuraava(); }
+      return;
+    }
+    if (e.key >= '1' && e.key <= '3') {
+      var napit = $('valinnat').querySelectorAll('.valinta');
+      var n = parseInt(e.key, 10) - 1;
+      if (napit[n]) { e.preventDefault(); napit[n].click(); }
+    } else if (e.key === 'f' || e.key === 'F') {
+      e.preventDefault(); nostaLippu();
+    }
+  });
+
+  // ── Käynnistys ─────────────────────────────────────────────────────
+  function naytaLatausvirhe() {
+    var el = $('latausvirhe');
+    if (el) { el.hidden = false; }
+    ['aloitaNappi', 'harjoitteleNappi'].forEach(function (id) {
+      var n = $(id);
+      if (n) { n.hidden = true; }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    P = window.VEDATYS_PANKKI;
+    if (!P) { naytaLatausvirhe(); return; }
+    EPOKKI = uusiPvm(P.epokki);
+
+    var params = new URLSearchParams(window.location.search);
+    haaste = lueHaaste();
+
+    var pyydetty = params.get('paiva');
+    var paiva = tamaPaiva();
+    if (pyydetty !== null) {
+      paiva = Math.max(0, Math.min(parseInt(pyydetty, 10) || 0, paiva));
+    } else if (haaste) {
+      paiva = Math.min(haaste.paiva, paiva);
+    }
+
+    piirraTehoste();
+    piirraHaasteKutsu();
+
+    // Pelatun erän saa pelata uudelleen, mutta tilastot lasketaan vain kerran
+    // päivässä (paivitaTilastot tarkistaa sen). Kerrotaan se suoraan.
+    var tilastot = lue(AVAIN_TILASTOT, null);
+    if (tilastot && tilastot.viimeisin === paiva && !haaste) {
+      $('aloitaNappi').textContent = 'Pelaa erä #' + (paiva + 1) + ' uudelleen';
+      $('jopelattu').hidden = false;
+    }
+
+    $('aloitaNappi').addEventListener('click', function () { aloitaEra(paiva, false); });
+    $('harjoitteleNappi').addEventListener('click', function () { aloitaEra(paiva, true); });
+    $('harjoitteleLoppu').addEventListener('click', function () { aloitaEra(paiva, true); });
+    $('seuraavaNappi').addEventListener('click', seuraava);
+    $('lippuNappi').addEventListener('click', nostaLippu);
+    $('jakoNappi').addEventListener('click', kopioi);
+    $('arkistoNappi').addEventListener('click', piirraArkisto);
+    $('ansaSyyllistys').addEventListener('click', function () {
+      // Nappi ei ohita mitään. Se on confirmshaming, ja se paljastetaan lopussa.
+      $('ansaSyyllistys').textContent = 'ei tämä mihinkään ohita';
+    });
+  });
+})();
+</script>
+</body>
+</html>

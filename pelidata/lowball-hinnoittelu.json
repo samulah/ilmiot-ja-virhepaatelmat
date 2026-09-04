@@ -1,0 +1,54 @@
+{
+ "ilmio": "lowball-hinnoittelu",
+ "laji": "taktiikka",
+ "kohdat": [
+  {
+   "id": "lowball-hinnoittelu-1",
+   "teksti": "Aloitetaan vaan, hinta on se sovittu. Tarkat vaatimukset katsotaan matkan varrella.",
+   "konteksti": "myynti",
+   "kanava": "sahkoposti",
+   "harhauttajat": ["scope-creep", "foot-in-the-door"],
+   "paljastus": {
+    "mita": "Hinta on kiinni, laajuus ei. Vain toinen niistä sitoo.",
+    "miksi": "Kun työ on aloitettu, vaihtaminen maksaa enemmän kuin lisälaskun hyväksyminen. Sitoutuminen on tarkoituksellinen.",
+    "sanot": "Kirjataan laajuus ja lisätöiden hinta ennen aloitusta."
+   }
+  },
+  {
+   "id": "lowball-hinnoittelu-2",
+   "teksti": "Se sovittu 8 500 piti sisällään perustyöt. Nyt kun seinä on auki, tähän tulee vielä noin 3 000 lisää.",
+   "konteksti": "kauppa",
+   "kanava": "puhe",
+   "harhauttajat": ["bait-and-switch", "sunk-cost-harha"],
+   "paljastus": {
+    "mita": "Hinta nousee vasta kun keskeyttäminen on kalliimpaa kuin jatkaminen.",
+    "miksi": "Jo maksettu raha ja avattu seinä tuntuvat perustelulta jatkaa, vaikka ne ovat mennyttä joka tapauksessa.",
+    "sanot": "Mitä maksaa lopettaa tähän? Vertaan sitä vasta sen jälkeen."
+   }
+  },
+  {
+   "id": "lowball-hinnoittelu-3",
+   "teksti": "Kuukausihinta 19 €. (Käyttöönotto 900 €, integraatiot erikseen, minimisitoutuminen 24 kk.)",
+   "konteksti": "kauppa",
+   "kanava": "kayttoliittyma",
+   "harhauttajat": ["piilokulut", "bait-and-switch"],
+   "paljastus": {
+    "mita": "Näkyvä hinta on pienin osa kokonaishinnasta.",
+    "miksi": "Vertailu tehdään sillä luvulla, joka on isolla. Loput luetaan vasta kun päätös on jo tehty.",
+    "sanot": "Paljonko tämä maksaa yhteensä kahdessa vuodessa?"
+   }
+  },
+  {
+   "id": "lowball-hinnoittelu-4",
+   "teksti": "Sovittiin 15 000 euroa. Auto on nyt valmiina — tähän tulee toimitusmaksu, rekisteröinti ja käsittelykulu, yhteensä 890.",
+   "konteksti": "kauppa",
+   "kanava": "puhe",
+   "harhauttajat": ["piilokulut", "painostusclose"],
+   "paljastus": {
+    "mita": "Lisät ilmestyvät sillä hetkellä, kun kauppa on henkisesti jo tehty.",
+    "miksi": "890 euroa 15 000:n päälle näyttää pieneltä — se on koko syy siihen, miksi se esitetään vasta nyt.",
+    "sanot": "Sovittu hinta oli 15 000. Kumpi meistä perääntyy?"
+   }
+  }
+ ]
+}

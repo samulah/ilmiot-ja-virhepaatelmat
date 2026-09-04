@@ -1,0 +1,66 @@
+{
+ "ilmio": "darvo",
+ "laji": "taktiikka",
+ "kohdat": [
+  {
+   "id": "darvo-1",
+   "teksti": "Et sä nyt taas ala. Mä oon se joka on joustanut koko syksyn, ja nyt musta tehdään tässä joku hirviö. Mä oon ihan loppu tähän.",
+   "konteksti": "parisuhde",
+   "kanava": "puhe",
+   "harhauttajat": ["gaslighting", "whataboutismi"],
+   "paljastus": {
+    "mita": "Kolme siirtoa kahdessa lauseessa: kiistetään, hyökätään sinun motiiviisi ja käännetään roolit niin että hän on uhri.",
+    "miksi": "Jokainen osa kuulostaa erikseen oikeutetulta — saa kiistää, saa loukkaantua. Vasta peräkkäin ne peittävät sen, ettei alkuperäiseen kysymykseen vastattu.",
+    "sanot": "Voidaan puhua siitä miltä susta tuntuu, mutta ensin haluan vastauksen siihen mitä kysyin."
+   }
+  },
+  {
+   "id": "darvo-2",
+   "teksti": "En ole missään vaiheessa jättänyt sinua tiedottamatta. Ihmetyttää kyllä, että tämä nousee esiin juuri nyt kun sinulla on kehityskeskustelu tulossa. Aika ikävää tällainen.",
+   "konteksti": "tyo",
+   "kanava": "sahkoposti",
+   "harhauttajat": ["blame-game", "hiljainen-irtisanominen"],
+   "paljastus": {
+    "mita": "Kiistäminen, sitten ajoituksen epäily, sitten loukkaantuminen — vastuu vaihtaa omistajaa kolmessa virkkeessä.",
+    "miksi": "Motiivin kyseenalaistaminen siirtää huomion teosta sinuun. Sen jälkeen asian esiin ottaminen näyttää itsessään hyökkäykseltä.",
+    "sanot": "Ajoitus on eri kysymys. Kirjataan tähän ketjuun, milloin tieto lähti ja kenelle."
+   }
+  },
+  {
+   "id": "darvo-3",
+   "teksti": "Yhtiö ei ole rikkonut yhtään sääntöä. On huolestuttavaa, että yksittäinen entinen työntekijä voi nimettömänä vaarantaa satojen ihmisten työpaikat.",
+   "konteksti": "tyo",
+   "kanava": "sahkoposti",
+   "harhauttajat": ["astroturf", "blame-game"],
+   "paljastus": {
+    "mita": "Sama kuvio kuin ihmisten välillä, mutta organisaation kokoisena: kiistä, mustamaalaa ilmoittaja, esiinny uhrina.",
+    "miksi": "Kun vastuu vaihtuu uhriudeksi, alkuperäinen väite jää käsittelemättä ja seuraava ilmoittaja miettii kahdesti.",
+    "sanot": "Kysymys oli väitteestä. Mihin kohtaan siitä vastaus tulee?"
+   }
+  },
+  {
+   "id": "darvo-4",
+   "teksti": "Mitään tällaista ei tapahtunut. Kannattaisi katsoa, kuka tuota väitettä levittää ja miksi. Minua tämä on satuttanut enemmän kuin kukaan tajuaa.",
+   "konteksti": "some",
+   "kanava": "viesti",
+   "harhauttajat": ["gaslighting", "kuollut-kissa"],
+   "paljastus": {
+    "mita": "Kiistä, hyökkää lähteeseen, käännä roolit. Kolme virkettä, kolme vaihetta.",
+    "miksi": "Kärsimyksen kuvaus lopettaa keskustelun kohteliaisuudesta — sen jälkeen asiaan palaaminen tuntuu julmalta.",
+    "sanot": "Ymmärrän että tämä on raskasta. Mitä vastaat itse väitteeseen?"
+   }
+  },
+  {
+   "id": "darvo-5",
+   "teksti": "Ei ollut mitään ylitöitä. Ja rehellisesti: mä oon antanut sulle enemmän joustoa kuin kenellekään muulle, ja tältä se nyt tuntuu.",
+   "konteksti": "tyo",
+   "kanava": "puhe",
+   "harhauttajat": ["vastavuoroisuuden-ansa", "gaslighting"],
+   "paljastus": {
+    "mita": "Kiistämisen perään liitetään velkalista, joka tekee vaatimuksesta kiittämättömyyttä.",
+    "miksi": "Aiemmat palvelukset ovat todellisia, joten ne tuntuvat relevanteilta — vaikka ne eivät liity siihen, tehtiinkö töitä vai ei.",
+    "sanot": "Nämä ovat kaksi eri asiaa. Katsotaan tunnit kalenterista."
+   }
+  }
+ ]
+}

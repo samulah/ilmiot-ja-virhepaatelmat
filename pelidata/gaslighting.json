@@ -1,0 +1,66 @@
+{
+ "ilmio": "gaslighting",
+ "laji": "taktiikka",
+ "kohdat": [
+  {
+   "id": "gaslighting-1",
+   "teksti": "En ole sanonut noin. Sä muistat tän ihan väärin, niin kuin viime kerrallakin.",
+   "konteksti": "parisuhde",
+   "kanava": "puhe",
+   "harhauttajat": ["darvo", "maalitolppien-siirtaminen"],
+   "paljastus": {
+    "mita": "Havainto kiistetään ja epäluotettavuus yleistetään: kyse ei ole tästä kerrasta vaan sinun muististasi.",
+    "miksi": "Yksittäisen tapauksen voi tarkistaa. Kun epäily kohdistuu muistiin itseensä, tarkistuspiste katoaa ja jäljelle jää hänen versionsa.",
+    "sanot": "Voi olla että muistan väärin. Kirjoitan jatkossa nämä ylös, niin ei tarvitse arvailla."
+   }
+  },
+  {
+   "id": "gaslighting-2",
+   "teksti": "Kaikki muut tiimissä pärjää tän kanssa ihan hyvin. Sä oot vaan vähän herkkä näille asioille.",
+   "konteksti": "tyo",
+   "kanava": "puhe",
+   "harhauttajat": ["sosiaalinen-todiste", "hiljainen-irtisanominen"],
+   "paljastus": {
+    "mita": "Reaktio siirretään ongelmaksi: vika ei ole tilanteessa vaan sinun herkkyydessäsi.",
+    "miksi": "Tunteen mitätöinti opettaa epäilemään omaa reaktiota. Kun sitä ei voi käyttää mittarina, ei ole enää mitään millä mitata.",
+    "sanot": "Puhutaan siitä mitä tapahtui, ei siitä millainen minä olen."
+   }
+  },
+  {
+   "id": "gaslighting-3",
+   "teksti": "Meillähän menee mittareilla paremmin kuin koskaan. En oikein ymmärrä, mistä tämä tyytymättömyys nyt kumpuaa.",
+   "konteksti": "tyo",
+   "kanava": "puhe",
+   "harhauttajat": ["goodhartin-laki", "rituaalinen-raportointi"],
+   "paljastus": {
+    "mita": "Virallinen mittari asetetaan kokemuksen tilalle todistusaineistoksi.",
+    "miksi": "Lukua vastaan on vaikea argumentoida ilman omaa lukua. Kokemus siirtyy mielipiteeksi, ja mielipiteen voi ohittaa.",
+    "sanot": "Mittari mittaa yhtä asiaa. Kysytään erikseen, mitä ihmiset kokevat."
+   }
+  },
+  {
+   "id": "gaslighting-4",
+   "teksti": "Sä loit tän riidan ihan tyhjästä. Kaikki oli ihan hyvin ennen kuin sä avasit suus.",
+   "konteksti": "parisuhde",
+   "kanava": "puhe",
+   "harhauttajat": ["darvo", "blame-game"],
+   "paljastus": {
+    "mita": "Riidan alku siirretään siihen hetkeen, kun asia otettiin puheeksi — ei siihen, mistä puhuttiin.",
+    "miksi": "Jos ongelman synty on puhuminen, ratkaisu on vaikeneminen. Se on koko lauseen tarkoitus.",
+    "sanot": "Asia oli olemassa ennen kuin sanoin siitä. Puhutaan siitä."
+   }
+  },
+  {
+   "id": "gaslighting-5",
+   "teksti": "Sovittiinhan me tästä jo. Sä hyväksyit tän viime viikolla, etkö muista?",
+   "konteksti": "tyo",
+   "kanava": "viesti",
+   "harhauttajat": ["maalitolppien-siirtaminen", "foot-in-the-door"],
+   "paljastus": {
+    "mita": "Sopimus, jota ei ole, esitetään muistikysymyksenä — jolloin kiistäminen näyttää unohtamiselta.",
+    "miksi": "Muistiaan epäilevä ihminen myöntyy varmuuden vuoksi. Kysymysmuoto tekee kiistämisestä kiusallista.",
+    "sanot": "En muista sitä samoin. Etsitään viesti, jossa se sovittiin."
+   }
+  }
+ ]
+}

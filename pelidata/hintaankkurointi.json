@@ -1,0 +1,54 @@
+{
+ "ilmio": "hintaankkurointi",
+ "laji": "taktiikka",
+ "kohdat": [
+  {
+   "id": "hintaankkurointi-1",
+   "teksti": "Normaalihinta 249 €. Nyt sinulle 89 €.",
+   "konteksti": "kauppa",
+   "kanava": "kayttoliittyma",
+   "harhauttajat": ["door-in-the-face", "bait-and-switch"],
+   "paljastus": {
+    "mita": "Yliviivattu luku on vertailupiste, ei hinta jolla tuotetta on koskaan myyty.",
+    "miksi": "Alennusprosentti tuntuu arvolta, vaikka ainoa peruste sille on toinen luku samalta myyjältä.",
+    "sanot": "Mihin tuo 249 perustuu? Katson mitä tästä pyydetään muualla."
+   }
+  },
+  {
+   "id": "hintaankkurointi-2",
+   "teksti": "Vastaava toteutus maksaa isoissa taloissa helposti 60 000. Meillä tää olisi 24 000.",
+   "konteksti": "myynti",
+   "kanava": "puhe",
+   "harhauttajat": ["omenoita-appelsiineja", "door-in-the-face"],
+   "paljastus": {
+    "mita": "Ulkoinen vertailuluku istutetaan ankkuriksi ilman lähdettä.",
+    "miksi": "Luku ei ole tarkistettavissa, mutta se ehtii asettaa asteikon ennen kuin ehdit kysyä mistä se on.",
+    "sanot": "Mistä tuo vertailuluku on? Pyydän kaksi muuta tarjousta."
+   }
+  },
+  {
+   "id": "hintaankkurointi-3",
+   "teksti": "Mitä ajattelit palkkatoiveeksi? Meillä tossa tehtävässä on haarukka 3 200–3 400.",
+   "konteksti": "tyo",
+   "kanava": "puhe",
+   "harhauttajat": ["lowball-hinnoittelu", "painostusclose"],
+   "paljastus": {
+    "mita": "Haarukka annetaan ennen kuin ehdit sanoa oman lukusi, jolloin neuvottelu käydään sen sisällä.",
+    "miksi": "Ensimmäinen luku määrää, miltä kaikki muut tuntuvat — myös silloin kun tiedät sen olevan neuvottelutaktiikka.",
+    "sanot": "Selvitän ensin alan tason tälle tehtävälle, niin puhutaan luvuista sen pohjalta."
+   }
+  },
+  {
+   "id": "hintaankkurointi-4",
+   "teksti": "Premium 129 €/kk · Pro 79 €/kk · Perus 69 €/kk",
+   "konteksti": "kauppa",
+   "kanava": "kayttoliittyma",
+   "harhauttajat": ["door-in-the-face", "sosiaalinen-todiste"],
+   "paljastus": {
+    "mita": "Kallein vaihtoehto ei ole myytävänä. Se on siellä tekemässä keskimmäisestä järkevän.",
+    "miksi": "Perus ja Pro eroavat kympillä, joten Pro näyttää ilmeiseltä — vertailu tapahtuu paketteja vasten, ei tarvetta vasten.",
+    "sanot": "Mitä minä oikeasti tarvitsen? Valitsen sen mukaan, en taulukon mukaan."
+   }
+  }
+ ]
+}

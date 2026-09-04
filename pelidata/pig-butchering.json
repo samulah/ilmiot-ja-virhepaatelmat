@@ -1,0 +1,54 @@
+{
+ "ilmio": "pig-butchering",
+ "laji": "taktiikka",
+ "kohdat": [
+  {
+   "id": "pig-butchering-1",
+   "teksti": "Hei! Anteeksi, taisin saada väärän numeron 😅 Mutta kun kerran juteltiin — mistä päin sä oot?",
+   "konteksti": "some",
+   "kanava": "viesti",
+   "harhauttajat": ["honeypot-huijaus", "smishing"],
+   "paljastus": {
+    "mita": "Väärä numero on käsikirjoitettu avaus. Se ei pyydä mitään, ja juuri siksi se toimii.",
+    "miksi": "Ensimmäisessä viestissä ei ole mitään epäilyttävää, koska siinä ei ole vielä pyyntöä. Rakennusvaihe kestää viikkoja.",
+    "sanot": "Ei tarvitse vastata mitään. Estä ja poista."
+   }
+  },
+  {
+   "id": "pig-butchering-2",
+   "teksti": "Mun setä hoitaa mulle näitä sijoituksia. Laitoin eilen 300 ja otin tänään 380 pois. Näytän jos kiinnostaa.",
+   "konteksti": "some",
+   "kanava": "viesti",
+   "harhauttajat": ["kaarmeoljy", "pump-and-dump"],
+   "paljastus": {
+    "mita": "Pieni oikeasti maksettu voitto ostaa luottamuksen isoa siirtoa varten.",
+    "miksi": "Todiste on aito ja tarkistettavissa — se on huijauksen kallein ja tehokkain osa.",
+    "sanot": "En sijoita alustalle, jota en löytänyt itse."
+   }
+  },
+  {
+   "id": "pig-butchering-3",
+   "teksti": "Nosto on hyväksytty! Ennen tilitystä järjestelmä vaatii 18 % veroennakon. Sen jälkeen koko summa on tililläsi.",
+   "konteksti": "some",
+   "kanava": "kayttoliittyma",
+   "harhauttajat": ["ennakkomaksuhuijaus", "honeypot-huijaus"],
+   "paljastus": {
+    "mita": "Omiin rahoihin pääsy vaatii lisää rahaa — se on hetki, jolloin teurastusvaihe alkaa.",
+    "miksi": "Näytöllä oleva saldo tuntuu omalta omaisuudelta, joten sen menettäminen tuntuu suuremmalta kuin uusi maksu.",
+    "sanot": "Oikea alusta ei koskaan vaadi maksua omien rahojen nostamiseksi. Tähän ei makseta senttiäkään."
+   }
+  },
+  {
+   "id": "pig-butchering-4",
+   "teksti": "Siirretäänkö juttelu WhatsAppiin? Tää sovellus on niin kankee.",
+   "konteksti": "some",
+   "kanava": "viesti",
+   "harhauttajat": ["honeypot-huijaus", "badger-game"],
+   "paljastus": {
+    "mita": "Siirto pois alustalta poistaa moderoinnin, raportoinnin ja jäljen.",
+    "miksi": "Pyyntö on täysin arkinen ja sille on uskottava syy — siksi se menee läpi ilman että sitä ajattelee.",
+    "sanot": "Jutellaan täällä. Jos se ei käy, ei jutella."
+   }
+  }
+ ]
+}

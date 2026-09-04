@@ -1,0 +1,54 @@
+{
+ "ilmio": "whataboutismi",
+ "laji": "taktiikka",
+ "kohdat": [
+  {
+   "id": "whataboutismi-1",
+   "teksti": "Sä oot nyt kolme viikkoa unohtanut roskat. — Ai jaa, entäs sun äitis synttärit viime vuonna?",
+   "konteksti": "parisuhde",
+   "kanava": "puhe",
+   "harhauttajat": ["darvo", "blame-game"],
+   "paljastus": {
+    "mita": "Vastaus on vastasyytös. Alkuperäiseen ei sanota mitään.",
+    "miksi": "Puolustautuminen tuntuu pakolliselta, ja sillä sekunnilla keskustelu on siirtynyt sinun virheisiisi.",
+    "sanot": "Tuo on eri asia ja siitä voidaan puhua. Ensin: mitä vastaat tähän?"
+   }
+  },
+  {
+   "id": "whataboutismi-2",
+   "teksti": "Teidän osastonne myöhästyi omasta osuudestaan kaksi kertaa keväällä. Kannattaisi ehkä katsoa ensin peiliin.",
+   "konteksti": "tyo",
+   "kanava": "sahkoposti",
+   "harhauttajat": ["blame-game", "argumenttitulva"],
+   "paljastus": {
+    "mita": "Kritiikki kuitataan arvostelijan omalla historialla — asiaan ei oteta kantaa.",
+    "miksi": "Väite arvostelijasta voi olla tosi, ja juuri siksi se toimii: totuus yhdessä asiassa ei ole vastaus toisessa.",
+    "sanot": "Molemmat voivat olla totta. Käsitellään ne erikseen, tämä ensin."
+   }
+  },
+  {
+   "id": "whataboutismi-3",
+   "teksti": "Ihan sama mitä ne tekee, kaikki muutkin tekee samaa. Ei siinä ole mitään erikoista.",
+   "konteksti": "some",
+   "kanava": "viesti",
+   "harhauttajat": ["sosiaalinen-todiste", "jarjestelman-puolustelu"],
+   "paljastus": {
+    "mita": "Siirto yleistykseen: kun kaikki tekevät samaa, kenenkään yksittäinen teko ei ole arvioitavissa.",
+    "miksi": "Lopputulos ei ole vastaus vaan väsymys — jos mistään ei voi sanoa mitään, ei kannata sanoa mitään.",
+    "sanot": "Puhutaan nyt tästä yhdestä tapauksesta. Mitä siitä pitäisi ajatella?"
+   }
+  },
+  {
+   "id": "whataboutismi-4",
+   "teksti": "Hauska kuulla tuo sinulta, kun muistan hyvin miten itse hoidit sen asiakkuuden.",
+   "konteksti": "tyo",
+   "kanava": "puhe",
+   "harhauttajat": ["darvo", "omenoita-appelsiineja"],
+   "paljastus": {
+    "mita": "Henkilöön kohdistuva vastasyytös, joka on muotoiltu huomioksi eikä väitteeksi.",
+    "miksi": "Kohteliaan sävyn takia siihen on vaikea tarttua, mutta se tekee saman työn: alkuperäinen kysymys katoaa.",
+    "sanot": "Otetaan se erikseen jos haluat. Nyt olin kysymässä tästä."
+   }
+  }
+ ]
+}

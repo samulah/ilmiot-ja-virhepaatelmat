@@ -1,0 +1,447 @@
+{
+ "ilmio": null,
+ "laji": "rehellinen",
+ "huom": "Nämä ovat pankin vaikeimmat kohdat. Jokaisen on oltava uskottavan epäilyttävä mutta oikeasti kunnossa. Testi: jos pelaaja vastaa 'taktiikka', onko hän oikeasti väärässä? Jos vastaus on 'no, riippuu', kohta ei kelpaa.",
+ "kohdat": [
+  {
+   "id": "rehellinen-1",
+   "teksti": "Tarjous on voimassa perjantaihin, koska hinnat päivittyvät kuun vaihteessa. Jos tarvitset lisäaikaa, sano — voin pyytää jatkoa.",
+   "konteksti": "myynti",
+   "kanava": "sahkoposti",
+   "paljastus": {
+    "mita": "Määräajalla on syy, ja siitä voi neuvotella. Kumpikaan ei pidä paikkaansa painostuksessa.",
+    "miksi": "Määräaika laukaisee kiireen tunteen automaattisesti, vaikka määräaika olisi täysin tavallinen.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-2",
+   "teksti": "Mä muistan tän toisin kuin sä. Voi olla että mä olen väärässä — katotaanko viestit läpi?",
+   "konteksti": "parisuhde",
+   "kanava": "puhe",
+   "paljastus": {
+    "mita": "Eriävä muisti kerrotaan omana näkemyksenä, ei toisen vikana, ja tarkistus tarjotaan.",
+    "miksi": "Sanat muistuttavat gaslightingia, mutta suunta on päinvastainen: epävarmuus otetaan itselle.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-3",
+   "teksti": "Mä mokasin ton. Se oli mun vastuulla enkä hoitanut sitä. Korjaan sen huomiseen mennessä.",
+   "konteksti": "tyo",
+   "kanava": "viesti",
+   "paljastus": {
+    "mita": "Anteeksipyyntö ilman mutta-osaa, ilman vastasyytöstä ja ilman uhriutumista.",
+    "miksi": "Olemme oppineet odottamaan käännettä. Sen puuttuminen tuntuu hetken epäilyttävältä.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-4",
+   "teksti": "Voisitko vilkaista tän yhden dian? Ja sanotaan heti, ettei tästä tule jatkoa — teen loput itse.",
+   "konteksti": "tyo",
+   "kanava": "viesti",
+   "paljastus": {
+    "mita": "Pyynnön laajuus rajataan etukäteen, mikä on foot-in-the-doorin täsmällinen vastakohta.",
+    "miksi": "Pieni pyyntö on itsessään neutraali. Manipulatiiviseksi sen tekee se, mitä sen jälkeen tulee.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-5",
+   "teksti": "Alennus on 30 % ja se perustuu siihen, että malli vaihtuu. Sama tuote maksaa muualla 240–260, voit tarkistaa.",
+   "konteksti": "kauppa",
+   "kanava": "puhe",
+   "paljastus": {
+    "mita": "Alennukselle annetaan syy ja vertailuhinta, jonka voi tarkistaa muualta.",
+    "miksi": "Alennusprosentti on niin usein ankkuri, että se herättää epäilyn myös silloin kun se on aito.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-6",
+   "teksti": "Tarvitsen vastauksen keskiviikkoon, koska varaan tilan torstaina. Jos et ehdi, siirrän varauksen ensi viikolle.",
+   "konteksti": "tyo",
+   "kanava": "sahkoposti",
+   "paljastus": {
+    "mita": "Kiireelle on konkreettinen syy ja vaihtoehto tarjotaan samassa viestissä.",
+    "miksi": "Määräaika ja vastauspyyntö yhdessä muistuttavat painostus-closea, vaikka mikään ei ole keinotekoista.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-7",
+   "teksti": "Ilmainen kartoitus, kesto tunti. Ei velvoita mihinkään emmekä ota yhteyttä jälkikäteen, ellet itse pyydä.",
+   "konteksti": "myynti",
+   "kanava": "sahkoposti",
+   "paljastus": {
+    "mita": "Ilmaisen työn ehdot rajataan etukäteen ja jatkoyhteydenotto suljetaan pois.",
+    "miksi": "Sana 'ilmainen' aktivoi vastavuoroisuuden ansan, vaikka ansaa ei olisi viritetty.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-8",
+   "teksti": "Tehtävä on laajempi kuin ilmoituksessa, joten haarukkakin on ylempi: 3 600–3 900. Sanoisitko oman toiveesi, niin katsotaan sopiiko.",
+   "konteksti": "tyo",
+   "kanava": "puhe",
+   "paljastus": {
+    "mita": "Muutos kerrotaan avoimesti ja suuntaan, joka on hakijan eduksi.",
+    "miksi": "Ilmoituksesta poikkeaminen on bait and switchin tunnusmerkki — mutta vain silloin kun se on hakijaa vastaan.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-9",
+   "teksti": "Kriteerit muuttuivat, koska asiakas vaihtoi tavoitetta. Aiempi tavoitteesi täyttyi ja se otetaan huomioon palkkakeskustelussa.",
+   "konteksti": "tyo",
+   "kanava": "puhe",
+   "paljastus": {
+    "mita": "Uusi kriteeri, mutta vanhan täyttyminen myönnetään ääneen ja sillä on seuraus.",
+    "miksi": "Maalitolppien siirtämisen erottaa juuri tämä: siinä täyttymistä ei koskaan myönnetä.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-10",
+   "teksti": "Mulla on tästä kolme huomiota. Otetaan yksi kerrallaan, aloitetaan siitä tärkeimmästä.",
+   "konteksti": "tyo",
+   "kanava": "puhe",
+   "paljastus": {
+    "mita": "Useita väitteitä, mutta esitettynä järjestyksessä ja vastattavaksi tarkoitettuina.",
+    "miksi": "Argumenttitulvassa määrä on ase. Tässä se on sisällysluettelo.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-11",
+   "teksti": "Se on eri asia ja siitä pitäisi kyllä puhua joskus. Mutta vastaan ensin tähän mitä kysyit.",
+   "konteksti": "parisuhde",
+   "kanava": "puhe",
+   "paljastus": {
+    "mita": "Toinen aihe nostetaan esiin mutta jätetään odottamaan — alkuperäiseen vastataan.",
+    "miksi": "Whataboutismi alkaa täsmälleen samoilla sanoilla. Ero on siinä, kumpi käsitellään ensin.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-12",
+   "teksti": "En osaa tätä ohjelmaa. Varaisitko mulle sen koulutuksen, niin en tarvii apua ens kerralla.",
+   "konteksti": "tyo",
+   "kanava": "viesti",
+   "paljastus": {
+    "mita": "Osaamattomuus tunnustetaan ja siihen pyydetään korjausta — ei apua tehtävän tekemiseen.",
+    "miksi": "Strateginen osaamattomuus kuulostaa samalta, mutta siinä koulutustarjous torjutaan toistuvasti.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-13",
+   "teksti": "Maksuehto on 30 päivää ja lasku kiertää meillä hyväksynnän kautta. Jos se on ongelma, voidaan sopia puolikkaasta etukäteen.",
+   "konteksti": "tyo",
+   "kanava": "sahkoposti",
+   "paljastus": {
+    "mita": "Maksuehto kerrotaan etukäteen ja siitä voi neuvotella.",
+    "miksi": "Pitkä maksuaika on tilipuristuksen työkalu — mutta vain kun se ilmestyy jälkikäteen eikä siitä voi puhua.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-14",
+   "teksti": "Sun asenteesta: eilisessä palaverissa keskeytit Annin kolme kertaa. Se on se konkreettinen asia, jota tarkoitan.",
+   "konteksti": "tyo",
+   "kanava": "puhe",
+   "paljastus": {
+    "mita": "Palaute on yksilöity tilanteeseen, päivään ja tekoon — joten sen voi korjata tai kiistää.",
+    "miksi": "'Asenne' on hiljaisen irtisanomisen sana. Se muuttuu palautteeksi silloin kun sen perässä on esimerkki.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-15",
+   "teksti": "Verrattiin samaa potilasryhmää, samaa vaivaa ja samaa kiireellisyysluokkaa. Erot jonoissa tasoittuvat aika lailla.",
+   "konteksti": "some",
+   "kanava": "viesti",
+   "paljastus": {
+    "mita": "Vertailun muuttujat on vakioitu ja se kerrotaan ääneen.",
+    "miksi": "Vertailu aiheesta, jossa vertailuharha on tavallinen, herättää epäilyn silloinkin kun se on tehty oikein.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-16",
+   "teksti": "Koetehtävä on kuvitteellisella datalla, kesto noin tunti, eikä tulosta käytetä meillä mihinkään. Halutaan nähdä miten ajattelet.",
+   "konteksti": "tyo",
+   "kanava": "sahkoposti",
+   "paljastus": {
+    "mita": "Keinotekoinen data, rajattu kesto ja lupaus siitä ettei tulosta hyödynnetä.",
+    "miksi": "Koetehtävä on niin usein ilmaista näytetyötä, että aitokin herättää epäilyn.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-17",
+   "teksti": "Palkkiota meillä ei ole, mutta sanon sen suoraan: tästä ei tule sinulle mitään rahaa nyt eikä myöhemmin. Kerro jos silti kiinnostaa.",
+   "konteksti": "tyo",
+   "kanava": "sahkoposti",
+   "paljastus": {
+    "mita": "Palkattomuus kerrotaan suoraan eikä sitä puettu näkyvyydeksi tai tulevaisuuden lupaukseksi.",
+    "miksi": "Exposure-maksun tuntomerkki on epämääräinen vastike. Tässä vastiketta ei väitetä olevan.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-18",
+   "teksti": "Mainostettu malli loppui kesken. Voin tilata sen sinulle samaan hintaan tai palauttaa rahat — kumpi sopii?",
+   "konteksti": "kauppa",
+   "kanava": "puhe",
+   "paljastus": {
+    "mita": "Syötti loppui, mutta tilalle ei tarjota kalliimpaa vaan alkuperäistä hintaa tai rahoja takaisin.",
+    "miksi": "Alkuasetelma on täsmälleen bait and switch. Erottava kohta on se, mitä tarjotaan tilalle.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-19",
+   "teksti": "Kannattaa varmistaa lakiosastolta. Kysyn minä, ja pyydän vastauksen perjantaihin — jos ei kuulu, edetään ilman.",
+   "konteksti": "tyo",
+   "kanava": "puhe",
+   "paljastus": {
+    "mita": "Lisäselvityksellä on omistaja, määräpäivä ja etenemissääntö sen puuttuessa.",
+    "miksi": "Sama lause ilman noita kolmea on organisaation hidastamista. Ne kolme tekevät siitä työtä.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-20",
+   "teksti": "Soitan pankista. En kysy sinulta mitään tunnuksia — jos et halua jatkaa, katkaise ja soita takaisin kortin takana olevaan numeroon.",
+   "konteksti": "puhelin",
+   "kanava": "puhe",
+   "paljastus": {
+    "mita": "Soittaja kehottaa itse varmistamaan, mikä on huijaukselle mahdotonta.",
+    "miksi": "Pankin nimissä soittaminen on niin yleinen huijaus, että aito soitto kuulostaa myös epäilyttävältä.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-21",
+   "teksti": "Äiti, mulla kävi kolari. Kaikki on ok. Soitan sulle vielä illalla kun oon saanut asiat selvitettyä.",
+   "konteksti": "perhe",
+   "kanava": "puhe",
+   "paljastus": {
+    "mita": "Hätätilanne ilman rahapyyntöä, ilman kiirettä ja ilman kieltoa kertoa muille.",
+    "miksi": "Ääniklooni-huijaus alkaa lähes samoilla sanoilla. Erottavat osat ovat ne, jotka tästä puuttuvat.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-22",
+   "teksti": "Paketti saapui noutopisteeseen. Nouda 7 päivän kuluessa. Ei toimenpiteitä, ei linkkejä.",
+   "konteksti": "kauppa",
+   "kanava": "viesti",
+   "paljastus": {
+    "mita": "Viesti ei pyydä maksua eikä sisällä linkkiä — smishingin kaksi välttämätöntä osaa puuttuvat.",
+    "miksi": "Pakettiviesti on niin usein huijaus, että aidon lukee epäluuloisesti. Se on hyvä tapa.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-23",
+   "teksti": "Otin sulle kahvit. Ei mitään asiaa, olin vaan menossa ohi.",
+   "konteksti": "tyo",
+   "kanava": "puhe",
+   "paljastus": {
+    "mita": "Lahja ilman pyyntöä. Vastavuoroisuuden ansan tekee ajoitus, ei lahja.",
+    "miksi": "Kun on oppinut tunnistamaan strategisen lahjan, ystävällisyys alkaa näyttää siltä. Se on ansan sivuvahinko.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-24",
+   "teksti": "★★★★☆ 4,1/5 · 812 arvostelua · 47 yhden tähden arvostelua, yleisin valitus: toimitus kesti yli 3 viikkoa.",
+   "konteksti": "kauppa",
+   "kanava": "kayttoliittyma",
+   "paljastus": {
+    "mita": "Kriittiset arvostelut ovat näkyvissä ja yleisin valitus on tiivistetty.",
+    "miksi": "Korkea arvosana herättää epäilyn, mutta epäilyn kohteena pitäisi olla kriittisten puuttuminen — ei arvosana.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-25",
+   "teksti": "Meillä on jäljellä kaksi paikkaa, koska tila vetää 12. Ilmoittaudu jos haluat, mutta kurssi järjestetään myös keväällä.",
+   "konteksti": "kauppa",
+   "kanava": "kayttoliittyma",
+   "paljastus": {
+    "mita": "Niukkuudella on fyysinen syy ja vaihtoehto kerrotaan heti perään.",
+    "miksi": "'Kaksi paikkaa jäljellä' on painostus-closen vakiofraasi. Tässä se on tilastatistiikkaa.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-26",
+   "teksti": "En ehdi auttaa tässä. Sanon sen nyt, jotta ehdit kysyä joltain muulta.",
+   "konteksti": "tyo",
+   "kanava": "viesti",
+   "paljastus": {
+    "mita": "Suora kieltäytyminen ilman selittelyä ja ilman verukkeita.",
+    "miksi": "Tylyys luetaan helposti vihamielisyydeksi, vaikka se on tässä huomaavaisuutta.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-27",
+   "teksti": "Hinta on 24 000. Se on paljon, ja ymmärrän jos haluat kilpailuttaa. Tarjous on voimassa kuukauden.",
+   "konteksti": "myynti",
+   "kanava": "sahkoposti",
+   "paljastus": {
+    "mita": "Hinta esitetään ilman ankkuria, ilman vertailulukua ja kilpailutus hyväksytään ääneen.",
+    "miksi": "Myyntitilanne aktivoi varautuneisuuden, vaikka juuri mitään myyntitekniikkaa ei käytettäisi.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-28",
+   "teksti": "Toi meni musta väärin ja mä olin siitä tosi pettynyt. Halusin sanoa sen suoraan sulle enkä muille.",
+   "konteksti": "parisuhde",
+   "kanava": "puhe",
+   "paljastus": {
+    "mita": "Tunne kerrotaan omana tunteena, kohdistettuna tekoon, oikealle ihmiselle.",
+    "miksi": "Pettymyksen ilmaisu muistuttaa syyllistämistä. Ero on siinä, vaaditaanko sillä jotain.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-29",
+   "teksti": "Muutkin tiimit ottivat tän käyttöön. Kysy Jannelta miten heillä meni — hän kertoo myös ne ongelmat.",
+   "konteksti": "tyo",
+   "kanava": "puhe",
+   "paljastus": {
+    "mita": "Sosiaalinen todiste, joka on tarkistettavissa ja jonka lähde kertoo myös huonot puolet.",
+    "miksi": "'Muutkin' on manipulaation vakiosana. Tarkistettavuus muuttaa sen tiedoksi.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-30",
+   "teksti": "Tää kestää mulla pari päivää kauemmin kuin lupasin. Syy on mun, ja uusi päivä on torstai.",
+   "konteksti": "tyo",
+   "kanava": "viesti",
+   "paljastus": {
+    "mita": "Myöhästyminen kerrotaan etukäteen, vastuu otetaan ja uusi päivä nimetään.",
+    "miksi": "Aikataulun venyminen on niin usein tilipuristuksen alku, että aitokin viivästys herättää epäilyn.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-31",
+   "teksti": "Voitko tehdä tän mun puolesta? Tiedän että se on iso pyyntö, ja on ihan ok sanoa ei.",
+   "konteksti": "perhe",
+   "kanava": "viesti",
+   "paljastus": {
+    "mita": "Iso pyyntö esitetään isona, ja kieltäytyminen tehdään etukäteen helpoksi.",
+    "miksi": "Door-in-the-face käyttää isoa pyyntöä välineenä. Tässä iso pyyntö on itse asia.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-32",
+   "teksti": "Perun tilaukseni. — Selvä, peruttu. Lähetämme vahvistuksen sähköpostiin.",
+   "konteksti": "kauppa",
+   "kanava": "kayttoliittyma",
+   "paljastus": {
+    "mita": "Peruminen onnistuu yhdellä toimella ilman pidätysyrityksiä.",
+    "miksi": "Peruutusruutu on yksi tavallisimmista pimeiden kuvioiden paikoista, joten toimiva peruutus yllättää.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-33",
+   "teksti": "Hei! Meidän kesken sanottuna tää projekti on vähän sekaisin. Kannattaa kysyä Marialta ennen kuin lupaat mitään.",
+   "konteksti": "tyo",
+   "kanava": "viesti",
+   "paljastus": {
+    "mita": "Luottamuksellinen varoitus, joka ei pyydä mitään ja ohjaa sinut toisen ihmisen luo.",
+    "miksi": "'Meidän kesken' on salailun sana, ja salailu on monen huijauksen tunnusmerkki. Tässä se suojaa sinua.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-34",
+   "teksti": "Sun analyysi oli hyvä. Erityisesti se kolmas kappale, jossa erotit korrelaation ja syy-yhteyden.",
+   "konteksti": "tyo",
+   "kanava": "viesti",
+   "paljastus": {
+    "mita": "Kehu kohdistuu tekoon ja on niin yksilöity, ettei se voi olla yleiskohteliaisuutta.",
+    "miksi": "Imartelu on niin usein pyynnön esisoitto, että täsmällinenkin kehu herättää odotuksen jatkosta.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-35",
+   "teksti": "Veronpalautus maksetaan elokuussa. Et tarvitse tehdä mitään. — OmaVero",
+   "konteksti": "viranomainen",
+   "kanava": "viesti",
+   "paljastus": {
+    "mita": "Ilmoitus ei pyydä toimenpidettä, tilinumeroa eikä sisällä linkkiä.",
+    "miksi": "Rahaa lupaava viranomaisviesti on smishingin vakiokehys, joten aidonkin lukee varautuneesti.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-36",
+   "teksti": "Laitoin tilinumeron muutospyynnön. Soita mulle varmistaaksesi, ennen kuin muutat mitään.",
+   "konteksti": "tyo",
+   "kanava": "sahkoposti",
+   "paljastus": {
+    "mita": "Muutospyyntöön liitetään itse vaatimus varmistaa se toista kanavaa pitkin.",
+    "miksi": "Tilinumeron muutos on toimitusjohtajahuijauksen ydinsiirto — mutta huijari ei koskaan pyydä soittamaan.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-37",
+   "teksti": "En osaa vastata tohon nyt. Selvitän ja palaan huomenna.",
+   "konteksti": "tyo",
+   "kanava": "puhe",
+   "paljastus": {
+    "mita": "Tietämättömyys myönnetään ja sille annetaan aikataulu.",
+    "miksi": "Väistö ja rehellinen 'en tiedä' kuulostavat samalta. Päivämäärä on se, joka erottaa ne.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-38",
+   "teksti": "Tän kuun luvut jäivät tavoitteesta. Katsotaan yhdessä mistä se johtui, ei etsitä syyllistä.",
+   "konteksti": "tyo",
+   "kanava": "puhe",
+   "paljastus": {
+    "mita": "Epäonnistumisen käsittely suunnataan syyhyn eikä henkilöön, ja se sanotaan ääneen.",
+    "miksi": "Huono uutinen palaverissa ennakoi yleensä syyllisen etsintää, joten varautuminen käynnistyy automaattisesti.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-39",
+   "teksti": "Tää on maksettu yhteistyö. Sain tuotteen ilmaiseksi ja tykkäsin siitä, mutta se maksaa mun mielestä liikaa.",
+   "konteksti": "some",
+   "kanava": "viesti",
+   "paljastus": {
+    "mita": "Kaupallinen suhde kerrotaan ja arvio sisältää kritiikin, joka on maksajaa vastaan.",
+    "miksi": "Suosittelu somessa on niin usein lavastettua, että merkitty ja rehellinen suositus luetaan silti epäillen.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-40",
+   "teksti": "Mä tarvin tän tänään. Anteeksi että se tulee näin myöhään — mun oma moka, en muistanut aiemmin.",
+   "konteksti": "tyo",
+   "kanava": "viesti",
+   "paljastus": {
+    "mita": "Kiire on aitoa ja sen syy kerrotaan rehellisesti: se on pyytäjän oma virhe.",
+    "miksi": "Kiireen tunnistaminen tekniikaksi on hyödyllistä, mutta joskus kiire on vain kiirettä.",
+    "sanot": ""
+   }
+  }
+ ]
+}

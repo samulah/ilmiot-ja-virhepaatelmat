@@ -1,0 +1,54 @@
+{
+ "ilmio": "vastavuoroisuuden-ansa",
+ "laji": "taktiikka",
+ "kohdat": [
+  {
+   "id": "vastavuoroisuuden-ansa-1",
+   "teksti": "Tehdään teille ilmainen kartoitus, ei maksa mitään. Käydään sitten tulokset läpi ja katsotaan tarjousta.",
+   "konteksti": "myynti",
+   "kanava": "puhe",
+   "harhauttajat": ["foot-in-the-door", "ilmainen-naytetyo"],
+   "paljastus": {
+    "mita": "Ilmainen työ ei ole lahja vaan sijoitus, joka lunastetaan tarjousvaiheessa.",
+    "miksi": "Kun joku on tehnyt sinulle tunteja töitä, kieltäytyminen tuntuu epäkohteliaalta — vaikka mitään ei sovittu.",
+    "sanot": "Otan kartoituksen mielelläni. Sovitaan heti, ettei se velvoita kumpaakaan."
+   }
+  },
+  {
+   "id": "vastavuoroisuuden-ansa-2",
+   "teksti": "Mä joustin sun kanssa siinä aikataulussa viime kuussa. Nyt tarvin sulta tän.",
+   "konteksti": "tyo",
+   "kanava": "viesti",
+   "harhauttajat": ["darvo", "foot-in-the-door"],
+   "paljastus": {
+    "mita": "Aiempi jousto esitetään velkana, jolla on nyt eräpäivä.",
+    "miksi": "Velka on todellinen vain jos hyväksyt sen ehdot. Kukaan ei sopinut, että jousto oli laina.",
+    "sanot": "Arvostin sitä joustoa. Tämä on silti oma kysymyksensä — ehdinkö minä?"
+   }
+  },
+  {
+   "id": "vastavuoroisuuden-ansa-3",
+   "teksti": "Otin sulle kahvit. Kuule, mietittiinkö vielä sitä sopimusta?",
+   "konteksti": "myynti",
+   "kanava": "puhe",
+   "harhauttajat": ["foot-in-the-door", "sosiaalinen-todiste"],
+   "paljastus": {
+    "mita": "Pieni lahja juuri ennen pyyntöä — koko sen tarkoitus on ajoitus.",
+    "miksi": "Vastavuoroisuus ei katso summaa. Kahvi ja tuhannen euron sopimus asettuvat samalle vaakakupille.",
+    "sanot": "Kiitos kahveista. Sopimuksesta päätän samoilla perusteilla kuin ennenkin."
+   }
+  },
+  {
+   "id": "vastavuoroisuuden-ansa-4",
+   "teksti": "Laitoin sulle valmiiksi tuon pohjan, säästit varmaan pari tuntia. Ehtisitkö sä muuten katsoa mun osuuden läpi ens yönä?",
+   "konteksti": "tyo",
+   "kanava": "viesti",
+   "harhauttajat": ["foot-in-the-door", "tilipuristus"],
+   "paljastus": {
+    "mita": "Palvelus ja pyyntö samassa viestissä: ensimmäinen tekee toisesta vaikean torjua.",
+    "miksi": "Saatu apu on aitoa, mikä tekee ansasta tehokkaan — velka tuntuu oikeutetulta vaikka hinta ei ole.",
+    "sanot": "Kiitos pohjasta. Yötyö ei onnistu — katson sen huomenna."
+   }
+  }
+ ]
+}

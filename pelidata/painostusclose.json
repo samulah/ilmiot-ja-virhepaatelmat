@@ -1,0 +1,54 @@
+{
+ "ilmio": "painostusclose",
+ "laji": "taktiikka",
+ "kohdat": [
+  {
+   "id": "painostusclose-1",
+   "teksti": "Tää hinta on voimassa tän puhelun ajan. Jos suljet luurin, mä en pysty enää lupaamaan mitään.",
+   "konteksti": "puhelin",
+   "kanava": "puhe",
+   "harhauttajat": ["sosiaalinen-todiste", "lowball-hinnoittelu"],
+   "paljastus": {
+    "mita": "Määräaika on keksitty, ja sen ainoa tehtävä on estää harkinta.",
+    "miksi": "Kiire poistaa vertailun. Kun ei ehdi katsoa muualta, tarjousta arvioidaan vain sitä itseään vasten.",
+    "sanot": "Laita se sähköpostilla, niin katson rauhassa. Jos se ei kestä yön yli, se ei ole minun tarjoukseni."
+   }
+  },
+  {
+   "id": "painostusclose-2",
+   "teksti": "Sanon nyt suoraan, että mulla on toinenkin kiinnostunut. Vakavasti otettavat ostajat päättää tänään.",
+   "konteksti": "myynti",
+   "kanava": "puhe",
+   "harhauttajat": ["sosiaalinen-todiste", "hintaankkurointi"],
+   "paljastus": {
+    "mita": "Kilpaileva ostaja ja empimisen häpeällistäminen samassa lauseessa.",
+    "miksi": "Toista ostajaa ei voi tarkistaa, ja 'vakavasti otettava' asettaa hinnan sinun uskottavuudellesi.",
+    "sanot": "Minä olen vakavasti otettava ostaja, joka katsoo paperit ensin."
+   }
+  },
+  {
+   "id": "painostusclose-3",
+   "teksti": "Viimeiset 3 paikkaa! Varaa nyt — 14 muuta katsoo tätä juuri nyt.",
+   "konteksti": "kauppa",
+   "kanava": "kayttoliittyma",
+   "harhauttajat": ["sosiaalinen-todiste", "bait-and-switch"],
+   "paljastus": {
+    "mita": "Kaksi keinotekoista niukkuutta samassa palkissa: määrä ja katsojamäärä.",
+    "miksi": "Kumpaakaan lukua ei voi tarkistaa, eikä niiden tarvitse olla tosia toimiakseen — riittää että ne ehtivät ennen harkintaa.",
+    "sanot": "Päivitän sivun ja katson, muuttuuko luku. Sitten päätän."
+   }
+  },
+  {
+   "id": "painostusclose-4",
+   "teksti": "Tarvin vastauksen tänään iltapäivään mennessä, muuten annetaan paikka seuraavalle.",
+   "konteksti": "tyo",
+   "kanava": "sahkoposti",
+   "harhauttajat": ["lukittu-paatos", "argumenttitulva"],
+   "paljastus": {
+    "mita": "Määräaika esitetään annettuna, vaikka sen asetti se, joka hyötyy nopeasta päätöksestä.",
+    "miksi": "Työpaikkatarjouksessa kiire estää vertailun muihin ja neuvottelun ehdoista — juuri ne kaksi asiaa jotka maksaisivat sinulle.",
+    "sanot": "Tarvitsen kaksi päivää. Onko se este?"
+   }
+  }
+ ]
+}

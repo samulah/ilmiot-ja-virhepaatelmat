@@ -1,0 +1,54 @@
+{
+ "ilmio": "door-in-the-face",
+ "laji": "taktiikka",
+ "kohdat": [
+  {
+   "id": "door-in-the-face-1",
+   "teksti": "Kokonaisuudistus olisi 48 000. — Ai, se on liikaa. — No, tehdään sitten pelkkä ykkösvaihe, 19 000. Sopiiko?",
+   "konteksti": "myynti",
+   "kanava": "puhe",
+   "harhauttajat": ["hintaankkurointi", "lowball-hinnoittelu"],
+   "paljastus": {
+    "mita": "Ensimmäinen luku oli tarkoitettu torjuttavaksi. Toinen oli koko ajan tavoite.",
+    "miksi": "Toinen tarjous näyttää myönnytykseltä, ja myönnytykseen vastataan myönnytyksellä. Vertailukohta on väärä luku.",
+    "sanot": "Olisinko ostanut tämän tähän hintaan, jos se olisi ollut ensimmäinen tarjous?"
+   }
+  },
+  {
+   "id": "door-in-the-face-2",
+   "teksti": "Voisitko tulla vetämään koko koulutuksen? — En valitettavasti ehdi. — Okei, no tuletko sitten pitämään vaan sen alustuksen?",
+   "konteksti": "tyo",
+   "kanava": "puhe",
+   "harhauttajat": ["foot-in-the-door", "vastavuoroisuuden-ansa"],
+   "paljastus": {
+    "mita": "Iso pyyntö torjuttiin, ja pienempi esitetään heti perään myönnytyksenä.",
+    "miksi": "Kieltäytyminen jättää epämukavan tunteen, jonka toinen pyyntö tarjoutuu poistamaan.",
+    "sanot": "Katson tämän omana kysymyksenään. Ehdinkö minä oikeasti?"
+   }
+  },
+  {
+   "id": "door-in-the-face-3",
+   "teksti": "Alun perin ajattelin pyytää sua muuttaa tänne. Mutta okei — riittää jos oot täällä viikonloput.",
+   "konteksti": "parisuhde",
+   "kanava": "puhe",
+   "harhauttajat": ["foot-in-the-door", "maalitolppien-siirtaminen"],
+   "paljastus": {
+    "mita": "Ylimitoitettu ehdotus tekee varsinaisesta pyynnöstä kohtuullisen kuuloisen.",
+    "miksi": "Vertaat pyyntöä edelliseen pyyntöön, et omaan haluusi. Ankkuri tekee työn puolestasi.",
+    "sanot": "Mietitään tätä ilman sitä ensimmäistä ehdotusta. Mitä minä haluan?"
+   }
+  },
+  {
+   "id": "door-in-the-face-4",
+   "teksti": "Budjetti pitäisi oikeastaan tuplata. Mutta jos se ei käy, niin tyydytään 30 prosentin lisäykseen.",
+   "konteksti": "tyo",
+   "kanava": "puhe",
+   "harhauttajat": ["hintaankkurointi", "argumenttitulva"],
+   "paljastus": {
+    "mita": "Ensimmäinen vaatimus asettaa asteikon, jolla toinen näyttää maltilliselta.",
+    "miksi": "Kolmenkymmenen prosentin lisäys arvioidaan suhteessa tuplaukseen, ei suhteessa nykytilaan tai tarpeeseen.",
+    "sanot": "Mihin lukuun tarve perustuu? Katsotaan se ilman vertailua."
+   }
+  }
+ ]
+}

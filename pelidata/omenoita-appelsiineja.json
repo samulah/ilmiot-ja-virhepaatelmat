@@ -1,0 +1,54 @@
+{
+ "ilmio": "omenoita-appelsiineja",
+ "laji": "taktiikka",
+ "kohdat": [
+  {
+   "id": "omenoita-appelsiineja-1",
+   "teksti": "Yksityisellä pääsee lääkäriin kolmessa päivässä. Julkisella jonotetaan kuukausia. Siinä on ero.",
+   "konteksti": "some",
+   "kanava": "viesti",
+   "harhauttajat": ["cherry-picking-aikavali", "keskiarvo-vs-mediaani"],
+   "paljastus": {
+    "mita": "Vertailtavat eivät ole sama asia: toisessa on valikoitu potilasjoukko, toisessa kaikki.",
+    "miksi": "Molemmilla on sama yksikkö (päivää), mikä saa vertailun näyttämään päteviltä vaikka populaatio on eri.",
+    "sanot": "Sama vaiva, sama kiireellisyys, sama potilasryhmä — miltä luvut näyttävät silloin?"
+   }
+  },
+  {
+   "id": "omenoita-appelsiineja-2",
+   "teksti": "Ruotsi käyttää puolustukseen 10 miljardia, me kuusi. Jäädään pahasti jälkeen.",
+   "konteksti": "some",
+   "kanava": "viesti",
+   "harhauttajat": ["pinta-alaharha", "cherry-picking-aikavali"],
+   "paljastus": {
+    "mita": "Absoluuttiset eurot rinnastetaan ilman väestön tai talouden kokoa.",
+    "miksi": "Iso luku on konkreettinen ja mieleenpainuva. Suhdeluku vaatii yhden laskutoimituksen lisää, eikä sitä tehdä.",
+    "sanot": "Paljonko se on asukasta kohti tai osuutena BKT:sta?"
+   }
+  },
+  {
+   "id": "omenoita-appelsiineja-3",
+   "teksti": "Edellinen hallitus jätti ylijäämän, tämä alijäämän. Siinä on koko talouspolitiikka pähkinänkuoressa.",
+   "konteksti": "some",
+   "kanava": "viesti",
+   "harhauttajat": ["cherry-picking-aikavali", "paatosperainen-todistelu"],
+   "paljastus": {
+    "mita": "Kaksi kautta rinnastetaan ilman suhdannetta, joka selittää valtaosan erosta.",
+    "miksi": "Vertailu on muodollisesti oikein — samat luvut, sama mittari — ja juuri siksi se menee läpi.",
+    "sanot": "Miltä sama vertailu näyttää, jos suhdanne vakioidaan?"
+   }
+  },
+  {
+   "id": "omenoita-appelsiineja-4",
+   "teksti": "Meillä on sairaalapaikkoja vähemmän kuin Saksassa. Siinä näkyy, mihin leikkaukset ovat johtaneet.",
+   "konteksti": "some",
+   "kanava": "viesti",
+   "harhauttajat": ["keskiarvo-vs-mediaani", "pinta-alaharha"],
+   "paljastus": {
+    "mita": "Sama sana tarkoittaa maissa eri asiaa: kirjaamistapa ei ole yhteinen.",
+    "miksi": "Kansainvälinen vertailu näyttää objektiiviselta, koska luvut tulevat virallisista lähteistä — vaikka määritelmä eroaa.",
+    "sanot": "Lasketaanko molemmissa maissa sama asia samalla tavalla?"
+   }
+  }
+ ]
+}

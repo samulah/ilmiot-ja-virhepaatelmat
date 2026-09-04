@@ -1,0 +1,54 @@
+{
+ "ilmio": "argumenttitulva",
+ "laji": "taktiikka",
+ "kohdat": [
+  {
+   "id": "argumenttitulva-1",
+   "teksti": "Ensinnäkin luvut on kerätty väärin, toiseksi otanta on liian pieni, kolmanneksi vertailuvuosi on valittu tarkoitushakuisesti, neljänneksi rahoittaja on sidoksissa alaan, ja viidenneksi sama tulos on kumottu jo kolmesti.",
+   "konteksti": "some",
+   "kanava": "viesti",
+   "harhauttajat": ["brandolinin-laki", "whataboutismi"],
+   "paljastus": {
+    "mita": "Viisi väitettä yhdessä viestissä, jotta yhteenkään ei ehditä vastata kunnolla.",
+    "miksi": "Kumoamatta jäänyt väite luetaan myönnytykseksi. Määrä voittaa laadun aina kun aika on rajallinen.",
+    "sanot": "En vastaa viiteen kerralla. Otetaan tärkein: kumpi vertailuvuosi olisi oikea ja miksi?"
+   }
+  },
+  {
+   "id": "argumenttitulva-2",
+   "teksti": "Selitän tän nyt vielä kerran alusta, koska sä et selvästikään ymmärtänyt. Ja sit mä kerron sen taustan, ja sen toisen kerran kun kävi samalla lailla, ja mitä siitä seurasi.",
+   "konteksti": "parisuhde",
+   "kanava": "puhe",
+   "harhauttajat": ["gaslighting", "darvo"],
+   "paljastus": {
+    "mita": "Sama taktiikka ilman yleisöä: puhutaan niin kauan ja niin monesta asiasta, että toinen antaa periksi väsymyksestä.",
+    "miksi": "Periksi antaminen tulkitaan myöhemmin yhteisymmärrykseksi, vaikka kyse oli lopettamisesta.",
+    "sanot": "En jaksa käydä kaikkea nyt. Valitaan yksi asia ja puhutaan se loppuun."
+   }
+  },
+  {
+   "id": "argumenttitulva-3",
+   "teksti": "Liitteenä 40 sivua taustaa. Ehdit varmasti käydä sen läpi ennen huomista kokousta, niin voidaan päättää asiasta siellä.",
+   "konteksti": "tyo",
+   "kanava": "sahkoposti",
+   "harhauttajat": ["painostusclose", "lukittu-paatos"],
+   "paljastus": {
+    "mita": "Aineiston määrä ja päätöksen aikataulu on mitoitettu niin, ettei perehtyminen ole mahdollista.",
+    "miksi": "Kukaan ei halua olla se, joka myöntää ettei lukenut. Hiljaisuus menee läpi hyväksyntänä.",
+    "sanot": "En ehdi lukea tätä huomiseksi. Siirretään päätös tai tiivistetään olennainen."
+   }
+  },
+  {
+   "id": "argumenttitulva-4",
+   "teksti": "Sulla ei selvästi ole vastausta yhteenkään mun kohdista, joten asia on kai sillä selvä.",
+   "konteksti": "some",
+   "kanava": "viesti",
+   "harhauttajat": ["brandolinin-laki", "darvo"],
+   "paljastus": {
+    "mita": "Tulvan toinen puolisko: vastaamatta jääminen esitetään voittona.",
+    "miksi": "Se on tulvan koko tarkoitus — vastaaminen tehtiin mahdottomaksi, ja mahdottomuus luetaan myönnytykseksi.",
+    "sanot": "Vastaamattomuus ei ole myöntämistä. Otetaan yksi kohta kerrallaan."
+   }
+  }
+ ]
+}
