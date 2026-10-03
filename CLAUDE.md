@@ -1,6 +1,6 @@
 # Ilmiöitä — www.ilmiöt.fi
 
-Suomenkielinen tietopankki: 139 yhteiskunnallista ilmiötä, 13 aihepiiriä. Staattinen
+Suomenkielinen tietopankki: 148 yhteiskunnallista ilmiötä, 14 aihepiiriä. Staattinen
 HTML, ei build-vaihetta — jokainen sivu on itsenäinen tiedosto repon juuressa. Osa
 tiedostoista on kuitenkin **generoituja**, eikä niitä muokata käsin (ks. alla).
 
@@ -185,15 +185,34 @@ saa rikkoa:
    Peruste on `kategoriat/psykologia-ja-kognitio.md` riveillä 17–21. Nimeäminen
    on erillinen toinen vaihe, koska ihminen voi selvitä tilanteesta oikein
    tunnistamatta tekniikkaa — ja nimeäminen on se osa, joka yleistyy.
+   Valinta on aito vain, jos kumpikin voi olla oikea vastaus samassa
+   kanavassa: `--tarkista` kaatuu, jos vinoumia on alle 15 % pankista (vaiheessa
+   1 niitä oli nolla, ja "Oma pää" oli aina väärin) tai jos `ajatus`-kanavassa
+   ei ole myös pätevää päättelyä ja jonkun toisen tempun jälkiä. Säännöt ovat
+   `pelidata/TYYLI.md`:ssä.
 5. **Pelisivu ei ole ilmiö.** Ei numeroa, ei `const IDS`-taulukkoa, ei
    PREV/NEXT-ketjua, **eikä luokkaa `hub-kortti`**. Sitemapiin se vaatii oman
    vakion `scripts/build_sitemap.py`:hyn; hakuindeksiin sitä ei lisätä.
 
-Päiväindeksi lasketaan epokista (23.8.2026 = Vedätys #1) **paikallisen**
+Päiväindeksi lasketaan epokista (epokki = Vedätys #1) **paikallisen**
 keskiyön mukaan, ja `setHours(0,0,0,0)` ajetaan molemmille päiville. Ilman
 jälkimmäistä kesäajan vaihtuminen siirtää indeksiä yhdellä. Epokki määritellään
 **vain** `scripts/build_peli.py`:ssä; `peli.html` lukee sen datasta
-(`P.epokki`), joten sitä ei kovakoodata sivulle.
+(`P.epokki`), joten sitä ei kovakoodata sivulle. Selaimen talletus on sidottu
+epokkiin (`peli-epokki`): kun epokki vaihtuu, tilastot, tulokset ja
+kertaushistoria nollataan, koska vanhat päiväindeksit osoittaisivat vääriin
+eriin. **Epokin muuttaminen julkaisun jälkeen nollaa siis jokaisen pelaajan
+putken.**
+
+**Tilastot ja tehoste kertyvät vain päivän omasta erästä, ja vain kerran.**
+Arkistosta tai vanhasta haastelinkistä pelattu erä tallentaa tuloksensa
+(`peli-tulokset`), mutta ei koske putkeen — ennen 3.10.2026 se siirsi
+viimeisin-päivän taaksepäin ja nollasi putken. Erän ensimmäinen tulos jää
+voimaan ja on se, joka jaetaan; uusintakierros ei korvaa sitä.
+
+**Ohjaava ansa osoittaa aina väärään vastaukseen** (`ansanKohde()`). Esivalittu
+oletus ja keksitty prosentti, jotka sattuvat osumaan oikeaan, palkitsevat
+tottelemisen ja opettavat päinvastaista kuin paljastus sanoo.
 
 **`data/peli-pankki.js` on defer-skripti, joten sitä ei saa lukea
 moduulitasolla.** `peli.html`:n inline-skripti ajetaan jäsennyshetkellä, siis

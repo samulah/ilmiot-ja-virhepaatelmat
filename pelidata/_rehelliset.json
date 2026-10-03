@@ -442,6 +442,149 @@
     "miksi": "Kiireen tunnistaminen tekniikaksi on hyödyllistä, mutta joskus kiire on vain kiirettä.",
     "sanot": ""
    }
+  },
+  {
+   "id": "rehellinen-41",
+   "teksti": "Remontti on maksanu jo 8 000 ja loppuun tarvitaan vielä 2 000. Valmiina asunnon arvo nousee selvästi enemmän ku se 2 000, joten tehään loppuun.",
+   "konteksti": "koti",
+   "kanava": "ajatus",
+   "paljastus": {
+    "mita": "Päätös perustuu siihen, mitä loppuun vieminen maksaa ja tuottaa tästä eteenpäin.",
+    "miksi": "Jo käytetty summa mainitaan, ja se kuulostaa uponneiden kustannusten harhalta. Ratkaisu ei kuitenkaan nojaa siihen.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-42",
+   "teksti": "Oon lukenu tätä kirjaa sata sivua eikä se nappaa. Jätän kesken, vaikka maksoin siitä kolmekymppiä.",
+   "konteksti": "koti",
+   "kanava": "ajatus",
+   "paljastus": {
+    "mita": "Jo maksettu hinta ei vaikuttanut päätökseen.",
+    "miksi": "Kesken jättäminen tuntuu rahan hukkaamiselta, ja siksi päätös näyttää epäilyttävältä. Raha on mennyt kummassakin tapauksessa.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-43",
+   "teksti": "Hakija oli haastattelussa tosi miellyttävä. Katon silti työnäytteen pisteet ensin ja päätän vasta niiden jälkeen.",
+   "konteksti": "tyo",
+   "kanava": "ajatus",
+   "paljastus": {
+    "mita": "Ensivaikutelma tunnistettiin ja pidettiin erillään taidon arvioinnista.",
+    "miksi": "Myönteinen vaikutelma mainitaan, ja se on halo-efektin lähtökohta. Tässä se ei päässyt päättämään.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-44",
+   "teksti": "Oon tehny tätä työtä viistoista vuotta ja nähny saman vian kymmeniä kertoja. Oon aika varma, että vika on virtalähteessä, mut mittaan sen ennen ku tilaan osan.",
+   "konteksti": "tyo",
+   "kanava": "ajatus",
+   "paljastus": {
+    "mita": "Varmuus perustuu toistuneeseen kokemukseen, ja se tarkistetaan silti mittaamalla.",
+    "miksi": "Vahva varmuus kuulostaa ylivertaisuusharhalta. Ero on siinä, että tällä varmuudella on historia ja sille haetaan testi.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-45",
+   "teksti": "Luin aiheesta viikonlopun. Ymmärrän nyt perusasiat, mut en vielä tiedä mitä en tiedä, joten kysyn neuvoa ennen ku siirrän rahoja.",
+   "konteksti": "raha",
+   "kanava": "ajatus",
+   "paljastus": {
+    "mita": "Oman osaamisen raja on tunnistettu ja siihen reagoidaan.",
+    "miksi": "Lyhyt perehtyminen on sama lähtötilanne kuin ylivertaisuusharhassa. Johtopäätös on päinvastainen.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-46",
+   "teksti": "Se näytti mulle luvut, ja mun arvio oli väärin. Harmittaa, mut korjaan sen esityksen ennen huomista.",
+   "konteksti": "tyo",
+   "kanava": "ajatus",
+   "paljastus": {
+    "mita": "Vastakkainen näyttö muutti kantaa.",
+    "miksi": "Korjatuksi tuleminen tuntuu pahalta, ja siitä tunteesta backfire-ilmiö alkaa. Tässä tunne ei päässyt ohjaamaan päätöstä.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-47",
+   "teksti": "Se linkkas tutkimuksen, ja luin sen: otos oli neljätoista ihmistä eikä vertailuryhmää ollu. En muuta kantaani tän perusteella.",
+   "konteksti": "some",
+   "kanava": "ajatus",
+   "paljastus": {
+    "mita": "Näyttö arvioitiin ennen kuin se hylättiin, ja hylkäämiselle on nimetty syy.",
+    "miksi": "Vastakkaisen tutkimuksen torjuminen näyttää uskomuksesta kiinni pitämiseltä. Ero on siinä, että syy löytyy tutkimuksesta eikä omasta kannasta.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-48",
+   "teksti": "Kolme tuttua on menestyny ravintoloitsijana. Katoin, kuinka moni samana vuonna alottaneista on enää pystyssä, ja luku oli pieni. En irtisanoudu vielä.",
+   "konteksti": "raha",
+   "kanava": "ajatus",
+   "paljastus": {
+    "mita": "Menestyjien lisäksi laskettiin ne, jotka lopettivat.",
+    "miksi": "Tuttujen menestystarinat ovat selviytymisharhan raaka-ainetta. Tässä otosta täydennettiin puuttuvilla.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-49",
+   "teksti": "Urakoitsija sano kolme viikkoa. Kysyin kahelta naapurilta, joilla tehtiin sama: kummallaki meni kuus. Varaan sijaisasunnon kuudeks viikoks.",
+   "konteksti": "koti",
+   "kanava": "ajatus",
+   "paljastus": {
+    "mita": "Arvio on otettu toteutuneista vastaavista töistä, ei lupauksesta.",
+    "miksi": "Aikataulun pidentäminen omin päin näyttää pelkältä puskurilta. Tässä luku tulee historiasta eikä tunteesta.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-50",
+   "teksti": "Lehden juttu mun alasta oli pielessä. Tarkistan siks tän toisenki jutun luvut alkuperäisestä raportista ennen ku jaan sen eteenpäin.",
+   "konteksti": "media",
+   "kanava": "ajatus",
+   "paljastus": {
+    "mita": "Oman alan virheestä tehtiin johtopäätös koko julkaisun tarkkuudesta.",
+    "miksi": "Lähtökohta on sama kuin Gell-Mannin amnesiassa: virhe omalla alalla. Tässä sitä ei unohdettu sivua kääntäessä.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-51",
+   "teksti": "Jutussa sanottiin, että päätös tehtiin maaliskuussa. Olin ite kokouksessa: se tehtiin toukokuussa. Lähetän toimitukseen oikaisupyynnön ja pöytäkirjan.",
+   "konteksti": "media",
+   "kanava": "ajatus",
+   "paljastus": {
+    "mita": "Palaute osoittaa yhden tarkistettavan virheen ja sen lähteen.",
+    "miksi": "Toimitukselle valittaminen näyttää vihamielisen median harhalta. Ero on siinä, että tässä on osoitettava virhe eikä pelkkä tunne.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-52",
+   "teksti": "Juttu ärsytti mua. Laskin kriittiset lauseet: neljä kummastaki osapuolesta. Ärsytys taitaa olla mun, ei jutun.",
+   "konteksti": "media",
+   "kanava": "ajatus",
+   "paljastus": {
+    "mita": "Tunne puolueellisuudesta tarkistettiin laskemalla, ja tulos hyväksyttiin.",
+    "miksi": "Ärtymys jutusta on vihamielisen median harhan ensimmäinen merkki. Tässä sitä ei pidetty todisteena.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-53",
+   "teksti": "Oon opiskellu tätä alaa kolme vuotta ja vuos on jäljellä. Ala kiinnostaa edelleen ja töitä on tarjolla, joten käyn loppuun.",
+   "konteksti": "opiskelu",
+   "kanava": "ajatus",
+   "paljastus": {
+    "mita": "Jatkamisen syyt ovat tulevassa: kiinnostus ja työtilanne.",
+    "miksi": "Käytetyt vuodet mainitaan, ja se kuulostaa uponneiden kustannusten harhalta. Ne eivät kuitenkaan ole perustelu.",
+    "sanot": ""
+   }
   }
  ]
 }

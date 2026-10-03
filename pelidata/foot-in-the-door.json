@@ -49,6 +49,18 @@
     "miksi": "Peruminen edellyttää toimenpidettä, ja tekemättä jättäminen on aina helpompaa kuin tekeminen.",
     "sanot": "Laitan perumisen kalenteriin heti, jos otan tämän."
    }
+  },
+  {
+   "id": "foot-in-the-door-5",
+   "teksti": "Lupasin sille ensin vastata yhteen kysymykseen, sit täytin lomakkeen, ja nyt se pyytää varaamaan tunnin esittelyn. Tuntuis oudolta kieltäytyä, ku oon jo sanonu kahesti joo.",
+   "konteksti": "myynti",
+   "kanava": "ajatus",
+   "harhauttajat": ["door-in-the-face", "vastavuoroisuuden-ansa"],
+   "paljastus": {
+    "mita": "Kaksi pientä myöntymistä on rakennettu portaiksi kolmanteen, isompaan.",
+    "miksi": "Haluat olla johdonmukainen aiempien vastaustesi kanssa. Pyytäjä tietää sen ja on järjestänyt pyynnöt kasvavaan järjestykseen.",
+    "sanot": "Vastasin kysymykseen ja täytin lomakkeen. Esittelyä en varaa."
+   }
   }
  ]
 }

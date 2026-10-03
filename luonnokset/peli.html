@@ -273,6 +273,10 @@
     .napit-rivi { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1.4rem; }
     .ansa-raportti li { margin-left: 1.1rem; margin-bottom: 0.3rem; }
     .kertaus li { margin-bottom: 0.45rem; }
+    .erottelu { font-size: 0.9em; color: #6B5020; margin-bottom: 1.1rem; }
+    .arkisto-rivi { display: flex; gap: 0.9rem; align-items: baseline; padding: 0.12rem 0; }
+    .arkisto-rivi a { min-width: 2.8rem; font-weight: 600; }
+    .arkisto-rivi span { font-size: 0.9em; color: #6B5020; letter-spacing: 0.06em; }
 
     .haaste-laatikko {
       border-left: 3px solid var(--c-primary-mid); background: #fff;
@@ -310,21 +314,19 @@
   <!-- ══ Aloitus ══ -->
   <section id="aloitus">
     <p class="aloitus-kuva">Kumpi näistä<br>on temppu?</p>
-    <p class="aloitus-alku">Viisi viestiä. Osassa sinua ohjataan, osa on ihan tavallisia. Puolitoista minuuttia.</p>
+    <p class="aloitus-alku">Viisi tilannetta. Osassa joku ohjaa sinua, osassa oma pää tekee tepposet, osa on ihan kunnossa. Puolitoista minuuttia.</p>
 
     <div class="tehoste-rivi" id="tehosteRivi" hidden>
       <div><b id="tehosteLuku">0</b> tehostepäivää putkeen</div>
       <div><b id="tarkkuusLuku">–</b> tunnistustarkkuus</div>
     </div>
+    <p class="erottelu" id="erotteluAloitus" hidden></p>
 
     <div class="haaste-laatikko" id="haasteLaatikko" hidden></div>
-    <p class="haaste-laatikko" id="jopelattu" hidden>Tämän päivän erä on jo pelattu. Voit pelata sen
-      uudelleen, mutta tilastoihin se ei enää vaikuta — huominen erä avautuu keskiyöllä.</p>
 
     <p class="raja-laatikko" id="latausvirhe" hidden style="border-color:#b03a2e;background:#fdf0ef">
-      <b>Pelin data ei latautunut.</b> Tiedosto <code>data/peli-pankki.js</code> puuttuu tai sitä ei
-      ehditty ajaa. Ilman sitä peliä ei voi käynnistää. Aja <code>python3 scripts/build_peli.py</code>
-      ja lataa sivu uudelleen.</p>
+      <b>Peli ei latautunut.</b> Lataa sivu uudelleen. Jos sama toistuu, kokeile hetken päästä
+      uudelleen — ilmiösivut toimivat tästä riippumatta.</p>
 
     <div class="napit-rivi">
       <button class="nappi nappi-iso nappi-tumma" id="aloitaNappi">Pelaa päivän erä</button>
@@ -334,9 +336,10 @@
     <div class="laatikko">
       <p class="osio-otsikko">Miten tämä toimii</p>
       <ul class="saannot">
-        <li>Jokaisesta viestistä valitset: <b>tavallinen</b>, <b>oma pää</b> vai <b>joku tekee tämän</b>.</li>
+        <li>Jokaisesta tilanteesta valitset: <b>kunnossa</b>, <b>oma pää</b> vai <b>joku tekee tämän</b>.</li>
         <li>Väärä hälytys maksaa saman kuin ohitus. Epäluuloisuus ei ole taito — <b>erottelu on</b>.</li>
-        <li>Jos tunnistat tempun, saat nimetä sen. Nimeäminen on se osa, joka siirtyy uusiin tilanteisiin.</li>
+        <li>Oma pää ja toisen temppu vaativat eri vastakeinon: vinoumaan auttaa menetelmä, temppuun nimeäminen ja raja.</li>
+        <li>Jos tunnistat tempun tai vinouman, saat nimetä sen. Nimeäminen on se osa, joka siirtyy uusiin tilanteisiin.</li>
         <li>Sinulla on <b>yksi lippu 🚩</b> per erä. Käytä se, jos epäilet että <b>peli itse</b> tekee sinulle tempun.</li>
       </ul>
     </div>
@@ -350,7 +353,7 @@
         kuukaudessa, ellei sitä testaa toistuvasti — toisto on ainoa syy tulla takaisin, ja se riittää.</p>
     </div>
 
-    <p style="font-size:.9em;color:#6B5020">Kaikki 27 ilmiötä löytyvät myös luettavina:
+    <p style="font-size:.9em;color:#6B5020">Kaikki <span id="ilmioMaara">pelin</span> ilmiötä löytyvät myös luettavina:
       <a href="../index.html">selaa tietopankkia</a>.</p>
   </section>
 
@@ -381,7 +384,7 @@
         <dt>Miksi se toimii</dt><dd id="pMiksi"></dd>
       </dl>
       <div class="sanot-laatikko" id="sanotLaatikko" hidden>
-        <p class="osio-otsikko">Mitä sanot</p>
+        <p class="osio-otsikko" id="sanotOtsikko">Mitä sanot</p>
         <p id="pSanot"></p>
       </div>
       <a class="lue-linkki" id="lueLinkki" href="#" hidden></a>
@@ -399,12 +402,20 @@
   <!-- ══ Loppu ══ -->
   <section id="loppu" hidden>
     <h2 id="loppuOtsikko">Erä 1</h2>
+    <p class="haaste-laatikko" id="tallessa" hidden></p>
     <div class="tulos-luvut">
       <div class="tulos-luku"><b id="tLuokitus">0/5</b><span>tunnistus</span></div>
       <div class="tulos-luku"><b id="tNimeaminen">0/0</b><span>nimeäminen</span></div>
       <div class="tulos-luku"><b id="tTehoste">1</b><span>tehostepäivää</span></div>
     </div>
     <div class="ruudukko" id="ruudukko"></div>
+    <p class="erottelu" id="erotteluEra" hidden></p>
+
+    <div class="laatikko" id="erotteluLaatikko" hidden>
+      <p class="osio-otsikko">Erottelusi tähän asti</p>
+      <p id="erotteluLuvut"></p>
+      <p id="erotteluTulkinta" hidden></p>
+    </div>
 
     <div class="laatikko" id="ansaRaportti" hidden>
       <p class="osio-otsikko">Mitä sinulle tehtiin tässä erässä</p>
@@ -415,8 +426,11 @@
 
     <p class="osio-otsikko">Jaa tulos ja haasta</p>
     <div class="jako-esikatselu" id="jakoTeksti"></div>
+    <p class="erottelu" id="jakoHuomio" hidden>Jaettava tulos on ensimmäinen pelikertasi tästä erästä.</p>
     <div class="napit-rivi">
+      <button class="nappi nappi-tumma" id="jaaNappi" hidden>Jaa tulos</button>
       <button class="nappi nappi-tumma" id="jakoNappi">Kopioi leikepöydälle</button>
+      <button class="nappi" id="uudelleenNappi" hidden>Pelaa uudelleen</button>
       <button class="nappi" id="harjoitteleLoppu">Harjoittele lisää</button>
       <button class="nappi" id="arkistoNappi">Arkisto</button>
     </div>
@@ -428,7 +442,7 @@
 
     <div id="arkistoLista" hidden class="laatikko">
       <p class="osio-otsikko">Arkisto</p>
-      <p id="arkistoSisalto" style="font-size:.95em"></p>
+      <div id="arkistoSisalto" style="font-size:.95em"></div>
     </div>
   </section>
 </main>
@@ -473,12 +487,24 @@
   var VRK = 864e5;
   var AVAIN_TILASTOT = 'peli-tilastot';
   var AVAIN_NAHTY = 'peli-nahty';
+  var AVAIN_TULOKSET = 'peli-tulokset';
+  var AVAIN_EPOKKI = 'peli-epokki';
 
   var LAJIT = [
     { koodi: 'rehellinen', nimi: 'Tavallinen viesti', selite: 'Ei mitään vikaa.' },
     { koodi: 'vinouma', nimi: 'Oma pää', selite: 'Minun päättelyni vinoutuu — kukaan ei tee tätä minulle.' },
     { koodi: 'taktiikka', nimi: 'Joku tekee tämän', selite: 'Tämän takana on valinta. Vastakeino on nimeäminen.' }
   ];
+
+  // Oma ajatus ei ole "viesti". Kunnossa oleva vaihtoehto nimetään kanavan
+  // mukaan, muuten rehellinen ajatuskohta lukisi "Tavallinen viesti".
+  function rehellisenNimi(k) {
+    return k.kn === 'ajatus' ? 'Pätevä päättely' : 'Tavallinen viesti';
+  }
+  function lajinNimi(koodi, k) {
+    if (koodi === 'rehellinen') { return rehellisenNimi(k); }
+    return koodi === 'vinouma' ? LAJIT[1].nimi : LAJIT[2].nimi;
+  }
 
   var KANAVAT = {
     viesti: 'Viesti', puhe: 'Puhelu', sahkoposti: 'Sähköposti',
@@ -487,7 +513,8 @@
   var KONTEKSTIT = {
     tyo: 'työ', parisuhde: 'parisuhde', perhe: 'perhe', myynti: 'myynti',
     puhelin: 'puhelin', some: 'some', kauppa: 'kauppa',
-    viranomainen: 'viranomainen', vuokra: 'vuokra', ajatus: 'ajatus'
+    viranomainen: 'viranomainen', vuokra: 'vuokra', ajatus: 'ajatus',
+    raha: 'raha', media: 'media', koti: 'koti', opiskelu: 'opiskelu'
   };
 
   // ── Päivämäärät ────────────────────────────────────────────────────
@@ -514,6 +541,19 @@
   }
   function talleta(avain, arvo) {
     try { window.localStorage.setItem(avain, JSON.stringify(arvo)); } catch (e) { /* ei mitään */ }
+  }
+  function poista(avain) {
+    try { window.localStorage.removeItem(avain); } catch (e) { /* ei mitään */ }
+  }
+
+  // Päiväindeksit lasketaan epokista. Jos epokki vaihtuu, vanha talletus
+  // osoittaa vääriin eriin: "päivä 12 pelattu" tarkoittaisi eri erää kuin
+  // silloin kun se kirjattiin. Siksi talletus sidotaan epokkiin ja
+  // nollataan, kun se ei täsmää.
+  function sidoEpokkiin() {
+    if (lue(AVAIN_EPOKKI, null) === P.epokki) { return; }
+    [AVAIN_TILASTOT, AVAIN_TULOKSET, AVAIN_NAHTY].forEach(poista);
+    talleta(AVAIN_EPOKKI, P.epokki);
   }
 
   // ── Siemennetty sekoitus ───────────────────────────────────────────
@@ -562,10 +602,17 @@
     tila = {
       paiva: paiva,
       harjoittelu: !!harjoittelu,
+      // Päätetään ALOITUSHETKELLÄ: 23.59 aloitettu erä on sen päivän erä,
+      // vaikka se loppuisi keskiyön jälkeen.
+      paivanEra: !harjoittelu && paiva === tamaPaiva(),
+      uusinta: !harjoittelu && !!tulos(paiva),
+      tallennettu: false,
       kohdat: kohdat,
       ansa: harjoittelu ? null : (era.a || null),
+      ansaSeurattu: null,
       nyt: 0,
       merkit: [],
+      erot: [],
       luokitusOikein: 0,
       nimiOikein: 0,
       nimiYritetty: 0,
@@ -575,6 +622,63 @@
     };
     naytaOsio('peli');
     piirraKierros();
+  }
+
+  // ── Päivän tulos ───────────────────────────────────────────────────
+  // Yksi rivi per pelattu erä. ENSIMMÄINEN tulos jää voimaan: uusintakierros
+  // ei korvaa sitä, koska jaettu tulos on muuten vain paras yritys.
+  //   m  merkit (G/Y/R)        e  erottelukoodit (ks. vastaaLaji)
+  //   o  luokitus oikein       n  [nimi oikein, nimeä yritetty]
+  //   f  lippu osui            u  lippu käytetty
+  //   s  seurattiinko ansan ohjausta (null = ansa ei ohjannut mihinkään)
+  function tulos(paiva) {
+    var kaikki = lue(AVAIN_TULOKSET, null);
+    var t = kaikki && kaikki[paiva];
+    var n = P.erat[eraIndeksi(paiva)].k.length;
+    if (!t || typeof t.m !== 'string' || !new RegExp('^[GYR]{' + n + '}$').test(t.m)) { return null; }
+    if (!t.n || t.n.length !== 2) { return null; }
+    return t;
+  }
+
+  function talletaTulos() {
+    if (tulos(tila.paiva)) { return; }
+    var kaikki = lue(AVAIN_TULOKSET, null) || {};
+    kaikki[tila.paiva] = {
+      m: tila.merkit.join('').toUpperCase(),
+      e: tila.erot.join(''),
+      o: tila.luokitusOikein,
+      n: [tila.nimiOikein, tila.nimiYritetty],
+      f: tila.lippuOsui ? 1 : 0,
+      u: tila.lippuKaytetty ? 1 : 0,
+      s: tila.ansaSeurattu === null ? null : (tila.ansaSeurattu ? 1 : 0)
+    };
+    talleta(AVAIN_TULOKSET, kaikki);
+  }
+
+  // Palaavalle pelaajalle rakennetaan pelitila talletetusta tuloksesta,
+  // jolloin loppuruutu piirtyy samalla koodilla kuin juuri pelatun erän.
+  function tilaTuloksesta(paiva, t) {
+    var era = P.erat[eraIndeksi(paiva)];
+    var kohdat = era.k.map(function (i) { return P.kohdat[i]; });
+    return {
+      paiva: paiva,
+      harjoittelu: false,
+      paivanEra: paiva === tamaPaiva(),
+      uusinta: false,
+      tallennettu: true,
+      kohdat: kohdat,
+      ansa: era.a || null,
+      ansaSeurattu: (t.s === null || t.s === undefined) ? null : !!t.s,
+      nyt: kohdat.length,
+      merkit: t.m.toLowerCase().split(''),
+      erot: (t.e || '').split(''),
+      luokitusOikein: t.o || 0,
+      nimiOikein: t.n[0],
+      nimiYritetty: t.n[1],
+      lippuKaytetty: !!t.u,
+      lippuOsui: !!t.f,
+      valmis: true
+    };
   }
 
   // Harjoittelu käyttää välijättötoistoa: väärin menneet ilmiöt palaavat
@@ -671,7 +775,7 @@
       kbd.textContent = String(n + 1);
       b.appendChild(kbd);
       var vahva = document.createElement('b');
-      vahva.textContent = laji.nimi;
+      vahva.textContent = lajinNimi(laji.koodi, k);
       b.appendChild(vahva);
       var sel = document.createElement('span');
       sel.textContent = laji.selite;
@@ -679,7 +783,7 @@
       // Ansa "oletus": yksi vaihtoehto on valmiiksi korostettu ja merkitty
       // suositelluksi. Mikään ei suosittele sitä — se on koko temppu.
       if (tila.ansa && tila.ansa.t === 'oletus' && tila.ansa.r === tila.nyt &&
-          laji.koodi === 'taktiikka') {
+          laji.koodi === ansanKohde(k)) {
         b.className += ' suositeltu';
         var merkki = document.createElement('span');
         merkki.className = 'suositeltu-merkki';
@@ -689,6 +793,16 @@
       b.addEventListener('click', function () { vastaaLaji(laji.koodi); });
       el.appendChild(b);
     });
+  }
+
+  // Ohjaava ansa (oletus, todiste) osoittaa aina VÄÄRÄÄN vastaukseen. Jos se
+  // osuisi oikeaan, totteleminen palkittaisiin ja paljastus opettaisi
+  // päinvastaista kuin sanoo. Temppu työnnetään ohitettavaksi, tavallinen
+  // viesti hälytettäväksi.
+  function ansanKohde(k) { return k.l === 'rehellinen' ? 'taktiikka' : 'rehellinen'; }
+  function ansaOhjaa() {
+    return !!tila.ansa && tila.ansa.r === tila.nyt &&
+      (tila.ansa.t === 'oletus' || tila.ansa.t === 'todiste');
   }
 
   function pystytaAnsa(k) {
@@ -702,10 +816,10 @@
       $('ansaAjastin').hidden = false;
       kaynnistaAjastin(10);
     } else if (tila.ansa.t === 'todiste') {
-      // Luku on keksitty. Se kerrotaan erän lopussa.
+      // Luku on keksitty ja osoittaa väärään vastaukseen. Se kerrotaan erän lopussa.
       var pros = 60 + ((tila.paiva * 7 + tila.nyt * 13) % 35);
       $('ansaTodiste').hidden = false;
-      $('ansaTodiste').textContent = pros + ' % vastasi tähän oikein.';
+      $('ansaTodiste').textContent = pros + ' % valitsi: ' + lajinNimi(ansanKohde(k), k) + '.';
     } else if (tila.ansa.t === 'syyllistys') {
       $('ansaSyyllistys').hidden = false;
     }
@@ -742,6 +856,18 @@
     tila.valittuLaji = valittu;
 
     if (oikein) { tila.luokitusOikein++; }
+    if (ansaOhjaa()) { tila.ansaSeurattu = (valittu === ansanKohde(k)); }
+
+    // Erottelukoodi: kumpaan suuntaan virhe meni. Yksi tarkkuusprosentti
+    // ei kerro, epäileekö pelaaja liikaa vai liian vähän — ja juuri se on
+    // se asia, jota tämä peli väittää mittaavansa.
+    //   o osuma   s osuma, mutta laji sekaisin (vinouma <-> taktiikka)
+    //   h ohitus  v väärä hälytys   k kunnossa oleva päästetty läpi
+    var koodi;
+    if (k.l === 'rehellinen') { koodi = valittu === 'rehellinen' ? 'k' : 'v'; }
+    else if (valittu === 'rehellinen') { koodi = 'h'; }
+    else { koodi = oikein ? 'o' : 's'; }
+    tila.erot[tila.nyt] = koodi;
 
     // Nimeämisvaihe vain jos kohta on oikeasti temppu JA pelaaja tunnisti
     // sen tempuksi. Väärä hälytys maksaa luokituksessa, ei nimeämisessä —
@@ -754,7 +880,8 @@
   }
 
   function naytaNimeaminen(k, luokitusOikein) {
-    $('kysymys').textContent = 'Mikä temppu tämä on?';
+    // Neutraali sana: "temppu" kertoisi jo, että laji oli taktiikka.
+    $('kysymys').textContent = 'Mikä ilmiö tämä on?';
     var vaihtoehdot = sekoita([k.i].concat(k.h), tila.paiva * 101 + tila.nyt * 7);
     var el = $('valinnat');
     tyhjenna(el);
@@ -793,22 +920,38 @@
     piirraEdistyminen();
 
     var t = $('tuomio');
+    var ajatus = (k.kn === 'ajatus');
     t.className = 'tuomio ' + merkki;
     if (merkki === 'g') {
-      t.textContent = k.l === 'rehellinen' ? 'Oikein — tässä ei ollut mitään vikaa.' : 'Osui.';
+      t.textContent = k.l !== 'rehellinen' ? 'Osui.'
+        : (ajatus ? 'Oikein — tässä päättelyssä ei ollut mitään vikaa.'
+                  : 'Oikein — tässä ei ollut mitään vikaa.');
     } else if (merkki === 'y') {
-      t.textContent = 'Tunnistit tempun, mutta nimi meni väärin.';
+      t.textContent = k.l === 'vinouma'
+        ? 'Tunnistit vinouman, mutta nimi meni väärin.'
+        : 'Tunnistit tempun, mutta nimi meni väärin.';
     } else if (k.l === 'rehellinen') {
-      t.textContent = 'Väärä hälytys. Tämä oli tavallinen viesti.';
-    } else {
+      t.textContent = ajatus ? 'Väärä hälytys. Tämä oli pätevää päättelyä.'
+                             : 'Väärä hälytys. Tämä oli tavallinen viesti.';
+    } else if (tila.valittuLaji === 'rehellinen') {
       t.textContent = 'Meni ohi.';
+    } else if (k.l === 'vinouma') {
+      // Lajisekaannus on oma virheensä: väärä vastakeino pahentaa molempia.
+      t.textContent = 'Laji meni väärin. Tämä oli oma pää, ei kenenkään temppu — ' +
+        'vastakeino on menetelmä, ei rajan vetäminen.';
+    } else {
+      t.textContent = 'Laji meni väärin. Tämän takana on joku, ei oma pää — ' +
+        'vastakeino on nimeäminen ja raja, ei oman päättelyn korjaaminen.';
     }
 
     $('pMita').textContent = k.p[0];
     $('pMiksi').textContent = k.p[1];
     var sanot = k.p[2] && k.p[2].trim();
     $('sanotLaatikko').hidden = !sanot;
-    if (sanot) { $('pSanot').textContent = '"' + sanot + '"'; }
+    // Taktiikan vastakeino on repliikki, vinouman menetelmä. Menetelmää ei
+    // sanota kenellekään, joten se ei tule lainausmerkkeihin.
+    $('sanotOtsikko').textContent = k.l === 'vinouma' ? 'Mitä teet' : 'Mitä sanot';
+    if (sanot) { $('pSanot').textContent = k.l === 'vinouma' ? sanot : '"' + sanot + '"'; }
 
     var linkki = $('lueLinkki');
     if (k.i && P.ilmiot[k.i]) {
@@ -849,18 +992,37 @@
   function paataEra() {
     pysaytaAjastin();
     tila.valmis = true;
+    if (!tila.harjoittelu) {
+      paivitaTilastot();
+      talletaTulos();
+    }
+    naytaLoppu();
+  }
+
+  // Piirtää loppuruudun pelitilasta. Sama funktio palvelee juuri pelattua
+  // erää ja palaavaa pelaajaa (tilaTuloksesta), joten se ei saa kirjoittaa
+  // mitään talteen.
+  function naytaLoppu() {
     var n = tila.kohdat.length;
-
-    if (!tila.harjoittelu) { paivitaTilastot(); }
-
     $('loppuOtsikko').textContent = tila.harjoittelu
       ? 'Harjoittelu' : 'Vedätys #' + (tila.paiva + 1);
     $('tLuokitus').textContent = tila.luokitusOikein + '/' + n;
     $('tNimeaminen').textContent = tila.nimiOikein + '/' + tila.nimiYritetty;
     var tilastot = lue(AVAIN_TILASTOT, null);
-    $('tTehoste').textContent = (tilastot && tilastot.tehoste) || (tila.harjoittelu ? '–' : 1);
+    $('tTehoste').textContent = tilastot
+      ? tehosteNyt(tilastot, tamaPaiva())
+      : (tila.paivanEra ? 1 : '–');
     $('ruudukko').textContent = tila.merkit.map(ruutu).join('');
 
+    $('tallessa').hidden = !tila.tallennettu;
+    if (tila.tallennettu) {
+      $('tallessa').textContent = tila.paivanEra
+        ? 'Pelasit tämän päivän erän jo. Tulos on tallessa tässä selaimessa — huominen erä avautuu keskiyöllä.'
+        : 'Pelasit tämän erän jo. Tulos on tallessa tässä selaimessa.';
+    }
+    $('uudelleenNappi').hidden = tila.harjoittelu;
+
+    piirraErottelu(tilastot);
     piirraAnsaRaportti();
     piirraKertaus();
     piirraJako();
@@ -870,6 +1032,61 @@
   }
 
   function ruutu(m) { return m === 'g' ? '🟩' : (m === 'y' ? '🟨' : '🟥'); }
+
+  function laske(koodit, merkki) {
+    return koodit.filter(function (x) { return x === merkki; }).length;
+  }
+
+  // ── Erottelu: kumpaan suuntaan virheet menevät ─────────────────────
+  // Luvut ovat pelaajan omia eivätkä lähde minnekään. Sanallinen tulkinta
+  // näytetään vasta kun kumpaakin lajia on nähty TULKINTA_MIN kappaletta:
+  // kolmen kohdan perusteella annettu luonnehdinta olisi arvaus.
+  var TULKINTA_MIN = 10;
+  var TULKINTA_ERO = 0.15;
+
+  function erottelunTulkinta(t) {
+    var temppuja = (t.os || 0) + (t.oh || 0);
+    var tavallisia = (t.vh || 0) + (t.oo || 0);
+    if (temppuja < TULKINTA_MIN || tavallisia < TULKINTA_MIN) { return ''; }
+    var ohitus = (t.oh || 0) / temppuja;
+    var halytys = (t.vh || 0) / tavallisia;
+    if (!t.oh && !t.vh) { return 'Et ole erehtynyt kumpaankaan suuntaan.'; }
+    if (halytys - ohitus >= TULKINTA_ERO) {
+      return 'Epäilet herkemmin kuin on tarpeen: väärä hälytys on sinulla yleisempi virhe kuin ohitus.';
+    }
+    if (ohitus - halytys >= TULKINTA_ERO) {
+      return 'Päästät läpi herkemmin kuin on tarpeen: ohitus on sinulla yleisempi virhe kuin väärä hälytys.';
+    }
+    return 'Virheesi jakautuvat tasan kumpaankin suuntaan.';
+  }
+
+  function erottelunLuvut(t) {
+    var temppuja = (t.os || 0) + (t.oh || 0);
+    var tavallisia = (t.vh || 0) + (t.oo || 0);
+    return 'Ohituksia ' + (t.oh || 0) + '/' + temppuja +
+      ' · vääriä hälytyksiä ' + (t.vh || 0) + '/' + tavallisia +
+      ((t.ls || 0) ? ' · laji sekaisin ' + t.ls + ' kertaa' : '');
+  }
+
+  function piirraErottelu(tilastot) {
+    var era = $('erotteluEra');
+    era.hidden = !tila.erot.length;
+    if (tila.erot.length) {
+      var osat = ['ohituksia ' + laske(tila.erot, 'h'),
+                  'vääriä hälytyksiä ' + laske(tila.erot, 'v')];
+      if (laske(tila.erot, 's')) { osat.push('laji sekaisin ' + laske(tila.erot, 's')); }
+      era.textContent = 'Tässä erässä: ' + osat.join(' · ') + '.';
+    }
+    var laatikko = $('erotteluLaatikko');
+    var nahty = tilastot && ((tilastot.os || 0) + (tilastot.oh || 0) +
+                             (tilastot.vh || 0) + (tilastot.oo || 0));
+    laatikko.hidden = !nahty;
+    if (!nahty) { return; }
+    $('erotteluLuvut').textContent = erottelunLuvut(tilastot) + '.';
+    var tulkinta = erottelunTulkinta(tilastot);
+    $('erotteluTulkinta').hidden = !tulkinta;
+    $('erotteluTulkinta').textContent = tulkinta;
+  }
 
   function piirraAnsaRaportti() {
     var el = $('ansaRaportti');
@@ -892,6 +1109,11 @@
     b.textContent = tila.ansa.n + (tila.lippuOsui ? ' — huomasit sen 🚩' : ' — meni ohi');
     li.appendChild(b);
     li.appendChild(document.createTextNode(' ' + tila.ansa.s));
+    if (tila.ansaSeurattu !== null) {
+      li.appendChild(document.createTextNode(tila.ansaSeurattu
+        ? ' Valitsit sen, mihin sinua ohjattiin.'
+        : ' Et valinnut sitä, mihin sinua ohjattiin.'));
+    }
     if (tila.ansa.i && P.ilmiot[tila.ansa.i]) {
       li.appendChild(document.createTextNode(' '));
       var a = document.createElement('a');
@@ -916,7 +1138,7 @@
         li.appendChild(document.createTextNode(' — ' + P.ilmiot[k.i].k));
       } else {
         var b = document.createElement('b');
-        b.textContent = 'Tavallinen viesti';
+        b.textContent = rehellisenNimi(k);
         li.appendChild(b);
         li.appendChild(document.createTextNode(' — ei mitään vikaa.'));
       }
@@ -931,6 +1153,10 @@
       nimiOikein: 0, nimiYritetty: 0,
       tehoste: 0, tehosteParas: 0, viimeisin: -99, armonpaiva: -99
     });
+    // Tilastot ja putki kertyvät vain päivän omasta erästä, ja vain kerran.
+    // Arkistosta tai vanhasta haastelinkistä pelattu erä ei kuulu tähän:
+    // se siirtäisi viimeisin-päivän taaksepäin ja nollaisi putken.
+    if (!tila.paivanEra || tila.uusinta) { return; }
     if (t.viimeisin === tila.paiva) { return; }   // sama päivä jo pelattu
 
     var ero = tila.paiva - t.viimeisin;
@@ -951,43 +1177,96 @@
     t.luokitusOikein += tila.luokitusOikein;
     t.nimiOikein += tila.nimiOikein;
     t.nimiYritetty += tila.nimiYritetty;
+    t.os = (t.os || 0) + laske(tila.erot, 'o') + laske(tila.erot, 's');
+    t.ls = (t.ls || 0) + laske(tila.erot, 's');
+    t.oh = (t.oh || 0) + laske(tila.erot, 'h');
+    t.vh = (t.vh || 0) + laske(tila.erot, 'v');
+    t.oo = (t.oo || 0) + laske(tila.erot, 'k');
     talleta(AVAIN_TILASTOT, t);
+  }
+
+  // Talletettu putki on voimassa vain, jos sen voi vielä jatkaa: viimeisin
+  // erä eilen tai tänään, tai toissa päivänä kun armonpäivä on käyttämättä.
+  // Muuten aloitusruutu näyttäisi katkennutta putkea ehjänä.
+  function tehosteNyt(t, tanaan) {
+    var ero = tanaan - t.viimeisin;
+    if (ero <= 1) { return t.tehoste; }
+    if (ero === 2 && tanaan - t.armonpaiva >= 30) { return t.tehoste; }
+    return 0;
   }
 
   function piirraTehoste() {
     var t = lue(AVAIN_TILASTOT, null);
-    if (!t || !t.pelatut) { $('tehosteRivi').hidden = true; return; }
+    if (!t || !t.pelatut) {
+      $('tehosteRivi').hidden = true;
+      $('erotteluAloitus').hidden = true;
+      return;
+    }
     $('tehosteRivi').hidden = false;
-    $('tehosteLuku').textContent = t.tehoste;
+    $('tehosteLuku').textContent = tehosteNyt(t, tamaPaiva());
     $('tarkkuusLuku').textContent = t.kohtia
       ? Math.round(t.luokitusOikein / t.kohtia * 100) + ' %' : '–';
+    var tulkinta = erottelunTulkinta(t);
+    $('erotteluAloitus').hidden = false;
+    $('erotteluAloitus').textContent = erottelunLuvut(t) + '.' + (tulkinta ? ' ' + tulkinta : '');
   }
 
   // ── Jako ja haaste ─────────────────────────────────────────────────
   // Linkki koodaa LÄHETTÄJÄN TULOKSEN, ei vastauksia. Vastaanottaja pelaa
   // saman erän itse ja näkee vertailun vasta lopussa.
-  function haasteKoodi() {
-    return tila.merkit.map(function (m) {
+  // Jaettava tulos on erän ENSIMMÄINEN pelikerta. Uusintakierroksen tulos
+  // ei korvaa sitä: muuten jaettu ruudukko olisi paras yritys eikä tulos.
+  function jakoLahde() {
+    var t = tulos(tila.paiva);
+    if (t) {
+      return { merkit: t.m.toLowerCase().split(''), oikein: t.o || 0,
+               nimi: t.n, lippu: !!t.f };
+    }
+    return { merkit: tila.merkit, oikein: tila.luokitusOikein,
+             nimi: [tila.nimiOikein, tila.nimiYritetty], lippu: tila.lippuOsui };
+  }
+
+  function haasteKoodi(lahde) {
+    return lahde.merkit.map(function (m) {
       return m === 'g' ? 'G' : (m === 'y' ? 'Y' : 'R');
-    }).join('') + (tila.lippuOsui ? '1' : '0');
+    }).join('') + (lahde.lippu ? '1' : '0');
   }
 
   function jakoTeksti() {
+    var lahde = jakoLahde();
     var rivit = [];
     rivit.push('Vedätys #' + (tila.paiva + 1) + '   ' +
-      tila.luokitusOikein + '/' + tila.kohdat.length +
-      ' · nimesit ' + tila.nimiOikein + '/' + tila.nimiYritetty);
-    rivit.push(tila.merkit.map(ruutu).join(''));
-    if (tila.lippuOsui) { rivit.push('🚩 huomasit ansan'); }
-    rivit.push('https://www.ilmiöt.fi/peli.html?p=' + tila.paiva + '&t=' + haasteKoodi());
+      lahde.oikein + '/' + tila.kohdat.length +
+      ' · nimesit ' + lahde.nimi[0] + '/' + lahde.nimi[1]);
+    rivit.push(lahde.merkit.map(ruutu).join(''));
+    if (lahde.lippu) { rivit.push('🚩 huomasit ansan'); }
+    rivit.push('https://www.ilmiöt.fi/peli.html?p=' + tila.paiva + '&t=' + haasteKoodi(lahde));
     return rivit.join('\n');
+  }
+
+  function voiJakaa() {
+    return typeof navigator !== 'undefined' && typeof navigator.share === 'function';
   }
 
   function piirraJako() {
     $('jakoTeksti').textContent = tila.harjoittelu
       ? 'Harjoittelutuloksia ei jaeta — päivän erä on se, joka on kaikilla sama.'
       : jakoTeksti();
+    $('jakoHuomio').hidden = !tila.uusinta;
     $('jakoNappi').hidden = tila.harjoittelu;
+    // Puhelimen oma jakovalikko, kun selain tarjoaa sen. Leikepöytä jää
+    // rinnalle: työpöydällä se on usein se, mitä oikeasti halutaan.
+    var jako = voiJakaa() && !tila.harjoittelu;
+    $('jaaNappi').hidden = !jako;
+    $('jakoNappi').className = jako ? 'nappi' : 'nappi nappi-tumma';
+  }
+
+  function jaa() {
+    if (!voiJakaa()) { kopioi(); return; }
+    navigator.share({ text: jakoTeksti() }).then(function () { /* jaettu */ }, function (e) {
+      // AbortError = pelaaja sulki jakovalikon. Se ei ole virhe.
+      if (!e || e.name !== 'AbortError') { kopioi(); }
+    });
   }
 
   function kopioi() {
@@ -1077,12 +1356,17 @@
     var tanaan = tamaPaiva();
     var alku = Math.max(0, tanaan - 20);
     for (var i = tanaan; i >= alku; i--) {
+      var rivi = document.createElement('div');
+      rivi.className = 'arkisto-rivi';
       var a = document.createElement('a');
       a.href = '?paiva=' + i;
       a.textContent = '#' + (i + 1);
-      a.style.marginRight = '0.7rem';
-      a.style.display = 'inline-block';
-      sisalto.appendChild(a);
+      rivi.appendChild(a);
+      var t = tulos(i);
+      var s = document.createElement('span');
+      s.textContent = t ? t.m.toLowerCase().split('').map(ruutu).join('') : 'pelaamatta';
+      rivi.appendChild(s);
+      sisalto.appendChild(rivi);
     }
   }
 
@@ -1117,6 +1401,13 @@
     P = window.VEDATYS_PANKKI;
     if (!P) { naytaLatausvirhe(); return; }
     EPOKKI = uusiPvm(P.epokki);
+    sidoEpokkiin();
+
+    // Ilmiöiden määrä luetaan pankista: kovakoodattu luku vanhenee joka
+    // kerta kun pankkiin lisätään ilmiö.
+    var ilmiot = {};
+    P.kohdat.forEach(function (k) { if (k.i) { ilmiot[k.i] = true; } });
+    $('ilmioMaara').textContent = Object.keys(ilmiot).length;
 
     var params = new URLSearchParams(window.location.search);
     haaste = lueHaaste();
@@ -1132,25 +1423,29 @@
     piirraTehoste();
     piirraHaasteKutsu();
 
-    // Pelatun erän saa pelata uudelleen, mutta tilastot lasketaan vain kerran
-    // päivässä (paivitaTilastot tarkistaa sen). Kerrotaan se suoraan.
-    var tilastot = lue(AVAIN_TILASTOT, null);
-    if (tilastot && tilastot.viimeisin === paiva && !haaste) {
-      $('aloitaNappi').textContent = 'Pelaa erä #' + (paiva + 1) + ' uudelleen';
-      $('jopelattu').hidden = false;
-    }
-
     $('aloitaNappi').addEventListener('click', function () { aloitaEra(paiva, false); });
+    $('uudelleenNappi').addEventListener('click', function () { aloitaEra(paiva, false); });
     $('harjoitteleNappi').addEventListener('click', function () { aloitaEra(paiva, true); });
     $('harjoitteleLoppu').addEventListener('click', function () { aloitaEra(paiva, true); });
     $('seuraavaNappi').addEventListener('click', seuraava);
     $('lippuNappi').addEventListener('click', nostaLippu);
+    $('jaaNappi').addEventListener('click', jaa);
     $('jakoNappi').addEventListener('click', kopioi);
     $('arkistoNappi').addEventListener('click', piirraArkisto);
     $('ansaSyyllistys').addEventListener('click', function () {
       // Nappi ei ohita mitään. Se on confirmshaming, ja se paljastetaan lopussa.
       $('ansaSyyllistys').textContent = 'ei tämä mihinkään ohita';
     });
+
+    // Jo pelattu erä: näytetään tulos eikä aloitusruutua. Näin tuloksen voi
+    // jakaa vielä illalla, ja haastelinkin avaaja näkee vertailun heti.
+    // Uudelleen saa pelata, mutta tilastoihin ja jaettavaan tulokseen se ei
+    // vaikuta.
+    var tallessa = tulos(paiva);
+    if (tallessa) {
+      tila = tilaTuloksesta(paiva, tallessa);
+      naytaLoppu();
+    }
   });
 })();
 </script>

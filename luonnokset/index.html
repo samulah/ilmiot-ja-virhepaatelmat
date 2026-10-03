@@ -276,30 +276,37 @@ julkaistaessa molemmat puretaan.</p>
   Viisi kohtaa, ~90 sekuntia. Sisältö tulee <code>pelidata/*.json</code>:ista, jotka
   <code>scripts/build_peli.py</code> validoi ja kääntää tiedostoksi
   <code>data/peli-pankki.js</code> &mdash; <strong>älä muokkaa datatiedostoa käsin</strong>.
-  Vaiheessa 1 mukana on 27 vuorovaikutusilmiötä ja 150 kohtaa (110 temppua + 40 rehellistä),
-  eli 30 päivän erät. <strong>Ei ilmiösivu:</strong> ei numeroa, ei PREV/NEXT-ketjua, ei
+  Mukana on 35 ilmiötä ja 200 kohtaa (115 taktiikkaa, 32 vinoumaa, 53 rehellistä), eli 40 päivän
+  erät. <strong>Vaiheen 2 kohdat (3.10.2026) odottavat kuratointia:</strong> kahdeksan
+  <code>pelidata/</code>-tiedostoa vinoumille, <code>rehellinen-41</code>&hellip;<code>53</code> ja viisi
+  ajatuskanavan taktiikkaa (<code>gaslighting-6</code>, <code>darvo-6</code>, <code>foot-in-the-door-5</code>,
+  <code>painostusclose-5</code>, <code>vastavuoroisuuden-ansa-5</code>). <strong>Ei ilmiösivu:</strong> ei numeroa, ei PREV/NEXT-ketjua, ei
   <code>lisaa_ilmiot.py</code>:tä, eikä luokkaa <code>hub-kortti</code>.
   Säännöt ja perustelut ovat <code>CLAUDE.md</code>:n osiossa &rdquo;Vedätys&rdquo;.
   <br><strong>Julkaisun tarkistuslista:</strong>
+  (0) <code>EPOKKI</code> siirtopäivään tiedostossa <code>scripts/build_peli.py</code> ja
+  <code>python3 scripts/build_peli.py</code> &mdash; yleisön ensimmäinen erä on #1, ja epokin
+  muuttaminen myöhemmin nollaisi jokaisen pelaajan putken;
   (1) <code>noindex</code> pois ja <code>../</code>-etuliitteet pois &mdash; myös JS:n
   <code>lueLinkki</code>- ja kertauslistan linkeistä;
   (2) siirto juureen nimellä <code>peli.html</code>;
   (3) vakio <code>PELI = ("peli.html", "0.6", "monthly")</code> tiedostoon
   <code>scripts/build_sitemap.py</code> ja rivi <code>rakenna()</code>-funktioon;
   (4) sisääntulot <code>index.html</code>:n headeriin ja footeriin &mdash; ilman niitä sivu jää orvoksi;
-  (5) <code>python3 scripts/lisaa_pelilinkit.py --kirjoita</code> (27 ilmiösivua);
+  (5) <code>python3 scripts/lisaa_pelilinkit.py --kirjoita</code> (35 ilmiösivua);
   (6) merkintä <code>muutokset.html</code>:ään ja <code>dateModified</code>-päivät kuntoon;
   (7) <code>python3 scripts/build_sitemap.py</code> ja
   <code>PELI_SIVU=peli.html node scripts/testaa_peli.js</code> julkaistua kopiota vasten;
   (8) siirto palvelimelle käsin &mdash; peli tarvitsee <em>sekä</em> <code>peli.html</code>:n
   <em>että</em> <code>data/peli-pankki.js</code>:n, ja ilman jälkimmäistä sivu on tyhjä.
   <br><strong>Testaus:</strong> <code>node scripts/testaa_peli.js</code> pelaa erän läpi
-  DOM-tyngällä ja on ajettava jokaisen muutoksen jälkeen (33 väitettä: käynnistys, läpipeluu,
+  DOM-tyngällä ja on ajettava jokaisen muutoksen jälkeen (84 väitettä: käynnistys, läpipeluu,
   pisteytys, ansa ja lippu, päivän vaihtuminen, heittävä localStorage, haastelinkki, päiväindeksi
-  kesäajan yli, pankin eheys). Testi <em>ei</em> kata ulkoasua, CSS:ää, mobiililayoutia eikä
+  kesäajan yli, pankin eheys, arkisto ja tehoste, tuloksen säilyminen, erottelutilasto, ohjaavat
+  ansat, jakaminen, epokin vaihtuminen, vinoumat). Testi <em>ei</em> kata ulkoasua, CSS:ää, mobiililayoutia eikä
   leikepöytää &mdash; <strong>selaintestaus on yhä tekemättä</strong>.</p>
   <div class="hub-kortit">
-    <a class="hub-kortti" style="--c:#b03a2e" href="peli.html"><span class="hub-numero tyhja">&#9873;</span><span class="hub-nimi">Vedätys <em>&middot; päivän erä, 5 kohtaa, 27 ilmiötä</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#b03a2e" href="peli.html"><span class="hub-numero tyhja">&#9873;</span><span class="hub-nimi">Vedätys <em>&middot; päivän erä, 5 kohtaa, 35 ilmiötä</em></span><span class="hub-nuoli">&rsaquo;</span></a>
   </div>
 </section>
 

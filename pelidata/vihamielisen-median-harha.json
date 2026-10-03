@@ -1,0 +1,54 @@
+{
+ "ilmio": "vihamielisen-median-harha",
+ "laji": "vinouma",
+ "kohdat": [
+  {
+   "id": "vihamielisen-median-harha-1",
+   "teksti": "Luin sen jutun meidän alan lakosta. Selvästi kirjotettu työnantajan näkökulmasta, meidän puolta ei ees yritetty ymmärtää.",
+   "konteksti": "media",
+   "kanava": "ajatus",
+   "harhauttajat": ["backfire-effect", "kaikukammio"],
+   "paljastus": {
+    "mita": "Luit jutun oman puolesi silmin ja laskit vain sinua vastaan puhuvat kohdat.",
+    "miksi": "Vastapuolen edustaja lukee saman jutun ja kokee sen puolueelliseksi omaa puoltaan vastaan. Kumpikin muistaa ne lauseet, jotka sattuivat.",
+    "sanot": "Älä luota muistikuvaan vaan laske: montako kriittistä lausetta kummastakin osapuolesta?"
+   }
+  },
+  {
+   "id": "vihamielisen-median-harha-2",
+   "teksti": "Paikallislehti kirjotti kyläkoulun lakkauttamisesta. Juttu oli ihan kunnan puolella, vaikka siinä haastateltiin meitä vanhempia.",
+   "konteksti": "perhe",
+   "kanava": "ajatus",
+   "harhauttajat": ["gell-mannin-amnesia", "tiedotejournalismi"],
+   "paljastus": {
+    "mita": "Oma puoli sai äänen jutussa, ja se tuntui silti vastapuolen jutulta.",
+    "miksi": "Kun asia on itselle tärkeä, tasapuolinen käsittely näyttää myönnytykseltä toiselle. Puolueeton kuulostaa vihamieliseltä.",
+    "sanot": "Kysy: kokisiko kunnan edustaja tämän jutun puolueettomaksi? Jos ei, kumpi teistä on oikeassa?"
+   }
+  },
+  {
+   "id": "vihamielisen-median-harha-3",
+   "teksti": "Henkilöstölehden juttu organisaatiomuutoksesta oli pelkkää johdon propagandaa. Kollega toisesta yksiköstä sano, että sen mielestä juttu haukku johtoa.",
+   "konteksti": "tyo",
+   "kanava": "ajatus",
+   "harhauttajat": ["backfire-effect", "konsensus-fetissi"],
+   "paljastus": {
+    "mita": "Kaksi lukijaa näki samassa jutussa vastakkaisen puolueellisuuden.",
+    "miksi": "Kumpikin huomaa ne kohdat, jotka osuvat omaan kantaan, ja ohittaa loput. Tulkinta syntyy lukijassa, ei tekstissä.",
+    "sanot": "Erota kaksi asiaa: onko jutussa virhe, vai eikö se vain ole minun puolellani?"
+   }
+  },
+  {
+   "id": "vihamielisen-median-harha-4",
+   "teksti": "Aion kirjottaa toimitukseen palautteen. Se juttu oli törkeen yksipuolinen, vaikka en nyt just keksi yhtään kohtaa, jossa olis ollu virhe.",
+   "konteksti": "media",
+   "kanava": "ajatus",
+   "harhauttajat": ["backfire-effect", "aanekas-vahemmisto"],
+   "paljastus": {
+    "mita": "Tunne puolueellisuudesta on vahva, mutta sille ei löydy osoitettavaa kohtaa.",
+    "miksi": "Juttu, joka ei asetu omalle puolelle, tuntuu asettuvan toiselle. Vain virhe on korjattavissa oikaisulla.",
+    "sanot": "Osoita konkreettinen virhe tai poisjätetty olennainen tieto. Jos sellaista ei löydy, jätä palaute lähettämättä."
+   }
+  }
+ ]
+}

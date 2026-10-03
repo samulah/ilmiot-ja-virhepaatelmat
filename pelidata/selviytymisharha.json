@@ -1,0 +1,54 @@
+{
+ "ilmio": "selviytymisharha",
+ "laji": "vinouma",
+ "kohdat": [
+  {
+   "id": "selviytymisharha-1",
+   "teksti": "Kaikki mun tutut, jotka on sijottanu asuntoihin, on rikastunu. Se on selvästi varma tapa.",
+   "konteksti": "raha",
+   "kanava": "ajatus",
+   "harhauttajat": ["sosiaalinen-todiste", "cherry-picking-aikavali"],
+   "paljastus": {
+    "mita": "Näet ne, jotka onnistuivat ja kertovat siitä.",
+    "miksi": "Tappiolla myyneet eivät ota asiaa puheeksi kahvipöydässä. Otos on valikoitunut lopputuloksen mukaan.",
+    "sanot": "Kysy: keitä tästä joukosta puuttuu, ja miksi?"
+   }
+  },
+  {
+   "id": "selviytymisharha-2",
+   "teksti": "Luin viis elämäkertaa yrittäjistä, jotka jätti koulun kesken ja menesty. Ehkä tutkinto on oikeesti vaan hidaste.",
+   "konteksti": "opiskelu",
+   "kanava": "ajatus",
+   "harhauttajat": ["dunning-kruger", "halo-efekti"],
+   "paljastus": {
+    "mita": "Päättelet menestyneistä, koska vain heistä kirjoitetaan kirjoja.",
+    "miksi": "Moni teki saman valinnan ja epäonnistui, mutta heidän tarinaansa ei julkaista. Kirjahylly ei ole otos.",
+    "sanot": "Etsi luku, jossa ovat mukana myös epäonnistuneet: kuinka moni keskeyttäneistä ylipäätään pärjäsi?"
+   }
+  },
+  {
+   "id": "selviytymisharha-3",
+   "teksti": "Mummolan pakastin on seitkytluvulta ja toimii yhä. Ennen ne osattiin tehä kestäviks, nykyään kaikki hajoo viidessä vuodessa.",
+   "konteksti": "koti",
+   "kanava": "ajatus",
+   "harhauttajat": ["gell-mannin-amnesia", "cherry-picking-aikavali"],
+   "paljastus": {
+    "mita": "Vertaat nykylaitteita siihen yhteen vanhaan, joka sattui kestämään.",
+    "miksi": "Hajonneet vanhat pakastimet on viety pois vuosikymmeniä sitten. Jäljellä ovat vain kestäneet, ja ne näyttävät säännöltä.",
+    "sanot": "Kysy: mitä tässä ei näy? Montako samanikäistä on jo hajonnut pois?"
+   }
+  },
+  {
+   "id": "selviytymisharha-4",
+   "teksti": "Mun feedissä kaikki, jotka vaihto alaa, kertoo että se oli elämän paras päätös. Ei siinä taida olla riskiä.",
+   "konteksti": "some",
+   "kanava": "ajatus",
+   "harhauttajat": ["sosiaalinen-todiste", "kaikukammio"],
+   "paljastus": {
+    "mita": "Kuulet alanvaihdosta vain niiltä, joilla se onnistui.",
+    "miksi": "Katuvat eivät tee päivitystä. Hiljaisuus näyttää siltä, ettei epäonnistujia ole.",
+    "sanot": "Kysy suoraan parilta, jotka eivät ole kertoneet aiheesta mitään: miten heillä meni?"
+   }
+  }
+ ]
+}

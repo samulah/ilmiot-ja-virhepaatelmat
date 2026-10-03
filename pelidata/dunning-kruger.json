@@ -1,0 +1,54 @@
+{
+ "ilmio": "dunning-kruger",
+ "laji": "vinouma",
+ "kohdat": [
+  {
+   "id": "dunning-kruger-1",
+   "teksti": "Katoin viikonloppuna kuus videota sijottamisesta. Tää on oikeestaan aika simppeliä, en ymmärrä miks ihmiset maksaa tästä neuvojille. Siirrän säästöt huomenna.",
+   "konteksti": "raha",
+   "kanava": "ajatus",
+   "harhauttajat": ["selviytymisharha", "hofstadterin-laki"],
+   "paljastus": {
+    "mita": "Viikonlopun perehtyminen tuotti varmuuden, jota ei ole vielä testattu millään.",
+    "miksi": "Alussa ei tiedä, mitä kaikkea ei tiedä, joten aihe näyttää pieneltä. Varmuus tuntuu samalta silloinkin, kun se on väärässä.",
+    "sanot": "Mittaa ennen kuin toimit: kirjoita ylös, mitä odotat tapahtuvan, ja kokeile ensin pienellä summalla."
+   }
+  },
+  {
+   "id": "dunning-kruger-2",
+   "teksti": "Oon ollu täällä viikon ja nään jo, mikä tässä järjestelmässä on vialla. Tän vois kirjottaa uusiks kahessa viikossa, outoa ettei kukaan oo tehny sitä.",
+   "konteksti": "tyo",
+   "kanava": "ajatus",
+   "harhauttajat": ["hofstadterin-laki", "halo-efekti"],
+   "paljastus": {
+    "mita": "Viikon kokemus riitti varmaan tuomioon järjestelmästä, jonka syitä et ole vielä nähnyt.",
+    "miksi": "Sama tiedon puute, joka tekee ratkaisusta helpon näköisen, estää näkemästä, miksi se ei ole helppo.",
+    "sanot": "Kysy ensin: miksi tämä on tehty näin? Kirjaa vastaukset ennen kuin ehdotat mitään."
+   }
+  },
+  {
+   "id": "dunning-kruger-3",
+   "teksti": "Luin yhen kirjan lasten unesta. Nyt mä tiedän, mitä siskon pitäis tehä sen vauvan kanssa, ja sanon sen sille suoraan.",
+   "konteksti": "perhe",
+   "kanava": "ajatus",
+   "harhauttajat": ["halo-efekti", "backfire-effect"],
+   "paljastus": {
+    "mita": "Yksi kirja teki sinusta mielestäsi pätevämmän kuin ihmisen, joka elää tilanteessa joka yö.",
+    "miksi": "Vähäinen tieto piirtää selkeän kuvan, koska mutkat puuttuvat siitä. Mitä enemmän tietää, sitä varovaisemmaksi neuvo muuttuu.",
+    "sanot": "Kysy ennen kuin neuvot: mitä hän on jo kokeillut?"
+   }
+  },
+  {
+   "id": "dunning-kruger-4",
+   "teksti": "Mä luin sen vuokralain kerran läpi. Ei tässä juristia tarvita, mä kirjotan riitautuksen ite ja oon varma että voitan.",
+   "konteksti": "vuokra",
+   "kanava": "ajatus",
+   "harhauttajat": ["backfire-effect", "occamin-partaveitsi"],
+   "paljastus": {
+    "mita": "Kerran luettu laki tuotti varmuuden lopputuloksesta.",
+    "miksi": "Et vielä tiedä, mitä poikkeuksia ja käytäntöjä et tunne. Juuri tältä varmuus tuntuu myös silloin, kun se on väärässä.",
+    "sanot": "Hae palautetta ennen kuin lähetät: näytä teksti jollekulle, joka on tehnyt näitä."
+   }
+  }
+ ]
+}

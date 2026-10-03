@@ -30,8 +30,8 @@ MALLI = (
     'background:#FBF5E0;border-left:3px solid #C9A84C;font-size:.95em">'
     '<b>Harjoittele tämän tunnistamista.</b> '
     '<a href="peli.html">Vedätys</a> on päivittäinen peli, jossa {nimi_ala} '
-    'on yksi tunnistettavista tempuista — mukana on aina myös tavallisia '
-    'viestejä, joissa ei ole mitään vikaa.</p>\n'
+    'on yksi tunnistettavista ilmiöistä — mukana on aina myös tilanteita, '
+    'joissa ei ole mitään vikaa.</p>\n'
 )
 
 

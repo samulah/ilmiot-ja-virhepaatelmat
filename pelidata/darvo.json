@@ -61,6 +61,18 @@
     "miksi": "Aiemmat palvelukset ovat todellisia, joten ne tuntuvat relevanteilta — vaikka ne eivät liity siihen, tehtiinkö töitä vai ei.",
     "sanot": "Nämä ovat kaksi eri asiaa. Katsotaan tunnit kalenterista."
    }
+  },
+  {
+   "id": "darvo-6",
+   "teksti": "Menin sanomaan, että se huus mulle palaverissa. Kymmenen minuutin päästä mä pyysin anteeks sitä, että otin asian puheeks. Miten tässä kävi näin?",
+   "konteksti": "tyo",
+   "kanava": "ajatus",
+   "harhauttajat": ["gaslighting", "blame-game"],
+   "paljastus": {
+    "mita": "Aloitit valituksella ja päädyit pyytämään anteeksi: roolit vaihtuivat keskustelun aikana.",
+    "miksi": "Kiistäminen, vastahyökkäys ja uhriksi asettuminen tulevat niin nopeasti peräkkäin, että alkuperäinen asia katoaa. Hämmennys jälkeenpäin on tunnistettavin merkki.",
+    "sanot": "Palaan siihen, mistä tulin puhumaan: sä huusit mulle palaverissa."
+   }
   }
  ]
 }

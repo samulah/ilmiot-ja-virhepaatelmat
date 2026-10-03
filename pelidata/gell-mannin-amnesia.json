@@ -1,0 +1,54 @@
+{
+ "ilmio": "gell-mannin-amnesia",
+ "laji": "vinouma",
+ "kohdat": [
+  {
+   "id": "gell-mannin-amnesia-1",
+   "teksti": "Lehden juttu mun omasta alasta oli ihan päin honkia, kolme asiavirhettä. No, käännetään sivua. Ai, taloudessa menee näin, hyvä tietää.",
+   "konteksti": "media",
+   "kanava": "ajatus",
+   "harhauttajat": ["vihamielisen-median-harha", "halo-efekti"],
+   "paljastus": {
+    "mita": "Huomasit virheet aiheessa jonka osaat, ja luotit seuraavaan juttuun kuin et olisi huomannut.",
+    "miksi": "Virheet näkee vain omalla kaistalla. Muualla juttu näyttää uskottavalta, koska sinulla ei ole millä tarkistaa.",
+    "sanot": "Käytä oman alasi virhetasoa mittana koko julkaisulle, ja mene tärkeissä asioissa alkuperäislähteeseen."
+   }
+  },
+  {
+   "id": "gell-mannin-amnesia-2",
+   "teksti": "Tää podcast-juontaja puhu mun ammatista niin väärin, että nauratti. Mut sen ravintojakso oli tosi vakuuttava, muutin heti aamupalaa.",
+   "konteksti": "some",
+   "kanava": "ajatus",
+   "harhauttajat": ["halo-efekti", "dunning-kruger"],
+   "paljastus": {
+    "mita": "Sama lähde epäonnistui aiheessa jonka tunnet, ja sai silti täyden luottamuksen aiheessa jota et tunne.",
+    "miksi": "Luottamus nollautuu, kun aihe vaihtuu. Sujuva esitys kuulostaa yhtä varmalta molemmissa.",
+    "sanot": "Kysy: jos se oli noin väärässä minun alastani, miksi se olisi oikeassa tästä?"
+   }
+  },
+  {
+   "id": "gell-mannin-amnesia-3",
+   "teksti": "Konsultin raportin IT-osio oli hölynpölyä, sen mä osaan arvioida. HR-osio vaikutti kyllä fiksulta, viedään ne suositukset johtoryhmään.",
+   "konteksti": "tyo",
+   "kanava": "ajatus",
+   "harhauttajat": ["halo-efekti", "hippo-efekti"],
+   "paljastus": {
+    "mita": "Raportti petti siinä osassa jonka pystyit tarkistamaan, ja uskoit loput.",
+    "miksi": "Se osa, jonka osaat arvioida, on paras otoksesi koko raportin laadusta. Muu vain näyttää paremmalta, koska et näe virheitä.",
+    "sanot": "Pyydä HR-osioon arvio joltakulta, joka osaa sen alan yhtä hyvin kuin sinä IT:n."
+   }
+  },
+  {
+   "id": "gell-mannin-amnesia-4",
+   "teksti": "Vertailusivuston arvio mun omasta autosta oli ihan pielessä, väärät mitatki. Mut katotaan samalta sivulta, mikä pesukone kannattaa ostaa.",
+   "konteksti": "kauppa",
+   "kanava": "ajatus",
+   "harhauttajat": ["vihamielisen-median-harha", "selviytymisharha"],
+   "paljastus": {
+    "mita": "Tiedät sivuston tekevän virheitä, ja käytät sitä silti ostopäätökseen.",
+    "miksi": "Virhe tuntuu yksittäiseltä lipsahdukselta eikä näytteeltä. Seuraavalla sivulla ei ole mitään, mikä muistuttaisi siitä.",
+    "sanot": "Tarkista pesukoneen tiedot toisesta lähteestä ennen kuin maksat."
+   }
+  }
+ ]
+}

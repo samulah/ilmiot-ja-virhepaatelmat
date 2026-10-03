@@ -42,7 +42,10 @@ Käytä konkreettisia suomalaisia tilanteita. Kierrätä samaa tekniikkaa eri
 konteksteissa — juuri se on inokulaatiotutkimuksen mittaama yleistyminen:
 
 `tyo` · `parisuhde` · `perhe` · `myynti` · `puhelin` · `some` · `kauppa` ·
-`viranomainen` · `vuokra` · `ajatus`
+`viranomainen` · `vuokra` · `raha` · `media` · `koti` · `opiskelu`
+
+Työ on yliedustettu (42 % kohdista 3.10.2026). Uusi kohta kirjoitetaan
+mieluummin mihin tahansa muuhun kontekstiin.
 
 Esimerkkejä paikoista: työpaikan Teams-viesti, esihenkilön kehityskeskustelu,
 vuokranantajan tekstari, puhelinmyyjä, appivanhemmat, verkkokaupan kassa,
@@ -72,8 +75,44 @@ Erottelu on sivuston oma teesi (`kategoriat/psykologia-ja-kognitio.md`):
 *vinouma ei tarvitse tekijää, taktiikka tarvitsee* — ja väärä vastakeino
 pahentaa molempia.
 
-Vaiheessa 1 pankki on taktiikkapainotteinen (27 vuorovaikutusilmiötä).
-Vinoumat tulevat vaiheessa 2.
+Vaiheessa 1 pankissa oli 27 vuorovaikutusilmiötä eikä yhtään vinoumaa, joten
+"Oma pää" oli aina väärä vastaus. Vaihe 2 (3.10.2026) toi kahdeksan vinoumaa.
+`--tarkista` kaatuu, jos vinoumia on alle 15 % pankista.
+
+## `vinouma` ja kanava `ajatus`
+
+Vinouma kirjoitetaan **omana ajatuksena**: kanava `ajatus`, minä-muoto,
+puhekieli. "Oma pää" tarkoittaa pelaajan omaa päätä, joten kollegan tai
+kaverin ääneen sanoma vinouma ei käy — siinä oikea vastaus olisi "jonkun
+toisen pää", eikä sellaista nappia ole. `--tarkista` kaatuu, jos vinouman
+kanava on jokin muu.
+
+`paljastus.sanot` on vinoumalla **menetelmä, ei repliikki**. Peli näyttää sen
+otsikolla "Mitä teet" ilman lainausmerkkejä. Kirjoita se käskynä tai itselle
+esitettynä kysymyksenä, ja ota se ilmiösivun vastakeino-osiosta:
+*"Kysy: jos kortti olisi ilmainen, menisinkö sinne huomenna?"*
+
+Kanava ei saa kertoa vastausta. Siksi `ajatus`-kanavassa on kolmea lajia:
+
+| Laji | Mitä | Portti |
+|---|---|---|
+| `vinouma` | oma päättely vinoutuu | — |
+| `rehellinen` | **pätevää** omaa päättelyä, joka näyttää vinoumalta | ≥ 25 % kanavan kohdista |
+| `taktiikka` | oma ajatus, joka on **jonkun toisen tempun jälki** | ≥ 4 kpl |
+
+Rehellinen ajatus käyttää vinouman sanastoa ja päätyy oikeaan: summa on jo
+maksettu, *ja* päätös tehdään silti tulevan perusteella. Peli nimeää sen
+"Pätevä päättely", ei "Tavallinen viesti".
+
+Taktiikka ajatuksena on pelin opettavaisin kohta. Tekstissä on oltava tekijä
+ja hänen tekonsa, ja ajatus on se, mitä teko sinussa sai aikaan: *"Se sano
+taas, ettei oo ikinä luvannu… Ehkä mun muistissa on oikeesti jotain vikaa."*
+Pelaaja, joka vastaa "Oma pää", tekee juuri sen virheen josta sivusto
+varoittaa: etsii vikaa omasta päättelystään, kun vika on toisen teoissa.
+
+Vältä vinoumakohtia, joissa joku hyötyy pelaajan virheestä (pullantuoksu
+asuntonäytössä, tyylikäs pakkaus). Niissä "Joku tekee tämän" on puolustettava
+vastaus, eikä kohta kelpaa.
 
 ## `rehellinen` — vaikeimmat kirjoittaa, ja ilman niitä peli opettaa väärin
 

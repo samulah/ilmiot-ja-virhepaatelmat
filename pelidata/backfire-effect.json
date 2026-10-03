@@ -1,0 +1,54 @@
+{
+ "ilmio": "backfire-effect",
+ "laji": "vinouma",
+ "kohdat": [
+  {
+   "id": "backfire-effect-1",
+   "teksti": "Se linkkas mulle tutkimuksen, jonka mukaan oon väärässä. No, nyt oon vielä varmempi asiastani. Jos pitää noin kovasti todistella, niin jotain siinä yritetään peitellä.",
+   "konteksti": "some",
+   "kanava": "ajatus",
+   "harhauttajat": ["vihamielisen-median-harha", "kaikukammio"],
+   "paljastus": {
+    "mita": "Vastakkainen näyttö vahvisti kantaasi sen sijaan että olisi horjuttanut sitä.",
+    "miksi": "Kun kanta on osa sitä, kuka olet, korjaus tuntuu hyökkäykseltä. Puolustautuminen sekoittuu perusteluun.",
+    "sanot": "Kysy itseltäsi: mikä tieto saisi minut muuttamaan mieltäni? Jos ei mikään, kyse ei ole tiedosta."
+   }
+  },
+  {
+   "id": "backfire-effect-2",
+   "teksti": "Kolme ihmistä sano palaverissa, että mun arvio on pielessä, ja näytti luvut. Mitä enemmän ne väitti vastaan, sitä selvemmin tajusin olevani oikeessa.",
+   "konteksti": "tyo",
+   "kanava": "ajatus",
+   "harhauttajat": ["dunning-kruger", "konsensus-fetissi"],
+   "paljastus": {
+    "mita": "Vastaväitteiden määrä kasvatti varmuuttasi, vaikka ne toivat mukanaan lukuja.",
+    "miksi": "Julkinen korjaus uhkaa kasvoja, ja kasvojen suojelu tuntuu sisältä päin vakaumukselta.",
+    "sanot": "Ota luvut mukaan ja käy ne läpi yksin: mikä niistä on väärin, ja millä perusteella?"
+   }
+  },
+  {
+   "id": "backfire-effect-3",
+   "teksti": "Luin testin, jossa mun puhelinmerkki pärjäs huonosti. Testi on varmaan sponsoroitu. Ostan seuraavakski saman merkin, nyt ihan periaatteesta.",
+   "konteksti": "kauppa",
+   "kanava": "ajatus",
+   "harhauttajat": ["vihamielisen-median-harha", "sunk-cost-harha"],
+   "paljastus": {
+    "mita": "Kielteinen testitulos teki sinusta uskollisemman merkille.",
+    "miksi": "Oman valinnan arvostelu tuntuu oman arvostelukyvyn arvostelulta. Helpointa on hylätä testi.",
+    "sanot": "Kysy: jos testi olisi kehunut merkkiä, olisinko epäillyt sponsorointia?"
+   }
+  },
+  {
+   "id": "backfire-effect-4",
+   "teksti": "Faktantarkistus sano sen väitteen vääräks. Se vaan todistaa, että ne tarkistajatki on mukana siinä.",
+   "konteksti": "media",
+   "kanava": "ajatus",
+   "harhauttajat": ["vihamielisen-median-harha", "gell-mannin-amnesia"],
+   "paljastus": {
+    "mita": "Korjaus muuttui todisteeksi alkuperäisen väitteen puolesta.",
+    "miksi": "Jos jokainen vastaväite käy todisteeksi, uskomusta ei voi enää mikään horjuttaa. Se tuntuu varmuudelta, mutta on lukko.",
+    "sanot": "Kysy: mistä tietäisin, että tämä ei pidä paikkaansa?"
+   }
+  }
+ ]
+}

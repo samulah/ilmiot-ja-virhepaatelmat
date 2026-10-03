@@ -1418,9 +1418,13 @@
   "vari": "#c0a000",
   "kategoria": "Byrokratia ja organisaatio",
   "ingressi": "Yhdysvaltain tiedusteluvirasto OSS (Office of Strategic Services, nykyisen CIA:n edeltäjä) julkaisi vuonna 1944 käsikirjan, joka opetti siviileitä sabotoimaan vihollisen organisaatioita sisältäpäin. Asiakirja on nyt CIA:n toimesta julkisesti saatavilla.",
-  "vastauslohko": "",
+  "vastauslohko": "OSS:n eli CIA:n edeltäjän vuonna 1944 julkaisema käsikirja. Kuuluisin osa on byrokratiasabotaasi : vaadi asiat kirjallisina, vie päätökset komiteoihin, palaa jo päätettyihin kysymyksiin, pidä pitkiä puheenvuoroja. Teho perustuu siihen, että sabotoija näyttää tunnolliselta.",
   "vastakeinot": "Manuaali toimii peilinä: käy lista läpi ja kysy jokaisesta kohdasta, missä oma organisaatiosi tekee tätä \"ihan normaalina prosessina\". Löydöksiin tepsivät täsmäkorjaukset: päätökset komitealta yhdelle nimetylle omistajalle, kokouksiin päätösagenda ja aikaraja, \"lisäselvitykseen\" lähettäminen vaatii perustelun ja määräpäivän, ja sääntöjen tulkintaan lupa käyttää harkintaa. Käytäntöä ei tarvitse todistaa pahantahtoiseksi — riittää, että sen purkaa.",
   "laatikot": [
+   {
+    "otsikko": "Mikä Simple Sabotage Field Manual on?",
+    "teksti": "OSS:n eli CIA:n edeltäjän vuonna 1944 julkaisema käsikirja. Kuuluisin osa on byrokratiasabotaasi : vaadi asiat kirjallisina, vie päätökset komiteoihin, palaa jo päätettyihin kysymyksiin, pidä pitkiä puheenvuoroja. Teho perustuu siihen, että sabotoija näyttää tunnolliselta."
+   },
    {
     "otsikko": "Huomio:",
     "teksti": "Käsikirja oli tarkoitettu sabotoimaan vihollisen organisaatioita. Mutta samat tekniikat toimivat missä tahansa hierarkkisessa organisaatiossa — ja monet niistä esiintyvät täysin luonnollisina prosesseina täysin normaalisti toimivissa instituutioissa."
@@ -1442,6 +1446,344 @@
    "goodhartin-laki",
    "hippo-efekti",
    "performatiivinen-lasnaolo"
+  ]
+ },
+ {
+  "slug": "sunk-cost-harha",
+  "nro": 31,
+  "nimi": "Sunk cost -harha",
+  "kuvaus": "Jo menetetyt panostukset saavat jatkamaan tappiollista hanketta, vaikka lopettaminen kannattaisi.",
+  "vari": "#2c3e50",
+  "kategoria": "Psykologia ja kognitio",
+  "ingressi": "Sunk cost -harha (suom. uponneiden kustannusten harha) on päätöksenteon kognitiivinen vinouma, jossa menneisiin, peruuttamattomiin panostuksiin — rahaan, aikaan, vaivaan — annetaan painoarvo tulevissa päätöksissä. Rationaalisen päätöksenteon kannalta menneillä kustannuksilla ei pitäisi olla merkitystä: ne ovat menneet riippumatta siitä, mitä seuraavaksi tehdään. Silti ihminen jatkaa, koska lopettaminen tuntuu tappioilta.",
+  "vastauslohko": "Sunk cost -harha on suomeksi uponneiden kustannusten harha . Se tarkoittaa taipumusta jatkaa hanketta siksi, että siihen on jo uponnut rahaa, aikaa tai vaivaa. Mennyt panostus ei palaa jatkamallakaan, joten päätöksen pitäisi riippua vain tulevasta tuotosta.",
+  "vastakeinot": "\"Jos emme olisi vielä sijoittaneet mitään tähän projektiin — aloittaisimmeko sen nyt?\" Jos vastaus on ei, jatkat sunk cost -harhan takia. Päätös pitäisi tehdä tulevaisuuden odotetun arvon perusteella, ei menneen investoinnin perusteella.",
+  "laatikot": [
+   {
+    "otsikko": "Mikä on sunk cost -harha suomeksi?",
+    "teksti": "Sunk cost -harha on suomeksi uponneiden kustannusten harha . Se tarkoittaa taipumusta jatkaa hanketta siksi, että siihen on jo uponnut rahaa, aikaa tai vaivaa. Mennyt panostus ei palaa jatkamallakaan, joten päätöksen pitäisi riippua vain tulevasta tuotosta."
+   },
+   {
+    "otsikko": "Esimerkkejä:",
+    "teksti": "Concorde-harha: Britannia ja Ranska jatkoivat Concorden rahoittamista vuosia senkin jälkeen kun oli selvää, ettei lentokone olisi koskaan kaupallisesti kannattava — koska jo panostettu summa oli niin suuri. Tästä ilmiötä kutsutaan myös Concorde fallacyksi . IT-projektit: \"Olemme jo käyttäneet 3 miljoonaa euroa — ei voida lopettaa.\" Organisaatiot investoivat huonosti suunniteltuihin järjestelmiin vuosia yli alkuperäisen budjetin, koska lopettaminen tuntuu haaviolta. Elokuva loppuun asti: Huono elokuva katsotaan loppuun koska \"lippu on jo maksettu\". Aika on mennyt riippumatta siitä, jatkaako vai ei. Ihmissuhteet: \"Olemme olleet yhdessä viisi vuotta — ei voi lähteä.\" Mennyt aika ei ole peruste tulevalle ajalle."
+   },
+   {
+    "otsikko": "Tunnistaminen ja vastakeinot:",
+    "teksti": "\"Jos emme olisi vielä sijoittaneet mitään tähän projektiin — aloittaisimmeko sen nyt?\" Jos vastaus on ei, jatkat sunk cost -harhan takia. Päätös pitäisi tehdä tulevaisuuden odotetun arvon perusteella, ei menneen investoinnin perusteella."
+   }
+  ],
+  "listat": [
+   {
+    "nimi": "Concorde-harha",
+    "selitys": "Britannia ja Ranska jatkoivat Concorden rahoittamista vuosia senkin jälkeen kun oli selvää, ettei lentokone olisi koskaan kaupallisesti kannattava — koska jo panostettu summa oli niin suuri. Tästä ilmiötä kutsutaan myös Concorde fallacyksi ."
+   },
+   {
+    "nimi": "IT-projektit",
+    "selitys": "\"Olemme jo käyttäneet 3 miljoonaa euroa — ei voida lopettaa.\" Organisaatiot investoivat huonosti suunniteltuihin järjestelmiin vuosia yli alkuperäisen budjetin, koska lopettaminen tuntuu haaviolta."
+   },
+   {
+    "nimi": "Elokuva loppuun asti",
+    "selitys": "Huono elokuva katsotaan loppuun koska \"lippu on jo maksettu\". Aika on mennyt riippumatta siitä, jatkaako vai ei."
+   },
+   {
+    "nimi": "Ihmissuhteet",
+    "selitys": "\"Olemme olleet yhdessä viisi vuotta — ei voi lähteä.\" Mennyt aika ei ole peruste tulevalle ajalle."
+   }
+  ],
+  "repliikit": [
+   "olen hävinnyt X euroa",
+   "Olemme jo käyttäneet 3 miljoonaa euroa — ei voida lopettaa.",
+   "lippu on jo maksettu",
+   "Olemme olleet yhdessä viisi vuotta — ei voi lähteä.",
+   "ei voida lopettaa",
+   "Jos emme olisi vielä sijoittaneet mitään tähän projektiin — aloittaisimmeko sen nyt?"
+  ],
+  "liittyvat": [
+   "jarjestelman-puolustelu",
+   "backfire-effect",
+   "darvo",
+   "halo-efekti",
+   "konsensus-fetissi"
+  ]
+ },
+ {
+  "slug": "halo-efekti",
+  "nro": 24,
+  "nimi": "Halo-efekti ja stigma",
+  "kuvaus": "Yksi hyvä piirre saa olettamaan kaiken muunkin hyväksi — ja yksi huono kaiken huonoksi.",
+  "vari": "#f9a825",
+  "kategoria": "Psykologia ja kognitio",
+  "ingressi": "Halo-efekti (Edward Thorndike, 1920) on kognitiivinen vinouma, jossa yhden positiivisen piirteen havaitseminen saa aivot päättelemään, että henkilöllä on muitakin positiivisia piirteitä — vaikka näillä ei ole mitään loogista yhteyttä. Kaunis ihminen arvioidaan automaattisesti älykkäämmäksi, luotettavammaksi ja kyvykkäämmäksi kuin hän ehkä on.",
+  "vastauslohko": "Halo-efekti tunnetaan suomeksi myös nimellä sädekehävaikutus . Se tarkoittaa kognitiivista vinoumaa, jossa yksi myönteinen piirre saa olettamaan muutkin piirteet myönteisiksi. Käänteistä versiota, jossa yksi kielteinen piirre värittää kaiken muun, kutsutaan stigmaksi eli sarvi-ilmiöksi.",
+  "vastakeinot": "Koska vinouma toimii ennen tietoista ajattelua, tiedostaminen ei yksin riitä — rakenteet ratkaisevat. Rekrytoinnissa ja arvioinnissa: lyö kriteerit ja niiden painoarvot lukkoon ennen kuin näet yhtään ehdokasta, käytä strukturoitua haastattelua (samat kysymykset kaikille, pisteytys heti) ja sokkoarviointia aina kun mahdollista — työnäyte ilman nimeä ja kasvokuvaa mittaa työtä, ei säteilyä. Arvioi ominaisuudet erikseen: anna arvosana osaamiselle, yhteistyökyvylle ja luotettavuudelle eri vaiheissa, älä yhtenä kokonaisvaikutelmana. Omissa päätöksissäsi tunnistat halon kysymällä: mihin havaintoon tämä arvio oikeasti perustuu — vai perustuuko se yhteen?",
+  "laatikot": [
+   {
+    "otsikko": "Mikä on halo-efekti suomeksi?",
+    "teksti": "Halo-efekti tunnetaan suomeksi myös nimellä sädekehävaikutus . Se tarkoittaa kognitiivista vinoumaa, jossa yksi myönteinen piirre saa olettamaan muutkin piirteet myönteisiksi. Käänteistä versiota, jossa yksi kielteinen piirre värittää kaiken muun, kutsutaan stigmaksi eli sarvi-ilmiöksi."
+   },
+   {
+    "otsikko": "Mitä aivot tekevät:",
+    "teksti": "Ensivaikutelma syntyy millisekunneissa. Aivot luovat kokonaiskuvan ihmisestä ennen kuin olet edes sanonut sanaakaan — ja se kokonaiskuva värittää kaiken myöhemmän tiedon tulkinnan. Hyvä ulkonäkö yhdistetään automaattisesti: ajattelevaisuuteen, ystävällisyyteen, luotettavuuteen, lämpöön, lojaalisuuteen, anteliaisuuteen, kyvykkyyteen, johtajuuteen ja älykkyyteen. Näillä ei ole ulkonäön kanssa mitään tekemistä — mutta aivoille sillä ei ole väliä."
+   },
+   {
+    "otsikko": "Käytännön seuraus:",
+    "teksti": "Halo-efekti ei ole tahallinen — se tapahtuu automaattisesti, ennen tietoista ajattelua. Rekrytoinnissa, arvioinnissa, oikeussaleissa ja lääkärin vastaanotolla ulkonäkö vaikuttaa lopputulokseen tavalla, jota kumpikaan osapuoli ei tunnista."
+   },
+   {
+    "otsikko": "Tunnistaminen ja vastakeinot:",
+    "teksti": "Koska vinouma toimii ennen tietoista ajattelua, tiedostaminen ei yksin riitä — rakenteet ratkaisevat. Rekrytoinnissa ja arvioinnissa: lyö kriteerit ja niiden painoarvot lukkoon ennen kuin näet yhtään ehdokasta, käytä strukturoitua haastattelua (samat kysymykset kaikille, pisteytys heti) ja sokkoarviointia aina kun mahdollista — työnäyte ilman nimeä ja kasvokuvaa mittaa työtä, ei säteilyä. Arvioi ominaisuudet erikseen: anna arvosana osaamiselle, yhteistyökyvylle ja luotettavuudelle eri vaiheissa, älä yhtenä kokonaisvaikutelmana. Omissa päätöksissäsi tunnistat halon kysymällä: mihin havaintoon tämä arvio oikeasti perustuu — vai perustuuko se yhteen?"
+   }
+  ],
+  "listat": [],
+  "repliikit": [],
+  "liittyvat": [
+   "konsensus-fetissi",
+   "omenoita-appelsiineja",
+   "blame-game",
+   "gaslighting",
+   "maalitolppien-siirtaminen",
+   "urheilupesu"
+  ]
+ },
+ {
+  "slug": "dunning-kruger",
+  "nro": 33,
+  "nimi": "Dunning–Kruger-ilmiö",
+  "kuvaus": "Heikoimmat osaajat yliarvioivat taitonsa eniten — arviointi vaatii samaa osaamista kuin itse taito.",
+  "vari": "#f57f17",
+  "kategoria": "Psykologia ja kognitio",
+  "ingressi": "Dunning–Kruger-ilmiö (suomeksi myös ylivertaisuusharha tai ylivertaisuusvinouma ) tarkoittaa, että heikoimmin osaavat yliarvioivat osaamisensa eniten — ja usein juuri he esiintyvät varmimpina. Justin Kruger ja David Dunning osoittivat vuonna 1999 klassikkotutkimuksessaan Unskilled and Unaware of It , että testien heikoin neljännes arvioi itsensä selvästi keskitasoa paremmaksi. Parhaat puolestaan aliarvioivat itsensä lievästi — he olettivat, että helpolta tuntuva on helppoa muillekin.",
+  "vastauslohko": "Dunning–Kruger-ilmiö tarkoittaa, että heikoimmin osaavat yliarvioivat osaamisensa eniten. Sama tietämättömyys, joka estää suoriutumasta hyvin, estää myös huomaamasta omaa heikkoutta. Suomeksi ilmiöstä puhutaan myös nimellä osaamisharha . Justin Kruger ja David Dunning osoittivat sen vuonna 1999.",
+  "vastakeinot": "Mittaa, älä fiilistele: testi, katselmointi ja data kertovat kalibraatiosta, varmuuden tunne ei. Hae palautetta, joka ei kierrä kohteliaisuuden kautta — ja anna sitä itse. Opettele sanomaan \"en tiedä vielä\"; se on kalibroinnin alku, ei heikkous. Ja kun tunnet suurinta varmuutta alueella, jota olet opiskellut viikon, muista: juuri tältä varmuus tuntuu myös silloin, kun se on väärässä.",
+  "laatikot": [
+   {
+    "otsikko": "Mitä Dunning–Kruger-ilmiö tarkoittaa?",
+    "teksti": "Dunning–Kruger-ilmiö tarkoittaa, että heikoimmin osaavat yliarvioivat osaamisensa eniten. Sama tietämättömyys, joka estää suoriutumasta hyvin, estää myös huomaamasta omaa heikkoutta. Suomeksi ilmiöstä puhutaan myös nimellä osaamisharha . Justin Kruger ja David Dunning osoittivat sen vuonna 1999."
+   },
+   {
+    "otsikko": "Ilmiö arjessa:",
+    "teksti": "Uusi tulokas korjaisi koko järjestelmän ensimmäisellä viikolla — kolmen kuukauden päästä hän ymmärtää, miksi järjestelmä on sellainen kuin on. Rekrytointi ja kokoukset: itsevarmuus voittaa osaamisen, kun arvioija ei itse hallitse aihetta — ja johto arvioi usein osaamista, jota sillä ei ole. \"Tein oman tutkimukseni\": viikon perehtyminen tuottaa varmuuden, jonka asiantuntijalta veisi vuosikymmen — koska viikossa ei ehdi oppia, mitä kaikkea ei tiedä. Peilikuva: kokenut osaaja vaikenee, koska näkee aiheen mutkikkuuden. Keskustelun äänekkäin pää on usein sen ohuin — ja pätevä epäilee itseään (impostori-ilmiö)."
+   },
+   {
+    "otsikko": "Tunnistaminen ja vastakeinot:",
+    "teksti": "Mittaa, älä fiilistele: testi, katselmointi ja data kertovat kalibraatiosta, varmuuden tunne ei. Hae palautetta, joka ei kierrä kohteliaisuuden kautta — ja anna sitä itse. Opettele sanomaan \"en tiedä vielä\"; se on kalibroinnin alku, ei heikkous. Ja kun tunnet suurinta varmuutta alueella, jota olet opiskellut viikon, muista: juuri tältä varmuus tuntuu myös silloin, kun se on väärässä."
+   }
+  ],
+  "listat": [
+   {
+    "nimi": "Uusi tulokas",
+    "selitys": "korjaisi koko järjestelmän ensimmäisellä viikolla — kolmen kuukauden päästä hän ymmärtää, miksi järjestelmä on sellainen kuin on."
+   },
+   {
+    "nimi": "Rekrytointi ja kokoukset",
+    "selitys": "itsevarmuus voittaa osaamisen, kun arvioija ei itse hallitse aihetta — ja johto arvioi usein osaamista, jota sillä ei ole."
+   },
+   {
+    "nimi": "\"Tein oman tutkimukseni\"",
+    "selitys": "viikon perehtyminen tuottaa varmuuden, jonka asiantuntijalta veisi vuosikymmen — koska viikossa ei ehdi oppia, mitä kaikkea ei tiedä."
+   },
+   {
+    "nimi": "Peilikuva",
+    "selitys": "kokenut osaaja vaikenee, koska näkee aiheen mutkikkuuden. Keskustelun äänekkäin pää on usein sen ohuin — ja pätevä epäilee itseään (impostori-ilmiö)."
+   }
+  ],
+  "repliikit": [
+   "Mount Stupid",
+   "epätoivon laaksoineen",
+   "Tein oman tutkimukseni",
+   "en tiedä vielä"
+  ],
+  "liittyvat": [
+   "halo-efekti",
+   "hippo-efekti",
+   "backfire-effect",
+   "konsensus-fetissi",
+   "occamin-partaveitsi",
+   "peterin-periaate",
+   "hanlonin-partaveitsi"
+  ]
+ },
+ {
+  "slug": "backfire-effect",
+  "nro": 22,
+  "nimi": "Backfire effect",
+  "kuvaus": "Virheellisen uskomuksen korjausyritys voi vahvistaa uskomusta entisestään.",
+  "vari": "#d35400",
+  "kategoria": "Psykologia ja kognitio",
+  "ingressi": "Backfire effect kuvaa ilmiötä, jossa henkilölle esitetty korjaus hänen virheelliseen uskomukseensa voi vahvistaa alkuperäistä uskomusta sen sijaan, että korjaisi sen. Mitä vahvemmin yrität kumota väärää uskomusta, sitä tiukemmin ihminen voi tarrautua siihen.",
+  "vastauslohko": "",
+  "vastakeinot": "RAND-tutkijoiden suositus on inokulointi : kerro etukäteen, millaisia manipulaatiotekniikoita on olemassa, ennen kuin ne iskevät — ennakkovaroitus rakentaa vastustuskykyä paremmin kuin jälkikäteen korjaaminen (ks. Inokulointiteoria ja Firehose of Falsehood ). Arjen keskustelussa: älä pommita faktoilla identiteettiä vasten, vaan kysy kysymyksiä — \"mistä tietäisit, että tämä ei pidä paikkaansa?\" siirtää arvioinnin toisen omaan päähän. Anna perääntymistilaa: ihminen luopuu uskomuksesta helpommin, kun se ei tarkoita kasvojen menetystä, joten kahdenkeskinen keskustelu voittaa julkisen väittelyn. Ja korjaa tarina tarinalla — pelkkä \"tuo on väärin\" jättää aukon, jonka vanha uskomus täyttää uudelleen.",
+  "laatikot": [
+   {
+    "otsikko": "Miksi näin tapahtuu:",
+    "teksti": "Uskomukset — erityisesti poliittiset ja identiteettiin kytkeytyvät — eivät ole pelkkiä tietopisteitä. Ne ovat osa sitä, kuka ihminen on ja mihin ryhmään hän kuuluu. Korjaus ei tunnu tietovirheeltä — se tuntuu hyökkäykseltä identiteettiä vastaan."
+   },
+   {
+    "otsikko": "Käytännön seuraus:",
+    "teksti": "Faktojen toistaminen ei aina riitä — ja väärinkäsityksen suora vastustaminen voi pahentaa tilannetta. Mitä julkisemmin ja painokkaammin korjaus esitetään, sitä suurempi on identiteettipuolustuksen riski."
+   },
+   {
+    "otsikko": "Tunnistaminen ja vastakeinot:",
+    "teksti": "RAND-tutkijoiden suositus on inokulointi : kerro etukäteen, millaisia manipulaatiotekniikoita on olemassa, ennen kuin ne iskevät — ennakkovaroitus rakentaa vastustuskykyä paremmin kuin jälkikäteen korjaaminen (ks. Inokulointiteoria ja Firehose of Falsehood ). Arjen keskustelussa: älä pommita faktoilla identiteettiä vasten, vaan kysy kysymyksiä — \"mistä tietäisit, että tämä ei pidä paikkaansa?\" siirtää arvioinnin toisen omaan päähän. Anna perääntymistilaa: ihminen luopuu uskomuksesta helpommin, kun se ei tarkoita kasvojen menetystä, joten kahdenkeskinen keskustelu voittaa julkisen väittelyn. Ja korjaa tarina tarinalla — pelkkä \"tuo on väärin\" jättää aukon, jonka vanha uskomus täyttää uudelleen."
+   }
+  ],
+  "listat": [],
+  "repliikit": [
+   "mistä tietäisit, että tämä ei pidä paikkaansa?",
+   "tuo on väärin"
+  ],
+  "liittyvat": [
+   "darvo",
+   "halo-efekti",
+   "konsensus-fetissi",
+   "omenoita-appelsiineja",
+   "blame-game"
+  ]
+ },
+ {
+  "slug": "selviytymisharha",
+  "nro": 126,
+  "nimi": "Selviytymisharha",
+  "kuvaus": "Vain palanneet koneet lasketaan — data kertoo selviytyjistä, ei kadonneista.",
+  "vari": "#37474f",
+  "kategoria": "Tilastoilla valehtelu",
+  "ingressi": "Toisen maailmansodan aikana Yhdysvaltain armeija kartoitti palanneiden pommikoneiden luodinreiät: eniten osumia siivissä ja rungossa, vähiten moottoreissa. Johtopäätös tuntui ilmeiseltä — panssaroidaan siivet ja runko. Tilastotieteilijä Abraham Wald käänsi päättelyn: data kuvaa koneita, jotka palasivat . Moottoriin osuneet eivät ole aineistossa, koska ne putosivat. Panssari kuuluu sinne, missä palanneissa koneissa ei ole reikiä.",
+  "vastauslohko": "",
+  "vastakeinot": "Kysy aina: keitä tästä aineistosta puuttuu, ja miksi? Jos otokseen pääsee vain onnistumalla (tai selviytymällä), data kertoo valikoitumisesta — ei syistä.",
+  "laatikot": [
+   {
+    "otsikko": "Tunnistaminen ja vastakeinot:",
+    "teksti": "Kysy aina: keitä tästä aineistosta puuttuu, ja miksi? Jos otokseen pääsee vain onnistumalla (tai selviytymällä), data kertoo valikoitumisesta — ei syistä."
+   }
+  ],
+  "listat": [
+   {
+    "nimi": "Menestystarinat",
+    "selitys": "”nämä 7 tapaa tekivät minusta miljonäärin” — tuhannet tekivät samat asiat ja epäonnistuivat, mutta heistä ei kirjoiteta kirjaa."
+   },
+   {
+    "nimi": "Rahastojen tuottohistoria",
+    "selitys": "huonot rahastot lakkautetaan tai fuusioidaan, jolloin ”keskimääräinen historiallinen tuotto” lasketaan vain selviytyjistä."
+   },
+   {
+    "nimi": "”Ennen rakennettiin kestävää”",
+    "selitys": "— vanhoista rakennuksista ja laitteista näemme vain ne, jotka kestivät. Roju hajosi pois otoksesta."
+   },
+   {
+    "nimi": "Yrittäjyyspuhe",
+    "selitys": "”koulupudokkaatkin onnistuvat, katso Jobs ja Zuckerberg” — otos on valikoitunut lopputuloksen perusteella."
+   }
+  ],
+  "repliikit": [
+   "nämä 7 tapaa tekivät minusta miljonäärin",
+   "keskimääräinen historiallinen tuotto",
+   "Ennen rakennettiin kestävää",
+   "koulupudokkaatkin onnistuvat, katso Jobs ja Zuckerberg"
+  ],
+  "liittyvat": [
+   "selviytymisharha",
+   "simpsonin-paradoksi",
+   "p-hakkerointi",
+   "hippo-efekti"
+  ]
+ },
+ {
+  "slug": "hofstadterin-laki",
+  "nro": 53,
+  "nimi": "Hofstadterin laki",
+  "kuvaus": "Kaikki kestää odotettua kauemmin, vaikka ottaisit Hofstadterin lain huomioon.",
+  "vari": "#7d6608",
+  "kategoria": "Projekti- ja ohjelmistokehitys",
+  "ingressi": "Douglas Hofstadter muotoili rekursiivisen totuuden teoksessaan Gödel, Escher, Bach (1979): \"Kaikki kestää aina odotettua kauemmin — jopa kun otat Hofstadterin lain huomioon.\" Projektiarviot ovat systemaattisesti liian optimistisia, eikä tämä korjaudu edes kun tietää sen.",
+  "vastauslohko": "",
+  "vastakeinot": "Käytä ulkoista referenssiluokkaa — kysy montako vastaavaa projektia on aikataulussa ja budjetissa valmistunut, ja anna sen ohjata arviota. Sisäinen optimismi on lähes aina virheellisempi kuin historiallinen keskiarvo. Miniohje: kerää 5–10 vastaavaa jo valmistunutta projektia, laske kunkin toteuman ja arvion suhde ja käytä mediaania kertoimena omalle arviollesi. Tyypillinen kerroin it- ja rakennusprojekteissa on 1,4–2,0 — kolmen kuukauden arvio tarkoittaa siis realistisesti 4–6 kuukautta. Kerroin tuntuu etukäteen aina liioittelulta; juuri se tunne on Hofstadterin laki työssään.",
+  "laatikot": [
+   {
+    "otsikko": "Miksi puskuri ei riitä:",
+    "teksti": "Ilmiö kytkeytyy Kahnemanin ja Tverskyn suunnitteluharhaukseen (planning fallacy): ihmiset arvioivat omaa projektiaan sisältä käsin — parhaiden skenaarioiden mukaan — eivätkä ulkoa käsin vertaamalla vastaaviin aiempiin projekteihin. Rakennusprojekti arvioidaan sen mukaan miten tämä projekti sujuu, ei sen mukaan miten vastaavat projektit yleensä sujuvat."
+   },
+   {
+    "otsikko": "Ilmiö arjessa:",
+    "teksti": "Kylpyhuoneremontin urakoitsija arvioi kolme viikkoa, ja tilaaja varaa varmuuden vuoksi neljä. Purkuvaiheessa paljastuu vesivaurio, laattatoimitus myöhästyy ja LVI-asentajan aikataulu siirtyy — remontti valmistuu seitsemännellä viikolla. Sama toistuu it-projekteissa: kolmen kuukauden migraatioarvio venyy puoleen vuoteen, vaikka arvioon \"lisättiin jo puskuria\". Puskuri ei auttanut, koska se mitoitettiin saman sisäisen optimismin varassa kuin itse arvio — juuri tämä on lain rekursiivinen ydin."
+   },
+   {
+    "otsikko": "Tunnistaminen ja vastakeinot:",
+    "teksti": "Käytä ulkoista referenssiluokkaa — kysy montako vastaavaa projektia on aikataulussa ja budjetissa valmistunut, ja anna sen ohjata arviota. Sisäinen optimismi on lähes aina virheellisempi kuin historiallinen keskiarvo. Miniohje: kerää 5–10 vastaavaa jo valmistunutta projektia, laske kunkin toteuman ja arvion suhde ja käytä mediaania kertoimena omalle arviollesi. Tyypillinen kerroin it- ja rakennusprojekteissa on 1,4–2,0 — kolmen kuukauden arvio tarkoittaa siis realistisesti 4–6 kuukautta. Kerroin tuntuu etukäteen aina liioittelulta; juuri se tunne on Hofstadterin laki työssään."
+   }
+  ],
+  "listat": [],
+  "repliikit": [
+   "Kaikki kestää aina odotettua kauemmin — jopa kun otat Hofstadterin lain huomioon.",
+   "lisättiin jo puskuria"
+  ],
+  "liittyvat": [
+   "kuolonmarssi",
+   "tekninen-velka",
+   "conways-laki",
+   "bikeshedding",
+   "scope-creep",
+   "parkinsonin-laki"
+  ]
+ },
+ {
+  "slug": "gell-mannin-amnesia",
+  "nro": 138,
+  "nimi": "Gell-Mannin amnesia",
+  "kuvaus": "Huomaat oman alasi jutussa virheet, käännät sivua ja luotat seuraavaan aivan yhtä paljon.",
+  "vari": "#e65100",
+  "kategoria": "Media ja julkisuus",
+  "ingressi": "Gell-Mannin amnesia (englanniksi Gell-Mann amnesia effect ) kuvaa tuttua kokemusta: luet jutun aiheesta, jonka osaat itse, ja huomaat sen olevan täynnä virheitä, sekaannuksia ja väärinymmärryksiä. Käännät sivua — ja luet seuraavan jutun aiheesta, jota et osaa, aivan yhtä luottavaisesti kuin ennen. Kirjailija Michael Crichton kuvasi ilmiön puheessaan vuonna 2002 ja nimesi sen ystävänsä, fyysikko Murray Gell-Mannin mukaan.",
+  "vastauslohko": "",
+  "vastakeinot": "Kalibroi luottamuksesi omalta alaltasi havaitsemaasi virhetasoon — se on paras saatavilla oleva otos koko julkaisun tarkkuudesta. Erota jutussa kaksi kerrosta: mitä tapahtui (yleensä oikein) ja mitä se tarkoittaa (usein liian varmaa). Lue oman alansa asiantuntijoiden kommentteja isoista jutuista — ne paljastavat, mitä ulkopuolinen ei näe. Kun aihe on sinulle tärkeä, mene alkuperäislähteeseen: raporttiin, tutkimukseen, päätökseen. Toimittajana pienin tehokas vastakeino on antaa asiantuntijan tarkistaa faktat ennen julkaisua — ei koko juttua, vaan tekniset kohdat.",
+  "laatikot": [
+   {
+    "otsikko": "Ero läheisiin käsitteisiin:",
+    "teksti": "Dunning–Kruger-ilmiössä osaamattomuus estää arvioimasta omaa suoritusta; tässä osaaminen paljastaa toisen suorituksen — mutta vain omalla kapealla kaistalla. Halo-efekti vahvistaa vaikutusta: arvostettu julkaisu saa jutun näyttämään luotettavalta riippumatta aiheesta."
+   },
+   {
+    "otsikko": "Tunnistaminen ja vastakeinot:",
+    "teksti": "Kalibroi luottamuksesi omalta alaltasi havaitsemaasi virhetasoon — se on paras saatavilla oleva otos koko julkaisun tarkkuudesta. Erota jutussa kaksi kerrosta: mitä tapahtui (yleensä oikein) ja mitä se tarkoittaa (usein liian varmaa). Lue oman alansa asiantuntijoiden kommentteja isoista jutuista — ne paljastavat, mitä ulkopuolinen ei näe. Kun aihe on sinulle tärkeä, mene alkuperäislähteeseen: raporttiin, tutkimukseen, päätökseen. Toimittajana pienin tehokas vastakeino on antaa asiantuntijan tarkistaa faktat ennen julkaisua — ei koko juttua, vaan tekniset kohdat."
+   }
+  ],
+  "listat": [],
+  "repliikit": [],
+  "liittyvat": [
+   "vihamielisen-median-harha",
+   "tiedotejournalismi",
+   "dunning-kruger",
+   "halo-efekti"
+  ]
+ },
+ {
+  "slug": "vihamielisen-median-harha",
+  "nro": 139,
+  "nimi": "Vihamielisen median harha",
+  "kuvaus": "Kaksi vastakkaista leiriä lukee saman jutun ja kumpikin kokee sen puolueelliseksi itseään vastaan.",
+  "vari": "#33691e",
+  "kategoria": "Media ja julkisuus",
+  "ingressi": "Vihamielisen median harha (englanniksi hostile media effect ) tarkoittaa taipumusta kokea sama uutisjuttu puolueelliseksi omaa kantaa vastaan riippumatta siitä, kummalla puolella on. Stanfordin tutkijat Robert Vallone, Lee Ross ja Mark Lepper osoittivat sen vuonna 1985: he näyttivät samat televisiouutiset Libanonin sodan tapahtumista opiskelijoille, jotka kannattivat eri osapuolia. Molemmat ryhmät arvioivat uutisoinnin vihamieliseksi omaa puoltaan kohtaan — ja pelkäsivät sen kääntävän puolueettomat katsojat vastapuolelle.",
+  "vastauslohko": "",
+  "vastakeinot": "Älä luota muistikuvaan — laske. Montako kriittistä lausetta juttu esittää kumpaakin osapuolta kohtaan? Kysy itseltäsi: kokisiko vastapuolen edustaja tämän jutun puolueettomaksi? Jos ei, kumpi teistä on oikeassa ja millä perusteella? Erota \"juttu on virheellinen\" ja \"juttu ei ole minun puolellani\". Vain edellinen on korjattavissa oikaisulla. Jos aiot valittaa puolueellisuudesta, osoita konkreettinen virhe tai poisjätetty olennainen tieto — muuten palaute vahvistaa vain sitä, että kaikki valittavat. Toimituksessa: symmetrinen valitusvirta on merkki tasapainosta, ei sen puutteesta. Epäsymmetria on se, mitä kannattaa tutkia.",
+  "laatikot": [
+   {
+    "otsikko": "Ero läheisiin käsitteisiin:",
+    "teksti": "Kaikukammiossa et kohtaa vastakkaista näkemystä lainkaan; tässä kohtaat sen ja tulkitset sen hyökkäykseksi. Backfire effect kertoo, mitä siitä seuraa: vastakkaisen tiedon kohtaaminen voi vahvistaa alkuperäistä kantaa. Äänekäs vähemmistö selittää, miksi palaute näyttää yksipuoliselta myös toimituksen suunnasta."
+   },
+   {
+    "otsikko": "Tunnistaminen ja vastakeinot:",
+    "teksti": "Älä luota muistikuvaan — laske. Montako kriittistä lausetta juttu esittää kumpaakin osapuolta kohtaan? Kysy itseltäsi: kokisiko vastapuolen edustaja tämän jutun puolueettomaksi? Jos ei, kumpi teistä on oikeassa ja millä perusteella? Erota \"juttu on virheellinen\" ja \"juttu ei ole minun puolellani\". Vain edellinen on korjattavissa oikaisulla. Jos aiot valittaa puolueellisuudesta, osoita konkreettinen virhe tai poisjätetty olennainen tieto — muuten palaute vahvistaa vain sitä, että kaikki valittavat. Toimituksessa: symmetrinen valitusvirta on merkki tasapainosta, ei sen puutteesta. Epäsymmetria on se, mitä kannattaa tutkia."
+   }
+  ],
+  "listat": [],
+  "repliikit": [
+   "juttu on virheellinen",
+   "juttu ei ole minun puolellani"
+  ],
+  "liittyvat": [
+   "gell-mannin-amnesia",
+   "kaikukammio",
+   "backfire-effect",
+   "aanekas-vahemmisto"
   ]
  }
 ]

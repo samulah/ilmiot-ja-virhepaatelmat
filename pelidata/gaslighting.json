@@ -61,6 +61,18 @@
     "miksi": "Muistiaan epäilevä ihminen myöntyy varmuuden vuoksi. Kysymysmuoto tekee kiistämisestä kiusallista.",
     "sanot": "En muista sitä samoin. Etsitään viesti, jossa se sovittiin."
    }
+  },
+  {
+   "id": "gaslighting-6",
+   "teksti": "Se sano taas, ettei oo ikinä luvannu hoitaa sitä, vaikka mulla on viesti tallessa. Tää on jo kolmas kerta tässä kuussa. Ehkä mun muistissa on oikeesti jotain vikaa.",
+   "konteksti": "parisuhde",
+   "kanava": "ajatus",
+   "harhauttajat": ["darvo", "maalitolppien-siirtaminen"],
+   "paljastus": {
+    "mita": "Epäilet omaa muistiasi, vaikka sinulla on todiste ja sama on toistunut kolmesti.",
+    "miksi": "Toistuva kiistäminen siirtää epäilyn tapahtumasta sinuun. Ajatus tuntuu omalta, mutta se on jonkun toisen tekojen jälki.",
+    "sanot": "Mulla on se viesti tallessa. En ala väitellä siitä, mitä muistan."
+   }
   }
  ]
 }

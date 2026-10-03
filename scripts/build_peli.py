@@ -28,13 +28,21 @@ ULOS = ROOT / "data" / "peli-pankki.js"
 EPOKKI = "2026-08-23"          # Vedätys #1. Tämä on ainoa paikka jossa epokki
                                # määritellään: peli.html lukee sen datasta
                                # (P.epokki), joten sitä ei kovakoodata sivulle.
-ERIA = 30                      # vaiheen 1 erämäärä
-KOHTIA_ERASSA = 5
+KOHTIA_ERASSA = 5              # erämäärä lasketaan pankin koosta (ks. main)
 REHELLISIA_MIN = 1             # per erä
 REHELLISIA_MAX = 2             # per erä
 KONTEKSTEJA_MIN = 3            # eri kontekstia per erä
 KOHTIA_PER_ILMIO_MIN = 4
 REHELLISTEN_OSUUS_MIN = 0.25   # koko pankista
+# Pelaaja valitsee kolmesta: kunnossa / oma pää / joku tekee tämän. Jos
+# pankissa ei ole vinoumia, keskimmäinen on aina väärä vastaus ja pelaaja
+# oppii ohittamaan sen — näin oli vaiheessa 1 (0 vinoumaa 150 kohdasta).
+VINOUMIEN_OSUUS_MIN = 0.15     # koko pankista
+# Vinoumat ovat omia ajatuksia (kanava "ajatus"). Jos kanavassa ei olisi
+# muuta, kanavan nimi kertoisi vastauksen. Siksi samassa kanavassa on oltava
+# sekä pätevää päättelyä että ajatuksia, joiden takana on jonkun temppu.
+AJATUS_REHELLISIA_MIN = 0.25   # ajatus-kanavan kohdista
+AJATUS_TAKTIIKOITA_MIN = 4     # kpl ajatus-kanavassa
 
 # Käyttöliittymän omat ansat: peli tekee tempun pelaajalle ja paljastaa sen.
 # Rajaus on tarkoituksellinen (ks. CLAUDE.md): peli manipuloi pelaajaa vain
@@ -45,10 +53,10 @@ ANSAT = [
      "selitys": "Kello ei tehnyt mitään. Se ei ollut kytketty mihinkään eikä vastausaikaa ollut rajattu. Kiireen tuntu on tekniikka: sillä ostetaan päätös ennen kuin ehdit ajatella."},
     {"tyyppi": "todiste", "ilmio": "sosiaalinen-todiste",
      "nimi": "Keksitty sosiaalinen todiste",
-     "selitys": "Prosenttiluku oli keksitty. Emme mittaa mitään emmekä voisikaan — tämä sivu ei lähetä mitään minnekään. Tarkistamaton luku toimii silti, ja juuri se on sen tarkoitus."},
+     "selitys": "Prosenttiluku oli keksitty, ja se osoitti väärään vastaukseen. Emme mittaa mitään emmekä voisikaan — tämä sivu ei lähetä mitään minnekään. Tarkistamaton luku toimii silti, ja juuri se on sen tarkoitus."},
     {"tyyppi": "oletus", "ilmio": "oletusasetusansa",
      "nimi": "Esivalittu oletus",
-     "selitys": "Yksi vaihtoehto oli valmiiksi valittuna. Oletus on vahvin yksittäinen käyttöliittymän keino: useimmat eivät muuta sitä, ja siksi sen valinta on se varsinainen päätös."},
+     "selitys": "Yksi vaihtoehto oli valmiiksi korostettu ja merkitty suositelluksi, ja se oli väärä vastaus. Kukaan ei suositellut sitä. Oletus on vahvin yksittäinen käyttöliittymän keino: useimmat eivät muuta sitä, ja siksi sen valinta on se varsinainen päätös."},
     {"tyyppi": "syyllistys", "ilmio": "confirmshaming",
      "nimi": "Syyllistävä nappi",
      "selitys": "Ohitusnappi nolasi sinut valinnastasi. Confirmshaming ei väitä mitään — se vain tekee toisesta vaihtoehdosta noloa."},
@@ -160,28 +168,57 @@ def tarkista_pankki(kohdat: list, K: dict) -> list:
     if osuus < REHELLISTEN_OSUUS_MIN:
         virhe(v, f"rehellisiä {rehellisia}/{len(kohdat)} = {osuus:.0%}, "
                  f"vähintään {REHELLISTEN_OSUUS_MIN:.0%}")
+
+    vinoumia = sum(1 for k in kohdat if k["laji"] == "vinouma")
+    osuus = vinoumia / len(kohdat) if kohdat else 0
+    if osuus < VINOUMIEN_OSUUS_MIN:
+        virhe(v, f"vinoumia {vinoumia}/{len(kohdat)} = {osuus:.0%}, "
+                 f"vähintään {VINOUMIEN_OSUUS_MIN:.0%} — muuten \"Oma pää\" "
+                 f"on käytännössä aina väärä vastaus")
+
+    ajatukset = [k for k in kohdat if k.get("kanava") == "ajatus"]
+    if ajatukset:
+        reh = sum(1 for k in ajatukset if k["laji"] == "rehellinen")
+        tak = sum(1 for k in ajatukset if k["laji"] == "taktiikka")
+        if reh / len(ajatukset) < AJATUS_REHELLISIA_MIN:
+            virhe(v, f"ajatus-kanavassa rehellisiä {reh}/{len(ajatukset)}, "
+                     f"vähintään {AJATUS_REHELLISIA_MIN:.0%} — muuten kanava "
+                     f"paljastaa vastauksen")
+        if tak < AJATUS_TAKTIIKOITA_MIN:
+            virhe(v, f"ajatus-kanavassa taktiikoita {tak}, vähintään "
+                     f"{AJATUS_TAKTIIKOITA_MIN} — muuten oma ajatus ei ole "
+                     f"koskaan jonkun tempun jälki")
+    for k in kohdat:
+        if k["laji"] == "vinouma" and k.get("kanava") != "ajatus":
+            virhe(v, f"{k.get('id')}: vinouman kanava on {k.get('kanava')!r}, "
+                     f"pitää olla 'ajatus' (\"Oma pää\" tarkoittaa pelaajan omaa päätä)")
+    if len(kohdat) % KOHTIA_ERASSA:
+        virhe(v, f"kohtia {len(kohdat)}, ei jaollinen {KOHTIA_ERASSA}:llä — "
+                 f"erät eivät mene tasan")
     return v
 
 
 def kokoa_erat(kohdat: list) -> list:
     """
-    Jakaa kohdat 30 erään deterministisesti.
+    Jakaa kohdat viiden kohdan eriin deterministisesti. Erämäärä tulee
+    pankin koosta: jokainen kohta on käytössä täsmälleen kerran.
 
     Taktiikat jaetaan ahneella "eniten jäljellä ensin" -säännöllä, joka on sama
     algoritmi kuin tehtävien vuorottelussa jäähdytysajalla: se estää saman
     ilmiön osumisen kahdesti samaan erään ilman perääntymistä. Rehelliset
     kohdat täyttävät loput paikat.
     """
+    eria = len(kohdat) // KOHTIA_ERASSA
     taktiikat = [k for k in kohdat if k["laji"] != "rehellinen"]
     rehelliset = [k for k in kohdat if k["laji"] == "rehellinen"]
 
     # Montako rehellistä mihinkin erään: mahdollisimman tasan, 1-2 per erä.
-    if not (ERIA * REHELLISIA_MIN <= len(rehelliset) <= ERIA * REHELLISIA_MAX):
+    if not (eria * REHELLISIA_MIN <= len(rehelliset) <= eria * REHELLISIA_MAX):
         raise SystemExit(
-            f"VIRHE: rehellisiä {len(rehelliset)} kpl — {ERIA} erään mahtuu "
-            f"{ERIA * REHELLISIA_MIN}–{ERIA * REHELLISIA_MAX}")
-    kakkosia = len(rehelliset) - ERIA * REHELLISIA_MIN
-    reh_maara = [REHELLISIA_MIN + (1 if i < kakkosia else 0) for i in range(ERIA)]
+            f"VIRHE: rehellisiä {len(rehelliset)} kpl — {eria} erään mahtuu "
+            f"{eria * REHELLISIA_MIN}–{eria * REHELLISIA_MAX}")
+    kakkosia = len(rehelliset) - eria * REHELLISIA_MIN
+    reh_maara = [REHELLISIA_MIN + (1 if i < kakkosia else 0) for i in range(eria)]
     tak_maara = [KOHTIA_ERASSA - n for n in reh_maara]
     if sum(tak_maara) != len(taktiikat):
         raise SystemExit(
@@ -194,8 +231,8 @@ def kokoa_erat(kohdat: list) -> list:
     for lista in ilmioittain.values():
         lista.sort(key=lambda k: k["id"])
 
-    erat = [[] for _ in range(ERIA)]
-    kaytetyt_ilmiot = [set() for _ in range(ERIA)]
+    erat = [[] for _ in range(eria)]
+    kaytetyt_ilmiot = [set() for _ in range(eria)]
     while any(ilmioittain.values()):
         # Eniten jäljellä oleva ilmiö ensin; tasapelin ratkaisee slug.
         slug = max(sorted(ilmioittain), key=lambda s: (len(ilmioittain[s]), s))
@@ -206,7 +243,7 @@ def kokoa_erat(kohdat: list) -> list:
         if not ilmioittain[slug]:
             del ilmioittain[slug]
         # Vähiten täytetty erä, johon tämä ilmiö ei vielä osu.
-        ehdokkaat = [i for i in range(ERIA)
+        ehdokkaat = [i for i in range(eria)
                      if len(erat[i]) < tak_maara[i] and slug not in kaytetyt_ilmiot[i]]
         if not ehdokkaat:
             raise SystemExit(f"VIRHE: {kohta['id']} ei mahdu mihinkään erään")
@@ -226,7 +263,7 @@ def kokoa_erat(kohdat: list) -> list:
     paikkoja = list(reh_maara)
     for kohta in rehelliset:
         kt = kohta.get("konteksti")
-        ehdokkaat = [i for i in range(ERIA) if paikkoja[i] > 0]
+        ehdokkaat = [i for i in range(eria) if paikkoja[i] > 0]
         i = min(ehdokkaat, key=lambda i: (
             1 if kt in {x.get("konteksti") for x in erat[i]} else 0,
             len({x.get("konteksti") for x in erat[i]}),

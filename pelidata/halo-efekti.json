@@ -1,0 +1,54 @@
+{
+ "ilmio": "halo-efekti",
+ "laji": "vinouma",
+ "kohdat": [
+  {
+   "id": "halo-efekti-1",
+   "teksti": "Se hakija oli tosi sujuva ja kättely oli napakka. Kyllä se varmaan koodaaki hyvin, ei sitä työnäytettä tarvi enää käydä läpi.",
+   "konteksti": "tyo",
+   "kanava": "ajatus",
+   "harhauttajat": ["dunning-kruger", "hippo-efekti"],
+   "paljastus": {
+    "mita": "Esiintyminen ratkaisi arvion taidosta, jota ei katsottu lainkaan.",
+    "miksi": "Ensivaikutelma syntyy ennen kuin ehdit ajatella, ja se värittää kaiken perässä tulevan. Sujuvuudella ja koodaustaidolla ei ole yhteyttä.",
+    "sanot": "Pisteytä työnäyte ennen kuin palaat haastattelumuistiinpanoihin."
+   }
+  },
+  {
+   "id": "halo-efekti-2",
+   "teksti": "Naapurin Jussi on hirveen hyvä kirurgi. Kysyn siltä, mihin kannattais sijottaa. Kyllä niin fiksu ihminen senki tietää.",
+   "konteksti": "raha",
+   "kanava": "ajatus",
+   "harhauttajat": ["dunning-kruger", "gell-mannin-amnesia"],
+   "paljastus": {
+    "mita": "Yhden alan huippuosaaminen sai sinut olettamaan osaamista alalla, josta sinulla ei ole mitään näyttöä.",
+    "miksi": "Aivot tekevät ihmisestä yhden kokonaisarvion ja levittävät sen kaikkeen. Kirurgin taito ei kerro sijoittamisesta mitään.",
+    "sanot": "Kysy: mihin havaintoon tämä arvio perustuu, ja koskeeko se tätä asiaa?"
+   }
+  },
+  {
+   "id": "halo-efekti-3",
+   "teksti": "Uuden kollegan eka sähköposti oli täynnä kirjotusvirheitä. En mä viitti pyytää sitä mukaan asiakasprojektiin, ei siitä taida olla siihen.",
+   "konteksti": "tyo",
+   "kanava": "ajatus",
+   "harhauttajat": ["dunning-kruger", "peterin-periaate"],
+   "paljastus": {
+    "mita": "Yksi huono havainto levisi arvioksi koko ihmisen kyvyistä.",
+    "miksi": "Sama mekanismi toimii molempiin suuntiin: yksi piirre värittää loput. Kirjoitusvirheet kertovat oikoluvusta, eivät asiakastyöstä.",
+    "sanot": "Arvioi yksi asia kerrallaan: mitä olet nähnyt juuri siitä taidosta, josta päätät?"
+   }
+  },
+  {
+   "id": "halo-efekti-4",
+   "teksti": "Tää kirjailija kirjottaa niin kauniisti. Sen mielipide ravintolisistäki on varmasti harkittu, tilaan samat.",
+   "konteksti": "some",
+   "kanava": "ajatus",
+   "harhauttajat": ["gell-mannin-amnesia", "sosiaalinen-todiste"],
+   "paljastus": {
+    "mita": "Kirjoitustaito sai mielipiteen näyttämään asiantuntevalta aiheessa, joka on kaukana kirjoittamisesta.",
+    "miksi": "Ihailu yhdestä asiasta laajenee luottamukseksi kaikkeen muuhun. Kaunis lause ei ole lähde.",
+    "sanot": "Kysy: kuuntelisinko tätä mielipidettä, jos sen sanoisi joku, jota en ihaile?"
+   }
+  }
+ ]
+}

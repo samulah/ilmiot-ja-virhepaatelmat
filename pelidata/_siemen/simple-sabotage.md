@@ -10,6 +10,10 @@ CIA:n edeltäjän ohjekirja: miten organisaatio halvaannutetaan kokouksilla, kom
 
 Yhdysvaltain tiedusteluvirasto OSS (Office of Strategic Services, nykyisen CIA:n edeltäjä) julkaisi vuonna 1944 käsikirjan, joka opetti siviileitä sabotoimaan vihollisen organisaatioita sisältäpäin. Asiakirja on nyt CIA:n toimesta julkisesti saatavilla.
 
+## Vastauslohko
+
+OSS:n eli CIA:n edeltäjän vuonna 1944 julkaisema käsikirja. Kuuluisin osa on byrokratiasabotaasi : vaadi asiat kirjallisina, vie päätökset komiteoihin, palaa jo päätettyihin kysymyksiin, pidä pitkiä puheenvuoroja. Teho perustuu siihen, että sabotoija näyttää tunnolliselta.
+
 ## Tunnistaminen ja vastakeinot
 
 Manuaali toimii peilinä: käy lista läpi ja kysy jokaisesta kohdasta, missä oma organisaatiosi tekee tätä "ihan normaalina prosessina". Löydöksiin tepsivät täsmäkorjaukset: päätökset komitealta yhdelle nimetylle omistajalle, kokouksiin päätösagenda ja aikaraja, "lisäselvitykseen" lähettäminen vaatii perustelun ja määräpäivän, ja sääntöjen tulkintaan lupa käyttää harkintaa. Käytäntöä ei tarvitse todistaa pahantahtoiseksi — riittää, että sen purkaa.
@@ -21,6 +25,10 @@ Manuaali toimii peilinä: käy lista läpi ja kysy jokaisesta kohdasta, missä o
 - “ihan normaalina prosessina”
 
 ## Muut laatikot
+
+### Mikä Simple Sabotage Field Manual on?
+
+OSS:n eli CIA:n edeltäjän vuonna 1944 julkaisema käsikirja. Kuuluisin osa on byrokratiasabotaasi : vaadi asiat kirjallisina, vie päätökset komiteoihin, palaa jo päätettyihin kysymyksiin, pidä pitkiä puheenvuoroja. Teho perustuu siihen, että sabotoija näyttää tunnolliselta.
 
 ### Huomio:
 

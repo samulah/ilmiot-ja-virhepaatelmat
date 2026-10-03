@@ -1,0 +1,54 @@
+{
+ "ilmio": "sunk-cost-harha",
+ "laji": "vinouma",
+ "kohdat": [
+  {
+   "id": "sunk-cost-harha-1",
+   "teksti": "Kuntosalikortti makso 600 euroa vuodeks. En oo käyny helmikuun jälkeen ja inhoan sitä paikkaa, mut pakko kai sinne on raahautua, ettei rahat mee hukkaan.",
+   "konteksti": "raha",
+   "kanava": "ajatus",
+   "harhauttajat": ["jarjestelman-puolustelu", "backfire-effect"],
+   "paljastus": {
+    "mita": "Jo maksettu raha päättää, mitä teet tulevilla illoillasi.",
+    "miksi": "Raha on mennyt, kävit tai et. Lopettaminen tuntuu tappion myöntämiseltä, joten maksat lisää omalla ajallasi.",
+    "sanot": "Kysy: jos kortti olisi ilmainen, menisinkö sinne huomenna?"
+   }
+  },
+  {
+   "id": "sunk-cost-harha-2",
+   "teksti": "Tätä raporttipohjaa on rakennettu jo kolme kuukautta. Uus työkalu tekis saman valmiina, mut ei tätä nyt voi enää heittää pois, ku näin pitkällä ollaan.",
+   "konteksti": "tyo",
+   "kanava": "ajatus",
+   "harhauttajat": ["lukittu-paatos", "hofstadterin-laki"],
+   "paljastus": {
+    "mita": "Kolmen kuukauden työ on perustelu jatkaa, vaikka parempi vaihtoehto on jo pöydällä.",
+    "miksi": "Tehty työ näkyy ja tuntuu omalta, tuleva säästö ei vielä miltään. Siksi mennyt painaa enemmän kuin se, mitä jatkaminen maksaa.",
+    "sanot": "Laske vain tästä eteenpäin: kumpi vie vähemmän tunteja valmiiksi asti?"
+   }
+  },
+  {
+   "id": "sunk-cost-harha-3",
+   "teksti": "Poika on soittanu viulua kuus vuotta eikä oo koskenu siihen keväästä asti. Mut ei kai sitä nyt voi antaa lopettaa, ku tunteihin on menny tuhansia.",
+   "konteksti": "perhe",
+   "kanava": "ajatus",
+   "harhauttajat": ["lapi-hinnalla-milla-hyvansa", "jarjestelman-puolustelu"],
+   "paljastus": {
+    "mita": "Kuuden vuoden tuntimaksut ratkaisevat, mitä lapsi tekee ensi vuonna.",
+    "miksi": "Lopettaminen tekisi menneistä maksuista näkyvästi turhia. Jatkaminen piilottaa saman tappion ja lisää siihen uuden lukukauden.",
+    "sanot": "Kysy: jos hän ei olisi koskaan soittanut, ilmoittaisinko hänet nyt tunneille?"
+   }
+  },
+  {
+   "id": "sunk-cost-harha-4",
+   "teksti": "Tää sarja on ollu huono jo kaks kautta. Mut neljäkymmentä jaksoa on katottu, niin kyllähän se loppuun pitää kattoa.",
+   "konteksti": "koti",
+   "kanava": "ajatus",
+   "harhauttajat": ["backfire-effect", "hofstadterin-laki"],
+   "paljastus": {
+    "mita": "Jo katsotut jaksot velvoittavat katsomaan loput.",
+    "miksi": "Kesken jättäminen tuntuu siltä kuin aiemmat illat valuisivat hukkaan. Ne on käytetty joka tapauksessa.",
+    "sanot": "Kysy: aloittaisinko tämän sarjan tänään tästä jaksosta?"
+   }
+  }
+ ]
+}

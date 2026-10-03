@@ -49,6 +49,18 @@
     "miksi": "Saatu apu on aitoa, mikä tekee ansasta tehokkaan — velka tuntuu oikeutetulta vaikka hinta ei ole.",
     "sanot": "Kiitos pohjasta. Yötyö ei onnistu — katson sen huomenna."
    }
+  },
+  {
+   "id": "vastavuoroisuuden-ansa-5",
+   "teksti": "Se toi mulle pyytämättä kahvin ja pullan ja jutteli mukavia. Nyt se kysyy, voisinko tehä sen vuoron lauantaina, ja tuntuu että oon velkaa.",
+   "konteksti": "tyo",
+   "kanava": "ajatus",
+   "harhauttajat": ["foot-in-the-door", "strateginen-osaamattomuus"],
+   "paljastus": {
+    "mita": "Pyytämätön lahja edelsi pyyntöä, ja velan tunne syntyi ennen kuin tiesit mistä on kyse.",
+    "miksi": "Vastavuoroisuus on niin vahva normi, että pieni lahja riittää ison palveluksen pohjaksi. Et pyytänyt kahvia, joten et ole siitä mitään velkaa.",
+    "sanot": "Kiitos kahvista. Lauantai ei käy mulle."
+   }
   }
  ]
 }

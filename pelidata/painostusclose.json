@@ -49,6 +49,18 @@
     "miksi": "Työpaikkatarjouksessa kiire estää vertailun muihin ja neuvottelun ehdoista — juuri ne kaksi asiaa jotka maksaisivat sinulle.",
     "sanot": "Tarvitsen kaksi päivää. Onko se este?"
    }
+  },
+  {
+   "id": "painostusclose-5",
+   "teksti": "Myyjä sano, että hinta on voimassa vaan tän puhelun ajan. Sydän hakkaa ja tekis mieli vaan sanoa joo, ettei tää mee ohi.",
+   "konteksti": "puhelin",
+   "kanava": "ajatus",
+   "harhauttajat": ["lowball-hinnoittelu", "sosiaalinen-todiste"],
+   "paljastus": {
+    "mita": "Kiire on tuotu tilanteeseen ulkoa, ja se tuntuu omalta hädältäsi.",
+    "miksi": "Määräaika, jolle ei ole syytä ja jota ei voi siirtää, on tehty estämään vertailu. Paine kehossa on tekniikan tarkoitus, ei merkki hyvästä tarjouksesta.",
+    "sanot": "Jos hinta ei ole voimassa huomenna, en ota sitä tänäänkään."
+   }
   }
  ]
 }

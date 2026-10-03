@@ -1,0 +1,54 @@
+{
+ "ilmio": "hofstadterin-laki",
+ "laji": "vinouma",
+ "kohdat": [
+  {
+   "id": "hofstadterin-laki-1",
+   "teksti": "Kylppäriremppaan menee kolme viikkoa. Varaan varmuuden vuoks neljä, niin ei tuu kiire.",
+   "konteksti": "koti",
+   "kanava": "ajatus",
+   "harhauttajat": ["parkinsonin-laki", "scope-creep"],
+   "paljastus": {
+    "mita": "Puskuri on mitoitettu samalla optimismilla kuin itse arvio.",
+    "miksi": "Arvioit tätä remonttia sisältä käsin, parhaan kulun mukaan. Yllätykset eivät ole arviossa, koska et vielä tiedä niitä.",
+    "sanot": "Kysy kolmelta, jotka ovat teettäneet saman: kauanko se oikeasti kesti?"
+   }
+  },
+  {
+   "id": "hofstadterin-laki-2",
+   "teksti": "Tää migraatio on kolmen kuukauden homma. Viimeks meni puol vuotta, mut nyt tiedetään mitä tehään.",
+   "konteksti": "tyo",
+   "kanava": "ajatus",
+   "harhauttajat": ["scope-creep", "kuolonmarssi"],
+   "paljastus": {
+    "mita": "Edellinen toteuma on tiedossa, ja arvio tehdään silti toiveen mukaan.",
+    "miksi": "Jokainen projekti tuntuu poikkeukselta, koska sen näkee sisältä. Historia on lähes aina tarkempi kuin tunne.",
+    "sanot": "Kerro arvio toteutuneella suhteella: jos viimeksi meni tuplasti, lähtöarvio on kuusi kuukautta."
+   }
+  },
+  {
+   "id": "hofstadterin-laki-3",
+   "teksti": "Gradu on valmis jouluks. Kirjotan kymmenen sivua viikossa, eihän siinä muuta tarvita.",
+   "konteksti": "opiskelu",
+   "kanava": "ajatus",
+   "harhauttajat": ["parkinsonin-laki", "dunning-kruger"],
+   "paljastus": {
+    "mita": "Aikataulu olettaa, että jokainen viikko on paras viikko.",
+    "miksi": "Suunnitelmassa ei ole sairastumista, ohjaajan kommentteja eikä viikkoa, jolloin teksti ei kulje. Niitä tulee aina.",
+    "sanot": "Katso omaa historiaasi: montako sivua viikossa olet oikeasti kirjoittanut tähän asti?"
+   }
+  },
+  {
+   "id": "hofstadterin-laki-4",
+   "teksti": "Lähetään mökille perjantaina viideltä. Pakkaamiseen menee puol tuntia, ollaan perillä kaheksalta.",
+   "konteksti": "perhe",
+   "kanava": "ajatus",
+   "harhauttajat": ["parkinsonin-laki", "pareto-periaate"],
+   "paljastus": {
+    "mita": "Arvio on laskettu matkasta, jossa mikään ei viivästy.",
+    "miksi": "Muistat ajoajan, et tankkausta, ruuhkaa ja unohtunutta laturia. Ne toistuvat joka kerta, mutta arviossa niitä ei ole.",
+    "sanot": "Käytä viime kerran toteumaa: milloin lähditte ja milloin olitte oikeasti perillä?"
+   }
+  }
+ ]
+}

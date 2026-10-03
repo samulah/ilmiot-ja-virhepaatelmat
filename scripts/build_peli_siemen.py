@@ -49,6 +49,15 @@ VAIHE1 = [
     "smishing", "badger-game", "honeypot-huijaus", "simple-sabotage",
 ]
 
+# Vaihe 2: kahdeksan vinoumaa — oman päättelyn poikkeamia, joilla ei ole
+# tekijää. Ilman näitä pelin keskimmäinen vaihtoehto ("Oma pää") oli aina
+# väärä vastaus.
+VAIHE2 = [
+    "sunk-cost-harha", "halo-efekti", "dunning-kruger", "backfire-effect",
+    "selviytymisharha", "hofstadterin-laki", "gell-mannin-amnesia",
+    "vihamielisen-median-harha",
+]
+
 # Vastakeino-osion otsikko vaihtelee 22 sivulla ("Vastakeinot — velanmaksu
 # käytännössä:", "Varoitusmerkit:" jne.), joten tunnistus tehdään alkuosalla.
 VASTAKEINO_RE = re.compile(
@@ -180,7 +189,7 @@ def kirjoita_md(d: dict) -> str:
 
 
 def main() -> None:
-    slugit = sys.argv[1:] or VAIHE1
+    slugit = sys.argv[1:] or VAIHE1 + VAIHE2
     K = kortit()
     SIEMEN.mkdir(parents=True, exist_ok=True)
     kaikki = []

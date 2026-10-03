@@ -1,5 +1,67 @@
 # Muutosloki — Ilmiöitä (www.ilmiöt.fi)
 
+## 3.10.2026 — Vedätys: vinoumat pankkiin, tehostebugi, tulos säilyy (luonnos)
+
+Peli on yhä luonnos (`luonnokset/peli.html`). Julkaisua ennen tarvitaan
+vaiheen 2 kohtien kuratointi ja selaintestaus.
+
+**"Oma pää" oli aina väärä vastaus.** Pankissa oli 110 taktiikkaa, 40
+rehellistä ja 0 vinoumaa, joten kolmesta napista keskimmäinen ei ollut koskaan
+oikein. Nyt: **200 kohtaa (115 taktiikkaa, 32 vinoumaa, 53 rehellistä), 40
+erää, 35 ilmiötä.**
+
+- 8 vinoumaa × 4 kohtaa: `sunk-cost-harha`, `halo-efekti`, `dunning-kruger`,
+  `backfire-effect`, `selviytymisharha`, `hofstadterin-laki`,
+  `gell-mannin-amnesia`, `vihamielisen-median-harha`. Kaikki kanavassa
+  `ajatus`, minä-muodossa.
+- 13 rehellistä (`rehellinen-41…53`) samaan kanavaan: pätevää päättelyä, joka
+  käyttää vinouman sanastoa. Suunnitelmassa luki 8; se ei olisi täyttänyt
+  kanavan omaa 25 %:n porttia (4/36 = 11 %).
+- 5 taktiikkaa ajatuskanavaan (`gaslighting-6`, `darvo-6`,
+  `foot-in-the-door-5`, `painostusclose-5`, `vastavuoroisuuden-ansa-5`): oma
+  ajatus, joka on jonkun toisen tempun jälki. **Tämä ei ollut suunnitelmassa.**
+  Ilman näitä kanava olisi ratkaissut lajin (viesti → taktiikka tai kunnossa,
+  ajatus → vinouma tai kunnossa), eikä vinouma vai taktiikka -valintaa olisi
+  koskaan oikeasti tehty. Viisi kohtaa on yhden erän verran, joten ne voi
+  poistaa blokkina ja pankki menee yhä tasan.
+
+`build_peli.py`: erämäärä lasketaan pankin koosta (ei vakiota `ERIA`), ja
+`tarkista_pankki()` sai neljä porttia: vinoumia ≥ 15 %, ajatuskanavassa
+rehellisiä ≥ 25 % ja taktiikoita ≥ 4, vinouman kanava on `ajatus`, kohtien
+määrä jaollinen viidellä. `build_peli_siemen.py` sai `VAIHE2`-listan; oletusajo
+kattaa molemmat vaiheet, koska `_kaikki.json` kirjoitetaan aina ajon slugeista.
+
+**Tehostebugi.** `paivitaTilastot()` laski putken mistä tahansa erästä.
+Arkistosta tai vanhasta haastelinkistä pelattu erä antoi negatiivisen
+päiväeron → putki 1:een ja `viimeisin` taaksepäin, jolloin seuraavakin päivä
+nollasi sen. Nyt tilastot kertyvät vain erästä, joka oli aloitushetkellä
+päivän erä (`tila.paivanEra`), eikä uusintakierroksesta. Regressiotesti kaatuu
+vanhaa sivua vasten kolmessa väitteessä.
+
+**Muut muutokset `luonnokset/peli.html`:ssä**
+
+| Mitä | Miten |
+|---|---|
+| Tulos säilyy | `peli-tulokset`: päivä → merkit, erottelukoodit, lippu. Palaava pelaaja näkee loppuruudun (`tilaTuloksesta()` → `naytaLoppu()`), arkisto näyttää ruudukot. Ensimmäinen tulos jää voimaan ja on se joka jaetaan. |
+| Erottelutilasto | Kierroskoodit `o s h v k` → laskurit `os oh vh oo ls`. Sanallinen tulkinta vasta kun nähty ≥ 10 temppua ja ≥ 10 tavallista, ja ero on ≥ 15 prosenttiyksikköä. Luvut ovat pelaajan omia. |
+| Ansat | `ansanKohde()`: esivalittu oletus ja keksitty prosentti osoittavat aina väärään lajiin. Aiemmin oletus korosti `taktiikka`-napin ja molemmat ansakierrokset olivat taktiikkaa. Raportti kertoo, seurattiinko ohjausta. |
+| Katkennut putki | `tehosteNyt()`: aloitusruutu näytti talletetun putken, vaikka se oli jo katkennut. |
+| Jakonappi | `navigator.share` kun selain tukee; leikepöytä rinnalla. `AbortError` ei ole virhe. |
+| Epokkisidonta | `peli-epokki`: eri epokki → talletus nollataan. Tarvitaan, koska epokki siirretään julkaisupäivään. |
+| Vinoumat käyttöliittymässä | Nimeämiskysymys "Mikä ilmiö tämä on?", vastakeino-otsikko "Mitä teet" ilman lainausmerkkejä, oma tuomio lajisekaannukselle, "Pätevä päättely" rehelliselle ajatukselle. |
+| Latausvirhe | Skriptinimet pois lukijan näkyviltä. |
+
+`scripts/testaa_peli.js`: 33 → 84 väitettä. Tynkä sai jaetun talletuksen
+(`asetukset.talletus`), `removeItem`:n ja vaihdettavan `navigator`:n. "Tänään"
+lasketaan nyt pankin epokista eikä kovakoodatusta 23.8:sta — muuten testi
+kaatuisi epokin siirtoon. Kohta 6 väitti testaavansa samaa selainta kahtena
+päivänä, mutta jokainen ympäristö sai oman tyhjän talletuksensa.
+
+**Tekemättä:** kuratointi, selaintestaus, ja julkaisun tarkistuslista
+`luonnokset/index.html`:ssä (kohta 0 on uusi: epokki siirtopäivään).
+Palvelimella on yhä vanha 150 kohdan `data/peli-pankki.js`; se ei haittaa,
+koska `peli.html` ei ole siellä.
+
 ## 3.10.2026 — Julkaistu Roolit ja valtapelit: 139 → 148 ilmiötä, 14. kategoria
 
 Yhdeksän sivua (140–148) luonnoksista juureen: `draamakolmio`, `roolinvaihto`,
