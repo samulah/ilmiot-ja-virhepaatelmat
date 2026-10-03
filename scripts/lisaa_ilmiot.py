@@ -11,6 +11,7 @@ hoitaa kaikki:
 
 Lisäksi:
   - siirtää luonnokset juureen: noindex pois, ../-etuliitteet riisutaan
+  - leimaa uusille sivuille julkaisupäivän (--paiva, oletus tänään)
   - lisää hub-kortin index.html:ään oikean kategorian sisään
   - rakentaa jokaisen sivun const IDS -taulukon uudelleen korttijärjestykseen
   - kytkee PREV/NEXT-ketjun ja selausnapit uudelleen niiltä osin kuin ne muuttuvat
@@ -31,6 +32,7 @@ Ajo:
 import argparse
 import re
 import shutil
+from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -141,12 +143,33 @@ def juurisivuksi(teksti):
     return teksti
 
 
+def leimaa_julkaisupaiva(teksti, paiva, nimi):
+    """Julkaisupäivä kolmeen paikkaan: datePublished, dateModified ja byline.
+
+    Luonnos kantaa kirjoituspäiväänsä. Jos se jää voimaan, paivita_suosio.py:n
+    ehti_mukaan() pitää sivua kirjoituspäivänä julkaistuna, ja kasvulistat
+    näyttävät sen "kasvaneena nollasta" vaikka se vasta ilmestyi.
+    """
+    for kentta in ("datePublished", "dateModified"):
+        teksti, k = re.subn(rf'("{kentta}": ")\d{{4}}-\d{{2}}-\d{{2}}(")',
+                            rf"\g<1>{paiva.isoformat()}\g<2>", teksti)
+        assert k == 1, f"{nimi}: {kentta} löytyi {k} kertaa, pitää olla 1"
+    nakyva = f"{paiva.day}.{paiva.month}.{paiva.year}"
+    teksti, k = re.subn(r'(<p class="ilmio-byline">.*?Päivitetty )[\d.]+(</p>)',
+                        rf"\g<1>{nakyva}\g<2>", teksti)
+    assert k == 1, f"{nimi}: bylinen päivämäärä löytyi {k} kertaa, pitää olla 1"
+    return teksti
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--kirjoita", action="store_true")
     ap.add_argument("--kortit-valmiina", action="store_true",
                     help="kortit on jo kirjoitettu index.html:ään käsin "
                          "(uusi kategoria) — älä koske index.html:ään")
+    ap.add_argument("--paiva", type=date.fromisoformat, default=date.today(),
+                    metavar="VVVV-KK-PP",
+                    help="julkaisupäivä uusille sivuille (oletus: tänään)")
     args = ap.parse_args()
     valmiina = args.kortit_valmiina
 
@@ -231,9 +254,11 @@ def main():
 
     # ── 3. luonnokset juureen (puskuriin; tiedostosiirto vasta lopuksi) ─
     for slug in UUDET:
-        M.puskuri[ROOT / f"{slug}.html"] = juurisivuksi(
-            (LUONNOKSET / f"{slug}.html").read_text(encoding="utf-8"))
-        M.loki.append(f"{slug}.html: luonnos → juuri (noindex pois, polut suoristettu)")
+        M.puskuri[ROOT / f"{slug}.html"] = leimaa_julkaisupaiva(
+            juurisivuksi((LUONNOKSET / f"{slug}.html").read_text(encoding="utf-8")),
+            args.paiva, f"{slug}.html")
+        M.loki.append(f"{slug}.html: luonnos → juuri (noindex pois, polut suoristettu, "
+                      f"julkaistu {args.paiva.isoformat()})")
 
     # ── 4. jokainen ilmiösivu ─────────────────────────────────────────
     ids_js = "const IDS = [" + ", ".join(f'"{s}"' for s in uusi_jarjestys) + "];"

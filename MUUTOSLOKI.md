@@ -1,5 +1,50 @@
 # Muutosloki — Ilmiöitä (www.ilmiöt.fi)
 
+## 3.10.2026 — Julkaistu Roolit ja valtapelit: 139 → 148 ilmiötä, 14. kategoria
+
+Yhdeksän sivua (140–148) luonnoksista juureen: `draamakolmio`, `roolinvaihto`,
+`voittajakolmio`, `kaksoissidos`, `mahdollistaja`, `syntipukki`, `valirikko`,
+`no-contact`, `harmaa-kivi`. Lohko on korttilistan lopussa, joten vanhoja
+sivuja ei numeroitu uudelleen (kuivaharjoitus: 0). Kaikki 139 vanhaa sivua
+muuttuivat silti, koska laskuri on nyt `N / 148` ja `const IDS` kasvoi.
+
+**Ajojärjestys:** `lisaa_ilmiot.py --kortit-valmiina --kirjoita` →
+`build_kategoriat.py` (14 sivua, trollaus ohitettiin koska sen `kat_id` ei ole
+vielä `index.html`:ssä) → `paivita_maarat.py` → `build_liittyvat.py` (0
+muutosta) → käsin päivämäärät → `build_sitemap.py` (165 URLia) →
+`build_search_index.py` (148 + 14).
+
+**Uusi: `lisaa_ilmiot.py` leimaa julkaisupäivän** (`--paiva VVVV-KK-PP`, oletus
+tänään). Luonnokset kantoivat kirjoituspäiväänsä 22.9. kolmessa paikassa
+(`datePublished`, `dateModified`, bylinen "Päivitetty"), eikä skripti koskenut
+niihin. Jos päivä olisi jäänyt, `paivita_suosio.py`:n `ehti_mukaan()` olisi
+pitänyt sivuja 22.9. julkaistuina ja päästänyt ne kasvulistoille 6.10. alkaen
+— "kasvaneina nollasta", vaikka ne ilmestyivät vasta 3.10. Jokaisella kolmella
+korvauksella on `assert k == 1`.
+
+**Kaksi asiaa, joita tarkistuslista ei tiennyt** (lisätty trollauksen listaan):
+
+1. `paivita_maarat.py` kaatui: `katnav-linkkiä ei löydy: Roolit ja valtapelit`.
+   Käsin kirjoitettu hub-lohko ei riitä — uusi kategoria tarvitsee myös rivin
+   `hub-katnav`-navigaatioon. Lisätty käsin.
+2. Kategoriasivun `lastmod` jäi 22.9:ään, koska se tulee esseen
+   frontmatterista (`paivitetty:`), ei julkaisuajosta. Vaihdettu käsin ja sivu
+   generoitu uudelleen.
+
+`llms.txt`:n käsin ylläpidetty otsikkolohko luetteli 11 aihepiiriä; lisätty
+tilastot, media ja roolit. Etusivun `random-vihje`-tekstissä lukee yhä "139
+ilmiötä", mutta se on nostolohkon JS:ttömän tilan varateksti, jonka selain
+korvaa korttien määrällä — lohko on `paivita_suosio.py`:n injektoima eikä sitä
+muokattu käsin.
+
+Luonnoskansiosta poistettu `kategoria-roolit-ja-valtapelit.html` (esikatselu,
+nyt juuressa). `scripts/build_valtapelit_luonnokset.py`:tä **ei saa enää ajaa**.
+
+Tarkistettu: 9 sivulla ei `noindex`- eikä `../`-jäänteitä, ketju
+`vihamielisen-median-harha` (139) → `draamakolmio` (140) … `harmaa-kivi` (148,
+ei seuraavaa), 166 juuren HTML-tiedostossa ei yhtään rikkinäistä sisäistä
+linkkiä.
+
 ## 4.9.2026 — Kapea hakuaie 11 sivulle (GSC-analyysi 4.9.)
 
 Lähtötieto: `seo-suunnitelmat/gsc-analyysi-2026-09-04.md`. Sijoilla 5–11 on

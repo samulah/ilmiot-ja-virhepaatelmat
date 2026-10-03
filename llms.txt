@@ -1,10 +1,11 @@
 # Ilmiöitä — Miten valta toimii
 
-> Suomenkielinen sivusto, joka selittää 139 yhteiskunnallista ilmiötä:
+> Suomenkielinen sivusto, joka selittää 148 yhteiskunnallista ilmiötä:
 > valtarakenteet, propaganda ja informaatiovaikuttaminen, kognitiiviset harhat,
 > byrokratia ja organisaatiodynamiikka, projektihallinnan lait,
 > talouden kasvuilmiöt, huijaukset ja petokset, myynti- ja painostustaktiikat,
-> alustatalouden ja algoritmien ilmiöt, maineenpesu sekä työelämän ilmiöt.
+> alustatalouden ja algoritmien ilmiöt, maineenpesu, työelämän ilmiöt,
+> tilastoilla valehtelu, media ja julkisuus sekä ihmissuhteiden roolit ja valtapelit.
 > Kirjoittaja: Ilmiömies. Sisältö on vapaasti viitattavissa.
 > Tietoa sivustosta: https://www.ilmiöt.fi/tietoa.html
 > Muutosloki (mitä on lisätty ja milloin): https://www.ilmiöt.fi/muutokset.html
@@ -240,3 +241,19 @@ Kategoriasivu: https://www.ilmiöt.fi/kategoria-media-ja-julkisuus.html
 - [Kehäraportointi](https://www.ilmiöt.fi/keharaportointi.html): Yksi väite siteerataan ketjussa eteenpäin, kunnes se näyttää neljän lähteen vahvistamalta.
 - [Gell-Mannin amnesia](https://www.ilmiöt.fi/gell-mannin-amnesia.html): Huomaat oman alasi jutussa virheet, käännät sivua ja luotat seuraavaan aivan yhtä paljon.
 - [Vihamielisen median harha](https://www.ilmiöt.fi/vihamielisen-median-harha.html): Kaksi vastakkaista leiriä lukee saman jutun ja kumpikin kokee sen puolueelliseksi itseään vastaan.
+
+### Roolit ja valtapelit
+
+Draamakolmio, roolinvaihto, kaksoissidos, syntipukki ja välirikko.
+
+Kategoriasivu: https://www.ilmiöt.fi/kategoria-roolit-ja-valtapelit.html
+
+- [Draamakolmio](https://www.ilmiöt.fi/draamakolmio.html): Uhri, pelastaja ja vainooja — kolme roolia, joissa kukaan ei ratkaise sitä mistä riidellään.
+- [Roolinvaihto](https://www.ilmiöt.fi/roolinvaihto.html): Pelastajasta tulee vainooja ja auttajasta uhri — hetki, joka tekee kuviosta pelin.
+- [Voittajakolmio](https://www.ilmiöt.fi/voittajakolmio.html): Sama kolmio ilman peliä: haavoittuva, välittävä ja jämäkkä uhrin, pelastajan ja vainoojan tilalla.
+- [Kaksoissidos](https://www.ilmiöt.fi/kaksoissidos.html): Kaksi vaatimusta, jotka sulkevat toisensa pois — eikä ristiriidasta saa mainita eikä tilanteesta poistua.
+- [Mahdollistaja](https://www.ilmiöt.fi/mahdollistaja.html): Se joka paikkaa jäljet pitää ongelman käynnissä: seuraukset eivät koskaan osu siihen joka ne aiheuttaa.
+- [Syntipukki-rooli](https://www.ilmiöt.fi/syntipukki.html): Ryhmällä on yksi nimetty kantaja — ja kun hän lähtee, tilalle valitaan uusi.
+- [Välirikko](https://www.ilmiöt.fi/valirikko.html): Suhde katkaistaan kokonaan, ja lasku lankeaa eri tavalla lähtijälle kuin jäävälle.
+- [No contact](https://www.ilmiöt.fi/no-contact.html): Täydellinen katkaisu poistaa pelistä toisen pelaajan — myös satunnaiset viestit, jotka pitäisivät sen käynnissä.
+- [Harmaa kivi](https://www.ilmiöt.fi/harmaa-kivi.html): Kun lähteminen ei ole mahdollista: reaktio on palkkio, ja tylsyys vie palkkion pois.

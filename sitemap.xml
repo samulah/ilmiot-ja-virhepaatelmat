@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.ilmiöt.fi/</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <priority>1.0</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -81,6 +81,12 @@
   <url>
     <loc>https://www.ilmiöt.fi/kategoria-media-ja-julkisuus.html</loc>
     <lastmod>2026-08-05</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.ilmiöt.fi/kategoria-roolit-ja-valtapelit.html</loc>
+    <lastmod>2026-10-03</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -919,6 +925,60 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://www.ilmiöt.fi/draamakolmio.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.ilmiöt.fi/roolinvaihto.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.ilmiöt.fi/voittajakolmio.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.ilmiöt.fi/kaksoissidos.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.ilmiöt.fi/mahdollistaja.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.ilmiöt.fi/syntipukki.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.ilmiöt.fi/valirikko.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.ilmiöt.fi/no-contact.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.ilmiöt.fi/harmaa-kivi.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://www.ilmiöt.fi/tietoa.html</loc>
     <lastmod>2026-08-14</lastmod>
     <priority>0.5</priority>
@@ -926,7 +986,7 @@
   </url>
   <url>
     <loc>https://www.ilmiöt.fi/muutokset.html</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <priority>0.4</priority>
     <changefreq>monthly</changefreq>
   </url>

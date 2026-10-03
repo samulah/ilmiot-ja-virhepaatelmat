@@ -4,7 +4,7 @@ h1: Roolit ja valtapelit — miten kaksi ihmistä jää kiinni samaan kuvioon
 otsikko: Draamakolmio, kaksoissidos ja välirikko
 kuvaus: Draamakolmio, roolinvaihto, kaksoissidos, syntipukki ja välirikko. Yhdeksän ilmiötä siitä, miten roolit lukkiutuvat työpaikalla ja läheissuhteessa.
 vari: "#ad1457"
-paivitetty: 2026-09-22
+paivitetty: 2026-10-03
 naapurit:
   - kategoria-psykologia-ja-kognitio | Psykologia ja kognitio →
   - kategoria-tyoelaman-ilmiot | Työelämän ilmiöt →
