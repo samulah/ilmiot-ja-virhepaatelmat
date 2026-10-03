@@ -8,6 +8,7 @@ paivitetty: 2026-08-14
 naapurit:
   - kategoria-informaatio-ja-propaganda | Informaatio ja propaganda →
   - kategoria-byrokratia-ja-organisaatio | Byrokratia ja organisaatio →
+  - kategoria-roolit-ja-valtapelit | Roolit ja valtapelit →
 ---
 
 Valta ei nykyaikaisessa yhteiskunnassa säily pakolla. Se säilyy muokkaamalla pelisääntöjä, joiden puitteissa siitä kilpaillaan — ja sääntöjen muokkaaminen näyttää aina laillisemmalta kuin vallan käyttö. Tämän kategorian kahdeksan ilmiötä ovat kaikki muunnelmia samasta havainnosta: vaikuttavin vallankäyttö kohdistuu kehykseen, ei sisältöön.

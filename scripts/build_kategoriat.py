@@ -67,7 +67,7 @@ KORTTI_RE = re.compile(
     r'<span class="hub-kuvaus">(.*?)</span>', re.S)
 
 
-def lue_kategoriat():
+def lue_kategoriat(luonnos=False):
     """index.html → {kat_id: {nro, label, kuvaus, kortit, ilmioalue}}
 
     `nro` on kategorian järjestysnumero etusivun järjestyksessä ja `ilmioalue`
@@ -75,6 +75,12 @@ def lue_kategoriat():
     kategorioiden yli, joten väli on aito tieto eikä koriste: se erottaa
     kategoriasivun ilmiösivusta, jolla on vain yksi numero."""
     html = (ROOT / "index.html").read_text(encoding="utf-8")
+    if luonnos:
+        # Uuden kategorian hub-lohko odottaa luonnoskansiossa, kunnes sen
+        # ilmiöt julkaistaan (esim. trollaus-hub-lohko.html). Esikatselua
+        # varten lohko luetaan kuin se olisi jo etusivun lopussa.
+        for lohko in sorted(LUONNOSKANSIO.glob("*-hub-lohko.html")):
+            html += "\n" + lohko.read_text(encoding="utf-8")
     kategoriat = {}
     for nro, (kat_id, label, kuvaus, runko) in enumerate(KAT_RE.findall(html), 1):
         kortit = [{"slug": s, "vari": v, "numero": int(n),
@@ -180,6 +186,15 @@ def korttilista(kortit):
     return "\n".join(osat)
 
 
+def kategoriapolku(slug, etu):
+    """Toisen kategoriasivun osoite. Luonnoskansiosta (etu="../") linkitetään
+    juureen, ellei sivu ole itsekin vain luonnoskansiossa."""
+    tiedosto = f"kategoria-{slug}.html"
+    if etu and not (LUONNOSKANSIO / tiedosto).exists():
+        return etu + tiedosto
+    return tiedosto
+
+
 def siirtymanavi(edellinen, seuraava, kat, etu):
     """Edellinen/seuraava kategoria sivun lopussa + laskuri."""
     if not edellinen and not seuraava:
@@ -192,7 +207,7 @@ def siirtymanavi(edellinen, seuraava, kat, etu):
             continue
         kortit.append(
             f'    <a class="kat-siirry-kortti {luokka}" '
-            f'href="kategoria-{tiedot["slug"]}.html" style="--c:{tiedot["vari"]}">\n'
+            f'href="{kategoriapolku(tiedot["slug"], etu)}" style="--c:{tiedot["vari"]}">\n'
             f'      <span class="kat-siirry-label">{label}</span>\n'
             f'      <span class="kat-siirry-nimi">{nuoli if luokka == "edellinen" else ""}'
             f'{tiedot["nro"]}. {tiedot["label"]}'
@@ -206,13 +221,13 @@ def siirtymanavi(edellinen, seuraava, kat, etu):
             f'</nav>')
 
 
-def selausskripti(edellinen, seuraava):
+def selausskripti(edellinen, seuraava, etu=""):
     """Nuolinäppäimet kuten ilmiösivuilla. Vaakaswipeä EI ole tarkoituksella:
     se törmää selaimen takaisin-eleeseen ja tekstin maalaamiseen."""
     if not edellinen and not seuraava:
         return ""
-    p = f"'kategoria-{edellinen['slug']}.html'" if edellinen else "null"
-    n = f"'kategoria-{seuraava['slug']}.html'" if seuraava else "null"
+    p = f"'{kategoriapolku(edellinen['slug'], etu)}'" if edellinen else "null"
+    n = f"'{kategoriapolku(seuraava['slug'], etu)}'" if seuraava else "null"
     return f"""  <script>
 (function () {{
   var PREV = {p}, NEXT = {n};
@@ -520,9 +535,16 @@ def rakenna(slug, meta, kat, luonnos=False, edellinen=None, seuraava=None):
     ohita = {f"kategoria-{t['slug']}" for t in (edellinen, seuraava) if t}
     runko = runko.replace("[[NAAPURIT]]",
                           naapurilista(meta.get("naapurit", []), ohita))
-    if luonnos:   # luonnoskansiosta sivuston juureen — paitsi toisiin
-        #           kategoriasivuihin, jotka ovat samassa luonnoskansiossa
-        runko = re.sub(r'href="(?!https?:|#|\.\./|kategoria-)', f'href="{etu}', runko)
+    if luonnos:   # luonnoskansiosta sivuston juureen — paitsi sivuihin, jotka
+        #           ovat vain luonnoskansiossa (julkaisemattomat ilmiöt ja
+        #           kategoriasivut): niihin ilman etuliitettä, muuten 404.
+        def etuliite(m):
+            kohde = m.group(1).split("#")[0]
+            if (kohde.endswith(".html") and not (ROOT / kohde).exists()
+                    and (LUONNOSKANSIO / kohde).exists()):
+                return m.group(0)
+            return f'href="{etu}{m.group(1)}"'
+        runko = re.sub(r'href="(?!https?:|#|\.\./)([^"]*)"', etuliite, runko)
     runko += "\n" + siirtymanavi(edellinen, seuraava, kat, etu)
 
     otsikko = f"{meta['otsikko']} — Ilmiöitä"
@@ -549,7 +571,7 @@ def rakenna(slug, meta, kat, luonnos=False, edellinen=None, seuraava=None):
 
   <!-- SEO -->
   <meta name="description" content="{meta['kuvaus']}">
-  <link rel="canonical" href="{url}">
+  {'<meta name="robots" content="noindex">' if luonnos else ''}<link rel="canonical" href="{url}">
   <meta property="og:title" content="{otsikko}">
   <meta property="og:description" content="{meta['kuvaus']}">
   <meta property="og:url" content="{url}">
@@ -594,7 +616,7 @@ def rakenna(slug, meta, kat, luonnos=False, edellinen=None, seuraava=None):
     <a href="{etu}tietoa.html">Tietoa sivustosta ja tekijästä</a></p>
   </footer>
 
-{selausskripti(edellinen, seuraava)}
+{selausskripti(edellinen, seuraava, etu)}
 
 </body>
 </html>
@@ -612,7 +634,7 @@ def main(argv):
     luonnos = "--luonnos" in argv
     valitut = [a for a in argv if not a.startswith("--")]
 
-    kategoriat = lue_kategoriat()
+    kategoriat = lue_kategoriat(luonnos)
     tiedostot = ([SISALTO / f"{s}.md" for s in valitut] if valitut
                  else sorted(SISALTO.glob("*.md")))
     assert tiedostot, f"ei sisältötiedostoja kansiossa {SISALTO}"

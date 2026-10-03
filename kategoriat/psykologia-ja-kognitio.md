@@ -9,6 +9,7 @@ naapurit:
   - kategoria-informaatio-ja-propaganda | Informaatio ja propaganda →
   - kategoria-myyntikikat-ja-painostus | Myyntikikat ja painostus →
   - kategoria-tilastoilla-valehtelu | Tilastoilla valehtelu →
+  - kategoria-roolit-ja-valtapelit | Roolit ja valtapelit →
 ---
 
 Tämän kategorian neljätoista ilmiötä näyttävät päällisin puolin samalta — kaikki kuvaavat tilannetta, jossa ajattelu menee vinoon. Ne jakautuvat kuitenkin kahteen lajiin, joiden sekoittaminen on itsessään yleinen virhe.

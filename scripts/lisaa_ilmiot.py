@@ -43,37 +43,28 @@ LUONNOKSET = ROOT / "luonnokset"   # kaikkien erien yhteinen kansio (14.8.2026)
 # perään samaan hub-kategoria-lohkoon. Ankkuri saa olla myös toinen tämän
 # taulukon slug, jolloin erä ketjuuntuu kategorian loppuun.
 #
-# 14.8.2026: vaalierä (3) + pimeät kuviot (5) + tekoälyhuijaukset (4) = 12.
-# Ei uutta kategoriaa → ei --kortit-valmiina-lippua.
+# 22.9.2026: uusi 14. kategoria "Roolit ja valtapelit" (9 ilmiötä, 140-148).
+# Lohko on kirjoitettu index.html:ään käsin → ajo vaatii --kortit-valmiina,
+# jolloin ankkurisaraketta ei käytetä (se on tässä vain dokumentaationa).
 UUDET = {
-    # Vallan rakenteet 7 → 8
-    "vaalilupauksen-hinnoittelu": ("hajota-hallitse", "#1565c0", "Vaalilupauksen hinnoittelu",
-        "Puolue esittää oman lukunsa, eikä sitä vastaan ole toista lukua — hinta on kampanja-aineistoa."),
-    # Huijaukset ja petokset 11 → 14
-    "aaniklooni-huijaus": ("rug-pull", "#7f0000", "Ääniklooni-huijaus",
-        "Muutaman sekunnin näyte riittää: tuttu ääni pyytää rahaa kiireellä, eikä kuulo enää todista mitään."),
-    "smishing": ("aaniklooni-huijaus", "#0b3d91", "Smishing",
-        "Huijausviesti putoaa samaan ketjuun aitojen kanssa: paketti odottaa maksua, pankki pyytää vahvistusta."),
-    "deepfake-sijoitushuijaus": ("smishing", "#9c4dcc", "Deepfake-sijoitushuijaus",
-        "Tuttu kasvo ja tutun näköinen uutissivu mainostavat alustaa, jolla saldo nousee mutta raha ei palaa."),
-    # Alustatalous ja algoritmit 10 → 17
-    "vaalikone-efekti": ("aanekas-vahemmisto", "#00695c", "Vaalikone-efekti",
-        "Kone ei vain mittaa kantaasi vaan muokkaa sitä: kysymysvalinta ja laskukaava ratkaisevat tuloksen."),
-    "tekoalypsykoosi": ("vaalikone-efekti", "#004d40", "Tekoälypsykoosi",
-        "Myötäilevä chatbot ei ole koskaan eri mieltä — ja vie hauraan ajattelun loppuun asti."),
-    "evasteansa": ("tekoalypsykoosi", "#0288d1", "Evästeansa",
-        "Hyväksyminen on yksi klikkaus, kieltäytyminen viisi — banneri on rakennettu tuottamaan suostumus."),
-    "piilokulut": ("evasteansa", "#ff6f00", "Piilokulut",
-        "Mainostettu hinta on ensimmäinen erä; loput valutetaan esiin vasta kun vertailu on tehty."),
-    "pakotettu-jatkuvuus": ("piilokulut", "#3e2723", "Pakotettu jatkuvuus",
-        "Ilmainen kokeilu muuttuu laskuksi automaattisesti — ilman muistutusta ja ilman uutta hyväksyntää."),
-    "confirmshaming": ("pakotettu-jatkuvuus", "#a31545", "Confirmshaming",
-        "Kieltäytymisnappi kirjoitetaan itseä alentavaksi: ”Ei kiitos, en halua säästää rahaa”."),
-    "oletusasetusansa": ("confirmshaming", "#1b5e20", "Oletusasetusansa",
-        "Seuranta ja jakaminen ovat valmiiksi päällä, koska oletusvalinta ratkaisee useimmiten."),
-    # Tilastoilla valehtelu 8 → 9
-    "kannatusmittausten-virhemarginaali": ("p-hakkerointi", "#2e7d32", "Kannatusmittausten virhemarginaali",
-        "Ilmoitettu marginaali koskee yhtä lukua; uutinen kertoo kahden luvun erosta, joka on epätarkempi."),
+    "draamakolmio": ("vihamielisen-median-harha", "#ad1457", "Draamakolmio",
+        "Uhri, pelastaja ja vainooja — kolme roolia, joissa kukaan ei ratkaise sitä mistä riidellään."),
+    "roolinvaihto": ("draamakolmio", "#880e4f", "Roolinvaihto",
+        "Pelastajasta tulee vainooja ja auttajasta uhri — hetki, joka tekee kuviosta pelin."),
+    "voittajakolmio": ("roolinvaihto", "#00695c", "Voittajakolmio",
+        "Sama kolmio ilman peliä: haavoittuva, välittävä ja jämäkkä uhrin, pelastajan ja vainoojan tilalla."),
+    "kaksoissidos": ("voittajakolmio", "#4a148c", "Kaksoissidos",
+        "Kaksi vaatimusta, jotka sulkevat toisensa pois — eikä ristiriidasta saa mainita eikä tilanteesta poistua."),
+    "mahdollistaja": ("kaksoissidos", "#ef6c00", "Mahdollistaja",
+        "Se joka paikkaa jäljet pitää ongelman käynnissä: seuraukset eivät koskaan osu siihen joka ne aiheuttaa."),
+    "syntipukki": ("mahdollistaja", "#b71c1c", "Syntipukki-rooli",
+        "Ryhmällä on yksi nimetty kantaja — ja kun hän lähtee, tilalle valitaan uusi."),
+    "valirikko": ("syntipukki", "#37474f", "Välirikko",
+        "Suhde katkaistaan kokonaan, ja lasku lankeaa eri tavalla lähtijälle kuin jäävälle."),
+    "no-contact": ("valirikko", "#263238", "No contact",
+        "Täydellinen katkaisu poistaa pelistä toisen pelaajan — myös satunnaiset viestit, jotka pitäisivät sen käynnissä."),
+    "harmaa-kivi": ("no-contact", "#607d8b", "Harmaa kivi",
+        "Kun lähteminen ei ole mahdollista: reaktio on palkkio, ja tylsyys vie palkkion pois."),
 }
 
 KORTTI_RE = re.compile(

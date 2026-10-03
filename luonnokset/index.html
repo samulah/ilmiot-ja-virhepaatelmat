@@ -181,7 +181,7 @@
   <img class="hub-logo" src="../favicon.svg" alt="Ilmiöitä-logo: punainen varoituslippu" width="36" height="36">
   <div class="hub-header-left">
     <h1>Ilmiöitä &middot; luonnokset</h1>
-    <p>1 peli + 1 koostesivu odottaa julkaisua &middot; suosiodata testivaiheessa</p>
+    <p>9 ilmiötä + 1 peli + 1 koostesivu odottaa julkaisua &middot; suosiodata testivaiheessa</p>
   </div>
   <a class="paluu-btn" href="../index.html">&larr; Kaikki ilmiöt</a>
 </header>
@@ -198,10 +198,94 @@ julkaistaessa molemmat puretaan.</p>
   <code>scripts/build_pimeat_kuviot_luonnokset.py</code> ja
   <code>scripts/build_tekoalyhuijaukset_luonnokset.py</code> kirjoittaisivat sivut uudelleen tähän
   kansioon, joten <strong>älä aja niitä enää</strong> — julkaistut versiot ovat juuressa.
-  <br><strong>Seuraavaksi:</strong> klusteri 3 (argumentointivirheet, 5 sivua) on yhä kirjoittamatta
+  <br><strong>Työn alla 22.9.2026:</strong> uusi 14. kategoria &rdquo;Roolit ja valtapelit&rdquo; (9 ilmiötä, numerot 140&ndash;148) &mdash; luonnokset alla, kuivaharjoitus ajettu.<br><strong>Työn alla 28.9.2026:</strong> uusi 15. kategoria &rdquo;Trollaus ja keskustelun sabotointi&rdquo; (17 ilmiötä, 149&ndash;165) &mdash; luonnokset alla, julkaistaan valtapelien jälkeen.<br><strong>Seuraavaksi:</strong> klusteri 3 (argumentointivirheet, 5 sivua) on yhä kirjoittamatta
   ja ehdollinen — päätös vasta title-testin mittauspisteen (~10.9.2026) jälkeen. Ks.
   <a href="UUDET-KLUSTERIT-PLAN.md">UUDET-KLUSTERIT-PLAN.md</a> &sect; 5.
 </div>
+
+<section class="hub-kategoria">
+  <div class="hub-kat-label">Roolit ja valtapelit &middot; uusi 14. kategoria &middot; odottaa julkaisua</div>
+  <p class="hub-kat-desc">Yhdeksän ilmiötä ihmissuhteiden roolidynamiikasta: Karpmanin
+  draamakolmio ja sen johdannaiset, kuviot jotka pitävät asetelman paikallaan, ja irtautuminen.
+  Jokainen sivu näyttää saman mekanismin sekä työelämässä että läheissuhteessa.
+  Karpmanin 12 kolmiosta mukaan valittiin neljä; False Perception ja Indecision karsittiin
+  päällekkäisyyden takia (<code>hanlonin-partaveitsi</code>, <code>sunk-cost-harha</code>) ja
+  loput siksi, ettei niillä ole vakiintunutta suomennosta.
+  Generaattori on <code>scripts/build_valtapelit_luonnokset.py</code> &mdash;
+  <strong>älä aja sitä julkaisun jälkeen</strong>, se kirjoittaisi sivut takaisin tähän kansioon.
+  Kategoriaessee on <code>kategoriat/roolit-ja-valtapelit.md</code> ja hub-lohko on jo
+  kirjoitettu käsin <code>index.html</code>:ään, joten julkaisu vaatii
+  <code>--kortit-valmiina</code>-lipun.
+  <strong>Esikatsele kategoriasivu:</strong> <a href="kategoria-roolit-ja-valtapelit.html">kategoria-roolit-ja-valtapelit.html</a>.</p>
+  <div class="hub-kortit">
+    <a class="hub-kortti" style="--c:#ad1457" href="draamakolmio.html"><span class="hub-numero">140</span><span class="hub-nimi">Draamakolmio <em>· Uhri, pelastaja ja vainooja</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#880e4f" href="roolinvaihto.html"><span class="hub-numero">141</span><span class="hub-nimi">Roolinvaihto <em>· Pelastajasta tulee vainooja ja auttajasta uhri</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#00695c" href="voittajakolmio.html"><span class="hub-numero">142</span><span class="hub-nimi">Voittajakolmio <em>· Sama kolmio ilman peliä</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#4a148c" href="kaksoissidos.html"><span class="hub-numero">143</span><span class="hub-nimi">Kaksoissidos <em>· Kaksi vaatimusta, jotka sulkevat toisensa pois</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#ef6c00" href="mahdollistaja.html"><span class="hub-numero">144</span><span class="hub-nimi">Mahdollistaja <em>· Se joka paikkaa jäljet pitää ongelman käynnissä</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#b71c1c" href="syntipukki.html"><span class="hub-numero">145</span><span class="hub-nimi">Syntipukki-rooli <em>· Ryhmällä on yksi nimetty kantaja</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#37474f" href="valirikko.html"><span class="hub-numero">146</span><span class="hub-nimi">Välirikko <em>· Suhde katkaistaan kokonaan, ja lasku lankeaa eri tavalla lähtijälle kuin jäävälle</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#263238" href="no-contact.html"><span class="hub-numero">147</span><span class="hub-nimi">No contact <em>· Täydellinen katkaisu poistaa pelistä toisen pelaajan</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#607d8b" href="harmaa-kivi.html"><span class="hub-numero">148</span><span class="hub-nimi">Harmaa kivi <em>· Kun lähteminen ei ole mahdollista</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+  </div>
+  <p class="hub-kat-desc"><strong>Julkaisun tarkistuslista:</strong>
+  1.&nbsp;<code>python3 scripts/lisaa_ilmiot.py --kortit-valmiina</code> kuivana &mdash; pitää
+  kertoa &rdquo;uudelleennumeroituja vanhoja sivuja: 0&rdquo;.
+  2.&nbsp;sama <code>--kirjoita</code>-lipulla.
+  3.&nbsp;<code>build_kategoriat.py</code> (14 sivua, ei &rdquo;alle 300 sanaa&rdquo; -varoitusta) &rarr;
+  <code>paivita_maarat.py</code> (148 ilmiötä, &rdquo;neljässätoista kategoriassa&rdquo;) &rarr;
+  <code>build_liittyvat.py</code>.
+  4.&nbsp;käsin: <code>index.html</code> päivitetty-nappi + <code>CollectionPage</code>
+  <code>dateModified</code>, <code>muutokset.html</code> uusi <code>article</code> + sen
+  <code>dateModified</code>, <code>MUUTOSLOKI.md</code>.
+  5.&nbsp;<code>build_sitemap.py</code> vasta päivämäärien jälkeen &rarr;
+  <code>build_search_index.py</code> viimeisenä.</p>
+</section>
+
+<section class="hub-kategoria">
+  <div class="hub-kat-label">Trollaus ja keskustelun sabotointi &middot; uusi 15. kategoria &middot; odottaa julkaisua</div>
+  <p class="hub-kat-desc">17 ilmiötä kolmessa osassa: trollaus ja miksi ihmiset trollaavat (149&ndash;153),
+  keskustelun kaatamisen taktiikat (154&ndash;162) sekä maalittaminen, doksaus ja vastakeino rajoineen (163&ndash;165).
+  <strong>Esikatsele kategoriasivu:</strong> <a href="kategoria-trollaus-ja-keskustelun-sabotointi.html">kategoria-trollaus-ja-keskustelun-sabotointi.html</a>
+  (<code>build_kategoriat.py --luonnos trollaus-ja-keskustelun-sabotointi</code>).
+  Vanhat sukulaissivut (<code>whataboutismi</code>, <code>argumenttitulva</code>,
+  <code>maalitolppien-siirtaminen</code>, <code>rage-bait</code>) jäävät kategorioihinsa; essee linkittää ne.
+  Generaattori on <code>scripts/build_trollaus_luonnokset.py</code> &mdash;
+  <strong>älä aja sitä julkaisun jälkeen</strong>. Kategoriaessee on
+  <code>kategoriat/trollaus-ja-keskustelun-sabotointi.md</code>.
+  <strong>Hub-lohkoa ei ole vielä <code>index.html</code>:ssä</strong> &mdash; se on valmiina tiedostossa
+  <a href="trollaus-hub-lohko.html"><code>trollaus-hub-lohko.html</code></a>.</p>
+  <div class="hub-kortit">
+    <a class="hub-kortti" style="--c:#00838f" href="trollaus.html"><span class="hub-numero">149</span><span class="hub-nimi">Trollaus <em>· Provosointi, jonka palkkio on reaktio</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#00695c" href="verkon-estottomuus.html"><span class="hub-numero">150</span><span class="hub-nimi">Verkon estottomuus <em>· Nimettömyys, näkymättömyys ja viive</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#37474f" href="pimea-tetradi.html"><span class="hub-numero">151</span><span class="hub-nimi">Pimeä tetradi <em>· Narsismi, machiavellismi, psykopatia ja sadismi</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#546e7a" href="kuka-tahansa-voi-trollata.html"><span class="hub-numero">152</span><span class="hub-nimi">Kuka tahansa voi trollata <em>· Huono päivä ja valmiiksi myrkyllinen ketju riittävät</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#8d6e63" href="vain-vitsi.html"><span class="hub-numero">153</span><span class="hub-nimi">Se oli vain vitsi <em>· Ironia vastuun kiertämisenä</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#006064" href="sealioning.html"><span class="hub-numero">154</span><span class="hub-nimi">Sealioning <em>· Kohtelias kysely, joka ei lopu koskaan</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#0277bd" href="kunhan-kysyn.html"><span class="hub-numero">155</span><span class="hub-nimi">Kunhan kysyn <em>· Väite puetaan kysymykseksi, jolloin sitä ei tarvitse perustella eikä siitä voi joutua vastuuseen</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#5d4037" href="huolitrollaus.html"><span class="hub-numero">156</span><span class="hub-nimi">Huolitrollaus <em>· Vastustaja esiintyy huolestuneena kannattajana ja neuvoo luopumaan juuri siitä, mitä vastustaa</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#455a64" href="motte-and-bailey.html"><span class="hub-numero">157</span><span class="hub-nimi">Motte and bailey <em>· Rohkea väite pihalla, vaatimaton väite tornissa</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#6a1b9a" href="nutpicking.html"><span class="hub-numero">158</span><span class="hub-nimi">Nutpicking <em>· Vastapuolen hölmöin yksittäinen kommentti nostetaan koko joukon kasvoiksi</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#ad1457" href="tone-policing.html"><span class="hub-numero">159</span><span class="hub-nimi">Tone policing <em>· Keskustelu siirretään siihen, miten asia sanottiin</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#4e342e" href="kafkatrapping.html"><span class="hub-numero">160</span><span class="hub-nimi">Kafkatrapping <em>· Kiistäminen todistaa syyllisyyden</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#795548" href="shitpostaus.html"><span class="hub-numero">161</span><span class="hub-nimi">Shitpostaus <em>· Tahallisen arvotonta sisältöä niin paljon, ettei asiallista keskustelua enää löydä sen alta</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#d84315" href="dunkkaus.html"><span class="hub-numero">162</span><span class="hub-nimi">Dunkkaus ja ratio <em>· Lainausviestillä nolataan yleisön edessä</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#c62828" href="maalittaminen.html"><span class="hub-numero">163</span><span class="hub-nimi">Maalittaminen <em>· Yksi osoittaa kohteen, joukko hoitaa loput</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#b71c1c" href="doksaus.html"><span class="hub-numero">164</span><span class="hub-nimi">Doksaus <em>· Henkilötiedot kaivetaan esiin ja julkaistaan</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#2e7d32" href="trollin-ruokkiminen.html"><span class="hub-numero">165</span><span class="hub-nimi">Älä ruoki trollia <em>· Reaktio on trollin palkkio. Neuvo toimii yksittäiseen provosoijaan</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+  </div>
+  <p class="hub-kat-desc"><strong>Julkaisun tarkistuslista</strong> (vasta kun Roolit ja valtapelit on julkaistu):
+  1.&nbsp;liitä <code>trollaus-hub-lohko.html</code>:n sisältö <code>index.html</code>:ään valtapelit-lohkon perään.
+  2.&nbsp;korvaa <code>lisaa_ilmiot.py</code>:n <code>UUDET</code>-taulukko tämän erän 17 slugilla.
+  3.&nbsp;<code>lisaa_ilmiot.py --kortit-valmiina</code> kuivana (&rdquo;uudelleennumeroituja vanhoja sivuja: 0&rdquo;), sitten <code>--kirjoita</code>.
+  4.&nbsp;<code>build_kategoriat.py</code> (15 sivua) &rarr; <code>paivita_maarat.py</code> (165 ilmiötä,
+  &rdquo;viidessätoista kategoriassa&rdquo;) &rarr; <code>build_liittyvat.py</code>.
+  5.&nbsp;käsin päivämäärät (<code>index.html</code>, <code>muutokset.html</code>, <code>MUUTOSLOKI.md</code>) &rarr;
+  <code>build_sitemap.py</code> &rarr; <code>build_search_index.py</code>.
+  Tarkista ennen julkaisua: omat suomennokset <em>kunhan kysyn</em>, <em>huolitrollaus</em>, <em>verkon estottomuus</em>,
+  <em>doksaus</em>, <em>shitpostaus</em>, <em>dunkkaus</em>; maalittamisen ja doksauksen oikeudellinen muotoilu;
+  Chengin ym. (2017) &rdquo;lähes kaksinkertainen&rdquo; ja Bradyn ym. (2017) &rdquo;noin viidenneksellä&rdquo;.</p>
+</section>
 
 <section class="hub-kategoria">
   <div class="hub-kat-label">Suosiodata &middot; generoitu &middot; ei versionhallinnassa</div>

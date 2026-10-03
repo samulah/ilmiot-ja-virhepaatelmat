@@ -8,6 +8,7 @@ paivitetty: 2026-07-25
 naapurit:
   - kategoria-byrokratia-ja-organisaatio | Byrokratia ja organisaatio →
   - kategoria-myyntikikat-ja-painostus | Myyntikikat ja painostus →
+  - kategoria-roolit-ja-valtapelit | Roolit ja valtapelit →
 ---
 
 Näiden kolmen ilmiön nimet ovat uusia, mutta ilmiöt eivät. Uutta on se, että ne on nimetty — ja nimeäminen on tässä tapauksessa merkityksellistä, koska kaikkien kolmen ydin on nimenomaan **sanomatta jättäminen**.
