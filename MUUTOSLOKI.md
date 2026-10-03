@@ -1,5 +1,33 @@
 # Muutosloki — Ilmiöitä (www.ilmiöt.fi)
 
+## 3.10.2026 — Vedätys julkaistu (paikallisesti): peli.html juureen, epokki 3.10.
+
+Käyttäjän päätös: julkaistaan heti, vaiheen 2 kohdat sellaisinaan (kuratointi
+julkaisun jälkeen). Selaintestaus on yhä tekemättä.
+
+- `EPOKKI = "2026-10-03"` → `build_peli.py`. Yleisön ensimmäinen erä on #1.
+  **Epokkia ei saa enää siirtää:** talletus on sidottu siihen, ja siirto
+  nollaisi jokaisen pelaajan putken.
+- `luonnokset/peli.html` → `peli.html`: `noindex` pois, 7 × `href="../`,
+  2 × `src="../` ja JS:n 3 × `'../' +` purettu, `dateModified` 2026-10-03.
+- `build_sitemap.py`: vakio `PELI` ja rivi `rakenna()`:ssa (166 URLia).
+- `testaa_peli.js`: oletussivu on nyt juuren `peli.html`.
+- `build_search_index.py` ohittaa luokan `peli-harjoittele`. Ilman tätä haku
+  "peli" palauttaisi 35 ilmiösivua, koska laatikon teksti on `.ilmio`:n sisällä.
+- `lisaa_pelilinkit.py --kirjoita`: 35 ilmiösivua. `dateModified` ei noussut;
+  laatikko on navigaatiota, ei sisältöpäivitys.
+
+**Sisääntulot `index.html`:ssä** (kolme, ei yhtään `hub-kortti`-luokalla):
+headerin `a.peli-btn` Satunnainen-napin edessä, `p.peli-nosto` intron ja
+aihepiirinavin välissä, ja linkki footerissa. Footer-linkki myös
+`tietoa.html`:ssä. Mobiilissa (≤ 640 px) headerin napista näkyy vain kuvake,
+koska kaksi tekstinappia puristaisi otsikkorivin kasaan — siksi nosto on
+sisällössä, jotta peli löytyy puhelimellakin. **Nosto ei ollut
+suunnitelmassa**; sen voi poistaa yhdellä rivillä.
+
+Palvelimelle on vietävä `peli.html` **ja** `data/peli-pankki.js` (siellä on yhä
+vanha 150 kohdan pankki, epokki 23.8.).
+
 ## 3.10.2026 — Vedätys: vinoumat pankkiin, tehostebugi, tulos säilyy (luonnos)
 
 Peli on yhä luonnos (`luonnokset/peli.html`). Julkaisua ennen tarvitaan

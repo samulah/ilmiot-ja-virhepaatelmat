@@ -25,7 +25,7 @@ ROOT = Path(__file__).parent.parent
 PELIDATA = ROOT / "pelidata"
 ULOS = ROOT / "data" / "peli-pankki.js"
 
-EPOKKI = "2026-08-23"          # Vedätys #1. Tämä on ainoa paikka jossa epokki
+EPOKKI = "2026-10-03"          # Vedätys #1. Tämä on ainoa paikka jossa epokki
                                # määritellään: peli.html lukee sen datasta
                                # (P.epokki), joten sitä ei kovakoodata sivulle.
 KOHTIA_ERASSA = 5              # erämäärä lasketaan pankin koosta (ks. main)

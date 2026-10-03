@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex">
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Vedätys — päivän manipulaatiopeli | Ilmiöitä</title>
-  <link rel="stylesheet" href="../fonts/fonts.css">
-  <link rel="stylesheet" href="../fonts/spectral.css">
+  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="stylesheet" href="fonts/spectral.css">
 
   <meta name="description" content="Vedätys on päivittäinen peli, jossa tunnistat viidestä viestistä ne, joissa sinua yritetään ohjata — ja ne, jotka ovat ihan tavallisia. Kestää puolitoista minuuttia.">
   <link rel="canonical" href="https://www.ilmiöt.fi/peli.html">
@@ -41,7 +40,7 @@
       "isAccessibleForFree": true,
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
       "description": "Päivittäinen peli, jossa tunnistetaan manipulaatiotekniikoita lyhyistä suomenkielisistä viesteistä. Mukana on aina myös tavallisia viestejä, joissa ei ole mitään vikaa.",
-      "dateModified": "2026-08-23",
+      "dateModified": "2026-10-03",
       "author": { "@id": "https://www.ilmiöt.fi/#ilmiomies" },
       "publisher": { "@id": "https://www.ilmiöt.fi/#organization" },
       "isPartOf": { "@id": "https://www.ilmiöt.fi/#website" }
@@ -302,12 +301,12 @@
 <body>
 
 <header class="hub-header">
-  <img class="hub-logo" src="../favicon.svg" alt="Ilmiöitä" width="36" height="36">
+  <img class="hub-logo" src="favicon.svg" alt="Ilmiöitä" width="36" height="36">
   <div class="hub-header-left">
     <h1>Vedätys</h1>
     <p>Päivän erä · Ilmiöitä</p>
   </div>
-  <a class="takaisin-btn" href="../index.html">← Kaikki ilmiöt</a>
+  <a class="takaisin-btn" href="index.html">← Kaikki ilmiöt</a>
 </header>
 
 <main>
@@ -354,7 +353,7 @@
     </div>
 
     <p style="font-size:.9em;color:#6B5020">Kaikki <span id="ilmioMaara">pelin</span> ilmiötä löytyvät myös luettavina:
-      <a href="../index.html">selaa tietopankkia</a>.</p>
+      <a href="index.html">selaa tietopankkia</a>.</p>
   </section>
 
   <!-- ══ Peli ══ -->
@@ -449,11 +448,11 @@
 
 <footer>
   <p>© 2026 Ilmiöitä — Miten valta toimii · Kirjoittanut Ilmiömies ·
-    <a href="../tietoa.html">Tietoa sivustosta ja tekijästä</a> ·
-    <a href="../muutokset.html">Mitä sivustolle on tehty</a></p>
+    <a href="tietoa.html">Tietoa sivustosta ja tekijästä</a> ·
+    <a href="muutokset.html">Mitä sivustolle on tehty</a></p>
 </footer>
 
-<script src="../data/peli-pankki.js" defer></script>
+<script src="data/peli-pankki.js" defer></script>
 <script>
 (function () {
   'use strict';
@@ -478,7 +477,7 @@
   // data/peli-pankki.js on defer-skripti: se ajetaan vasta dokumentin
   // jäsennyksen jälkeen, siis MYÖHEMMIN kuin tämä inline-skripti. Siksi
   // pankkia ei saa lukea tässä — se luetaan DOMContentLoadedissa, samalla
-  // tavalla kuin etusivu lukee window.ILMIO_SUOSIO:n (index.html:3059).
+  // tavalla kuin etusivu lukee window.ILMIO_SUOSIO:n.
   // Aiemmin tässä oli "var P = window.VEDATYS_PANKKI; if (!P) return;",
   // jolloin koko peli poistui hiljaa eikä yhtään nappia kytketty.
   var P = null;
@@ -956,7 +955,7 @@
     var linkki = $('lueLinkki');
     if (k.i && P.ilmiot[k.i]) {
       linkki.hidden = false;
-      linkki.href = '../' + k.i + '.html';
+      linkki.href = k.i + '.html';
       linkki.textContent = 'Lue lisää: ' + P.ilmiot[k.i].n + ' →';
     } else {
       linkki.hidden = true;
@@ -1117,7 +1116,7 @@
     if (tila.ansa.i && P.ilmiot[tila.ansa.i]) {
       li.appendChild(document.createTextNode(' '));
       var a = document.createElement('a');
-      a.href = '../' + tila.ansa.i + '.html';
+      a.href = tila.ansa.i + '.html';
       a.textContent = P.ilmiot[tila.ansa.i].n + ' →';
       li.appendChild(a);
     }
@@ -1132,7 +1131,7 @@
       li.appendChild(document.createTextNode(ruutu(tila.merkit[i]) + ' '));
       if (k.i && P.ilmiot[k.i]) {
         var a = document.createElement('a');
-        a.href = '../' + k.i + '.html';
+        a.href = k.i + '.html';
         a.textContent = P.ilmiot[k.i].n;
         li.appendChild(a);
         li.appendChild(document.createTextNode(' — ' + P.ilmiot[k.i].k));

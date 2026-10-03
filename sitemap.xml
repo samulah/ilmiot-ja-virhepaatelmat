@@ -979,8 +979,14 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://www.ilmiöt.fi/peli.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://www.ilmiöt.fi/tietoa.html</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <priority>0.5</priority>
     <changefreq>yearly</changefreq>
   </url>

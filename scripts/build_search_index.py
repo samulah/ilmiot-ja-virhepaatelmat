@@ -39,7 +39,7 @@ def extract_text(html_path: Path) -> str:
         return ""
 
     # Kohina pois ennen tekstin poimintaa.
-    for sel in ("ilmio-byline", "ilmio-tag"):
+    for sel in ("ilmio-byline", "ilmio-tag", "peli-harjoittele"):
         for el in il.find_all(class_=sel):
             el.decompose()
 

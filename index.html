@@ -111,6 +111,24 @@
     }
     .random-btn:hover { background: rgba(201,168,76,0.3); }
     .random-btn:active { transform: scale(0.97); }
+    /* Vedätys-peli: linkki, ei ilmiö. EI luokkaa hub-kortti — haku,
+       nuolinäppäimet ja randomIlmio() keräävät ne kaikki. */
+    .peli-btn {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--c-primary);
+      color: var(--c-primary-dark);
+      border: 1px solid var(--c-primary);
+      padding: 0.5rem 1rem;
+      font-size: 0.82em;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.12s;
+    }
+    .peli-btn:hover, .peli-btn:focus-visible { background: #dcbb5e; }
 
     /* ── Main ── */
     .hub-main {
@@ -128,6 +146,18 @@
       line-height: 1.55;
       color: #5a4712;
     }
+
+    .peli-nosto {
+      max-width: 740px;
+      margin: -0.6rem auto 1.7rem;
+      background: #FBF5E0;
+      border-left: 3px solid var(--c-primary);
+      padding: 0.7rem 1rem;
+      font-size: 0.9em;
+      line-height: 1.55;
+      color: #3d3008;
+    }
+    .peli-nosto a { color: var(--c-primary-mid); font-weight: 600; white-space: nowrap; }
 
     /* ── Aihepiirinavigaatio ── */
     .hub-katnav {
@@ -372,6 +402,8 @@
       .hub-header { flex-wrap: wrap; padding: 0.75rem 1rem; }
       .hub-header-left { order: 1; flex: 1; }
       .random-btn { order: 2; }
+      .peli-btn { order: 2; padding: 0.5rem 0.65rem; }
+      .peli-btn .btn-label { display: none; }
       .hub-haku { order: 3; flex: 1 1 100%; width: 100%; }
       .hub-kortit { grid-template-columns: 1fr; }
       .hub-main { padding: 1rem 0.9rem 3rem; }
@@ -1595,6 +1627,10 @@
     <p>148 ilmiötä &middot; Miten valta toimii &middot; <a class="paivitetty-btn" href="muutokset.html" title="Mitä sivustolle on tehty">Päivitetty 3.10.2026 &rsaquo;</a></p>
   </div>
   <input class="hub-haku" type="search" id="haku" placeholder="Etsi ilmiötä&hellip;" autocomplete="off" spellcheck="false">
+  <a class="peli-btn" href="peli.html" title="Vedätys — päivän peli" aria-label="Vedätys — päivän peli">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 22V3"/><path d="M5 4h13l-3 4.5L18 13H5"/></svg>
+    <span class="btn-label">Päivän peli</span>
+  </a>
   <button class="random-btn" onclick="randomIlmio()" title="Satunnainen ilmiö (R)">
     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>
     <span class="btn-label">Satunnainen</span>
@@ -1603,6 +1639,7 @@
 
 <main class="hub-main" id="hub-main">
 <p class="hub-intro"><strong>Ilmiöitä</strong> on suomenkielinen tietopankki, joka selittää 148 yhteiskunnallista ilmiötä, kognitiivista harhaa ja manipulointitaktiikkaa: miten valta keskittyy, propaganda uppoaa, byrokratia jumiutuu ja huijaukset sekä myyntikikat vetoavat. Jokainen artikkeli kertoo, mistä ilmiössä on kyse, miten se toimii käytännössä ja miten siltä suojaudutaan — jokaisen ilmiön lopussa on konkreettiset vastakeinot. Sivusto on kirjoitettu tavalliselle lukijalle ilman psykologian tai taloustieteen taustaa, ja se sopii yhtä lailla työelämän päätöksentekijälle, opiskelijalle kuin uutisvirran kriittiselle seuraajalle. Kun ilmiöllä on nimi, sen tunnistaa nopeammin — ja siihen osaa varautua.</p>
+<p class="peli-nosto"><strong>Uutta: Vedätys.</strong> Päivän peli, jossa tunnistat viidestä tilanteesta, missä joku ohjaa sinua, missä oma pää tekee tepposet ja mikä on ihan kunnossa. Puolitoista minuuttia. <a href="peli.html">Pelaa päivän erä &rarr;</a></p>
 <nav class="hub-katnav" aria-label="Aihepiirit">
   <a href="#vallan-rakenteet">Vallan rakenteet<span>8</span></a>
   <a href="#informaatio-ja-propaganda">Informaatio ja propaganda<span>13</span></a>
@@ -3427,7 +3464,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 <!-- NOSTOT-LOPPU -->
   <footer class="ilmio-footer">
-    <p>© 2026 Ilmiöitä — Miten valta toimii · Kirjoittanut Ilmiömies · <a href="tietoa.html">Tietoa sivustosta ja tekijästä</a> · <a href="muutokset.html">Mitä sivustolle on tehty</a></p>
+    <p>© 2026 Ilmiöitä — Miten valta toimii · Kirjoittanut Ilmiömies · <a href="tietoa.html">Tietoa sivustosta ja tekijästä</a> · <a href="peli.html">Vedätys — päivän peli</a> · <a href="muutokset.html">Mitä sivustolle on tehty</a></p>
   </footer>
 </body>
 </html>

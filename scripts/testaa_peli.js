@@ -2,7 +2,7 @@
 /*
  * Läpipeluutesti Vedätys-pelille.
  *
- * Rakentaa minimaalisen DOM-tyngän, lataa OIKEAN luonnokset/peli.html:n
+ * Rakentaa minimaalisen DOM-tyngän, lataa OIKEAN peli.html:n
  * inline-skriptin ja pelaa erän läpi napin painalluksesta loppuruutuun.
  * Ei selainta, ei jsdomia, ei package.jsonia — sivustolla ei ole
  * JS-työkaluketjua eikä sellaista tuoda tämän takia.
@@ -25,10 +25,10 @@ const fs = require('fs');
 const path = require('path');
 
 const JUURI = path.join(__dirname, '..');
-// Oletuksena luonnos. PELI_SIVU-ympäristömuuttujalla testin voi ajaa myös
-// julkaistua juuren peli.html:ää vasten — tai rikottua kopiota vasten, kun
-// halutaan varmistua siitä että testi oikeasti kaatuu.
-const SIVU = process.env.PELI_SIVU || path.join(JUURI, 'luonnokset', 'peli.html');
+// Oletuksena julkaistu juuren peli.html (3.10.2026 asti luonnos).
+// PELI_SIVU-ympäristömuuttujalla testin voi ajaa muuta kopiota vasten —
+// esimerkiksi rikottua, kun halutaan varmistua siitä että testi oikeasti kaatuu.
+const SIVU = process.env.PELI_SIVU || path.join(JUURI, 'peli.html');
 const DATA = path.join(JUURI, 'data', 'peli-pankki.js');
 
 let virheita = 0;
