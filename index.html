@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <title>Manipulointi, propaganda ja huijaukset — 148 ilmiötä | Ilmiöitä</title>
+  <title>Manipulointi, propaganda ja huijaukset — 165 ilmiötä | Ilmiöitä</title>
   <link rel="stylesheet" href="fonts/fonts.css">
   <link rel="stylesheet" href="fonts/spectral.css">
   <style>
@@ -129,6 +129,7 @@
       transition: background 0.12s;
     }
     .peli-btn:hover, .peli-btn:focus-visible { background: #dcbb5e; }
+    .peli-btn .btn-lyhyt { display: none; }
 
     /* ── Main ── */
     .hub-main {
@@ -404,6 +405,8 @@
       .random-btn { order: 2; }
       .peli-btn { order: 2; padding: 0.5rem 0.65rem; }
       .peli-btn .btn-label { display: none; }
+      .peli-btn .btn-lyhyt { display: inline; }
+      .random-btn .btn-label { display: none; }
       .hub-haku { order: 3; flex: 1 1 100%; width: 100%; }
       .hub-kortit { grid-template-columns: 1fr; }
       .hub-main { padding: 1rem 0.9rem 3rem; }
@@ -415,6 +418,7 @@
     }
     @media (max-width: 380px) {
       .random-btn .btn-label { display: none; }
+      .peli-btn .btn-lyhyt { display: none; }
     }
     @media (prefers-reduced-motion: reduce) {
       .hub-kortti, .hub-katnav a, .hub-nuoli, .hub-haku { transition: none; }
@@ -423,17 +427,17 @@
   </style>
 
   <!-- SEO -->
-  <meta name="description" content="Ilmiöt selitettynä suomeksi: 148 ilmiötä vallankäytöstä, propagandasta, harhoista, byrokratiasta ja huijauksista — esimerkit ja vastakeinot.">
+  <meta name="description" content="Ilmiöt selitettynä suomeksi: 165 ilmiötä vallankäytöstä, propagandasta, harhoista, byrokratiasta ja huijauksista — esimerkit ja vastakeinot.">
   <link rel="canonical" href="https://www.ilmiöt.fi/">
-  <meta property="og:title" content="Manipulointi, propaganda ja huijaukset — 148 ilmiötä | Ilmiöitä">
-  <meta property="og:description" content="Ilmiöt selitettynä suomeksi: 148 ilmiötä vallankäytöstä, propagandasta, harhoista, byrokratiasta ja huijauksista — esimerkit ja vastakeinot.">
+  <meta property="og:title" content="Manipulointi, propaganda ja huijaukset — 165 ilmiötä | Ilmiöitä">
+  <meta property="og:description" content="Ilmiöt selitettynä suomeksi: 165 ilmiötä vallankäytöstä, propagandasta, harhoista, byrokratiasta ja huijauksista — esimerkit ja vastakeinot.">
   <meta property="og:url" content="https://www.ilmiöt.fi/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fi_FI">
   <meta property="og:site_name" content="Ilmiöitä — Miten valta toimii">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Manipulointi, propaganda ja huijaukset — 148 ilmiötä | Ilmiöitä">
-  <meta name="twitter:description" content="Ilmiöt selitettynä suomeksi: 148 ilmiötä vallankäytöstä, propagandasta, harhoista, byrokratiasta ja huijauksista — esimerkit ja vastakeinot.">
+  <meta name="twitter:title" content="Manipulointi, propaganda ja huijaukset — 165 ilmiötä | Ilmiöitä">
+  <meta name="twitter:description" content="Ilmiöt selitettynä suomeksi: 165 ilmiötä vallankäytöstä, propagandasta, harhoista, byrokratiasta ja huijauksista — esimerkit ja vastakeinot.">
   <meta property="og:image" content="https://www.ilmiöt.fi/og/brand.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -451,7 +455,7 @@
         "Ilmiöt",
         "ilmiöt.fi"
       ],
-      "description": "Suomenkielinen tietopankki, joka selittää 148 yhteiskunnallista ilmiötä: vallankäyttö, propaganda, kognitiiviset harhat, byrokratia, huijaukset ja myyntikikat.",
+      "description": "Suomenkielinen tietopankki, joka selittää 165 yhteiskunnallista ilmiötä: vallankäyttö, propaganda, kognitiiviset harhat, byrokratia, huijaukset ja myyntikikat.",
       "url": "https://www.ilmiöt.fi/",
       "inLanguage": "fi",
       "publisher": {
@@ -480,8 +484,8 @@
       "@type": "CollectionPage",
       "@id": "https://www.ilmiöt.fi/#collectionpage",
       "url": "https://www.ilmiöt.fi/",
-      "name": "Manipulointi, propaganda ja huijaukset — 148 ilmiötä",
-      "description": "Ilmiöt selitettynä suomeksi: 148 ilmiötä vallankäytöstä, propagandasta, harhoista, byrokratiasta ja huijauksista — esimerkit ja vastakeinot.",
+      "name": "Manipulointi, propaganda ja huijaukset — 165 ilmiötä",
+      "description": "Ilmiöt selitettynä suomeksi: 165 ilmiötä vallankäytöstä, propagandasta, harhoista, byrokratiasta ja huijauksista — esimerkit ja vastakeinot.",
       "inLanguage": "fi",
       "dateModified": "2026-10-03",
       "isPartOf": {
@@ -497,7 +501,7 @@
         "@type": "ItemList",
         "@id": "https://www.ilmiöt.fi/#itemlist",
         "name": "Kaikki ilmiöt",
-        "numberOfItems": 148,
+        "numberOfItems": 165,
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -1386,6 +1390,108 @@
             "position": 148,
             "name": "Harmaa kivi — kun lähteminen ei ole vaihtoehto",
             "url": "https://www.ilmiöt.fi/harmaa-kivi.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 149,
+            "name": "Trollaus — provosointi, jonka palkkio on reaktio",
+            "url": "https://www.ilmiöt.fi/trollaus.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 150,
+            "name": "Verkon estottomuus — miksi ruudun takaa sanotaan enemmän",
+            "url": "https://www.ilmiöt.fi/verkon-estottomuus.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 151,
+            "name": "Pimeä tetradi — narsismi, machiavellismi, psykopatia ja sadismi",
+            "url": "https://www.ilmiöt.fi/pimea-tetradi.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 152,
+            "name": "Kuka tahansa voi trollata — huono päivä ja huono ketju",
+            "url": "https://www.ilmiöt.fi/kuka-tahansa-voi-trollata.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 153,
+            "name": "Se oli vain vitsi — ironia vastuun kiertämisenä",
+            "url": "https://www.ilmiöt.fi/vain-vitsi.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 154,
+            "name": "Sealioning — kohtelias kysely, joka ei lopu koskaan",
+            "url": "https://www.ilmiöt.fi/sealioning.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 155,
+            "name": "Kunhan kysyn — väite kysymyksen muodossa",
+            "url": "https://www.ilmiöt.fi/kunhan-kysyn.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 156,
+            "name": "Huolitrollaus — vastustaja esiintyy huolestuneena ystävänä",
+            "url": "https://www.ilmiöt.fi/huolitrollaus.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 157,
+            "name": "Motte and bailey — rohkea väite, turvallinen perääntymistie",
+            "url": "https://www.ilmiöt.fi/motte-and-bailey.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 158,
+            "name": "Nutpicking — vastapuolen hölmöin edustaja koko joukon kasvoiksi",
+            "url": "https://www.ilmiöt.fi/nutpicking.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 159,
+            "name": "Tone policing — sävystä puhutaan, ettei tarvitse puhua asiasta",
+            "url": "https://www.ilmiöt.fi/tone-policing.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 160,
+            "name": "Kafkatrapping — kun kiistäminen todistaa syyllisyyden",
+            "url": "https://www.ilmiöt.fi/kafkatrapping.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 161,
+            "name": "Shitpostaus — keskustelu hukutetaan roskaan",
+            "url": "https://www.ilmiöt.fi/shitpostaus.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 162,
+            "name": "Dunkkaus ja ratio — nolaaminen yleisön edessä",
+            "url": "https://www.ilmiöt.fi/dunkkaus.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 163,
+            "name": "Maalittaminen — joukko kohdistetaan yhteen ihmiseen",
+            "url": "https://www.ilmiöt.fi/maalittaminen.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 164,
+            "name": "Doksaus — verkon riita siirtyy kotiovelle",
+            "url": "https://www.ilmiöt.fi/doksaus.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 165,
+            "name": "Älä ruoki trollia — milloin hiljaisuus toimii ja milloin ei",
+            "url": "https://www.ilmiöt.fi/trollin-ruokkiminen.html"
           }
         ]
       }
@@ -1427,7 +1533,7 @@
           "name": "Mitä ilmiöitä sivusto käsittelee?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sivusto selittää 148 ilmiötä neljässätoista kategoriassa: vallan rakenteet, informaatio ja propaganda, psykologia ja kognitio, byrokratia ja organisaatio, projekti- ja ohjelmistokehitys, kasvun dynamiikka, huijaukset ja petokset, myyntikikat ja painostus, alustatalous ja algoritmit, pesut ja maineenhallinta, työelämän ilmiöt sekä tilastoilla valehtelu. Mukana ovat esimerkiksi Overton-ikkuna, gaslighting, Goodhartin laki, sunk cost -harha, Brooksin laki ja Ponzi-huijaus."
+            "text": "Sivusto selittää 165 ilmiötä viidessätoista kategoriassa: vallan rakenteet, informaatio ja propaganda, psykologia ja kognitio, byrokratia ja organisaatio, projekti- ja ohjelmistokehitys, kasvun dynamiikka, huijaukset ja petokset, myyntikikat ja painostus, alustatalous ja algoritmit, pesut ja maineenhallinta, työelämän ilmiöt sekä tilastoilla valehtelu. Mukana ovat esimerkiksi Overton-ikkuna, gaslighting, Goodhartin laki, sunk cost -harha, Brooksin laki ja Ponzi-huijaus."
           }
         },
         {
@@ -1624,12 +1730,12 @@
   <img class="hub-logo" src="favicon.svg" alt="Ilmiöitä-logo: punainen varoituslippu" width="36" height="36">
   <div class="hub-header-left">
     <h1>Ilmiöitä</h1>
-    <p>148 ilmiötä &middot; Miten valta toimii &middot; <a class="paivitetty-btn" href="muutokset.html" title="Mitä sivustolle on tehty">Päivitetty 3.10.2026 &rsaquo;</a></p>
+    <p>165 ilmiötä &middot; Miten valta toimii &middot; <a class="paivitetty-btn" href="muutokset.html" title="Mitä sivustolle on tehty">Päivitetty 3.10.2026 &rsaquo;</a></p>
   </div>
   <input class="hub-haku" type="search" id="haku" placeholder="Etsi ilmiötä&hellip;" autocomplete="off" spellcheck="false">
   <a class="peli-btn" href="peli.html" title="Vedätys — päivän peli" aria-label="Vedätys — päivän peli">
     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 22V3"/><path d="M5 4h13l-3 4.5L18 13H5"/></svg>
-    <span class="btn-label">Päivän peli</span>
+    <span class="btn-label">Päivän peli</span><span class="btn-lyhyt">Peli</span>
   </a>
   <button class="random-btn" onclick="randomIlmio()" title="Satunnainen ilmiö (R)">
     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>
@@ -1638,7 +1744,7 @@
 </header>
 
 <main class="hub-main" id="hub-main">
-<p class="hub-intro"><strong>Ilmiöitä</strong> on suomenkielinen tietopankki, joka selittää 148 yhteiskunnallista ilmiötä, kognitiivista harhaa ja manipulointitaktiikkaa: miten valta keskittyy, propaganda uppoaa, byrokratia jumiutuu ja huijaukset sekä myyntikikat vetoavat. Jokainen artikkeli kertoo, mistä ilmiössä on kyse, miten se toimii käytännössä ja miten siltä suojaudutaan — jokaisen ilmiön lopussa on konkreettiset vastakeinot. Sivusto on kirjoitettu tavalliselle lukijalle ilman psykologian tai taloustieteen taustaa, ja se sopii yhtä lailla työelämän päätöksentekijälle, opiskelijalle kuin uutisvirran kriittiselle seuraajalle. Kun ilmiöllä on nimi, sen tunnistaa nopeammin — ja siihen osaa varautua.</p>
+<p class="hub-intro"><strong>Ilmiöitä</strong> on suomenkielinen tietopankki, joka selittää 165 yhteiskunnallista ilmiötä, kognitiivista harhaa ja manipulointitaktiikkaa: miten valta keskittyy, propaganda uppoaa, byrokratia jumiutuu ja huijaukset sekä myyntikikat vetoavat. Jokainen artikkeli kertoo, mistä ilmiössä on kyse, miten se toimii käytännössä ja miten siltä suojaudutaan — jokaisen ilmiön lopussa on konkreettiset vastakeinot. Sivusto on kirjoitettu tavalliselle lukijalle ilman psykologian tai taloustieteen taustaa, ja se sopii yhtä lailla työelämän päätöksentekijälle, opiskelijalle kuin uutisvirran kriittiselle seuraajalle. Kun ilmiöllä on nimi, sen tunnistaa nopeammin — ja siihen osaa varautua.</p>
 <p class="peli-nosto"><strong>Uutta: Vedätys.</strong> Päivän peli, jossa tunnistat viidestä tilanteesta, missä joku ohjaa sinua, missä oma pää tekee tepposet ja mikä on ihan kunnossa. Puolitoista minuuttia. <a href="peli.html">Pelaa päivän erä &rarr;</a></p>
 <nav class="hub-katnav" aria-label="Aihepiirit">
   <a href="#vallan-rakenteet">Vallan rakenteet<span>8</span></a>
@@ -1655,6 +1761,7 @@
   <a href="#tilastoilla-valehtelu-kategoria">Tilastoilla valehtelu<span>9</span></a>
   <a href="#media-ja-julkisuus-kategoria">Media ja julkisuus<span>10</span></a>
   <a href="#roolit-ja-valtapelit">Roolit ja valtapelit<span>9</span></a>
+  <a href="#trollaus-ja-keskustelun-sabotointi">Trollaus ja keskustelun sabotointi<span>17</span></a>
 </nav>
 <!-- NOSTOT-ALKU — scripts/paivita_suosio.py injektoi, älä muokkaa käsin -->
 <section class="nostot" id="nostot" hidden>
@@ -3015,6 +3122,150 @@
   </div>
 </div>
 
+<div class="hub-kategoria" id="trollaus-ja-keskustelun-sabotointi">
+  <h2 class="hub-kat-label"><span class="hub-kat-nro">15</span>Trollaus ja keskustelun sabotointi<span class="hub-kat-count"> · 17 ilmiötä</span></h2>
+  <p class="hub-kat-desc">Miksi ihmiset trollaavat, ja miten keskustelu kaadetaan niin, että kaataja näyttää sen ainoalta asialliselta osapuolelta. Sealioning, kunhan kysyn, huolitrollaus, maalittaminen ja doksaus — ja mitä trollille kannattaa vastata, jos mitään.</p>
+  <a class="hub-kat-linkki" href="kategoria-trollaus-ja-keskustelun-sabotointi.html">Lue koko kategoria <span aria-hidden="true">&rarr;</span></a>
+  <div class="hub-kortit">
+<a href="trollaus.html" class="hub-kortti" style="--c:#00838f">
+  <span class="hub-numero">149</span>
+  <span class="hub-teksti">
+    <span class="hub-nimi">Trollaus</span>
+    <span class="hub-kuvaus">Provosointi, jonka palkkio on reaktio — ei se, kumpi on oikeassa.</span>
+  </span>
+  <span class="hub-nuoli" aria-hidden="true">›</span>
+</a>
+<a href="verkon-estottomuus.html" class="hub-kortti" style="--c:#00695c">
+  <span class="hub-numero">150</span>
+  <span class="hub-teksti">
+    <span class="hub-nimi">Verkon estottomuus</span>
+    <span class="hub-kuvaus">Nimettömyys, näkymättömyys ja viive: miksi verkossa sanotaan, mitä kasvokkain ei sanottaisi.</span>
+  </span>
+  <span class="hub-nuoli" aria-hidden="true">›</span>
+</a>
+<a href="pimea-tetradi.html" class="hub-kortti" style="--c:#37474f">
+  <span class="hub-numero">151</span>
+  <span class="hub-teksti">
+    <span class="hub-nimi">Pimeä tetradi</span>
+    <span class="hub-kuvaus">Narsismi, machiavellismi, psykopatia ja sadismi — ja se yksi, joka selittää trollausta parhaiten.</span>
+  </span>
+  <span class="hub-nuoli" aria-hidden="true">›</span>
+</a>
+<a href="kuka-tahansa-voi-trollata.html" class="hub-kortti" style="--c:#546e7a">
+  <span class="hub-numero">152</span>
+  <span class="hub-teksti">
+    <span class="hub-nimi">Kuka tahansa voi trollata</span>
+    <span class="hub-kuvaus">Huono päivä ja valmiiksi myrkyllinen ketju riittävät: trollaus on myös tilanne, ei vain luonne.</span>
+  </span>
+  <span class="hub-nuoli" aria-hidden="true">›</span>
+</a>
+<a href="vain-vitsi.html" class="hub-kortti" style="--c:#8d6e63">
+  <span class="hub-numero">153</span>
+  <span class="hub-teksti">
+    <span class="hub-nimi">Se oli vain vitsi</span>
+    <span class="hub-kuvaus">Ironia vastuun kiertämisenä: kommentti on vakava, jos se toimii, ja vitsi, jos siitä tulee seurauksia.</span>
+  </span>
+  <span class="hub-nuoli" aria-hidden="true">›</span>
+</a>
+<a href="sealioning.html" class="hub-kortti" style="--c:#006064">
+  <span class="hub-numero">154</span>
+  <span class="hub-teksti">
+    <span class="hub-nimi">Sealioning</span>
+    <span class="hub-kuvaus">Kohtelias kysely, joka ei lopu koskaan: jokainen vastaus synnyttää uuden lähdepyynnön.</span>
+  </span>
+  <span class="hub-nuoli" aria-hidden="true">›</span>
+</a>
+<a href="kunhan-kysyn.html" class="hub-kortti" style="--c:#0277bd">
+  <span class="hub-numero">155</span>
+  <span class="hub-teksti">
+    <span class="hub-nimi">Kunhan kysyn</span>
+    <span class="hub-kuvaus">Väite puetaan kysymykseksi, jolloin sitä ei tarvitse perustella eikä siitä voi joutua vastuuseen.</span>
+  </span>
+  <span class="hub-nuoli" aria-hidden="true">›</span>
+</a>
+<a href="huolitrollaus.html" class="hub-kortti" style="--c:#5d4037">
+  <span class="hub-numero">156</span>
+  <span class="hub-teksti">
+    <span class="hub-nimi">Huolitrollaus</span>
+    <span class="hub-kuvaus">Vastustaja esiintyy huolestuneena kannattajana ja neuvoo luopumaan juuri siitä, mitä vastustaa.</span>
+  </span>
+  <span class="hub-nuoli" aria-hidden="true">›</span>
+</a>
+<a href="motte-and-bailey.html" class="hub-kortti" style="--c:#455a64">
+  <span class="hub-numero">157</span>
+  <span class="hub-teksti">
+    <span class="hub-nimi">Motte and bailey</span>
+    <span class="hub-kuvaus">Rohkea väite pihalla, vaatimaton väite tornissa — ja perääntyminen aina kun joku kyseenalaistaa.</span>
+  </span>
+  <span class="hub-nuoli" aria-hidden="true">›</span>
+</a>
+<a href="nutpicking.html" class="hub-kortti" style="--c:#6a1b9a">
+  <span class="hub-numero">158</span>
+  <span class="hub-teksti">
+    <span class="hub-nimi">Nutpicking</span>
+    <span class="hub-kuvaus">Vastapuolen hölmöin yksittäinen kommentti nostetaan koko joukon kasvoiksi.</span>
+  </span>
+  <span class="hub-nuoli" aria-hidden="true">›</span>
+</a>
+<a href="tone-policing.html" class="hub-kortti" style="--c:#ad1457">
+  <span class="hub-numero">159</span>
+  <span class="hub-teksti">
+    <span class="hub-nimi">Tone policing</span>
+    <span class="hub-kuvaus">Keskustelu siirretään siihen, miten asia sanottiin — ettei tarvitse puhua siitä, mitä sanottiin.</span>
+  </span>
+  <span class="hub-nuoli" aria-hidden="true">›</span>
+</a>
+<a href="kafkatrapping.html" class="hub-kortti" style="--c:#4e342e">
+  <span class="hub-numero">160</span>
+  <span class="hub-teksti">
+    <span class="hub-nimi">Kafkatrapping</span>
+    <span class="hub-kuvaus">Kiistäminen todistaa syyllisyyden: ansa, josta ei pääse ulos millään vastauksella.</span>
+  </span>
+  <span class="hub-nuoli" aria-hidden="true">›</span>
+</a>
+<a href="shitpostaus.html" class="hub-kortti" style="--c:#795548">
+  <span class="hub-numero">161</span>
+  <span class="hub-teksti">
+    <span class="hub-nimi">Shitpostaus</span>
+    <span class="hub-kuvaus">Tahallisen arvotonta sisältöä niin paljon, ettei asiallista keskustelua enää löydä sen alta.</span>
+  </span>
+  <span class="hub-nuoli" aria-hidden="true">›</span>
+</a>
+<a href="dunkkaus.html" class="hub-kortti" style="--c:#d84315">
+  <span class="hub-numero">162</span>
+  <span class="hub-teksti">
+    <span class="hub-nimi">Dunkkaus ja ratio</span>
+    <span class="hub-kuvaus">Lainausviestillä nolataan yleisön edessä — vastaus ei ole tarkoitettu sille, jolle se vastaa.</span>
+  </span>
+  <span class="hub-nuoli" aria-hidden="true">›</span>
+</a>
+<a href="maalittaminen.html" class="hub-kortti" style="--c:#c62828">
+  <span class="hub-numero">163</span>
+  <span class="hub-teksti">
+    <span class="hub-nimi">Maalittaminen</span>
+    <span class="hub-kuvaus">Yksi osoittaa kohteen, joukko hoitaa loput: painostus, joka ei näytä kenenkään yksittäisen teolta.</span>
+  </span>
+  <span class="hub-nuoli" aria-hidden="true">›</span>
+</a>
+<a href="doksaus.html" class="hub-kortti" style="--c:#b71c1c">
+  <span class="hub-numero">164</span>
+  <span class="hub-teksti">
+    <span class="hub-nimi">Doksaus</span>
+    <span class="hub-kuvaus">Henkilötiedot kaivetaan esiin ja julkaistaan: verkon riita siirtyy kotiovelle.</span>
+  </span>
+  <span class="hub-nuoli" aria-hidden="true">›</span>
+</a>
+<a href="trollin-ruokkiminen.html" class="hub-kortti" style="--c:#2e7d32">
+  <span class="hub-numero">165</span>
+  <span class="hub-teksti">
+    <span class="hub-nimi">Älä ruoki trollia</span>
+    <span class="hub-kuvaus">Reaktio on trollin palkkio. Neuvo toimii yksittäiseen provosoijaan — ei maalittamiseen.</span>
+  </span>
+  <span class="hub-nuoli" aria-hidden="true">›</span>
+</a>
+  </div>
+</div>
+
   <div class="hub-tyhja" id="hub-tyhja">Ei tuloksia haullesi.</div>
   <p class="hub-vinkki">
     <kbd>&#8592;</kbd> <kbd>&#8594;</kbd>&thinsp;selaa &nbsp;&middot;&nbsp;
@@ -3080,7 +3331,7 @@
     ulospäin näkyvä toistuva seuraus.</p>
 
     <h2>Mitä ilmiöitä sivusto käsittelee?</h2>
-    <p>Sivusto selittää 148 ilmiötä neljässätoista kategoriassa:
+    <p>Sivusto selittää 165 ilmiötä viidessätoista kategoriassa:
     <a href="#vallan-rakenteet">vallan rakenteet</a>,
     <a href="#informaatio-ja-propaganda">informaatio ja propaganda</a>,
     <a href="#psykologia-ja-kognitio">psykologia ja kognitio</a>,

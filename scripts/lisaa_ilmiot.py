@@ -45,28 +45,46 @@ LUONNOKSET = ROOT / "luonnokset"   # kaikkien erien yhteinen kansio (14.8.2026)
 # perään samaan hub-kategoria-lohkoon. Ankkuri saa olla myös toinen tämän
 # taulukon slug, jolloin erä ketjuuntuu kategorian loppuun.
 #
-# 22.9.2026: uusi 14. kategoria "Roolit ja valtapelit" (9 ilmiötä, 140-148).
-# Lohko on kirjoitettu index.html:ään käsin → ajo vaatii --kortit-valmiina,
-# jolloin ankkurisaraketta ei käytetä (se on tässä vain dokumentaationa).
+# 3.10.2026: uusi 15. kategoria "Trollaus ja keskustelun sabotointi" (17 ilmiötä,
+# 149-165). Lohko liitettiin index.html:ään tiedostosta
+# luonnokset/trollaus-hub-lohko.html → ajo vaatii --kortit-valmiina, jolloin
+# ankkurisaraketta ei käytetä (se on tässä vain dokumentaationa).
+# Edellinen erä (22.9., Roolit ja valtapelit, 140-148) julkaistiin 3.10.2026.
 UUDET = {
-    "draamakolmio": ("vihamielisen-median-harha", "#ad1457", "Draamakolmio",
-        "Uhri, pelastaja ja vainooja — kolme roolia, joissa kukaan ei ratkaise sitä mistä riidellään."),
-    "roolinvaihto": ("draamakolmio", "#880e4f", "Roolinvaihto",
-        "Pelastajasta tulee vainooja ja auttajasta uhri — hetki, joka tekee kuviosta pelin."),
-    "voittajakolmio": ("roolinvaihto", "#00695c", "Voittajakolmio",
-        "Sama kolmio ilman peliä: haavoittuva, välittävä ja jämäkkä uhrin, pelastajan ja vainoojan tilalla."),
-    "kaksoissidos": ("voittajakolmio", "#4a148c", "Kaksoissidos",
-        "Kaksi vaatimusta, jotka sulkevat toisensa pois — eikä ristiriidasta saa mainita eikä tilanteesta poistua."),
-    "mahdollistaja": ("kaksoissidos", "#ef6c00", "Mahdollistaja",
-        "Se joka paikkaa jäljet pitää ongelman käynnissä: seuraukset eivät koskaan osu siihen joka ne aiheuttaa."),
-    "syntipukki": ("mahdollistaja", "#b71c1c", "Syntipukki-rooli",
-        "Ryhmällä on yksi nimetty kantaja — ja kun hän lähtee, tilalle valitaan uusi."),
-    "valirikko": ("syntipukki", "#37474f", "Välirikko",
-        "Suhde katkaistaan kokonaan, ja lasku lankeaa eri tavalla lähtijälle kuin jäävälle."),
-    "no-contact": ("valirikko", "#263238", "No contact",
-        "Täydellinen katkaisu poistaa pelistä toisen pelaajan — myös satunnaiset viestit, jotka pitäisivät sen käynnissä."),
-    "harmaa-kivi": ("no-contact", "#607d8b", "Harmaa kivi",
-        "Kun lähteminen ei ole mahdollista: reaktio on palkkio, ja tylsyys vie palkkion pois."),
+    "trollaus": ("harmaa-kivi", "#00838f", "Trollaus",
+        "Provosointi, jonka palkkio on reaktio — ei se, kumpi on oikeassa."),
+    "verkon-estottomuus": ("trollaus", "#00695c", "Verkon estottomuus",
+        "Nimettömyys, näkymättömyys ja viive: miksi verkossa sanotaan, mitä kasvokkain ei sanottaisi."),
+    "pimea-tetradi": ("verkon-estottomuus", "#37474f", "Pimeä tetradi",
+        "Narsismi, machiavellismi, psykopatia ja sadismi — ja se yksi, joka selittää trollausta parhaiten."),
+    "kuka-tahansa-voi-trollata": ("pimea-tetradi", "#546e7a", "Kuka tahansa voi trollata",
+        "Huono päivä ja valmiiksi myrkyllinen ketju riittävät: trollaus on myös tilanne, ei vain luonne."),
+    "vain-vitsi": ("kuka-tahansa-voi-trollata", "#8d6e63", "Se oli vain vitsi",
+        "Ironia vastuun kiertämisenä: kommentti on vakava, jos se toimii, ja vitsi, jos siitä tulee seurauksia."),
+    "sealioning": ("vain-vitsi", "#006064", "Sealioning",
+        "Kohtelias kysely, joka ei lopu koskaan: jokainen vastaus synnyttää uuden lähdepyynnön."),
+    "kunhan-kysyn": ("sealioning", "#0277bd", "Kunhan kysyn",
+        "Väite puetaan kysymykseksi, jolloin sitä ei tarvitse perustella eikä siitä voi joutua vastuuseen."),
+    "huolitrollaus": ("kunhan-kysyn", "#5d4037", "Huolitrollaus",
+        "Vastustaja esiintyy huolestuneena kannattajana ja neuvoo luopumaan juuri siitä, mitä vastustaa."),
+    "motte-and-bailey": ("huolitrollaus", "#455a64", "Motte and bailey",
+        "Rohkea väite pihalla, vaatimaton väite tornissa — ja perääntyminen aina kun joku kyseenalaistaa."),
+    "nutpicking": ("motte-and-bailey", "#6a1b9a", "Nutpicking",
+        "Vastapuolen hölmöin yksittäinen kommentti nostetaan koko joukon kasvoiksi."),
+    "tone-policing": ("nutpicking", "#ad1457", "Tone policing",
+        "Keskustelu siirretään siihen, miten asia sanottiin — ettei tarvitse puhua siitä, mitä sanottiin."),
+    "kafkatrapping": ("tone-policing", "#4e342e", "Kafkatrapping",
+        "Kiistäminen todistaa syyllisyyden: ansa, josta ei pääse ulos millään vastauksella."),
+    "shitpostaus": ("kafkatrapping", "#795548", "Shitpostaus",
+        "Tahallisen arvotonta sisältöä niin paljon, ettei asiallista keskustelua enää löydä sen alta."),
+    "dunkkaus": ("shitpostaus", "#d84315", "Dunkkaus ja ratio",
+        "Lainausviestillä nolataan yleisön edessä — vastaus ei ole tarkoitettu sille, jolle se vastaa."),
+    "maalittaminen": ("dunkkaus", "#c62828", "Maalittaminen",
+        "Yksi osoittaa kohteen, joukko hoitaa loput: painostus, joka ei näytä kenenkään yksittäisen teolta."),
+    "doksaus": ("maalittaminen", "#b71c1c", "Doksaus",
+        "Henkilötiedot kaivetaan esiin ja julkaistaan: verkon riita siirtyy kotiovelle."),
+    "trollin-ruokkiminen": ("doksaus", "#2e7d32", "Älä ruoki trollia",
+        "Reaktio on trollin palkkio. Neuvo toimii yksittäiseen provosoijaan — ei maalittamiseen."),
 }
 
 KORTTI_RE = re.compile(

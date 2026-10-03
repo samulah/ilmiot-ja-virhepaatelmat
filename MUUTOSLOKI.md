@@ -1,9 +1,41 @@
 # Muutosloki — Ilmiöitä (www.ilmiöt.fi)
 
+## 3.10.2026 — Julkaistu Trollaus ja keskustelun sabotointi: 148 → 165, 15. kategoria
+
+17 sivua (149–165) luonnoksista juureen samalla ajolla kuin valtapelit, nyt
+tarkistuslistan mukaan: hub-lohko `luonnokset/trollaus-hub-lohko.html`:stä
+`index.html`:ään valtapelilohkon perään, rivi `hub-katnav`:iin, `UUDET` 17
+slugiin (generoitu hub-lohkon korteista, ei käsin), `lisaa_ilmiot.py
+--kortit-valmiina --kirjoita` (0 uudelleennumeroitua), esseen `paivitetty:`
+3.10., `build_kategoriat.py` (15) → `paivita_maarat.py` (165, "viidessätoista
+kategoriassa") → `build_liittyvat.py` → `build_sitemap.py` (184 URLia) →
+`build_search_index.py` (165 + 15).
+
+**Käyttäjän päätös: julkaistaan sellaisinaan.** Hyväksymättä jäivät omat
+suomennokset *kunhan kysyn*, *huolitrollaus*, *verkon estottomuus*, *doksaus*,
+*shitpostaus* ja *dunkkaus* sekä maalittamisen ja doksauksen oikeudellinen
+muotoilu. Korjaukset tehdään suoraan juuren sivuihin; muista silloin
+`dateModified` ja `build_search_index.py`.
+
+Kaksi lähdelukua tarkistettu tutkimusten tiivistelmistä (ei koko artikkeleista):
+Cheng ym. 2017 — huono mieliala ja trolliviestien näkeminen yhdessä
+kaksinkertaistavat trollaamisen todennäköisyyden (sivulla "lähes
+kaksinkertainen"); Brady ym. 2017 — leviäminen kasvaa 20 % jokaista
+moraalis-tunteellista sanaa kohti (sivulla "noin viidenneksellä").
+
+Luonnoskansiosta poistettu kategoriaesikatselu ja hub-lohkotiedosto.
+`scripts/build_trollaus_luonnokset.py`:tä **ei saa enää ajaa**. Kansiossa on
+jäljellä vain `vaalikeskustelun-lukuohje.html` ja suunnitelmat.
+
+Tarkistettu koko sivusto: 165 korttia, numerointi 1…165 ja PREV/NEXT-ketju
+täsmäävät joka sivulla, ei `noindex`- eikä `../`-jäänteitä, 185 juuren
+HTML-tiedostossa ei rikkinäisiä sisäisiä linkkejä, harjoittelulaatikko yhä 35
+sivulla eikä sen teksti ole hakuindeksissä.
+
 ## 3.10.2026 — Vedätys julkaistu (paikallisesti): peli.html juureen, epokki 3.10.
 
 Käyttäjän päätös: julkaistaan heti, vaiheen 2 kohdat sellaisinaan (kuratointi
-julkaisun jälkeen). Selaintestaus on yhä tekemättä.
+julkaisun jälkeen). Selaintestaus tehtiin julkaisun jälkeen, ks. alla.
 
 - `EPOKKI = "2026-10-03"` → `build_peli.py`. Yleisön ensimmäinen erä on #1.
   **Epokkia ei saa enää siirtää:** talletus on sidottu siihen, ja siirto
@@ -20,10 +52,25 @@ julkaisun jälkeen). Selaintestaus on yhä tekemättä.
 **Sisääntulot `index.html`:ssä** (kolme, ei yhtään `hub-kortti`-luokalla):
 headerin `a.peli-btn` Satunnainen-napin edessä, `p.peli-nosto` intron ja
 aihepiirinavin välissä, ja linkki footerissa. Footer-linkki myös
-`tietoa.html`:ssä. Mobiilissa (≤ 640 px) headerin napista näkyy vain kuvake,
-koska kaksi tekstinappia puristaisi otsikkorivin kasaan — siksi nosto on
-sisällössä, jotta peli löytyy puhelimellakin. **Nosto ei ollut
-suunnitelmassa**; sen voi poistaa yhdellä rivillä.
+`tietoa.html`:ssä. **Nosto ei ollut suunnitelmassa**; sen voi poistaa yhdellä
+rivillä.
+
+**Selaintestaus (ensimmäistä kertaa).** Koneella on Playwrightin Chromium
+(`~/.cache/ms-playwright`), vaikka aiempi merkintä väitti ettei selainta ole.
+Pelattu viisi erää 390 px:n ikkunassa: päivän erä ja neljä ansaerää kelloa
+siirtämällä (`page.clock.set_fixed_time`). Ei konsolivirheitä, ei
+epäonnistuneita pyyntöjä, ei vaakavieritystä; paluu samana päivänä avaa
+loppuruudun ja arkisto näyttää ruudukon. Testiskripti oli kertakäyttöinen eikä
+ole repossa. Headless-koneelta puuttuu emojifontti, joten 🟩🟨🟥 ja 🚩 näkyivät
+kuvakaappauksissa tyhjinä laatikoina — se on testikoneen ominaisuus, mutta
+oikealla puhelimella katsomatta sitä ei voi varmistaa.
+
+Testi löysi yhden vian: ensimmäinen versio headerin napista puristi
+etusivun otsikkolohkon 390 px:n ikkunassa 115 px:iin ja kasvatti sticky-
+headerin 125 → 155 px:iin. Korjattu: ≤ 640 px pelinapissa lukee "Peli" ja
+Satunnainen on pelkkä kuvake (ennen vasta ≤ 380 px); ≤ 380 px molemmat ovat
+kuvakkeita. Mitattu 1280 / 640 / 430 / 390 / 360 px: header 66 / 110 / 125 /
+125 / 125 px.
 
 Palvelimelle on vietävä `peli.html` **ja** `data/peli-pankki.js` (siellä on yhä
 vanha 150 kohdan pankki, epokki 23.8.).
