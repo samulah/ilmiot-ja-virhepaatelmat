@@ -1,0 +1,54 @@
+{
+ "ilmio": "motte-and-bailey",
+ "laji": "taktiikka",
+ "kohdat": [
+  {
+   "id": "motte-and-bailey-1",
+   "teksti": "— Kouluruoka on myrkkyä, sitä ei pitäis antaa yhdellekään lapselle. — Siis myrkkyä? — No mä sanoin vaan, et lasten pitäis saada terveellistä ruokaa. Vai ooksä siitäki eri mieltä?",
+   "konteksti": "some",
+   "kanava": "viesti",
+   "harhauttajat": ["kunhan-kysyn", "vain-vitsi"],
+   "paljastus": {
+    "mita": "Rohkea väite vaihtuu haastettaessa väitteeseen, josta kukaan ei ole eri mieltä.",
+    "miksi": "Näytät hyökkäävän itsestäänselvyyttä vastaan. Alkuperäinen väite jää kumoamatta ja palaa, kun lähdet.",
+    "sanot": "Terveellisestä ruuasta ollaan samaa mieltä. Väitätkö sä yhä, et kouluruoka on myrkkyä?"
+   }
+  },
+  {
+   "id": "motte-and-bailey-2",
+   "teksti": "— Nykynuoret ei tee päivääkään töitä. — Sun oma tytär on tehny kolmee työtä. — Niin niin, mä tarkotin vaan et ahkeruus on hyve. Sitähän sä et kai kiistä?",
+   "konteksti": "perhe",
+   "kanava": "puhe",
+   "harhauttajat": ["maalitolppien-siirtaminen", "vain-vitsi"],
+   "paljastus": {
+    "mita": "Kun vastaesimerkki tulee, väite kutistuu hyveen ylistykseksi.",
+    "miksi": "Tornia on helppo puolustaa, ja sen myöntäminen tuntuu koko väitteen myöntämiseltä.",
+    "sanot": "Ahkeruus on hyve, samaa mieltä. Väitätkö silti, ettei nuoret tee töitä?"
+   }
+  },
+  {
+   "id": "motte-and-bailey-3",
+   "teksti": "Tarkennan eilistä: tarkoitin vain, että aina on parantamisen varaa, ja siitä olemme varmasti yhtä mieltä. Perjantaina käydään sitten läpi, miksi tiimin toimintatapa on täysin epäonnistunut.",
+   "konteksti": "tyo",
+   "kanava": "sahkoposti",
+   "harhauttajat": ["maalitolppien-siirtaminen", "gaslighting"],
+   "paljastus": {
+    "mita": "Samassa viestissä on vaatimaton versio vastalauseita varten ja rohkea versio perjantaita varten.",
+    "miksi": "Väitteen sisältö muuttuu kritiikin mukana, mutta nimi pysyy samana. Kumpaankaan versioon ei tarvitse sitoutua.",
+    "sanot": "Kumpaa perjantaina käsitellään: parantamisen varaa vai täyttä epäonnistumista?"
+   }
+  },
+  {
+   "id": "motte-and-bailey-4",
+   "teksti": "— Tää naapurusto on nykyään täysin turvaton. — Täällä ei oo sattunu mitään vuosiin. — Mä sanoin vaan, et turvallisuus on tärkeetä. Eiks ookki? …Mut kyllä tänne ei kohta uskalla lapsia päästää ulos.",
+   "konteksti": "koti",
+   "kanava": "puhe",
+   "harhauttajat": ["kunhan-kysyn", "nutpicking"],
+   "paljastus": {
+    "mita": "Haaste torjutaan itsestäänselvyydellä, ja rohkea väite palaa seuraavassa lauseessa.",
+    "miksi": "Tornia puolustetaan, mutta pihalla eletään. Jos myönnät tornin sanomatta mitään pihasta, piha jää hänelle.",
+    "sanot": "Turvallisuus on tärkeetä, joo. Mihin se perustuu, et täällä olis turvatonta?"
+   }
+  }
+ ]
+}

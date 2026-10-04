@@ -1,0 +1,54 @@
+{
+ "ilmio": "sealioning",
+ "laji": "taktiikka",
+ "kohdat": [
+  {
+   "id": "sealioning-1",
+   "teksti": "Kiitos näistäkin linkeistä. Kysyn silti edelleen ihan kohteliaasti: voisitko perustella vielä vähän tarkemmin? Ja määrittelisitkö samalla, mitä tarkoitat sanalla \"yleinen\"? Haluan vain ymmärtää.",
+   "konteksti": "some",
+   "kanava": "viesti",
+   "harhauttajat": ["kunhan-kysyn", "argumenttitulva"],
+   "paljastus": {
+    "mita": "Linkit on jo annettu, eikä niistä sanota mitään. Tilalle tulee kaksi uutta pyyntöä.",
+    "miksi": "Lähteen kysyminen näyttää hyvältä keskustelulta, joten kieltäytyjä näyttää välttelijältä. Kysyminen vie sekunnin, vastaaminen illan.",
+    "sanot": "Mikä näyttö muuttaisi sun kantaa? Jos ei mikään, mä lopetan tähän."
+   }
+  },
+  {
+   "id": "sealioning-2",
+   "teksti": "Hei taas, ja kiitos vastauksista tiistaina, keskiviikkona ja eilen. Yksi asia jäi vielä vaivaamaan: voisitko perustella pyörävaraston lukituksen vielä kerran, nyt kirjallisesti? Kysyn huomenna uudestaan, jos et ehdi tänään.",
+   "konteksti": "koti",
+   "kanava": "viesti",
+   "harhauttajat": ["kunhan-kysyn", "tone-policing"],
+   "paljastus": {
+    "mita": "Kolme vastausta on saatu ja kuitattu kiitoksella. Yhteenkään ei oteta kantaa, ja neljäs pyyntö on jo jonossa.",
+    "miksi": "Sävy on moitteeton, joten tuskastuminen näyttäisi sinun viaksesi. Juuri sitä kehä odottaa.",
+    "sanot": "Oon vastannut tähän kolme kertaa. Mikä vastaus sulle riittäisi?"
+   }
+  },
+  {
+   "id": "sealioning-3",
+   "teksti": "Mihin tutkimukseen se perustuu, ettet syö lihaa? Niin mut mihin just? Entä mistä sä tiedät, et se pitää paikkansa? Mä vaan kysyn, mua ihan oikeesti kiinnostaa — kerro nyt vielä kerran.",
+   "konteksti": "perhe",
+   "kanava": "puhe",
+   "harhauttajat": ["kunhan-kysyn", "argumenttitulva"],
+   "paljastus": {
+    "mita": "Jokainen vastaus synnyttää uuden kysymyksen, eikä yhtäkään vastausta kuitata.",
+    "miksi": "Kiinnostus kuulostaa aidolta, ja kysymyksiin vastaamatta jättäminen tuntuu epäkohteliaalta. Niin kauan kuin vastaat, kehä jatkuu.",
+    "sanot": "Mä oon vastannu jo. Mikä vastaus sais sut sanomaan \"okei\"?"
+   }
+  },
+  {
+   "id": "sealioning-4",
+   "teksti": "Arvoisa toimittaja, kiitän vastauksestanne. Pyytäisin kuitenkin vielä kohteliaimmin perustelun jokaisen haastateltavan valinnalle erikseen. Tämä on neljäs viestini, ja palaan asiaan, kunnes saan tyhjentävän selvityksen.",
+   "konteksti": "media",
+   "kanava": "sahkoposti",
+   "harhauttajat": ["argumenttitulva", "tone-policing"],
+   "paljastus": {
+    "mita": "Vastaus on saatu, mutta pyyntö vain kasvaa. Viestejä luvataan lisää, kunnes selvitys on \"tyhjentävä\".",
+    "miksi": "Tyhjentävää selvitystä ei ole olemassa, joten vaatimus ei voi täyttyä. Kohteliaisuus tekee lopettamisesta vaikeaa.",
+    "sanot": "Olen vastannut kysymykseenne. Jos jokin tietty kohta jutussa on virheellinen, kertokaa mikä."
+   }
+  }
+ ]
+}

@@ -1,0 +1,54 @@
+{
+ "ilmio": "kunhan-kysyn",
+ "laji": "taktiikka",
+ "kohdat": [
+  {
+   "id": "kunhan-kysyn-1",
+   "teksti": "En väitä mitään, mut eiks oo vähän outoa, et se uus kahvila sai luvat noin nopeesti? Kysyn vaan, et kenenköhän kaveri siellä on töissä.",
+   "konteksti": "some",
+   "kanava": "viesti",
+   "harhauttajat": ["sealioning", "motte-and-bailey"],
+   "paljastus": {
+    "mita": "Väite on puettu kysymykseksi: luvissa on vilppiä. Kukaan ei sanonut sitä, joten kenenkään ei tarvitse perustella sitä.",
+    "miksi": "Täydennät vastauksen itse, ja itse keksitty johtopäätös tuntuu omalta. Samalla todistustaakka siirtyy sille, joka epäilee vihjausta.",
+    "sanot": "Kysytkö vai väitätkö, et luvissa on jotain vilppiä? Jos väität, mihin se perustuu?"
+   }
+  },
+  {
+   "id": "kunhan-kysyn-2",
+   "teksti": "Mä vaan mietin ääneen… onks se ihan sattumaa, et Rikulla on aina rahaa just sen jälkeen ku se on käyny mummolla? Emmä mitään sano. Kunhan kysyn.",
+   "konteksti": "perhe",
+   "kanava": "puhe",
+   "harhauttajat": ["sealioning", "vain-vitsi"],
+   "paljastus": {
+    "mita": "Syytös sanotaan kysymyksenä ja kielletään samassa lauseessa.",
+    "miksi": "Kysymystä pidetään viattomana, joten vihjaus jää ilmaan ilman, että kukaan vastaa siitä.",
+    "sanot": "Väitätkö sä, et Riku ottaa mummolta rahaa? Sano se suoraan, niin siitä voidaan puhua."
+   }
+  },
+  {
+   "id": "kunhan-kysyn-3",
+   "teksti": "Kysyn ihan vaan mielenkiinnosta: oletteko te varmasti olleet kotona aina silloin, kun rappukäytävässä on haissut tupakka? En syytä ketään, ihmettelen vaan yhteensattumaa.",
+   "konteksti": "vuokra",
+   "kanava": "viesti",
+   "harhauttajat": ["sealioning", "gaslighting"],
+   "paljastus": {
+    "mita": "Syytös sisäpolttamisesta esitetään uteliaisuutena, josta ei voi joutua vastuuseen.",
+    "miksi": "Jos puolustaudut, puolustaudut väitettä vastaan, jota kukaan ei esittänyt. Jos et, vihjaus jää voimaan.",
+    "sanot": "Väitättekö, että me poltetaan sisällä? Jos väitätte, mihin se perustuu?"
+   }
+  },
+  {
+   "id": "kunhan-kysyn-4",
+   "teksti": "Eiks oo vähän jännä, et sun puhelin on nykyään aina äänettömällä? Emmä mitään väitä. Kunhan ihmettelen.",
+   "konteksti": "parisuhde",
+   "kanava": "puhe",
+   "harhauttajat": ["sealioning", "gaslighting"],
+   "paljastus": {
+    "mita": "Epäily sanotaan ihmettelynä, jolloin sitä ei tarvitse sanoa epäilynä.",
+    "miksi": "Vihjaukseen ei voi vastata, koska mitään ei väitetty. Se jää silti vaikuttamaan.",
+    "sanot": "Kysytkö vai epäiletkö mua jostain? Sano suoraan, mitä sä ajattelet."
+   }
+  }
+ ]
+}

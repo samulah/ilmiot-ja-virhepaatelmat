@@ -1,0 +1,54 @@
+{
+ "ilmio": "nutpicking",
+ "laji": "taktiikka",
+ "kohdat": [
+  {
+   "id": "nutpicking-1",
+   "teksti": "Kattokaa nyt tätä yhtä kommenttia 👇 Tällasia ne koiranomistajat on, joka ikinen. Mitään sääntöjä ei noudateta.",
+   "konteksti": "some",
+   "kanava": "viesti",
+   "harhauttajat": ["motte-and-bailey", "whataboutismi"],
+   "paljastus": {
+    "mita": "Yksi kommentti esitetään koko joukon kantana.",
+    "miksi": "Esimerkki on aito, joten sitä on vaikea kiistää. Keksitty on vain sen edustavuus.",
+    "sanot": "Kuka ton kirjotti, ja kuinka moni koiranomistaja on sanonu samaa?"
+   }
+  },
+  {
+   "id": "nutpicking-2",
+   "teksti": "Näitkö sen yhen pyöräilijän aamulla, ku se ajo päin punasia? Just tollasia ne on kaikki. Ja sit ne vielä vaatii lisää pyöräteitä.",
+   "konteksti": "perhe",
+   "kanava": "puhe",
+   "harhauttajat": ["whataboutismi", "syntipukki"],
+   "paljastus": {
+    "mita": "Yhden ihmisen teko nostetaan koko ryhmän kasvoiksi ja perusteeksi torjua ryhmän vaatimus.",
+    "miksi": "Hölmöin esimerkki jää mieleen, ja jokaisesta isosta joukosta löytyy sellainen.",
+    "sanot": "Se oli yks pyöräilijä. Montako sä näit aamulla, jotka pysähty?"
+   }
+  },
+  {
+   "id": "nutpicking-3",
+   "teksti": "Asukkaat raivoissaan uudesta pysäköintimaksusta: \"Täyttä ryöstöä!\" — jutussa lainataan kolmea kommenttia kaupunginosan Facebook-ryhmästä.",
+   "konteksti": "media",
+   "kanava": "kayttoliittyma",
+   "harhauttajat": ["vaara-tasapaino", "keharaportointi"],
+   "paljastus": {
+    "mita": "Kolme kommenttia on otsikossa \"asukkaat\".",
+    "miksi": "Kärkevin kommentti löytyy aina ja on aina lainattavissa. Otsikko ei kerro, kuinka moni on samaa mieltä.",
+    "sanot": "Kolme kommenttia. Montako asukasta alueella on, ja mitä muut sanoo?"
+   }
+  },
+  {
+   "id": "nutpicking-4",
+   "teksti": "Yks fuksi kysy luennolla, saako tentin tehä tekoälyllä. Tää on se taso nykyään. Koko vuosikurssi on tollasta.",
+   "konteksti": "opiskelu",
+   "kanava": "puhe",
+   "harhauttajat": ["motte-and-bailey", "syntipukki"],
+   "paljastus": {
+    "mita": "Yhden opiskelijan kysymyksestä tehdään arvio sadasta.",
+    "miksi": "Typerä kysymys on hyvä tarina. Ne, jotka eivät kysyneet mitään, eivät ole tarinassa mukana.",
+    "sanot": "Se oli yks kysymys. Mitä ne loput sata on tehny?"
+   }
+  }
+ ]
+}
