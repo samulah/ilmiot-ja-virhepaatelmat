@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <title>DARVO — manipulaatiotaktiikka suomeksi | Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <title>No contact — mitä täydellinen katkaisu tarkoittaa | Ilmiöitä</title>
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -765,8 +766,8 @@
       "inLanguage": "fi",
       "articleSection": "Roolit ja valtapelit",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "No contact — katkaisu, joka poistaa toisen pelaajan",
+        "name": "No contact",
         "description": "No contact tarkoittaa yhteydenpidon lopettamista kokonaan, myös satunnaisten viestien. Osittainen katkaisu vahvistaa kuviota enemmän kuin jatkuva.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -798,30 +799,7 @@
         "description": "Kirjoittajanimi, jonka takana on kiinnostus valtaan, vaikuttamiseen ja ihmisen päättelyn vinoumiin. Sisältö perustuu julkisiin lähteisiin ja vakiintuneeseen käsitteistöön."
       },
       "datePublished": "2026-10-03",
-      "dateModified": "2026-10-03"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.ilmiöt.fi/no-contact.html#faq",
-      "inLanguage": "fi",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Mitä no contact tarkoittaa?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No contact tarkoittaa yhteydenpidon lopettamista kokonaan: ei viestejä, ei puheluita, ei seuraamista sosiaalisessa mediassa eikä terveisiä kolmansien kautta. Termi on peräisin vertaistukikirjallisuudesta, ei kliinisestä tutkimuksesta, ja sillä tarkoitetaan rajanvetoa — ei rangaistusta."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Miksi satunnainen yhteydenpito ei toimi?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Koska satunnainen palkkio vahvistaa käyttäytymistä tehokkaammin kuin säännöllinen. Jos yhdeksän yhteydenottoa jätetään huomiotta ja kymmenenteen vastataan, opittu läksy on että yrittämistä kannattaa jatkaa. Siksi puolittainen katkaisu pitää kuviota yllä pidempään kuin joko täysi yhteydenpito tai täysi katkaisu."
-          }
-        }
-      ]
+      "dateModified": "2026-10-04"
     }
   ]
 }
@@ -847,13 +825,14 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="no-contact">
 <div class="ilmio-tag">Ilmiö 147</div>
 <h1>No contact — katkaisu, joka poistaa toisen pelaajan</h1>
-<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 3.10.2026</p>
+<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 4.10.2026</p>
 <p><strong>No contact</strong> tarkoittaa yhteydenpidon lopettamista kokonaan: ei viestejä, ei puheluita, ei seuraamista sosiaalisessa mediassa eikä terveisiä kolmansien kautta. Termi on peräisin vertaistukikirjallisuudesta, ei kliinisestä tutkimuksesta. Se on <a href="valirikko.html">välirikon</a> toteutustapa, ja sen ainoa tarkoitus on poistaa kuviosta toinen pelaaja — ei rangaista ketään.</p>
 <div class="infolaatikko vastauslohko">
-<h2 class="laatikko-otsikko">Mitä no contact tarkoittaa suomeksi?</h2>
+<h2 class="laatikko-otsikko" id="mita-no-contact-tarkoittaa-suomeksi">Mitä no contact tarkoittaa suomeksi?</h2>
 <p style="margin:0.4em 0 0;">Vakiintunutta suomennosta ei ole, joten termi esiintyy suomeksikin muodossa <strong>no contact</strong>; joskus käytetään sanaa <em>nollakontakti</em>. Läheinen käsite on <em>low contact</em> eli rajattu yhteydenpito, jossa tavataan ennalta sovituissa tilanteissa ja sovitun ajan. Erona <a href="hiljainen-irtisanominen.html">hiljaiseen vetäytymiseen</a> on se, että no contact on lausuttu päätös, ei hitaasti haipuva yhteys.</p>
 </div>
 <div class="mermaid">
@@ -868,7 +847,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Puolittainen katkaisu on tehokkain tapa pitää kuvio hengissä.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Kolme asiaa, jotka yllättävät:</h2>
+<h2 class="laatikko-otsikko" id="kolme-asiaa-jotka-yllattavat">Kolme asiaa, jotka yllättävät:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Yritykset lisääntyvät ensin.</strong> Katkaisua seuraa tyypillisesti piikki: anteeksipyyntöjä, lahjoja, hätäviestejä, uusia numeroita. Se on kuvion viimeinen yritys, ei merkki muutoksesta.</li>
 <li><strong>Kolmannet osapuolet joutuvat väliin.</strong> Viestit alkavat kulkea sukulaisten ja kollegoiden kautta, jolloin heidän on valittava puoli — myös silloin kun he eivät halua.</li>
@@ -877,7 +856,7 @@ flowchart TD
 </div>
 <p>Työelämässä täydellinen katkaisu on mahdollinen vasta jälkikäteen: entiseen työnantajaan, entiseen kollegaan tai entiseen asiakkaaseen. Nykyiseen esimieheen sitä ei voi soveltaa, koska työsuhteessa yhteydenpito on velvollisuus — silloin jäljelle jää <a href="harmaa-kivi.html">harmaa kivi</a> eli yhteydenpidon jatkaminen ilman sitä, mitä toinen siitä hakee. Kannattaa myös erottaa kaksi eri asiaa: no contact on rajanveto, jonka tarkoitus on suojata, kun taas hiljaisuus <em>rangaistuksena</em> on osa samaa kuviota, josta yritetään ulos. Jälkimmäinen tunnetaan nimellä <em>silent treatment</em>, ja sen tunnistaa siitä, että yhteys palaa heti kun toinen antaa periksi.</p>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Jos harkitset katkaisua, tee siitä <strong>päätös etukäteen, ei reaktio kerrallaan</strong>. Kirjoita itsellesi mitä katkaisu koskee (kanavat, kolmannet osapuolet, yhteiset tilaisuudet) ja mikä olisi ehto sen purkamiselle — ehto teoista, ei lupauksista. Kerro päätös kerran ja lyhyesti, tai älä ollenkaan; perustelu kutsuu neuvottelun, jota et halua käydä. Sovi yhden ihmisen kanssa, joka välittää tarvittaessa aidon hätätiedon, niin et joudu seuraamaan kanavia itse. Varaudu piikkiin ja päätä etukäteen, ettet tulkitse sitä muutokseksi. Jos katkaisuun liittyy uhkailua, omaisuutta, lapsia tai työsuhteen ehtoja, kyse ei ole enää vain ihmissuhteesta — hanki tuki ja kirjaa tapahtumat.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Jos harkitset katkaisua, tee siitä <strong>päätös etukäteen, ei reaktio kerrallaan</strong>. Kirjoita itsellesi mitä katkaisu koskee (kanavat, kolmannet osapuolet, yhteiset tilaisuudet) ja mikä olisi ehto sen purkamiselle — ehto teoista, ei lupauksista. Kerro päätös kerran ja lyhyesti, tai älä ollenkaan; perustelu kutsuu neuvottelun, jota et halua käydä. Sovi yhden ihmisen kanssa, joka välittää tarvittaessa aidon hätätiedon, niin et joudu seuraamaan kanavia itse. Varaudu piikkiin ja päätä etukäteen, ettet tulkitse sitä muutokseksi. Jos katkaisuun liittyy uhkailua, omaisuutta, lapsia tai työsuhteen ehtoja, kyse ei ole enää vain ihmissuhteesta — hanki tuki ja kirjaa tapahtumat.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -942,6 +921,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="valirikko.html">← Välirikko — kenelle lasku lankeaa, kun suhde katkeaa</a>

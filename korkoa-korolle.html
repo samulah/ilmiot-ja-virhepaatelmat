@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Korkoa korolle -efekti — eksponentiaalinen kasvu — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   
   
   <script src="js/chart.umd.min.js" defer></script>
@@ -734,12 +736,12 @@
       "@id": "https://www.ilmiöt.fi/korkoa-korolle.html#article",
       "url": "https://www.ilmiöt.fi/korkoa-korolle.html",
       "headline": "Korkoa korolle -efekti — eksponentiaalinen kasvu",
-      "description": "Korkoa korolle -efekti ( compound interest , compounding effect ) tarkoittaa ilmiötä, jossa kasvu kohdistuu koko kertyneeseen pohjaan — ei vain alkuperäiseen…",
+      "description": "Korkoa korolle -efekti: miten eksponentiaalinen kasvu toimii, miten käännät sen hyödyksesi — ja miksi sama voima on velassa vaarallinen. Mukana 72:n sääntö.",
       "inLanguage": "fi",
       "articleSection": "Kasvun dynamiikka",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -748,19 +750,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Korkoa korolle -efekti — eksponentiaalinen kasvu",
-        "description": "Korkoa korolle -efekti ( compound interest , compounding effect ) tarkoittaa ilmiötä, jossa kasvu kohdistuu koko kertyneeseen pohjaan — ei vain alkuperäiseen…",
+        "name": "Korkoa korolle -efekti",
+        "description": "Korkoa korolle -efekti: miten eksponentiaalinen kasvu toimii, miten käännät sen hyödyksesi — ja miksi sama voima on velassa vaarallinen. Mukana 72:n sääntö.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -797,6 +799,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="korkoa-korolle">
 <div class="ilmio-tag">Ilmiö 63</div>
 <h1>Korkoa korolle -efekti — eksponentiaalinen kasvu</h1>
@@ -815,10 +818,10 @@
 </div>
 <p class="kaavio-selitys">Liiku kursorin kanssa graafin päällä nähdäksesi tarkat luvut. Katkoviiva = lineaarinen kasvu (ei korkoa korolle) samalla 7 %:n euromäärällä vuodessa.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">72:n sääntö:</h2> Jaa 72 vuotuisella korkoprosentilla — saat arvioidun tuplautumisajan. 7 % korolla pääoma tuplautuu noin 72 ÷ 7 ≈ 10 vuodessa. 12 % korolla 6 vuodessa. Sääntö toimii myös toisin päin: jos haluaa tuplata 8 vuodessa, tarvitaan noin 9 % vuosituotto.
+<h2 class="laatikko-otsikko" id="72-n-saanto">72:n sääntö:</h2> Jaa 72 vuotuisella korkoprosentilla — saat arvioidun tuplautumisajan. 7 % korolla pääoma tuplautuu noin 72 ÷ 7 ≈ 10 vuodessa. 12 % korolla 6 vuodessa. Sääntö toimii myös toisin päin: jos haluaa tuplata 8 vuodessa, tarvitaan noin 9 % vuosituotto.
     </div>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Efekti toimii myös rahan ulkopuolella:</h2>
+<h2 class="laatikko-otsikko" id="efekti-toimii-myos-rahan-ulkopuolella">Efekti toimii myös rahan ulkopuolella:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Osaaminen:</strong> Mitä enemmän tiedät aiheesta, sitä helpompi oppia lisää — taustatieto toimii "korkopohjana". Kirja kasvattaa sanastoa, joka helpottaa seuraavaa kirjaa.</li>
 <li><strong>Verkostot:</strong> Laajempi verkosto houkuttelee uusia kontakteja — jokainen uusi kontakti kasvattaa pohjaa, josta seuraavat kasvavat.</li>
@@ -828,10 +831,10 @@
 </ul>
 </div>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Lineaarisen ajattelun loukku:</h2> Ihmisaivot ovat huonoja hahmottamaan eksponentiaalista kasvua. Intuitio arvioi kasvun lineaariseksi — siksi ylipaino kertyy "yllättäen", velka karkaa "yhtäkkiä" ja rokotteen leviäminen "yllättää". Eksponentiaalinen kasvukäyrä näyttää pitkään miltei tasaiselta — ja sitten se nousee pystyyn. Se osa on jo myöhäistä yrittää pysäyttää perinteisillä keinoilla.
+<h2 class="laatikko-otsikko" id="lineaarisen-ajattelun-loukku">Lineaarisen ajattelun loukku:</h2> Ihmisaivot ovat huonoja hahmottamaan eksponentiaalista kasvua. Intuitio arvioi kasvun lineaariseksi — siksi ylipaino kertyy "yllättäen", velka karkaa "yhtäkkiä" ja rokotteen leviäminen "yllättää". Eksponentiaalinen kasvukäyrä näyttää pitkään miltei tasaiselta — ja sitten se nousee pystyyn. Se osa on jo myöhäistä yrittää pysäyttää perinteisillä keinoilla.
     </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Käännä efekti hyödyksesi:</h2> Tärkein muuttuja on aika, joten aloita ennen kuin summa tuntuu merkitykselliseltä: 72:n säännöllä 7 %:n vuosituotto tuplaa pääoman noin kymmenessä vuodessa — 25-vuotiaana aloitettu säästö ehtii tuplaantua eläkeikään mennessä kolme–neljä kertaa, 45-vuotiaana aloitettu kerran tai kaksi. Automatisoi kuukausisiirto, jotta kasvu ei jää motivaation varaan, ja anna tuottojen jäädä kasvamaan korkoa. Ja muista, että sama mekanismi toimii myös sinua vastaan velassa: ks. <a href="korkokierre.html">Negatiivinen korkokierre</a>.
+<h2 class="laatikko-otsikko" id="vastakeinot-kaanna-efekti-hyodyksesi">Vastakeinot — käännä efekti hyödyksesi:</h2> Tärkein muuttuja on aika, joten aloita ennen kuin summa tuntuu merkitykselliseltä: 72:n säännöllä 7 %:n vuosituotto tuplaa pääoman noin kymmenessä vuodessa — 25-vuotiaana aloitettu säästö ehtii tuplaantua eläkeikään mennessä kolme–neljä kertaa, 45-vuotiaana aloitettu kerran tai kaksi. Automatisoi kuukausisiirto, jotta kasvu ei jää motivaation varaan, ja anna tuottojen jäädä kasvamaan korkoa. Ja muista, että sama mekanismi toimii myös sinua vastaan velassa: ks. <a href="korkokierre.html">Negatiivinen korkokierre</a>.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -889,6 +892,7 @@
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="scope-creep.html">← Scope creep — vaatimusten hiljaa laajeneminen</a>

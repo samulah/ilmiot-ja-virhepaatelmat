@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Maksu näkyvyydellä — "tästä saat hyvää referenssiä" — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   
   
   
@@ -734,12 +736,12 @@
       "@id": "https://www.ilmiöt.fi/exposure-maksu.html#article",
       "url": "https://www.ilmiöt.fi/exposure-maksu.html",
       "headline": "Maksu näkyvyydellä — \"tästä saat hyvää referenssiä\"",
-      "description": "Exposure-maksussa työ teetetään ilman rahaa lupaamalla tilalle aineetonta vastiketta : näkyvyyttä, portfoliota, kokemusta, \"jalkaa oven väliin\" tai lupaus…",
+      "description": "Maksu näkyvyydellä: 'saat hyvää referenssiä' ei maksa laskuja. Selitämme miksi näkyvyys ei ole palkkio ja miten hinnoittelet työsi ammattimaisesti.",
       "inLanguage": "fi",
       "articleSection": "Myyntikikat ja painostus",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -748,19 +750,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Maksu näkyvyydellä — \"tästä saat hyvää referenssiä\"",
-        "description": "Exposure-maksussa työ teetetään ilman rahaa lupaamalla tilalle aineetonta vastiketta : näkyvyyttä, portfoliota, kokemusta, \"jalkaa oven väliin\" tai lupaus…",
+        "name": "Maksu näkyvyydellä",
+        "description": "Maksu näkyvyydellä: 'saat hyvää referenssiä' ei maksa laskuja. Selitämme miksi näkyvyys ei ole palkkio ja miten hinnoittelet työsi ammattimaisesti.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -797,6 +799,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="exposure-maksu">
 <div class="ilmio-tag">Ilmiö 81</div>
 <h1>Maksu näkyvyydellä — "tästä saat hyvää referenssiä"</h1>
@@ -804,7 +807,7 @@
 <p>Exposure-maksussa työ teetetään ilman rahaa lupaamalla tilalle <strong>aineetonta vastiketta</strong>: näkyvyyttä, portfoliota, kokemusta, "jalkaa oven väliin" tai lupaus maksavista töistä myöhemmin. Ydinväite on, että korvaus tulee tulevaisuudessa tai muussa muodossa kuin rahana — käytännössä se ei tule lainkaan.</p>
 <p>Taktiikka nojaa aloittelijan epävarmuuteen ja toivoon. Mitä kokemattomampi tekijä, sitä helpommin "referenssin arvo" myydään korvauksen sijaan. Klassinen kuittaus: <em>"näkyvyydellä ei makseta vuokraa."</em></p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Tyypilliset muotoilut:</h2>
+<h2 class="laatikko-otsikko" id="tyypilliset-muotoilut">Tyypilliset muotoilut:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>"Hyvä referenssi sinulle":</strong> meidän nimemme CV:ssäsi muka korvaa palkan.</li>
 <li><strong>"Nyt budjetti on tiukka, mutta jatkossa…":</strong> ensimmäinen keikka ilmaiseksi, loput "varmasti" maksullisina.</li>
@@ -813,10 +816,10 @@
 </ul>
 </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Miksi lupaus harvoin lunastuu:</h2> Se, joka ei maksa ensimmäisestä työstä, on jo osoittanut suhtautumisensa korvaukseen. "Jatkossa maksamme" -lupaus on ilmainen antaa eikä sido mihinkään. Näkyvyys taas hyödyttää lähes aina tilaajaa enemmän kuin tekijää — ja tilaaja, jolla on yleisöä ja brändiä, on yleensä juuri se taho, jolla olisi varaa maksaa.
+<h2 class="laatikko-otsikko" id="miksi-lupaus-harvoin-lunastuu">Miksi lupaus harvoin lunastuu:</h2> Se, joka ei maksa ensimmäisestä työstä, on jo osoittanut suhtautumisensa korvaukseen. "Jatkossa maksamme" -lupaus on ilmainen antaa eikä sido mihinkään. Näkyvyys taas hyödyttää lähes aina tilaajaa enemmän kuin tekijää — ja tilaaja, jolla on yleisöä ja brändiä, on yleensä juuri se taho, jolla olisi varaa maksaa.
     </div>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Erota aito vaihtokauppa pelkästä lupauksesta. Joskus näkyvyys on todellista arvoa (oikea julkaisu, mitattava yleisö) — mutta silloin se on sovittavissa konkreettisesti ja kirjallisesti. Jos vastike on epämääräinen, tulevaisuuteen siirretty tai "kokemusta", pyydä rahaa. Toimiva sääntö: ottaisiko tilaaja itse vastaan palkakseen pelkkää näkyvyyttä? Liittyy läheisesti <a href="ilmainen-naytetyo.html">ilmaiseen näytetyöhön</a>.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Erota aito vaihtokauppa pelkästä lupauksesta. Joskus näkyvyys on todellista arvoa (oikea julkaisu, mitattava yleisö) — mutta silloin se on sovittavissa konkreettisesti ja kirjallisesti. Jos vastike on epämääräinen, tulevaisuuteen siirretty tai "kokemusta", pyydä rahaa. Toimiva sääntö: ottaisiko tilaaja itse vastaan palkakseen pelkkää näkyvyyttä? Liittyy läheisesti <a href="ilmainen-naytetyo.html">ilmaiseen näytetyöhön</a>.
     </div>
 <p class="peli-harjoittele" style="margin:1.4rem 0 0;padding:.7rem .9rem;background:#FBF5E0;border-left:3px solid #C9A84C;font-size:.95em"><b>Harjoittele tämän tunnistamista.</b> <a href="peli.html">Vedätys</a> on päivittäinen peli, jossa maksu näkyvyydellä on yksi tunnistettavista ilmiöistä — mukana on aina myös tilanteita, joissa ei ole mitään vikaa.</p>
 <div class="lue-lisaa">
@@ -882,6 +885,7 @@
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="ilmainen-naytetyo.html">← Ilmainen näytetyö — "tee koetehtävä, valitsemme parhaan"</a>

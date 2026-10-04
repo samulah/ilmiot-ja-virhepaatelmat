@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Initiointirituaalit — hierarkian naturalisointi — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/initiointirituaalit.html#article",
       "url": "https://www.ilmiöt.fi/initiointirituaalit.html",
       "headline": "Initiointirituaalit — hierarkian naturalisointi",
-      "description": "Initiointirituaali on prosessi, jossa uusi tulokas \"ansaitsee paikkansa\" tekemällä epämiellyttäviä, nöyryyttäviä tai epäolennaisia tehtäviä.",
+      "description": "Initiointirituaalit: 'perinne', joka naturalisoi hierarkian. Selitämme mekanismin, tunnusmerkit tulokkaalle ja ohjeet organisaatiolle.",
       "inLanguage": "fi",
       "articleSection": "Byrokratia ja organisaatio",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Initiointirituaalit — hierarkian naturalisointi",
-        "description": "Initiointirituaali on prosessi, jossa uusi tulokas \"ansaitsee paikkansa\" tekemällä epämiellyttäviä, nöyryyttäviä tai epäolennaisia tehtäviä.",
+        "name": "Initiointirituaalit",
+        "description": "Initiointirituaalit: 'perinne', joka naturalisoi hierarkian. Selitämme mekanismin, tunnusmerkit tulokkaalle ja ohjeet organisaatiolle.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -824,6 +825,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="initiointirituaalit">
 <div class="ilmio-tag">Ilmiö 43</div>
 <h1>Initiointirituaalit — hierarkian naturalisointi</h1>
@@ -840,14 +842,14 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Initiointirituaali: kärsimys tuottaa sitoutumisen, sitoutuminen tuottaa järjestelmän puolustamisen.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Kognitiivinen dissonanssi:</h2> Leon Festingerin teoria (1957) selittää mekanismin: jos olet kärsinyt jotain saadaksesi jotain, aivot selittävät kärsimyksen jälkikäteen merkitykselliseksi. Mitä kovempi initiointi, sitä vahvempi sitoutuminen ryhmään — vaikka ryhmä osoittautuisi myöhemmin pettymykseksi. Sama ilmiö on dokumentoitu armeijassa, veljeskunnissa ja yrityskulttuureissa.
+<h2 class="laatikko-otsikko" id="kognitiivinen-dissonanssi">Kognitiivinen dissonanssi:</h2> Leon Festingerin teoria (1957) selittää mekanismin: jos olet kärsinyt jotain saadaksesi jotain, aivot selittävät kärsimyksen jälkikäteen merkitykselliseksi. Mitä kovempi initiointi, sitä vahvempi sitoutuminen ryhmään — vaikka ryhmä osoittautuisi myöhemmin pettymykseksi. Sama ilmiö on dokumentoitu armeijassa, veljeskunnissa ja yrityskulttuureissa.
     </div>
 <p>Työelämässä initiointi on harvoin eksplisiittistä. Se esiintyy epävirallisena normina: "meillä nuoret tekevät ensin nämä tehtävät", "se kuuluu uraan", "kaikki ovat tehneet sen". Kukaan ei käske — kulttuuri hoitaa sen.</p>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Rakenteellinen ongelma:</h2> Initiointirituaalit karsivat ihmiset, jotka eivät suostu alistumaan — usein ne itsenäisimmät ja kriittisimmät. Organisaatio koostuu ajan myötä niistä, jotka ovat läpäisseet seulan — ja juuri tämän takia pitävät seulaa oikeutettuna.
+<h2 class="laatikko-otsikko" id="rakenteellinen-ongelma">Rakenteellinen ongelma:</h2> Initiointirituaalit karsivat ihmiset, jotka eivät suostu alistumaan — usein ne itsenäisimmät ja kriittisimmät. Organisaatio koostuu ajan myötä niistä, jotka ovat läpäisseet seulan — ja juuri tämän takia pitävät seulaa oikeutettuna.
     </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Tulokkaalle varoitusmerkki on vaatimus, jota kukaan ei osaa perustella muuten kuin "kaikki ovat tehneet sen" — ja jonka kärsimys ei opeta työn kannalta mitään. Nöyryytys perinteeksi puettuna on silti nöyryytys. Kysy ääneen, mitä tehtävä palvelee: pelkkä kysymys rikkoo rituaalin itsestäänselvyyden. Organisaatiolle vastakeino on perehdytyksen auditointi — listatkaa, mitä uusilta todella vaaditaan ensimmäisen vuoden aikana, ja perustelkaa jokainen kohta — sekä anonyymi palautekanava uusille, joita seula ei ole vielä ehtinyt valikoida.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Tulokkaalle varoitusmerkki on vaatimus, jota kukaan ei osaa perustella muuten kuin "kaikki ovat tehneet sen" — ja jonka kärsimys ei opeta työn kannalta mitään. Nöyryytys perinteeksi puettuna on silti nöyryytys. Kysy ääneen, mitä tehtävä palvelee: pelkkä kysymys rikkoo rituaalin itsestäänselvyyden. Organisaatiolle vastakeino on perehdytyksen auditointi — listatkaa, mitä uusilta todella vaaditaan ensimmäisen vuoden aikana, ja perustelkaa jokainen kohta — sekä anonyymi palautekanava uusille, joita seula ei ole vielä ehtinyt valikoida.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -912,6 +914,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="rituaalinen-raportointi.html">← Rituaalinen raportointi — kontrollin näytelmä</a>

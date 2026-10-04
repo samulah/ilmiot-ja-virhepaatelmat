@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Läpi hinnalla millä hyvänsä — kun päätöksessä on kiinni nimi — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +763,12 @@
       "@id": "https://www.ilmiöt.fi/lapi-hinnalla-milla-hyvansa.html#article",
       "url": "https://www.ilmiöt.fi/lapi-hinnalla-milla-hyvansa.html",
       "headline": "Läpi hinnalla millä hyvänsä — kun päätöksessä on kiinni nimi",
-      "description": "Jossain vaiheessa hanke lakkaa olemasta hanke ja muuttuu kysymykseksi kasvoista. Siitä hetkestä eteenpäin jokainen huono uutinen uhkaa päättäjää — ei ha…",
+      "description": "Läpi hinnalla millä hyvänsä: kun hanke kiinnittyy henkilöön, jokainen huono uutinen uhkaa päättäjää eikä hanketta. Selitämme Staw’n löydöksen ja vastakeinot.",
       "inLanguage": "fi",
       "articleSection": "Projekti- ja ohjelmistokehitys",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +777,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Läpi hinnalla millä hyvänsä — kun päätöksessä on kiinni nimi",
-        "description": "Jossain vaiheessa hanke lakkaa olemasta hanke ja muuttuu kysymykseksi kasvoista. Siitä hetkestä eteenpäin jokainen huono uutinen uhkaa päättäjää — ei ha…",
+        "name": "Läpi hinnalla millä hyvänsä",
+        "description": "Läpi hinnalla millä hyvänsä: kun hanke kiinnittyy henkilöön, jokainen huono uutinen uhkaa päättäjää eikä hanketta. Selitämme Staw’n löydöksen ja vastakeinot.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -824,6 +826,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="lapi-hinnalla-milla-hyvansa">
 <div class="ilmio-tag">Ilmiö 58</div>
 <h1>Läpi hinnalla millä hyvänsä — kun päätöksessä on kiinni nimi</h1>
@@ -846,10 +849,10 @@ flowchart TD
     </div>
 <p>Seuraus on tiedonkulun kääntyminen: hankkeen ongelmia ei voi enää käsitellä hankkeen ongelmina, koska ne ovat väite siitä että päättäjä oli väärässä. Länsimetron viivästyksiä selvittänyt raportti tiivisti tämän omistajan lauseeseen: <em>"Meille vakuutettiin viimeiseen asti, että aikataulussa pysytään."</em> Tieto oli olemassa — se ei vain päässyt sinne, missä sillä olisi ollut vaikutusta.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Vastailmiö on olemassa:</h2> Tampereen raitiotien ensimmäinen osuus valmistui etuajassa ja noin 34 miljoonaa euroa alle 219 miljoonan euron tavoitekustannuksen; liikennöinti alkoi suunnitellusti 9.8.2021. Ratkaisu ei ollut parempi tahdonvoima vaan rakenne: allianssimallissa tilaaja ja toteuttajat jakavat saman kustannustavoitteen ja saman riskin, jolloin huonon uutisen kertominen aikaisin on kaikkien etu. Poista kannustin salata, niin salaaminen loppuu.
+<h2 class="laatikko-otsikko" id="vastailmio-on-olemassa">Vastailmiö on olemassa:</h2> Tampereen raitiotien ensimmäinen osuus valmistui etuajassa ja noin 34 miljoonaa euroa alle 219 miljoonan euron tavoitekustannuksen; liikennöinti alkoi suunnitellusti 9.8.2021. Ratkaisu ei ollut parempi tahdonvoima vaan rakenne: allianssimallissa tilaaja ja toteuttajat jakavat saman kustannustavoitteen ja saman riskin, jolloin huonon uutisen kertominen aikaisin on kaikkien etu. Poista kannustin salata, niin salaaminen loppuu.
     </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> <strong>Kirjaa lopetuskriteerit samaan päätökseen kuin aloituskriteerit</strong> — millä kustannustasolla tai mittarilukemalla hanke keskeytetään. Niistä on mahdoton sopia enää siinä vaiheessa, kun kasvot ovat pelissä. <strong>Erota päättäjä ja arvioija:</strong> se, jonka nimi on alkuperäisessä päätöksessä, ei saa arvioida jatkamisen kannattavuutta — tämä on suoraan Staw'n löydöksen sovellus. <strong>Käännä todistustaakka:</strong> aloittaisimmeko tämän tänään, tällä tiedolla ja tällä hinnalla? Jos ei, jatkamista pitää perustella — ei lopettamista. <strong>Suojaa viestintuoja</strong> kanavalla, joka ei kulje sen henkilön kautta, jonka päätöstä uutinen koskee. Ja jos olet itse matkalla, jonka lopun näet: <strong>kirjaa varoituksesi päivämäärällä ylös</strong>. Se ei pysäytä hanketta, mutta se pysyy pystyssä jälkiselvittelyssä.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> <strong>Kirjaa lopetuskriteerit samaan päätökseen kuin aloituskriteerit</strong> — millä kustannustasolla tai mittarilukemalla hanke keskeytetään. Niistä on mahdoton sopia enää siinä vaiheessa, kun kasvot ovat pelissä. <strong>Erota päättäjä ja arvioija:</strong> se, jonka nimi on alkuperäisessä päätöksessä, ei saa arvioida jatkamisen kannattavuutta — tämä on suoraan Staw'n löydöksen sovellus. <strong>Käännä todistustaakka:</strong> aloittaisimmeko tämän tänään, tällä tiedolla ja tällä hinnalla? Jos ei, jatkamista pitää perustella — ei lopettamista. <strong>Suojaa viestintuoja</strong> kanavalla, joka ei kulje sen henkilön kautta, jonka päätöstä uutinen koskee. Ja jos olet itse matkalla, jonka lopun näet: <strong>kirjaa varoituksesi päivämäärällä ylös</strong>. Se ei pysäytä hanketta, mutta se pysyy pystyssä jälkiselvittelyssä.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -863,7 +866,7 @@ flowchart TD
 <span class="lue-lisaa-tyyppi">Verkossa</span>
 <ul class="lue-lisaa-lista">
 <li><a href="https://en.wikipedia.org/wiki/Escalation_of_commitment" target="_blank" rel="noopener">Wikipedia: Escalation of commitment (englanniksi)</a></li>
-<li><a href="https://raitiotieallianssi.fi/tiedotteet/raitiotien-ensimmainen-osuus-valmistuu-etuajassa-ja-34-miljoonaa-euroa-alle-budjetin-liikenne-alkaa-9-8/" target="_blank" rel="noopener">Raitiotieallianssi: valmistui etuajassa ja alle budjetin</a></li>
+<li><a href="https://web.archive.org/web/20250514085723/https://raitiotieallianssi.fi/tiedotteet/raitiotien-ensimmainen-osuus-valmistuu-etuajassa-ja-34-miljoonaa-euroa-alle-budjetin-liikenne-alkaa-9-8/" target="_blank" rel="noopener">Raitiotieallianssi: valmistui etuajassa ja alle budjetin (arkistoitu)</a></li>
 </ul>
 </div>
 </div>
@@ -914,6 +917,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="paatosperainen-todistelu.html">← Päätösperäinen todistelu — vastaus valmiina</a>

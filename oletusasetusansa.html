@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Oletusasetusansa — valinta on tehty valmiiksi palvelun eduksi — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -392,8 +393,8 @@
       "inLanguage": "fi",
       "articleSection": "Alustatalous ja algoritmit",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -402,9 +403,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
+        }
+      },
+      "about": {
+        "@type": "DefinedTerm",
+        "name": "Oletusasetusansa",
+        "description": "Oletusasetusansa: seuranta, jakaminen ja uutiskirje ovat valmiiksi päällä, koska oletusvalinta ratkaisee useimmiten. Tietosuoja-asetus vaatii päinvastaista.",
+        "inDefinedTermSet": {
+          "@type": "DefinedTermSet",
+          "name": "Ilmiöitä — Miten valta toimii",
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -416,29 +427,6 @@
       },
       "datePublished": "2026-08-14",
       "dateModified": "2026-08-14"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.ilmiöt.fi/oletusasetusansa.html#faq",
-      "inLanguage": "fi",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Mitä privacy zuckering tarkoittaa?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Termin esitti Electronic Frontier Foundationin Tim Jones vuonna 2010, ja se on nimetty Mark Zuckerbergin mukaan. Se tarkoittaa palvelua, jonka oletusasetukset saavat käyttäjän jakamaan enemmän tietoa kuin hän tarkoitti. Suomeksi termiä ei käytetä — puhutaan oletusasetuksista."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Miksi oletusasetus ratkaisee valinnan?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oletus luetaan suositukseksi: arvioksi siitä, mikä on tavallista ja järkevää. Eric Johnson ja Daniel Goldstein vertasivat vuonna 2003 maita, joissa elinluovutukseen joko liitytään tai siitä poistutaan, ja suostumusaste vaihteli muutamasta prosentista lähes sataan pelkän lomakkeen oletusvalinnan mukaan."
-          }
-        }
-      ]
     }
   ]
 }
@@ -464,13 +452,14 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="oletusasetusansa">
 <div class="ilmio-tag">Ilmiö 111</div>
 <h1>Oletusasetusansa — valinta on tehty valmiiksi palvelun eduksi</h1>
 <p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 14.8.2026</p>
 <p><strong>Oletusasetusansa</strong> (englanniksi <em>privacy zuckering</em>, taustalla <em>default effect</em>) tarkoittaa palvelua, jonka asetukset on viritetty valmiiksi palvelun eduksi eikä käyttäjän. Sijainti on päällä, profiili on julkinen, uutiskirje on tilattu ja markkinointilupa on annettu — kaikki ilman että kukaan on valehdellut. Valinta on olemassa, mutta se on tehty jo puolestasi.</p>
 <div class="infolaatikko vastauslohko">
-<h2 class="laatikko-otsikko">Mitä privacy zuckering tarkoittaa?</h2>
+<h2 class="laatikko-otsikko" id="mita-privacy-zuckering-tarkoittaa">Mitä privacy zuckering tarkoittaa?</h2>
 <p style="margin:0.4em 0 0;">Termin esitti Electronic Frontier Foundationin Tim Jones vuonna 2010, ja se on nimetty Mark Zuckerbergin mukaan: käyttäjä houkutellaan jakamaan enemmän kuin hän tarkoitti. Suomeksi termiä ei käytetä — puhutaan oletusasetuksista. Tietosuoja-asetuksen 25 artikla vaatii päinvastaista kuin ansa tekee: oletusarvoisesti saa käsitellä vain ne tiedot, jotka ovat käyttötarkoituksen kannalta välttämättömiä.</p>
 </div>
 <div class="mermaid">
@@ -486,10 +475,10 @@ flowchart TD
 <p class="kaavio-selitys">Oletus ei ole kertaluontoinen valinta vaan kehä: jokainen uusi ominaisuus palauttaa lähtötilanteen.</p>
 <p>Oletusarvon voima on mitattu tarkasti. Eric Johnson ja Daniel Goldstein vertasivat vuonna 2003 Euroopan maita, joissa elinluovutukseen joko liitytään tai siitä poistutaan: suostumusaste vaihteli muutamasta prosentista lähes sataan pelkän lomakkeen oletusvalinnan mukaan. Kyse ei siis ole laiskuudesta vaan siitä, että oletus luetaan suositukseksi — jonkun asiantuntevan arvioksi siitä, mikä on tavallista.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Miten oletusasetusansa eroaa läheisistä ilmiöistä?</h2> <a href="houkutinvaihtoehto.html">Houkutinvaihtoehto</a> ohjaa valintaa lisäämällä vaihtoehdon, <a href="hintaankkurointi.html">hintaankkurointi</a> ensimmäisellä luvulla. Oletusasetusansa ei kysy mitään. <a href="evasteansa.html">Evästeansa</a> on sen tunnetuin erikoistapaus, jossa oletukset on pakattu yhteen banneriin.
+<h2 class="laatikko-otsikko" id="miten-oletusasetusansa-eroaa-laheisista-ilmioista">Miten oletusasetusansa eroaa läheisistä ilmiöistä?</h2> <a href="houkutinvaihtoehto.html">Houkutinvaihtoehto</a> ohjaa valintaa lisäämällä vaihtoehdon, <a href="hintaankkurointi.html">hintaankkurointi</a> ensimmäisellä luvulla. Oletusasetusansa ei kysy mitään. <a href="evasteansa.html">Evästeansa</a> on sen tunnetuin erikoistapaus, jossa oletukset on pakattu yhteen banneriin.
     </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2>
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2>
 <ul style="margin:0.5em 0 0;">
 <li>Käy asetukset läpi heti tilin luomisen jälkeen, ennen kuin palvelusta tulee tarpeellinen. Silloin kieltäytyminen ei vielä maksa mitään.</li>
 <li>Lue oletus tarjouksena, älä suosituksena. Se kertoo, mikä hyödyttää palvelua — ei mikä on sinulle tavallista.</li>
@@ -552,6 +541,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="confirmshaming.html">← Confirmshaming — kieltäytymisnappi, joka nolaa käyttäjän</a>

@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Parasosiaalinen suhde — yksipuolinen ystävyys — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/parasosiaalinen-suhde.html#article",
       "url": "https://www.ilmiöt.fi/parasosiaalinen-suhde.html",
       "headline": "Parasosiaalinen suhde — yksipuolinen ystävyys",
-      "description": "Parasosiaalinen suhde on yksipuolinen tunneside mediahahmoon, joka tuntuu ystävyydeltä. Influensserimarkkinointi ja huijaukset hyödyntävät juuri sitä.",
+      "description": "Parasosiaalinen suhde: yksipuolinen ystävyys julkkiksen kanssa. Selitämme suhteen psykologian, sen kaupallisen hyödyntämisen ja terveet rajat.",
       "inLanguage": "fi",
       "articleSection": "Alustatalous ja algoritmit",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Parasosiaalinen suhde — yksipuolinen ystävyys",
-        "description": "Parasosiaalinen suhde on yksipuolinen tunneside mediahahmoon, joka tuntuu ystävyydeltä. Influensserimarkkinointi ja huijaukset hyödyntävät juuri sitä.",
+        "name": "Parasosiaalinen suhde",
+        "description": "Parasosiaalinen suhde: yksipuolinen ystävyys julkkiksen kanssa. Selitämme suhteen psykologian, sen kaupallisen hyödyntämisen ja terveet rajat.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -824,6 +825,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="parasosiaalinen-suhde">
 <div class="ilmio-tag">Ilmiö 98</div>
 <h1>Parasosiaalinen suhde — yksipuolinen ystävyys</h1>
@@ -843,7 +845,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Parasosiaalinen luottamus on myyntikanava — siksi siitä maksetaan.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Tuttuja parasosiaalisia pareja:</h2>
+<h2 class="laatikko-otsikko" id="tuttuja-parasosiaalisia-pareja">Tuttuja parasosiaalisia pareja:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Fani ja artisti:</strong> klassinen muoto. Artisti on läsnä fanin arjessa joka päivä — soittolistalla, somessa, huoneen seinällä. Fanille suhde voi olla yksi elämän merkittävimmistä; artistille fani on tilastorivi. Fanikulttuurin ääripäissä side kääntyy omistushaluksi: artistin parisuhde tuntuu petokselta.</li>
 <li><strong>Katsoja ja tubettaja tai striimaaja:</strong> "moikka taas kaikille" kuulostaa siltä kuin se olisi osoitettu juuri sinulle. Vuosia päivittäin seurattu striimaaja tuntuu läheisemmältä kuin moni oikea tuttava.</li>
@@ -853,7 +855,7 @@ flowchart TD
 </div>
 <p>Side ei synny vain vahingossa — sitä rakennetaan tietoisesti. Poliitikkojen viestintätiimit tuntevat ilmiön hyvin: arkiset postaukset aamulenkiltä ja keittiöstä, perhekuvat ja suoraan kameralle puhuminen luovat tunteen henkilökohtaisesta tuttavuudesta, jota vastaehdokkaan asialista ei horjuta — hyökkäys "tuttua ihmistä" kohtaan tuntuu äänestäjästä hyökkäykseltä omaa ystävää kohtaan. Samaa tekevät yritykset esittämällä "ihmisiä" internetissä: kasvokuvalla ja etunimellä varustetut somepersoonat, asiakaspalvelun "Emmat", "perustajan tarinat" ja kokonaan keksityt virtuaali-influensserit — tunnetuin niistä, Lil Miquela, keräsi miljoonia seuraajia olematta olemassa. Generatiivinen tekoäly teki tällaisten valeihmisten tuottamisesta halpaa massatavaraa.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Missä sidettä rahastetaan:</h2>
+<h2 class="laatikko-otsikko" id="missa-sidetta-rahastetaan">Missä sidettä rahastetaan:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Influensserimarkkinointi:</strong> koko toimiala perustuu siihen, että suositus ei tunnu mainokselta. Juuri siksi kaupallinen yhteistyö on lain mukaan merkittävä näkyvästi.</li>
 <li><strong>Finfluencerit:</strong> sijoitus- ja kryptovinkit "kaverilta" — palkkiot ja kytkökset jäävät kertomatta.</li>
@@ -863,7 +865,7 @@ flowchart TD
 </ul>
 </div>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Varoitusmerkit itsessä:</h2> Hahmon kritisointi tuntuu henkilökohtaiselta loukkaukselta. Ostopäätöksen perustelu on "luotan häneen", eivät tuotteen ominaisuudet. Seuraamiseen kuluu rahaa tai aikaa, jota joudut selittelemään itsellesi. Testikysymys on yksinkertainen: <strong>mitä tämä ihminen tietää minusta?</strong> Jos vastaus on "ei mitään", suhtaudu hänen suosituksiinsa kuin mihin tahansa mainokseen — sitä ne ovat.
+<h2 class="laatikko-otsikko" id="varoitusmerkit-itsessa">Varoitusmerkit itsessä:</h2> Hahmon kritisointi tuntuu henkilökohtaiselta loukkaukselta. Ostopäätöksen perustelu on "luotan häneen", eivät tuotteen ominaisuudet. Seuraamiseen kuluu rahaa tai aikaa, jota joudut selittelemään itsellesi. Testikysymys on yksinkertainen: <strong>mitä tämä ihminen tietää minusta?</strong> Jos vastaus on "ei mitään", suhtaudu hänen suosituksiinsa kuin mihin tahansa mainokseen — sitä ne ovat.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -927,6 +929,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="ai-slop.html">← AI slop — halpasisällön vyöry</a>

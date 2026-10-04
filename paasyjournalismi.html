@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Pääsyjournalismi — kriittinen kysymys maksaa lähteen — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -392,8 +393,8 @@
       "inLanguage": "fi",
       "articleSection": "Media ja julkisuus",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -402,9 +403,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
+        }
+      },
+      "about": {
+        "@type": "DefinedTerm",
+        "name": "Pääsyjournalismi",
+        "description": "Pääsyjournalismissa toimittaja on riippuvainen lähteen jatkuvasta pääsystä: kriittinen juttu katkaisisi suhteen, joten kysymykset pehmenevät.",
+        "inDefinedTermSet": {
+          "@type": "DefinedTermSet",
+          "name": "Ilmiöitä — Miten valta toimii",
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -441,6 +452,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="paasyjournalismi">
 <div class="ilmio-tag">Ilmiö 132</div>
 <h1>Pääsyjournalismi — kriittinen kysymys maksaa lähteen</h1>
@@ -459,10 +471,10 @@ flowchart TD
 <p>Asetelma tuottaa tunnistettavia jälkiä. Haastattelussa ei ole jatkokysymystä. Kysymykset on sovittu ennakkoon. Juttu perustuu nimettömään "lähipiiriin", jonka näkökulma on johdonmukaisesti sama. Yrityksestä kertova juttu nojaa toimitusjohtajan haastatteluun eikä yhteenkään entiseen työntekijään. Vastapainona syntyy myös hyötyä: pääsy tuottaa tietoa, jota ei muuten saisi. Ongelma ei ole pääsy vaan riippuvuus siitä.</p>
 <p>Sama mekanismi toistuu urheilutoimituksissa (seura myöntää akkreditoinnit), viihdejournalismissa (levy-yhtiö sopii ehdot) ja teknologiajournalismissa (arvostelukappaleet ja embargot). Kaikissa kolmessa kriittisen jutun hinta on sama: seuraavaa kertaa ei tule.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Ero läheisiin käsitteisiin:</h2> Rakenne on sama kuin <a href="saantelijan-kaappaus.html">sääntelijän kaappauksessa</a> — valvoja tulee riippuvaiseksi valvottavasta — mutta instituutio on media. <a href="tiedotejournalismi.html">Tiedotejournalismissa</a> aineisto tulee valmiina; pääsyjournalismissa toimittaja tekee työn itse, mutta rajatusta asemasta.
+<h2 class="laatikko-otsikko" id="ero-laheisiin-kasitteisiin">Ero läheisiin käsitteisiin:</h2> Rakenne on sama kuin <a href="saantelijan-kaappaus.html">sääntelijän kaappauksessa</a> — valvoja tulee riippuvaiseksi valvottavasta — mutta instituutio on media. <a href="tiedotejournalismi.html">Tiedotejournalismissa</a> aineisto tulee valmiina; pääsyjournalismissa toimittaja tekee työn itse, mutta rajatusta asemasta.
     </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2>
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2>
 <ul style="margin:0.5em 0 0;">
 <li>Katso, esitetäänkö haastattelussa yhtään jatkokysymystä. Sen puuttuminen kertoo enemmän kuin kysymysten sisältö.</li>
 <li>Kysy jokaisesta eksklusiivista: kuka hyötyi siitä, että juuri tämä toimittaja sai sen juuri nyt?</li>
@@ -526,6 +538,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="uutisautiomaa.html">← Uutisautiomaa — kunta, jossa kukaan ei enää seuraa päätöksiä</a>

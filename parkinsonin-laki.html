@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Parkinsonin laki — miksi työ venyy aikarajaan | Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -775,12 +776,12 @@
       "@id": "https://www.ilmiöt.fi/parkinsonin-laki.html#article",
       "url": "https://www.ilmiöt.fi/parkinsonin-laki.html",
       "headline": "Parkinsonin laki — työ laajenee täyttämään sille varatun ajan",
-      "description": "\"Työ laajenee täyttämään sille varatun ajan.\" Cyril Northcote Parkinson julkaisi lain vuonna 1955 ja osoitti, että hallinto kasvaa vaikka työ vähenee…",
+      "description": "Parkinsonin laki: työ laajenee täyttämään sille varatun ajan. Mistä sääntö tulee, mitä Parkinson todella mittasi ja miten aikarajan asettaa oikein.",
       "inLanguage": "fi",
       "articleSection": "Byrokratia ja organisaatio",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -789,19 +790,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Parkinsonin laki — työ laajenee täyttämään sille varatun ajan",
-        "description": "\"Työ laajenee täyttämään sille varatun ajan.\" Cyril Northcote Parkinson julkaisi lain vuonna 1955 ja osoitti, että hallinto kasvaa vaikka työ vähenee…",
+        "name": "Parkinsonin laki",
+        "description": "Parkinsonin laki: työ laajenee täyttämään sille varatun ajan. Mistä sääntö tulee, mitä Parkinson todella mittasi ja miten aikarajan asettaa oikein.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -813,29 +814,6 @@
       },
       "datePublished": "2026-07-10",
       "dateModified": "2026-09-04"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.ilmiöt.fi/parkinsonin-laki.html#faq",
-      "inLanguage": "fi",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Mitä Parkinsonin laki tarkoittaa?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Parkinsonin laki tarkoittaa sitä, että työ laajenee täyttämään sille varatun ajan. Jos tehtävälle annetaan viikko, se vie viikon, vaikka se olisi tehtävissä päivässä. Cyril Northcote Parkinson esitti lauseen The Economist -lehdessä vuonna 1955."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Pitääkö Parkinsonin laki paikkansa?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Parkinsonin oma näyttö oli tilastollinen: Britannian laivaston hallintohenkilöstö kasvoi vuosina 1914–1928, vaikka aluksia ja merimiehiä oli entistä vähemmän. Havainto hallinnon itsekasvusta on toistunut myöhemmissä organisaatiotutkimuksissa, mutta laki on kuvaus taipumuksesta, ei luonnonlaki."
-          }
-        }
-      ]
     }
   ]
 }
@@ -861,17 +839,18 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="parkinsonin-laki">
 <div class="ilmio-tag">Ilmiö 48</div>
 <h1>Parkinsonin laki — työ laajenee täyttämään sille varatun ajan</h1>
 <p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 4.9.2026</p>
 <p><em>"Työ laajenee täyttämään sille varatun ajan."</em> Brittiläinen merihistorioitsija Cyril Northcote Parkinson julkaisi lauseen nimettömässä esseessä <cite>The Economist</cite> -lehdessä vuonna 1955 ja laajensi sen kirjaksi <cite>Parkinson's Law: The Pursuit of Progress</cite> (1958). Kyse ei ollut vitsistä, vaikka sävy oli satiirinen: Parkinson esitti väitteensä tueksi lukuja, ja luvut olivat hänen puolellaan.</p>
 <div class="infolaatikko vastauslohko">
-<h2 class="laatikko-otsikko">Mitä Parkinsonin laki tarkoittaa?</h2>
+<h2 class="laatikko-otsikko" id="mita-parkinsonin-laki-tarkoittaa">Mitä Parkinsonin laki tarkoittaa?</h2>
 <p style="margin:0.4em 0 0;"><strong>Työ laajenee täyttämään sille varatun ajan.</strong> Jos tehtävälle varataan viikko, se vie viikon, vaikka olisi tehtävissä päivässä. Parkinsonin havainto koski hallintoa, jonka koko kasvoi vaikka työn määrä laski. Vastalääke on aikaraja, joka asetetaan ennen aloitusta eikä sen jälkeen.</p>
 </div>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Parkinsonin todistusaineisto — Britannian laivasto 1914 → 1928:</h2>
+<h2 class="laatikko-otsikko" id="parkinsonin-todistusaineisto-britannian-laivasto-1914-1928">Parkinsonin todistusaineisto — Britannian laivasto 1914 → 1928:</h2>
 <ul style="margin:0.5em 0 0;">
 <li>Taistelulaivoja 62 → 20 <em>(−68 %)</em></li>
 <li>Upseereita ja merimiehiä 146 000 → 100 000 <em>(−32 %)</em></li>
@@ -892,11 +871,11 @@ flowchart TD
 <p class="kaavio-selitys">Parkinsonin kaksi kasvumoottoria: virkamies haluaa alaisia eikä kilpailijoita, ja virkamiehet teettävät työtä toisillaan.</p>
 <p>Kasvu ei siis vaadi työn lisääntymistä. Se vaatii vain sen, että ylikuormittunut virkamies ratkaisee ongelmansa palkkaamalla kaksi alaista yhden sijaan — sillä yksi alainen voisi joskus korvata hänet, kaksi pitää toisiaan silmällä. Alaiset tarvitsevat ohjausta, ja ohjaus on työtä. He tuottavat toisilleen tarkistettavia asiakirjoja, ja tarkistaminen on työtä. Lopulta kaikilla on aidosti kiire, eikä kukaan valehtele sanoessaan niin.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Aikaversio arjessa:</h2> Kahden tunnin kokous täyttyy kahdella tunnilla asiaa. Viikon määräaika tuottaa viikon työtä. Sama raportti syntyy kolmessa päivässä tai kolmessa viikossa, ja kolmen viikon versio on harvoin kolme kertaa parempi. Syy ei ole laiskuus: väljä aikataulu sallii täydellisyyden tavoittelun, uudelleenmuotoilun ja triviaalin hiomisen — eikä mikään pakota priorisoimaan, ennen kuin määräaika alkaa painaa.
+<h2 class="laatikko-otsikko" id="aikaversio-arjessa">Aikaversio arjessa:</h2> Kahden tunnin kokous täyttyy kahdella tunnilla asiaa. Viikon määräaika tuottaa viikon työtä. Sama raportti syntyy kolmessa päivässä tai kolmessa viikossa, ja kolmen viikon versio on harvoin kolme kertaa parempi. Syy ei ole laiskuus: väljä aikataulu sallii täydellisyyden tavoittelun, uudelleenmuotoilun ja triviaalin hiomisen — eikä mikään pakota priorisoimaan, ennen kuin määräaika alkaa painaa.
     </div>
 <p>Parkinson kirjoitti samassa kirjassa myös <em>triviaalisuuden laista</em>, joka tunnetaan nykyään paremmin nimellä <a href="bikeshedding.html">bikeshedding</a>: komitea käyttää kaksi ja puoli minuuttia ydinvoimalan hyväksymiseen ja tunnin polkupyörävajan väristä kiistelyyn, koska vain jälkimmäisestä kaikilla on mielipide. Aika-arvioiden puolella Parkinsonin lain vastinpari on <a href="hofstadterin-laki.html">Hofstadterin laki</a>: työ vie aina odotettua kauemmin, silloinkin kun otat Hofstadterin lain huomioon. Molempien seuraukset näkyvät <a href="rituaalinen-raportointi.html">rituaalisessa raportoinnissa</a> ja <a href="scope-creep.html">scope creepissä</a>.</p>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Aikaraja ei ole arvio. Anna tehtävälle tiukempi aika kuin uskot tarvitsevasi, ja pura sitten julki: mitä jäi tekemättä? Jos vastaus on "ei mitään olennaista", aikataulu oli väljä. Kokouksissa sama koe on ilmainen: lyhennä oletuskesto tunnista kahteenkymmeneenviiteen minuuttiin ja katso, mikä katoaa. Useimmiten katoaa se, mitä ei olisi tarvinnut sanoa.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Aikaraja ei ole arvio. Anna tehtävälle tiukempi aika kuin uskot tarvitsevasi, ja pura sitten julki: mitä jäi tekemättä? Jos vastaus on "ei mitään olennaista", aikataulu oli väljä. Kokouksissa sama koe on ilmainen: lyhennä oletuskesto tunnista kahteenkymmeneenviiteen minuuttiin ja katso, mikä katoaa. Useimmiten katoaa se, mitä ei olisi tarvinnut sanoa.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -961,6 +940,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="sivustakatsojan-efekti.html">← Sivustakatsojan efekti — vastuun hajoaminen</a>

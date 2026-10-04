@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <title>DARVO — manipulaatiotaktiikka suomeksi | Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <title>Kaksoissidos (double bind) — käsky, jota ei voi totella</title>
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -708,14 +709,14 @@
   <!-- SEO -->
   <meta name="description" content="Kaksoissidos tarkoittaa kahta vaatimusta, jotka sulkevat toisensa pois — eikä ristiriidasta saa mainita eikä tilanteesta poistua.">
   <link rel="canonical" href="https://www.ilmiöt.fi/kaksoissidos.html">
-  <meta property="og:title" content="Kaksoissidos (double bind) — mitä se tarkoittaa | Ilmiöitä">
+  <meta property="og:title" content="Kaksoissidos (double bind) — käsky, jota ei voi totella">
   <meta property="og:description" content="Kaksoissidos tarkoittaa kahta vaatimusta, jotka sulkevat toisensa pois — eikä ristiriidasta saa mainita eikä tilanteesta poistua.">
   <meta property="og:url" content="https://www.ilmiöt.fi/kaksoissidos.html">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="fi_FI">
   <meta property="og:site_name" content="Ilmiöitä — Miten valta toimii">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Kaksoissidos (double bind) — mitä se tarkoittaa | Ilmiöitä">
+  <meta name="twitter:title" content="Kaksoissidos (double bind) — käsky, jota ei voi totella">
   <meta name="twitter:description" content="Kaksoissidos tarkoittaa kahta vaatimusta, jotka sulkevat toisensa pois — eikä ristiriidasta saa mainita eikä tilanteesta poistua.">
   <meta property="og:image" content="https://www.ilmiöt.fi/og/brand.png">
   <meta property="og:image:width" content="1200">
@@ -765,8 +766,8 @@
       "inLanguage": "fi",
       "articleSection": "Roolit ja valtapelit",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Kaksoissidos — käsky, jota ei voi totella eikä olla tottelematta",
+        "name": "Kaksoissidos",
         "description": "Kaksoissidos tarkoittaa kahta vaatimusta, jotka sulkevat toisensa pois — eikä ristiriidasta saa mainita eikä tilanteesta poistua.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -798,30 +799,7 @@
         "description": "Kirjoittajanimi, jonka takana on kiinnostus valtaan, vaikuttamiseen ja ihmisen päättelyn vinoumiin. Sisältö perustuu julkisiin lähteisiin ja vakiintuneeseen käsitteistöön."
       },
       "datePublished": "2026-10-03",
-      "dateModified": "2026-10-03"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.ilmiöt.fi/kaksoissidos.html#faq",
-      "inLanguage": "fi",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Mitä kaksoissidos tarkoittaa?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Kaksoissidos tarkoittaa tilannetta, jossa ihminen saa kaksi vaatimusta, jotka sulkevat toisensa pois, eikä hän voi tehdä oikein kummallakaan tavalla. Ratkaisevaa on kaksi lisäehtoa: ristiriidasta ei saa huomauttaa, eikä tilanteesta voi poistua. Antropologi Gregory Bateson työryhmineen kuvasi rakenteen vuonna 1956."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Mitä kaksoissidokselle voi tehdä?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ainoa ulospääsy on rikkoa se ehto, joka kieltää ristiriidan mainitsemisen. Käytännössä se tarkoittaa ristiriidan kirjaamista näkyviin sellaisena kuin se on: molemmat ohjeet rinnakkain, kirjallisesti, ja kysymys siitä kumpi on voimassa. Ristiriidan nimeäminen siirtää ongelman takaisin sille, joka on sen luonut."
-          }
-        }
-      ]
+      "dateModified": "2026-10-04"
     }
   ]
 }
@@ -847,13 +825,14 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="kaksoissidos">
 <div class="ilmio-tag">Ilmiö 143</div>
 <h1>Kaksoissidos — käsky, jota ei voi totella eikä olla tottelematta</h1>
-<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 3.10.2026</p>
+<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 4.10.2026</p>
 <p><strong>Kaksoissidos</strong> (engl. <em>double bind</em>) tarkoittaa tilannetta, jossa ihminen saa kaksi vaatimusta, jotka sulkevat toisensa pois: kumpaa tahansa hän noudattaa, hän rikkoo toista. Antropologi Gregory Bateson kuvasi rakenteen työryhmänsä kanssa vuonna 1956. Ratkaisevaa ei ole itse ristiriita vaan kaksi lisäehtoa: <strong>ristiriidasta ei saa huomauttaa</strong> eikä <strong>tilanteesta voi poistua</strong>.</p>
 <div class="infolaatikko vastauslohko">
-<h2 class="laatikko-otsikko">Mitä kaksoissidos tarkoittaa suomeksi?</h2>
+<h2 class="laatikko-otsikko" id="mita-kaksoissidos-tarkoittaa-suomeksi">Mitä kaksoissidos tarkoittaa suomeksi?</h2>
 <p style="margin:0.4em 0 0;"><strong>Kaksoissidos</strong> on vakiintunut suomennos englannin termistä <em>double bind</em>. Käsite on peräisin Batesonin, Don Jacksonin, Jay Haleyn ja John Weaklandin artikkelista <cite>Toward a Theory of Schizophrenia</cite> (1956). Artikkelin alkuperäinen väite skitsofrenian syystä ei ole saanut tukea myöhemmässä tutkimuksessa, mutta itse viestinnän kuvauksena käsite on jäänyt käyttöön.</p>
 </div>
 <div class="mermaid">
@@ -868,7 +847,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Ilman mainitsemiskieltoa kyse olisi vain huonosta ohjeesta.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Neljä ehtoa, joiden on täytyttävä:</h2>
+<h2 class="laatikko-otsikko" id="nelja-ehtoa-joiden-on-taytyttava">Neljä ehtoa, joiden on täytyttävä:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Kaksi tasoa:</strong> sanottu ja sanaton ohje ovat ristiriidassa — "sano rehellinen mielipiteesi", mutta rehellisyys muistetaan kehityskeskustelussa.</li>
 <li><strong>Mainitsemiskielto:</strong> ristiriidan osoittaminen tulkitaan hankaluudeksi, asenteeksi tai luottamuspulaksi.</li>
@@ -878,7 +857,7 @@ flowchart TD
 </div>
 <p>Työelämän tavallisin muoto on vastuu ilman valtuuksia: sinä vastaat lopputuloksesta, mutta jokainen päätös on hyväksytettävä. Kun projekti myöhästyy, syy kirjataan sinun nimiisi — et ollut riittävän oma-aloitteinen. Läheissuhteessa muoto on usein tunnepuolella: "älä ole noin varautunut" ja samalla jokainen avautuminen palautuu myöhemmin aseena. Kaksoissidos muistuttaa <a href="catch-22.html">catch-22:ta</a>, mutta ne eivät ole sama asia: catch-22 on sääntö, joka kumoaa itsensä, ja <a href="kafka-ilmio.html">Kafka-ilmiössä</a> vastuuta ei löydy mistään. Kaksoissidoksessa toinen osapuoli on tiedossa ja läsnä — kielletty on vain ristiriidan nimeäminen.</p>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Tunnusmerkki on tunne siitä, että <strong>häviät kummallakin vaihtoehdolla</strong>, ja että asian esiin ottaminen tuntuu riskiltä. Vastakeino on rikkoa juuri sitä ehtoa, joka kieltää mainitsemisen: kirjaa molemmat ohjeet rinnakkain näkyviin — sähköpostilla, samaan viestiin, neutraalisti — ja kysy kumpi on voimassa. Pyydä vastaus kirjallisena. Tämä ei ole niuhotusta: se siirtää ristiriidan takaisin sille, joka on sen luonut, ja tekee siitä yhteisen ongelman ratkaistavaksi. Jos vastausta ei tule tai kysymys itsessään tulkitaan hyökkäykseksi, olet saanut tärkeimmän tiedon — ristiriita on tarkoituksellinen tai ainakin hyväksytty.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Tunnusmerkki on tunne siitä, että <strong>häviät kummallakin vaihtoehdolla</strong>, ja että asian esiin ottaminen tuntuu riskiltä. Vastakeino on rikkoa juuri sitä ehtoa, joka kieltää mainitsemisen: kirjaa molemmat ohjeet rinnakkain näkyviin — sähköpostilla, samaan viestiin, neutraalisti — ja kysy kumpi on voimassa. Pyydä vastaus kirjallisena. Tämä ei ole niuhotusta: se siirtää ristiriidan takaisin sille, joka on sen luonut, ja tekee siitä yhteisen ongelman ratkaistavaksi. Jos vastausta ei tule tai kysymys itsessään tulkitaan hyökkäykseksi, olet saanut tärkeimmän tiedon — ristiriita on tarkoituksellinen tai ainakin hyväksytty.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -943,6 +922,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="voittajakolmio.html">← Voittajakolmio — sama kolmio ilman peliä</a>

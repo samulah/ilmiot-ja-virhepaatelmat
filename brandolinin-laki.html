@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Brandolinin laki — valhe on halpaa, kumoaminen kallista — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -775,12 +776,12 @@
       "@id": "https://www.ilmiöt.fi/brandolinin-laki.html#article",
       "url": "https://www.ilmiöt.fi/brandolinin-laki.html",
       "headline": "Brandolinin laki — valheen kumoaminen maksaa kymmenkertaisesti",
-      "description": "\"Hölynpölyn kumoamiseen tarvittava energia on suuruusluokkaa suurempi kuin sen tuottamiseen.\" Alberto Brandolini muotoili lain vuonna 2013 — miksi oikaisu…",
+      "description": "Brandolinin laki: valheen kumoaminen maksaa kymmenkertaisesti sen levittämiseen nähden. Selitämme asymmetrian seuraukset ja järkevät vastakeinot.",
       "inLanguage": "fi",
       "articleSection": "Informaatio ja propaganda",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -789,19 +790,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Brandolinin laki — valheen kumoaminen maksaa kymmenkertaisesti",
-        "description": "\"Hölynpölyn kumoamiseen tarvittava energia on suuruusluokkaa suurempi kuin sen tuottamiseen.\" Alberto Brandolini muotoili lain vuonna 2013 — miksi oikaisu…",
+        "name": "Brandolinin laki",
+        "description": "Brandolinin laki: valheen kumoaminen maksaa kymmenkertaisesti sen levittämiseen nähden. Selitämme asymmetrian seuraukset ja järkevät vastakeinot.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -813,29 +814,6 @@
       },
       "datePublished": "2026-07-10",
       "dateModified": "2026-08-04"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.ilmiöt.fi/brandolinin-laki.html#faq",
-      "inLanguage": "fi",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Kuka muotoili Brandolinin lain?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Italialainen ohjelmistokehittäjä Alberto Brandolini kirjoitti lauseen Twitteriin 11.1.2013 seurattuaan televisioväittelyä, jossa toinen osapuoli latasi väitteitä nopeammin kuin toinen ehti tarkistaa niitä. Laki tunnetaan myös nimellä bullshit asymmetry principle."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Mitä Brandolinin laille voi tehdä?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Jokaisen väitteen kumoaminen ei ole mahdollista — se on laskutoimitus, ei asennekysymys. Toimivampaa on osoittaa väitteiden lähde tai kaava kuin käsitellä ne yksitellen, ja valita kumottavaksi ne väitteet, joilla on eniten painoa."
-          }
-        }
-      ]
     }
   ]
 }
@@ -861,13 +839,14 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="brandolinin-laki">
 <div class="ilmio-tag">Ilmiö 19</div>
 <h1>Brandolinin laki — valheen kumoaminen maksaa kymmenkertaisesti</h1>
 <p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 4.8.2026</p>
 <p><em>"Hölynpölyn kumoamiseen tarvittava energia on suuruusluokkaa suurempi kuin sen tuottamiseen."</em> Italialainen ohjelmistokehittäjä Alberto Brandolini kirjoitti lauseen Twitteriin 11. tammikuuta 2013 — kirjoitusvirheineen, muodossa <em>"the bullshit asimmetry"</em>. Hän oli juuri seurannut televisioväittelyä, jossa toinen osapuoli latasi väitteitä nopeammin kuin toinen ehti tarkistaa niitä. Laki tunnetaan myös nimellä <em>bullshit asymmetry principle</em>, paskapuheen epäsymmetria.</p>
 <div class="infolaatikko vastauslohko">
-<h2 class="laatikko-otsikko">Mitä Brandolinin laki tarkoittaa?</h2>
+<h2 class="laatikko-otsikko" id="mita-brandolinin-laki-tarkoittaa">Mitä Brandolinin laki tarkoittaa?</h2>
 <p style="margin:0.4em 0 0;"><strong>Brandolinin laki</strong> sanoo, että hölynpölyn kumoaminen vaatii suuruusluokkaa enemmän vaivaa kuin sen tuottaminen. Väitteen voi heittää sekunnissa, mutta sen tarkistaminen vie tunteja. Epäsymmetria selittää, miksi virheellinen tieto leviää nopeammin kuin oikaisu ehtii perässä.</p>
 </div>
 <div class="mermaid">
@@ -883,7 +862,7 @@ flowchart LR
     </div>
 <p class="kaavio-selitys">Epäsymmetria ei ole mielipide vaan kustannusrakenne: tuottaminen on vapaata, kumoaminen sidottua.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Mistä epäsymmetria syntyy:</h2>
+<h2 class="laatikko-otsikko" id="mista-epasymmetria-syntyy">Mistä epäsymmetria syntyy:</h2>
 <ul style="margin:0.5em 0 0;">
 <li>Väitteen ei tarvitse olla tosi — vastaväitteen on pakko olla.</li>
 <li>Väite saa olla epämääräinen — kumoamisen on oltava täsmällinen.</li>
@@ -895,11 +874,11 @@ flowchart LR
     </div>
 <p>Mekanismi on epäsymmetrinen työnjako. Väitteen esittäjä saa valita aiheen, ajankohdan ja muotoilun. Kumoajan on hyväksyttävä ne kaikki annettuina ja tehtävä työ jälkikäteen: etsittävä alkuperäinen lähde, tarkistettava luvut, selvitettävä konteksti ja muotoiltava vastaus niin, ettei siihen jää aukkoa. Sillä välin väitteen esittäjä on jo julkaissut seuraavan. Kilpajuoksu on hävitty ennen kuin se alkaa, koska osapuolet eivät juokse samaa matkaa.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Miksi laki toimii:</h2> Hyökkäys rinnakkaistuu, puolustus ei. Yksi ihminen voi tuottaa kymmenen väitettä tunnissa; niiden kumoaminen vaatii kymmenen ihmisen työtunnit. Verkossa jakelu on lisäksi ilmaista, joten volyymi ei maksa mitään. Pahimmillaan kumoaminen kääntyy itseään vastaan: vastine toistaa alkuperäisen väitteen ja levittää sitä uudelle yleisölle, joka muistaa väitteen mutta ei oikaisua.
+<h2 class="laatikko-otsikko" id="miksi-laki-toimii">Miksi laki toimii:</h2> Hyökkäys rinnakkaistuu, puolustus ei. Yksi ihminen voi tuottaa kymmenen väitettä tunnissa; niiden kumoaminen vaatii kymmenen ihmisen työtunnit. Verkossa jakelu on lisäksi ilmaista, joten volyymi ei maksa mitään. Pahimmillaan kumoaminen kääntyy itseään vastaan: vastine toistaa alkuperäisen väitteen ja levittää sitä uudelle yleisölle, joka muistaa väitteen mutta ei oikaisua.
     </div>
 <p>Brandolinin laki ei ole yksittäinen kikka vaan se ehto, jonka varassa useat tekniikat toimivat. <a href="argumenttitulva.html">Argumenttitulva</a> on laki tietoisesti aseistettuna: väitteitä ladataan väittelyssä nopeammin kuin vastapuoli ehtii käsitellä yhtäkään. <a href="firehose-of-falsehood.html">Firehose of falsehood</a> skaalaa saman valtiollisen propagandan mitassa. <a href="ai-slop.html">AI slop</a> on lain uusin muoto: kun tuotantokustannus painuu käytännössä nollaan, epäsymmetria ei enää ole kymmenkertainen vaan rajaton.</p>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Jokaisen väitteen kumoamalla ei voi voittaa — se on laskutoimitus, ei asenne. Kolme asiaa toimii silti. <em>Kumoa tekniikka, älä jokaista väitettä:</em> yksi selitys siitä, miksi väitteitä tulee tulvana, kattaa ne kaikki. <em>Ehkäise ennalta:</em> <a href="inokulointiteoria.html">inokulointi</a> on ainoa vastakeino, joka skaalautuu, koska se tehdään kerran ja suojaa monelta. <em>Älä toista väitettä otsikossa:</em> oikaisu, joka aloittaa valheella, levittää sitä.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Jokaisen väitteen kumoamalla ei voi voittaa — se on laskutoimitus, ei asenne. Kolme asiaa toimii silti. <em>Kumoa tekniikka, älä jokaista väitettä:</em> yksi selitys siitä, miksi väitteitä tulee tulvana, kattaa ne kaikki. <em>Ehkäise ennalta:</em> <a href="inokulointiteoria.html">inokulointi</a> on ainoa vastakeino, joka skaalautuu, koska se tehdään kerran ja suojaa monelta. <em>Älä toista väitettä otsikossa:</em> oikaisu, joka aloittaa valheella, levittää sitä.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -965,6 +944,7 @@ flowchart LR
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="kuollut-kissa.html">← Kuollut kissa -strategia — skandaali pöydälle</a>

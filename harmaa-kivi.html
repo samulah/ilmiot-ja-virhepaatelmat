@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <title>DARVO — manipulaatiotaktiikka suomeksi | Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <title>Harmaa kivi (grey rock) — menetelmä suomeksi | Ilmiöitä</title>
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -765,8 +766,8 @@
       "inLanguage": "fi",
       "articleSection": "Roolit ja valtapelit",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Harmaa kivi — kun lähteminen ei ole vaihtoehto",
+        "name": "Harmaa kivi",
         "description": "Harmaa kivi tarkoittaa tylsäksi tulemista: reaktio on palkkio, ja ilman palkkiota kuvio menettää tarkoituksensa. Keino tilanteisiin joista ei voi lähteä.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -798,30 +799,7 @@
         "description": "Kirjoittajanimi, jonka takana on kiinnostus valtaan, vaikuttamiseen ja ihmisen päättelyn vinoumiin. Sisältö perustuu julkisiin lähteisiin ja vakiintuneeseen käsitteistöön."
       },
       "datePublished": "2026-10-03",
-      "dateModified": "2026-10-03"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.ilmiöt.fi/harmaa-kivi.html#faq",
-      "inLanguage": "fi",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Mitä harmaa kivi tarkoittaa?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Harmaa kivi on menetelmä, jossa vuorovaikutuksesta poistetaan se, mitä toinen siitä hakee: tunnereaktio, uusi tieto ja pitkä keskustelu. Vastaukset ovat lyhyitä, asiallisia ja tylsiä. Menetelmä on tarkoitettu tilanteisiin, joista ei voi poistua — työsuhteeseen, yhteishuoltajuuteen tai pakollisiin sukutapaamisiin."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Toimiiko harmaa kivi?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Se vähentää yleensä kontaktien määrää, koska käyttäytyminen menettää tehtävänsä ilman reaktiota. Se ei kuitenkaan korjaa suhdetta eikä sovi tilanteeseen, jossa yhteistyötä oikeasti tarvitaan. Ensimmäinen vaihe on usein kiihtyminen: kun reaktio jää saamatta, sitä haetaan voimakkaammin ennen kuin yritykset vähenevät."
-          }
-        }
-      ]
+      "dateModified": "2026-10-04"
     }
   ]
 }
@@ -847,13 +825,14 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="harmaa-kivi">
 <div class="ilmio-tag">Ilmiö 148</div>
 <h1>Harmaa kivi — kun lähteminen ei ole vaihtoehto</h1>
-<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 3.10.2026</p>
+<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 4.10.2026</p>
 <p><strong>Harmaa kivi</strong> (engl. <em>grey rock</em> tai <em>gray rock method</em>) tarkoittaa tylsäksi tulemista tarkoituksella. Vuorovaikutuksesta poistetaan se, mitä toinen siitä hakee: tunnereaktio, uusi tieto ja pitkä keskustelu. Ajatus on yksinkertainen — reaktio on palkkio, ja ilman palkkiota käyttäytyminen menettää tehtävänsä. Menetelmä on tarkoitettu tilanteisiin, joista ei voi poistua.</p>
 <div class="infolaatikko vastauslohko">
-<h2 class="laatikko-otsikko">Mitä harmaa kivi tarkoittaa suomeksi?</h2>
+<h2 class="laatikko-otsikko" id="mita-harmaa-kivi-tarkoittaa-suomeksi">Mitä harmaa kivi tarkoittaa suomeksi?</h2>
 <p style="margin:0.4em 0 0;">Termi on suora käännös englannin ilmauksesta <em>grey rock</em>: ole kuin harmaa kivi, jota kukaan ei poimi rannalta. Nimitys on peräisin vertaistukikirjoittelusta 2010-luvun alusta eikä ole kliininen käsite. Se on <a href="no-contact.html">no contactin</a> vastine silloin, kun katkaisu ei ole mahdollinen — yhteishuoltajuudessa, työsuhteessa tai pakollisissa sukutapaamisissa.</p>
 </div>
 <div class="mermaid">
@@ -868,7 +847,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Kiihtymisvaihe tulee ennen laantumista — se ei ole merkki epäonnistumisesta.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Käytännössä kolme sääntöä:</h2>
+<h2 class="laatikko-otsikko" id="kaytannossa-kolme-saantoa">Käytännössä kolme sääntöä:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Lyhyt ja asiallinen:</strong> vastaa kysymykseen, älä sen ympärille. "Selvä." "En tiedä." "Palaan asiaan huomenna."</li>
 <li><strong>Ei uutta tietoa:</strong> älä kerro suunnitelmia, tunteita tai muiden asioita — kaikki kerrottu on myöhemmin käytettävissä.</li>
@@ -877,7 +856,7 @@ flowchart TD
 </div>
 <p>Työpaikalla harmaa kivi tarkoittaa käytännössä siirtymistä kirjalliseen kanavaan: vastaukset sähköpostilla, lyhyesti, faktoihin rajautuen ja niin että jälki jää. Se poistaa samalla <a href="gaslighting.html">gaslightingin</a> toimintaedellytykset, koska muistin sijasta kiistellään tekstistä. Kaksi rajausta on syytä tehdä. Harmaa kivi ei ole hiljainen rankaiseminen eikä <a href="hiljainen-irtisanoutuminen.html">vetäytyminen työstä</a>: työ tehdään, viesteihin vastataan, vain palkkio jää pois. Eikä se ole päämäärä vaan silta — se tekee tilanteesta siedettävän sillä aikaa kun järjestät itsellesi ulospääsyn.</p>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Menetelmän hinta kannattaa tietää etukäteen: <strong>se on väsyttävää</strong>, koska oman reaktion pidättäminen on työtä, ja pitkään jatkuessaan se turruttaa myös muut suhteet. Siksi kolme ehtoa. Aseta <strong>aikaraja</strong> — kuukausia, ei vuosia — ja päätä mitä sinä sinä aikana järjestät. Pidä <strong>yksi ihminen</strong>, jolle puhut suoraan, ettei tylsyydestä tule ainoa tapasi olla. Ja <strong>kirjaa tapahtumat</strong>, koska hiljaisuus ei todista mitään jälkikäteen. Jos tilanteeseen liittyy uhkaa, työturvallisuutta tai lasten asioita, menetelmä ei riitä: se hallitsee vuorovaikutusta, ei ratkaise valtasuhdetta.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Menetelmän hinta kannattaa tietää etukäteen: <strong>se on väsyttävää</strong>, koska oman reaktion pidättäminen on työtä, ja pitkään jatkuessaan se turruttaa myös muut suhteet. Siksi kolme ehtoa. Aseta <strong>aikaraja</strong> — kuukausia, ei vuosia — ja päätä mitä sinä sinä aikana järjestät. Pidä <strong>yksi ihminen</strong>, jolle puhut suoraan, ettei tylsyydestä tule ainoa tapasi olla. Ja <strong>kirjaa tapahtumat</strong>, koska hiljaisuus ei todista mitään jälkikäteen. Jos tilanteeseen liittyy uhkaa, työturvallisuutta tai lasten asioita, menetelmä ei riitä: se hallitsee vuorovaikutusta, ei ratkaise valtasuhdetta.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -942,6 +921,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="no-contact.html">← No contact — katkaisu, joka poistaa toisen pelaajan</a>

@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Tilausansa — helppo tilata, vaikea perua — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/tilausansa.html#article",
       "url": "https://www.ilmiöt.fi/tilausansa.html",
       "headline": "Tilausansa — helppo tilata, vaikea perua",
-      "description": "Tilausansa (subscription trap) on tilaus, johon liittyminen on yhden klikkauksen helppoa ja peruminen tahallaan vaikeaa — kokeilusta jatkuvaan veloitukseen.",
+      "description": "Tilausansa: helppo tilata, vaikea perua. Selitämme miten peruutus tehdään tahallaan hankalaksi ja miten pääset tilauksesta eroon.",
       "inLanguage": "fi",
       "articleSection": "Myyntikikat ja painostus",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Tilausansa — helppo tilata, vaikea perua",
-        "description": "Tilausansa (subscription trap) on tilaus, johon liittyminen on yhden klikkauksen helppoa ja peruminen tahallaan vaikeaa — kokeilusta jatkuvaan veloitukseen.",
+        "name": "Tilausansa",
+        "description": "Tilausansa: helppo tilata, vaikea perua. Selitämme miten peruutus tehdään tahallaan hankalaksi ja miten pääset tilauksesta eroon.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -824,6 +825,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="tilausansa">
 <div class="ilmio-tag">Ilmiö 94</div>
 <h1>Tilausansa — helppo tilata, vaikea perua</h1>
@@ -843,7 +845,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Torakkahotellin pohjapiirros: ovi aukeaa vain sisäänpäin.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Missä ansat asuvat:</h2>
+<h2 class="laatikko-otsikko" id="missa-ansat-asuvat">Missä ansat asuvat:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Kuntosalit:</strong> nettiliittyminen minuutissa, irtisanominen paperilomakkeella tiskillä irtisanomisaikoineen.</li>
 <li><strong>Lehtitilaukset:</strong> "kuukausi eurolla" jatkuu täysihintaisena kestotilauksena — ja peruminen vaatii puhelinsoiton myyjälle.</li>
@@ -854,7 +856,7 @@ flowchart TD
 </div>
 <p>Sääntely kiristyy, mutta laahaa ansan perässä. EU:n kuluttajansuoja edellyttää, että kestotilauksesta kerrotaan selvästi ennen maksua ja että sen voi perua kohtuudella; Saksa vaatii verkkopalveluihin pakollisen perumisnapin. Suomessa kuluttaja-asiamies on puuttunut toistuvasti puhelinmyynnin ja kestotilausten ehtoihin. Ansa vastaa vaihtamalla muotoa — siksi tunnistaminen kannattaa opetella itse.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Tarkista perumisohje <em>ennen</em> tilaamista — jos sitä ei löydy hakukoneella minuutissa, se on vastauksesi palvelun luonteesta. Merkitse kokeilun päättymispäivä kalenteriin heti tilatessa, tai peru saman tien: useimmat kokeilut jatkuvat jakson loppuun perumisesta huolimatta. Käytä kokeiluihin virtuaalikorttia, jonka voi sulkea. Ja käy tiliotteen toistuvaisveloitukset läpi pari kertaa vuodessa — hiljainen pieni summa on ansan tuottoisin muoto.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Tarkista perumisohje <em>ennen</em> tilaamista — jos sitä ei löydy hakukoneella minuutissa, se on vastauksesi palvelun luonteesta. Merkitse kokeilun päättymispäivä kalenteriin heti tilatessa, tai peru saman tien: useimmat kokeilut jatkuvat jakson loppuun perumisesta huolimatta. Käytä kokeiluihin virtuaalikorttia, jonka voi sulkea. Ja käy tiliotteen toistuvaisveloitukset läpi pari kertaa vuodessa — hiljainen pieni summa on ansan tuottoisin muoto.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -911,6 +913,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="suunniteltu-vanheneminen.html">← Suunniteltu vanheneminen — tehty hajoamaan</a>

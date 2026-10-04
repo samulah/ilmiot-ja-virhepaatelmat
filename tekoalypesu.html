@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Tekoälypesu — tekoälyä puheissa, ei tuotteessa — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/tekoalypesu.html#article",
       "url": "https://www.ilmiöt.fi/tekoalypesu.html",
       "headline": "Tekoälypesu — tekoälyä puheissa, ei tuotteessa",
-      "description": "Tekoälypesu (AI washing) tarkoittaa tuotteen tai yrityksen markkinoimista tekoälyllä, jota siinä ei ole — tai jonka rooli on rajusti liioiteltu.",
+      "description": "Tekoälypesu: tekoälyä puheissa, ei tuotteessa. Selitämme miten AI-väitteet tehtaillaan käytännössä ja millä kysymyksillä testaat ne.",
       "inLanguage": "fi",
       "articleSection": "Pesut ja maineenhallinta",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Tekoälypesu — tekoälyä puheissa, ei tuotteessa",
-        "description": "Tekoälypesu (AI washing) tarkoittaa tuotteen tai yrityksen markkinoimista tekoälyllä, jota siinä ei ole — tai jonka rooli on rajusti liioiteltu.",
+        "name": "Tekoälypesu",
+        "description": "Tekoälypesu: tekoälyä puheissa, ei tuotteessa. Selitämme miten AI-väitteet tehtaillaan käytännössä ja millä kysymyksillä testaat ne.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -824,6 +825,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="tekoalypesu">
 <div class="ilmio-tag">Ilmiö 116</div>
 <h1>Tekoälypesu — tekoälyä puheissa, ei tuotteessa</h1>
@@ -842,7 +844,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Tekoälypesun kaari: sana tuo rahat heti, todellisuus laskuttaa myöhemmin.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Tekoälypesun muodot:</h2>
+<h2 class="laatikko-otsikko" id="tekoalypesun-muodot">Tekoälypesun muodot:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Uudelleennimeäminen:</strong> vanha sääntöpohjainen automaatio, excel-makro tai tilastomalli ristitään tekoälyksi. Tuote ei muutu — esite muuttuu.</li>
 <li><strong>Ozin velho:</strong> "tekoälyn" työn tekevät kulisseissa ihmiset. Halpatyö skaalautuu demoon asti, mutta ei liiketoiminnaksi.</li>
@@ -851,7 +853,7 @@ flowchart TD
 </ul>
 </div>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Tunnettuja tapauksia:</h2>
+<h2 class="laatikko-otsikko" id="tunnettuja-tapauksia">Tunnettuja tapauksia:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>SEC:n ensimmäiset AI washing -sakot (2024):</strong> Yhdysvaltain arvopaperivalvoja sakotti sijoitusyhtiöitä Delphia ja Global Predictions perättömistä tekoälyväitteistä markkinoinnissa — valvoja käytti itse termiä "AI washing" ja varoitti, että lisää on tulossa.</li>
 <li><strong>Amazon Just Walk Out (2024):</strong> uutisoinnin mukaan "kassattoman kaupan" tekoäly nojasi yli tuhanteen työntekijään, jotka tarkistivat ostoksia videolta Intiassa. Amazon kiisti tulkinnan mutta luopui järjestelmästä useimmissa myymälöissään.</li>
@@ -859,7 +861,7 @@ flowchart TD
 </ul>
 </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Kysy samat kysymykset kuin ympäristöväitteestä. Mitä malli konkreettisesti tekee, millä datalla se on koulutettu ja miten tulos eroaa vanhasta ratkaisusta? "Tekoäly" ilman vastauksia on sama epämääräisyyssynti kuin "luonnollinen" ilman määritelmää. Selvitä, tekeekö työn ihminen: miten palvelu toimii yöllä, ruuhkassa, kymmenkertaisella volyymilla? Erota tuote roadmapista — osta se, mikä on olemassa. Ja sijoittajana muista: yhtiö, jonka ainoa tekoälyetu on sana tiedotteessa, kilpailee kaikkia muita saman sanan käyttäjiä vastaan.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Kysy samat kysymykset kuin ympäristöväitteestä. Mitä malli konkreettisesti tekee, millä datalla se on koulutettu ja miten tulos eroaa vanhasta ratkaisusta? "Tekoäly" ilman vastauksia on sama epämääräisyyssynti kuin "luonnollinen" ilman määritelmää. Selvitä, tekeekö työn ihminen: miten palvelu toimii yöllä, ruuhkassa, kymmenkertaisella volyymilla? Erota tuote roadmapista — osta se, mikä on olemassa. Ja sijoittajana muista: yhtiö, jonka ainoa tekoälyetu on sana tiedotteessa, kilpailee kaikkia muita saman sanan käyttäjiä vastaan.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -932,6 +934,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="pinkkipesu.html">← Pinkkipesu — sateenkaari kampanjakuukaudeksi</a>

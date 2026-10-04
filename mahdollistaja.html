@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <title>DARVO — manipulaatiotaktiikka suomeksi | Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <title>Mahdollistaja (enabler) — apu, joka pitää ongelman käynnissä</title>
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -708,14 +709,14 @@
   <!-- SEO -->
   <meta name="description" content="Mahdollistaja paikkaa toisen jäljet, jolloin seuraukset eivät koskaan osu siihen joka ne aiheuttaa. Näin mekanismi toimii tiimissä ja perheessä.">
   <link rel="canonical" href="https://www.ilmiöt.fi/mahdollistaja.html">
-  <meta property="og:title" content="Mahdollistaja (enabler) — mitä se tarkoittaa | Ilmiöitä">
+  <meta property="og:title" content="Mahdollistaja (enabler) — apu, joka pitää ongelman käynnissä">
   <meta property="og:description" content="Mahdollistaja paikkaa toisen jäljet, jolloin seuraukset eivät koskaan osu siihen joka ne aiheuttaa. Näin mekanismi toimii tiimissä ja perheessä.">
   <meta property="og:url" content="https://www.ilmiöt.fi/mahdollistaja.html">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="fi_FI">
   <meta property="og:site_name" content="Ilmiöitä — Miten valta toimii">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Mahdollistaja (enabler) — mitä se tarkoittaa | Ilmiöitä">
+  <meta name="twitter:title" content="Mahdollistaja (enabler) — apu, joka pitää ongelman käynnissä">
   <meta name="twitter:description" content="Mahdollistaja paikkaa toisen jäljet, jolloin seuraukset eivät koskaan osu siihen joka ne aiheuttaa. Näin mekanismi toimii tiimissä ja perheessä.">
   <meta property="og:image" content="https://www.ilmiöt.fi/og/brand.png">
   <meta property="og:image:width" content="1200">
@@ -765,8 +766,8 @@
       "inLanguage": "fi",
       "articleSection": "Roolit ja valtapelit",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Mahdollistaja — apu, joka pitää ongelman käynnissä",
+        "name": "Mahdollistaja",
         "description": "Mahdollistaja paikkaa toisen jäljet, jolloin seuraukset eivät koskaan osu siihen joka ne aiheuttaa. Näin mekanismi toimii tiimissä ja perheessä.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -798,30 +799,7 @@
         "description": "Kirjoittajanimi, jonka takana on kiinnostus valtaan, vaikuttamiseen ja ihmisen päättelyn vinoumiin. Sisältö perustuu julkisiin lähteisiin ja vakiintuneeseen käsitteistöön."
       },
       "datePublished": "2026-10-03",
-      "dateModified": "2026-10-03"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.ilmiöt.fi/mahdollistaja.html#faq",
-      "inLanguage": "fi",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Mitä mahdollistaja tarkoittaa?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Mahdollistaja on ihminen, joka ottaa kantaakseen ne seuraukset, jotka kuuluisivat toiselle: paikkaa virheet, keksii selitykset ja tekee tekemättä jääneet työt. Aikomus on lähes aina hyvä, mutta lopputulos on se, ettei ongelma näy missään — eikä siksi muutu."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Miten mahdollistajan roolista pääsee pois?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ei kieltäytymällä auttamasta kokonaan, vaan lopettamalla seurausten siirtämisen. Käytännössä se tarkoittaa, että työ tai virhe jää näkyviin sen nimiin jolle se kuuluu. Muutos tuntuu ensin kovuudelta ja aiheuttaa usein syytöksiä, koska se poistaa muilta hyödyn, johon on totuttu."
-          }
-        }
-      ]
+      "dateModified": "2026-10-04"
     }
   ]
 }
@@ -847,13 +825,14 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="mahdollistaja">
 <div class="ilmio-tag">Ilmiö 144</div>
 <h1>Mahdollistaja — apu, joka pitää ongelman käynnissä</h1>
-<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 3.10.2026</p>
+<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 4.10.2026</p>
 <p><strong>Mahdollistaja</strong> (engl. <em>enabler</em>) on ihminen, joka ottaa kantaakseen ne seuraukset, jotka kuuluisivat toiselle. Hän paikkaa virheet, keksii selitykset, soittaa poissaolot ja tekee tekemättä jääneet työt. Aikomus on lähes aina hyvä. Lopputulos on silti se, että ongelma ei näy missään — ja asia, joka ei näy, ei myöskään muutu.</p>
 <div class="infolaatikko vastauslohko">
-<h2 class="laatikko-otsikko">Mitä mahdollistaja tarkoittaa suomeksi?</h2>
+<h2 class="laatikko-otsikko" id="mita-mahdollistaja-tarkoittaa-suomeksi">Mitä mahdollistaja tarkoittaa suomeksi?</h2>
 <p style="margin:0.4em 0 0;"><strong>Mahdollistaja</strong> on vakiintunut suomennos englannin sanasta <em>enabler</em>. Käsite tulee päihderiippuvuuden ja perheterapian kirjallisuudesta 1980-luvulta, ja se vastaa <a href="draamakolmio.html">draamakolmion</a> pelastajan asemaa. Nykyisessä päihdehoidossa sanaa käytetään varovasti, koska se kääntyy helposti syytökseksi läheistä kohtaan — mekanismi on rakenteellinen, ei luonnevika.</p>
 </div>
 <div class="mermaid">
@@ -868,7 +847,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Palaute ei katkea siksi että se puuttuu, vaan siksi että joku ottaa sen vastaan toisen puolesta.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Miksi rooli pysyy:</h2>
+<h2 class="laatikko-otsikko" id="miksi-rooli-pysyy">Miksi rooli pysyy:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Se palkitaan heti:</strong> paikkaaminen lopettaa ahdistavan tilanteen tänään; hinta lankeaa vasta kuukausien päästä.</li>
 <li><strong>Se tuottaa aseman:</strong> mahdollistajasta tulee korvaamaton — ja korvaamattomuus tuntuu arvostukselta.</li>
@@ -878,7 +857,7 @@ flowchart TD
 </div>
 <p>Tiimissä mahdollistaja on se, joka korjaa toisen koodin öisin, siivoaa esityksen ennen kokousta ja vastaa asiakkaalle kun kollega ei vastannut. Kukaan ei näe alisuoriutumista, koska se ei koskaan ehdi näkyä. Johto katsoo mittareita, ja mittarit ovat kunnossa. Perheessä sama rakenne kantaa juomista, rahankäyttöä tai väkivaltaa: ulospäin kaikki on hallinnassa, koska yksi ihminen käyttää kaiken aikansa siihen, että se näyttäisi siltä. Kun mahdollistaja lopulta väsyy, seuraa tyypillisesti <a href="roolinvaihto.html">roolinvaihto</a> — pitkä lista tehdyistä palveluksista, joita ei koskaan sovittu.</p>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Testikysymys on yksinkertainen: <strong>kenelle seuraus lankeaa, jos et tee mitään?</strong> Jos vastaus on "minulle", olet ottanut kannettavaksesi jotain, mikä ei ole sinun. Vastakeino ei ole auttamisen lopettaminen vaan seurausten palauttaminen: tee oma työsi, älä toisen, ja anna tekemättä jääneen näkyä sen nimissä jolle se kuuluu. Kirjaa mitä teet toisen puolesta — kahden viikon lista riittää yleensä yllättämään. Varaudu siihen, että muutos tulkitaan ensin kylmyydeksi: se ei ole merkki virheestä vaan siitä, että joku menetti hyödyn, johon oli tottunut. Hätätilanteessa autetaan — mutta hätätila, joka toistuu joka kuukausi, on järjestely.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Testikysymys on yksinkertainen: <strong>kenelle seuraus lankeaa, jos et tee mitään?</strong> Jos vastaus on "minulle", olet ottanut kannettavaksesi jotain, mikä ei ole sinun. Vastakeino ei ole auttamisen lopettaminen vaan seurausten palauttaminen: tee oma työsi, älä toisen, ja anna tekemättä jääneen näkyä sen nimissä jolle se kuuluu. Kirjaa mitä teet toisen puolesta — kahden viikon lista riittää yleensä yllättämään. Varaudu siihen, että muutos tulkitaan ensin kylmyydeksi: se ei ole merkki virheestä vaan siitä, että joku menetti hyödyn, johon oli tottunut. Hätätilanteessa autetaan — mutta hätätila, joka toistuu joka kuukausi, on järjestely.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -943,6 +922,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="kaksoissidos.html">← Kaksoissidos — käsky, jota ei voi totella eikä olla tottelematta</a>

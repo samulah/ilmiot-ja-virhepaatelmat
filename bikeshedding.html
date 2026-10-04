@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Bikeshedding — triviaalisuuslaki — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/bikeshedding.html#article",
       "url": "https://www.ilmiöt.fi/bikeshedding.html",
       "headline": "Bikeshedding — triviaalisuuslaki",
-      "description": "C. Northcote Parkinson kuvasi 1957 ilmiön, jonka myöhemmin nimettiin bikesheddingiksi: komitea käyttää enemmän aikaa polkupyöräkatoksen värin valintaan kuin…",
+      "description": "Bikeshedding: triviaalit asiat saavat eniten keskustelua. Selitämme miksi pyöräteline puhuttaa enemmän kuin ydinvoimala ja miten kokoukset korjataan.",
       "inLanguage": "fi",
       "articleSection": "Projekti- ja ohjelmistokehitys",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Bikeshedding — triviaalisuuslaki",
-        "description": "C. Northcote Parkinson kuvasi 1957 ilmiön, jonka myöhemmin nimettiin bikesheddingiksi: komitea käyttää enemmän aikaa polkupyöräkatoksen värin valintaan kuin…",
+        "name": "Bikeshedding",
+        "description": "Bikeshedding: triviaalit asiat saavat eniten keskustelua. Selitämme miksi pyöräteline puhuttaa enemmän kuin ydinvoimala ja miten kokoukset korjataan.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -824,6 +825,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="bikeshedding">
 <div class="ilmio-tag">Ilmiö 61</div>
 <h1>Bikeshedding — triviaalisuuslaki</h1>
@@ -858,10 +860,10 @@ flowchart TD
 <p>Suunta on selvä: mitä pienempi ja arkipäiväisempi asia, sitä enemmän aikaa siihen käytetään — koska yhä useampi kokouksessa istuva voi ottaa siihen kantaa ilman pelkoa siitä, että asiantuntija osoittaa hänet vääräksi.</p>
 <p>Teknisessä kontekstissa bikeshedding näkyy esimerkiksi: muuttujanimen kirjoitusasusta väitellään koodikatselmuksessa tuntikausia, mutta tietokannan sirpalointi- tai arkkitehtuuripäätös menee läpi minuuteissa, koska aihe on liian tekninen suurimmalle osalle osallistujista. Dashboardin väripaletti saa enemmän kommentteja kuin sen taustalla oleva mittarilogiikka. Fontin koko herättää enemmän keskustelua PR:ssä kuin tietoturva-aukko, koska fontista jokainen uskaltaa sanoa mielipiteensä.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Miksi tämä on institutionaalinen ongelma:</h2> Bikeshedding ei johdu huonoista ihmisistä — se johtuu siitä, että kokouksissa on enemmän ihmisiä kuin on tarpeen monimutkaisten päätösten tekemiseen. Suuressa kokouksessa jokainen haluaa osoittaa osallistumisensa, ja yksinkertaisiin asioihin on helpoin — ja turvallisinta — osallistua.
+<h2 class="laatikko-otsikko" id="miksi-tama-on-institutionaalinen-ongelma">Miksi tämä on institutionaalinen ongelma:</h2> Bikeshedding ei johdu huonoista ihmisistä — se johtuu siitä, että kokouksissa on enemmän ihmisiä kuin on tarpeen monimutkaisten päätösten tekemiseen. Suuressa kokouksessa jokainen haluaa osoittaa osallistumisensa, ja yksinkertaisiin asioihin on helpoin — ja turvallisinta — osallistua.
     </div>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Kolme konkreettista tekniikkaa:
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Kolme konkreettista tekniikkaa:
 <ul style="margin:0.6em 0 0; padding-left:1.3em;">
 <li><strong>Aikaboksaus per aihe:</strong> jokaiselle asialistan kohdalle etukäteen määrätty maksimiaika — kun aika loppuu, päätös tehdään tai siirretään pienemmälle ryhmälle.</li>
 <li><strong>"Kaksi minuuttia" -sääntö:</strong> jos kukaan ei pysty perustelemaan kantaansa kahdessa minuutissa asiantuntemuksella, asia ei kuulu koko ryhmän agendalle.</li>
@@ -940,6 +942,7 @@ Päätökset pitäisi ylipäätään tehdä pienimmällä mahdollisella joukolla
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="conways-laki.html">← Conwayn laki — organisaatio heijastuu arkkitehtuuriin</a>

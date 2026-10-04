@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Houkutinvaihtoehto — tahallaan huono vaihtoehto ohjaa valintaa — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/houkutinvaihtoehto.html#article",
       "url": "https://www.ilmiöt.fi/houkutinvaihtoehto.html",
       "headline": "Houkutinvaihtoehto — tahallaan huono vaihtoehto ohjaa valintaa",
-      "description": "Houkutinvaihtoehto (engl. decoy effect ) on hinnoittelukikka, jossa valikoimaan lisätään kolmas, tarkoituksella epäedullinen vaihtoehto , jonka ainoa tehtävä…",
+      "description": "Houkutinvaihtoehto: tahallaan huono vaihtoehto ohjaa valintaasi. Selitämme decoy-tekniikan hinnoittelussa ja miten vertaat vain omaan tarpeeseesi.",
       "inLanguage": "fi",
       "articleSection": "Myyntikikat ja painostus",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Houkutinvaihtoehto — tahallaan huono vaihtoehto ohjaa valintaa",
-        "description": "Houkutinvaihtoehto (engl. decoy effect ) on hinnoittelukikka, jossa valikoimaan lisätään kolmas, tarkoituksella epäedullinen vaihtoehto , jonka ainoa tehtävä…",
+        "name": "Houkutinvaihtoehto",
+        "description": "Houkutinvaihtoehto: tahallaan huono vaihtoehto ohjaa valintaasi. Selitämme decoy-tekniikan hinnoittelussa ja miten vertaat vain omaan tarpeeseesi.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -798,7 +799,7 @@
         "description": "Kirjoittajanimi, jonka takana on kiinnostus valtaan, vaikuttamiseen ja ihmisen päättelyn vinoumiin. Sisältö perustuu julkisiin lähteisiin ja vakiintuneeseen käsitteistöön."
       },
       "datePublished": "2026-06-19",
-      "dateModified": "2026-06-19"
+      "dateModified": "2026-10-04"
     }
   ]
 }
@@ -824,12 +825,13 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="houkutinvaihtoehto">
 <div class="ilmio-tag">Ilmiö 88</div>
 <h1>Houkutinvaihtoehto — tahallaan huono vaihtoehto ohjaa valintaa</h1>
-<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 19.6.2026</p>
+<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 4.10.2026</p>
 <p>Houkutinvaihtoehto (engl. <em>decoy effect</em>) on hinnoittelukikka, jossa valikoimaan lisätään <strong>kolmas, tarkoituksella epäedullinen vaihtoehto</strong>, jonka ainoa tehtävä on saada haluttu vaihtoehto näyttämään ylivertaiselta. Houkutinta ei ole tarkoitus myydä — se on olemassa vain ohjatakseen valintaa.</p>
-<p>Klassinen esimerkki on <em>The Economist</em> -lehden tilausmalli: kun "vain verkko 59 $" ja "verkko + printti 125 $" rinnalle lisättiin "vain printti 125 $", lähes kaikki valitsivat kalleimman paketin — koska se näytti nyt ilmaiselta lisältä. Pelkkä huono vaihtoehto siirsi valintoja kalliimpaan.</p>
+<p>Klassinen esimerkki on Dan Arielyn koe, jonka pohjana oli <em>The Economist</em> -lehden tilausilmoitus. Kun sata opiskelijaa sai valita vaihtoehdoista "vain verkko 59 $" ja "verkko + printti 125 $", 68 otti halvemman. Kun rinnalle lisättiin "vain printti 125 $", 84 valitsi kalleimman paketin — koska se näytti nyt ilmaiselta lisältä. Houkutinta ei valinnut kukaan, mutta se siirsi valinnat kalliimpaan.</p>
 <div class="mermaid">
 flowchart TD
   A["Vaihtoehto A:\nPerus 10 €"] --&gt; D{Asiakkaan valinta}
@@ -841,7 +843,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Keskimmäistä ei ole tarkoitus myydä — se on hinnoiteltu niin, että kallein näyttää järkevimmältä.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Missä se esiintyy:</h2>
+<h2 class="laatikko-otsikko" id="missa-se-esiintyy">Missä se esiintyy:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Tilausmallit:</strong> kolme pakettia, joista keskimmäinen on tahallaan kehno.</li>
 <li><strong>Elokuvateatterin popcorn:</strong> "keski" hinnoitellaan lähelle "suurta", jotta suuri tuntuu järkevältä.</li>
@@ -850,7 +852,7 @@ flowchart TD
 </ul>
 </div>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Kun edessäsi on kolme vaihtoehtoa, kysy: <em>mitä minä todella tarvitsen?</em> — älä vertaile vaihtoehtoja keskenään vaan suhteessa tarpeeseesi. Jos yksi vaihtoehto vaikuttaa olevan olemassa vain saadakseen toisen näyttämään hyvältä, se on houkutin. Sama ankkurointivinouma kuin <a href="hintaankkurointi.html">hintaankkuroinnissa</a>.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Kun edessäsi on kolme vaihtoehtoa, kysy: <em>mitä minä todella tarvitsen?</em> — älä vertaile vaihtoehtoja keskenään vaan suhteessa tarpeeseesi. Jos yksi vaihtoehto vaikuttaa olevan olemassa vain saadakseen toisen näyttämään hyvältä, se on houkutin. Sama ankkurointivinouma kuin <a href="hintaankkurointi.html">hintaankkuroinnissa</a>.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -915,6 +917,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="hintaankkurointi.html">← Hintaankkurointi — ensimmäinen luku ohjaa koko neuvottelua</a>

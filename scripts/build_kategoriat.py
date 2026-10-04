@@ -35,6 +35,9 @@ Sisältötiedoston muoto:
     [[ILMIOT]]     -> generoitu korttilista
     [[NAAPURIT]]   -> generoidut naapurikategorialinkit
 
+h1:ssä, otsikossa ja kuvauksessa {n} on kategorian ilmiömäärä ja {n-1} yhtä
+vähemmän. Määrää ei kirjoiteta niihin numerona käsin (ks. tayta_maarat).
+
 Ajo:
     python3 scripts/build_kategoriat.py                  # kaikki kategoriat/*.md
     python3 scripts/build_kategoriat.py tilastoilla-valehtelu
@@ -50,7 +53,7 @@ SISALTO = ROOT / "kategoriat"
 LUONNOSKANSIO = ROOT / "luonnokset"
 
 DOMAIN = "https://www.ilmiöt.fi"
-CSS_VERSIO = "20260727"   # pidä samassa kuin ilmiösivuilla (ks. muisti: CSS cache-bust)
+CSS_VERSIO = "20261004"   # pidä samassa kuin scripts/fontit_esilataus.py:n VERSIO
 
 
 # ───────────────────────────── index.html ──────────────────────────────
@@ -132,6 +135,32 @@ def lue_sisalto(polku):
     for pakollinen in ("kat_id", "h1", "otsikko", "kuvaus", "vari", "paivitetty"):
         assert pakollinen in meta, f"{polku.name}: '{pakollinen}' puuttuu front matterista"
     return meta, runko
+
+
+# -toista-lukusanan vartalo → luku. Pidempi vartalo ensin: "kahdeksa" ennen
+# "kahde", "yhdeksä" ennen "yhde".
+TOISTA = [("kahdeksa", 18), ("yhdeksä", 19), ("seitsemä", 17), ("yksi", 11),
+          ("yhde", 11), ("kaksi", 12), ("kahde", 12), ("kolme", 13),
+          ("neljä", 14), ("viisi", 15), ("viide", 15), ("kuusi", 16), ("kuude", 16)]
+
+
+def tayta_maarat(meta, n, nimi):
+    """h1, otsikko ja kuvaus: {n} ja {n-1} → kategorian ilmiömäärä korteista.
+
+    Käsin kirjoitettu luku vanhenee, kun kategoriaan lisätään ilmiö: 4.10.2026
+    kolmen kategorian <title> lupasi 11, 8 ja 7, kun ilmiöitä oli 14, 9 ja 8.
+    Numerona kirjoitettu määrä on siksi aina paikkamerkki. Sanana kirjoitettua
+    (-toista) ei voi taivuttaa koneellisesti, joten se vain tarkistetaan.
+    Palauttaa kopion; jo täytetylle metalle ajo ei muuta mitään.
+    """
+    meta = dict(meta)
+    for avain in ("h1", "otsikko", "kuvaus"):
+        meta[avain] = meta[avain].replace("{n-1}", str(n - 1)).replace("{n}", str(n))
+        for sana in re.findall(r"\w+toista\b", meta[avain].lower()):
+            luku = next((l for vartalo, l in TOISTA if sana.startswith(vartalo)), None)
+            assert luku is None or luku == n, \
+                f"{nimi}: {avain} sanoo '{sana}', kategoriassa on {n} ilmiötä"
+    return meta
 
 
 def muotoile(runko):
@@ -295,8 +324,8 @@ def skeema(meta, kat, slug):
                     "name": "Ilmiöitä",
                     "url": f"{DOMAIN}/",
                     "logo": {"@type": "ImageObject",
-                             "url": f"{DOMAIN}/favicon.svg",
-                             "width": 64, "height": 64},
+                             "url": f"{DOMAIN}/og/logo.png",
+                             "width": 512, "height": 512},
                 },
                 "author": {"@type": "Person", "name": "Ilmiömies",
                            "url": f"{DOMAIN}/tietoa.html"},
@@ -529,6 +558,7 @@ TYYLI = """  <style>
 
 
 def rakenna(slug, meta, kat, luonnos=False, edellinen=None, seuraava=None):
+    meta = tayta_maarat(meta, len(kat["kortit"]), f"{slug}.md")
     etu = "../" if luonnos else ""
     runko = muotoile(meta["_runko"])
     runko = runko.replace("[[ILMIOT]]", korttilista(kat["kortit"]))
@@ -549,6 +579,13 @@ def rakenna(slug, meta, kat, luonnos=False, edellinen=None, seuraava=None):
 
     otsikko = f"{meta['otsikko']} — Ilmiöitä"
     url = f"{DOMAIN}/kategoria-{slug}.html"
+    # Oma jakokuva, jos build_og.py on sen tehnyt; muuten yhteinen brändikuva.
+    if (ROOT / "og" / f"kategoria-{slug}.png").exists():
+        og_kuva = f"{DOMAIN}/og/kategoria-{slug}.png"
+        og_alt = meta["h1"]
+    else:
+        og_kuva = f"{DOMAIN}/og/brand.png"
+        og_alt = "Ilmiöitä — Miten valta toimii"
 
     # h1 on tasan kategorian nimi; alaotsikko on oma <p> h1:n ULKOPUOLELLA.
     # Aiemmin alaotsikko oli h1:n sisällä <span>issä ilman välimerkkiä, jolloin
@@ -567,6 +604,8 @@ def rakenna(slug, meta, kat, luonnos=False, edellinen=None, seuraava=None):
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="{etu}favicon.svg">
   <title>{otsikko}</title>
+  <link rel="preload" href="{etu}fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{etu}fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="{etu}style.css?v={CSS_VERSIO}">
 
   <!-- SEO -->
@@ -578,14 +617,14 @@ def rakenna(slug, meta, kat, luonnos=False, edellinen=None, seuraava=None):
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fi_FI">
   <meta property="og:site_name" content="Ilmiöitä — Miten valta toimii">
-  <meta property="og:image" content="{DOMAIN}/og/brand.png">
+  <meta property="og:image" content="{og_kuva}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Ilmiöitä — Miten valta toimii">
+  <meta property="og:image:alt" content="{og_alt}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{otsikko}">
   <meta name="twitter:description" content="{meta['kuvaus']}">
-  <meta name="twitter:image" content="{DOMAIN}/og/brand.png">
+  <meta name="twitter:image" content="{og_kuva}">
 {skeema(meta, kat, slug)}
 {TYYLI}
 </head>

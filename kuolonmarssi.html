@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Kuolonmarssi — projekti jota ei voi lopettaa — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -759,12 +761,12 @@
       "@id": "https://www.ilmiöt.fi/kuolonmarssi.html#article",
       "url": "https://www.ilmiöt.fi/kuolonmarssi.html",
       "headline": "Kuolonmarssi — projekti jota ei voi lopettaa",
-      "description": "Edward Yourdon kuvasi teoksessaan Death March (1997) projektiluokan, jossa kaikki tietävät jo varhain että projekti epäonnistuu — mutta kukaan ei pysty tai…",
+      "description": "Kuolonmarssi: projekti, jonka kaikki tietävät epäonnistuvan, mutta kukaan ei lopeta. Selitämme kierteen ja vastakeinot ennen marssia ja sen aikana.",
       "inLanguage": "fi",
       "articleSection": "Projekti- ja ohjelmistokehitys",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -773,19 +775,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Kuolonmarssi — projekti jota ei voi lopettaa",
-        "description": "Edward Yourdon kuvasi teoksessaan Death March (1997) projektiluokan, jossa kaikki tietävät jo varhain että projekti epäonnistuu — mutta kukaan ei pysty tai…",
+        "name": "Kuolonmarssi",
+        "description": "Kuolonmarssi: projekti, jonka kaikki tietävät epäonnistuvan, mutta kukaan ei lopeta. Selitämme kierteen ja vastakeinot ennen marssia ja sen aikana.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -822,6 +824,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="kuolonmarssi">
 <div class="ilmio-tag">Ilmiö 54</div>
 <h1>Kuolonmarssi — projekti jota ei voi lopettaa</h1>
@@ -842,7 +845,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Kuolonmarssin kierre: paine ja vaikeneminen ruokkivat toisiaan — mitä pahemmin aikataulu pettää, sitä kalliimpaa ongelmasta on puhua ääneen.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Kuolonmarssin tunnusmerkit:</h2>
+<h2 class="laatikko-otsikko" id="kuolonmarssin-tunnusmerkit">Kuolonmarssin tunnusmerkit:</h2>
 <ul style="margin:0.5em 0 0;">
 <li>Aikataulu tai budjetti on puolet siitä mitä asiantuntijat arvioivat tarvittavan.</li>
 <li>Vaatimukset muuttuvat jatkuvasti mutta aikataulu ei.</li>
@@ -854,10 +857,10 @@ flowchart TD
 </div>
 <p>Kuolonmarssi eroaa tavallisesta myöhässä olevasta projektista siinä, että epäonnistuminen on strukturaalinen — se on sisäänrakennettu alkuperäisiin reunaehtoihin, ei vain huonoa tuurua. Jatkaminen on rationaalista jokaiselle yksittäiselle toimijalle (ei halua olla se joka "lopetti projektin"), vaikka lopettaminen olisi rationaalista organisaatiolle.</p>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Uponneiden kustannusten loukku:</h2> Kuolonmarssit jatkuvat usein siksi, että niihin on jo investoitu paljon — lopettaminen näyttäisi tuhlaukselta. Mutta jo käytetty raha ei palaudu jatkamalla. Relevantti kysymys on aina: kannattaako jatkaa <em>tästä hetkestä eteenpäin</em>?
+<h2 class="laatikko-otsikko" id="uponneiden-kustannusten-loukku">Uponneiden kustannusten loukku:</h2> Kuolonmarssit jatkuvat usein siksi, että niihin on jo investoitu paljon — lopettaminen näyttäisi tuhlaukselta. Mutta jo käytetty raha ei palaudu jatkamalla. Relevantti kysymys on aina: kannattaako jatkaa <em>tästä hetkestä eteenpäin</em>?
     </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Paras suoja rakennetaan ennen marssia: kirjaa exit-kriteerit ylös projektin alussa — millä mittarilukemilla tai päivämäärillä projekti keskeytetään — sillä kriteereistä on mahdoton sopia enää siinä vaiheessa, kun kasvot ovat pelissä. Käynnissä olevalle projektille tee säännöllinen tarkistus: <em>aloittaisimmeko tämän projektin tänään, tällä tiedolla ja tällä hinnalla?</em> Jos ei, jatkamista pitää perustella erikseen — ei lopettamista. Tuo arvioon ulkopuolinen, jonka ura ei riipu projektista: hän näkee sen, mitä sisäpiiri ei voi sanoa ääneen (ks. <a href="sunk-cost-harha.html">Sunk cost -harha</a>). Ja tiimin jäsenenä dokumentoi varoituksesi kirjallisesti — se ei pelasta projektia, mutta se pelastaa sinut jälkiselvittelyssä.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Paras suoja rakennetaan ennen marssia: kirjaa exit-kriteerit ylös projektin alussa — millä mittarilukemilla tai päivämäärillä projekti keskeytetään — sillä kriteereistä on mahdoton sopia enää siinä vaiheessa, kun kasvot ovat pelissä. Käynnissä olevalle projektille tee säännöllinen tarkistus: <em>aloittaisimmeko tämän projektin tänään, tällä tiedolla ja tällä hinnalla?</em> Jos ei, jatkamista pitää perustella erikseen — ei lopettamista. Tuo arvioon ulkopuolinen, jonka ura ei riipu projektista: hän näkee sen, mitä sisäpiiri ei voi sanoa ääneen (ks. <a href="sunk-cost-harha.html">Sunk cost -harha</a>). Ja tiimin jäsenenä dokumentoi varoituksesi kirjallisesti — se ei pelasta projektia, mutta se pelastaa sinut jälkiselvittelyssä.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -922,6 +925,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="hofstadterin-laki.html">← Hofstadterin laki — rekursiivinen aikataululaki</a>

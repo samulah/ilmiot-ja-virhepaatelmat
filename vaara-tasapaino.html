@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Väärä tasapaino — kaksi näkemystä, joista toinen on kolmen prosentin — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -392,8 +393,8 @@
       "inLanguage": "fi",
       "articleSection": "Media ja julkisuus",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -402,9 +403,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
+        }
+      },
+      "about": {
+        "@type": "DefinedTerm",
+        "name": "Väärä tasapaino",
+        "description": "Väärä tasapaino antaa marginaaliselle näkemykselle saman palstatilan kuin valtavirralle — ja tasapuolisuuden nimissä syntyy kuva tasaväkisestä kiistasta.",
+        "inDefinedTermSet": {
+          "@type": "DefinedTermSet",
+          "name": "Ilmiöitä — Miten valta toimii",
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -441,6 +452,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="vaara-tasapaino">
 <div class="ilmio-tag">Ilmiö 136</div>
 <h1>Väärä tasapaino — kaksi näkemystä, joista toinen on kolmen prosentin</h1>
@@ -458,10 +470,10 @@ flowchart TD
 <p>Ilmiö on dokumentoitu tarkimmin ilmastonmuutoksen uutisoinnista. Maxwell ja Jules Boykoffin tutkimuksessa (2004) yli puolet yhdysvaltalaisten laatulehtien ilmastojutuista vuosina 1988–2002 antoi suunnilleen yhtä paljon tilaa ihmisen aiheuttamalle ilmastonmuutokselle ja sen kiistämiselle — vaikka tieteellinen kirjallisuus ei jakautunut lähellekään samoin. Britanniassa BBC:n tiedeuutisoinnin riippumaton arvio (2011) päätyi samaan johtopäätökseen ja johti ohjeistuksen muuttamiseen.</p>
 <p>Väärä tasapaino ei tarkoita, etteikö erimielisyyttä saisi näyttää. Se tarkoittaa, että erimielisyyden <em>painoarvo</em> on osa faktaa: jos sitä ei kerrota, tasapuolisuus muuttuu harhaanjohtavuudeksi.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Ero läheisiin käsitteisiin:</h2> Vastakkainen virhe on <a href="konsensus-fetissi.html">konsensus-fetissi</a>, jossa yksimielisyydellä tukahdutetaan aiheellinenkin erimielisyys. <a href="brandolinin-laki.html">Brandolinin laki</a> selittää, miksi asetelma on epäreilu jo lähtökohtaisesti: väitteen esittäminen vie sekunteja, sen kumoaminen minuutteja. Arvokysymyksissä — toisin kuin näyttökysymyksissä — kahden kannan esittäminen on aidosti oikein.
+<h2 class="laatikko-otsikko" id="ero-laheisiin-kasitteisiin">Ero läheisiin käsitteisiin:</h2> Vastakkainen virhe on <a href="konsensus-fetissi.html">konsensus-fetissi</a>, jossa yksimielisyydellä tukahdutetaan aiheellinenkin erimielisyys. <a href="brandolinin-laki.html">Brandolinin laki</a> selittää, miksi asetelma on epäreilu jo lähtökohtaisesti: väitteen esittäminen vie sekunteja, sen kumoaminen minuutteja. Arvokysymyksissä — toisin kuin näyttökysymyksissä — kahden kannan esittäminen on aidosti oikein.
     </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2>
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2>
 <ul style="margin:0.5em 0 0;">
 <li>Kysy jokaisesta väittelystä: kuinka moni alan tutkija on kummallakin kannalla ja millä näytöllä?</li>
 <li>Erota näyttökysymys ("nouseeko lämpötila") ja arvokysymys ("mitä sille pitäisi tehdä") — vain jälkimmäisessä tasapuolisuus on itsestään selvä hyve.</li>
@@ -502,7 +514,7 @@ flowchart TD
     <a href="konsensus-fetissi.html" class="liittyvat-kortti" style="--c:#01579b">
       <span class="liittyvat-numero">25</span>
       <span class="liittyvat-teksti">
-        <span class="liittyvat-nimi">Konsensus fetissi</span>
+        <span class="liittyvat-nimi">Konsensusfetissi</span>
         <span class="liittyvat-kuvaus">Yksimielisyydestä tulee itseisarvo, ja erimielisyys aletaan nähdä ongelmana — ei tietona.</span>
       </span>
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
@@ -525,6 +537,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="huonojen-uutisten-hautaaminen.html">← Huonojen uutisten hautaaminen — hyvä päivä julkaista ikävä asia</a>

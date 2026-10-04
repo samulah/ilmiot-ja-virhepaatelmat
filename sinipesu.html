@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Sinipesu — vastuullisuus ilman valvontaa — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -392,8 +393,8 @@
       "inLanguage": "fi",
       "articleSection": "Pesut ja maineenhallinta",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -402,9 +403,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
+        }
+      },
+      "about": {
+        "@type": "DefinedTerm",
+        "name": "Sinipesu",
+        "description": "Sinipesu (bluewashing) tarkoittaa vastuullisen maineen ostamista liittymällä vapaaehtoiseen sitoumukseen, jolla ei ole mittareita eikä sanktioita.",
+        "inDefinedTermSet": {
+          "@type": "DefinedTermSet",
+          "name": "Ilmiöitä — Miten valta toimii",
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -441,6 +452,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="sinipesu">
 <div class="ilmio-tag">Ilmiö 113</div>
 <h1>Sinipesu — vastuullisuus ilman valvontaa</h1>
@@ -460,7 +472,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Sinipesussa maksetaan jäsenyydestä, ei muutoksesta.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Mistä sinipesun tunnistaa</h2>
+<h2 class="laatikko-otsikko" id="mista-sinipesun-tunnistaa">Mistä sinipesun tunnistaa</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Sitoumus ilman lukua:</strong> luvataan "kunnioittaa" tai "edistää" — ei kerrota mitä, kuinka paljon ja mihin mennessä.</li>
 <li><strong>Oma raportointi:</strong> edistymisen arvioi sama taho, jota arvioidaan.</li>
@@ -471,7 +483,7 @@ flowchart TD
 </div>
 <p>Sinipesu on viherpesun sosiaalinen sisar: sama mekanismi, eri väite. Siinä missä viherpesu koskee ympäristöä, sinipesu koskee ihmisoikeuksia, työoloja ja hyvää hallintoa — alueita, joiden mittaaminen on vaikeampaa ja väitteiden tarkistaminen siksi kalliimpaa. Juuri mittaamisen vaikeus tekee siitä houkuttelevaa.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Kysy sitoumuksesta kolme asiaa. <strong>Onko mittari?</strong> Sitoumus ilman lukua ja määräaikaa on toivomus. <strong>Kuka varmentaa?</strong> Riippumaton auditointi maksaa ja siksi kertoo aikeesta enemmän kuin itse sitoumus. <strong>Mitä seuraa rikkomisesta?</strong> Jos vastaus on "poistaminen listalta raportoimatta jättämisen takia", kyse ei ole valvonnasta vaan kirjanpidosta. Vertaa lisäksi sitoumusta yrityksen lobbaukseen: sitoumus, jonka vastaista sääntelyä sama taho vastustaa, kumoaa itsensä.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Kysy sitoumuksesta kolme asiaa. <strong>Onko mittari?</strong> Sitoumus ilman lukua ja määräaikaa on toivomus. <strong>Kuka varmentaa?</strong> Riippumaton auditointi maksaa ja siksi kertoo aikeesta enemmän kuin itse sitoumus. <strong>Mitä seuraa rikkomisesta?</strong> Jos vastaus on "poistaminen listalta raportoimatta jättämisen takia", kyse ei ole valvonnasta vaan kirjanpidosta. Vertaa lisäksi sitoumusta yrityksen lobbaukseen: sitoumus, jonka vastaista sääntelyä sama taho vastustaa, kumoaa itsensä.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -537,6 +549,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="viherpesu.html">← Viherpesu — vihreää pintaa ilman tekoja</a>

@@ -129,6 +129,28 @@ def sivun_h1(teksti):
     return m.group(1).strip()
 
 
+def sivun_title(teksti):
+    m = re.search(r"<title>(.*?)</title>", teksti, re.S)
+    assert m, "ei <title>:ä"
+    return m.group(1).strip()
+
+
+def tarkista_title(slug, teksti, varatut):
+    """Kaatuu, jos luonnos kantaa pohjasivunsa titleä.
+
+    Luonnosskriptit vaihtavat h1:n, og:titlen ja scheman mutta ovat jättäneet
+    <title>:n pohjan arvoon: 26 sivua julkaistiin darvo.html:n otsikolla
+    (löytyi 4.10.2026). Selain näyttää h1:n, joten vika ei näy silmällä.
+    """
+    title = sivun_title(teksti)
+    assert title not in varatut, \
+        f"{slug}: <title> on sama kuin sivulla {varatut.get(title)}.html — {title!r}"
+    h1 = re.sub(r"<[^>]+>", "", sivun_h1(teksti))
+    termi = re.findall(r"\w+", h1)[0]
+    assert termi.lower() in title.lower(), \
+        f"{slug}: <title> ei sisällä h1:n ensimmäistä sanaa {termi!r} — {title!r}"
+
+
 def kortti_html(slug, vari, nimi, kuvaus, numero):
     return (f'\n<a href="{slug}.html" class="hub-kortti" style="--c:{vari}">\n'
             f'  <span class="hub-numero">{numero}</span>\n'
@@ -211,6 +233,15 @@ def main():
         assert slug not in vanhat_numerot, f"{slug} on jo index.html:ssä"
         assert ankkuri in vanhat_numerot or ankkuri in UUDET, \
             f"{slug}: ankkuria {ankkuri} ei ole"
+
+    # title ei saa olla peritty: ei minkään julkaistun sivun eikä toisen
+    # samassa erässä tulevan luonnoksen kanssa sama
+    varatut = {sivun_title(M.lue(ROOT / f"{s}.html")): s
+               for s in vanha_jarjestys if s not in UUDET}
+    for slug in UUDET:
+        luonnos = (LUONNOKSET / f"{slug}.html").read_text(encoding="utf-8")
+        tarkista_title(slug, luonnos, varatut)
+        varatut[sivun_title(luonnos)] = slug
 
     if valmiina:
         # ── 1.–2. korvattu: järjestys ja numerot luetaan sellaisenaan käsin
@@ -368,7 +399,8 @@ def main():
             LUONNOKSET.rmdir()
         print(f"\n  {LUONNOKSET.name}/: julkaistut luonnokset poistettu")
         print("\n  Aja seuraavaksi:")
-        for k in ("build_kategoriat.py", "paivita_maarat.py", "build_liittyvat.py",
+        for k in ("seo_rakenne.py --kirjoita", "seo_schema.py --kirjoita",
+                  "build_kategoriat.py", "paivita_maarat.py", "build_liittyvat.py",
                   "build_sitemap.py", "build_search_index.py"):
             print(f"    python3 scripts/{k}")
     else:

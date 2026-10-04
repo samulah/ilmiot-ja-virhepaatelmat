@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Äänekäs vähemmistö — kommenttiosio ei ole mielipidemittari — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -344,11 +345,11 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Äänekäs vähemmistö — kommenttiosio ei ole mielipidemittari — Ilmiöitä">
   <meta name="twitter:description" content="Äänekäs vähemmistö vääristää kuvan yleisestä mielipiteestä: kärjekkäimmät kommentoijat näkyvät eniten, kun hiljainen enemmistö ei koskaan vastaa.">
-  <meta property="og:image" content="https://www.ilmiöt.fi/og/brand.png">
+  <meta property="og:image" content="https://www.ilmiöt.fi/og/aanekas-vahemmisto.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Ilmiöitä — Miten valta toimii">
-  <meta name="twitter:image" content="https://www.ilmiöt.fi/og/brand.png">
+  <meta property="og:image:alt" content="Äänekäs vähemmistö — Kärjekkäimmät kommentoijat näkyvät eniten, kun hiljainen enemmistö ei koskaan vastaa.">
+  <meta name="twitter:image" content="https://www.ilmiöt.fi/og/aanekas-vahemmisto.png">
   <style>.ilmio h1{margin-top:0;font-family:'Spectral',Georgia,serif;}</style>
   <script type="application/ld+json">
 {
@@ -381,7 +382,7 @@
       "@type": "Article",
       "image": {
         "@type": "ImageObject",
-        "url": "https://www.ilmiöt.fi/og/brand.png",
+        "url": "https://www.ilmiöt.fi/og/aanekas-vahemmisto.png",
         "width": 1200,
         "height": 630
       },
@@ -392,8 +393,8 @@
       "inLanguage": "fi",
       "articleSection": "Alustatalous ja algoritmit",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -402,9 +403,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
+        }
+      },
+      "about": {
+        "@type": "DefinedTerm",
+        "name": "Äänekäs vähemmistö",
+        "description": "Äänekäs vähemmistö vääristää kuvan yleisestä mielipiteestä: kärjekkäimmät kommentoijat näkyvät eniten, kun hiljainen enemmistö ei koskaan vastaa.",
+        "inDefinedTermSet": {
+          "@type": "DefinedTermSet",
+          "name": "Ilmiöitä — Miten valta toimii",
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -441,6 +452,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="aanekas-vahemmisto">
 <div class="ilmio-tag">Ilmiö 104</div>
 <h1>Äänekäs vähemmistö — kommenttiosio ei ole mielipidemittari</h1>
@@ -458,10 +470,10 @@ flowchart TD
 <p class="kaavio-selitys">Kierre vahvistaa itseään: mitä kärjekkäämmältä keskustelu näyttää, sitä epätodennäköisemmin maltillinen ääni liittyy siihen.</p>
 <p>Ilmiöllä on kolme toisiaan vahvistavaa syytä. Ensinnäkin tunteen voimakkuus ennustaa osallistumisalttiutta epäsymmetrisesti: tyytyväinen tai neutraali ihminen harvemmin näkee vaivaa kommentoidakseen, kun taas suuttunut tai loukkaantunut kokee tarvetta sanoa asian ääneen. Toiseksi suosittelualgoritmit nostavat näkyvimmäksi sen, mikä kerää eniten reaktioita — ja kärjekäs kommentti kerää niitä tehokkaammin kuin tasapainoinen. Kolmanneksi vaikuttaa sosiaalipsykologiassa 1970-luvulta tunnettu <strong>vaikenemisen kierre</strong> (<em>spiral of silence</em>, Elisabeth Noelle-Neumann, 1974): kun oma näkemys vaikuttaa vähemmistön kannalta, ihminen vaikenee mieluummin kuin altistuu vastareaktiolle — mikä tekee näkyvästä enemmistöstä entistä näkyvämmän ja hiljaisesta yhä hiljaisemman.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Ero läheisiin käsitteisiin:</h2> Äänekäs vähemmistö ei ole sama asia kuin <a href="kaikukammio.html">kaikukammio</a>, jossa näet vain omaa kantaasi tukevaa sisältöä — se koskee sitä, mitä <em>yksi</em> kommenttiosio tai keskusteluketju näyttää edustavan koko yleisöstä. Se kytkeytyy kuitenkin <a href="rage-bait.html">rage baitiin</a>: sisältö, joka on suunniteltu ärsyttämään, tuottaa juuri sellaisia kommentteja, joita äänekäs vähemmistö parhaiten synnyttää.
+<h2 class="laatikko-otsikko" id="ero-laheisiin-kasitteisiin">Ero läheisiin käsitteisiin:</h2> Äänekäs vähemmistö ei ole sama asia kuin <a href="kaikukammio.html">kaikukammio</a>, jossa näet vain omaa kantaasi tukevaa sisältöä — se koskee sitä, mitä <em>yksi</em> kommenttiosio tai keskusteluketju näyttää edustavan koko yleisöstä. Se kytkeytyy kuitenkin <a href="rage-bait.html">rage baitiin</a>: sisältö, joka on suunniteltu ärsyttämään, tuottaa juuri sellaisia kommentteja, joita äänekäs vähemmistö parhaiten synnyttää.
     </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2>
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2>
 <ul style="margin:0.5em 0 0;">
 <li>Älä johda yleisön mielipidettä kommenttiosion sävystä — vertaa sitä aina muihin mittareihin (kyselyt, äänestykset, myyntiluvut, laajempi otanta).</li>
 <li>Organisaatiot ja julkaisijat: älä muuta linjaa yksittäisen kommenttivyöryn perusteella ennen kuin olet varmistanut, edustaako se laajempaa mielipidettä vai kapeaa mutta äänekästä ryhmää.</li>
@@ -523,6 +535,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="1-prosentin-saanto.html">← 1 %:n sääntö (90-9-1) — kuka verkossa oikeasti puhuu</a>

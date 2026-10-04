@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Gell-Mannin amnesia — luet oman alasi jutun ja unohdat sen heti — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -392,8 +393,8 @@
       "inLanguage": "fi",
       "articleSection": "Media ja julkisuus",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -402,9 +403,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
+        }
+      },
+      "about": {
+        "@type": "DefinedTerm",
+        "name": "Gell-Mannin amnesia",
+        "description": "Gell-Mannin amnesia: huomaat oman erikoisalasi jutussa virheet, käännät sivua ja luotat seuraavaan juttuun aivan yhtä paljon kuin ennen.",
+        "inDefinedTermSet": {
+          "@type": "DefinedTermSet",
+          "name": "Ilmiöitä — Miten valta toimii",
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -441,6 +452,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="gell-mannin-amnesia">
 <div class="ilmio-tag">Ilmiö 138</div>
 <h1>Gell-Mannin amnesia — luet oman alasi jutun ja unohdat sen heti</h1>
@@ -459,10 +471,10 @@ flowchart TD
 <p>Syy on epäsymmetria: virheen havaitseminen vaatii saman osaamisen kuin sen välttäminen. Omalla alalla näet, mikä puuttuu ja mikä on käännetty väärin; vieraalla alalla juttu näyttää sujuvalta ja auktoritatiiviselta, koska sinulla ei ole mitään, mihin verrata. Lisäksi lukukokemus on tunteeton: turhautuminen omalta alalta ei siirry seuraavaan juttuun, koska se ei tuntunut yleiseltä havainnolta vaan yksittäiseltä kömmähdykseltä.</p>
 <p>Havainto ei tarkoita, että media valehtelisi tai olisi hyödytön. Se tarkoittaa, että toimittaja työskentelee tuntikausissa aiheesta, jota lähde on tutkinut vuosia — ja lopputuloksen tarkkuus vaihtelee sen mukaan.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Ero läheisiin käsitteisiin:</h2> <a href="dunning-kruger.html">Dunning–Kruger-ilmiössä</a> osaamattomuus estää arvioimasta omaa suoritusta; tässä osaaminen paljastaa toisen suorituksen — mutta vain omalla kapealla kaistalla. <a href="halo-efekti.html">Halo-efekti</a> vahvistaa vaikutusta: arvostettu julkaisu saa jutun näyttämään luotettavalta riippumatta aiheesta.
+<h2 class="laatikko-otsikko" id="ero-laheisiin-kasitteisiin">Ero läheisiin käsitteisiin:</h2> <a href="dunning-kruger.html">Dunning–Kruger-ilmiössä</a> osaamattomuus estää arvioimasta omaa suoritusta; tässä osaaminen paljastaa toisen suorituksen — mutta vain omalla kapealla kaistalla. <a href="halo-efekti.html">Halo-efekti</a> vahvistaa vaikutusta: arvostettu julkaisu saa jutun näyttämään luotettavalta riippumatta aiheesta.
     </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2>
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2>
 <ul style="margin:0.5em 0 0;">
 <li>Kalibroi luottamuksesi omalta alaltasi havaitsemaasi virhetasoon — se on paras saatavilla oleva otos koko julkaisun tarkkuudesta.</li>
 <li>Erota jutussa kaksi kerrosta: mitä tapahtui (yleensä oikein) ja mitä se tarkoittaa (usein liian varmaa).</li>
@@ -526,6 +538,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="keharaportointi.html">← Kehäraportointi — sama lähde neljä kertaa näyttää neljältä lähteeltä</a>

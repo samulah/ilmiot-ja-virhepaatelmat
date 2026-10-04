@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Lukittu päätös — todellinen päätös tehtiin jo ennen kokousta — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +763,12 @@
       "@id": "https://www.ilmiöt.fi/lukittu-paatos.html#article",
       "url": "https://www.ilmiöt.fi/lukittu-paatos.html",
       "headline": "Lukittu päätös — todellinen päätös tehtiin jo ennen kokousta",
-      "description": "Virallinen päätös tehdään kokouksessa, jossa on esityslista, esittelijä ja pöytäkirja. Todellinen päätös tehtiin usein vuosia aiemmin — käytävällä, sito…",
+      "description": "Lukittu päätös: muodollinen päätös tehdään kokouksessa, todellinen vuosia aiemmin. Selitämme miksi lukittuminen maksaa rahaa ja miten tunnistat sen ajoissa.",
       "inLanguage": "fi",
       "articleSection": "Projekti- ja ohjelmistokehitys",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +777,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Lukittu päätös — todellinen päätös tehtiin jo ennen kokousta",
-        "description": "Virallinen päätös tehdään kokouksessa, jossa on esityslista, esittelijä ja pöytäkirja. Todellinen päätös tehtiin usein vuosia aiemmin — käytävällä, sito…",
+        "name": "Lukittu päätös",
+        "description": "Lukittu päätös: muodollinen päätös tehdään kokouksessa, todellinen vuosia aiemmin. Selitämme miksi lukittuminen maksaa rahaa ja miten tunnistat sen ajoissa.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -824,6 +826,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="lukittu-paatos">
 <div class="ilmio-tag">Ilmiö 55</div>
 <h1>Lukittu päätös — todellinen päätös tehtiin jo ennen kokousta</h1>
@@ -841,7 +844,7 @@ flowchart TD
 <p>Chantal Cantarelli ja Bent Flyvbjerg erottavat suurhankkeiden tutkimuksessaan <em>muodollisen</em> ja <em>todellisen</em> rakentamispäätöksen (real decision to build). Ilmiön englanninkielinen nimi on <strong>lock-in</strong>.</p>
 <p>Erolla on suora hintalappu. Kun todellinen päätös syntyy aikaisin, hanke sidotaan sen hetken kustannusarvioon — ja se on tyypillisesti selvästi matalampi kuin myöhempi, tarkempi arvio. Ylitys ei siis synny rakennusvaiheessa. Se syntyy siinä hetkessä, jota kukaan ei kirjannut ylös.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnusmerkit:</h2>
+<h2 class="laatikko-otsikko" id="tunnusmerkit">Tunnusmerkit:</h2>
 <ul style="margin:0.5em 0 0;">
 <li>Vaihtoehdot vertailtiin, mutta vain yksi niistä oli koskaan aidosti elossa.</li>
 <li>Selvitys tilattiin vasta sen jälkeen, kun suunta oli jo kerrottu julkisuudessa.</li>
@@ -851,7 +854,7 @@ flowchart TD
 </div>
 <p>Länsimetron rakentamispäätökset tehtiin kaupungeissa vuonna 2007 ja hankesuunnitelma valmistui 2008 kustannusarviolla 714 miljoonaa euroa, indeksikorjattuna 849 miljoonaa. Ruoholahti–Matinkylä-osuuden loppukustannus oli 1 171 miljoonaa. Osa erosta on inflaatiota ja laajuuden kasvua — mutta luku, johon hanke sidottiin, oli vuodelta jolloin suunnitelmaa ei vielä ollut.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> <strong>Kirjaa päätöshetki ylös</strong> — päivämäärä, kustannusarvio ja se, mihin arvio perustui. Ilman kirjausta ylitystä verrataan myöhemmin siihen lukuun, joka sattuu olemaan käsillä. <strong>Vaadi että vertailtavat vaihtoehdot ovat aidosti elossa</strong>, nollavaihtoehto mukaan lukien: jos yhtäkään vaihtoehtoa ei ole varauduttu valitsemaan, vertailu on kulissi. <strong>Erota selvityksen tilaaja siitä, joka on jo ottanut julkisesti kantaa.</strong> Ja kun kuulet että on liian myöhäistä perua, kysy tarkka kysymys: <em>mikä konkreettinen asia tekee perumisesta mahdotonta juuri nyt?</em> Usein vastaus on sitoumus, ei betoni.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> <strong>Kirjaa päätöshetki ylös</strong> — päivämäärä, kustannusarvio ja se, mihin arvio perustui. Ilman kirjausta ylitystä verrataan myöhemmin siihen lukuun, joka sattuu olemaan käsillä. <strong>Vaadi että vertailtavat vaihtoehdot ovat aidosti elossa</strong>, nollavaihtoehto mukaan lukien: jos yhtäkään vaihtoehtoa ei ole varauduttu valitsemaan, vertailu on kulissi. <strong>Erota selvityksen tilaaja siitä, joka on jo ottanut julkisesti kantaa.</strong> Ja kun kuulet että on liian myöhäistä perua, kysy tarkka kysymys: <em>mikä konkreettinen asia tekee perumisesta mahdotonta juuri nyt?</em> Usein vastaus on sitoumus, ei betoni.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -906,7 +909,7 @@ flowchart TD
     <a href="konsensus-fetissi.html" class="liittyvat-kortti" style="--c:#01579b">
       <span class="liittyvat-numero">25</span>
       <span class="liittyvat-teksti">
-        <span class="liittyvat-nimi">Konsensus fetissi</span>
+        <span class="liittyvat-nimi">Konsensusfetissi</span>
         <span class="liittyvat-kuvaus">Yksimielisyydestä tulee itseisarvo, ja erimielisyys aletaan nähdä ongelmana — ei tietona.</span>
       </span>
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
@@ -921,6 +924,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="kuolonmarssi.html">← Kuolonmarssi — projekti jota ei voi lopettaa</a>

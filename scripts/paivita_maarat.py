@@ -103,6 +103,9 @@ def paivita_index(raportti):
     def korvaa(kuvaus, pattern, korvaava, maara=0):
         nonlocal html
         uusi, n = re.subn(pattern, korvaava, html)
+        # Nolla osumaa on aina virhe: kuvio ei enää vastaa sivun sanamuotoa ja
+        # luku jää hiljaa vanhaksi (title 14.8.2026, #random-vihje 4.10.2026).
+        assert n, f"{kuvaus}: ei yhtään osumaa — kuvio ei vastaa sivua"
         if maara:
             assert n == maara, f"{kuvaus}: {n} osumaa, odotettiin {maara}"
         if uusi != html:
@@ -117,6 +120,10 @@ def paivita_index(raportti):
     korvaa("Sivusto selittää N ilmiötä", r"Sivusto selittää \d+ ilmiötä",
            f"Sivusto selittää {yhteensa} ilmiötä", maara=2)
     korvaa("hub-header", r"<p>\d+ ilmiötä &middot;", f"<p>{yhteensa} ilmiötä &middot;", maara=1)
+    # Skripti kirjoittaa saman tekstin korttimäärästä; tämä on se, mikä näkyy
+    # ennen kuin skripti ehtii ajoon (ja hakukoneelle).
+    korvaa("random-vihje", r'(<span id="random-vihje">)\d+ ilmiötä',
+           rf"\g<1>{yhteensa} ilmiötä", maara=1)
     # <title>, og:title, twitter:title ja JSON-LD name päättyvät "— N ilmiötä".
     # Lisätty 14.8.2026: nämä neljä jäivät 127:ään, koska aiemmat kuviot eivät
     # osuneet titlen sanamuotoon. Titleä ei generoida muualla → tarkistus tähän.
@@ -171,10 +178,12 @@ def paivita_tietoa(yhteensa, n_kat, raportti):
     p = ROOT / "tietoa.html"
     html = p.read_text(encoding="utf-8")
     alku = html
-    html = re.sub(r"joka selittää \d+", f"joka selittää {yhteensa}", html)
-    html = re.sub(r"jaettu \w+ teemaan ja numeroitu yhdestä \d+:\w+",
-                  f"jaettu {ILLATIIVI[n_kat]} teemaan ja numeroitu "
-                  f"yhdestä {yhteensa}{illatiivipaate(yhteensa)}", html)
+    html, n = re.subn(r"joka selittää \d+", f"joka selittää {yhteensa}", html)
+    assert n, "tietoa.html: 'joka selittää N' ei löytynyt"
+    html, n = re.subn(r"jaettu \w+ teemaan ja numeroitu yhdestä \d+:\w+",
+                      f"jaettu {ILLATIIVI[n_kat]} teemaan ja numeroitu "
+                      f"yhdestä {yhteensa}{illatiivipaate(yhteensa)}", html)
+    assert n, "tietoa.html: 'jaettu X teemaan ja numeroitu yhdestä N:een' ei löytynyt"
     if html != alku:
         raportti.append("tietoa.html: määrät päivitetty")
     p.write_text(html, encoding="utf-8")
@@ -197,8 +206,9 @@ def paivita_llms(yhteensa, kortit, raportti):
     p = ROOT / "llms.txt"
     txt = p.read_text(encoding="utf-8")
 
-    txt = re.sub(r"selittää \d+ yhteiskunnallista ilmiötä",
-                 f"selittää {yhteensa} yhteiskunnallista ilmiötä", txt)
+    txt, n = re.subn(r"selittää \d+ yhteiskunnallista ilmiötä",
+                     f"selittää {yhteensa} yhteiskunnallista ilmiötä", txt)
+    assert n, "llms.txt: 'selittää N yhteiskunnallista ilmiötä' ei löytynyt"
 
     assert LLMS_OTSIKKO in txt, f"llms.txt: '{LLMS_OTSIKKO}' puuttuu"
     ylatunniste, _, runko = txt.partition(LLMS_OTSIKKO)

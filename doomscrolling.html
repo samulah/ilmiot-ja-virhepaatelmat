@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Doomscrolling suomeksi — näin katkaiset kierteen | Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/doomscrolling.html#article",
       "url": "https://www.ilmiöt.fi/doomscrolling.html",
       "headline": "Doomscrolling — kurjuusselauksen kierre",
-      "description": "Doomscrolling tarkoittaa pakonomaista huonojen uutisten selaamista, joka jatkuu vaikka se lisää ahdistusta. Miksi kierre syntyy ja miten sen katkaisee?",
+      "description": "Doomscrolling tarkoittaa pakonomaista huonojen uutisten selaamista. Miksi algoritmi syöttää ahdistusta ja miten katkaiset kierteen.",
       "inLanguage": "fi",
       "articleSection": "Alustatalous ja algoritmit",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Doomscrolling — kurjuusselauksen kierre",
-        "description": "Doomscrolling tarkoittaa pakonomaista huonojen uutisten selaamista, joka jatkuu vaikka se lisää ahdistusta. Miksi kierre syntyy ja miten sen katkaisee?",
+        "name": "Doomscrolling",
+        "description": "Doomscrolling tarkoittaa pakonomaista huonojen uutisten selaamista. Miksi algoritmi syöttää ahdistusta ja miten katkaiset kierteen.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -799,29 +800,6 @@
       },
       "datePublished": "2026-07-06",
       "dateModified": "2026-07-06"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.ilmiöt.fi/doomscrolling.html#faq",
-      "inLanguage": "fi",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Mitä doomscrolling tarkoittaa?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Doomscrolling tarkoittaa ahdistavan sisällön pakonomaista selaamista, joka ei lopu vaikka olo huononee. Aivot etsivät uhkatietoa turvallisuuden tunteen vuoksi, mutta syöte ei koskaan lopu, joten päätepistettä ei tule ja selaaminen jatkuu itseään ruokkien."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Miten doomscrollingin voi katkaista?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Poista päätepisteettömyys: aseta selaamiselle kellotettu raja, siirrä puhelin pois makuuhuoneesta ja korvaa loputon syöte lähteellä, jolla on loppu — lehti, uutiskirje tai kerran päivässä luettava sivu. Kyse on rakenteesta, ei tahdonvoimasta."
-          }
-        }
-      ]
     }
   ]
 }
@@ -847,13 +825,14 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="doomscrolling">
 <div class="ilmio-tag">Ilmiö 95</div>
 <h1>Doomscrolling — kurjuusselauksen kierre</h1>
 <p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 6.7.2026</p>
 <p><strong>Doomscrolling</strong> (myös <em>doom scrolling</em>) tarkoittaa pakonomaista huonojen uutisten ja ahdistavan sisällön selaamista, joka jatkuu senkin jälkeen, kun se alkaa tuntua pahalta. Sormi vetää syötettä alaspäin vielä yhden kriisin, onnettomuuden ja riidan verran — olo huononee, mutta selaaminen ei lopu.</p>
 <div class="infolaatikko vastauslohko">
-<h2 class="laatikko-otsikko">Mikä on doomscrolling suomeksi?</h2>
+<h2 class="laatikko-otsikko" id="mika-on-doomscrolling-suomeksi">Mikä on doomscrolling suomeksi?</h2>
 <p style="margin:0.4em 0 0;"><strong>Doomscrollingille ei ole vakiintunutta suomennosta.</strong> Käytössä ovat <em>kurjuusselaus</em>, <em>tuomioselailu</em> ja <em>huolisurffailu</em>. Sana tarkoittaa pakonomaista huonojen uutisten selaamista, joka jatkuu senkin jälkeen, kun se alkaa tuntua pahalta — sormi vetää syötettä yhä alaspäin.</p>
 </div>
 <p>Termi yleistyi koronakeväänä 2020, kun puoli maailmaa jäi kotiin päivittämään tartuntalukuja. Mekanismi on kuitenkin pysyvä, koska siinä yhdistyy kolme voimaa: aivojen <strong>negatiivisuusvinouma</strong> (uhkatieto ohittaa muun tiedon — savannilla se piti hengissä), <strong>loputon syöte</strong> (luonnollista lopetuspistettä ei ole, koska sivun pohjaa ei ole) ja <strong>suositusalgoritmi</strong>, joka tarjoaa lisää sitä, mihin reagoit. Ja ahdistavaan sisältöön reagoi lähes jokainen.</p>
@@ -870,7 +849,7 @@ flowchart TD
 <p class="kaavio-selitys">Doomscrolling-kierre: ahdistus lisää selaamista ja selaaminen ahdistusta — algoritmi voitelee rattaat.</p>
 <p>Kierre naamioituu tiedonhankinnaksi. Tuntuu vastuulliselta "pysyä kartalla", mutta sadas otsikko samasta kriisistä ei enää lisää ymmärrystä — se lisää vain kuormaa. Tutkimuksissa runsas kriisiuutisten seuraaminen on yhdistetty ahdistuneisuuteen, unihäiriöihin ja mielialan laskuun, ja vaikutus kulkee molempiin suuntiin: huonovointisena selaa enemmän, ja selaaminen pahentaa oloa.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2>
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2>
 <ul style="margin:0.5em 0 0;">
 <li>Anna uutisille aika ja paikka: yksi tai kaksi tietoista uutishetkeä päivässä syötteen tihkuvirran sijaan.</li>
 <li>Poista push-ilmoitukset uutis- ja somesovelluksilta — ne ovat kierteen sytytin.</li>
@@ -950,6 +929,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="tilausansa.html">← Tilausansa — helppo tilata, vaikea perua</a>

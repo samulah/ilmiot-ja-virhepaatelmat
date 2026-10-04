@@ -1,7 +1,7 @@
 ---
 kat_id: projekti-ja-ohjelmistokehitys
 h1: Projekti- ja ohjelmistokehitys — miksi aikataulut pettävät järjestelmällisesti
-otsikko: Projektien lait — 12 syytä siihen, miksi aikataulu ja budjetti pettävät
+otsikko: Projektien lait — {n} syytä siihen, miksi aikataulu ja budjetti pettävät
 kuvaus: Brooksin laki, tekninen velka, strateginen aliarviointi. Kaksitoista projektien lainalaisuutta, joissa aliarviointi ei ole huolimattomuutta vaan tapa.
 vari: "#5d4037"
 paivitetty: 2026-08-05

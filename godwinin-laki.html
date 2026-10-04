@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Godwinin laki — natsivertaus saapuu ennen pitkää — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -775,12 +776,12 @@
       "@id": "https://www.ilmiöt.fi/godwinin-laki.html#article",
       "url": "https://www.ilmiöt.fi/godwinin-laki.html",
       "headline": "Godwinin laki — natsivertaus saapuu ennen pitkää",
-      "description": "Mitä pidemmäksi verkkokeskustelu venyy, sitä varmemmin joku vertaa vastapuolta Hitleriin. Mike Godwin muotoili lain 1990 — ei havaintona vaan…",
+      "description": "Godwinin laki: pitkä nettikeskustelu päätyy natsivertaukseen. Selitämme mistä ilmiössä on kyse, miksi vertaus tappaa keskustelun ja miten vältät sen.",
       "inLanguage": "fi",
       "articleSection": "Informaatio ja propaganda",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -789,19 +790,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Godwinin laki — natsivertaus saapuu ennen pitkää",
-        "description": "Mitä pidemmäksi verkkokeskustelu venyy, sitä varmemmin joku vertaa vastapuolta Hitleriin. Mike Godwin muotoili lain 1990 — ei havaintona vaan…",
+        "name": "Godwinin laki",
+        "description": "Godwinin laki: pitkä nettikeskustelu päätyy natsivertaukseen. Selitämme mistä ilmiössä on kyse, miksi vertaus tappaa keskustelun ja miten vältät sen.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -838,6 +839,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="godwinin-laki">
 <div class="ilmio-tag">Ilmiö 21</div>
 <h1>Godwinin laki — natsivertaus saapuu ennen pitkää</h1>
@@ -856,7 +858,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Vertaus ei ole argumentin huipentuma vaan sen loppuminen: kun perustelut ehtyvät, jäljelle jää leimaaminen.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Mitä laki ei sano:</h2>
+<h2 class="laatikko-otsikko" id="mita-laki-ei-sano">Mitä laki ei sano:</h2>
 <ul style="margin:0.5em 0 0;">
 <li>Se ei sano, että natsivertaus on aina väärä.</li>
 <li>Se ei sano, että vertauksen ensimmäisenä tekevä häviää väittelyn. Tämä lisäys on Usenetin perinnettä, ei Godwinin lakia.</li>
@@ -866,11 +868,11 @@ flowchart TD
     </div>
 <p>Mekanismi on eskalaatio. Väittelyssä osapuolet nostavat panoksia niin kauan kuin nostaminen on ilmaista, ja äärivertaus on retoriikan halvin ase: sen esittäminen ei vaadi todisteita, mutta sen kumoaminen vaatii vastapuolta puolustamaan itseään syytteeltä, jota ei koskaan varsinaisesti esitetty. Samalla vertaus lopettaa keskustelun. Kukaan ei jatka argumentointia sen jälkeen, kun hänet on rinnastettu joukkomurhaajiin.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Miksi laki on tärkeä:</h2> Inflaatio syö vertauksen arvon. Kun natsivertausta käytetään kaavamuutoksista ja kahvinkeittimen käyttösäännöistä, sana menettää merkityksensä juuri silloin, kun sitä eniten tarvittaisiin. Godwinin laki suojelee siis vertausta, ei vertailtavia: se yrittää säilyttää sanan terävyyden sitä varten, kun jokin oikeasti muistuttaa fasismia.
+<h2 class="laatikko-otsikko" id="miksi-laki-on-tarkea">Miksi laki on tärkeä:</h2> Inflaatio syö vertauksen arvon. Kun natsivertausta käytetään kaavamuutoksista ja kahvinkeittimen käyttösäännöistä, sana menettää merkityksensä juuri silloin, kun sitä eniten tarvittaisiin. Godwinin laki suojelee siis vertausta, ei vertailtavia: se yrittää säilyttää sanan terävyyden sitä varten, kun jokin oikeasti muistuttaa fasismia.
     </div>
 <p>Natsivertaus on sukua muille keskustelun lopettajille. <a href="whataboutismi.html">Whataboutismi</a> siirtää huomion vastapuolen syntiin sen sijaan, että vastaisi väitteeseen. <a href="omenoita-appelsiineja.html">Omenoita ja appelsiineja</a> kuvaa rinnastusta, joka ei kestä tarkastelua. <a href="maalitolppien-siirtaminen.html">Maalitolppien siirtäminen</a> puolestaan takaa, ettei väittely voi päättyä — ja mitä pidempään se jatkuu, sitä varmemmin Godwinin laki toteutuu.</p>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Kysy, onko vertaus argumentti vai lopetuslause. Osuva vertaus nimeää mekanismin, joka on molemmissa tapauksissa sama, ja se kestää tarkistuksen: sen voi kiistää osoittamalla, että mekanismi on eri. Retorinen vertaus ei väitä mitään tarkistettavaa — se vain merkitsee vastapuolen pahaksi. Jos vertauksesta ei voi olla eri mieltä, se ei ollut väite.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Kysy, onko vertaus argumentti vai lopetuslause. Osuva vertaus nimeää mekanismin, joka on molemmissa tapauksissa sama, ja se kestää tarkistuksen: sen voi kiistää osoittamalla, että mekanismi on eri. Retorinen vertaus ei väitä mitään tarkistettavaa — se vain merkitsee vastapuolen pahaksi. Jos vertauksesta ei voi olla eri mieltä, se ei ollut väite.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -942,6 +944,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="poen-laki.html">← Poen laki — parodiaa ei erota aidosta ilman hymiötä</a>

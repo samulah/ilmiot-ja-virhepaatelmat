@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Hiljainen irtisanoutuminen — työtä vain palkan verran — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/hiljainen-irtisanoutuminen.html#article",
       "url": "https://www.ilmiöt.fi/hiljainen-irtisanoutuminen.html",
       "headline": "Hiljainen irtisanoutuminen — työtä vain palkan verran",
-      "description": "Hiljainen irtisanoutuminen (quiet quitting) tarkoittaa, että työntekijä tekee vain työsopimuksen mukaiset työt — ei ylitöitä, ei ylimääräistä, ei venymistä.",
+      "description": "Hiljainen irtisanoutuminen: töitä vain palkan verran. Selitämme mistä ilmiö kertoo ja annamme toimintaohjeet sekä työntekijälle että työnantajalle.",
       "inLanguage": "fi",
       "articleSection": "Työelämän ilmiöt",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Hiljainen irtisanoutuminen — työtä vain palkan verran",
-        "description": "Hiljainen irtisanoutuminen (quiet quitting) tarkoittaa, että työntekijä tekee vain työsopimuksen mukaiset työt — ei ylitöitä, ei ylimääräistä, ei venymistä.",
+        "name": "Hiljainen irtisanoutuminen",
+        "description": "Hiljainen irtisanoutuminen: töitä vain palkan verran. Selitämme mistä ilmiö kertoo ja annamme toimintaohjeet sekä työntekijälle että työnantajalle.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -824,6 +825,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="hiljainen-irtisanoutuminen">
 <div class="ilmio-tag">Ilmiö 118</div>
 <h1>Hiljainen irtisanoutuminen — työtä vain palkan verran</h1>
@@ -842,7 +844,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Kierre: venyminen ilman vastinetta johtaa panoksen rajaamiseen — ja pelkkä vaatiminen syventää sitä.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Mistä laajamittainen hiljainen irtisanoutuminen kertoo:</h2>
+<h2 class="laatikko-otsikko" id="mista-laajamittainen-hiljainen-irtisanoutuminen-kertoo">Mistä laajamittainen hiljainen irtisanoutuminen kertoo:</h2>
 <ul style="margin:0.5em 0 0;">
 <li>Palkkakehitys laahaa, ja venyminen palkitaan uudella työkuormalla — ei rahalla eikä etenemisellä.</li>
 <li>"Me ollaan perhettä" -puhe korvaa konkreettiset vastineet.</li>
@@ -851,7 +853,7 @@ flowchart TD
 </ul>
 </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Toimintaohjeet molemmille osapuolille:</h2>
+<h2 class="laatikko-otsikko" id="vastakeinot-molemmille-osapuolille">Vastakeinot molemmille osapuolille:</h2>
 <p style="margin:0.5em 0 0;"><strong>Työntekijälle:</strong> Rajojen vetäminen on laillista ja usein tervettä — työsopimus on vaihtokauppa, ei uskollisuudenvala. Tee rajaus näkyvästi mutta ammattimaisesti: hoida sovitut työt hyvin, ja kun uutta pyydetään, kysy mikä nykyisistä tehtävistä väistyy. Dokumentoi työkuormasi ja venymisesi kirjallisesti (viikkoyhteenveto riittää) — se on neuvotteluvaluuttaa palkkakeskustelussa ja suojaa, jos panostasi myöhemmin kyseenalaistetaan. Jos vastine ei parane pyynnöistä huolimatta, hiljainen vetäytyminen ei ole strategia vaan välivaihe: käytä vapautunut energia seuraavan paikan etsimiseen.</p>
 <p style="margin:0.6em 0 0;"><strong>Työnantajalle:</strong> Laajamittainen hiljainen irtisanoutuminen on mittari, ei moraalivika: se kertoo, että odotusten ja vastineiden suhde on rikki. Sitä ei korjata sitouttamiskampanjalla tai läsnäolopakolla, vaan palkalla, urapoluilla ja työkuorman kohtuullistamisella — eli palauttamalla vaihtokauppaan vastine, jonka puuttuminen sen käynnisti.</p>
     </div>
@@ -910,6 +912,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="hyvesignalointi.html">← Hyvesignalointi — hyvettä yleisölle</a>

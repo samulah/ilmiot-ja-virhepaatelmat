@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <title>DARVO — manipulaatiotaktiikka suomeksi | Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <title>Välirikko — miksi lähtijä ja jäävä maksavat eri hinnan</title>
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -708,14 +709,14 @@
   <!-- SEO -->
   <meta name="description" content="Välirikko katkaisee suhteen kokonaan. Lasku on epäsymmetrinen: lähtijä maksaa siirtymän kerran, jäävä menettää jotain jota ei saa korvattua.">
   <link rel="canonical" href="https://www.ilmiöt.fi/valirikko.html">
-  <meta property="og:title" content="Välirikko — miksi lähtijä ja jäävä maksavat eri hinnan | Ilmiöitä">
+  <meta property="og:title" content="Välirikko — miksi lähtijä ja jäävä maksavat eri hinnan">
   <meta property="og:description" content="Välirikko katkaisee suhteen kokonaan. Lasku on epäsymmetrinen: lähtijä maksaa siirtymän kerran, jäävä menettää jotain jota ei saa korvattua.">
   <meta property="og:url" content="https://www.ilmiöt.fi/valirikko.html">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="fi_FI">
   <meta property="og:site_name" content="Ilmiöitä — Miten valta toimii">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Välirikko — miksi lähtijä ja jäävä maksavat eri hinnan | Ilmiöitä">
+  <meta name="twitter:title" content="Välirikko — miksi lähtijä ja jäävä maksavat eri hinnan">
   <meta name="twitter:description" content="Välirikko katkaisee suhteen kokonaan. Lasku on epäsymmetrinen: lähtijä maksaa siirtymän kerran, jäävä menettää jotain jota ei saa korvattua.">
   <meta property="og:image" content="https://www.ilmiöt.fi/og/brand.png">
   <meta property="og:image:width" content="1200">
@@ -765,8 +766,8 @@
       "inLanguage": "fi",
       "articleSection": "Roolit ja valtapelit",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Välirikko — kenelle lasku lankeaa, kun suhde katkeaa",
+        "name": "Välirikko",
         "description": "Välirikko katkaisee suhteen kokonaan. Lasku on epäsymmetrinen: lähtijä maksaa siirtymän kerran, jäävä menettää jotain jota ei saa korvattua.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -798,30 +799,7 @@
         "description": "Kirjoittajanimi, jonka takana on kiinnostus valtaan, vaikuttamiseen ja ihmisen päättelyn vinoumiin. Sisältö perustuu julkisiin lähteisiin ja vakiintuneeseen käsitteistöön."
       },
       "datePublished": "2026-10-03",
-      "dateModified": "2026-10-03"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.ilmiöt.fi/valirikko.html#faq",
-      "inLanguage": "fi",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Mitä välirikko tarkoittaa?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Välirikko tarkoittaa suhteen katkaisemista kokonaan tai lähes kokonaan: yhteydenpito loppuu eikä sitä ole tarkoitus jatkaa. Kyse ei ole riidasta vaan riidan lopettamisesta poistumalla. Sama rakenne toistuu sukulaissuhteissa ja työyhteisöissä, joissa kuormaa kantanut osapuoli lopulta lähtee."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Miksi välirikossa lähtijä pärjää usein paremmin?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Koska kustannukset ovat erilaiset. Lähtijä maksaa siirtymän kerran: surun, järjestelyt ja menetetyt verkostot. Jäävä menettää jatkuvan hyödyn — tehdyn työn, tuen tai aseman — jota on vaikea korvata, koska se oli sidottu juuri siihen ihmiseen. Tämä ei tee lähtemisestä ilmaista eikä aina oikeaa, mutta selittää miksi lopputulos harvoin on symmetrinen."
-          }
-        }
-      ]
+      "dateModified": "2026-10-04"
     }
   ]
 }
@@ -847,13 +825,14 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="valirikko">
 <div class="ilmio-tag">Ilmiö 146</div>
 <h1>Välirikko — kenelle lasku lankeaa, kun suhde katkeaa</h1>
-<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 3.10.2026</p>
+<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 4.10.2026</p>
 <p><strong>Välirikko</strong> (engl. <em>estrangement</em>) tarkoittaa suhteen katkaisemista kokonaan tai lähes kokonaan: yhteydenpito loppuu eikä sitä ole tarkoitus jatkaa. Kyse ei ole riidasta vaan riidan lopettamisesta poistumalla. Ilmiö on yleisempi kuin siitä puhutaan: Karl Pillemerin yhdysvaltalaisaineistossa (2020) 27&nbsp;% aikuisista kertoi olevansa välirikossa jonkun sukulaisensa kanssa. Suomesta vastaavaa lukua ei ole.</p>
 <div class="infolaatikko vastauslohko">
-<h2 class="laatikko-otsikko">Mitä välirikko tarkoittaa suomeksi?</h2>
+<h2 class="laatikko-otsikko" id="mita-valirikko-tarkoittaa-suomeksi">Mitä välirikko tarkoittaa suomeksi?</h2>
 <p style="margin:0.4em 0 0;"><strong>Välirikko</strong> on vakiintunut suomen sana; englanniksi puhutaan <em>family estrangementista</em> tai <em>cutoffista</em>. Perhetutkimuksessa erotetaan <strong>fyysinen etäisyys</strong> (yhteydenpito loppuu) ja <strong>tunne-etäisyys</strong> (yhteys jatkuu, mutta merkitys on kadonnut). Työelämän vastine ei ole irtisanoutuminen sinänsä vaan se, että lähtevä katkaisee myös suhteet, joita ei olisi pakko katkaista.</p>
 </div>
 <div class="mermaid">
@@ -868,7 +847,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Epäsymmetria ei ole moraalinen tuomio vaan kustannusten ajoitus.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Miksi lasku jakautuu epätasaisesti:</h2>
+<h2 class="laatikko-otsikko" id="miksi-lasku-jakautuu-epatasaisesti">Miksi lasku jakautuu epätasaisesti:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Hyöty on henkilösidonnainen:</strong> juuri tämän ihmisen työpanos, tuki, sovittelu tai asema — sitä ei saa vaihtamalla ketä tahansa tilalle.</li>
 <li><strong>Kustannus on yleinen:</strong> aika, uskottavuus ja terveys ovat samoja kaikkialla, ja ne lakkaavat kulumasta heti kun suhde päättyy.</li>
@@ -878,7 +857,7 @@ flowchart TD
 </div>
 <p>Työelämässä sama näkyy siinä, kuka lähtee ensin. Kuormaa kantanut asiantuntija vie mukanaan tiedon, jota ei ollut kirjattu mihinkään, ja tiimin todellinen tila tulee näkyviin vasta hänen lähdettyään — siihen asti sen peitti yksi ihminen, joka teki liikaa. Sama rakenne kuin <a href="mahdollistaja.html">mahdollistajassa</a>: ongelma ei näkynyt, koska joku otti seuraukset vastaan toisen puolesta. Lähtijän kannalta tämä ei ole voitto siinä mielessä, että se tuntuisi hyvältä: menetettyjä ovat myös suhteet kolmansiin, perinnöt, suosittelijat ja yhteiset lapset. Hinta on kuitenkin määrä, joka maksetaan — ei summa, joka jatkaa juoksemistaan.</p>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Kysy kolme asiaa ennen kuin päätät mitään. <strong>Mikä muuttuisi, jos toinen muuttuisi?</strong> Jos et osaa nimetä konkreettista tekoa, jota pyydät, pyyntöä ei ole vielä esitetty — ja silloin sitä kannattaa kokeilla ensin. <strong>Mitä olet jo yrittänyt ja miten siihen vastattiin?</strong> Yritysten lista on tärkein tieto: toistuva vastaamatta jättäminen on vastaus. <strong>Mitkä kustannukset lakkaavat ja mitkä alkavat?</strong> Kirjaa molemmat, myös ne joita ei mielellään laskisi. Välirikko ei ole ainoa vaihtoehto: <a href="no-contact.html">täydellisen katkaisun</a> ja nykytilan väliin mahtuu rajattu yhteydenpito, ja silloin kun lähteminen ei ole mahdollista, jäljelle jää <a href="harmaa-kivi.html">harmaa kivi</a>. Vältä tekemästä päätöstä yhden riidan päivänä: rakenteellinen ongelma näkyy kuukausissa, ei yhdessä illassa.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Kysy kolme asiaa ennen kuin päätät mitään. <strong>Mikä muuttuisi, jos toinen muuttuisi?</strong> Jos et osaa nimetä konkreettista tekoa, jota pyydät, pyyntöä ei ole vielä esitetty — ja silloin sitä kannattaa kokeilla ensin. <strong>Mitä olet jo yrittänyt ja miten siihen vastattiin?</strong> Yritysten lista on tärkein tieto: toistuva vastaamatta jättäminen on vastaus. <strong>Mitkä kustannukset lakkaavat ja mitkä alkavat?</strong> Kirjaa molemmat, myös ne joita ei mielellään laskisi. Välirikko ei ole ainoa vaihtoehto: <a href="no-contact.html">täydellisen katkaisun</a> ja nykytilan väliin mahtuu rajattu yhteydenpito, ja silloin kun lähteminen ei ole mahdollista, jäljelle jää <a href="harmaa-kivi.html">harmaa kivi</a>. Vältä tekemästä päätöstä yhden riidan päivänä: rakenteellinen ongelma näkyy kuukausissa, ei yhdessä illassa.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -943,6 +922,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="syntipukki.html">← Syntipukki-rooli — ryhmän nimetty kantaja</a>

@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Trollitehdas — mielipiteitä liukuhihnalta — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/trollitehdas.html#article",
       "url": "https://www.ilmiöt.fi/trollitehdas.html",
       "headline": "Trollitehdas — mielipiteitä liukuhihnalta",
-      "description": "Trollitehdas on organisaatio, jonka palkatut työntekijät levittävät propagandaa ja lietsovat riitaa valehenkilöllisyyksillä. Tunnetuin oli Pietarin trollitehdas.",
+      "description": "Trollitehdas: palkattuja mielipiteitä liukuhihnalta. Selitämme miten organisoitu vaikuttaminen toimii ja mistä merkeistä tunnistat trollin.",
       "inLanguage": "fi",
       "articleSection": "Informaatio ja propaganda",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Trollitehdas — mielipiteitä liukuhihnalta",
-        "description": "Trollitehdas on organisaatio, jonka palkatut työntekijät levittävät propagandaa ja lietsovat riitaa valehenkilöllisyyksillä. Tunnetuin oli Pietarin trollitehdas.",
+        "name": "Trollitehdas",
+        "description": "Trollitehdas: palkattuja mielipiteitä liukuhihnalta. Selitämme miten organisoitu vaikuttaminen toimii ja mistä merkeistä tunnistat trollin.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -824,6 +825,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="trollitehdas">
 <div class="ilmio-tag">Ilmiö 17</div>
 <h1>Trollitehdas — mielipiteitä liukuhihnalta</h1>
@@ -845,7 +847,7 @@ flowchart TD
 <p class="kaavio-selitys">Tehtaan tuote ei ole mielipide vaan hajaannus: kärjistynyt ja kyyninen yleisö.</p>
 <p>Tavoite ymmärretään usein väärin. Tehdas ei yleensä yritä saada sinua uskomaan yhtä väitettä — se kärjistää molempia laitoja, hukuttaa asiakeskustelun ja opettaa, että mihinkään ei voi luottaa. Kyyninen kansalainen, joka on luovuttanut totuuden suhteen, on propagandistille yhtä hyvä saalis kuin käännytetty. Suomessa ilmiön toi julkisuuteen Ylen toimittaja <strong>Jessikka Aro</strong>, joka selvitti venäläistrollien toimintaa 2014–2015 — ja joutui itse vuosia kestäneen vainokampanjan kohteeksi, josta annettiin tuomioita törkeästä kunnianloukkauksesta 2018.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Trollitehtaita maailmalla:</h2>
+<h2 class="laatikko-otsikko" id="trollitehtaita-maailmalla">Trollitehtaita maailmalla:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Kiinan "50 sentin armeija":</strong> arvioiden mukaan satoja miljoonia tilattuja viestejä vuodessa — pääpaino ei ole väittelyssä vaan huomion ohjaamisessa pois kiistanalaisista aiheista.</li>
 <li><strong>Filippiinit:</strong> vaalikampanjoiden "näppäimistöarmeijat" tekivät trollauksesta palkkatyötä ja mainostoimistobisnestä.</li>
@@ -854,7 +856,7 @@ flowchart TD
 </ul>
 </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Profiili on tuore mutta tuottaa mielipiteitä liukuhihnalta; aktiivisuus osuu toimistotyöaikaan väärällä aikavyöhykkeellä; sama sanamuoto toistuu monella "eri" tilillä; kasvokuva on kuvapankista tai tekoälyn generoima; tili vaihtaa kieltä ja intohimon kohdetta kampanjasta toiseen. Tärkein neuvo koskee silti tavoitetta, ei trollia: jos verkkokeskustelu saa sinut vihaamaan naapuriasi ja luovuttamaan yhteiskunnan suhteen, tehdas sai tuotteensa perille — riippumatta siitä, oliko yksittäinen kommentoija ihminen.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Profiili on tuore mutta tuottaa mielipiteitä liukuhihnalta; aktiivisuus osuu toimistotyöaikaan väärällä aikavyöhykkeellä; sama sanamuoto toistuu monella "eri" tilillä; kasvokuva on kuvapankista tai tekoälyn generoima; tili vaihtaa kieltä ja intohimon kohdetta kampanjasta toiseen. Tärkein neuvo koskee silti tavoitetta, ei trollia: jos verkkokeskustelu saa sinut vihaamaan naapuriasi ja luovuttamaan yhteiskunnan suhteen, tehdas sai tuotteensa perille — riippumatta siitä, oliko yksittäinen kommentoija ihminen.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -926,6 +928,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="streisand-ilmio.html">← Streisand-ilmiö — salailu levittää</a>

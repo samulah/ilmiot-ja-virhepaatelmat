@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Maalitolppien siirtäminen — liikkuva maaliviiva — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/maalitolppien-siirtaminen.html#article",
       "url": "https://www.ilmiöt.fi/maalitolppien-siirtaminen.html",
       "headline": "Maalitolppien siirtäminen — liikkuva maaliviiva",
-      "description": "Maalitolppien siirtäminen (eng. moving the goalposts ) on retorinen ja strateginen taktiikka, jossa onnistumisen kriteerejä muutetaan jälkikäteen — juuri kun…",
+      "description": "Maalitolppien siirtäminen: vaatimus muuttuu aina, kun ehto täyttyy. Selitämme tekniikan käytännössä ja miten lukitset kriteerit etukäteen.",
       "inLanguage": "fi",
       "articleSection": "Psykologia ja kognitio",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Maalitolppien siirtäminen — liikkuva maaliviiva",
-        "description": "Maalitolppien siirtäminen (eng. moving the goalposts ) on retorinen ja strateginen taktiikka, jossa onnistumisen kriteerejä muutetaan jälkikäteen — juuri kun…",
+        "name": "Maalitolppien siirtäminen",
+        "description": "Maalitolppien siirtäminen: vaatimus muuttuu aina, kun ehto täyttyy. Selitämme tekniikan käytännössä ja miten lukitset kriteerit etukäteen.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -799,29 +800,6 @@
       },
       "datePublished": "2026-06-19",
       "dateModified": "2026-08-04"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.ilmiöt.fi/maalitolppien-siirtaminen.html#faq",
-      "inLanguage": "fi",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Missä maalitolppia siirretään?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Väittelyssä: todiste hyväksytään ensin riittäväksi, ja kun se esitetään, vaaditaan seuraavaa. Työelämässä: ylennyksen ehto täyttyy, minkä jälkeen ilmestyy uusi ehto. Kaava on sama molemmissa."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Miten maalitolppien siirtämiseen vastataan?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Kirjaa ehto ylös ennen suoritusta ja palaa siihen sanatarkasti. Kun ehto muuttuu, nimeä muutos ääneen ja pyydä uusi ehto kirjallisena — silloin siirto tulee näkyviin myös muille."
-          }
-        }
-      ]
     }
   ]
 }
@@ -847,13 +825,14 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="maalitolppien-siirtaminen">
 <div class="ilmio-tag">Ilmiö 29</div>
 <h1>Maalitolppien siirtäminen — liikkuva maaliviiva</h1>
 <p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 4.8.2026</p>
 <p>Maalitolppien siirtäminen (eng. <em>moving the goalposts</em>) on retorinen ja strateginen taktiikka, jossa onnistumisen kriteerejä muutetaan jälkikäteen — juuri kun alkuperäinen ehto on täytetty tai lähellä täyttymistä. Tavoitteena ei ole parempi tulos: se on pitää toinen osapuoli ikuisessa suoritustilassa ilman koskaan saavutettavaa maalilinjaa.</p>
 <div class="infolaatikko vastauslohko">
-<h2 class="laatikko-otsikko">Mitä maalitolppien siirtäminen tarkoittaa?</h2>
+<h2 class="laatikko-otsikko" id="mita-maalitolppien-siirtaminen-tarkoittaa">Mitä maalitolppien siirtäminen tarkoittaa?</h2>
 <p style="margin:0.4em 0 0;"><strong>Maalitolppien siirtäminen</strong> tarkoittaa, että ehto vaihdetaan sen jälkeen kun se on täytetty. Rehellisestä kriteerin tarkennuksesta sen erottaa ajoitus ja vaikeneminen: uusi vaatimus ilmestyy vasta kun vanha on menossa läpi, eikä vanhan täyttymistä myönnetä ääneen.</p>
 </div>
 <p>Ilmiö esiintyy kahdessa muodossa. <strong>Avoimessa muodossa</strong> siirto tapahtuu näkyvästi: "Olen jo tyytyväinen kunhan teet X" → X tehdään → "Nyt täytyy myös Y." <strong>Hiljaisessa muodossa</strong> alkuperäistä ehtoa ei koskaan selvästi asetettu — ja kun pyydetty asia on tehty, väitetään, ettei se koskaan riittänyt. Jälkimmäinen liukuu <a href="gaslighting.html">gaslightingin</a> puolelle.</p>
@@ -869,7 +848,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Maaliviiva pakenee aina askeleen verran — ei koskaan saavuteta, mutta aina vain "vähän enemmän".</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Missä ilmiö esiintyy:</h2>
+<h2 class="laatikko-otsikko" id="missa-ilmio-esiintyy">Missä ilmiö esiintyy:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Työelämä:</strong> Bonus tai ylennys luvataan tietyn tuloksen jälkeen — saavutettu, mutta palkka ei seuraa. "Tarvitaan vielä yksi kvartaali."</li>
 <li><strong>Politiikka:</strong> Oppositio asettaa hallitukselle ehtoja — hallitus täyttää ne — oppositio vaatii lisää. Kritiikki jatkuu ehdon sisällöstä riippumatta.</li>
@@ -879,7 +858,7 @@ flowchart TD
 </div>
 <p><strong>Rakenteellinen funktio:</strong> Maalitolppien siirtäminen antaa näennäisesti rationaalisen perusteen kieltäytymiselle. Siirtäjä ei näytä epäreilulta — hän vain "nostaa rimaa". Tämä erottaa sen avoimesta hylkäämisestä: kieltäytymistä ei tarvitse perustella, koska suoritustaso ei koskaan ole riittävä. Vertaa <a href="portinvartija-kulttuuri.html">portinvartija-kulttuuriin</a>: siellä pääsy estetään prosessilla — täällä se estetään ikuisesti liikkuvilla kriteereillä.</p>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Kirjaa sopimukset ja kriteerit ennen suoritusta — ei jälkikäteen. Jos kriteerit muuttuvat toistuvasti saavuttamisen jälkeen, kyse ei ole standardien nostamisesta vaan maaliviivan poistamisesta. Kysymys joka paljastaa ilmiön: "Mikä tarkalleen ottaen riittäisi?"
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Kirjaa sopimukset ja kriteerit ennen suoritusta — ei jälkikäteen. Jos kriteerit muuttuvat toistuvasti saavuttamisen jälkeen, kyse ei ole standardien nostamisesta vaan maaliviivan poistamisesta. Kysymys joka paljastaa ilmiön: "Mikä tarkalleen ottaen riittäisi?"
     </div>
 <p class="peli-harjoittele" style="margin:1.4rem 0 0;padding:.7rem .9rem;background:#FBF5E0;border-left:3px solid #C9A84C;font-size:.95em"><b>Harjoittele tämän tunnistamista.</b> <a href="peli.html">Vedätys</a> on päivittäinen peli, jossa maalitolppien siirtäminen on yksi tunnistettavista ilmiöistä — mukana on aina myös tilanteita, joissa ei ole mitään vikaa.</p>
 <div class="lue-lisaa">
@@ -961,6 +940,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="gaslighting.html">← Gaslighting — todellisuuden järjestelmällinen kiistäminen</a>

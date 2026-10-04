@@ -1,7 +1,7 @@
 ---
 kat_id: media-ja-julkisuus-kategoria
 h1: Media ja julkisuus — miksi jostain ei kerrota
-otsikko: Media ja julkisuus — 10 syytä siihen, mitä uutisista puuttuu
+otsikko: Media ja julkisuus — {n} syytä siihen, mitä uutisista puuttuu
 kuvaus: Uutiskynnys, pääsyjournalismi, tiedotejournalismi, väärä tasapaino. Kymmenen julkisuuden ilmiötä — eikä yksikään niistä edellytä, että kukaan valehtelee.
 vari: "#283593"
 paivitetty: 2026-08-05

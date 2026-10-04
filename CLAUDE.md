@@ -67,9 +67,37 @@ nappi on säilytettävä — muuten sivu jää orvoksi.
 | `luonnokset/suosio.html` | `scripts/paivita_suosio.py` | samalla ajolla |
 | `luonnokset/etusivu-nostot.html` | `scripts/paivita_suosio.py` | samalla ajolla |
 | `data/peli-pankki.js` | `scripts/build_peli.py` | kun `pelidata/*.json` muuttuu |
+| `og/<slug>.png`, `og/kategoria-<slug>.png` | `scripts/build_og.py` | kun etusivun kortin nimi tai kuvaus muuttuu |
 
 `llms.txt`:n **otsikkolohko** (rivit 1–10) on käsin ylläpidetty; vain
 ilmiölista synkronoituu skriptillä.
+
+Kaksi skriptiä ei generoi tiedostoa vaan **johtaa osan ilmiösivusta muusta
+sisällöstä**, ja ne ajetaan julkaisun jälkeen (`lisaa_ilmiot.py` tulostaa ne
+ajolistaan) sekä aina kun lähde muuttuu:
+
+- `scripts/seo_rakenne.py --kirjoita` — `id` jokaiselle `.ilmio`-säiliön `h2`:lle
+  ja `<main>`. Olemassa olevaa `id`:tä ei muuteta. `.ilmio`-säiliö pysyy
+  `<div>`:nä: luonnosskriptit tunnistavat sen tagista.
+- `scripts/seo_schema.py --kirjoita` — JSON-LD:n `description` metakuvauksesta,
+  `image` `og:image`sta, `about` kortin nimestä; poistaa FAQPagen. Aja, kun
+  metakuvaus, kortin nimi tai jakokuva muuttuu. JSON-LD:tä ei muokata käsin
+  näiltä osin.
+
+Kategorian ilmiömäärää ei kirjoiteta `kategoriat/*.md`:n `h1`-, `otsikko`- tai
+`kuvaus`-kenttään numerona: käytä `{n}` (ja `{n-1}`). `build_kategoriat.py`
+täyttää ne korttimäärästä ja kaatuu, jos kentässä on `-toista`-lukusana, joka ei
+vastaa määrää.
+
+`lisaa_ilmiot.py` kaatuu, jos luonnoksen `<title>` on jo käytössä toisella
+sivulla tai ei sisällä h1:n ensimmäistä sanaa — 26 sivua julkaistiin pohjasivun
+titlellä ennen tätä tarkistusta.
+
+Sivukohtaisia jakokuvia on toistaiseksi vain 20 sivulla (kategoria 15 ja kaksi
+muuta, 3.10.2026); muut käyttävät `og/brand.png`:tä. `build_og.py --kirjoita`
+vaihtaa myös ilmiösivun kolme `og:`-metariviä, joten **kuvat viedään palvelimelle
+ennen HTML-sivuja** — muuten `og:image` osoittaa 404:ään. Kuvassa ei ole ilmiön
+numeroa, koska uudelleennumerointi vanhentaisi sen.
 
 ## Suosiodata ja etusivun nostot
 
@@ -210,6 +238,13 @@ Arkistosta tai vanhasta haastelinkistä pelattu erä tallentaa tuloksensa
 viimeisin-päivän taaksepäin ja nollasi putken. Erän ensimmäinen tulos jää
 voimaan ja on se, joka jaetaan; uusintakierros ei korvaa sitä.
 
+**Pankin kasvattaminen kokoaa kaikki erät uudelleen.** `kokoa_erat()` jakaa koko
+pankin alusta, joten yksikin uusi kohta muuttaa myös jo pelattuja eriä: kokeessa
+3.10.2026 (200 → 260 kohtaa) 0/40 erästä säilyi samana. Arkiston tulokset
+(`peli-tulokset`) osoittaisivat silloin eri eriin kuin mitä pelattiin. Uudet
+kohdat odottavat siksi `luonnokset/pelidata/`:ssa, kunnes on päätetty, lukitaanko
+pelatut erät vai hyväksytäänkö uudelleenkokoaminen.
+
 **Ohjaava ansa osoittaa aina väärään vastaukseen** (`ansanKohde()`). Esivalittu
 oletus ja keksitty prosentti, jotka sattuvat osumaan oikeaan, palkitsevat
 tottelemisen ja opettavat päinvastaista kuin paljastus sanoo.
@@ -237,11 +272,20 @@ epäilyttäviä mutta oikeasti kunnossa.
 
 - `index.html`, `tietoa.html` ja `muutokset.html` kantavat CSS:nsä `<style>`-lohkossa
   → ne ovat immuuneja `style.css`:n cache-bustille.
-- Ilmiösivut linkittävät `style.css?v=YYYYMMDD`. Kun `style.css` muuttuu, versio on
-  bumpattava kaikilla sivuilla, jotka siihen linkittävät.
+- Ilmiö- ja kategoriasivut linkittävät `style.css?v=YYYYMMDD`. Kun `style.css` tai
+  `fonts/fonts.css` muuttuu: nosta `VERSIO` skriptissä `scripts/fontit_esilataus.py`
+  ja `CSS_VERSIO` skriptissä `scripts/build_kategoriat.py` (sama arvo) ja aja
+  molemmat. Älä vaihda versiota käsin sivu kerrallaan.
+- **Sivu linkittää fontit vain yhdestä paikasta:** `style.css` (ilmiöt, kategoriat)
+  tai `fonts/fonts.css` (index, tietoa, muutokset, peli). Sama `@font-face`-lohko
+  on molemmissa tiedostoissa ja muutetaan aina yhdessä. Kaksi lähdettä samalla
+  sivulla haki saman fontin kolmesti ja aiheutti mobiilissa CLS:n 0,2 (4.10.2026).
+  Jokaisella sivulla on `<link rel="preload">` kahdelle ensimmäisen näkymän
+  fontille; `fontit_esilataus.py` ylläpitää ne.
 - Väripaletti: `--c-primary #C9A84C`, `--c-primary-dark #1C1400`,
-  `--c-primary-mid #8B6914`, `--c-bg #F5F0E5`. Kirjasimet Spectral (otsikot) ja
-  DM Sans (leipäteksti), molemmat itsehostattuja `fonts/`-kansiossa.
+  `--c-primary-mid #8B6914`, `--c-bg #F5F0E5`. Kirjasimet: Spectral (otsikot),
+  Source Sans 3 (ilmiö- ja kategoriasivujen leipäteksti) ja DM Sans (etusivu,
+  muut sivut ja käyttöliittymä), kaikki itsehostattuja `fonts/`-kansiossa.
 - Sivusto ei lataa mitään ulkopuoliselta palvelimelta (27.7.2026 alkaen). Älä lisää
   CDN-linkkejä, Google Fontsia tai ulkoisia skriptejä.
 

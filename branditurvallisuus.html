@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Bränditurvallisuus — mainostaja päättää, mistä aiheista kannattaa kirjoittaa — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -392,8 +393,8 @@
       "inLanguage": "fi",
       "articleSection": "Media ja julkisuus",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -402,9 +403,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
+        }
+      },
+      "about": {
+        "@type": "DefinedTerm",
+        "name": "Bränditurvallisuus",
+        "description": "Bränditurvallisuuden estolistat katkaisevat mainostulon vakavista aiheista: kukaan ei kiellä uutisointia, mutta sen tekeminen muuttuu kannattamattomaksi.",
+        "inDefinedTermSet": {
+          "@type": "DefinedTermSet",
+          "name": "Ilmiöitä — Miten valta toimii",
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -441,6 +452,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="branditurvallisuus">
 <div class="ilmio-tag">Ilmiö 134</div>
 <h1>Bränditurvallisuus — mainostaja päättää, mistä aiheista kannattaa kirjoittaa</h1>
@@ -458,10 +470,10 @@ flowchart TD
 <p>Ilmiö tuli näkyväksi koronapandemian alussa 2020, kun uutissivustot menettivät mainostuloja juuri sen aiheen kohdalla, jota kaikki lukivat. Estolistoilta on löydetty myös ihmisryhmiä kuvaavia sanoja, jolloin vähemmistöjä koskeva journalismi muuttuu automaattisesti "riskialttiiksi". Videopalveluissa sama näkyy suoraan tekijöiden kielessä: kiertoilmaisut kuolemasta tai seksuaalisuudesta ovat vastaus algoritmiselle demonetisoinnille, ei sattumaa.</p>
 <p>Kyse on siis mainosrahan kautta kulkevasta aihevalinnasta. Se ei vaadi kenenkään pahaa tahtoa: mainostaja suojelee brändiään, alusta myy suojausta ja julkaisija sopeutuu tulovirtaan.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Ero läheisiin käsitteisiin:</h2> Sensuurissa joku kieltää julkaisemisen; tässä julkaiseminen on vapaata mutta kannattamatonta. Vaikutus on <a href="manufactured-consent.html">manufactured consentin</a> mainostajasuodattimen nykyversio, ja se selittää osaltaan, miksi <a href="rage-bait.html">rage bait</a> ja <a href="ai-slop.html">AI slop</a> ovat taloudellisesti järkevämpiä kuin vakava uutinen.
+<h2 class="laatikko-otsikko" id="ero-laheisiin-kasitteisiin">Ero läheisiin käsitteisiin:</h2> Sensuurissa joku kieltää julkaisemisen; tässä julkaiseminen on vapaata mutta kannattamatonta. Vaikutus on <a href="manufactured-consent.html">manufactured consentin</a> mainostajasuodattimen nykyversio, ja se selittää osaltaan, miksi <a href="rage-bait.html">rage bait</a> ja <a href="ai-slop.html">AI slop</a> ovat taloudellisesti järkevämpiä kuin vakava uutinen.
     </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2>
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2>
 <ul style="margin:0.5em 0 0;">
 <li>Huomaa kiertoilmaisut videoissa ja somessa — ne kertovat, mitä sanoja alusta rankaisee.</li>
 <li>Älä tulkitse aiheen vähäistä käsittelyä todisteeksi siitä, ettei aihe ole tärkeä.</li>
@@ -476,7 +488,7 @@ flowchart TD
 <span class="lue-lisaa-tyyppi">Verkossa</span>
 <ul class="lue-lisaa-lista">
 <li><a href="https://en.wikipedia.org/wiki/Brand_safety" target="_blank" rel="noopener">Wikipedia: Brand safety (englanniksi)</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Demonetization_(YouTube)" target="_blank" rel="noopener">Wikipedia: YouTube-demonetisointi (englanniksi)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Censorship_by_Google#Advertiser-friendly_content" target="_blank" rel="noopener">Wikipedia: YouTuben mainostajaystävällisyyssäännöt ja demonetisointi (englanniksi)</a></li>
 </ul>
 </div>
 </div>
@@ -519,6 +531,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="tiedotejournalismi.html">← Tiedotejournalismi — uutinen, jonka kirjoitti viestintätoimisto</a>

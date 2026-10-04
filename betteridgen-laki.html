@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Betteridgen laki — kysymysmerkki tarkoittaa "ei" — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/betteridgen-laki.html#article",
       "url": "https://www.ilmiöt.fi/betteridgen-laki.html",
       "headline": "Betteridgen laki — kysymysmerkki tarkoittaa \"ei\"",
-      "description": "\"Jokainen otsikko, joka päättyy kysymysmerkkiin, voidaan vastata sanalla 'ei'.\" Brittitoimittaja Ian Betteridge muotoili periaatteen vuonna 2009, mutta ilmiö…",
+      "description": "Betteridgen laki: kysymysmerkillä päättyvä otsikko tarkoittaa 'ei'. Selitämme miksi laki toimii, käytännön esimerkit ja miten luet otsikoita.",
       "inLanguage": "fi",
       "articleSection": "Informaatio ja propaganda",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Betteridgen laki — kysymysmerkki tarkoittaa \"ei\"",
-        "description": "\"Jokainen otsikko, joka päättyy kysymysmerkkiin, voidaan vastata sanalla 'ei'.\" Brittitoimittaja Ian Betteridge muotoili periaatteen vuonna 2009, mutta ilmiö…",
+        "name": "Betteridgen laki",
+        "description": "Betteridgen laki: kysymysmerkillä päättyvä otsikko tarkoittaa 'ei'. Selitämme miksi laki toimii, käytännön esimerkit ja miten luet otsikoita.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -824,6 +825,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="betteridgen-laki">
 <div class="ilmio-tag">Ilmiö 13</div>
 <h1>Betteridgen laki — kysymysmerkki tarkoittaa "ei"</h1>
@@ -842,7 +844,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Betteridgen laki: kysymysmerkki on halpa vakuutus — spekulaatio pääsee julki ilman väitteen vastuuta.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Esimerkkejä otsikkotyypistä:</h2>
+<h2 class="laatikko-otsikko" id="esimerkkeja-otsikkotyypista">Esimerkkejä otsikkotyypistä:</h2>
 <ul style="margin:0.5em 0 0;">
 <li>"Aiheuttaako 5G-verkko syöpää?" — Ei.</li>
 <li>"Onko tämä löytö muuttamassa historian käsitystä?" — Ei.</li>
@@ -853,11 +855,11 @@ flowchart TD
     </div>
 <p>Mekanismi on yksinkertainen: kysymysmuoto mahdollistaa huomiota herättävän väitteen esittämisen ilman toimituksellista vastuuta siitä. Jos toimittaja tietää vastauksen olevan "kyllä", hän kirjoittaa sen suoraan. Kun otsikko päättyy kysymysmerkkiin, se on lähes aina merkki siitä, että toimituksella ei ole näyttöä — tai että se tietää vastauksen olevan "ei" mutta haluaa silti klikkejä aiheesta.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Miksi laki toimii:</h2> Lukijan aivot rekisteröivät kysymyksen sisällön ennen sen muotoa. "Aiheuttaako lisäaine X syöpää?" jättää epäilyn mieleen — vaikka artikkeli itse kumoaisi väitteen. Kysymys on jo kylvetty. Sama rakenne toimii poliittisessa viestinnässä: "Onko poliitikko X korruptoitunut?" riittää maineen vahingoittamiseen vailla yhtäkään todistetta.
+<h2 class="laatikko-otsikko" id="miksi-laki-toimii">Miksi laki toimii:</h2> Lukijan aivot rekisteröivät kysymyksen sisällön ennen sen muotoa. "Aiheuttaako lisäaine X syöpää?" jättää epäilyn mieleen — vaikka artikkeli itse kumoaisi väitteen. Kysymys on jo kylvetty. Sama rakenne toimii poliittisessa viestinnässä: "Onko poliitikko X korruptoitunut?" riittää maineen vahingoittamiseen vailla yhtäkään todistetta.
     </div>
 <p>Betteridgen laki kytkeytyy <a href="firehose-of-falsehood.html">Firehose of Falsehood</a> -tekniikkaan: kun spekulatiivisia kysymysotsikoita julkaistaan tarpeeksi paljon, lukijan on mahdoton arvioida mitä on todistettu ja mitä ei. Kysymysmuoto on yksittäisenä harmittoman näköinen — volyymina se muodostaa informaatiomelun, jossa kaikki väitteet näyttävät yhtä epävarmoilta.</p>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Kun luet kysymysmerkkiin päättyvän otsikon, käännä se väitelauseeksi: "X aiheuttaa Y." Onko tämä väite artikkelin sisällön tukema? Jos ei — otsikko on spekulaatiota, joka hyödyntää kysymysmuodon suojaa. Vastaus Betteridgen lakiin on lähes aina: ei.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Kun luet kysymysmerkkiin päättyvän otsikon, käännä se väitelauseeksi: "X aiheuttaa Y." Onko tämä väite artikkelin sisällön tukema? Jos ei — otsikko on spekulaatiota, joka hyödyntää kysymysmuodon suojaa. Vastaus Betteridgen lakiin on lähes aina: ei.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -938,6 +940,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="manufactured-consent.html">← Manufactured consent — suostumus tehdään</a>

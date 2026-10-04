@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Argumenttitulva — Gish Gallop — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/argumenttitulva.html#article",
       "url": "https://www.ilmiöt.fi/argumenttitulva.html",
       "headline": "Argumenttitulva — Gish Gallop",
-      "description": "Argumenttitulva (eng. Gish Gallop , nimetty kreationistidebatisti Duane Gishin mukaan) on retorinen taktiikka, jossa esitetään mahdollisimman monta…",
+      "description": "Argumenttitulva (Gish gallop): väitteitä nopeammin kuin ehdit vastata. Selitämme miksi tekniikka toimii ja miten torjut sen keskustelussa.",
       "inLanguage": "fi",
       "articleSection": "Psykologia ja kognitio",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Argumenttitulva — Gish Gallop",
-        "description": "Argumenttitulva (eng. Gish Gallop , nimetty kreationistidebatisti Duane Gishin mukaan) on retorinen taktiikka, jossa esitetään mahdollisimman monta…",
+        "name": "Argumenttitulva",
+        "description": "Argumenttitulva (Gish gallop): väitteitä nopeammin kuin ehdit vastata. Selitämme miksi tekniikka toimii ja miten torjut sen keskustelussa.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -799,29 +800,6 @@
       },
       "datePublished": "2026-06-19",
       "dateModified": "2026-08-04"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.ilmiöt.fi/argumenttitulva.html#faq",
-      "inLanguage": "fi",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Mistä nimi Gish Gallop tulee?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Nimi tulee yhdysvaltalaisesta kreationistidebatisti Duane Gishistä, joka käytti taktiikkaa järjestelmällisesti evoluutiobiologien kanssa käymissään väittelyissä 1970- ja 1980-luvuilla."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Miten argumenttitulvaan kannattaa vastata?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Älä yritä vastata kaikkeen — se on juuri taktiikan tavoite. Valitse yksi tai kaksi väitettä, käsittele ne kunnolla loppuun ja nimeä taktiikka ääneen, jotta yleisö näkee määrän korvanneen perustelun."
-          }
-        }
-      ]
     }
   ]
 }
@@ -847,13 +825,14 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="argumenttitulva">
 <div class="ilmio-tag">Ilmiö 30</div>
 <h1>Argumenttitulva — Gish Gallop</h1>
 <p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 4.8.2026</p>
 <p>Argumenttitulva (eng. <em>Gish Gallop</em>, nimetty kreationistidebatisti Duane Gishin mukaan) on retorinen taktiikka, jossa esitetään mahdollisimman monta argumenttia niin nopeasti tai tiheästi, että vastapuolella ei ole aikaa tai resursseja vastata kaikkiin. Yksittäisten väitteiden laadulla tai todenperäisyydellä ei ole merkitystä — tavoitteena on kuormittaa, ei vakuuttaa.</p>
 <div class="infolaatikko vastauslohko">
-<h2 class="laatikko-otsikko">Mikä on Gish Gallop suomeksi?</h2>
+<h2 class="laatikko-otsikko" id="mika-on-gish-gallop-suomeksi">Mikä on Gish Gallop suomeksi?</h2>
 <p style="margin:0.4em 0 0;"><strong>Gish Gallop</strong> on suomeksi <strong>argumenttitulva</strong>. Siinä esitetään niin monta väitettä niin nopeasti, ettei vastapuoli ehdi vastata kaikkiin. Väitteiden todenperäisyydellä ei ole merkitystä, eikä niiden ole tarkoituskaan kestää tarkastelua: tavoite on kuormittaa vastustaja, ei vakuuttaa yleisöä.</p>
 </div>
 <p>Argumenttitulva hyödyntää epäsymmetristä vaivaa: väitteen esittäminen on nopeaa, kumoaminen hidasta. Kymmenen argumentin esittäminen vie minuutin; jokaisen asianmukainen käsittely vie tunteja. Kun vastapuoli ei pysty kumoamaan kaikkia, esittäjä julistaa voittaneensa. Argumenttitulva ei pyri voittamaan väittelyä meriitillä — se pyrkii voittamaan resurssien epätasapainolla.</p>
@@ -870,7 +849,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Epäsymmetrinen vaiva: esittäminen on halpaa, kumoaminen kallista.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Kaksi päämuotoa:</h2>
+<h2 class="laatikko-otsikko" id="kaksi-paamuotoa">Kaksi päämuotoa:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Debattimuoto:</strong> Julkisessa väittelyssä tai somessa esitetään nopea sarja väitteitä joihin ei odoteta faktista vastausta — ne luovat <em>vaikutelman</em> laajasta tietämyksestä. Ks. <a href="firehose-of-falsehood.html">Firehose of Falsehood</a>: valtiollinen versio samasta logiikasta.</li>
 <li><strong>Henkilökohtainen muoto:</strong> Selitetään niin paljon, niin pitkään ja niin monimutkaisesti, että vastapuoli antaa periksi väsymisestä — vaikka ei ole vakuuttunut. Käytetään neuvotteluissa, parisuhteissa, hierarkkisissa suhteissa.</li>
@@ -878,7 +857,7 @@ flowchart TD
 </div>
 <p><strong>Vastataktiikka:</strong> Argumenttitulvaan ei voi vastata vastatulvalla — se vain eskaloituu. Tehokkain vastataktiikka on nimetä ilmiö ääneen ("tässä käytetään Gish Gallopta") ja valita yksi tai kaksi keskeisintä väitettä käsiteltäväksi, selittäen miksi muita ei käsitellä. Valinta on pakko tehdä ääneen — muuten vastapuoli käyttää käsittelemättömiä väitteitä hyväkseen. "En aio vastailla 14 väitteeseen — mutta väite X on keskeinen, ja se on väärä siksi että..."</p>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Väittelytilanteessa, jossa et pysty vastaamaan kaikkiin esitettyihin kohtiin — kysy ensin: onko kyse tiedon puutteesta vai volyymista? Jos esittäjä lisää uusia argumentteja jo ennen kuin aiemmat on käsitelty, kyse on strategiasta eikä aidosta evidenssistä.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Väittelytilanteessa, jossa et pysty vastaamaan kaikkiin esitettyihin kohtiin — kysy ensin: onko kyse tiedon puutteesta vai volyymista? Jos esittäjä lisää uusia argumentteja jo ennen kuin aiemmat on käsitelty, kyse on strategiasta eikä aidosta evidenssistä.
     </div>
 <p class="peli-harjoittele" style="margin:1.4rem 0 0;padding:.7rem .9rem;background:#FBF5E0;border-left:3px solid #C9A84C;font-size:.95em"><b>Harjoittele tämän tunnistamista.</b> <a href="peli.html">Vedätys</a> on päivittäinen peli, jossa argumenttitulva on yksi tunnistettavista ilmiöistä — mukana on aina myös tilanteita, joissa ei ole mitään vikaa.</p>
 <div class="lue-lisaa">
@@ -960,6 +939,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="maalitolppien-siirtaminen.html">← Maalitolppien siirtäminen — liikkuva maaliviiva</a>

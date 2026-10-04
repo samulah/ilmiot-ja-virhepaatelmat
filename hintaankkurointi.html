@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Hintaankkurointi — ensimmäinen luku ohjaa koko neuvottelua — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   
   
   
@@ -734,12 +736,12 @@
       "@id": "https://www.ilmiöt.fi/hintaankkurointi.html#article",
       "url": "https://www.ilmiöt.fi/hintaankkurointi.html",
       "headline": "Hintaankkurointi — ensimmäinen luku ohjaa koko neuvottelua",
-      "description": "Ankkurointi tarkoittaa, että ensimmäinen esitetty numero asettaa vertailupisteen , johon kaikkia myöhempiä lukuja peilataan — vaikka tuo ensimmäinen luku…",
+      "description": "Hintaankkurointi: ensimmäinen luku ohjaa koko neuvottelua. Selitämme ankkurin psykologian käytännössä ja miten irrotat arviosi annetusta luvusta.",
       "inLanguage": "fi",
       "articleSection": "Myyntikikat ja painostus",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -748,19 +750,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Hintaankkurointi — ensimmäinen luku ohjaa koko neuvottelua",
-        "description": "Ankkurointi tarkoittaa, että ensimmäinen esitetty numero asettaa vertailupisteen , johon kaikkia myöhempiä lukuja peilataan — vaikka tuo ensimmäinen luku…",
+        "name": "Hintaankkurointi",
+        "description": "Hintaankkurointi: ensimmäinen luku ohjaa koko neuvottelua. Selitämme ankkurin psykologian käytännössä ja miten irrotat arviosi annetusta luvusta.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -797,6 +799,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="hintaankkurointi">
 <div class="ilmio-tag">Ilmiö 87</div>
 <h1>Hintaankkurointi — ensimmäinen luku ohjaa koko neuvottelua</h1>
@@ -804,7 +807,7 @@
 <p>Ankkurointi tarkoittaa, että <strong>ensimmäinen esitetty numero asettaa vertailupisteen</strong>, johon kaikkia myöhempiä lukuja peilataan — vaikka tuo ensimmäinen luku olisi mielivaltainen tai keinotekoinen. Hinnoittelussa tämä tarkoittaa, että avaushinta määrää, miltä "halpa" ja "kallis" tuntuvat, riippumatta tuotteen todellisesta arvosta.</p>
 <p>Vinouma on niin vahva, että se vaikuttaa silloinkin, kun ankkuri tiedetään merkityksettömäksi. Siksi myyjä esittää lähes aina korkean luvun ensin: alennukset, "ovh"-hinnat ja yliarvoiset premium-vaihtoehdot ovat kaikki ankkureita.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Ankkurin muotoja hinnoittelussa:</h2>
+<h2 class="laatikko-otsikko" id="ankkurin-muotoja-hinnoittelussa">Ankkurin muotoja hinnoittelussa:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Yliviivattu "ovh":</strong> 199 € → 99 € — alkuperäishinta on ankkuri, ei välttämättä totta.</li>
 <li><strong>Premium-paketti houkuttimena:</strong> kallein vaihtoehto saa keskimmäisen näyttämään järkevältä.</li>
@@ -813,10 +816,10 @@
 </ul>
 </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Freelance- ja datatyössä:</h2> Se osapuoli, joka nimeää hinnan ensin, ankkuroi neuvottelun. Jos tilaaja sanoo "budjetti on 1500 €", luku jää kummittelemaan, vaikka työ olisi 4000 €:n arvoinen. Kääntäen: harkittu, perusteltu avaushinta omasta suusta suojaa sinua tilaajan matalalta ankkurilta.
+<h2 class="laatikko-otsikko" id="freelance-ja-datatyossa">Freelance- ja datatyössä:</h2> Se osapuoli, joka nimeää hinnan ensin, ankkuroi neuvottelun. Jos tilaaja sanoo "budjetti on 1500 €", luku jää kummittelemaan, vaikka työ olisi 4000 €:n arvoinen. Kääntäen: harkittu, perusteltu avaushinta omasta suusta suojaa sinua tilaajan matalalta ankkurilta.
     </div>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Selvitä tuotteen tai työn arvo <em>ennen</em> kuin kuulet myyjän luvun — silloin sinulla on oma ankkuri. Kysy itseltäsi, mihin riippumattomaan tietoon vertailuhinta perustuu. Jos ainoa peruste "edullisuudelle" on toinen, korkeampi luku samalta myyjältä, kyseessä on ankkuri eikä arvo. Ankkurointi on <a href="door-in-the-face.html">door-in-the-facen</a> ja <a href="houkutinvaihtoehto.html">houkutinvaihtoehdon</a> taustamekanismi.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Selvitä tuotteen tai työn arvo <em>ennen</em> kuin kuulet myyjän luvun — silloin sinulla on oma ankkuri. Kysy itseltäsi, mihin riippumattomaan tietoon vertailuhinta perustuu. Jos ainoa peruste "edullisuudelle" on toinen, korkeampi luku samalta myyjältä, kyseessä on ankkuri eikä arvo. Ankkurointi on <a href="door-in-the-face.html">door-in-the-facen</a> ja <a href="houkutinvaihtoehto.html">houkutinvaihtoehdon</a> taustamekanismi.
     </div>
 <p class="peli-harjoittele" style="margin:1.4rem 0 0;padding:.7rem .9rem;background:#FBF5E0;border-left:3px solid #C9A84C;font-size:.95em"><b>Harjoittele tämän tunnistamista.</b> <a href="peli.html">Vedätys</a> on päivittäinen peli, jossa hintaankkurointi on yksi tunnistettavista ilmiöistä — mukana on aina myös tilanteita, joissa ei ole mitään vikaa.</p>
 <div class="lue-lisaa">
@@ -882,6 +885,7 @@
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="door-in-the-face.html">← Door-in-the-face — kohtuuton pyyntö ensin, "kohtuullinen" perään</a>

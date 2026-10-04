@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Poen laki — parodiaa ei erota aidosta ilman hymiötä — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -775,12 +776,12 @@
       "@id": "https://www.ilmiöt.fi/poen-laki.html#article",
       "url": "https://www.ilmiöt.fi/poen-laki.html",
       "headline": "Poen laki — parodiaa ei erota aidosta ilman hymiötä",
-      "description": "Ilman selvää huumorin merkkiä ääriajattelun parodiaa ei voi erottaa aidosta. Nathan Poe muotoili lain vuonna 2005 — ja ironiasta tuli kilpi…",
+      "description": "Poen laki: parodiaa ei erota aidosta ääripuheesta ilman hymiötä. Selitämme mistä on kyse, mitä siitä seuraa ja miten suhtaudut epäselvään sisältöön.",
       "inLanguage": "fi",
       "articleSection": "Informaatio ja propaganda",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -789,19 +790,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Poen laki — parodiaa ei erota aidosta ilman hymiötä",
-        "description": "Ilman selvää huumorin merkkiä ääriajattelun parodiaa ei voi erottaa aidosta. Nathan Poe muotoili lain vuonna 2005 — ja ironiasta tuli kilpi…",
+        "name": "Poen laki",
+        "description": "Poen laki: parodiaa ei erota aidosta ääripuheesta ilman hymiötä. Selitämme mistä on kyse, mitä siitä seuraa ja miten suhtaudut epäselvään sisältöön.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -838,6 +839,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="poen-laki">
 <div class="ilmio-tag">Ilmiö 20</div>
 <h1>Poen laki — parodiaa ei erota aidosta ilman hymiötä</h1>
@@ -857,7 +859,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Poen laki: ilman eksplisiittistä vihjettä aie jää lukijan arvattavaksi — ja osa arvaa aina väärin.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Miksi aie ei välity verkossa:</h2>
+<h2 class="laatikko-otsikko" id="miksi-aie-ei-vality-verkossa">Miksi aie ei välity verkossa:</h2>
 <ul style="margin:0.5em 0 0;">
 <li>Ei äänensävyä, ilmettä eikä taukoa — kaikki kasvokkaisen ironian merkit puuttuvat.</li>
 <li>Konteksti romahtaa: viesti kirjoitetaan yhdelle yleisölle ja luetaan toisessa.</li>
@@ -867,11 +869,11 @@ flowchart TD
     </div>
 <p>Viimeinen kohta on lain terävin. Parodia toimii liioittelemalla: se vie kohteen kannan absurdiin äärimmäisyyteen, jotta lukija näkisi kannan absurdiuden. Mutta jos kohteen todellinen kanta on jo äärimmäinen, liioittelulle ei jää tilaa — parodia ja alkuperäinen näyttävät samalta, koska ne ovat samalla kohdalla. Poen laki ei siis kerro lukijoiden tyhmyydestä. Se kertoo siitä, että ääriajattelun ja sen parodian väliin ei mahdu erottavaa merkkiä.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Ironia kilpenä:</h2> Kun aietta ei voi todentaa, sen voi myös kiistää jälkikäteen. "Sehän oli vitsi" on vastaus, jota vastaan ei voi argumentoida — se muuttaa kritiikin huumorintajuttomuudeksi. Tästä syntyy suppilo: ironinen sisältö vetää mukaan yleisön, jolle vakavampi versio esitellään myöhemmin. Ensimmäinen taso on aina kiellettävissä, ja juuri siksi se on turvallinen paikka aloittaa.
+<h2 class="laatikko-otsikko" id="ironia-kilpena">Ironia kilpenä:</h2> Kun aietta ei voi todentaa, sen voi myös kiistää jälkikäteen. "Sehän oli vitsi" on vastaus, jota vastaan ei voi argumentoida — se muuttaa kritiikin huumorintajuttomuudeksi. Tästä syntyy suppilo: ironinen sisältö vetää mukaan yleisön, jolle vakavampi versio esitellään myöhemmin. Ensimmäinen taso on aina kiellettävissä, ja juuri siksi se on turvallinen paikka aloittaa.
     </div>
 <p>Sama epävarmuus on <a href="rage-bait.html">rage baitin</a> polttoainetta: kiukustunut vastaus ei tiedä, tähtääkö se aitoon kantaan vai syöttiin, ja kumpi tahansa vastaus tuottaa huomiota. <a href="trollitehdas.html">Trollitehtaat</a> hyödyntävät lakia järjestelmällisesti, koska aiteen kiistettävyys tekee toiminnasta halpaa ja riskitöntä. <a href="kuollut-internet.html">Kuollut internet -teoria</a> vie ajatuksen loppuun: kun kirjoittajan aidosta olemassaolostakaan ei ole varmuutta, aikeen arvailu käy mahdottomaksi.</p>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Älä kysy "onko tämä vitsi?" — sitä et voi tietää, eikä kirjoittajan vastauskaan ratkaise sitä. Kysy sen sijaan: "mitä tämä tekee, jos se ei ole vitsi?" Aie on tarkistamaton, vaikutus ei. Viesti, joka toimii rekrytointina riippumatta kirjoittajan aikeesta, on rekrytointi.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Älä kysy "onko tämä vitsi?" — sitä et voi tietää, eikä kirjoittajan vastauskaan ratkaise sitä. Kysy sen sijaan: "mitä tämä tekee, jos se ei ole vitsi?" Aie on tarkistamaton, vaikutus ei. Viesti, joka toimii rekrytointina riippumatta kirjoittajan aikeesta, on rekrytointi.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -936,6 +938,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="brandolinin-laki.html">← Brandolinin laki — valheen kumoaminen maksaa kymmenkertaisesti</a>

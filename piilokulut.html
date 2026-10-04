@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Piilokulut — hinta paljastuu erissä vasta kassalla — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -392,8 +393,8 @@
       "inLanguage": "fi",
       "articleSection": "Alustatalous ja algoritmit",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -402,9 +403,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
+        }
+      },
+      "about": {
+        "@type": "DefinedTerm",
+        "name": "Piilokulut",
+        "description": "Piilokulut eli drip pricing: mainostettu hinta on vain ensimmäinen erä, ja lopullinen summa selviää vasta maksuvaiheessa — sen jälkeen kun vertailu on jo tehty.",
+        "inDefinedTermSet": {
+          "@type": "DefinedTermSet",
+          "name": "Ilmiöitä — Miten valta toimii",
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -416,29 +427,6 @@
       },
       "datePublished": "2026-08-14",
       "dateModified": "2026-08-14"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.ilmiöt.fi/piilokulut.html#faq",
-      "inLanguage": "fi",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Mitä drip pricing tarkoittaa suomeksi?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Vakiintunutta suomennosta ei ole. Käytössä ovat piilokulut, pilkottu hinnoittelu ja hinnan valuttaminen; viranomaiset puhuvat kokonaishinnan ilmoittamisesta. Kyse on hinnoittelusta, jossa mainostettu luku on vain ensimmäinen erä ja loput lisät paljastuvat vaiheittain ostoprosessin aikana."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Ovatko piilokulut laillisia?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Lopullinen hinta on kerrottava. EU:n lentoliikenneasetus (1008/2008) edellyttää, että hinta veroineen ja maksuineen on nähtävissä koko varausprosessin ajan, ja kuluttajansuojalaki vaatii hinnan ilmoittamista niin, ettei kokonaiskustannus jää arvailun varaan. Rajanveto koskee sitä, missä vaiheessa ja miten näkyvästi summa esitetään."
-          }
-        }
-      ]
     }
   ]
 }
@@ -464,13 +452,14 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="piilokulut">
 <div class="ilmio-tag">Ilmiö 108</div>
 <h1>Piilokulut — hinta paljastuu erissä vasta kassalla</h1>
 <p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 14.8.2026</p>
 <p><strong>Piilokulut</strong> (englanniksi <em>drip pricing</em>) tarkoittaa hinnoittelua, jossa mainostettu luku on vain ensimmäinen erä. Lentolippu maksaa 29 euroa, kunnes mukaan tulee matkatavara, istumapaikka, maksutapalisä ja palvelumaksu. Kokonaishinta ei ole salaisuus — se vain kerrotaan vaiheittain, sen jälkeen kun vertailu vaihtoehtoihin on jo tehty.</p>
 <div class="infolaatikko vastauslohko">
-<h2 class="laatikko-otsikko">Mitä drip pricing tarkoittaa suomeksi?</h2>
+<h2 class="laatikko-otsikko" id="mita-drip-pricing-tarkoittaa-suomeksi">Mitä drip pricing tarkoittaa suomeksi?</h2>
 <p style="margin:0.4em 0 0;">Vakiintunutta suomennosta ei ole. Käytössä ovat <strong>piilokulut</strong>, <em>pilkottu hinnoittelu</em> ja <em>hinnan valuttaminen</em>; viranomaiset puhuvat kokonaishinnan ilmoittamisesta. EU:n lentoliikenneasetus (1008/2008) edellyttää, että lopullinen hinta veroineen ja maksuineen on nähtävissä koko varausprosessin ajan, ja kuluttajansuojalaki vaatii hinnan ilmoittamista niin, ettei kokonaiskustannus jää arvailun varaan.</p>
 </div>
 <div class="mermaid">
@@ -486,10 +475,10 @@ flowchart TD
 <p class="kaavio-selitys">Jokainen erä on pieni suhteessa jo tehtyyn valintaan — siksi jatkaminen tuntuu halvemmalta kuin aloittaminen alusta.</p>
 <p>Mekanismi on kaksiosainen. Ensimmäinen luku jää ankkuriksi, johon kaikkia myöhempiä lisiä verrataan, ja jokainen vaihe kuluttaa aikaa, joka menetetään jos peruuttaa. Xavier Gabaix ja David Laibson osoittivat vuonna 2006, ettei kilpailu korjaa tätä itsestään: yritys, joka ilmoittaisi kokonaishinnan heti, näyttäisi vertailussa kalliimmalta kuin se on.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Miten piilokulut eroavat läheisistä ilmiöistä?</h2> <a href="bait-and-switch.html">Bait and switchissä</a> vaihtuu tuote, piilokuluissa vain hinnan esitystapa — luvattu asia myös toimitetaan. <a href="shrinkflaatio.html">Shrinkflaatiossa</a> hinta pysyy ja sisältö pienenee. <a href="hintaankkurointi.html">Hintaankkurointi</a> selittää, miksi ensimmäinen luku jää päähän silloinkin kun se osoittautuu vääräksi.
+<h2 class="laatikko-otsikko" id="miten-piilokulut-eroavat-laheisista-ilmioista">Miten piilokulut eroavat läheisistä ilmiöistä?</h2> <a href="bait-and-switch.html">Bait and switchissä</a> vaihtuu tuote, piilokuluissa vain hinnan esitystapa — luvattu asia myös toimitetaan. <a href="shrinkflaatio.html">Shrinkflaatiossa</a> hinta pysyy ja sisältö pienenee. <a href="hintaankkurointi.html">Hintaankkurointi</a> selittää, miksi ensimmäinen luku jää päähän silloinkin kun se osoittautuu vääräksi.
     </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2>
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2>
 <ul style="margin:0.5em 0 0;">
 <li>Vertaile vasta viimeisellä ruudulla. Hakukoneen ja vertailusivuston hinnat ovat eri erästä kuin maksettava summa.</li>
 <li>Vie ostos maksusivulle asti kahdella palveluntarjoajalla ennen kuin päätät — vasta siellä luvut ovat vertailukelpoisia.</li>
@@ -552,6 +541,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="evasteansa.html">← Evästeansa — hyväksyminen yhdellä klikkauksella, kieltäytyminen viidellä</a>

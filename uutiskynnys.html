@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Mikä on uutiskynnys — ja miksi se ylitetään | Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -388,12 +389,12 @@
       "@id": "https://www.ilmiöt.fi/uutiskynnys.html#article",
       "url": "https://www.ilmiöt.fi/uutiskynnys.html",
       "headline": "Uutiskynnys — miksi tärkeä asia ei koskaan päädy uutisiin",
-      "description": "Uutiskynnys ratkaisee, mistä uutisoidaan: asian on oltava tuore, yllättävä ja henkilöitävä. Hidas ja rakenteellinen ongelma jää siksi kertomatta.",
+      "description": "Uutiskynnys on raja, jonka tapahtuman on ylitettävä päästäkseen uutiseksi. Mitkä kriteerit ratkaisevat, mikä jää alle ja miten kynnys ylitetään tarkoituksella.",
       "inLanguage": "fi",
       "articleSection": "Media ja julkisuus",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -402,9 +403,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
+        }
+      },
+      "about": {
+        "@type": "DefinedTerm",
+        "name": "Uutiskynnys",
+        "description": "Uutiskynnys on raja, jonka tapahtuman on ylitettävä päästäkseen uutiseksi. Mitkä kriteerit ratkaisevat, mikä jää alle ja miten kynnys ylitetään tarkoituksella.",
+        "inDefinedTermSet": {
+          "@type": "DefinedTermSet",
+          "name": "Ilmiöitä — Miten valta toimii",
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -416,29 +427,6 @@
       },
       "datePublished": "2026-08-05",
       "dateModified": "2026-09-04"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.ilmiöt.fi/uutiskynnys.html#faq",
-      "inLanguage": "fi",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Mikä on uutiskynnys?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Uutiskynnys on se raja, jonka tapahtuman on ylitettävä päästäkseen uutiseksi. Kyse ei ole yksittäisestä päätöksestä vaan toimituksen päivittäisestä rutiinista, jossa satoja mahdollisia aiheita arvioidaan vakiintuneilla kriteereillä: tuoreus, yllättävyys, suuruus, läheisyys ja henkilöityminen."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Mitä uutiskynnys on englanniksi?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Uutiskynnys on englanniksi news threshold. Taustalla oleva tutkimuskäsite on news values eli uutiskriteerit, jotka Johan Galtung ja Mari Holmboe Ruge kuvasivat vuonna 1965."
-          }
-        }
-      ]
     }
   ]
 }
@@ -464,13 +452,14 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="uutiskynnys">
 <div class="ilmio-tag">Ilmiö 130</div>
 <h1>Uutiskynnys — miksi tärkeä asia ei koskaan päädy uutisiin</h1>
 <p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 4.9.2026</p>
 <p><strong>Uutiskynnys</strong> (englanniksi <em>news threshold</em>, taustalla <em>news values</em>) tarkoittaa sitä rajaa, jonka tapahtuman on ylitettävä päästäkseen uutiseksi. Kynnys ei ole päätös yksittäisestä aiheesta vaan rutiini: toimitus arvioi joka päivä satoja mahdollisia aiheita muutaman vakiintuneen kriteerin läpi. Johan Galtung ja Mari Holmboe Ruge kuvasivat kriteerit jo vuonna 1965 — tuoreus, yllättävyys, suuruus, läheisyys, henkilöityminen, konflikti, eliittihenkilöt ja eliittimaat.</p>
 <div class="infolaatikko vastauslohko">
-<h2 class="laatikko-otsikko">Mikä on uutiskynnys?</h2>
+<h2 class="laatikko-otsikko" id="mika-on-uutiskynnys">Mikä on uutiskynnys?</h2>
 <p style="margin:0.4em 0 0;"><strong>Uutiskynnys</strong> (englanniksi <em>news threshold</em>) on toimituksen rutiini, ei mielipide aiheesta. Sen ylittää tapahtuma, jolla on hetki, tekijä ja uhri. Alle jää se, mikä muuttuu hitaasti ilman yksittäistä hetkeä: korjausvelka, hoitojonot, lainvalmistelu.</p>
 </div>
 <div class="mermaid">
@@ -488,10 +477,10 @@ flowchart TD
 <p>Seuraukset ovat järjestelmällisiä. Läpi menee ryöstö, onnettomuus, eroilmoitus ja skandaali. Kynnyksen alle jää se, mikä muuttuu hitaasti ja ilman yksittäistä hetkeä: pienituloisten ostovoiman rapautuminen, hoitojonojen piteneminen, homekoulujen korjausvelka, lainsäädännön valmisteluvaiheet. Sama koskee maantiedettä — kaukaisen maan tuhannen ihmisen katastrofi voi jäädä pienemmäksi uutiseksi kuin lähialueen yksittäinen kuolema.</p>
 <p>Olennaista on, ettei kyse ole salaliitosta. Kukaan ei päätä vaieta rakenteellisista ongelmista; ne vain eivät tapahdu minään päivänä. Juuri siksi kynnyksen tuntevat viestijät osaavat rakentaa asialleen tapahtuman: julkistus, kannanotto, mielenosoitus tai vuosipäivä on tekninen keino ylittää kynnys ilman että itse asia on muuttunut.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Ero läheisiin käsitteisiin:</h2> Uutiskynnys on toimituksen rutiini, <a href="manufactured-consent.html">manufactured consent</a> taas rakenteellinen malli siitä, miten omistus ja mainostulot suodattavat julkisuutta laajemmin. <a href="portinvartija-kulttuuri.html">Portinvartija-kulttuurissa</a> tieto pysähtyy organisaation sisällä ennen kuin se edes päätyy toimituksen arvioitavaksi.
+<h2 class="laatikko-otsikko" id="ero-laheisiin-kasitteisiin">Ero läheisiin käsitteisiin:</h2> Uutiskynnys on toimituksen rutiini, <a href="manufactured-consent.html">manufactured consent</a> taas rakenteellinen malli siitä, miten omistus ja mainostulot suodattavat julkisuutta laajemmin. <a href="portinvartija-kulttuuri.html">Portinvartija-kulttuurissa</a> tieto pysähtyy organisaation sisällä ennen kuin se edes päätyy toimituksen arvioitavaksi.
     </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2>
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2>
 <ul style="margin:0.5em 0 0;">
 <li>Erota kaksi kysymystä: "mikä tässä on uutta" ja "mikä tässä on tärkeää". Uutisvirta vastaa vain edelliseen.</li>
 <li>Jos jostain ei uutisoida, älä tulkitse sitä todisteeksi ettei mitään tapahdu — kysy, olisiko asialla ylipäätään tapahtuman muotoa.</li>
@@ -554,6 +543,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="kannatusmittausten-virhemarginaali.html">← Kannatusmittausten virhemarginaali — kahden luvun ero on epätarkempi kuin luvut</a>

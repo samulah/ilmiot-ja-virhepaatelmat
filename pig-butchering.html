@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Pig butchering — uhrin lihottaminen ennen teurastusta — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/pig-butchering.html#article",
       "url": "https://www.ilmiöt.fi/pig-butchering.html",
       "headline": "Pig butchering — uhrin lihottaminen ennen teurastusta",
-      "description": "Pig butchering (kiin. shā zhū pán , \"sian teurastuslautanen\") on pitkäkestoinen huijaus, jossa uhri ensin \"lihotetaan\" luottamuksella ja pienillä…",
+      "description": "Pig butchering: uhria 'lihotetaan' luottamuksella ennen teurastusta. Selitämme pitkän huijauksen vaiheet ja varoitusmerkit, jotka näkyvät ajoissa.",
       "inLanguage": "fi",
       "articleSection": "Huijaukset ja petokset",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Pig butchering — uhrin lihottaminen ennen teurastusta",
-        "description": "Pig butchering (kiin. shā zhū pán , \"sian teurastuslautanen\") on pitkäkestoinen huijaus, jossa uhri ensin \"lihotetaan\" luottamuksella ja pienillä…",
+        "name": "Pig butchering",
+        "description": "Pig butchering: uhria 'lihotetaan' luottamuksella ennen teurastusta. Selitämme pitkän huijauksen vaiheet ja varoitusmerkit, jotka näkyvät ajoissa.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -824,6 +825,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="pig-butchering">
 <div class="ilmio-tag">Ilmiö 71</div>
 <h1>Pig butchering — uhrin lihottaminen ennen teurastusta</h1>
@@ -845,10 +847,10 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Pienet onnistuneet nostot ovat osa ansaa: ne todistavat "alustan toimivan" ja rohkaisevat suurempaan panokseen.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Miksi se toimii:</h2> Hidas tahti ohittaa varovaisuuden — kun luottamus on rakennettu kuukausia, sijoitus tuntuu neuvolta ystävältä, ei myyntipuheelta. Näennäisvoitot ja toimivat pikkunostot vahvistavat <a href="halo-efekti.html">uskottavuutta</a>. Lopun "verot ja maksut ennen nostoa" ovat <a href="ennakkomaksuhuijaus.html">ennakkomaksuhuijauksen</a> jatke.
+<h2 class="laatikko-otsikko" id="miksi-se-toimii">Miksi se toimii:</h2> Hidas tahti ohittaa varovaisuuden — kun luottamus on rakennettu kuukausia, sijoitus tuntuu neuvolta ystävältä, ei myyntipuheelta. Näennäisvoitot ja toimivat pikkunostot vahvistavat <a href="halo-efekti.html">uskottavuutta</a>. Lopun "verot ja maksut ennen nostoa" ovat <a href="ennakkomaksuhuijaus.html">ennakkomaksuhuijauksen</a> jatke.
     </div>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Varoitusmerkkejä: tuntematon, joka siirtää keskustelun nopeasti alustalle pois julkisesta; sijoitusvinkki osana romanttista tai ystävällistä suhdetta; alusta jota et löytänyt itse; ja "voitto" jonka nostamiseksi pitää ensin maksaa lisää. Oikea sijoitusalusta ei vaadi maksamaan päästäkseen käsiksi omiin rahoihinsa.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Varoitusmerkkejä: tuntematon, joka siirtää keskustelun nopeasti alustalle pois julkisesta; sijoitusvinkki osana romanttista tai ystävällistä suhdetta; alusta jota et löytänyt itse; ja "voitto" jonka nostamiseksi pitää ensin maksaa lisää. Oikea sijoitusalusta ei vaadi maksamaan päästäkseen käsiksi omiin rahoihinsa.
     </div>
 <p class="peli-harjoittele" style="margin:1.4rem 0 0;padding:.7rem .9rem;background:#FBF5E0;border-left:3px solid #C9A84C;font-size:.95em"><b>Harjoittele tämän tunnistamista.</b> <a href="peli.html">Vedätys</a> on päivittäinen peli, jossa pig butchering on yksi tunnistettavista ilmiöistä — mukana on aina myös tilanteita, joissa ei ole mitään vikaa.</p>
 <div class="lue-lisaa">
@@ -914,6 +916,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="pump-and-dump.html">← Pump and dump — pumppaa ja dumppaa</a>

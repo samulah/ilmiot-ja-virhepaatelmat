@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Järjestelmän puolustelu — miksi häviäjä puolustaa sitä — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/jarjestelman-puolustelu.html#article",
       "url": "https://www.ilmiöt.fi/jarjestelman-puolustelu.html",
       "headline": "Järjestelmän puolustelu — menestyneen puolesta taisteleva häviäjä",
-      "description": "Järjestelmän puolustelu (system justification theory, Jost, Banaji & Nosek 2004) on kognitiivinen harha, jossa ihmiset rationalisoivat ja puolustavat…",
+      "description": "Järjestelmän puolustelu: häviäjä puolustaa järjestelmää, joka hävittää hänet. Selitämme psykologisen mekanismin ja miten sen tunnistaa itsessään.",
       "inLanguage": "fi",
       "articleSection": "Psykologia ja kognitio",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Järjestelmän puolustelu — menestyneen puolesta taisteleva häviäjä",
-        "description": "Järjestelmän puolustelu (system justification theory, Jost, Banaji & Nosek 2004) on kognitiivinen harha, jossa ihmiset rationalisoivat ja puolustavat…",
+        "name": "Järjestelmän puolustelu",
+        "description": "Järjestelmän puolustelu: häviäjä puolustaa järjestelmää, joka hävittää hänet. Selitämme psykologisen mekanismin ja miten sen tunnistaa itsessään.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -824,6 +825,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="jarjestelman-puolustelu">
 <div class="ilmio-tag">Ilmiö 32</div>
 <h1>Järjestelmän puolustelu — menestyneen puolesta taisteleva häviäjä</h1>
@@ -849,7 +851,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Järjestelmän puolustelu on itsevahvistava kehä — mitä enemmän uskoo järjestelmän oikeudenmukaisuuteen, sitä vaikeampi on nähdä sen voittajien kritiikki rehellisenä.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Esimerkkejä:</h2>
+<h2 class="laatikko-otsikko" id="esimerkkeja">Esimerkkejä:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Insinööri puolustaa miljardööriä:</strong> Teknologia-alan ammattilainen puolustaa Elon Muskin poliittisia kannanottoja — "hän rakensi Teslan ja SpaceX:n, kyllä hänellä on oikea käsitys demokratiasta" — vaikka nämä ovat täysin eri osaamisalueita.</li>
 <li><strong>Pienituloinen puolustaa miljonäärien veronalennuksia:</strong> Henkilö, joka itse hyötyisi progressiivisesta verotuksesta, vastustaa sitä koska "rikkaiden raha valuu alas". Hän puolustaa järjestelmää, joka hyödyttää muita.</li>
@@ -859,7 +861,7 @@ flowchart TD
 </div>
 <p><strong>Miksi se tarttuu erityisesti asiantuntijoihin:</strong> Korkeatason ammattilaiset (insinöörit, lääkärit, juristit) tunnistavat helposti menestyksen teknisessä osaamisessa — ja se tekee heistä erityisen alttiita halolle. He osaavat arvioida teknistä suoritusta, mutta samalla projisoidaan menestystä omalle alalle alueille joilla ei ole asiantuntemusta.</p>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> "Puolustaisitko tätä kantaa tai päätöstä, jos sen esittäisi tuntematon ihminen ilman titteleitä tai omaisuutta?" Jos et — kyse on järjestelmän puolustelusta, ei argumentin arvioimisesta.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> "Puolustaisitko tätä kantaa tai päätöstä, jos sen esittäisi tuntematon ihminen ilman titteleitä tai omaisuutta?" Jos et — kyse on järjestelmän puolustelusta, ei argumentin arvioimisesta.
     </div>
 <p>Ks. myös <a href="halo-efekti.html">Halo-efekti ja stigma</a> (viehättävyyden halo) ja <a href="valta-suojelee-valtaa.html">Valta suojelee valtaa</a> (rakenteellinen taso).</p>
 <div class="lue-lisaa">
@@ -910,7 +912,7 @@ flowchart TD
     <a href="konsensus-fetissi.html" class="liittyvat-kortti" style="--c:#01579b">
       <span class="liittyvat-numero">25</span>
       <span class="liittyvat-teksti">
-        <span class="liittyvat-nimi">Konsensus fetissi</span>
+        <span class="liittyvat-nimi">Konsensusfetissi</span>
         <span class="liittyvat-kuvaus">Yksimielisyydestä tulee itseisarvo, ja erimielisyys aletaan nähdä ongelmana — ei tietona.</span>
       </span>
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
@@ -933,6 +935,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="sunk-cost-harha.html">← Sunk cost -harha — uponneiden kustannusten loukku</a>

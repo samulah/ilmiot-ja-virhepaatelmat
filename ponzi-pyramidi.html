@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Ponzi vai pyramidihuijaus — mikä on ero | Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/ponzi-pyramidi.html#article",
       "url": "https://www.ilmiöt.fi/ponzi-pyramidi.html",
       "headline": "Ponzi ja pyramidihuijaus — tuotot tulevat uusilta uhreilta",
-      "description": "Ponzi-huijauksessa luvataan epätavallisen hyviä tuottoja, mutta tuottoa ei synny oikeasta toiminnasta — vanhojen sijoittajien voitot maksetaan uusien…",
+      "description": "Ponzissa järjestäjä maksaa tuotot uusien sijoittajien rahoilla, pyramidissa uhrit värväävät itse. Näin erotat ne ja tunnistat molemmat ajoissa.",
       "inLanguage": "fi",
       "articleSection": "Huijaukset ja petokset",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Ponzi ja pyramidihuijaus — tuotot tulevat uusilta uhreilta",
-        "description": "Ponzi-huijauksessa luvataan epätavallisen hyviä tuottoja, mutta tuottoa ei synny oikeasta toiminnasta — vanhojen sijoittajien voitot maksetaan uusien…",
+        "name": "Ponzi ja pyramidihuijaus",
+        "description": "Ponzissa järjestäjä maksaa tuotot uusien sijoittajien rahoilla, pyramidissa uhrit värväävät itse. Näin erotat ne ja tunnistat molemmat ajoissa.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -798,30 +799,7 @@
         "description": "Kirjoittajanimi, jonka takana on kiinnostus valtaan, vaikuttamiseen ja ihmisen päättelyn vinoumiin. Sisältö perustuu julkisiin lähteisiin ja vakiintuneeseen käsitteistöön."
       },
       "datePublished": "2026-06-19",
-      "dateModified": "2026-09-04"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.ilmiöt.fi/ponzi-pyramidi.html#faq",
-      "inLanguage": "fi",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Mikä on pyramidihuijaus?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Pyramidihuijauksessa jäsen maksaa liittymismaksun ja tienaa värväämällä uusia jäseniä, jotka maksavat hänelle. Rakenne on matemaattisesti mahdoton: jokainen taso vaatii moninkertaisen määrän uusia uhreja, ja väki loppuu kesken. Romahdus on varma, vain ajankohta on auki."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Miten Ponzi-huijauksen tunnistaa?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Tuotto on epätavallisen hyvä ja epätavallisen tasainen — oikea sijoitus heiluu, huijaus ei. Strategiaa ei selitetä tai selitys on liian monimutkainen tarkistettavaksi, ja nostoja viivytellään tai palkitaan uudelleensijoittamisesta. Nimi tulee Charles Ponzilta (1920)."
-          }
-        }
-      ]
+      "dateModified": "2026-10-04"
     }
   ]
 }
@@ -847,18 +825,19 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="ponzi-pyramidi">
 <div class="ilmio-tag">Ilmiö 69</div>
 <h1>Ponzi ja pyramidihuijaus — tuotot tulevat uusilta uhreilta</h1>
-<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 4.9.2026</p>
+<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 4.10.2026</p>
 <p>Ponzi-huijauksessa luvataan epätavallisen hyviä tuottoja, mutta tuottoa ei synny oikeasta toiminnasta — vanhojen sijoittajien voitot maksetaan <strong>uusien sijoittajien rahoilla.</strong> Niin kauan kuin uutta rahaa virtaa enemmän kuin ulos maksetaan, järjestelmä näyttää toimivan. Kun virta tyrehtyy, koko rakenne romahtaa kerralla.</p>
 <div class="infolaatikko vastauslohko">
-<h2 class="laatikko-otsikko">Mitä eroa on Ponzi-huijauksella ja pyramidihuijauksella?</h2>
+<h2 class="laatikko-otsikko" id="mita-eroa-on-ponzi-huijauksella-ja-pyramidihuijauksella">Mitä eroa on Ponzi-huijauksella ja pyramidihuijauksella?</h2>
 <p style="margin:0.4em 0 0;">Molemmissa tuotot maksetaan uusien uhrien rahoilla, mutta värväys eroaa. <strong>Ponzissa</strong> järjestäjä hoitaa kaiken: sijoittaja saa tuotto-otteen eikä tiedä mistä raha tulee. <strong>Pyramidissa</strong> uhri värvää itse uusia jäseniä ja tienaa heidän maksuistaan. Molemmat romahtavat samasta syystä: uutta rahaa ei riitä.</p>
 </div>
 <p>Nimi tulee Charles Ponzilta (1920). Pyramidihuijaus on lähisukulainen: siinä uhrit värväävät itse uusia jäseniä ja tienaavat heidän maksuistaan — matemaattinen mahdottomuus, koska väki loppuu kesken.</p>
 <div class="avainluku-rivi">
-<div class="avainluku"><div class="luku">6 tasoa</div><div class="selite">jos jokainen värvää 6 uutta</div></div>
+<div class="avainluku"><div class="luku">8 tasoa</div><div class="selite">jos jokainen värvää 6 uutta</div></div>
 <div class="avainluku"><div class="luku">&gt; 2 milj.</div><div class="selite">tarvittavia osallistujia</div></div>
 <div class="avainluku"><div class="luku">13 tasoa</div><div class="selite">ylittää maapallon väkiluvun</div></div>
 </div>
@@ -876,7 +855,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Itseään ruokkiva kierre, joka kestää vain niin kauan kuin sisään tulee enemmän kuin ulos lähtee.</p>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Varma ja epätavallisen korkea tuotto ilman riskiä ei ole olemassa. Varoitusmerkkejä: tuoton lähdettä ei selitetä ymmärrettävästi, painostus värvätä muita, vaikeus nostaa rahojaan ulos (vrt. <a href="honeypot-huijaus.html">Honeypot</a>), ja "tuotot" jotka maksetaan vain jos uutta rahaa virtaa sisään.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Varma ja epätavallisen korkea tuotto ilman riskiä ei ole olemassa. Varoitusmerkkejä: tuoton lähdettä ei selitetä ymmärrettävästi, painostus värvätä muita, vaikeus nostaa rahojaan ulos (vrt. <a href="honeypot-huijaus.html">Honeypot</a>), ja "tuotot" jotka maksetaan vain jos uutta rahaa virtaa sisään.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -941,6 +920,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="kaarmeoljy.html">← Käärmeöljy — ihmetuote joka parantaa kaiken</a>

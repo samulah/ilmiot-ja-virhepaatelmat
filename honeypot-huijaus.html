@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Honeypot-huijaus — ansa josta ei pääse ulos | Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/honeypot-huijaus.html#article",
       "url": "https://www.ilmiöt.fi/honeypot-huijaus.html",
       "headline": "Honeypot-huijaus — ansa josta pääsee sisään muttei ulos",
-      "description": "Honeypot (\"hunajapurkki\") on ansa, joka houkuttelee uhrin sisään näennäisen helpolla voitolla — ja sulkee uloskäynnin vasta kun uhri on jo sitoutunut.",
+      "description": "Honeypot-huijaus tarkoittaa ansaa, johon on helppo mennä ja mahdoton palata. Näin houkutusansa toimii ja näin tunnistat sen ajoissa.",
       "inLanguage": "fi",
       "articleSection": "Huijaukset ja petokset",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Honeypot-huijaus — ansa josta pääsee sisään muttei ulos",
-        "description": "Honeypot (\"hunajapurkki\") on ansa, joka houkuttelee uhrin sisään näennäisen helpolla voitolla — ja sulkee uloskäynnin vasta kun uhri on jo sitoutunut.",
+        "name": "Honeypot-huijaus",
+        "description": "Honeypot-huijaus tarkoittaa ansaa, johon on helppo mennä ja mahdoton palata. Näin houkutusansa toimii ja näin tunnistat sen ajoissa.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -799,29 +800,6 @@
       },
       "datePublished": "2026-06-19",
       "dateModified": "2026-07-28"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.ilmiöt.fi/honeypot-huijaus.html#faq",
-      "inLanguage": "fi",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Mitä honeypot-huijaus tarkoittaa?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Honeypot-huijauksessa uhri houkutellaan mukaan lupauksella helposta hyödystä — voitosta, suhteesta tai sijoituksesta — ja ansa sulkeutuu vasta kun hän on antanut rahaa, tietoja tai jotain, jolla häntä voi painostaa. Houkutin on aito vain sisäänpääsyyn asti."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Miten honeypot-ansan tunnistaa?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Varoitusmerkki on epäsuhta: tarjottu hyöty on selvästi suurempi kuin pyydetty vastine, ja kiire perustellaan tilaisuuden ainutkertaisuudella. Testaa aina poispääsy ennen sitoutumista — kysy, miten järjestelystä irtaudutaan. Vastauksen epämääräisyys on itsessään vastaus."
-          }
-        }
-      ]
     }
   ]
 }
@@ -847,13 +825,14 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="honeypot-huijaus">
 <div class="ilmio-tag">Ilmiö 66</div>
 <h1>Honeypot-huijaus — ansa josta pääsee sisään muttei ulos</h1>
 <p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 28.7.2026</p>
 <p>Honeypot ("hunajapurkki") on ansa, joka houkuttelee uhrin sisään näennäisen helpolla voitolla — ja sulkee uloskäynnin vasta kun uhri on jo sitoutunut. Olennaista ei ole houkutin vaan <strong>epäsymmetria sisään- ja ulospääsyn välillä:</strong> ovi aukeaa vain yhteen suuntaan.</p>
 <div class="infolaatikko vastauslohko">
-<h2 class="laatikko-otsikko">Mikä on honeypot suomeksi?</h2>
+<h2 class="laatikko-otsikko" id="mika-on-honeypot-suomeksi">Mikä on honeypot suomeksi?</h2>
 <p style="margin:0.4em 0 0;"><strong>Honeypot</strong> on suomeksi <strong>hunajapurkki</strong>. Huijauksena se tarkoittaa ansaa, joka houkuttelee uhrin sisään näennäisen helpolla voitolla ja sulkee uloskäynnin vasta kun uhri on jo sitoutunut. Olennaista ei ole houkutin vaan se, ettei poispääsy ole enää uhrin päätettävissä.</p>
 </div>
 <p>Termi tulee tietoturvasta, jossa honeypot on tahallaan haavoittuvaksi jätetty järjestelmä, joka houkuttelee hyökkääjän ansaan. Huijauskäytössä logiikka on sama, mutta uhri on tavallinen ihminen.</p>
@@ -870,7 +849,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Honeypotin ydin: sisäänpääsy on tahallaan helppoa, koska uloskäyntiä ei ole.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Tyypillisiä muotoja:</h2>
+<h2 class="laatikko-otsikko" id="tyypillisia-muotoja">Tyypillisiä muotoja:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Krypto-honeypot:</strong> Älysopimus, jonka voi <em>ostaa</em> mutta jonka koodi estää <em>myynnin</em>. Hinta näyttää nousevan (kukaan ei voi myydä), mikä houkuttelee lisää ostajia — kunnes tekijä tyhjentää likviditeetin.</li>
 <li><strong>Romanssi-/kiristysansa (honeytrap):</strong> Houkutteleva tuntematon luo luottamuksen tai saa uhrin lähettämään arkaluontoista materiaalia, jota käytetään kiristykseen.</li>
@@ -878,7 +857,7 @@ flowchart TD
 </ul>
 </div>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Ennen kuin astut sisään, kysy aina <em>miten pääsen ulos?</em> Jos sisäänpääsy on helppoa mutta uloskäyntiä ei selitetä — tai sen olemassaolosta ei ole takeita — kyseessä on todennäköisesti honeypot. Testaa uloskäynti pienellä summalla ennen kuin sitoudut suurella.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Ennen kuin astut sisään, kysy aina <em>miten pääsen ulos?</em> Jos sisäänpääsy on helppoa mutta uloskäyntiä ei selitetä — tai sen olemassaolosta ei ole takeita — kyseessä on todennäköisesti honeypot. Testaa uloskäynti pienellä summalla ennen kuin sitoudut suurella.
     </div>
 <p class="peli-harjoittele" style="margin:1.4rem 0 0;padding:.7rem .9rem;background:#FBF5E0;border-left:3px solid #C9A84C;font-size:.95em"><b>Harjoittele tämän tunnistamista.</b> <a href="peli.html">Vedätys</a> on päivittäinen peli, jossa honeypot-huijaus on yksi tunnistettavista ilmiöistä — mukana on aina myös tilanteita, joissa ei ole mitään vikaa.</p>
 <div class="lue-lisaa">
@@ -946,6 +925,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="korkokierre.html">← Negatiivinen korkokierre — velkaeksponentti 30 vuodessa</a>

@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Manufactured consent — suostumus tehdään — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/manufactured-consent.html#article",
       "url": "https://www.ilmiöt.fi/manufactured-consent.html",
       "headline": "Manufactured consent — suostumus tehdään",
-      "description": "Noam Chomsky ja Edward Herman esittivät teoksessaan Manufacturing Consent (1988) propagandamallin, joka kuvaa miten valtamedia tuottaa ideologista…",
+      "description": "Manufactured consent: media suodattaa ilman sensuuria. Selitämme Chomskyn viisi suodatinta käytännössä ja medialukutaidon tarkistuslistan.",
       "inLanguage": "fi",
       "articleSection": "Informaatio ja propaganda",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Manufactured consent — suostumus tehdään",
-        "description": "Noam Chomsky ja Edward Herman esittivät teoksessaan Manufacturing Consent (1988) propagandamallin, joka kuvaa miten valtamedia tuottaa ideologista…",
+        "name": "Manufactured consent",
+        "description": "Manufactured consent: media suodattaa ilman sensuuria. Selitämme Chomskyn viisi suodatinta käytännössä ja medialukutaidon tarkistuslistan.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -824,6 +825,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="manufactured-consent">
 <div class="ilmio-tag">Ilmiö 12</div>
 <h1>Manufactured consent — suostumus tehdään</h1>
@@ -850,10 +852,10 @@ flowchart TD
 <li><strong>Ideologia</strong> — jaettu kehys siitä mikä on "normaalia" ja mikä "radikaalia". Määrittelee mitä kysymyksiä edes esitetään.</li>
 </ul>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Mallin ydinväite:</h2> Sensuuri ei ole tehokkain tiedonhallinnan muoto. Tehokkaampi on muokata sitä, mitä toimittajat <em>pitävät uutisarvoisena</em> — mitä kysymyksiä esitetään, mistä näkökulmasta, kenelle annetaan puheenvuoro. Nämä valinnat tehdään ennen kuin yhtään sanaa on kirjoitettu.
+<h2 class="laatikko-otsikko" id="mallin-ydinvaite">Mallin ydinväite:</h2> Sensuuri ei ole tehokkain tiedonhallinnan muoto. Tehokkaampi on muokata sitä, mitä toimittajat <em>pitävät uutisarvoisena</em> — mitä kysymyksiä esitetään, mistä näkökulmasta, kenelle annetaan puheenvuoro. Nämä valinnat tehdään ennen kuin yhtään sanaa on kirjoitettu.
     </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Medialukutaidon tarkistuslista:</h2> Viisi kysymystä, jotka vastaavat mallin viittä suodatinta: <em>Kuka omistaa</em> tämän median — ja mitä muuta omistaja omistaa? <em>Ketkä mainostavat</em> — eli keiden ärsyttämiseen medialla ei ole varaa? <em>Keitä siteerataan</em> — ovatko lähteet virallisia tiedotteita vai toimituksen omaa hankintaa? <em>Mitkä äänet puuttuvat</em> — ei sensuroituina, vaan koskaan kutsumattomina? <em>Mitä aiheita ei käsitellä lainkaan</em> — puuttuva juttu on näkymättömämpi kuin vino juttu. Suodattimet paljastuvat harvoin yhdestä uutisesta mutta usein vertailusta: lue sama aihe kahdesta eri omistuspohjan mediasta ja katso, mikä eroaa.
+<h2 class="laatikko-otsikko" id="vastakeinot-medialukutaidon-tarkistuslista">Vastakeinot — medialukutaidon tarkistuslista:</h2> Viisi kysymystä, jotka vastaavat mallin viittä suodatinta: <em>Kuka omistaa</em> tämän median — ja mitä muuta omistaja omistaa? <em>Ketkä mainostavat</em> — eli keiden ärsyttämiseen medialla ei ole varaa? <em>Keitä siteerataan</em> — ovatko lähteet virallisia tiedotteita vai toimituksen omaa hankintaa? <em>Mitkä äänet puuttuvat</em> — ei sensuroituina, vaan koskaan kutsumattomina? <em>Mitä aiheita ei käsitellä lainkaan</em> — puuttuva juttu on näkymättömämpi kuin vino juttu. Suodattimet paljastuvat harvoin yhdestä uutisesta mutta usein vertailusta: lue sama aihe kahdesta eri omistuspohjan mediasta ja katso, mikä eroaa.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -927,6 +929,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="firehose-of-falsehood.html">← Firehose of falsehood — valheiden paloletku</a>

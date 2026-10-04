@@ -1,7 +1,7 @@
 ---
 kat_id: psykologia-ja-kognitio
 h1: Psykologia ja kognitio — kognitiiviset vinoumat ja keskustelun taktiikat
-otsikko: Kognitiiviset vinoumat ja manipulointitaktiikat — 14 ilmiötä
+otsikko: Kognitiiviset vinoumat ja manipulointitaktiikat — {n} ilmiötä
 kuvaus: Dunning–Kruger, sunk cost, gaslighting, DARVO. Neljätoista ajattelun vinoumaa ja keskustelutaktiikkaa — ja se ratkaiseva ero, kumpi on kyseessä.
 vari: "#6a1b9a"
 paivitetty: 2026-07-25
@@ -26,7 +26,7 @@ Ero on käytännöllinen, ei akateeminen. Vinouman vastakeino on menetelmä: tar
 
 **Keskustelun taktiikat.** [Gaslighting](gaslighting.html) kiistää havainnot ja muistin järjestelmällisesti. [DARVO](darvo.html) kääntää roolit: kiinni jäänyt kiistää, hyökkää ja esittää itsensä uhrina. [Maalitolppien siirtäminen](maalitolppien-siirtaminen.html) vaihtaa onnistumisen kriteerit juuri kun aiemmat täyttyivät. [Argumenttitulva](argumenttitulva.html) syytää väitteitä nopeammin kuin niitä ehtii kumota, ja [omenoita ja appelsiineja](omenoita-appelsiineja.html) rinnastaa kaksi asiaa, jotka eroavat juuri siinä mikä tekisi vertailusta mielekkään.
 
-**Ryhmän vinoumat.** [Konsensus fetissi](konsensus-fetissi.html) tekee yksimielisyydestä itseisarvon, jolloin erimielisyys aletaan nähdä ongelmana eikä tietona. [The Blame Game](blame-game.html) ohjaa epäonnistumisen jälkeisen energian syyllisen etsintään korjaamisen sijaan.
+**Ryhmän vinoumat.** [Konsensusfetissi](konsensus-fetissi.html) tekee yksimielisyydestä itseisarvon, jolloin erimielisyys aletaan nähdä ongelmana eikä tietona. [The Blame Game](blame-game.html) ohjaa epäonnistumisen jälkeisen energian syyllisen etsintään korjaamisen sijaan.
 
 Kaksi ilmiötä on työkaluja, ei ongelmia. [Occamin partaveitsi](occamin-partaveitsi.html) neuvoo valitsemaan selityksen, jossa on vähemmän oletuksia, ja [Hanlonin partaveitsi](hanlonin-partaveitsi.html) muistuttaa, ettei pahantahtoisuutta kannata olettaa siellä missä huolimattomuus riittää. Ne ovat kategorian vastalääkkeet — mutta myös väärinkäytettävissä: Hanlonin partaveitsestä tulee tekosyy, jos toistuva ”huolimattomuus” hyödyttää aina samaa osapuolta.
 
@@ -40,7 +40,7 @@ Kaksi ilmiötä on työkaluja, ei ongelmia. [Occamin partaveitsi](occamin-partav
 - **Sunk cost ja maalitolppien siirtäminen ruokkivat toisiaan projekteissa.** Uponneet kustannukset estävät lopettamisen, ja kriteerien siirtäminen tekee jatkamisesta muodollisesti onnistunutta. Sama pari näkyy [kuolonmarssina](kuolonmarssi.html).
 - **Argumenttitulva on Brandolinin laki keskustelun mitassa.** Kumoamatta jäänyt väite luetaan myönnytykseksi, joten määrä voittaa laadun aina kun aika on rajallinen.
 - **Backfire effect selittää, miksi näitä ei korjata faktoilla.** Siksi [inokulointiteoria](inokulointiteoria.html) — ennakkoaltistus — toimii, kun jälkikäteinen oikaisu ei toimi.
-- **Konsensus fetissi ja blame game ovat ryhmän versiot järjestelmän puolustelusta.** Kaikissa kolmessa ryhmän koossapysyminen menee ongelman ratkaisun edelle.
+- **Konsensusfetissi ja blame game ovat ryhmän versiot järjestelmän puolustelusta.** Kaikissa kolmessa ryhmän koossapysyminen menee ongelman ratkaisun edelle.
 - **Halo-efekti on [HIPPO-efektin](hippo-efekti.html) psykologinen moottori.** Kun yksi vahva piirre — asema, itsevarmuus — säteilee kaikkeen muuhun, kokouksen lopputulos määräytyy palkkatasosta eikä datasta.
 
 ## Mitä näistä seuraa lukijalle

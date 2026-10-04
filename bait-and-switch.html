@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Bait and switch — syötti ja vaihto — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/bait-and-switch.html#article",
       "url": "https://www.ilmiöt.fi/bait-and-switch.html",
       "headline": "Bait and switch — syötti ja vaihto",
-      "description": "Bait and switch on myyntihuijaus, jossa houkutellaan näyttävällä syötillä (poikkeuksellisen halpa tai hyvä tarjous) ja kun asiakas on jo paikalla tai…",
+      "description": "Bait and switch: mainostettu tuote 'loppui', tilalle tarjotaan kalliimpaa. Selitämme syötti ja vaihto -tekniikan ja miten toimit, kun kohtaat sen.",
       "inLanguage": "fi",
       "articleSection": "Huijaukset ja petokset",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Bait and switch — syötti ja vaihto",
-        "description": "Bait and switch on myyntihuijaus, jossa houkutellaan näyttävällä syötillä (poikkeuksellisen halpa tai hyvä tarjous) ja kun asiakas on jo paikalla tai…",
+        "name": "Bait and switch",
+        "description": "Bait and switch: mainostettu tuote 'loppui', tilalle tarjotaan kalliimpaa. Selitämme syötti ja vaihto -tekniikan ja miten toimit, kun kohtaat sen.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -824,12 +825,13 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="bait-and-switch">
 <div class="ilmio-tag">Ilmiö 67</div>
 <h1>Bait and switch — syötti ja vaihto</h1>
 <p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 19.6.2026</p>
 <p>Bait and switch on myyntihuijaus, jossa houkutellaan <strong>näyttävällä syötillä</strong> (poikkeuksellisen halpa tai hyvä tarjous) ja kun asiakas on jo paikalla tai sitoutunut, syötti "loppuu" tai osoittautuu kelvottomaksi — ja tilalle tarjotaan kalliimpaa, huonompaa tai täysin eri tuotetta.</p>
-<p>Houkutin ei koskaan ollut tarjolla oikeasti. Sen ainoa tehtävä oli saada uhri liikkeelle ja sijoittamaan jo aikaa, vaivaa tai rahaa — jonka jälkeen <a href="korkokierre.html">uponneiden kustannusten</a> logiikka pitää hänet paikalla, vaikka diili muuttui.</p>
+<p>Houkutin ei koskaan ollut tarjolla oikeasti. Sen ainoa tehtävä oli saada uhri liikkeelle ja sijoittamaan jo aikaa, vaivaa tai rahaa — jonka jälkeen <a href="sunk-cost-harha.html">uponneiden kustannusten</a> logiikka pitää hänet paikalla, vaikka diili muuttui.</p>
 <div class="mermaid">
 flowchart TD
   A["Syötti:\n'tämä huipputuote\n vain 199 €'"] --&gt; B["Asiakas sitoutuu:\nmatka, aika, odotus"]
@@ -840,7 +842,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Syötti on aina loppu juuri kun ehdit paikalle — vaihto oli suunnitelma alusta asti.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Missä se esiintyy:</h2>
+<h2 class="laatikko-otsikko" id="missa-se-esiintyy">Missä se esiintyy:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Vähittäiskauppa:</strong> Mainostettu erikoistarjous "on loppuunmyyty", mutta vieressä on kalliimpi malli.</li>
 <li><strong>Asunnot ja matkat:</strong> Houkutushinta verkossa, mutta "juuri se kohde varattiin" — tarjolla on kalliimpia.</li>
@@ -849,7 +851,7 @@ flowchart TD
 </ul>
 </div>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Jos houkutteleva tarjous "sattuu juuri loppumaan" sillä hetkellä kun olet valmis tarttumaan siihen, ja tilalle työnnetään kalliimpaa — se ei ole sattuma. Pyydä syötti kirjallisena tai jätä koko kauppa. Älä anna jo sijoittamasi ajan tai vaivan ratkaista (ks. uponneet kustannukset).
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Jos houkutteleva tarjous "sattuu juuri loppumaan" sillä hetkellä kun olet valmis tarttumaan siihen, ja tilalle työnnetään kalliimpaa — se ei ole sattuma. Pyydä syötti kirjallisena tai jätä koko kauppa. Älä anna jo sijoittamasi ajan tai vaivan ratkaista (ks. uponneet kustannukset).
     </div>
 <p class="peli-harjoittele" style="margin:1.4rem 0 0;padding:.7rem .9rem;background:#FBF5E0;border-left:3px solid #C9A84C;font-size:.95em"><b>Harjoittele tämän tunnistamista.</b> <a href="peli.html">Vedätys</a> on päivittäinen peli, jossa bait and switch on yksi tunnistettavista ilmiöistä — mukana on aina myös tilanteita, joissa ei ole mitään vikaa.</p>
 <div class="lue-lisaa">
@@ -915,6 +917,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="honeypot-huijaus.html">← Honeypot-huijaus — ansa josta pääsee sisään muttei ulos</a>

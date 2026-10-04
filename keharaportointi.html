@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Kehäraportointi — sama lähde neljä kertaa näyttää neljältä lähteeltä — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -392,8 +393,8 @@
       "inLanguage": "fi",
       "articleSection": "Media ja julkisuus",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -402,9 +403,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
+        }
+      },
+      "about": {
+        "@type": "DefinedTerm",
+        "name": "Kehäraportointi",
+        "description": "Kehäraportoinnissa yksi alkuperäinen väite siteerataan ketjussa eteenpäin, kunnes se näyttää monen riippumattoman lähteen vahvistamalta.",
+        "inDefinedTermSet": {
+          "@type": "DefinedTermSet",
+          "name": "Ilmiöitä — Miten valta toimii",
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -441,6 +452,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="keharaportointi">
 <div class="ilmio-tag">Ilmiö 137</div>
 <h1>Kehäraportointi — sama lähde neljä kertaa näyttää neljältä lähteeltä</h1>
@@ -459,10 +471,10 @@ flowchart TD
 <p>Havainnollisin todiste tehtiin vahingossa vuonna 2009: irlantilainen opiskelija Shane Fitzgerald lisäsi juuri kuolleen säveltäjän Maurice Jarren Wikipedia-artikkeliin itse keksimänsä sitaatin. Se päätyi useiden suurten lehtien muistokirjoituksiin, koska jokainen luotti edelliseen. Erikoistapaus on <em>sitogeneesi</em>, jossa Wikipedian virhe siteerataan lehtijuttuun ja lehtijuttu lisätään sitten Wikipedian lähteeksi — jolloin väite todistaa itsensä.</p>
 <p>Sama rakenne toistuu tutkimusväitteissä: alkuperäisen julkaisun sijaan siteerataan artikkelia, joka siteerasi tiedotetta, joka tiivisti tutkimuksen. Toistojen määrä alkaa tuntua näytöltä, vaikka se on vain kaikua.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Ero läheisiin käsitteisiin:</h2> <a href="sosiaalinen-todiste.html">Sosiaalinen todiste</a> selittää, miksi toistuvuus vakuuttaa; kehäraportointi kuvaa, miten toisto syntyy ilman että kukaan huijaa tahallaan. <a href="tiedotejournalismi.html">Tiedotejournalismi</a> on ketjun tavallisin alkupää, ja <a href="brandolinin-laki.html">Brandolinin laki</a> kertoo, miksi ketjun purkaminen on työläämpää kuin sen syntyminen.
+<h2 class="laatikko-otsikko" id="ero-laheisiin-kasitteisiin">Ero läheisiin käsitteisiin:</h2> <a href="sosiaalinen-todiste.html">Sosiaalinen todiste</a> selittää, miksi toistuvuus vakuuttaa; kehäraportointi kuvaa, miten toisto syntyy ilman että kukaan huijaa tahallaan. <a href="tiedotejournalismi.html">Tiedotejournalismi</a> on ketjun tavallisin alkupää, ja <a href="brandolinin-laki.html">Brandolinin laki</a> kertoo, miksi ketjun purkaminen on työläämpää kuin sen syntyminen.
     </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2>
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2>
 <ul style="margin:0.5em 0 0;">
 <li>Klikkaa lähdeketju loppuun asti. Kysymys on aina sama: mikä on ensimmäinen julkaisu, jolla oli oma havainto?</li>
 <li>Katso päivämäärät. Jos kaikki "riippumattomat" jutut ovat parin päivän sisällä, kyseessä on yksi lähde.</li>
@@ -520,6 +532,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="vaara-tasapaino.html">← Väärä tasapaino — kaksi näkemystä, joista toinen on kolmen prosentin</a>

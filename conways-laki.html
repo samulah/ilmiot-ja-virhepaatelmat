@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Conwayn laki — organisaatio heijastuu arkkitehtuuriin — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/conways-laki.html#article",
       "url": "https://www.ilmiöt.fi/conways-laki.html",
       "headline": "Conwayn laki — organisaatio heijastuu arkkitehtuuriin",
-      "description": "Melvin Conway esitti vuonna 1967: \"Organisaatiot, jotka suunnittelevat järjestelmiä, tuottavat järjestelmiä jotka heijastavat kyseisten organisaatioiden…",
+      "description": "Conwayn laki: järjestelmä perii organisaation rakenteen. Selitämme mistä laissa on kyse, miltä se näyttää käytännössä ja miten käännät sen hyödyksesi.",
       "inLanguage": "fi",
       "articleSection": "Projekti- ja ohjelmistokehitys",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Conwayn laki — organisaatio heijastuu arkkitehtuuriin",
-        "description": "Melvin Conway esitti vuonna 1967: \"Organisaatiot, jotka suunnittelevat järjestelmiä, tuottavat järjestelmiä jotka heijastavat kyseisten organisaatioiden…",
+        "name": "Conwayn laki",
+        "description": "Conwayn laki: järjestelmä perii organisaation rakenteen. Selitämme mistä laissa on kyse, miltä se näyttää käytännössä ja miten käännät sen hyödyksesi.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -824,6 +825,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="conways-laki">
 <div class="ilmio-tag">Ilmiö 60</div>
 <h1>Conwayn laki — organisaatio heijastuu arkkitehtuuriin</h1>
@@ -839,10 +841,10 @@ flowchart TD
 <p class="kaavio-selitys">Conwayn laki: muuta ensin organisaatio, jos haluat muuttaa arkkitehtuuria.</p>
 <p>Laki ei ole pessimistinen — se on käytännöllinen. Amazon sovelsi sitä tietoisesti "kaksi pizzaa" -tiimisäännöllään: tiimin pitää mahtua kahteen pizzaan, koska se pakottaa pienet autonomiset yksiköt joiden rajapinnat ovat selkeitä. Tulos näkyy AWS:n arkkitehtuurissa.</p>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Data-arkkitehtuurissa:</h2> Jos tietovaraston arkkitehtuuri heijastelee organisaatiosiiloja — myynti, markkinointi, tuotanto kukin omina datajärjestelminään ilman yhteistä mallia — syy on lähes aina organisaatiorakenteessa, ei teknisessä päätöksessä.
+<h2 class="laatikko-otsikko" id="data-arkkitehtuurissa">Data-arkkitehtuurissa:</h2> Jos tietovaraston arkkitehtuuri heijastelee organisaatiosiiloja — myynti, markkinointi, tuotanto kukin omina datajärjestelminään ilman yhteistä mallia — syy on lähes aina organisaatiorakenteessa, ei teknisessä päätöksessä.
     </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Vastakeino — käänteinen Conwayn manööveri:</h2> Koska laki toimii joka tapauksessa, käytä sitä tietoisesti: suunnittele ensin haluttu arkkitehtuuri ja organisoi tiimit sen mukaan — ei toisinpäin. Käytännössä: piirrä tavoitearkkitehtuurin moduulit ja rajapinnat, anna kullekin moduulille yksi omistava tiimi ja varmista, että tiimien väliset kommunikaatiokanavat vastaavat haluttuja rajapintoja. Jos haluat mikropalveluarkkitehtuurin mutta tiimit ovat silossaan, saat vain hajautetun monoliitin — kaikki mikropalvelujen haitat ilman hyötyjä. Varoitusmerkki arjessa: jos jokainen arkkitehtuurimuutos vaatii kolmen tiimin yhteiskokouksen, organisaatiokaavio on jo arkkitehtuurisi.
+<h2 class="laatikko-otsikko" id="vastakeino-kaanteinen-conwayn-manooveri">Vastakeino — käänteinen Conwayn manööveri:</h2> Koska laki toimii joka tapauksessa, käytä sitä tietoisesti: suunnittele ensin haluttu arkkitehtuuri ja organisoi tiimit sen mukaan — ei toisinpäin. Käytännössä: piirrä tavoitearkkitehtuurin moduulit ja rajapinnat, anna kullekin moduulille yksi omistava tiimi ja varmista, että tiimien väliset kommunikaatiokanavat vastaavat haluttuja rajapintoja. Jos haluat mikropalveluarkkitehtuurin mutta tiimit ovat silossaan, saat vain hajautetun monoliitin — kaikki mikropalvelujen haitat ilman hyötyjä. Varoitusmerkki arjessa: jos jokainen arkkitehtuurimuutos vaatii kolmen tiimin yhteiskokouksen, organisaatiokaavio on jo arkkitehtuurisi.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -907,6 +909,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="tekninen-velka.html">← Tekninen velka — oikoteiden korko</a>

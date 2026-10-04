@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Inokulointiteoria — mentaalinen rokotus — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -717,11 +718,11 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Inokulointiteoria — mentaalinen rokotus — Ilmiöitä">
   <meta name="twitter:description" content="Inokulointiteoria: mentaalinen rokotus manipulaatiota vastaan. Selitämme miten prebunking toimii käytännössä ja miten käytät sitä itse.">
-  <meta property="og:image" content="https://www.ilmiöt.fi/og/brand.png">
+  <meta property="og:image" content="https://www.ilmiöt.fi/og/inokulointiteoria.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Ilmiöitä — Miten valta toimii">
-  <meta name="twitter:image" content="https://www.ilmiöt.fi/og/brand.png">
+  <meta property="og:image:alt" content="Inokulointiteoria — Mieli rokotetaan disinformaatiota vastaan altistamalla se etukäteen heikennetylle huijaukselle.">
+  <meta name="twitter:image" content="https://www.ilmiöt.fi/og/inokulointiteoria.png">
   <style>.ilmio h1{margin-top:0;font-family:'Spectral',Georgia,serif;}</style>
   <script type="application/ld+json">
 {
@@ -754,19 +755,19 @@
       "@type": "Article",
       "image": {
         "@type": "ImageObject",
-        "url": "https://www.ilmiöt.fi/og/brand.png",
+        "url": "https://www.ilmiöt.fi/og/inokulointiteoria.png",
         "width": 1200,
         "height": 630
       },
       "@id": "https://www.ilmiöt.fi/inokulointiteoria.html#article",
       "url": "https://www.ilmiöt.fi/inokulointiteoria.html",
       "headline": "Inokulointiteoria — mentaalinen rokotus",
-      "description": "Inokulointiteoria (William McGuire, 1961) soveltaa rokotuslogiikkaa asenteiden suojelemiseen.",
+      "description": "Inokulointiteoria: mentaalinen rokotus manipulaatiota vastaan. Selitämme miten prebunking toimii käytännössä ja miten käytät sitä itse.",
       "inLanguage": "fi",
       "articleSection": "Informaatio ja propaganda",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Inokulointiteoria — mentaalinen rokotus",
-        "description": "Inokulointiteoria (William McGuire, 1961) soveltaa rokotuslogiikkaa asenteiden suojelemiseen.",
+        "name": "Inokulointiteoria",
+        "description": "Inokulointiteoria: mentaalinen rokotus manipulaatiota vastaan. Selitämme miten prebunking toimii käytännössä ja miten käytät sitä itse.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -824,6 +825,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="inokulointiteoria">
 <div class="ilmio-tag">Ilmiö 14</div>
 <h1>Inokulointiteoria — mentaalinen rokotus</h1>
@@ -847,11 +849,11 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Sama logiikka — eri kohde. Harjoittelu turvallisessa ympäristössä rakentaa suojan oikeaa kohtaamista varten.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Miksi inokulointi toimii paremmin kuin jälkikäteen korjaaminen:</h2> Väärän tiedon levittäminen on nopeampaa kuin sen kumoaminen. Ja mitä vahvemmin virheellinen uskomus on jo iskostunut, sitä todennäköisemmin suora korjaus laukaisee vastareaktion (<a href="backfire-effect.html">backfire effect</a>). Inokulointi toimii <em>ennen</em> kohtaamista — silloin puolustusasemia ei rakenneta kriisin keskelläkään. Pelkästään manipulaatiotekniikan <em>nimeäminen</em> etukäteen riittää osittaiseen suojaukseen.
+<h2 class="laatikko-otsikko" id="miksi-inokulointi-toimii-paremmin-kuin-jalkikateen-korjaamin">Miksi inokulointi toimii paremmin kuin jälkikäteen korjaaminen:</h2> Väärän tiedon levittäminen on nopeampaa kuin sen kumoaminen. Ja mitä vahvemmin virheellinen uskomus on jo iskostunut, sitä todennäköisemmin suora korjaus laukaisee vastareaktion (<a href="backfire-effect.html">backfire effect</a>). Inokulointi toimii <em>ennen</em> kohtaamista — silloin puolustusasemia ei rakenneta kriisin keskelläkään. Pelkästään manipulaatiotekniikan <em>nimeäminen</em> etukäteen riittää osittaiseen suojaukseen.
     </div>
 <p>Moderni inokulointitutkimus (Sander van der Linden, Jon Roozenbeek, John Cook) on siirtynyt yksilökohtaisesta teoriasta skaalautuviin interventioihin. Keskeinen havainto: ei tarvitse kumota jokaista yksittäistä väitettä — riittää, että tunnistaa käytetyn manipulaatiokehyksen. Tämä tekee inokulointipohjaisista interventioista mahdollisia myös valtioiden ja alustojen mittakaavassa.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Käytännön sovelluksia:</h2>
+<h2 class="laatikko-otsikko" id="kaytannon-sovelluksia">Käytännön sovelluksia:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Bad News -peli (2018):</strong> Cambridgen yliopiston kehittämä selainpeli, jossa pelaaja simuloi disinformaatiotoimijaa — tarkoituksena on opettaa tunnistamaan manipulaatiotekniikat sisältäpäin. Tutkitusti tehokas inokulointimenetelmä.</li>
 <li><strong>Go Viral! (2020):</strong> WHO:n kanssa yhteistyössä kehitetty peli COVID-19-disinformaatiota vastaan.</li>
@@ -860,10 +862,10 @@ flowchart TD
 </ul>
 </div>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Rajoitukset:</h2> Inokulointi rakentaa suojan <em>tunnistettuja</em> tekniikoita vastaan — uudet manipulaatiomuodot voivat silti toimia. Inokulointivaikutus myös heikkenee ajan myötä ja vaatii "tehosteannostuksia". Lisäksi inokulointi ei toimi yhtä hyvin kaikilla: vahvasti identiteettiin kytkeytyvissä aiheissa suoja on heikompi, ja juuri siellä <a href="backfire-effect.html">backfire effect</a> on voimakkain.
+<h2 class="laatikko-otsikko" id="rajoitukset">Rajoitukset:</h2> Inokulointi rakentaa suojan <em>tunnistettuja</em> tekniikoita vastaan — uudet manipulaatiomuodot voivat silti toimia. Inokulointivaikutus myös heikkenee ajan myötä ja vaatii "tehosteannostuksia". Lisäksi inokulointi ei toimi yhtä hyvin kaikilla: vahvasti identiteettiin kytkeytyvissä aiheissa suoja on heikompi, ja juuri siellä <a href="backfire-effect.html">backfire effect</a> on voimakkain.
     </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Inokulointi on itsessään vastakeino — näin sovellat sitä. Itsellesi: pelaa <em>Bad News</em> tai <em>Go Viral!</em> kertaalleen läpi; tekniikoiden näkeminen sisältäpäin rakentaa tunnistuksen nopeammin kuin niistä lukeminen. Muille: kun tiedät, että joku on kohta kohtaamassa manipulaatiota (vaalikampanja, sijoitushuijausaalto, somekohu), varoita <em>ennen</em> altistusta ja näytä heikennetty esimerkki — "sinulle tullaan sanomaan X, ja se perustuu tähän temppuun". Omassa viestinnässäsi: älä vain kumoa väitettä vaan nimeä käytetty tekniikka, sillä tekniikan tunnistus suojaa myös seuraavalta väitteeltä. Ja ota tehosteannos aika ajoin — suoja hiipuu kuukausissa.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Inokulointi on itsessään vastakeino — näin sovellat sitä. Itsellesi: pelaa <em>Bad News</em> tai <em>Go Viral!</em> kertaalleen läpi; tekniikoiden näkeminen sisältäpäin rakentaa tunnistuksen nopeammin kuin niistä lukeminen. Muille: kun tiedät, että joku on kohta kohtaamassa manipulaatiota (vaalikampanja, sijoitushuijausaalto, somekohu), varoita <em>ennen</em> altistusta ja näytä heikennetty esimerkki — "sinulle tullaan sanomaan X, ja se perustuu tähän temppuun". Omassa viestinnässäsi: älä vain kumoa väitettä vaan nimeä käytetty tekniikka, sillä tekniikan tunnistus suojaa myös seuraavalta väitteeltä. Ja ota tehosteannos aika ajoin — suoja hiipuu kuukausissa.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -937,6 +939,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="betteridgen-laki.html">← Betteridgen laki — kysymysmerkki tarkoittaa "ei"</a>

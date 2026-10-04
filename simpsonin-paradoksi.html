@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Simpsonin paradoksi — trendi kääntyy kun ryhmät yhdistetään — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   
   
   
@@ -734,12 +736,12 @@
       "@id": "https://www.ilmiöt.fi/simpsonin-paradoksi.html#article",
       "url": "https://www.ilmiöt.fi/simpsonin-paradoksi.html",
       "headline": "Simpsonin paradoksi — trendi kääntyy kun ryhmät yhdistetään",
-      "description": "Sama aineisto voi näyttää kasvua kokonaisuutena ja laskua jokaisessa osaryhmässä. Berkeleyn sisäänpääsytilastot ovat kuuluisin esimerkki.",
+      "description": "Simpsonin paradoksi: trendi kääntyy, kun ryhmät yhdistetään. Selitämme paradoksin käytännön esimerkein ja miten vältät väärän johtopäätöksen.",
       "inLanguage": "fi",
       "articleSection": "Tilastoilla valehtelu",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -748,19 +750,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Simpsonin paradoksi — trendi kääntyy kun ryhmät yhdistetään",
-        "description": "Sama aineisto voi näyttää kasvua kokonaisuutena ja laskua jokaisessa osaryhmässä. Berkeleyn sisäänpääsytilastot ovat kuuluisin esimerkki.",
+        "name": "Simpsonin paradoksi",
+        "description": "Simpsonin paradoksi: trendi kääntyy, kun ryhmät yhdistetään. Selitämme paradoksin käytännön esimerkein ja miten vältät väärän johtopäätöksen.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -798,6 +800,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="simpsonin-paradoksi">
 <div class="ilmio-tag">Ilmiö 127</div>
 <h1>Simpsonin paradoksi — trendi kääntyy kun ryhmät yhdistetään</h1>
@@ -839,7 +842,7 @@
 <li><strong>Koulujen tulokset:</strong> ”keskiarvo parani” voi syntyä pelkästä oppilaspohjan muutoksesta, vaikka jokainen ryhmä heikkeni.</li>
 </ul>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Kun kaksi osapuolta siteeraa ”samaa dataa” vastakkaisin johtopäätöksin, kysy: millä tasolla luvut on laskettu — yhdistettynä vai ryhmittäin? Ja mikä kolmas tekijä (hakukohde, potilasaines, ryhmien koko) jakaa aineiston?
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Kun kaksi osapuolta siteeraa ”samaa dataa” vastakkaisin johtopäätöksin, kysy: millä tasolla luvut on laskettu — yhdistettynä vai ryhmittäin? Ja mikä kolmas tekijä (hakukohde, potilasaines, ryhmien koko) jakaa aineiston?
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -896,6 +899,7 @@
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="selviytymisharha.html">← Selviytymisharha — vain palanneet koneet lasketaan</a>

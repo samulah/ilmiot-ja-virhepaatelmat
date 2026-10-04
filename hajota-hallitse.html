@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Hajota ja hallitse — divide et impera suomeksi | Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -745,7 +746,7 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Hajota ja hallitse —divide et impera",
+          "name": "Hajota ja hallitse — divide et impera",
           "item": "https://www.ilmiöt.fi/hajota-hallitse.html"
         }
       ]
@@ -760,13 +761,13 @@
       },
       "@id": "https://www.ilmiöt.fi/hajota-hallitse.html#article",
       "url": "https://www.ilmiöt.fi/hajota-hallitse.html",
-      "headline": "Hajota ja hallitse —divide et impera",
-      "description": "Hajota ja hallitse on vallan ylläpitämisen perusstrategia: hallitseva taho pitää valtansa jakamalla potentiaaliset vastavoiman muodostajat toisilleen…",
+      "headline": "Hajota ja hallitse — divide et impera",
+      "description": "Divide et impera tarkoittaa suomeksi hajota ja hallitse: valta säilyy, kun mahdolliset haastajat taistelevat keskenään. Näin tunnistat jakolinjan rakentamisen.",
       "inLanguage": "fi",
       "articleSection": "Vallan rakenteet",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Hajota ja hallitse —divide et impera",
-        "description": "Hajota ja hallitse on vallan ylläpitämisen perusstrategia: hallitseva taho pitää valtansa jakamalla potentiaaliset vastavoiman muodostajat toisilleen…",
+        "name": "Hajota ja hallitse",
+        "description": "Divide et impera tarkoittaa suomeksi hajota ja hallitse: valta säilyy, kun mahdolliset haastajat taistelevat keskenään. Näin tunnistat jakolinjan rakentamisen.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -799,29 +800,6 @@
       },
       "datePublished": "2026-06-19",
       "dateModified": "2026-09-04"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.ilmiöt.fi/hajota-hallitse.html#faq",
-      "inLanguage": "fi",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Mitä hajota ja hallitse tarkoittaa?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Hajota ja hallitse on vallan ylläpitämisen strategia, jossa hallitseva taho pitää valtansa jakamalla mahdolliset vastavoiman muodostajat toisilleen vihamielisiin ryhmiin. Koalitio, joka voisi haastaa vallan, ei muodostu, koska sen osat taistelevat keskenään."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Mistä divide et impera on peräisin?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ilmaus on latinaa ja se on liitetty perinteisesti Rooman valtakunnan hallintotapaan, vaikka lauseen tarkkaa alkuperää ei tunneta. Samaa periaatetta on käytetty siirtomaahallinnossa, työmarkkinoilla ja politiikassa aina siellä, missä hallitsijan on halvempaa jakaa kuin voittaa."
-          }
-        }
-      ]
     }
   ]
 }
@@ -847,13 +825,14 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="hajota-hallitse">
 <div class="ilmio-tag">Ilmiö 7</div>
 <h1>Hajota ja hallitse — <em>divide et impera</em></h1>
 <p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 4.9.2026</p>
 <p>Hajota ja hallitse on vallan ylläpitämisen perusstrategia: hallitseva taho pitää valtansa jakamalla potentiaaliset vastavoiman muodostajat toisilleen vihamielisiksi ryhmiksi. Koalitio, joka voisi haastaa vallan, ei koskaan muodostu — koska sen osat taistelevat keskenään.</p>
 <div class="infolaatikko vastauslohko">
-<h2 class="laatikko-otsikko">Mitä divide et impera tarkoittaa suomeksi?</h2>
+<h2 class="laatikko-otsikko" id="mita-divide-et-impera-tarkoittaa-suomeksi">Mitä divide et impera tarkoittaa suomeksi?</h2>
 <p style="margin:0.4em 0 0;">Latinan <em>divide et impera</em> tarkoittaa suomeksi <strong>hajota ja hallitse</strong>. Ilmaus liitetään Rooman hallintotapaan, mutta sen tarkkaa alkuperää ei tunneta. Sääntönä se on halpa: hallitsijan ei tarvitse voittaa haastajiaan, riittää että ne pitävät toisiaan vihollisina.</p>
 </div>
 <p>Strategian ydin ei ole väkivalta vaan <strong>epäluottamuksen kylväminen</strong>: kun ryhmät A ja B pitävät toisiaan vihollisina, molemmat hakevat turvaa hallitsijalta — joka kontrolloi molempien resursseja.</p>
@@ -876,7 +855,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Hallitsija ei tarvitse enemmistöä — riittää, että kukaan muukaan ei saa sitä. Ryhmien keskinäinen kilpailu tekee koalitiosta mahdottoman.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Historiallisia ja nykyisiä esimerkkejä:</h2>
+<h2 class="laatikko-otsikko" id="historiallisia-ja-nykyisia-esimerkkeja">Historiallisia ja nykyisiä esimerkkejä:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Makedonian Filippos II (300-luku eKr.):</strong> Piti kreikkalaiskaupunkivaltiot toisilleen vihamielisina neuvottelemalla erikseen kunkin kanssa, lupaten kullekin etuja toisen kustannuksella.</li>
 <li><strong>Brittiläinen siirtomaahallinto:</strong> "Indirect rule" — paikalliset eliitit hallitsivat omia ryhmiään brittien puolesta, ja ryhmien välinen kilpailu esti yhtenäisen vastarintaliikkeen synnyn. Intian kastijärjestelmän hallinnollinen vahvistaminen on esimerkki.</li>
@@ -886,10 +865,10 @@ flowchart TD
 </ul>
 </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Kysy aina — kuka <em>hyötyy</em> siitä, että ryhmät A ja B riitelevät keskenään? Jos ryhmien välinen konflikti palvelee systemaattisesti jonkun kolmannen etua, hajota-ja-hallitse on todennäköisesti käynnissä. Erityinen varoitusmerkki: kun etuoikeutettu taho kehystää itsensä puolueettomaksi välittäjäksi kahden "ääriliikkeen" välissä.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Kysy aina — kuka <em>hyötyy</em> siitä, että ryhmät A ja B riitelevät keskenään? Jos ryhmien välinen konflikti palvelee systemaattisesti jonkun kolmannen etua, hajota-ja-hallitse on todennäköisesti käynnissä. Erityinen varoitusmerkki: kun etuoikeutettu taho kehystää itsensä puolueettomaksi välittäjäksi kahden "ääriliikkeen" välissä.
     </div>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Sorrettujen keskinäinen taistelu:</h2> Strategian tehokkain muoto on se, jossa hallitsijan ei tarvitse edes toimia aktiivisesti — riittää, että rakenteet pitävät ryhmät kilpailutilassa toisiaan vastaan. Prekariaatti kilpailee prekariaatin kanssa työtunneista. Maahanmuuttajat kilpailevat kantaväestön köyhien kanssa huonoista töistä. Naisten keskinäinen arvostelu pitää naiset kiireisinä toisistaan — ei rakenteesta. Hajota-ja-hallitse on onnistunut täydellisesti silloin, kun sorretut itse selittävät ongelmansa toistensa syyksi.
+<h2 class="laatikko-otsikko" id="sorrettujen-keskinainen-taistelu">Sorrettujen keskinäinen taistelu:</h2> Strategian tehokkain muoto on se, jossa hallitsijan ei tarvitse edes toimia aktiivisesti — riittää, että rakenteet pitävät ryhmät kilpailutilassa toisiaan vastaan. Prekariaatti kilpailee prekariaatin kanssa työtunneista. Maahanmuuttajat kilpailevat kantaväestön köyhien kanssa huonoista töistä. Naisten keskinäinen arvostelu pitää naiset kiireisinä toisistaan — ei rakenteesta. Hajota-ja-hallitse on onnistunut täydellisesti silloin, kun sorretut itse selittävät ongelmansa toistensa syyksi.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -954,6 +933,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="valta-suojelee-valtaa.html">← Valta suojelee valtaa</a>

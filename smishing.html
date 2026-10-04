@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Huijaustekstiviesti — näin tunnistat smishingin | Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/smishing.html#article",
       "url": "https://www.ilmiöt.fi/smishing.html",
       "headline": "Smishing — tekstiviesti, joka näyttää tulevan Postilta",
-      "description": "QR-koodihuijaus eli quishing ohjaa uhrin väärennetyllä QR-koodilla valesivulle maksamaan tai antamaan korttitietonsa. Parkkimittarit ovat tyypillinen kohde.",
+      "description": "Smishing on tekstiviestillä tehty kalastelu: viesti näyttää tulevan Postilta tai pankilta. Näin tunnistat huijausviestin ja mitä teet jos ehdit klikata.",
       "inLanguage": "fi",
       "articleSection": "Huijaukset ja petokset",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Smishing — tekstiviesti, joka näyttää tulevan Postilta",
-        "description": "QR-koodihuijaus eli quishing ohjaa uhrin väärennetyllä QR-koodilla valesivulle maksamaan tai antamaan korttitietonsa. Parkkimittarit ovat tyypillinen kohde.",
+        "name": "Smishing",
+        "description": "Smishing on tekstiviestillä tehty kalastelu: viesti näyttää tulevan Postilta tai pankilta. Näin tunnistat huijausviestin ja mitä teet jos ehdit klikata.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -799,29 +800,6 @@
       },
       "datePublished": "2026-08-14",
       "dateModified": "2026-09-04"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.ilmiöt.fi/smishing.html#faq",
-      "inLanguage": "fi",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Miten huijaustekstiviestin tunnistaa?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Viesti luo kiireen ja pyytää klikkaamaan linkkiä: paketti odottaa, tili suljetaan, maksu epäonnistui. Osoite on lähes oikea mutta ei aivan. Luotettava lähettäjä ei koskaan pyydä pankkitunnuksia tai korttitietoja tekstiviestin linkin kautta."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Mitä teen jos klikkasin huijausviestin linkkiä?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Pelkkä linkin avaaminen ei yleensä riitä vahinkoon. Jos syötit pankkitunnukset, sulje verkkopankki heti ja soita pankkiisi. Jos annoit korttitiedot, sulje kortti. Tee rikosilmoitus ja ilmoita viestistä Traficomin Kyberturvallisuuskeskukselle."
-          }
-        }
-      ]
     }
   ]
 }
@@ -847,13 +825,14 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="smishing">
 <div class="ilmio-tag">Ilmiö 78</div>
 <h1>Smishing — tekstiviesti, joka näyttää tulevan Postilta</h1>
 <p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 4.9.2026</p>
 <p><strong>Smishing</strong> (sanoista <em>SMS</em> ja <em>phishing</em>) tarkoittaa tekstiviestillä tehtyä kalastelua. Viesti kertoo, että paketti odottaa pientä maksua, tili on lukittu tai veronpalautus vaatii vahvistuksen, ja tarjoaa linkin. Linkin takana on sivu, joka näyttää oikealta ja pyytää juuri ne tiedot, joilla rahat siirretään: verkkopankkitunnukset ja vahvistuksen.</p>
 <div class="infolaatikko vastauslohko">
-<h2 class="laatikko-otsikko">Mitä smishing tarkoittaa suomeksi?</h2>
+<h2 class="laatikko-otsikko" id="mita-smishing-tarkoittaa-suomeksi">Mitä smishing tarkoittaa suomeksi?</h2>
 <p style="margin:0.4em 0 0;">Vakiintunutta suomennosta ei ole. Käytössä ovat <strong>tekstiviestikalastelu</strong> ja <em>tekstiviestihuijaus</em>; viranomaiset puhuvat huijausviesteistä. Termi on yhdistelmä sanoista SMS ja phishing eli kalastelu. Suomenkielistä Wikipedia-artikkelia ei ole, vaikka ilmiö on yksi tunnistetuimmista — käytännössä jokainen suomalainen on saanut tällaisen viestin.</p>
 </div>
 <div class="mermaid">
@@ -867,10 +846,10 @@ flowchart TD
 <p class="kaavio-selitys">Pieni summa ei ole huijauksen saalis vaan sen sisäänpääsy: se saa vahvistuksen tuntumaan vaarattomalta.</p>
 <p>Uskottavuus syntyy kahdesta asiasta. Ensinnäkin teema osuu ajankohtaan — pakettiviestit tulevat joulukuussa, veroviestit keväällä. Toiseksi viesti voi pudota samaan keskusteluketjuun aitojen viestien kanssa, jos lähettäjätunnus on väärennetty; silloin puhelin näyttää sen tutun nimen alla. Suomessa organisaatioiden on pitänyt luvittaa käyttämänsä lähettäjätunnukset ennakkoon toukokuusta 2026 alkaen, eikä suojattua tunnusta voi enää väärentää. Siksi huijausviesti tulee yhä useammin tavallisesta puhelinnumerosta tai muusta viestisovelluksesta.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Miten smishing eroaa QR-koodihuijauksesta?</h2> Kanava on eri, loppu sama: molemmissa uhri ohjataan väärennetylle sivulle antamaan tunnuksensa. <a href="qr-koodihuijaus.html">QR-koodihuijaus</a> odottaa fyysisessä paikassa, smishing tulee taskuun. Molemmissa suojaus on sama: mene palveluun itse, älä linkin kautta.
+<h2 class="laatikko-otsikko" id="miten-smishing-eroaa-qr-koodihuijauksesta">Miten smishing eroaa QR-koodihuijauksesta?</h2> Kanava on eri, loppu sama: molemmissa uhri ohjataan väärennetylle sivulle antamaan tunnuksensa. <a href="qr-koodihuijaus.html">QR-koodihuijaus</a> odottaa fyysisessä paikassa, smishing tulee taskuun. Molemmissa suojaus on sama: mene palveluun itse, älä linkin kautta.
     </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2>
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2>
 <ul style="margin:0.5em 0 0;">
 <li>Älä avaa viestin linkkiä. Kirjoita palvelun osoite itse tai käytä sen omaa sovellusta — paketin seuranta löytyy sieltä.</li>
 <li>Pankki ei kysy tunnuslukuja eikä pyydä vahvistamaan mitään viestin linkissä. Yksikään aito toimija ei tee sitä.</li>
@@ -928,6 +907,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="aaniklooni-huijaus.html">← Ääniklooni-huijaus — tuttu ääni puhelimessa ei enää todista mitään</a>

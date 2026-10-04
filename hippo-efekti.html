@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>HIPPO-efekti — johtajan mielipide voittaa datan — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/hippo-efekti.html#article",
       "url": "https://www.ilmiöt.fi/hippo-efekti.html",
       "headline": "HIPPO-efekti — johtajan mielipide voittaa datan",
-      "description": "HIPPO (Highest Paid Person's Opinion) kuvaa ilmiötä, jossa kokouksen korkein hierarkkinen asema määrittää lopputuloksen — ei data, asiantuntemus tai…",
+      "description": "HIPPO-efekti: korkeimmin palkatun mielipide voittaa datan. Selitämme miksi näin käy ja miten palautat datan päätöksenteon pohjaksi.",
       "inLanguage": "fi",
       "articleSection": "Byrokratia ja organisaatio",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "HIPPO-efekti — johtajan mielipide voittaa datan",
-        "description": "HIPPO (Highest Paid Person's Opinion) kuvaa ilmiötä, jossa kokouksen korkein hierarkkinen asema määrittää lopputuloksen — ei data, asiantuntemus tai…",
+        "name": "HIPPO-efekti",
+        "description": "HIPPO-efekti: korkeimmin palkatun mielipide voittaa datan. Selitämme miksi näin käy ja miten palautat datan päätöksenteon pohjaksi.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -824,6 +825,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="hippo-efekti">
 <div class="ilmio-tag">Ilmiö 40</div>
 <h1>HIPPO-efekti — johtajan mielipide voittaa datan</h1>
@@ -840,11 +842,11 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">HIPPO-efekti: hierarkkinen asema korvaa perustelut päätöksenteossa.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Miten se toimii ilman käskyä:</h2> Kukaan ei sano "tehdään niin kuin pomo sanoo". Sen sijaan: data esitellään, asiantuntijat puhuvat — ja sitten johtaja avaa suunsa. Hiljaisuus laskeutuu. Muutama nyökkäys. Päätös syntyy.
+<h2 class="laatikko-otsikko" id="miten-se-toimii-ilman-kaskya">Miten se toimii ilman käskyä:</h2> Kukaan ei sano "tehdään niin kuin pomo sanoo". Sen sijaan: data esitellään, asiantuntijat puhuvat — ja sitten johtaja avaa suunsa. Hiljaisuus laskeutuu. Muutama nyökkäys. Päätös syntyy.
     </div>
 <p>Efekti ei vaadi autoritaarista johtajaa. Riittää, että ihmiset tietävät kenen mielipide ratkaisee. Psykologinen turvallisuus — tai sen puute — tekee loput: eriävän mielipiteen esittäminen ylöspäin hierarkiassa on sosiaalinen riski, jonka useimmat välttävät.</p>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Katso kenen puheenvuoron jälkeen muut alkavat muuttaa kantaansa. Jos se on aina sama henkilö — ja sama henkilö on hierarkiassa korkein — HIPPO on paikalla. Hyvä testi: miten päätökset syntyisivät, jos johtaja ei olisi kokouksessa?
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Katso kenen puheenvuoron jälkeen muut alkavat muuttaa kantaansa. Jos se on aina sama henkilö — ja sama henkilö on hierarkiassa korkein — HIPPO on paikalla. Hyvä testi: miten päätökset syntyisivät, jos johtaja ei olisi kokouksessa?
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -918,6 +920,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="goodhartin-laki.html">← Goodhartin laki — mittari syö tavoitteen</a>

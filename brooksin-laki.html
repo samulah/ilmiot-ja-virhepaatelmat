@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Brooksin laki — lisähenkilö myöhästyttää — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/brooksin-laki.html#article",
       "url": "https://www.ilmiöt.fi/brooksin-laki.html",
       "headline": "Brooksin laki — lisähenkilö myöhästyttää",
-      "description": "Fred Brooks dokumentoi teoksessaan The Mythical Man-Month (1975) ilmiön, joka on sittemmin toistettu jokaisessa sukupolvessa: myöhässä olevaan…",
+      "description": "Brooksin laki: lisäväki myöhästyttää myöhässä olevaa projektia. Selitämme miksi näin käy ja mitä projektijohdon kannattaa tehdä sen sijaan.",
       "inLanguage": "fi",
       "articleSection": "Projekti- ja ohjelmistokehitys",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Brooksin laki — lisähenkilö myöhästyttää",
-        "description": "Fred Brooks dokumentoi teoksessaan The Mythical Man-Month (1975) ilmiön, joka on sittemmin toistettu jokaisessa sukupolvessa: myöhässä olevaan…",
+        "name": "Brooksin laki",
+        "description": "Brooksin laki: lisäväki myöhästyttää myöhässä olevaa projektia. Selitämme miksi näin käy ja mitä projektijohdon kannattaa tehdä sen sijaan.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -824,6 +825,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="brooksin-laki">
 <div class="ilmio-tag">Ilmiö 51</div>
 <h1>Brooksin laki — lisähenkilö myöhästyttää</h1>
@@ -843,13 +845,13 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Brooksin laki: lisäresurssi myöhäisessä vaiheessa aiheuttaa enemmän haittaa kuin hyötyä.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Miksi kommunikaatio räjähtää:</h2> Tiimin kommunikaatiokanavien määrä kasvaa kaavalla <em>n × (n−1) / 2</em>. Kahdella henkilöllä on 1 kanava. Viidellä 10. Kymmenellä 45. Kahdellakymmenellä 190. Jokainen uusi jäsen ei lisää yhtä kanavaa — hän lisää yhtä monta kanavaa kuin tiimissä on jo ihmisiä.
+<h2 class="laatikko-otsikko" id="miksi-kommunikaatio-rajahtaa">Miksi kommunikaatio räjähtää:</h2> Tiimin kommunikaatiokanavien määrä kasvaa kaavalla <em>n × (n−1) / 2</em>. Kahdella henkilöllä on 1 kanava. Viidellä 10. Kymmenellä 45. Kahdellakymmenellä 190. Jokainen uusi jäsen ei lisää yhtä kanavaa — hän lisää yhtä monta kanavaa kuin tiimissä on jo ihmisiä.
     </div>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Miksi sama toistuu joka projektissa:</h2> Kun projekti on myöhässä, johdon paine on lisätä resursseja — se on ainoa näkyvä toimenpide. Brooksin lain tietäminen ei auta, jos organisaatiorakenne palkitsee näkyvistä toimenpiteistä eikä oikeista.
+<h2 class="laatikko-otsikko" id="miksi-sama-toistuu-joka-projektissa">Miksi sama toistuu joka projektissa:</h2> Kun projekti on myöhässä, johdon paine on lisätä resursseja — se on ainoa näkyvä toimenpide. Brooksin lain tietäminen ei auta, jos organisaatiorakenne palkitsee näkyvistä toimenpiteistä eikä oikeista.
     </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Vastakeinot projektijohdolle:</h2> Myöhästyneeseen projektiin ei lisätä väkeä loppuvaiheessa — vaihtoehdot ovat lisäaika tai karsittu scope, ja ne on parempi myöntää ääneen kuin piilottaa "resursointiin". Jos väkeä on silti pakko lisätä, eristä uudet: anna heille itsenäinen osatehtävä, jolla on vain yksi rajapinta vanhaan tiimiin — silloin kommunikaatiokanavien määrä ei räjähdä. Ja laske kustannus näkyviin etukäteen: montako vanhan tiimin työviikkoa perehdytys syö, ennen kuin uusi jäsen tuottaa enemmän kuin kuluttaa?
+<h2 class="laatikko-otsikko" id="vastakeinot-projektijohdolle">Vastakeinot projektijohdolle:</h2> Myöhästyneeseen projektiin ei lisätä väkeä loppuvaiheessa — vaihtoehdot ovat lisäaika tai karsittu scope, ja ne on parempi myöntää ääneen kuin piilottaa "resursointiin". Jos väkeä on silti pakko lisätä, eristä uudet: anna heille itsenäinen osatehtävä, jolla on vain yksi rajapinta vanhaan tiimiin — silloin kommunikaatiokanavien määrä ei räjähdä. Ja laske kustannus näkyviin etukäteen: montako vanhan tiimin työviikkoa perehdytys syö, ennen kuin uusi jäsen tuottaa enemmän kuin kuluttaa?
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -914,6 +916,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="pareto-periaate.html">← Pareto-periaate — 80/20-sääntö</a>

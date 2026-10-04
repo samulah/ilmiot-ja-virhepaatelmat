@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Scope creep — vaatimusten hiljaa laajeneminen — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/scope-creep.html#article",
       "url": "https://www.ilmiöt.fi/scope-creep.html",
       "headline": "Scope creep — vaatimusten hiljaa laajeneminen",
-      "description": "Scope creep on ilmiö, jossa projektin laajuus kasvaa asteittain ilman vastaavaa muutosta aikatauluun tai budjettiin.",
+      "description": "Scope creep: vaatimukset laajenevat hiljaa, aikataulu ei. Selitämme miten hiipivä laajeneminen toimii ja miten pidät rajauksen hallinnassa.",
       "inLanguage": "fi",
       "articleSection": "Projekti- ja ohjelmistokehitys",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Scope creep — vaatimusten hiljaa laajeneminen",
-        "description": "Scope creep on ilmiö, jossa projektin laajuus kasvaa asteittain ilman vastaavaa muutosta aikatauluun tai budjettiin.",
+        "name": "Scope creep",
+        "description": "Scope creep: vaatimukset laajenevat hiljaa, aikataulu ei. Selitämme miten hiipivä laajeneminen toimii ja miten pidät rajauksen hallinnassa.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -824,6 +825,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="scope-creep">
 <div class="ilmio-tag">Ilmiö 62</div>
 <h1>Scope creep — vaatimusten hiljaa laajeneminen</h1>
@@ -842,10 +844,10 @@ flowchart TD
 <p class="kaavio-selitys">Scope creep: jokainen yksittäinen lisäys tuntuu pieneltä — kokonaisvaikutus on kumuloituva.</p>
 <p>Scope creep ei aina tule asiakkaalta. Sisäinen scope creep syntyy kun kehittäjät lisäävät ominaisuuksia joita ei pyydetty ("kun kerran ollaan tässä, tehdään tämäkin kunnolla"), tai kun projektiryhmä ei osaa sanoa ei pyynnöille koska jokainen pyyntö erikseen tuntuu kohtuulliselta.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Data-projekteissa erityinen muoto:</h2> "Raporttipyyntö" alkaa yhdestä mittarista. Sitten lisätään segmentointi. Sitten vertailukausi. Sitten poikkeus tiettyyn toimialaan. Sitten erikoislogiikka yhdelle asiakkaalle. Lopulta "raportti" on räätälöityjen erikoistapausten kokoelma jota kukaan ei ymmärrä kokonaan.
+<h2 class="laatikko-otsikko" id="data-projekteissa-erityinen-muoto">Data-projekteissa erityinen muoto:</h2> "Raporttipyyntö" alkaa yhdestä mittarista. Sitten lisätään segmentointi. Sitten vertailukausi. Sitten poikkeus tiettyyn toimialaan. Sitten erikoislogiikka yhdelle asiakkaalle. Lopulta "raportti" on räätälöityjen erikoistapausten kokoelma jota kukaan ei ymmärrä kokonaan.
     </div>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Kirjallinen scope-dokumentti jonka muuttaminen vaatii eksplisiittisen päätöksen aikataulun tai budjetin muutoksesta. "Pienet muutokset" hyväksytään suullisesti ja kirjataan ylös — kokonaisvaikutus tulee näkyväksi ennen kuin se on jo tapahtunut.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Kirjallinen scope-dokumentti jonka muuttaminen vaatii eksplisiittisen päätöksen aikataulun tai budjetin muutoksesta. "Pienet muutokset" hyväksytään suullisesti ja kirjataan ylös — kokonaisvaikutus tulee näkyväksi ennen kuin se on jo tapahtunut.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -918,6 +920,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="bikeshedding.html">← Bikeshedding — triviaalisuuslaki</a>

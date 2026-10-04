@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Sunk cost -harha — uponneiden kustannusten loukku — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/sunk-cost-harha.html#article",
       "url": "https://www.ilmiöt.fi/sunk-cost-harha.html",
       "headline": "Sunk cost -harha — uponneiden kustannusten loukku",
-      "description": "Sunk cost -harha (suom. uponneiden kustannusten harha) on päätöksenteon kognitiivinen vinouma, jossa menneisiin, peruuttamattomiin panostuksiin — rahaan…",
+      "description": "Sunk cost -harha: jatkat, koska olet jo panostanut. Selitämme miksi menetetty raha ei ole peruste jatkaa ja miten teet päätökset eteenpäin katsoen.",
       "inLanguage": "fi",
       "articleSection": "Psykologia ja kognitio",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Sunk cost -harha — uponneiden kustannusten loukku",
-        "description": "Sunk cost -harha (suom. uponneiden kustannusten harha) on päätöksenteon kognitiivinen vinouma, jossa menneisiin, peruuttamattomiin panostuksiin — rahaan…",
+        "name": "Sunk cost -harha",
+        "description": "Sunk cost -harha: jatkat, koska olet jo panostanut. Selitämme miksi menetetty raha ei ole peruste jatkaa ja miten teet päätökset eteenpäin katsoen.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -799,29 +800,6 @@
       },
       "datePublished": "2026-06-19",
       "dateModified": "2026-08-04"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.ilmiöt.fi/sunk-cost-harha.html#faq",
-      "inLanguage": "fi",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Mikä on Concorde-harha?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Sunk cost -harhan tunnetuin nimitys. Britannia ja Ranska jatkoivat Concorde-koneen rahoittamista senkin jälkeen, kun sen kannattamattomuus oli selvää — juuri siksi, että hankkeeseen oli jo sijoitettu valtavasti."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Miten sunk cost -harhan tunnistaa itsessään?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Kysy: jos emme olisi vielä sijoittaneet tähän mitään, aloittaisimmeko sen nyt? Jos vastaus on ei, jatkamisen ainoa peruste on mennyt kustannus — eikä se ole peruste."
-          }
-        }
-      ]
     }
   ]
 }
@@ -847,13 +825,14 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="sunk-cost-harha">
 <div class="ilmio-tag">Ilmiö 31</div>
 <h1>Sunk cost -harha — uponneiden kustannusten loukku</h1>
 <p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 4.8.2026</p>
 <p>Sunk cost -harha (suom. uponneiden kustannusten harha) on päätöksenteon kognitiivinen vinouma, jossa menneisiin, peruuttamattomiin panostuksiin — rahaan, aikaan, vaivaan — annetaan painoarvo tulevissa päätöksissä. Rationaalisen päätöksenteon kannalta menneillä kustannuksilla ei pitäisi olla merkitystä: ne ovat menneet riippumatta siitä, mitä seuraavaksi tehdään. Silti ihminen jatkaa, koska lopettaminen tuntuu tappioilta.</p>
 <div class="infolaatikko vastauslohko">
-<h2 class="laatikko-otsikko">Mikä on sunk cost -harha suomeksi?</h2>
+<h2 class="laatikko-otsikko" id="mika-on-sunk-cost-harha-suomeksi">Mikä on sunk cost -harha suomeksi?</h2>
 <p style="margin:0.4em 0 0;"><strong>Sunk cost -harha</strong> on suomeksi <strong>uponneiden kustannusten harha</strong>. Se tarkoittaa taipumusta jatkaa hanketta siksi, että siihen on jo uponnut rahaa, aikaa tai vaivaa. Mennyt panostus ei palaa jatkamallakaan, joten päätöksen pitäisi riippua vain tulevasta tuotosta.</p>
 </div>
 <p>Harha toimii tappionkaihtamisen (Kahneman &amp; Tversky, 1979) kautta: tappion tuska on noin kaksi kertaa suurempi kuin vastaavan voiton ilo. Projektin lopettaminen aktivoi "olen hävinnyt X euroa" -tunteen, vaikka jatkaminen tuottaisi lisää tappiota. Aivot laskevat menneisyyden investoinnin ja tekevät siitä perustelun jatkamiselle — vaikka se ei ole perustelu lainkaan.</p>
@@ -871,7 +850,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Rationaalinen valinta ei katso taaksepäin — sunk cost -harha tekee menneisyydestä tulevaisuuden vankilan.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Esimerkkejä:</h2>
+<h2 class="laatikko-otsikko" id="esimerkkeja">Esimerkkejä:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Concorde-harha:</strong> Britannia ja Ranska jatkoivat Concorden rahoittamista vuosia senkin jälkeen kun oli selvää, ettei lentokone olisi koskaan kaupallisesti kannattava — koska jo panostettu summa oli niin suuri. Tästä ilmiötä kutsutaan myös <em>Concorde fallacyksi</em>.</li>
 <li><strong>IT-projektit:</strong> "Olemme jo käyttäneet 3 miljoonaa euroa — ei voida lopettaa." Organisaatiot investoivat huonosti suunniteltuihin järjestelmiin vuosia yli alkuperäisen budjetin, koska lopettaminen tuntuu haaviolta.</li>
@@ -882,7 +861,7 @@ flowchart TD
 <p><strong>Organisaatiovaikutus:</strong> Sunk cost -harha on erityisen tuhoisa organisaatioissa, koska siihen lisätään vastuuvelvollisuuden paine: projektin lopettaminen tarkoittaa myöntämistä, että alkuperäinen päätös oli virhe. Tämä aktivoi <a href="blame-game.html">The Blame Gamen</a> — kuka päätti aloittaa? — ja tekee lopettamispäätöksestä henkilökohtaisen riskin. Sunk cost -harha ja syyttelykulttuuri yhdessä lukitsevat organisaatiot huonoihin päätöksiin.</p>
 <p>Ks. myös <a href="negatiivinen-korkoa.html">Negatiivinen korkoa korolle</a>: sunk cost -harha on usein mekanismi, jolla negatiivinen kierre alkaa — "ei voida lopettaa" → lisätään rahaa → tappio kasvaa → vaikeampi lopettaa → kierretään yhä syvemmälle.</p>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> "Jos emme olisi vielä sijoittaneet mitään tähän projektiin — aloittaisimmeko sen nyt?" Jos vastaus on ei, jatkat sunk cost -harhan takia. Päätös pitäisi tehdä tulevaisuuden odotetun arvon perusteella, ei menneen investoinnin perusteella.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> "Jos emme olisi vielä sijoittaneet mitään tähän projektiin — aloittaisimmeko sen nyt?" Jos vastaus on ei, jatkat sunk cost -harhan takia. Päätös pitäisi tehdä tulevaisuuden odotetun arvon perusteella, ei menneen investoinnin perusteella.
     </div>
 <p class="peli-harjoittele" style="margin:1.4rem 0 0;padding:.7rem .9rem;background:#FBF5E0;border-left:3px solid #C9A84C;font-size:.95em"><b>Harjoittele tämän tunnistamista.</b> <a href="peli.html">Vedätys</a> on päivittäinen peli, jossa sunk cost -harha on yksi tunnistettavista ilmiöistä — mukana on aina myös tilanteita, joissa ei ole mitään vikaa.</p>
 <div class="lue-lisaa">
@@ -942,13 +921,14 @@ flowchart TD
     <a href="konsensus-fetissi.html" class="liittyvat-kortti" style="--c:#01579b">
       <span class="liittyvat-numero">25</span>
       <span class="liittyvat-teksti">
-        <span class="liittyvat-nimi">Konsensus fetissi</span>
+        <span class="liittyvat-nimi">Konsensusfetissi</span>
         <span class="liittyvat-kuvaus">Yksimielisyydestä tulee itseisarvo, ja erimielisyys aletaan nähdä ongelmana — ei tietona.</span>
       </span>
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="argumenttitulva.html">← Argumenttitulva — Gish Gallop</a>

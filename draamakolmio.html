@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <title>DARVO — manipulaatiotaktiikka suomeksi | Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <title>Draamakolmio — Karpmanin kolme roolia suomeksi | Ilmiöitä</title>
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -765,8 +766,8 @@
       "inLanguage": "fi",
       "articleSection": "Roolit ja valtapelit",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Draamakolmio — uhri, pelastaja ja vainooja",
+        "name": "Draamakolmio",
         "description": "Draamakolmio on Karpmanin malli kolmesta roolista: uhri, pelastaja ja vainooja. Näin tunnistat kuvion työpaikalla ja läheissuhteessa.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -798,30 +799,7 @@
         "description": "Kirjoittajanimi, jonka takana on kiinnostus valtaan, vaikuttamiseen ja ihmisen päättelyn vinoumiin. Sisältö perustuu julkisiin lähteisiin ja vakiintuneeseen käsitteistöön."
       },
       "datePublished": "2026-10-03",
-      "dateModified": "2026-10-03"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.ilmiöt.fi/draamakolmio.html#faq",
-      "inLanguage": "fi",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Mitä draamakolmio tarkoittaa?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Draamakolmio on psykiatri Stephen Karpmanin vuonna 1968 kuvaama malli, jossa toistuva ristiriita asettuu kolmeen rooliin: uhri kokee olevansa voimaton, pelastaja ratkaisee toisen puolesta ja vainooja osoittaa syyllisen. Roolit eivät kerro siitä, kuka on oikeassa, vaan siitä minkä aseman kukin ottaa — ja niin kauan kuin asemat pysyvät, itse asia ei ratkea."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Miten draamakolmion tunnistaa?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Tunnusmerkki on toisto ilman ratkaisua: sama keskustelu käydään uudelleen, samat repliikit toistuvat ja lopputulos on joka kerta sama. Toinen merkki on se, että kukaan ei puhu omasta osuudestaan — uhri puhuu siitä mitä hänelle tehdään, pelastaja siitä mitä hän tekee toisten puolesta ja vainooja siitä mitä muut jättävät tekemättä."
-          }
-        }
-      ]
+      "dateModified": "2026-10-04"
     }
   ]
 }
@@ -847,13 +825,14 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="draamakolmio">
 <div class="ilmio-tag">Ilmiö 140</div>
 <h1>Draamakolmio — uhri, pelastaja ja vainooja</h1>
-<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 3.10.2026</p>
+<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 4.10.2026</p>
 <p><strong>Draamakolmio</strong> (engl. <em>drama triangle</em>) on psykiatri Stephen Karpmanin vuonna 1968 kuvaama malli, jossa toistuva ristiriita asettuu kolmeen rooliin: <strong>uhri</strong>, <strong>pelastaja</strong> ja <strong>vainooja</strong>. Roolit eivät kerro siitä, kuka tosiasiassa on oikeassa tai kärsinyt vääryyttä. Ne kertovat asemasta, jonka kukin ottaa — ja siitä, että kolme asemaa yhdessä pitävät tilanteen paikallaan.</p>
 <div class="infolaatikko vastauslohko">
-<h2 class="laatikko-otsikko">Mitä draamakolmio tarkoittaa suomeksi?</h2>
+<h2 class="laatikko-otsikko" id="mita-draamakolmio-tarkoittaa-suomeksi">Mitä draamakolmio tarkoittaa suomeksi?</h2>
 <p style="margin:0.4em 0 0;"><strong>Draamakolmio</strong> on vakiintunut suomennos termistä <em>Karpman drama triangle</em>. Roolien nimet ovat <strong>uhri</strong> (<em>Victim</em>), <strong>pelastaja</strong> (<em>Rescuer</em>) ja <strong>vainooja</strong> (<em>Persecutor</em>). Malli on peräisin transaktioanalyysistä: Karpman julkaisi sen artikkelissa <cite>Fairy Tales and Script Drama Analysis</cite> vuonna 1968.</p>
 </div>
 <div class="mermaid">
@@ -868,7 +847,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Kolme roolia pitävät toisiaan pystyssä: jokainen tarvitsee kaksi muuta.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Kolme roolia käytännössä:</h2>
+<h2 class="laatikko-otsikko" id="kolme-roolia-kaytannossa">Kolme roolia käytännössä:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Uhri:</strong> "en minä voi tälle mitään." Ei kyse ole siitä, ettei vääryyttä olisi tapahtunut — vaan siitä, että oma liikkumavara kiistetään kokonaan.</li>
 <li><strong>Pelastaja:</strong> "minä hoidan tämän." Auttaa pyytämättä ja ratkaisee toisen puolesta, jolloin toinen ei koskaan joudu ratkaisemaan itse.</li>
@@ -877,7 +856,7 @@ flowchart TD
 </div>
 <p>Työpaikalla kuvio näyttää usein tältä: esimies ottaa alisuoriutuvan tiimiläisen työt hoitaakseen (pelastaja), muu tiimi kantaa kuorman ja kokee tulleensa jätetyksi yksin (uhri), ja lopulta joku vaatii puuttumista ja leimautuu koviksi (vainooja). Läheissuhteessa samat kolme asemaa jakautuvat sukulaisten kesken. Kummassakin tapauksessa riita siirtyy siihen, kuka käyttäytyy huonosti — ei siihen, mikä alun perin oli ongelma. Sama huomion siirto tapahtuu <a href="blame-game.html">syyllisen etsinnässä</a> ja <a href="darvo.html">DARVOssa</a>.</p>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Merkki kolmiosta ei ole riita vaan <strong>toisto ilman ratkaisua</strong>: sama keskustelu, samat repliikit, sama lopputulos. Toinen merkki on se, ettei kukaan puhu omasta osuudestaan. Ulos ei pääse vaihtamalla roolia — pelastajasta tulee helposti vainooja — vaan vaihtamalla tasoa: kysy mitä konkreettista pyydetään, mihin mennessä ja kuka sen tekee. Älä auta pyytämättä, äläkä ratkaise toisen puolesta sitä, minkä hän voi ratkaista itse. Huomaa myös, ettei malli sovi tilanteeseen, jossa joku oikeasti käyttää valtaa väärin: silloin kyse ei ole rooleista vaan teosta, ja "kaikki ovat osallisia" -tulkinta on itsessään vahingollinen.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Merkki kolmiosta ei ole riita vaan <strong>toisto ilman ratkaisua</strong>: sama keskustelu, samat repliikit, sama lopputulos. Toinen merkki on se, ettei kukaan puhu omasta osuudestaan. Ulos ei pääse vaihtamalla roolia — pelastajasta tulee helposti vainooja — vaan vaihtamalla tasoa: kysy mitä konkreettista pyydetään, mihin mennessä ja kuka sen tekee. Älä auta pyytämättä, äläkä ratkaise toisen puolesta sitä, minkä hän voi ratkaista itse. Huomaa myös, ettei malli sovi tilanteeseen, jossa joku oikeasti käyttää valtaa väärin: silloin kyse ei ole rooleista vaan teosta, ja "kaikki ovat osallisia" -tulkinta on itsessään vahingollinen.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -942,6 +921,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="vihamielisen-median-harha.html">← Vihamielisen median harha — sama juttu on molempien mielestä puolueellinen</a>

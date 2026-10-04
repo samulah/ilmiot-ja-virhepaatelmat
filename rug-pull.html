@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Rug pull — matto vedetään alta — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/rug-pull.html#article",
       "url": "https://www.ilmiöt.fi/rug-pull.html",
       "headline": "Rug pull — matto vedetään alta",
-      "description": "Rug pull on kryptohuijaus, jossa kehittäjät hypettävät tokenin, keräävät sijoittajien rahat ja katoavat — likviditeetti tyhjennetään ja arvo romahtaa.",
+      "description": "Rug pull: kehittäjät katoavat sijoittajien rahojen kanssa. Selitämme kryptohuijauksen mekanismin käytännössä ja varoitusmerkit ennen sijoitusta.",
       "inLanguage": "fi",
       "articleSection": "Huijaukset ja petokset",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Rug pull — matto vedetään alta",
-        "description": "Rug pull on kryptohuijaus, jossa kehittäjät hypettävät tokenin, keräävät sijoittajien rahat ja katoavat — likviditeetti tyhjennetään ja arvo romahtaa.",
+        "name": "Rug pull",
+        "description": "Rug pull: kehittäjät katoavat sijoittajien rahojen kanssa. Selitämme kryptohuijauksen mekanismin käytännössä ja varoitusmerkit ennen sijoitusta.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -824,12 +825,13 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="rug-pull">
 <div class="ilmio-tag">Ilmiö 76</div>
 <h1>Rug pull — matto vedetään alta</h1>
 <p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 6.7.2026</p>
 <p><strong>Rug pull</strong> (englanniksi "matto vedetään jalkojen alta") on kryptomaailman huijaus, jossa kehittäjät luovat tokenin tai NFT-projektin, keräävät hypellä sijoittajien rahat — ja katoavat niiden kanssa. Sijoittajalle jää arvoton merkintä lohkoketjuun; nimensä mukaisesti maailma katoaa jalkojen alta yhdessä transaktiossa.</p>
-<p>Muodot vaihtelevat raakuudeltaan. <strong>Kova rug</strong> on tekninen: kehittäjät tyhjentävät likviditeettipoolin, johon ostajien rahat on vaihdettu, tai sopimukseen on koodattu takaovi — honeypot-sopimus, jossa tokenia voi ostaa muttei myydä, tai rajaton oikeus luoda uusia tokeneita. <strong>Pehmeä rug</strong> on juridisesti liukkaampi: tiimi dumppaa omat tokeninsa huipulla ja hylkää projektin — "emme me kadonneet, projekti vain kuoli". Ero pump-and-dumpiin on omistajuudessa: pumppaaja manipuloi jonkun muun arvopaperia, rug pullissa koko tuote on tekijöiden hallussa alusta loppuun.</p>
+<p>Muodot vaihtelevat raakuudeltaan. <strong>Kova rug</strong> on tekninen: kehittäjät tyhjentävät likviditeettipoolin, johon ostajien rahat on vaihdettu, tai sopimukseen on koodattu takaovi — honeypot-sopimus, jossa tokenia voi ostaa muttei myydä, tai rajaton oikeus luoda uusia tokeneita. <strong>Pehmeä rug</strong> on juridisesti liukkaampi: tiimi dumppaa omat tokeninsa huipulla ja hylkää projektin — "emme me kadonneet, projekti vain kuoli". Ero <a href="pump-and-dump.html">pump-and-dumpiin</a> on omistajuudessa: pumppaaja manipuloi jonkun muun arvopaperia, rug pullissa koko tuote on tekijöiden hallussa alusta loppuun.</p>
 <div class="mermaid">
 flowchart TD
   T["Token + isot lupaukset\n+ ostettu hype: somet,\ninfluensserit, botit"] --&gt; F["FOMO-ostot\nnostavat hintaa"]
@@ -842,7 +844,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Rug pullin elinkaari: hype sisään, likviditeetti ulos — ja sama tiimi uudella tokenilla ensi kuussa.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Tunnettuja tapauksia:</h2>
+<h2 class="laatikko-otsikko" id="tunnettuja-tapauksia">Tunnettuja tapauksia:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Squid Game -token (2021):</strong> tv-sarjan nimeä luvatta lainannut token nousi päivissä tuhansia prosentteja — myynti oli estetty koodissa, ja hinta romahti nollaan minuuteissa kehittäjien kadotessa noin 3,4 miljoonan dollarin kanssa.</li>
 <li><strong>AnubisDAO (2021):</strong> noin 60 miljoonaa dollaria katosi kesken rahoituskierroksen, alle vuorokausi julkaisusta.</li>
@@ -851,10 +853,10 @@ flowchart TD
 </ul>
 </div>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Anonyymi tiimi ilman historiaa. Likviditeettiä ei ole lukittu eikä sopimusta auditoitu — tai "auditointi" on tiimin oma dokumentti. Sopimuksessa on tiimille mint- tai blacklist-oikeudet. Tuotto luvataan varmana ja kiire on kova: "stealth launch", "vain tänään", "seuraava satakertaistuja". Yhteisö on täynnä botteja ja maksettua hypeä, ja influensseri unohtaa mainita palkkionsa. Ja peruslaki: jos projektin ainoa tuote on sen oma token, ostat pelimerkkejä kasinolle, jonka omistaja voi kävellä ulos kassan kanssa.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Anonyymi tiimi ilman historiaa. Likviditeettiä ei ole lukittu eikä sopimusta auditoitu — tai "auditointi" on tiimin oma dokumentti. Sopimuksessa on tiimille mint- tai blacklist-oikeudet. Tuotto luvataan varmana ja kiire on kova: "stealth launch", "vain tänään", "seuraava satakertaistuja". Yhteisö on täynnä botteja ja maksettua hypeä, ja influensseri unohtaa mainita palkkionsa. Ja peruslaki: jos projektin ainoa tuote on sen oma token, ostat pelimerkkejä kasinolle, jonka omistaja voi kävellä ulos kassan kanssa.
 </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Muista myös:</h2> rug pull ei rajoitu kryptoon — sama rakenne toimii kaikkialla, missä rahat kerätään ennen tuotetta ja tekijät voivat kadota: joukkorahoituskampanjoissa, "eksklusiivisissa sijoituskerhoissa" ja peliprojekteissa. Kysymys on aina sama: kuka pitää rahoja hallussaan, ja mikä estää häntä lähtemästä?
+<h2 class="laatikko-otsikko" id="muista-myos">Muista myös:</h2> rug pull ei rajoitu kryptoon — sama rakenne toimii kaikkialla, missä rahat kerätään ennen tuotetta ja tekijät voivat kadota: joukkorahoituskampanjoissa, "eksklusiivisissa sijoituskerhoissa" ja peliprojekteissa. Kysymys on aina sama: kuka pitää rahoja hallussaan, ja mikä estää häntä lähtemästä?
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -910,6 +912,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="toimitusjohtajahuijaus.html">← Toimitusjohtajahuijaus — kiireellinen ja salainen maksu</a>

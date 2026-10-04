@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Firehose of falsehood — valheiden paloletku — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/firehose-of-falsehood.html#article",
       "url": "https://www.ilmiöt.fi/firehose-of-falsehood.html",
       "headline": "Firehose of falsehood — valheiden paloletku",
-      "description": "RAND Corporation dokumentoi vuonna 2016 Venäjän propagandatekniikan, jolle he antoivat nimen Firehose of Falsehood .",
+      "description": "Firehose of falsehood: valheita nopeammin kuin ehdit kumota. Selitämme propagandatekniikan toiminnan käytännössä ja tehokkaimmat vastakeinot.",
       "inLanguage": "fi",
       "articleSection": "Informaatio ja propaganda",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Firehose of falsehood — valheiden paloletku",
-        "description": "RAND Corporation dokumentoi vuonna 2016 Venäjän propagandatekniikan, jolle he antoivat nimen Firehose of Falsehood .",
+        "name": "Firehose of falsehood",
+        "description": "Firehose of falsehood: valheita nopeammin kuin ehdit kumota. Selitämme propagandatekniikan toiminnan käytännössä ja tehokkaimmat vastakeinot.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -824,6 +825,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="firehose-of-falsehood">
 <div class="ilmio-tag">Ilmiö 11</div>
 <h1>Firehose of falsehood — valheiden paloletku</h1>
@@ -851,11 +853,11 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Firehose of falsehood: tavoite ei ole saada ihmisiä uskomaan valheita — vaan saada heidät lopettamaan kaiken uskomisen.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Miksi tämä toimii:</h2> Faktojen tarkistaminen vaatii aikaa ja resursseja. Valheen levittäminen on nopeampaa kuin sen kumoaminen. RAND-tutkijoiden havainto: vaikka yksittäinen väite kumottaisiin, volyymi kokonaisuutena tekee tehtävänsä — yleisö väsyy ja turhautuu.
+<h2 class="laatikko-otsikko" id="miksi-tama-toimii">Miksi tämä toimii:</h2> Faktojen tarkistaminen vaatii aikaa ja resursseja. Valheen levittäminen on nopeampaa kuin sen kumoaminen. RAND-tutkijoiden havainto: vaikka yksittäinen väite kumottaisiin, volyymi kokonaisuutena tekee tehtävänsä — yleisö väsyy ja turhautuu.
     </div>
 <p>Tekniikka ei ole yksinomaan venäläinen — RAND:n analyysi kuvaa Venäjän valtiomediaa, mutta sama rakenne tunnistetaan muissakin konteksteissa: poliittisissa kampanjoissa, yritysten kriisiviestinnässä ja sosiaalisessa mediassa yleisesti. Kun informaatioympäristö on kyllästetty, <em>instituutioihin kohdistuva luottamus heikkenee</em> — ja se hyödyttää niitä, joilla on institutionaalinen valta mutta huono maine.</p>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> RAND suosittelee "älä toista, älä vahvista" -periaatetta: yksittäisten väitteiden kumoaminen voi vahvistaa niitä (ks. <em>backfire effect</em>). Tehokkaampi tapa on rakentaa yleinen medialukutaito ja inokulointipohjainen viestintä — varoittaa tekniikasta etukäteen, ennen kuin se osuu. (Ks. <a href="inokulointiteoria.html">Inokulointiteoria</a>.)
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> RAND suosittelee "älä toista, älä vahvista" -periaatetta: yksittäisten väitteiden kumoaminen voi vahvistaa niitä (ks. <em>backfire effect</em>). Tehokkaampi tapa on rakentaa yleinen medialukutaito ja inokulointipohjainen viestintä — varoittaa tekniikasta etukäteen, ennen kuin se osuu. (Ks. <a href="inokulointiteoria.html">Inokulointiteoria</a>.)
     </div>
 <p style="margin-bottom:0;"><a href="firehose-of-falsehood.html">→ Lue lisää: Firehose of Falsehood omalla sivullaan</a> — käytännön esimerkit, miten tekniikka näkyy somessa ja miten taistella vastaan omalla nimellä tai anonyymisti.</p>
 <div class="lue-lisaa">
@@ -938,6 +940,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="astroturf.html">← Astroturf — keinotekoinen kansanliike</a>

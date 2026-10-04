@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Overton-ikkuna — mikä on poliittisesti mahdollista | Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -708,14 +709,14 @@
   <!-- SEO -->
   <meta name="description" content="Overton-ikkuna määrää, mitkä poliittiset ideat ovat hyväksyttäviä. Selitämme miten ikkunaa siirretään käytännössä ja miten tunnistat siirtoyrityksen.">
   <link rel="canonical" href="https://www.ilmiöt.fi/overton-ikkuna.html">
-  <meta property="og:title" content="Overton-ikkuna — Ilmiöitä">
+  <meta property="og:title" content="Overton-ikkuna — mikä on poliittisesti mahdollista | Ilmiöitä">
   <meta property="og:description" content="Overton-ikkuna määrää, mitkä poliittiset ideat ovat hyväksyttäviä. Selitämme miten ikkunaa siirretään käytännössä ja miten tunnistat siirtoyrityksen.">
   <meta property="og:url" content="https://www.ilmiöt.fi/overton-ikkuna.html">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="fi_FI">
   <meta property="og:site_name" content="Ilmiöitä — Miten valta toimii">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Overton-ikkuna — Ilmiöitä">
+  <meta name="twitter:title" content="Overton-ikkuna — mikä on poliittisesti mahdollista | Ilmiöitä">
   <meta name="twitter:description" content="Overton-ikkuna määrää, mitkä poliittiset ideat ovat hyväksyttäviä. Selitämme miten ikkunaa siirretään käytännössä ja miten tunnistat siirtoyrityksen.">
   <meta property="og:image" content="https://www.ilmiöt.fi/og/brand.png">
   <meta property="og:image:width" content="1200">
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/overton-ikkuna.html#article",
       "url": "https://www.ilmiöt.fi/overton-ikkuna.html",
       "headline": "Overton-ikkuna",
-      "description": "Overton-ikkuna kuvaa sitä kaistaa poliittisia ideoita, joita pidetään yhteiskunnallisesti hyväksyttävinä tietyllä hetkellä.",
+      "description": "Overton-ikkuna määrää, mitkä poliittiset ideat ovat hyväksyttäviä. Selitämme miten ikkunaa siirretään käytännössä ja miten tunnistat siirtoyrityksen.",
       "inLanguage": "fi",
       "articleSection": "Vallan rakenteet",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
         "name": "Overton-ikkuna",
-        "description": "Overton-ikkuna kuvaa sitä kaistaa poliittisia ideoita, joita pidetään yhteiskunnallisesti hyväksyttävinä tietyllä hetkellä.",
+        "description": "Overton-ikkuna määrää, mitkä poliittiset ideat ovat hyväksyttäviä. Selitämme miten ikkunaa siirretään käytännössä ja miten tunnistat siirtoyrityksen.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -799,29 +800,6 @@
       },
       "datePublished": "2026-06-19",
       "dateModified": "2026-08-04"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.ilmiöt.fi/overton-ikkuna.html#faq",
-      "inLanguage": "fi",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Kuka oli Joseph Overton?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yhdysvaltalainen ajatushautomovaikuttaja, joka kehitti mallin 1990-luvulla. Hänen havaintonsa oli, että poliitikko ei voi valita mitä tahansa kantaa — vain ikkunan sisällä olevia — joten vaikuttaminen kohdistuu ikkunaan itseensä."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Miten Overton-ikkunaa siirretään?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Esittämällä toistuvasti kantoja, jotka ovat nykyisen ikkunan ulkoreunalla tai sen ulkopuolella. Ääripää tekee sitä lähimpänä olevasta kannasta maltillisen, jolloin koko kaista siirtyy vähitellen samaan suuntaan."
-          }
-        }
-      ]
     }
   ]
 }
@@ -847,13 +825,14 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="overton-ikkuna">
 <div class="ilmio-tag">Ilmiö 3</div>
 <h1>Overton-ikkuna</h1>
 <p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 4.8.2026</p>
 <p>Overton-ikkuna kuvaa sitä kaistaa poliittisia ideoita, joita pidetään yhteiskunnallisesti hyväksyttävinä tietyllä hetkellä. Ikkunan ulkopuolella olevat ideat ovat "radikaaleja", "hulluja" tai "ajattelemattomia" — ei siksi, että ne ovat huonoja, vaan siksi, että ne ovat vielä normin ulkopuolella.</p>
 <div class="infolaatikko vastauslohko">
-<h2 class="laatikko-otsikko">Mitä Overton-ikkuna tarkoittaa?</h2>
+<h2 class="laatikko-otsikko" id="mita-overton-ikkuna-tarkoittaa">Mitä Overton-ikkuna tarkoittaa?</h2>
 <p style="margin:0.4em 0 0;"><strong>Overton-ikkuna</strong> kuvaa sitä, mitä poliitikko voi sanoa menettämättä uskottavuuttaan — ei sitä, mikä on oikein tai kannatettavaa. Ikkunan sisällä oleva kanta on vaalikelpoinen, ulkopuolella oleva ei. Siksi vaikuttaminen kohdistuu usein ikkunaan itseensä.</p>
 </div>
 <p>Keskeinen havainto: ikkunaa voidaan <strong>tietoisesti siirtää</strong>. Edistämällä äärimmäisiä kantoja — vaikka ne eivät koskaan tulisi politiikaksi — voidaan tehdä aiemmin radikaalista näkemyksestä "kohtuullinen kompromissi".</p>
@@ -875,14 +854,14 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Overton-ikkuna: ideat liukuvat tasolta toiselle — ja ikkunan sijaintia voidaan manipuloida.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Siirtämisen mekaniikka:</h2> Ääriliike ei tarvitse voittaa vaaleja ollakseen tehokas. Riittää, että se tekee aiemmin radikaalista kannasta "maltillisen" vaihtoehdon äärimmäisyyteen verrattuna. Maltillinen oikeisto näyttää hyväksyttävältä, kun sen rinnalla on vielä äärimmäisempi vaihtoehto.
+<h2 class="laatikko-otsikko" id="siirtamisen-mekaniikka">Siirtämisen mekaniikka:</h2> Ääriliike ei tarvitse voittaa vaaleja ollakseen tehokas. Riittää, että se tekee aiemmin radikaalista kannasta "maltillisen" vaihtoehdon äärimmäisyyteen verrattuna. Maltillinen oikeisto näyttää hyväksyttävältä, kun sen rinnalla on vielä äärimmäisempi vaihtoehto.
     </div>
 <p>Joseph Overton kehitti käsitteen 1990-luvulla Mackinac Center for Public Policy -ajatushautomossa. Alun perin neutraali analyysityökalu — mutta myöhemmin myös strategiseksi ohjenuoraksi tunnustettu: jos haluat siirtää politiikkaa tiettyyn suuntaan, tue myös sen suunnan äärimmäisempiä kantoja, vaikka et niistä itse pitäisikään.</p>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Käytännön seuraus:</h2> Mediahuomio ääriliikkeille — myös kriittinen — voi siirtää ikkunaa heidän suuntaansa. Äärikannan raportointi normalisoi sen osana poliittista kenttää, vaikka tarkoitus olisi ollut tuomita se.
+<h2 class="laatikko-otsikko" id="kaytannon-seuraus">Käytännön seuraus:</h2> Mediahuomio ääriliikkeille — myös kriittinen — voi siirtää ikkunaa heidän suuntaansa. Äärikannan raportointi normalisoi sen osana poliittista kenttää, vaikka tarkoitus olisi ollut tuomita se.
     </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Ikkunan siirron tunnistaa vertailusta: ehdotus näyttää maltilliselta vain vielä äärimmäisemmän rinnalla. Arvioi ehdotus sen omilla seurauksilla, älä ääripäiden rinnalla — ja kysy: olisinko hyväksynyt tämän viisi vuotta sitten? Jos en, muuttuiko asia vai ikkuna?
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Ikkunan siirron tunnistaa vertailusta: ehdotus näyttää maltilliselta vain vielä äärimmäisemmän rinnalla. Arvioi ehdotus sen omilla seurauksilla, älä ääripäiden rinnalla — ja kysy: olisinko hyväksynyt tämän viisi vuotta sitten? Jos en, muuttuiko asia vai ikkuna?
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -948,6 +927,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="starve-the-beast.html">← Starve the beast</a>

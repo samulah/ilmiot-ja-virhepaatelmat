@@ -1,346 +1,267 @@
-# Full SEO Audit — ilmiöt.fi
+# SEO-auditointi — ilmiöt.fi
 
-**Audited:** 2026-07-25 · **URL:** https://www.ilmiöt.fi/ (`xn--ilmit-mua.fi`)
-**Scope:** 111 live URLs crawled (100% of sitemap), all returning 200.
-**Previous audit:** 2026-07-05 — 84/100
+**Tehty:** 4.10.2026 · **URL:** https://www.ilmiöt.fi/ (`xn--ilmit-mua.fi`)
+**Laajuus:** 185 live-URL:ää haettu (184 sitemapista + `/index.html`), kaikki 200. Live on md5-identtinen `main`-haaran HEADin kanssa kaikilla 185 sivulla.
+**Edellinen auditointi:** 25.7.2026 — 80/100 (111 sivua)
 
-## SEO Health Score: **80 / 100**
+## Kokonaispisteet: **72 / 100**
 
-| Category | Weight | Score | Weighted |
-|---|---|---|---|
-| Technical SEO | 22% | 83 | 18.3 |
-| Content Quality | 23% | 76 | 17.5 |
-| On-Page SEO | 20% | 78 | 15.6 |
-| Schema / Structured Data | 10% | 92 | 9.2 |
-| Performance (CWV) | 10% | 74 | 7.4 |
-| AI Search Readiness | 10% | 82 | 8.2 |
-| Images | 5% | 85 | 4.3 |
-| **Total** | | | **80.4** |
+| Osa-alue | Paino | Pisteet | Ed. (25.7.) | Painotettu |
+|---|---|---|---|---|
+| Tekninen SEO | 22 % | 78 | 83 | 17,2 |
+| Sisällön laatu | 23 % | 72 | 76 | 16,6 |
+| On-page | 20 % | 66 | 78 | 13,2 |
+| Schema | 10 % | 80 | 92 | 8,0 |
+| Suorituskyky | 10 % | 76 | 74 | 7,6 |
+| Tekoälyhaku (GEO) | 10 % | 66 | 82 | 6,6 |
+| Kuvat | 5 % | 60 | 85 | 3,0 |
+| **Yhteensä** | | | **80** | **72,1** |
 
-> **On the score vs. the prior 84/100:** this is not a regression. The prior run scored Content on raw text extraction; this run measured article *prose* separately from boilerplate, which revealed that median body copy is 269 words rather than the 462 a naive extraction reports. Several real defects were also fixed since then (see Progress). Treat 80 as a re-baselined number, not a drop.
+**Miksi pisteet laskivat kahdeksalla.** Lasku jakautuu kahteen eri syyhyn, eikä niitä pidä sekoittaa:
 
-**Business type:** Independent Finnish-language reference/publisher site — a glossary of 109 social, cognitive and organisational phenomena. Non-commercial, no transactions, no local presence. The relevant playbook is publisher/knowledge-base SEO: entity coverage, passage citability, and E-E-A-T — not conversion or local signals.
+- **Todellinen heikennys:** kahden uusimman erän (4.9. ja 3.10.) kaikki 26 sivua julkaistiin väärällä `<title>`-tagilla. Tämä yksin selittää suurimman osan on-page-pisteiden pudotuksesta.
+- **Tarkempi mittaus:** tällä kierroksella mitattiin asioita, joita heinäkuussa ei mitattu. Layout-siirtymä mitattiin labrassa ensimmäistä kertaa, jakokuvan teksti luettiin, hakemistolistaus kokeiltiin, lähdelinkit laskettiin ja FAQ-merkintöjen teksti verrattiin sivun näkyvään tekstiin. Lisäksi Google lopetti FAQ-rikastetulokset 7.5.2026, mikä vie arvon 68 sivun merkinnältä. Nämä viat olivat pääosin olemassa jo heinäkuussa.
 
----
-
-## Executive Summary
-
-This is a well-built, carefully maintained site. There are **no Critical issues** — nothing blocks indexing, nothing risks a penalty, and the whole sitemap resolves cleanly. Security headers, structured data, compression and editorial quality are all above what most independent sites achieve.
-
-The remaining upside is concentrated in two places: **canonical host discipline** (four URL variants currently serve identical 200s) and **passage structure** (97 of 111 pages have no subheadings in the body, which is the main thing standing between this content and featured snippets / AI citations).
-
-### Top 5 issues
-
-1. **Four host/protocol variants all serve 200 with no redirect** — `http://`, `http://www.`, `https://www.` and `https://` apex are all live. Canonical tags mitigate the duplication, but HTTP is served without an HTTPS redirect.
-2. **97 of 111 pages have only two headings** (the `h1` and "Liittyvät ilmiöt"). The two most valuable sections — *Ilmiö arjessa* and *Tunnistaminen ja vastakeinot* — are `<strong>` inside a `<div>`, not headings.
-3. **`llms.txt` is 3 pages out of date** — it claims 109 phenomena but lists 106, omitting `1-prosentin-saanto`, `aanekas-vahemmisto` and `pareto-periaate`.
-4. **`sitemap.xml` freshness signals are inconsistent** — 93 of 111 `<lastmod>` values disagree with the schema `dateModified`, and the most recently edited page (`bikeshedding.html`) is stale in the sitemap.
-5. **929 KB of third-party JavaScript** (`mermaid@11`) loads on 87 article pages from `cdn.jsdelivr.net` to render diagrams that never change.
-
-### Top 5 quick wins
-
-1. Add a canonical-host redirect rule (`.htaccess`) — one block, resolves issue 1.
-2. Re-run the sitemap + `llms.txt` build and commit — resolves issues 3 and 4.
-3. Promote the two box labels to `<h2>` in the article template — resolves issue 2 across ~97 pages in one edit.
-4. Add `defer` to `chart.js` on the 3 finance pages — it currently sits in `<head>` un-deferred and blocks render.
-5. Fix the live typo "Katkais**tt**u y-akseli" in `tilastoilla-valehtelu.html`.
+**Sivustotyyppi:** itsenäinen suomenkielinen tietopankki (julkaisija/hakuteos). Ei kaupallinen, ei paikallinen. Sovellettava ohjeisto on julkaisijan SEO: käsitekattavuus, kappaletason siteerattavuus ja luotettavuussignaalit.
 
 ---
 
-## Progress since the 2026-07-05 audit
+## Yhteenveto
 
-| # | Prior item | Status |
+Indeksointia estäviä tai rangaistusriskiä aiheuttavia vikoja ei ole. Kaikki sivut vastaavat 200, kanoniset osoitteet ovat kunnossa, rikkinäisiä sisäisiä linkkejä ei ole ja jokainen sivu on yhden klikkauksen päässä etusivulta. Edellisen auditin pahin ongelma, neljä rinnakkaista isäntänimeä, on korjattu.
+
+### Viisi tärkeintä ongelmaa
+
+1. **26 artikkelilla on väärä `<title>`.** Kaikki 17 trollaussivua ja 9 Roolit ja valtapelit -sivua kantavat otsikkoa "DARVO — manipulaatiotaktiikka suomeksi | Ilmiöitä". Sama otsikko on siis 27 sivulla. `h1`, metakuvaus, `og:title` ja schema ovat oikein, ja vika on myös repossa.
+2. **Fontit aiheuttavat layout-siirtymän ja latautuvat moneen kertaan.** Labrassa mobiilin CLS on etusivulla 0,21 ja artikkelissa 0,19 (hyvän raja 0,1); kun fontit estetään, CLS on 0. Artikkeli hakee 7 fonttitiedostoa (206 kt), joista noin 95 kt on saman tiedoston uudelleenlatausta.
+3. **Jakokuva on vanhentunut ja yhteinen kaikille.** `og/brand.png` sanoo "68 yhteiskunnallista ilmiötä", ja se on kaikkien 185 sivun `og:image`. Sivukohtaiset kuvat (20 kpl) ovat valmiina paikallisesti mutta eivät palvelimella.
+4. **Palvelin näyttää hakemistolistaukset ja sisäiset tiedostot.** `/scripts/`, `/kategoriat/`, `/pelidata/`, `/data/`, `/og/`, `/fonts/` ja `/js/` listautuvat. Julkisia ovat mm. `GSC-AUDIT-2026-08-13.md` (oikeaa Search Console -dataa), `suosio_kooste.md` (liikennelukuja, gitignoressa mutta palvelimella), `CLAUDE.md` ja kaikki skriptit. Hakusijoituksiin tämä ei vaikuta; kyse on tietovuodosta.
+5. **Luotettavuuden perusrakenteet puuttuvat.** `tietoa.html`:ssä ei ole yhteystietoa, virheilmoituskanavaa eikä lähde- tai korjauskäytäntöä. 131 artikkelissa 165:stä jokainen leipätekstin ulkoinen linkki vie Wikipediaan tai linkkiä ei ole. `ponzi-pyramidi.html`:ssä on laskuvirhe.
+
+### Viisi nopeinta korjausta
+
+1. Korjaa 26 otsikkoa (ehdotukset `ACTION-PLAN.md`:ssä) ja lisää julkaisuskriptiin tarkistus, joka kaatuu, jos `<title>` ei sisällä `h1`:n termiä.
+2. Yksi `.htaccess`-kierros: `Options -Indexes`, sisäisten tiedostotyyppien esto, `data/suosio.js`:lle `no-cache`, CSP:n vanhentuneet isännät pois, oma 404-sivu.
+3. Generoi `og/brand.png` uudelleen ilman lukumäärää ja vie 20 valmista sivukohtaista jakokuvaa palvelimelle (kuvat ensin, sitten HTML).
+4. Sisältökorjaukset, joissa on yksi oikea vastaus: Ponzi-laskelma (6 tasoa → 8), `tekoälytauhka` ja `tekoälymoska` AI slop -sivulle, kolme vanhentunutta lukua kategoriaotsikoissa ja etusivun "139 ilmiötä".
+5. Yksi `@font-face` per fonttiperhe ja `preload` kahdelle ensimmäisen näkymän fontille.
+
+---
+
+## Edistyminen 25.7.2026 auditista
+
+| Kohta | Tila |
+|---|---|
+| Neljä isäntä-/protokollavarianttia palautti 200 | ✅ Korjattu — `http://`, `http://www.` ja apex ohjautuvat 301:llä yhdellä hypyllä |
+| 97 sivulla vain kaksi otsikkoa (laatikoiden otsikot olivat `<strong>`) | ✅ Korjattu — jokaisella artikkelilla on vähintään yksi `h2` leipätekstissä, 154:llä vähintään kaksi |
+| `llms.txt` kolme sivua jäljessä | ✅ Korjattu — 165 artikkelia ja 15 kategoriaa, ei vanhentuneita polkuja |
+| Sitemapin `lastmod` ristiriidassa 93 sivulla | ✅ Korjattu — 0 ristiriitaa |
+| 929 kt Mermaid-skripti CDN:stä | ◐ Osittain — itsehostattu ja laiska lataus, mutta 914 kt latautuu yhä (ks. Suorituskyky) |
+| `chart.js` ilman `defer`-attribuuttia | ✅ Korjattu |
+| Sivukohtaiset jakokuvat | ◐ 20 tehty paikallisesti, ei julkaistu |
+| `SearchAction` | — Ei enää ajankohtainen; Google poisti sivustohakukentän hakutuloksista |
+
+---
+
+## 1. Tekninen SEO — 78
+
+**Kunnossa.** 185/185 vastaa 200. Jokainen kanoninen osoite viittaa itseensä. `noindex`-sivuja ei ole. Sisäisiä linkkejä on 3 262, joista yksikään ei ole rikki, eikä orposivuja ole. Isäntäohjaukset toimivat yhdellä hypyllä. HSTS, `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy` ja `Permissions-Policy` ovat paikallaan. HTTP/2 ja brotli ovat käytössä, palvelimen vasteaika on 44–62 ms. Etusivun kaikki 165 korttia ja 15 kategoriaa ovat tavallisia linkkejä raaka-HTML:ssä, joten mikään indeksoitava ei riipu JavaScriptistä.
+
+**Löydökset**
+
+| Vakavuus | Löydös | Näyttö |
 |---|---|---|
-| 1 | **Deploy the backlog** (was Critical) | ✅ **Done** — live matches the repo byte-for-byte on all 111 pages (md5-verified) |
-| 5 | Strengthen thin pages | ✅ **Largely done** — pages under 320 total words fell from 23 → 4 |
-| 10 | Differentiate `og:title` from `og:site_name`; category breadcrumb node | ✅ **Done** — breadcrumb position 2 now points to `index.html#<category>` |
-| 3 | `defer` on `chart.js` | ❌ Not done — still in `<head>`, un-deferred, on 3 pages |
-| 2 | Punycode host standardisation | ❌ Not done — see the reassessment below |
-| 4 | Per-article OG images | ❌ Not done — all 111 pages share `/og/brand.png`; `/og/<slug>.png` still 404s |
-| 6 | `SearchAction` + `?q=` deep linking | ❌ Not done |
-| 7 | Trim over-length titles | ❌ Regressed — titles over 65 chars went 21 → 32 |
-| 8 | Tighten CSP | ❌ Not done — `fonts.googleapis.com` / `fonts.gstatic.com` still allowed but unused (0 pages reference them) |
-| 9 | Branded 404 | ❌ Not done — still the 1,251-byte stock LiteSpeed page (status code is correct) |
-| 11 | Per-passage anchors / FAQ blocks | ❌ Not done — 1 `FAQPage` across the site |
-| 12 | GSC / Bing verification | ⚠️ Unverified — no API credentials configured locally |
+| Korkea | 27 sivulla sama `<title>` | ks. On-page |
+| Keskitaso | Hakemistolistaus päällä | `Index of /scripts/` ym. seitsemässä hakemistossa |
+| Keskitaso | Sisäiset tiedostot julkisia | `/GSC-AUDIT-2026-08-13.md`, `/suosio_kooste.md`, `/CLAUDE.md`, `/MUUTOSLOKI.md`, `/scripts/paivita_suosio.py`, `/.suosio.env.malli`, `/pelidata/TYYLI.md` → 200. `/.suosio.env`, `/data/.viikko-historia.json` → 404 ja `/.git/HEAD`, `/.htaccess` → 403, eli salaisuudet eivät vuoda |
+| Keskitaso | `data/suosio.js` välimuistissa 7 vrk | `Cache-Control: public, max-age=604800`, ei versiomerkkiä. Tiedosto generoidaan joka yö, ja etusivu piilottaa lohkot, jos data on yli tuoreusrajan — palaava kävijä voi siis nähdä vanhan datan tai tyhjät lohkot |
+| Keskitaso | `/index.html` on kaksoiskappale | palauttaa 200, kanoninen osoittaa `/`:ään, mutta 183 sivua linkittää `index.html`:ään |
+| Keskitaso | CSP sallii isäntiä, joita ei käytetä | `cdn.jsdelivr.net`, `fonts.googleapis.com`, `fonts.gstatic.com`; lisäksi `'unsafe-inline'`, ei `base-uri`-, `form-action`- eikä `object-src`-sääntöä |
+| Matala | 404-sivu on LiteSpeedin oletus | englanninkielinen, ei linkkiä sivustolle, ei viewport-metaa (`screenshots/404-mobile.png`) |
+| Matala | `/random.html` on livenä tyhjä | 200 ja 0 tavua; repossa 2 650 tavua vanhalla 109 ilmiön listalla. Mikään ei linkitä siihen |
+| Matala | Sitemapissa `<priority>` ja `<changefreq>` | Google ohittaa molemmat |
+| Matala | `build_sitemap.py` voi pudottaa sivuja hiljaa | korttiregex vaatii täsmälleen `class="hub-kortti"`, eikä tulosta verrata tiedostolistaan. Tulos on tänään oikein (165/165) |
+| Matala | HTML:llä ei ole `Cache-Control`-otsaketta | vain `Last-Modified`; ehdollinen haku palauttaa silti 304 |
+| Matala | `style.css` kahdella versiomerkillä | 162 sivua `?v=20260725`, 18 sivua `?v=20260727`, sama tiedosto. `fonts.css`, `mermaid.min.js` ja `search-index.js` ovat versioimattomia |
+| Matala | `favicon.ico` → 404 | vain `favicon.svg`; ei `apple-touch-icon`ia |
 
-**The deploy gap is closed.** That was the previous audit's Critical item and the long-running failure mode for this project. All 111 live pages are byte-identical to `main`.
+**Unicode vai punycode.** Kanoniset osoitteet, `og:url`, schema, sitemap ja `llms.txt` käyttävät kaikki muotoa `www.ilmiöt.fi`; vain `robots.txt`:n `Sitemap:`-rivi ja palvelimen ohjaukset käyttävät punycodea. Muoto on johdonmukainen, ja sivut indeksoituvat Search Consolen mukaan, joten muutosta ei tarvita. Varmista kuitenkin Search Consolen Sitemaps-raportista, että löydettyjen URL:ien määrä on 184.
 
-### Reassessing the punycode item
-
-The prior audit rated this **High**. I'd downgrade it to **Medium**, and the reasoning matters more than the label:
-
-- Every signal on the site consistently uses the UTF-8 form `https://www.ilmiöt.fi/` — canonicals (111/111), `og:url`, all JSON-LD `@id`/`url`, all 111 sitemap `<loc>` entries, `llms.txt`, and the `robots.txt` `Sitemap:` line. There is no *mixing*, which is the failure mode that actually splits signals.
-- Google documents support for IDNs and normalises UTF-8 URLs to punycode on its side.
-- So the practical risk is low. What remains is genuine but narrower: the sitemaps.org spec and RFC 3986 both call for ASCII URIs, and third-party tooling (validators, log processors, some crawlers) handles raw non-ASCII inconsistently.
-
-Worth doing as hygiene, and it must be done *all at once* — a half-migration is worse than either end state.
+**IndexNow** ei ole käytössä. Google ei käytä sitä; Bingille (ja sitä kautta Copilotille) se kannattaa lisätä vasta, kun Bing Webmaster Tools on vahvistettu.
 
 ---
 
-## Technical SEO — 83/100
+## 2. Sisällön laatu — 72
 
-### Working well
+Agentti luki noin 57 artikkelia (41 kokonaan). Osapisteet: E-E-A-T 56, syvyys 74, tarkkuus 80, rakenne ja luettavuus 82, tuoreus 80.
 
-- **HTTPS everywhere**, valid cert, HTTP/2 with HTTP/3 advertised via `alt-svc`.
-- **A genuinely complete security header set** — HSTS (`max-age=31536000; includeSubDomains`), CSP, `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`, `Permissions-Policy`. This is better than most commercial sites.
-- **Brotli** on HTML, CSS and JS.
-- **Correct 404s** — unknown paths and wrong-case paths both return a true 404, not a soft 200.
-- **Canonical on 111/111 pages**, all self-referential and consistent.
-- **Clean crawl**: 111/111 URLs returned 200, zero broken internal links, zero orphan pages.
-- **Utility pages correctly excluded** — `random.html` (`noindex, follow`) and `artikkelein_sisaltolustaus_not_article.html` (`noindex,nofollow`) are out of the sitemap and out of the index.
+**Vahvuudet.** Tekstit ovat täsmällisiä: nimiä, vuosilukuja ja lukuja. Rakenne on yhtenäinen (määritelmä, mekanismi, esimerkki, vastakeino), virkkeet lyhyitä (mediaani 12,8 sanaa). Kopioitua tekstiä ei ole; suurin neljän sanan jaksojen päällekkäisyys kahden sivun välillä on 10,8 %. Kategoriasivuilla on omaa proosaa 366–766 sanaa. Näkyvä "Päivitetty"-päivä vastaa schemaa kaikilla 165 sivulla.
 
-### Issues
+**Löydökset**
 
-**No canonical host enforcement (High).** All four variants return 200 with zero redirects:
-
-```
-http://xn--ilmit-mua.fi/        → 200   (no HTTPS redirect)
-http://www.xn--ilmit-mua.fi/    → 200
-https://www.xn--ilmit-mua.fi/   → 200
-https://xn--ilmit-mua.fi/       → 200
-```
-
-The canonical tag points to the `www` host, so Google will very likely consolidate correctly — this is why it's High and not Critical. But serving plain HTTP without a redirect is the part that matters: HSTS only protects a visitor who has *already* completed one HTTPS request, so first-time visitors and crawlers can be served over unencrypted HTTP. Verified with `--max-redirs 0`: all four return `200`, no `Location` header, and plain HTTP serves the complete homepage (120 hub cards, correct title).
-
-**Root cause confirmed: the redirect rule targets the wrong domain.** The server's `.htaccess` does contain a canonical-host block, and its comment correctly says "force HTTPS + www on www.ilmiöt.fi" — but the rules underneath match and redirect to **`ilmioita.fi`**, a domain this site does not use:
-
-```apache
-RewriteCond %{HTTP_HOST} ^ilmioita\.fi$ [OR]
-RewriteCond %{HTTP_HOST} ^www\.ilmioita\.fi$
-RewriteRule ^(.*)$ "https\:\/\/www\.ilmioita\.fi\/$1" [R=301,L]
-```
-
-The site is served on `xn--ilmit-mua.fi`, so neither condition ever matches and the rule is dead code — which is exactly why all four variants return 200. Had it matched, it would have redirected to the wrong domain entirely. The comment documents the intent; the code does something else. `.htaccess` was also absent from the repo, so this was invisible to review — it should be version-controlled as part of the fix.
-
-**Sitemap freshness is inconsistent (Medium).** 93 of 111 `<lastmod>` values disagree with the page's own schema `dateModified`:
-
-| Page | sitemap `<lastmod>` | schema `dateModified` |
+| Vakavuus | Löydös | Näyttö |
 |---|---|---|
-| `argumenttitulva.html` | 2026-07-13 | 2026-06-19 |
-| `bikeshedding.html` | 2026-07-13 | **2026-07-21** |
-| `1-prosentin-saanto.html` | 2026-07-21 | 2026-07-14 |
+| Korkea | Ei luotettavuuden perusrakenteita | `tietoa.html` (223 sanaa): ei yhteystietoa, ei virheilmoituskanavaa, ei lähde- tai korjauskäytäntöä. Johdanto luettelee 11 teemaa 15:stä (puuttuvat media, tilastot, roolit, trollaus) |
+| Korkea | Laskuvirhe | `ponzi-pyramidi.html`: "6 tasoa jos jokainen värvää 6 uutta → > 2 milj." Oikea luku kuudella tasolla on 46 656 (kertymä noin 56 000); 2 miljoonaa ylittyy 8. tasolla. "13 tasoa ylittää maapallon väkiluvun" pitää paikkansa |
+| Korkea | Lähteet nojaavat Wikipediaan | 126 artikkelissa kaikki leipätekstin ulkoiset linkit ovat Wikipediaan, 5:ssä linkkejä ei ole. 163 linkkiä 201:stä vie `en.wikipedia.org`iin. Tutkimukset nimetään mutta ei linkitetä |
+| Korkea | Huijaussivuilta puuttuu "jos olet jo maksanut" | `pig-butchering`, `ennakkomaksuhuijaus`, `ponzi-pyramidi`, `pump-and-dump` (189–195 sanaa): ei toimintaohjetta uhrille eikä nimettyä suomalaista kanavaa. Sama koskee `no-contact`-, `harmaa-kivi`- ja `gaslighting`-sivuja |
+| Keskitaso | Ehdottomia väitteitä | `tekoalypsykoosi`: "eikä tekoäly aiheuta psykoosia" on kategorinen kiisto aiheesta, josta näyttö on kesken. `houkutinvaihtoehto` esittää Arielyn koeasetelman The Economistin tilaustuloksena |
+| Keskitaso | Vastakeino-lupaus | 16 artikkelilta puuttuu "vastakeinot"-otsikko. Näistä 13:ssa sisältö on olemassa toisella nimellä ("Työntekijälle:", "Hakijalle:"); kolmessa se on heikko: `parasosiaalinen-suhde`, `strateginen-osaamattomuus`, `yhdeksanyhdeksan` |
+| Keskitaso | Missä 260 sanan normi maksaa | huijaussivut (yllä) sekä `hippo-efekti`, `scope-creep`, `door-in-the-face` ja `houkutinvaihtoehto`, joissa alkuperä jää ohueksi. Tilasto- ja trollaussivut ovat lyhyitä mutta täydellisiä |
+| Keskitaso | Mallipohjan jälki | 87 metakuvauksessa "Selitämme", 28 sivulla "…suomeksi?"-`h2`, 35 sivua päättyy samaan pelikappaleeseen (vain termi vaihtuu) |
+| Matala | Kieli | "Konsensus fetissi" (yhdyssana erikseen `h1`:ssä ja titlessä); `kafka-ilmio` käyttää samasta kirjasta nimiä *Oikeudenkäynti* ja *Oikeusjuttu*; `hajota-hallitse`n schema-otsikossa "—divide" ilman välilyöntiä |
+| Matala | Väärä linkkikohde | `bait-and-switch.html`: "uponneiden kustannusten" vie `korkokierre.html`:ään, pitäisi `sunk-cost-harha.html`:ään |
 
-`bikeshedding.html` is the tell: it was edited on 2026-07-21 (commit `28d5e5a`) but the sitemap still reports 2026-07-13. The sitemap is not being regenerated as part of the content workflow, so it now understates freshness on the newest edit and overstates it on 42 older pages.
-
-**`robots.txt` sitemap URL is non-ASCII (Low).** The directive reads `Sitemap: https://www.ilmiöt.fi/sitemap.xml`. RFC 9309 expects an ASCII URI here; this is the one place where punycode is worth using regardless of what the rest of the site does, because `robots.txt` parsers are the least forgiving consumers.
-
-**No `preconnect` to `cdn.jsdelivr.net` (Low)** despite 89 pages loading from it.
+Nimimerkki voi kantaa asiantuntemusta työn laadun kautta, ja tämä sivusto tekee sen. Se ei voi kantaa luottamusta, ellei *sivusto* tarjoa sitä, mitä henkilö ei tarjoa: tapaa ottaa yhteyttä, tapaa ilmoittaa virheestä ja kuvausta siitä, miten tekstit syntyvät.
 
 ---
 
-## Content Quality — 76/100
+## 3. On-page — 66
 
-### Working well
-
-- **Meta descriptions are excellent.** 111/111 present, 111/111 unique, all 120–172 characters, all hand-written with a consistent "what it is → what we explain" structure. Only `index.html` (172) exceeds the ~160-char display budget. This is the single best-executed area of the site.
-- **E-E-A-T signals are strong for an independent site:** bylines on 110/111 pages, a real author entity (`Ilmiömies`) with a `Person` node and an about page, visible "Päivitetty" dates matching schema on 110/111 pages, and sourcing on 109/111 pages (102 cite books, 109 link external references).
-- **No duplicate content** — zero duplicate titles, descriptions or canonical targets.
-- **Genuinely differentiated angle.** Every article ends with *Tunnistaminen ja vastakeinot*. A glossary that tells you what to *do* about the phenomenon is materially more useful than the Wikipedia entry it links to, and that is the site's real competitive moat.
-
-### Issues
-
-**Body copy is thinner than it first appears (Medium).** Raw text extraction reports a median of 462 words, but that includes the sources list, related-phenomena cards, navigation and footer. Measuring article prose only:
-
-| Metric | Article prose |
+| Mittari | Arvo |
 |---|---|
-| Median | **269 words** |
-| Minimum | 152 (`astroturf.html`) |
-| Maximum | 575 |
-| Under 300 words | **63 of 109** |
+| Väärä `<title>` | 26 sivua (27 jakaa saman otsikon) |
+| Otsikon pituus | mediaani 59, maksimi 90; 82 sivua yli 60 merkkiä, joista 51 mahtuisi ilman brändipäätettä |
+| Brändipääte | 129 sivua `— Ilmiöitä`, 56 sivua `\| Ilmiöitä` |
+| Metakuvaus | mediaani 144 merkkiä; 8 yli 160; ei puuttuvia, ei kaksoiskappaleita |
+| `h1` | täsmälleen yksi joka sivulla |
+| Kysymysmuotoinen `h2` | 68 artikkelilla; 97:llä ei |
+| Otsikoiden `id` | 0 / 598 `h2`:sta |
+| `<main>` / `<article>` | ei yhdelläkään sivulla |
 
-Thinnest: `astroturf` (152), `scope-creep` (157), `hippo-efekti` (159), `pinta-alaharha` (161), `door-in-the-face` (167), `ponzi-pyramidi` (170), `pump-and-dump` (170), `darvo` (176).
+**Väärät otsikot.** Luonnokset on tehty `darvo.html`:n pohjalta, ja `<title>` jäi vaihtamatta. Oikeat otsikot ovat sivujen `og:title`-kentissä, mutta niitä ei pidä kopioida sellaisenaan: yhdeksän niistä käyttää muotoa "— mitä se tarkoittaa", joka peruttiin 13.8., koska se laski klikkausprosenttia, ja kolme on 75–81 merkkiä pitkiä. Ehdotukset kaikille 26:lle ovat toimenpidelistassa.
 
-Concision is a legitimate editorial choice for a glossary and I would not turn these into 1,500-word essays — that is how good reference sites get worse. But at 269 median words there is room for one concrete worked example per article, which is also the highest-value addition for AI citation.
+**Vanhentuneet luvut.** Kategoriaotsikoissa: huijaukset "11" (sivuja 14), tilastot "8" (9), vallan rakenteet "7" (8). Etusivun satunnaislohkossa lukee "139 ilmiötä". Jakokuvassa "68".
 
-**Raw diagram source is indexable text (Low).** The `.mermaid` divs contain flowchart syntax as literal DOM text until JavaScript rewrites them. Any non-rendering crawler reads:
+**Puuttuvat suomalaiset rinnakkaistermit.** `ai-slop.html` ei mainitse sanoja *tekoälytauhka* tai *tekoälymoska*, vaikka suomenkielisen Wikipedian artikkeli on nimellä Tekoälytauhka. Kumpaakaan sanaa ei ole yhdelläkään 185 sivusta.
 
-```
-flowchart TD V["Vähän osaamista"] --> E["Ei kykyä nähdä\nomia virheitä"] ...
-```
+**Suomalainen konteksti.** Noin 20 artikkelissa 165:stä on leipätekstissä jokin Suomeen sidottu viite (kaksi eri laskentatapaa antoi 18 ja 23). Hakutuloksissa näkyneillä suomalaisilla kilpailijoilla (HS, Yle, Lääkärilehti) on kotimainen kytkös.
 
-That is **6.6% of all extractable text sitewide** (3,440 of 52,248 words), median 8% per diagram page, peaking at 13% on `saantelijan-kaappaus.html`. Mitigated by the `.kaavio-selitys` paragraph that follows each diagram with a plain-language summary — a good pattern already in place.
+**Hakutulosvertailun rajat.** Vertailu jäi osittaiseksi: hakutyökalu palautti suomalaisille hauille enimmäkseen ulkomaisia tuloksia ja esti suurimmat suomalaiset uutissivustot, eikä Googlen tulossivua saatu luettua. Ainoa oikea järjestetty tuloslista oli Bingin `hyvesignalointi`, jossa ilmiöt.fi oli toisena fi.wikipedian jälkeen; Googlessa sama sivu on Search Consolen mukaan sijalla 7. Tekoälyvastauksia, esittelykatkelmia tai "Ihmiset kysyvät myös" -kysymyksiä ei havaittu, koska työkalu ei näytä niitä.
 
-**One live typo:** "Katkais**tt**u y-akseli" → "Katkaistu" in `tilastoilla-valehtelu.html`.
+**Missä 260 sanaa riittää ja missä ei.** Riittää puhtaissa määritelmähauissa, joissa suomenkielistä kilpailua ei ole: `darvo.html` (221 sanaa) toi elokuun datassa 71 % sivuston klikeistä, ja fi.wikipedian tyngät aiheista *whataboutismi* ja *Hanlonin partaveitsi* ovat 110–140 sanaa. Ei riitä, kun haku on "miten vastata" tai kun Wikipedia on perusteellinen (*Brandolinin laki*, noin 1 500 sanaa). Halvin vastaus normin sisällä: kysymysmuotoiset `h2`:t, joiden alla on 40–60 sanan vastaus, ja lyhyt "Esimerkki Suomesta" -lohko.
 
 ---
 
-## On-Page SEO — 78/100
+## 4. Schema — 80
 
-### Working well
+Kaikki 185 JSON-LD-lohkoa jäsentyvät. Murupolut osoittavat olemassa oleviin sivuihin, `articleSection` vastaa kategoriaa ja päivämäärät ovat johdonmukaiset kaikilla 165 artikkelilla. Väärän otsikon 26 sivulla schema-`headline` on oikein.
 
-- Titles: 111/111 present and unique, none under 30 chars.
-- Exactly one `h1` on every page — no missing, no duplicates.
-- `lang="fi"` on 111/111.
-- Open Graph and Twitter Card tags complete on 111/111.
-- Internal linking is healthy: 9.2 outbound links per page, **zero orphans**, zero broken targets.
+| Vakavuus | Löydös | Näyttö |
+|---|---|---|
+| Keskitaso | FAQPage ei vastaa sivua, eikä sillä ole enää Google-käyttöä | 68 artikkelia: 0/136 vastauksesta löytyy sivulta sanatarkasti. Google lopetti FAQ-rikastetulokset 7.5.2026 ja poisti dokumentaation 15.6.2026 |
+| Keskitaso | `isPartOf` osoittaa solmuun, jota ei ole | 165 artikkelia viittaa `@id "https://www.ilmiöt.fi/"`; etusivun CollectionPage on `…/#collectionpage`. 139 artikkelilla sama IRI on lisäksi `DefinedTermSet` |
+| Keskitaso | Julkaisijan logo alle Googlen vähimmäiskoon | `favicon.svg`, ilmoitettu 64×64; vähimmäiskoko on 112×112 |
+| Matala | Scheman `description` vanhentunut | eroaa metakuvauksesta 115 artikkelilla; 59 katkeaa "…"-merkkiin |
+| Matala | `tietoa.html` | ei `dateModified`ia; AboutPage, vaikka tekijäsivulle suositellaan ProfilePagea |
+| Matala | `about`/DefinedTerm epäyhtenäinen | 139 artikkelilla on, 26:lla ei; `name` on koko otsikko, ei termi |
+| Tieto | 20 sivua ilman `datePublished`ia | kaikki muita kuin artikkeleita (etusivu, 15 kategoriaa, peli, muutokset, tietoa) |
 
-### Issues
+Älä lisää `SearchAction`-, `speakable`- tai `Quiz`-merkintää: yhdelläkään ei ole tälle sivustolle käyttäjää.
 
-**Article bodies have no heading structure (High).** This is the most consequential on-page finding.
+---
 
-| Headings per page | Pages |
+## 5. Suorituskyky — 76
+
+**Kaikki luvut ovat labramittauksia.** Kenttädataa (CrUX) ei ole, koska Google-rajapinnan avainta ei ole määritetty. INP:tä ei mitattu. Lighthouse ajettiin vain kahdelle sivulle mobiiliprofiililla (hidas 4G, 4× CPU-hidastus); Mermaid-, kaavio-, kategoria- ja pelisivuja sekä työpöytää ei mitattu.
+
+| Sivu | Lighthouse | LCP | CLS | TBT | Siirto | Fontit |
+|---|---|---|---|---|---|---|
+| `/` (3 ajoa) | 89 | 1,10 s | **0,214** | 28 ms | 372 kt | 5 tiedostoa, 157 kt |
+| `/dunkkaus.html` (2 ajoa) | 91–92 | 1,04 s | **0,17–0,20** | 0–20 ms | 221 kt | 7 tiedostoa, 206 kt |
+
+**CLS johtuu fonteista.** Erillinen mittaus (Playwright, sama mobiiliprofiili, 3 ajoa): etusivu 0,213 ja artikkeli 0,188 normaalisti, molemmat **0,000** kun `.woff2`-pyynnöt estetään. Siirtymä syntyy, kun varafontti vaihtuu verkkofonttiin. Etusivulla siirtyvät `main#hub-main` ja kategorianavigaatio, artikkelissa ensimmäinen kappale ja vastauslaatikko.
+
+**Fontit latautuvat moneen kertaan.** DM Sansin painot 400, 500 ja 600 ovat tavulleen sama tiedosto kolmella osoitteella (md5 tarkistettu). Artikkeli hakee lisäksi Source Sansin kolmesti (`sourcesans-400`, `sourcesans-600`, `sourcesans3-var`), koska sekä `style.css` että `fonts/fonts.css` määrittelevät fontit. Noin 95 kt artikkelin 206 kt:n fonttikuormasta on turhaa. `preload`ia ei ole.
+
+**Mermaid latautuu käytännössä heti.** 914 kt:n (brotli) skripti haetaan, kun kaavio on 200 px:n päässä näkymästä. Mobiilinäkymässä (412×823) se täyttyy ilman vieritystä 72 sivulla 129:stä, työpöydällä 128:lla. Pääsäikeen kuormaa ja kaavion piirtymisen aiheuttamaa siirtymää ei mitattu.
+
+**Muut.** Etusivu lataa `search-index.js`:n (184 kt, 49 % sivun siirrosta) heti, vaikka sitä tarvitaan vasta haussa. Jokainen artikkeli kantaa noin 46 kt samaa upotettua CSS:ää ja JavaScriptiä, 78 % raaka-HTML:stä.
+
+---
+
+## 6. Kuvat — 60
+
+Sivustolla ei ole sisältökuvia; ainoa `<img>` on `favicon.svg`. Kaaviot ovat Mermaidia ja kolmella sivulla Chart.js:ää.
+
+| Vakavuus | Löydös | Näyttö |
+|---|---|---|
+| Korkea | Jakokuva vanhentunut | `og/brand.png`: "68 yhteiskunnallista ilmiötä", kaikilla 185 sivulla (`screenshots/og-brand-live.png`) |
+| Keskitaso | Kolme vaakakaaviota lukukelvottomia mobiilissa | `sealioning`, `motte-and-bailey`, `brandolinin-laki` (`flowchart LR`): 12 px:n teksti näkyy noin 3 px:n kokoisena (`screenshots/sealioning-mermaid-mobile-viewport.png`). Muut 127 kaaviota ovat pystysuuntaisia ja luettavia |
+| Keskitaso | Kaavioilla ei saavutettavaa nimeä eikä varasisältöä | SVG:ssä ei `aria-label`ia, `<title>`ä eikä `<desc>`iä. Ilman JavaScriptiä kävijä näkee Mermaid-lähdekoodin kappaleena (`screenshots/darvo-nojs-mermaid.png`). Chart.js-canvas on tyhjä ilman varatekstiä |
+| Matala | `favicon.svg` ilman mittoja | `width`/`height` puuttuu 165 sivulla |
+
+Julkaisemattomat sivukohtaiset jakokuvat (`og/trollaus.png` ym.) ovat hyviä ja luettavia pikkukuvakoossa.
+
+**Mobiilikäytettävyys** (ei painotettu osa-alue, 72/100): perusta on kunnossa — 16 px:n fontti, ei vaakavieritystä, määritelmä näkyy ilman vieritystä. Huomiot: artikkelin tekstipalsta on noin 276 px leveä 57 px:n marginaalien takia; 10 kosketuskohdetta 15:stä on alle 48 px (jakonappi 28×19, satunnaisnappi 37×24); edellinen/seuraava-linkit katkeavat muotoon "← Shitp…"; näppäimistövihje näkyy kosketuslaitteilla; leipätekstin linkit ovat selaimen oletussinisiä; "LUE LISÄÄ" -otsikon kontrasti on 1,67:1.
+
+---
+
+## 7. Tekoälyhaku (GEO) — 66
+
+**Kunnossa.** `robots.txt` sallii kaiken ja nimeää GPTBotin, OAI-SearchBotin, ClaudeBotin ja PerplexityBotin. Yhdeksällä eri user-agentilla tehty haku palautti saman sivun. `llms.txt` on ajan tasalla. Sisältö on staattista HTML:ää.
+
+**Siteerattavuus.** 130 artikkelia 165:stä alkaa itsenäisellä määritelmällä; ensimmäisen kappaleen mediaani on 41 sanaa. 68 artikkelilla on kysymysotsikko ja sen alla 29–63 sanan vastaus. 76 mainitsee englanninkielisen alkuperäistermin ensimmäisessä kappaleessa.
+
+| Vakavuus | Löydös | Näyttö |
+|---|---|---|
+| Korkea | 26 väärää otsikkoa | otsikko on keskeinen hakusignaali myös tekoälyhauissa |
+| Korkea | Osioihin ei voi linkittää | yhdelläkään `h2`:lla ei ole `id`:tä; ei `<main>`- eikä `<article>`-elementtiä |
+| Keskitaso | 13 artikkelia ei ala määritelmällä | `bkt-harha`, `korkokierre`, `kuka-tahansa-voi-trollata`, `lapi-hinnalla-milla-hyvansa`, `lukittu-paatos`, `p-hakkerointi`, `pinta-alaharha`, `portinvartija-kulttuuri`, `selviytymisharha`, `strateginen-aliarviointi`, `suhteellinen-riski`, `keskiarvo-vs-mediaani`, `simple-sabotage` |
+| Keskitaso | 97 artikkelilla ei kysymys–vastaus-lohkoa | |
+| Keskitaso | Kaaviot näkyvät ei-JS-roboteille lähdekoodina | lähdeteksti on HTML:ssä, joten sisältö ei katoa, mutta se on kaaviosyntaksia |
+
+Pistemäärä on agentin 63:a korkeampi, koska sen auktoriteettiosio jäi mittaamatta: sivuston ulkopuolisia mainintoja, Wikipediaa, Wikidataa ja Bing-indeksointia ei tarkistettu. `llms-full.txt`:ää ei kannata lisätä; ei ole näyttöä siitä, että mikään suuri tekoälyjärjestelmä lukisi edes `llms.txt`:ää.
+
+---
+
+## 8. Sisäinen linkitys ja klusterit — 72 (ei painotettu)
+
+Rakenne on ehjä: jokainen kategoriasivu linkittää jokaiseen sivuunsa kortilla ja johdantotekstissä, ja jokainen artikkeli linkittää takaisin kategoriaansa. Ankkuritekstit ovat hyviä: 207 leipätekstilinkistä yksikään ei ole geneerinen ja 92 % sisältää kohteen termin.
+
+**Leipätekstilinkitys on ohutta.** 63 artikkeliin ei viittaa yksikään toinen artikkeli leipätekstistään. Keskittymät: media 8/10, alustatalous 9/17, tilastot 6/9, projektit 6/12, pesut 4/6. Median sivut linkittävät lähes pelkästään muihin kategorioihin (0,30 sisäistä vs. 2,0 ulkoista leipätekstilinkkiä sivua kohden). Elokuun GSC-auditointi neuvoi olemaan tekemättä uutta täyttä linkityskierrosta, joten tämä on hienosäätöä.
+
+**Kannibalisointia ei testattu.** Hakutulosten päällekkäisyysvertailua ei ajettu yhdellekään epäillylle parille (`hiljainen-irtisanominen`/`hiljainen-irtisanoutuminen`, `trollaus`/`trollin-ruokkiminen`, `draamakolmio`/`voittajakolmio`/`roolinvaihto`). Työelämän ja Roolit-kategorian otsikot koostuvat omien alasivujensa nimistä, mikä on riski, mutta sekin on testaamatta.
+
+**Aukot, joita ei ole omistajan suunnitelmassa:** *pluralistinen tietämättömyys* (määritelty kahdella sivulla, ei omaa sivua) ja *ryhmäajattelu* (sama).
+
+---
+
+## 9. Backlinkit
+
+**Saapuvat linkit: ei mitattavissa.** Moz- ja Bing-avaimia ei ole, joten viittaavia verkkotunnuksia, ankkuritekstejä tai linkkien laatua ei saatu. Halvin tapa on Search Consolen Linkit-raportin vienti tai Bing Webmaster Tools (ilmainen).
+
+**Common Crawl ei tunne sivustoa.** Verkkotunnusta ei ole kahdessa uusimmassa verkkograafissa (kesä–elokuu ja heinä–syyskuu 2026), eikä sivustosta ole yhtään tallennetta neljässä tarkistetussa indeksissä. CCBotia ei ole estetty, joten sivustoa ei vain ole vielä haettu. Common Crawl on yleinen kielimallien koulutusaineiston lähde, joten tämä kannattaa tarkistaa uudelleen muutaman kuukauden päästä.
+
+**Lähtevät linkit: 8 rikki 190:stä** (jokainen tarkistettu kahdesti, 404):
+
+| Sivu | Rikkinäinen kohde |
 |---|---|
-| 2 (`h1` + "Liittyvät ilmiöt") | **97** |
-| 4–6 | 13 |
-| 19 (`index.html`) | 1 |
+| `branditurvallisuus` | en.wikipedia.org/wiki/Demonetization_(YouTube) |
+| `huonojen-uutisten-hautaaminen` | en.wikipedia.org/wiki/News_dump |
+| `klikkiotsikko` | en.wikipedia.org/wiki/Information_gap_theory_of_curiosity |
+| `negatiivinen-korkoa` | en.wikipedia.org/wiki/Debt_spiral |
+| `tilipuristus` | en.wikipedia.org/wiki/Pay_compression |
+| `simple-sabotage` | cia.gov/…/SimpleSabotage.pdf |
+| `urheilupesu` | amnesty.org/…/saudi-arabia-2034-world-cup-bid-evaluation… |
+| `lapi-hinnalla-milla-hyvansa` | raitiotieallianssi.fi/tiedotteet/… |
 
-A typical article renders like this:
+Lisäksi kaksi ei vastannut lainkaan: `caltech.edu` (`rituaalinen-raportointi`) ja `bcaction.org` (`pinkkipesu`). Kolme palauttaa 403 roboteille mutta toimii selaimessa (theatlantic.com, sourcewatch.org, ssrn.com). Kaikissa 203 ulkoisessa linkissä on `rel="noopener"`.
 
-```
-h1  Dunning–Kruger-ilmiö — itsevarmuus ilman taitoa
-    <p> definition
-    <p> mechanism
-    <div class="mermaid">        diagram
-    <div class="infolaatikko">   <strong>Ilmiö arjessa:</strong>
-    <div class="huomiolaatikko"> <strong>Tunnistaminen ja vastakeinot:</strong>
-    <div class="lue-lisaa">      sources
-h2  Liittyvät ilmiöt
-```
-
-The `.infolaatikko` and `.huomiolaatikko` blocks are the most citable material on every page — concrete examples and actionable advice — and every one of them opens with a `<strong>` label inside a `<div>` rather than a heading. Google's featured-snippet and passage-ranking systems, and every AI retrieval pipeline, use heading boundaries to segment a document. Right now each article presents as one undifferentiated block.
-
-**The labels are already good heading text.** They are not two boilerplate strings — across the site there are **181 boxes carrying 139 distinct labels** (66 in `.infolaatikko`, 73 in `.huomiolaatikko`), written per article: "Tunnistaminen ja vastakeinot:", "Tunnettuja tapauksia:", "Miksi laki toimii:", "Luku ei valehtele — mutta harhauttaa:", "Kolme yleistä väärinymmärrystä:". Specific, descriptive, query-shaped — exactly what you would write if you were writing subheadings deliberately. They are simply marked up as bold text.
-
-| | Boxes | Distinct labels | Pages |
-|---|---|---|---|
-| `.infolaatikko` | 78 | 66 | 72 |
-| `.huomiolaatikko` | 103 | 73 | 92 |
-
-So the fix is a structural rule — *promote the leading `<strong>` of each box to `<h2>`* — not a find-and-replace of known strings. Because 98 of the 181 boxes continue into running text rather than a list, the `<h2>` should be styled `display: inline` so it renders exactly as the current bold run-in label. Heading semantics are unaffected by CSS display, so this changes the document outline for crawlers and screen readers while changing nothing visually.
-
-**32 titles exceed 65 characters (Medium)** — up from 21 at the last audit; 12 exceed 70, longest is 85. The `— Ilmiöitä` suffix costs 11 characters, so the distinctive part is what gets truncated:
-
-| Chars | Page |
-|---|---|
-| 85 | `badger-game.html` — Badger game — houkuttele kiusalliseen tilanteeseen, kiristä vaikenemisesta — Ilmiöitä |
-| 81 | `rautainen-laki.html` |
-| 76 | `jarjestelman-puolustelu.html` |
-| 75 | `door-in-the-face.html` |
-| 75 | `painostusclose.html` |
-
-**12 pages skip heading levels (Low)** — `h1 → h4`, because `h4` is used to label the two halves of comparison graphics ("Harhaanjohtava (valittu ikkuna)" / "Rehellinen"). Affects `bikeshedding`, `bkt-harha`, `cherry-picking-aikavali`, `halo-efekti`, `kaksois-y-akseli`, `keskiarvo-vs-mediaani`, `p-hakkerointi`, `pinta-alaharha`, `selviytymisharha`, `simpsonin-paradoksi`, `suhteellinen-riski`, `tilastoilla-valehtelu`. Largely resolves itself once real `h2`s exist.
-
-**Uneven internal link distribution (Low).** `index.html` and `tietoa.html` receive 110 inbound links each; the best-connected article is `bait-and-switch.html` at 15. But 12 pages sit at just 3 inbound links — the site-wide nav plus prev/next — including `shrinkflaatio`, `rug-pull`, `qr-koodihuijaus`, `haamutyopaikat`, `tekoalypesu`, `hiljainen-irtisanominen`, `hiljainen-irtisanoutuminen`, `hyvesignalointi`, `tilausansa`, `suunniteltu-vanheneminen`, `toimitusjohtajahuijaus`, `aanekas-vahemmisto`. These are mostly recent additions that older articles never linked back to.
+**Realistiset linkkilähteet:** Vedätys-peli opettajien materiaalipankkeihin ja medialukutaitosivustoille; suomenkielisen Wikipedian ulkoiset linkit keskustelusivujen kautta; yliopistojen kurssisivut ja kirjastojen oppaat kategoriasivuihin; faktantarkistajat ja toimittajat trollaus- ja huijauskategorioihin.
 
 ---
 
-## Schema & Structured Data — 92/100
+## Mitä ei mitattu
 
-**The strongest area of the site.** 111/111 pages carry JSON-LD, **zero parse errors**, all using a proper `@graph`.
+- **Kenttädata:** CrUX, INP ja todellisten käyttäjien CLS. Vaatii Google-rajapinnan avaimen.
+- **Google-sijoitukset ja klikit:** Search Console -rajapintaa ei ole kytketty, eikä lokakuun vientiä ole repossa. 13.8. ja 4.9. tehtyjen otsikkomuutosten vaikutus on siis mittaamatta.
+- **Suomalaiset hakutulossivut:** ks. On-page-osion rajaus.
+- **Kannibalisointi:** ei testattu.
+- **Saapuvat linkit ja sivuston ulkopuoliset maininnat.**
+- **Suorituskyky** Mermaid-, kaavio-, kategoria- ja pelisivuilla sekä työpöydällä.
+- **Oikeinkirjoitus:** suomen morfologista tarkistinta ei ollut; kielihuomiot perustuvat lukemiseen.
 
-| Type | Count |
-|---|---|
-| `Article` | 109 |
-| `BreadcrumbList` | 109 |
-| `Organization` | 2 |
-| `Person` | 2 |
-| `WebSite` | 1 |
-| `CollectionPage` | 1 |
-| `FAQPage` | 1 |
-| `AboutPage` | 1 |
+## Menetelmä
 
-`Article` nodes are complete: `headline`, `description`, `datePublished`, `dateModified`, `author` (`@id`-referenced), `publisher` with `logo`, `image`, `inLanguage`, `articleSection`, `isPartOf`, and an `about` → `DefinedTerm` → `DefinedTermSet` chain. That last part is unusually good practice — it models each phenomenon as a defined term in a named glossary, which is exactly the shape entity-extraction systems want. `BreadcrumbList` is 3-level and valid on all 109, with zero malformed `itemListElement` entries.
-
-### Gaps
-
-- **`mainEntityOfPage` missing on all 109 `Article` nodes** — a recommended Article property; trivial to add in the template.
-- **Only one `FAQPage`** despite content that is natively Q&A-shaped ("miten tunnistat…", "miten toimit…"). Note that Google restricted FAQ rich results to authoritative government and health sites in 2023, so the SERP payoff is now near zero — the remaining value is as an AI-extraction hint, which makes this Low priority rather than Medium.
-- **No `SearchAction`** on the `WebSite` node (carried over from the prior audit) — the site has full-text search, so the sitelinks search box is available if `?q=` deep-linking is added first.
-
----
-
-## Performance — 74/100
-
-**No field data available.** No CrUX/PageSpeed API key is configured, and Playwright's Chromium cannot launch on this machine — `libnss3`, `libnspr4`, `libnssutil3` and `libasound2` are missing and installing them needs root, which I did not do unprompted. **LCP, INP and CLS are therefore unmeasured.** What follows is network and architecture analysis, which is solid on delivery and weaker on interaction.
-
-### Measured
-
-| Metric | Value |
-|---|---|
-| TTFB (homepage) | **0.12 s** |
-| TTFB (article) | **0.09 s** |
-| TCP connect / TLS | 0.031 s / 0.058 s |
-| Homepage | 101 KB → **20 KB** (Brotli) |
-| Article | 58.6 KB → **15 KB** (Brotli) |
-| Subresource requests/article | **4** |
-| Static asset cache | `public, max-age=604800` (7 days) |
-
-Delivery is genuinely fast — sub-100 ms TTFB, four requests per article, self-hosted WOFF2 fonts with `font-display: swap`, no external font or analytics calls, HTTP/2 with HTTP/3 available.
-
-### Issues
-
-**`mermaid@11` is 929 KB compressed (High for CWV).** It loads from `cdn.jsdelivr.net` on 87 pages — roughly **60× the weight of the article it decorates**.
-
-The implementation is thoughtful: `IntersectionObserver` with a 200 px `rootMargin`, `startOnLoad: false`, explicit `mermaid.run()`. But the diagram sits directly after the opening two paragraphs, so on virtually every article view it is within the 200 px margin at load and the fetch fires immediately. The lazy-loading is real but rarely gets to help.
-
-The deeper point: these diagrams are **static**. Nothing about them requires a runtime renderer. Pre-rendering to inline SVG at build time (via `@mermaid-js/mermaid-cli`, matching the existing `scripts/build_search_index.py` pattern) would eliminate 929 KB of third-party JavaScript and a large main-thread parse/execute cost, remove the CDN as a dependency and privacy surface, make diagrams paint with the HTML, and simultaneously fix the 6.6% raw-syntax pollution noted above. This is the highest-value performance change available.
-
-**`chart.js` is render-blocking on 3 pages (Medium).** On `korkoa-korolle.html`, `korkokierre.html` and `negatiivinen-korkoa.html`, a 72 KB script sits in `<head>` with no `defer`. This was item 3 in the previous action plan and is a one-attribute fix.
-
-**`search-index.js` is 293 KB → 107 KB Brotli** on the homepage. It is correctly placed at the end of `<body>` (96% through the document) so it does not block render, but it is still ~107 KB fetched on every homepage visit for a feature most visitors never use. Lazy-loading it on first focus of the search box would be a clean improvement.
-
----
-
-## AI Search Readiness (GEO) — 82/100
-
-### Working well
-
-- **`llms.txt` is genuinely well-executed** and rare in Finnish. Correct format: `# H1`, `>` blockquote summary, `## Kategoriat`, `###` sections, and `- [Title](url): description` entries — each with a real one-sentence explanation rather than a bare link. It names the author and states the content is freely citable.
-- **AI crawlers are explicitly welcomed** in `robots.txt` (`GPTBot`, `OAI-SearchBot`, `ClaudeBot`, `PerplexityBot`), and all four — plus `Google-Extended` — were verified to receive 200s.
-- **Strong entity grounding.** The `DefinedTerm` / `DefinedTermSet` modelling, plus `Organization`, `Person` and `articleSection`, gives retrieval systems unusually clean structure.
-- **Definition-first writing.** Every article opens with a direct one-sentence definition — the ideal shape for extraction.
-- **Low-competition niche.** Finnish-language explanations of these concepts are scarce, and citation-worthy sourcing (books + Wikipedia + primary sources) is present on 109/111 pages.
-
-### Issues
-
-**`llms.txt` is out of date (High).** It states 109 phenomena but lists **106**. Missing:
-
-- `/1-prosentin-saanto.html`
-- `/aanekas-vahemmisto.html`
-- `/pareto-periaate.html`
-
-These are exactly the three pages published in commit `9120be2`. Because `llms.txt` is the file AI systems read *first* to understand the site, three of the newest articles are invisible to that path.
-
-**Passage structure limits citability (High).** Same root cause as the on-page heading finding. AI retrieval chunks documents on heading boundaries; 97 pages present as a single unsegmented block, so the *Tunnistaminen ja vastakeinot* content — the most citation-worthy material on the site — has no addressable boundary. This is the single highest-leverage GEO fix, and it is the same one-template edit as the on-page fix.
-
-**No per-passage anchors.** Adding `id` attributes to the new `h2`s would make sections directly linkable, which helps both AI citation and the deep links Google generates to page fragments.
-
----
-
-## Images — 85/100
-
-There is effectively **one image asset on the entire site**: `favicon.svg`, referenced 437 times. All diagrams are mermaid-rendered SVG and all charts are canvas.
-
-| Check | Result |
-|---|---|
-| `<img>` missing `alt` attribute | **0** |
-| Decorative `alt=""` | 327 — **correct usage** (`.random-siirtyma-logo` transition overlay) |
-| Meaningful images with descriptive `alt` | Yes — e.g. `alt="Ilmiöitä-logo: punainen varoituslippu"` with `width`/`height` |
-| `og:image` | `/og/brand.png`, 200, 29 KB, correct 1200×630, with `og:image:alt` |
-
-Alt-text handling is correct — decorative images take empty alt, meaningful ones are described. That is the right pattern and I want to be clear it is **not** a defect, despite what a naive "327 images missing alt text" scan would report.
-
-Two genuine gaps:
-
-- **All 111 pages share one OG image.** Every link shared from this site looks identical on social and in chat previews. `/og/<slug>.png` returns 404, and the prior audit notes `scripts/generate_og_images.py` already exists.
-- **436 of 437 `<img>` lack `width`/`height`.** CLS impact is minimal — these are the fixed-position transition overlay logos, not layout-participating content — so this is Low, not the Medium a generic checklist would assign.
-
----
-
-## Methodology & limitations
-
-**Method:** all 111 sitemap URLs fetched live over HTTPS (5 concurrent) and parsed for on-page signals; live output diffed against the working tree by md5; `robots.txt`, `sitemap.xml` and `llms.txt` validated; host/protocol variants, 404 behaviour, compression and cache headers probed directly; internal link graph reconstructed from all 111 pages; JSON-LD parsed and validated on every page.
-
-**Limitations to be explicit about:**
-
-- **No Core Web Vitals data — neither field nor lab.** No CrUX/PSI credentials, and Chromium cannot launch locally (missing `libnss3`, `libnspr4`, `libnssutil3`, `libasound2`; installation requires root). LCP, INP and CLS are unmeasured. The Performance score reflects delivery architecture only and carries the widest error bar of any category here.
-- **No indexation or traffic data.** No Search Console or GA4 credentials, so actual indexed-page count, impressions, clicks and query data are unknown. Everything above is what a crawler sees, not what Google has done with it.
-- **No backlink data.** Moz and Bing Webmaster keys are absent; only the Common Crawl tier was available.
-- **No rank or SERP data.** No DataForSEO access, so competitive positioning is not assessed.
-
-Verifying the site in **Google Search Console and Bing Webmaster Tools** (using the punycode property, `xn--ilmit-mua.fi`) would close the largest of these gaps and costs nothing.
-
----
-
-*Audit performed with the `seo-audit` skill, run inline. Findings verified against the live site on 2026-07-25.*
+Sivusto haettiin 4.10.2026 viidellä rinnakkaisella pyynnöllä ja sekunnin viiveellä; `robots.txt` sallii kaiken. Sivukohtaiset tiedot purettiin skriptillä kaikista 185 sivusta. Kymmenen erikoisagenttia analysoi saman tilannekuvan. Agenttien keskeiset väitteet tarkistettiin erikseen ennen raporttiin vientiä, ja yksi hylättiin (`harmaa-kivi.html`:n "sinä sinä aikana" on kieliopillisesti oikein). Näyttökuvat ovat kansiossa `screenshots/`.

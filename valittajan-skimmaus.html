@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Välittäjän skimmaus — siivu molemmilta, marginaali piilossa — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/valittajan-skimmaus.html#article",
       "url": "https://www.ilmiöt.fi/valittajan-skimmaus.html",
       "headline": "Välittäjän skimmaus — siivu molemmilta, marginaali piilossa",
-      "description": "Skimmauksessa välittäjä asettuu kahden osapuolen väliin ja ottaa osansa salaamalla todellisen marginaalin .",
+      "description": "Välittäjän skimmaus: siivu molemmilta osapuolilta, marginaali piilossa. Selitämme miten välikäsi kuorii katteensa ja mitä kysyt ennen sopimusta.",
       "inLanguage": "fi",
       "articleSection": "Myyntikikat ja painostus",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Välittäjän skimmaus — siivu molemmilta, marginaali piilossa",
-        "description": "Skimmauksessa välittäjä asettuu kahden osapuolen väliin ja ottaa osansa salaamalla todellisen marginaalin .",
+        "name": "Välittäjän skimmaus",
+        "description": "Välittäjän skimmaus: siivu molemmilta osapuolilta, marginaali piilossa. Selitämme miten välikäsi kuorii katteensa ja mitä kysyt ennen sopimusta.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -824,6 +825,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="valittajan-skimmaus">
 <div class="ilmio-tag">Ilmiö 83</div>
 <h1>Välittäjän skimmaus — siivu molemmilta, marginaali piilossa</h1>
@@ -839,7 +841,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Kumpikaan pää ei näe toisen lukua — välittäjän kate elää juuri tästä tietopimennosta.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Varoitusmerkit:</h2>
+<h2 class="laatikko-otsikko" id="varoitusmerkit">Varoitusmerkit:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Marginaalista ei saa puhua:</strong> "et saa kertoa asiakkaalle laskutustasi" / "älä keskustele hinnasta tekijän kanssa".</li>
 <li><strong>Osapuolet pidetään erillään:</strong> kaikki viestintä kulkee välittäjän kautta, ei suoria kontakteja.</li>
@@ -848,10 +850,10 @@ flowchart TD
 </ul>
 </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Missä se esiintyy:</h2> Konsulttitalot ja resurssointifirmat data- ja IT-keikoissa (alihankkijan tuntihinnasta katoaa 30–50 % asiakkaan maksamasta), agentuurit, kiinteistö- ja rahoitusvälitys, sekä alustat, jotka ottavat suuren komission näkymättömänä. Erityisen yleistä juuri datatyössä, jossa osaajan ja loppuasiakkaan välissä on usein monta porrasta.
+<h2 class="laatikko-otsikko" id="missa-se-esiintyy">Missä se esiintyy:</h2> Konsulttitalot ja resurssointifirmat data- ja IT-keikoissa (alihankkijan tuntihinnasta katoaa 30–50 % asiakkaan maksamasta), agentuurit, kiinteistö- ja rahoitusvälitys, sekä alustat, jotka ottavat suuren komission näkymättömänä. Erityisen yleistä juuri datatyössä, jossa osaajan ja loppuasiakkaan välissä on usein monta porrasta.
     </div>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Kysy suoraan: <em>paljonko loppuasiakas maksaa ja mikä on välittäjän osuus?</em> Kieltäytyminen vastaamasta on itsessään vastaus. Aito välittäjä, joka tuottaa arvoa, kestää läpinäkyvyyden. Vältä sopimuksia, jotka kieltävät puhumasta hinnoista tai estävät kaikki suorat kontaktit. Tietoasymmetria on koko mekanismin moottori — sen purkaminen poistaa skimmauksen.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Kysy suoraan: <em>paljonko loppuasiakas maksaa ja mikä on välittäjän osuus?</em> Kieltäytyminen vastaamasta on itsessään vastaus. Aito välittäjä, joka tuottaa arvoa, kestää läpinäkyvyyden. Vältä sopimuksia, jotka kieltävät puhumasta hinnoista tai estävät kaikki suorat kontaktit. Tietoasymmetria on koko mekanismin moottori — sen purkaminen poistaa skimmauksen.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -916,6 +918,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="lowball-hinnoittelu.html">← Lowball — matala aloitushinta, joka nousee sitoutumisen jälkeen</a>

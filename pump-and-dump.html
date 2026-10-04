@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Pump and dump — pumppaa ja dumppaa — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/pump-and-dump.html#article",
       "url": "https://www.ilmiöt.fi/pump-and-dump.html",
       "headline": "Pump and dump — pumppaa ja dumppaa",
-      "description": "Pump and dump on markkinamanipulaatio, jossa jokin halpa ja vähän vaihdettu kohde (osake, kryptovaluutta, NFT) pumpataan keinotekoisesti hypellä ja…",
+      "description": "Pump and dump: kurssi pumpataan ylös ja omistukset dumpataan uhreille. Selitämme miten huijaus etenee vaiheittain ja mistä merkeistä tunnistat sen.",
       "inLanguage": "fi",
       "articleSection": "Huijaukset ja petokset",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Pump and dump — pumppaa ja dumppaa",
-        "description": "Pump and dump on markkinamanipulaatio, jossa jokin halpa ja vähän vaihdettu kohde (osake, kryptovaluutta, NFT) pumpataan keinotekoisesti hypellä ja…",
+        "name": "Pump and dump",
+        "description": "Pump and dump: kurssi pumpataan ylös ja omistukset dumpataan uhreille. Selitämme miten huijaus etenee vaiheittain ja mistä merkeistä tunnistat sen.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -799,29 +800,6 @@
       },
       "datePublished": "2026-06-19",
       "dateModified": "2026-08-04"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.ilmiöt.fi/pump-and-dump.html#faq",
-      "inLanguage": "fi",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Missä pump and dump esiintyy?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Klassisesti pienissä pörssiosakkeissa, nykyään erityisesti kryptovaluutoissa ja NFT-kohteissa, joissa vaihto on ohutta ja sääntely kevyttä. Koordinointi tapahtuu usein suljetuissa Telegram- tai Discord-ryhmissä."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Onko pump and dump laitonta?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Säännellyillä arvopaperimarkkinoilla kyllä — se on markkinamanipulaatiota. Kryptomarkkinoilla oikeustila on epäselvempi ja valvonta ohuempaa, mikä on yksi syy siihen, miksi kaava on siirtynyt sinne."
-          }
-        }
-      ]
     }
   ]
 }
@@ -847,13 +825,14 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="pump-and-dump">
 <div class="ilmio-tag">Ilmiö 70</div>
 <h1>Pump and dump — pumppaa ja dumppaa</h1>
 <p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 4.8.2026</p>
 <p>Pump and dump on markkinamanipulaatio, jossa jokin halpa ja vähän vaihdettu kohde (osake, kryptovaluutta, NFT) <strong>pumpataan</strong> keinotekoisesti hypellä ja koordinoidulla ostamisella, jotta hinta nousee — ja kun uudet ostajat ryntäävät mukaan, manipuloijat <strong>dumppaavat</strong> omistuksensa huipulla. Hinta romahtaa, ja myöhäiset jäävät tappiolle.</p>
 <div class="infolaatikko vastauslohko">
-<h2 class="laatikko-otsikko">Mitä pump and dump tarkoittaa?</h2>
+<h2 class="laatikko-otsikko" id="mita-pump-and-dump-tarkoittaa">Mitä pump and dump tarkoittaa?</h2>
 <p style="margin:0.4em 0 0;"><strong>Pump and dump</strong> tarkoittaa järjestettyä hinnannousua, jonka tarkoitus on tuottaa ostajia myyntihetkelle. Järjestäjä omistaa kohteen jo ennen hypeä ja myy sen huipulla niille, jotka hype toi paikalle. Tappion kantaa aina viimeisenä ostanut, ei manipuloija.</p>
 </div>
 <p>Voitto ei synny kohteen arvosta vaan ajoituksesta: sisäpiiri ostaa halvalla, luo FOMO:n (pelon jäädä paitsi) ja myy juuri ennen kuin tarina paljastuu tyhjäksi.</p>
@@ -869,10 +848,10 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Voitto siirtyy myöhään mukaan tulleilta aikaisin sisällä olleille — nollasummapeli puettuna mahdollisuudeksi.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnusmerkit:</h2> Äkillinen, selittämätön hintapiikki vähän tunnetussa kohteessa; koordinoitu somekampanja ("älä jää paitsi", "viimeinen mahdollisuus"); maksetut influensserit; ja kohde, jolla ei ole todellista käyttöä tai tuloa. Vrt. <a href="kaarmeoljy.html">Käärmeöljy</a> ja <a href="ponzi-pyramidi.html">Ponzi</a>: arvo on tarinassa, ei sisällössä.
+<h2 class="laatikko-otsikko" id="tunnusmerkit">Tunnusmerkit:</h2> Äkillinen, selittämätön hintapiikki vähän tunnetussa kohteessa; koordinoitu somekampanja ("älä jää paitsi", "viimeinen mahdollisuus"); maksetut influensserit; ja kohde, jolla ei ole todellista käyttöä tai tuloa. Vrt. <a href="kaarmeoljy.html">Käärmeöljy</a> ja <a href="ponzi-pyramidi.html">Ponzi</a>: arvo on tarinassa, ei sisällössä.
     </div>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Jos joku <em>kertoo sinulle</em> mihin pitää sijoittaa nyt heti ennen kuin on myöhäistä — kysy, miksi he jakavat vinkin sen sijaan että ostaisivat itse hiljaa. Hype on tuote; sinä olet usein se, jolle dumpataan.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Jos joku <em>kertoo sinulle</em> mihin pitää sijoittaa nyt heti ennen kuin on myöhäistä — kysy, miksi he jakavat vinkin sen sijaan että ostaisivat itse hiljaa. Hype on tuote; sinä olet usein se, jolle dumpataan.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -937,6 +916,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="ponzi-pyramidi.html">← Ponzi ja pyramidihuijaus — tuotot tulevat uusilta uhreilta</a>

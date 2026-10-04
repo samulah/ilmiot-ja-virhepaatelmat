@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Mitä BKT mittaa — ja mitä se jättää pois | Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/bkt-harha.html#article",
       "url": "https://www.ilmiöt.fi/bkt-harha.html",
       "headline": "BKT-harha — Irlannin paradoksi",
-      "description": "Bruttokansantuote (BKT) on maailman käytetyin taloudellisen hyvinvoinnin mittari. Se mittaa kaiken maassa tuotetun tavaran ja palvelun arvon — mutta ei sitä…",
+      "description": "BKT mittaa rahassa mitattua tuotantoa, ei hyvinvointia. Mitä bruttokansantuote jättää laskematta ja miksi kasvava luku voi kertoa huonon uutisen.",
       "inLanguage": "fi",
       "articleSection": "Informaatio ja propaganda",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "BKT-harha — Irlannin paradoksi",
-        "description": "Bruttokansantuote (BKT) on maailman käytetyin taloudellisen hyvinvoinnin mittari. Se mittaa kaiken maassa tuotetun tavaran ja palvelun arvon — mutta ei sitä…",
+        "name": "BKT-harha",
+        "description": "BKT mittaa rahassa mitattua tuotantoa, ei hyvinvointia. Mitä bruttokansantuote jättää laskematta ja miksi kasvava luku voi kertoa huonon uutisen.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -799,29 +800,6 @@
       },
       "datePublished": "2026-06-19",
       "dateModified": "2026-09-04"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.ilmiöt.fi/bkt-harha.html#faq",
-      "inLanguage": "fi",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Mitä BKT mittaa?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "BKT eli bruttokansantuote mittaa maan rajojen sisällä vuoden aikana tuotettujen lopputuotteiden ja palveluiden markkina-arvon. Mittari laskee mukaan kaiken maksullisen toiminnan riippumatta siitä, lisääkö se hyvinvointia vai korjaako se vahinkoa."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Miksi BKT ei mittaa hyvinvointia?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Koska mittarin ehto on rahassa mitattu vaihdanta, ei hyöty. Kotityö, omaishoito ja vapaaehtoistyö jäävät kokonaan pois, kun taas onnettomuuden siivous, sairaanhoito ja pilaantuneen maan puhdistus kasvattavat lukua. Myöskään tulonjako ei näy: sama BKT voi jakautua hyvin eri tavoin."
-          }
-        }
-      ]
     }
   ]
 }
@@ -847,13 +825,14 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="bkt-harha">
 <div class="ilmio-tag">Ilmiö 9</div>
 <h1>BKT-harha — Irlannin paradoksi</h1>
 <p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 4.9.2026</p>
 <p>Bruttokansantuote (BKT) on maailman käytetyin taloudellisen hyvinvoinnin mittari. Se mittaa kaiken maassa tuotetun tavaran ja palvelun arvon — mutta ei sitä, <strong>kenen taskuihin tuotettu arvo päätyy</strong>. Irlanti on tästä oppikirjaesimerkki.</p>
 <div class="infolaatikko vastauslohko">
-<h2 class="laatikko-otsikko">Mitä BKT mittaa — ja mitä se jättää mittaamatta?</h2>
+<h2 class="laatikko-otsikko" id="mita-bkt-mittaa-ja-mita-se-jattaa-mittaamatta">Mitä BKT mittaa — ja mitä se jättää mittaamatta?</h2>
 <p style="margin:0.4em 0 0;"><strong>BKT</strong> mittaa vuoden aikana tuotettujen tavaroiden ja palveluiden markkina-arvon. Se laskee mukaan kaiken, mistä maksetaan — myös öljyvahingon siivouksen ja sairaanhoidon. Ulkopuolelle jäävät kotityö, vapaaehtoistyö, luonnonvarojen kuluminen ja tulonjako.</p>
 </div>
 <h3>Mitä tapahtui Irlannissa?</h3>
@@ -870,16 +849,16 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">BKT kasvaa — mutta kasvu hyödyttää ensisijaisesti monikansallisten yritysten osakkeenomistajia, ei irlantilaisia palkansaajia.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Luku ei valehtele — mutta harhauttaa:</h2> Irlannin BKT per asukas on paperilla noin 100 000 dollaria, yksi maailman korkeimmista. Mutta irlantilaisten kotitalouksien <em>todellinen käytettävissä oleva tulo</em> on huomattavasti pienempi. Irlannin virallinen tilastolaitos on itsekin todennut BKT:n olevan liian harhaanjohtava mittari oman maansa tarpeisiin.
+<h2 class="laatikko-otsikko" id="luku-ei-valehtele-mutta-harhauttaa">Luku ei valehtele — mutta harhauttaa:</h2> Irlannin BKT per asukas on paperilla noin 100 000 dollaria, yksi maailman korkeimmista. Mutta irlantilaisten kotitalouksien <em>todellinen käytettävissä oleva tulo</em> on huomattavasti pienempi. Irlannin virallinen tilastolaitos on itsekin todennut BKT:n olevan liian harhaanjohtava mittari oman maansa tarpeisiin.
     </div>
 <h3>Irlanti keksi oman mittarin</h3>
 <p>Irlanti on yksi harvoista maista, joka on <strong>virallisesti myöntänyt BKT:n olevan liian harhaanjohtava</strong> oman taloutensa kuvaamiseen. Vuodesta 2017 lähtien Irlanti on julkaissut <em>muokattua bruttokansantuloa</em> (GNI*, <em>modified gross national income</em>), joka poistaa monikansallisten yritysten kirjanpidolliset vaikutukset.</p>
 <p>GNI* on noin 40–45 % Irlannin BKT:tä pienempi. Se kuvaa paremmin irlantilaisten kotitalouksien ja kotimaisten yritysten todellista taloudellista tilannetta.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Sama ilmiö muualla:</h2> Luxemburgin BKT per asukas on maailman korkein — mutta noin 45 % maan BKT:stä tuottavat ulkomaalaiset rajan yli pendelöivät työntekijät, jotka eivät laske Luxemburgin väestöön. Singaporessa ja Sveitsissä tilanne on samansuuntainen: rahoitussektori kasvattaa BKT:tä tavalla, joka ei suoraan heijasta tavallisten asukkaiden elintasoa.
+<h2 class="laatikko-otsikko" id="sama-ilmio-muualla">Sama ilmiö muualla:</h2> Luxemburgin BKT per asukas on maailman korkein — mutta noin 45 % maan BKT:stä tuottavat ulkomaalaiset rajan yli pendelöivät työntekijät, jotka eivät laske Luxemburgin väestöön. Singaporessa ja Sveitsissä tilanne on samansuuntainen: rahoitussektori kasvattaa BKT:tä tavalla, joka ei suoraan heijasta tavallisten asukkaiden elintasoa.
     </div>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Kun poliitikko kertoo BKT:n kasvaneen X prosenttia, se ei kerro mitään siitä, paraniko tavallisten ihmisten elintaso. Oleellisempaa on katsoa mediaanipalkan ostovoima, asumisen hintakehitys suhteessa palkkoihin ja julkisten palvelujen taso — luvut, joita ei yleensä mainita samassa lauseessa BKT-kasvun kanssa.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Kun poliitikko kertoo BKT:n kasvaneen X prosenttia, se ei kerro mitään siitä, paraniko tavallisten ihmisten elintaso. Oleellisempaa on katsoa mediaanipalkan ostovoima, asumisen hintakehitys suhteessa palkkoihin ja julkisten palvelujen taso — luvut, joita ei yleensä mainita samassa lauseessa BKT-kasvun kanssa.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -945,6 +924,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="vaalilupauksen-hinnoittelu.html">← Vaalilupauksen hinnoittelu — luvun laskee se, joka lupaa</a>

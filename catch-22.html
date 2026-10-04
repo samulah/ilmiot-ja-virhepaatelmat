@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Catch-22 — pakenematon ansa — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/catch-22.html#article",
       "url": "https://www.ilmiöt.fi/catch-22.html",
       "headline": "Catch-22 — pakenematon ansa",
-      "description": "Catch-22 on looginen ansa, jossa järjestelmän omat säännöt tekevät pakenemisen mahdottomaksi.",
+      "description": "Catch-22: ehto A vaatii B:n ja B vaatii A:n. Selitämme pakenemattoman ansan rakenteen ja konkreettiset keinot kehään joutuneelle.",
       "inLanguage": "fi",
       "articleSection": "Byrokratia ja organisaatio",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Catch-22 — pakenematon ansa",
-        "description": "Catch-22 on looginen ansa, jossa järjestelmän omat säännöt tekevät pakenemisen mahdottomaksi.",
+        "name": "Catch-22",
+        "description": "Catch-22: ehto A vaatii B:n ja B vaatii A:n. Selitämme pakenemattoman ansan rakenteen ja konkreettiset keinot kehään joutuneelle.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -824,6 +825,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="catch-22">
 <div class="ilmio-tag">Ilmiö 38</div>
 <h1>Catch-22 — pakenematon ansa</h1>
@@ -841,7 +843,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Catch-22: pakotie on suljettu juuri sillä säännöllä joka sen pitäisi avata.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Rakenteen ydin:</h2> Catch-22 eroaa tavallisesta byrokratiasta siinä, että se ei ole epäselvä tai hidas — se on loogisesti suljettu. Mitä enemmän yrität käyttää järjestelmää sen tarkoitetulla tavalla, sitä varmemmin päädyt takaisin lähtöpisteeseen.
+<h2 class="laatikko-otsikko" id="rakenteen-ydin">Rakenteen ydin:</h2> Catch-22 eroaa tavallisesta byrokratiasta siinä, että se ei ole epäselvä tai hidas — se on loogisesti suljettu. Mitä enemmän yrität käyttää järjestelmää sen tarkoitetulla tavalla, sitä varmemmin päädyt takaisin lähtöpisteeseen.
     </div>
 <p>Rakenteen tunnistaa siitä, että poikkeuksiin pääseminen edellyttää juuri sen aseman poistumista, jonka takia poikkeusta tarvitaan:</p>
 <ul>
@@ -850,10 +852,10 @@ flowchart TD
 <li>Ilmiantaja tarvitsee institutionaalisen suojan ilmiantamiseen — mutta suoja edellyttää ilmiannon menevän instituution omia kanavia pitkin.</li>
 </ul>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Vallankäytön muoto:</h2> Catch-22-rakenteet näyttävät reiluilta — säännöt ovat julkisia ja niitä sovelletaan tasaisesti. Rakenteen absurdius on vaikea osoittaa, koska jokainen yksittäinen sääntö erikseen kuulostaa järkevältä.
+<h2 class="laatikko-otsikko" id="vallankayton-muoto">Vallankäytön muoto:</h2> Catch-22-rakenteet näyttävät reiluilta — säännöt ovat julkisia ja niitä sovelletaan tasaisesti. Rakenteen absurdius on vaikea osoittaa, koska jokainen yksittäinen sääntö erikseen kuulostaa järkevältä.
     </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Vastakeinot kehään joutuneelle:</h2> Pyydä vaatimus aina kirjallisena ja dokumentoi kehä yhdellä lauseella: "A edellyttää B:tä ja B edellyttää A:ta — kumman poikkeuksesta aloitetaan?" Kirjallinen muoto pakottaa organisaation näkemään absurdiuden, jonka yksittäiset säännöt piilottavat. Jos vastaus on "sääntö on sääntö", eskaloi kehän ulkopuolelle: esihenkilön esihenkilö, kirjaamo, kuluttajariitalautakunta tai oikeusasiamies. Ja etsi rinnakkaisreitti — moni kehä murtuu takaajalla, määräaikaisella poikkeusluvalla tai toisella palveluntarjoajalla, jonka säännöt eivät muodosta samaa silmukkaa.
+<h2 class="laatikko-otsikko" id="vastakeinot-kehaan-joutuneelle">Vastakeinot kehään joutuneelle:</h2> Pyydä vaatimus aina kirjallisena ja dokumentoi kehä yhdellä lauseella: "A edellyttää B:tä ja B edellyttää A:ta — kumman poikkeuksesta aloitetaan?" Kirjallinen muoto pakottaa organisaation näkemään absurdiuden, jonka yksittäiset säännöt piilottavat. Jos vastaus on "sääntö on sääntö", eskaloi kehän ulkopuolelle: esihenkilön esihenkilö, kirjaamo, kuluttajariitalautakunta tai oikeusasiamies. Ja etsi rinnakkaisreitti — moni kehä murtuu takaajalla, määräaikaisella poikkeusluvalla tai toisella palveluntarjoajalla, jonka säännöt eivät muodosta samaa silmukkaa.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -918,6 +920,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="kafka-ilmio.html">← Kafka-ilmiö — byrokratian labyrintti</a>

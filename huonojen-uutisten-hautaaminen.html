@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Huonojen uutisten hautaaminen — hyvä päivä julkaista ikävä asia — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -392,8 +393,8 @@
       "inLanguage": "fi",
       "articleSection": "Media ja julkisuus",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -402,9 +403,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
+        }
+      },
+      "about": {
+        "@type": "DefinedTerm",
+        "name": "Huonojen uutisten hautaaminen",
+        "description": "Ikävä tieto julkaistaan perjantai-iltapäivänä, juhlapyhän alla tai ison uutisen varjossa — muodollisesti avoimesti, käytännössä huomaamatta.",
+        "inDefinedTermSet": {
+          "@type": "DefinedTermSet",
+          "name": "Ilmiöitä — Miten valta toimii",
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -441,6 +452,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="huonojen-uutisten-hautaaminen">
 <div class="ilmio-tag">Ilmiö 135</div>
 <h1>Huonojen uutisten hautaaminen — hyvä päivä julkaista ikävä asia</h1>
@@ -459,10 +471,10 @@ flowchart TD
 <p>Ajoitus toimii, koska uutisvirran kapasiteetti on rajallinen ja lyhytkestoinen. Perjantai-iltana toimitukset ovat pienimmillään, seuraavan päivän lehti luetuin harvimmin, ja maanantaina aihe on jo vanha. Sama pätee juhlapyhiin, lomakausiin ja päiviin, joina jokin suuri tapahtuma vie kaiken tilan. Klassisia hautauskohteita ovat tappiolliset tulokset, palkkiopäätökset, sisäisten selvitysten loppuraportit, irtisanomiset ja hankkeiden kustannusylitykset.</p>
 <p>Tekniikkaa on vaikea todistaa yksittäistapauksessa: kaikkea on julkaistava jonain päivänä. Todistusvoima syntyy toistosta — jos saman organisaation ikävät tiedotteet osuvat järjestelmällisesti perjantai-iltapäiviin ja hyvät tiistaiaamuihin, kyse ei ole sattumasta.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Ero läheisiin käsitteisiin:</h2> <a href="kuollut-kissa.html">Kuollut kissa -strategiassa</a> häiriö luodaan itse; tässä hyödynnetään olemassa olevaa melua. <a href="streisand-ilmio.html">Streisand-ilmiö</a> on käänteinen riski: aktiivinen yritys estää tiedon leviäminen kasvattaa huomiota, kun taas hautaaminen ei anna mitään, mihin tarttua.
+<h2 class="laatikko-otsikko" id="ero-laheisiin-kasitteisiin">Ero läheisiin käsitteisiin:</h2> <a href="kuollut-kissa.html">Kuollut kissa -strategiassa</a> häiriö luodaan itse; tässä hyödynnetään olemassa olevaa melua. <a href="streisand-ilmio.html">Streisand-ilmiö</a> on käänteinen riski: aktiivinen yritys estää tiedon leviäminen kasvattaa huomiota, kun taas hautaaminen ei anna mitään, mihin tarttua.
     </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2>
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2>
 <ul style="margin:0.5em 0 0;">
 <li>Katso tiedotteen kellonaika ja viikonpäivä. Perjantai klo 15–17 ja juhlapyhien aatot ovat tilastollisesti poikkeavia julkaisuhetkiä.</li>
 <li>Kerää organisaation tiedotteet vuodelta ja vertaa ajankohtia sisältöön — kuvio näkyy vasta aineistossa.</li>
@@ -477,7 +489,7 @@ flowchart TD
 <span class="lue-lisaa-tyyppi">Verkossa</span>
 <ul class="lue-lisaa-lista">
 <li><a href="https://en.wikipedia.org/wiki/Jo_Moore" target="_blank" rel="noopener">Wikipedia: Jo Moore ja "a good day to bury bad news" (englanniksi)</a></li>
-<li><a href="https://en.wikipedia.org/wiki/News_dump" target="_blank" rel="noopener">Wikipedia: News dump (englanniksi)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Friday_news_dump" target="_blank" rel="noopener">Wikipedia: Friday news dump (englanniksi)</a></li>
 </ul>
 </div>
 </div>
@@ -520,6 +532,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="branditurvallisuus.html">← Bränditurvallisuus — mainostaja päättää, mistä aiheista kannattaa kirjoittaa</a>

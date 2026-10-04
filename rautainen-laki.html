@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Rautainen laki oligarkiasta — väistämätön mätäneminen — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/rautainen-laki.html#article",
       "url": "https://www.ilmiöt.fi/rautainen-laki.html",
       "headline": "Rautainen laki oligarkiasta — organisaatioiden väistämätön mätäneminen",
-      "description": "Robert Michels havaitsi vuonna 1911 tutkiessaan saksalaisia ammattiliittoja ja osuuskuntia ilmiön, jota hän kutsui organisaatioiden rautaiseksi laiksi…",
+      "description": "Rautainen laki oligarkiasta: jokainen organisaatio ajautuu harvainvaltaan. Selitämme miksi, mistä sen tunnistaa ja mitkä rakenteet hidastavat kehitystä.",
       "inLanguage": "fi",
       "articleSection": "Vallan rakenteet",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Rautainen laki oligarkiasta — organisaatioiden väistämätön mätäneminen",
-        "description": "Robert Michels havaitsi vuonna 1911 tutkiessaan saksalaisia ammattiliittoja ja osuuskuntia ilmiön, jota hän kutsui organisaatioiden rautaiseksi laiksi…",
+        "name": "Rautainen laki oligarkiasta",
+        "description": "Rautainen laki oligarkiasta: jokainen organisaatio ajautuu harvainvaltaan. Selitämme miksi, mistä sen tunnistaa ja mitkä rakenteet hidastavat kehitystä.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -824,6 +825,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="rautainen-laki">
 <div class="ilmio-tag">Ilmiö 5</div>
 <h1>Rautainen laki oligarkiasta — organisaatioiden väistämätön mätäneminen</h1>
@@ -846,7 +848,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Prosessi ei vaadi pahantahtoisuutta — riittää, että johto toimii rationaalisesti omien etujensa mukaan.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Missä ilmiö näkyy:</h2>
+<h2 class="laatikko-otsikko" id="missa-ilmio-nakyy">Missä ilmiö näkyy:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Osuuskunnat:</strong> Perustettu jäsenten yhteiseksi eduksi — ajan myötä hallintoneuvosto ja toimiva johto voivat muodostaa itsensä uudelleen valitsevan eliitin. Jäsenten äänestysosallistuminen laskee, jolloin johdon oma ehdokasasettelu dominoi.</li>
 <li><strong>Ammattiliitot:</strong> Michels havaitsi tämän ensimmäisenä — liittojen byrokraatit alkoivat vastustaa lakkoja, koska lakot uhkasivat liiton rahoituspohjaa ja siten heidän omaa asemaansa.</li>
@@ -856,7 +858,7 @@ flowchart TD
 </ul>
 </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Varoitusmerkit organisaatiossa:</h2>
+<h2 class="laatikko-otsikko" id="varoitusmerkit-organisaatiossa">Varoitusmerkit organisaatiossa:</h2>
 <ul style="margin:0.5em 0 0;">
 <li>Johdon palkitseminen kasvaa selvästi nopeammin kuin organisaation suorituskyky tai jäsenten/omistajien saama hyöty</li>
 <li>Hallituksen tai johdon vaihtuvuus on poikkeuksellisen alhainen — samat henkilöt jatkavat vuosikymmenestä toiseen</li>
@@ -866,10 +868,10 @@ flowchart TD
 </ul>
 </div>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Miksi rakenne ei suojele:</h2> Demokraattiset muodot — äänestykset, valinnat, hallintoneuvostot — eivät estä lakia toteutumasta. Johto kontrolloi informaatiota, asialistan muodostamista, ehdokasasettelua ja tulkintaa. Muodollinen demokratia voi toimia legitimaation tuottajana valtarakenteen ylläpitämiseen. Suoja ei löydy sääntökirjasta vaan aktiivisesta, informoidusta jäsen- tai omistajapohjan osallistumisesta — ja tämän ylläpitäminen on kallis, jatkuva ponnistus. Vertaa: <a href="saantelijan-kaappaus.html">Sääntelijän kaappaus</a> on saman logiikan erikoistapaus viranomaistasolla.
+<h2 class="laatikko-otsikko" id="miksi-rakenne-ei-suojele">Miksi rakenne ei suojele:</h2> Demokraattiset muodot — äänestykset, valinnat, hallintoneuvostot — eivät estä lakia toteutumasta. Johto kontrolloi informaatiota, asialistan muodostamista, ehdokasasettelua ja tulkintaa. Muodollinen demokratia voi toimia legitimaation tuottajana valtarakenteen ylläpitämiseen. Suoja ei löydy sääntökirjasta vaan aktiivisesta, informoidusta jäsen- tai omistajapohjan osallistumisesta — ja tämän ylläpitäminen on kallis, jatkuva ponnistus. Vertaa: <a href="saantelijan-kaappaus.html">Sääntelijän kaappaus</a> on saman logiikan erikoistapaus viranomaistasolla.
     </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Vastakeinot — rakenteet jotka hidastavat lakia:</h2> Kokonaan lakia ei voi kumota, mutta sitä voi hidastaa rakenteilla, jotka eivät ole johdon itsensä hallinnassa: määräaikaiset luottamustoimet ja pakollinen rotaatio (sama henkilö ei jatka vuosikymmentä), avoin talous- ja palkkioraportointi suoraan jäsenille tai omistajille, ja kilpailevien ehdokkaiden aktiivinen rekrytointi ennen jokaista valintaa — vaali ilman vastaehdokasta on nimitys, ei vaali. Jäsenenä tehokkain yksittäinen teko on osallistua juuri niihin kokouksiin, joissa ehdokkaat asetetaan: siellä valta liikkuu, ei äänestyksessä.
+<h2 class="laatikko-otsikko" id="vastakeinot-rakenteet-jotka-hidastavat-lakia">Vastakeinot — rakenteet jotka hidastavat lakia:</h2> Kokonaan lakia ei voi kumota, mutta sitä voi hidastaa rakenteilla, jotka eivät ole johdon itsensä hallinnassa: määräaikaiset luottamustoimet ja pakollinen rotaatio (sama henkilö ei jatka vuosikymmentä), avoin talous- ja palkkioraportointi suoraan jäsenille tai omistajille, ja kilpailevien ehdokkaiden aktiivinen rekrytointi ennen jokaista valintaa — vaali ilman vastaehdokasta on nimitys, ei vaali. Jäsenenä tehokkain yksittäinen teko on osallistua juuri niihin kokouksiin, joissa ehdokkaat asetetaan: siellä valta liikkuu, ei äänestyksessä.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -942,6 +944,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="saantelijan-kaappaus.html">← Sääntelijän kaappaus</a>

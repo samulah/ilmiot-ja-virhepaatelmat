@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Halo-efekti — ensivaikutelman loukku päätöksissä | Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/halo-efekti.html#article",
       "url": "https://www.ilmiöt.fi/halo-efekti.html",
       "headline": "Halo-efekti ja stigma — ensivaikutelman loukku",
-      "description": "Halo-efekti (Edward Thorndike, 1920) on kognitiivinen vinouma, jossa yhden positiivisen piirteen havaitseminen saa aivot päättelemään, että henkilöllä on…",
+      "description": "Halo-efekti tarkoittaa sitä, että yksi hyvä piirre värittää koko arvion. Näin ensivaikutelma harhauttaa — ja näin suojaat päätöksesi.",
       "inLanguage": "fi",
       "articleSection": "Psykologia ja kognitio",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Halo-efekti ja stigma — ensivaikutelman loukku",
-        "description": "Halo-efekti (Edward Thorndike, 1920) on kognitiivinen vinouma, jossa yhden positiivisen piirteen havaitseminen saa aivot päättelemään, että henkilöllä on…",
+        "name": "Halo-efekti ja stigma",
+        "description": "Halo-efekti tarkoittaa sitä, että yksi hyvä piirre värittää koko arvion. Näin ensivaikutelma harhauttaa — ja näin suojaat päätöksesi.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -799,29 +800,6 @@
       },
       "datePublished": "2026-06-19",
       "dateModified": "2026-07-13"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.ilmiöt.fi/halo-efekti.html#faq",
-      "inLanguage": "fi",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Mitä halo-efekti tarkoittaa?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Halo-efekti tarkoittaa, että yhden myönteisen ominaisuuden havaitseminen saa päättelemään ihmisellä olevan muitakin myönteisiä ominaisuuksia, joista ei ole mitään tietoa. Edward Thorndike kuvasi ilmiön vuonna 1920 huomattuaan, että upseerien arviot alaisistaan korreloivat epäuskottavan vahvasti."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Miten halo-efektin vaikutusta voi vähentää?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Arvioi yksi ominaisuus kerrallaan ja kirjaa arvio ylös ennen kuin siirryt seuraavaan. Rekrytoinnissa auttavat anonymisoidut työnäytteet ja se, että eri arvioijat käsittelevät eri osa-alueet toisistaan tietämättä. Yhteisarvio kannattaa muodostaa vasta lopuksi."
-          }
-        }
-      ]
     }
   ]
 }
@@ -847,13 +825,14 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="halo-efekti">
 <div class="ilmio-tag">Ilmiö 24</div>
 <h1>Halo-efekti ja stigma — ensivaikutelman loukku</h1>
 <p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 13.7.2026</p>
 <p>Halo-efekti (Edward Thorndike, 1920) on kognitiivinen vinouma, jossa yhden positiivisen piirteen havaitseminen saa aivot päättelemään, että henkilöllä on muitakin positiivisia piirteitä — vaikka näillä ei ole mitään loogista yhteyttä. Kaunis ihminen arvioidaan automaattisesti älykkäämmäksi, luotettavammaksi ja kyvykkäämmäksi kuin hän ehkä on.</p>
 <div class="infolaatikko vastauslohko">
-<h2 class="laatikko-otsikko">Mikä on halo-efekti suomeksi?</h2>
+<h2 class="laatikko-otsikko" id="mika-on-halo-efekti-suomeksi">Mikä on halo-efekti suomeksi?</h2>
 <p style="margin:0.4em 0 0;"><strong>Halo-efekti</strong> tunnetaan suomeksi myös nimellä <strong>sädekehävaikutus</strong>. Se tarkoittaa kognitiivista vinoumaa, jossa yksi myönteinen piirre saa olettamaan muutkin piirteet myönteisiksi. Käänteistä versiota, jossa yksi kielteinen piirre värittää kaiken muun, kutsutaan stigmaksi eli sarvi-ilmiöksi.</p>
 </div>
 <p><strong>Stigma</strong> (kutsutaan myös devil's horn -efektiksi) on saman ilmiön kääntöpuoli: yksi negatiivinen piirre värittää kaiken muun arvioinnin negatiiviseksi. Yhdessä ne muodostavat saman kolikon kaksi puolta.</p>
@@ -889,7 +868,7 @@
 </div>
 <p class="kaavio-selitys">Halo ja stigma toimivat automaattisesti — nopeammin kuin ehdit tietoisesti arvioida.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Mitä aivot tekevät:</h2> Ensivaikutelma syntyy millisekunneissa. Aivot luovat kokonaiskuvan ihmisestä ennen kuin olet edes sanonut sanaakaan — ja se kokonaiskuva värittää kaiken myöhemmän tiedon tulkinnan. Hyvä ulkonäkö yhdistetään automaattisesti: ajattelevaisuuteen, ystävällisyyteen, luotettavuuteen, lämpöön, lojaalisuuteen, anteliaisuuteen, kyvykkyyteen, johtajuuteen ja älykkyyteen. Näillä ei ole ulkonäön kanssa mitään tekemistä — mutta aivoille sillä ei ole väliä.
+<h2 class="laatikko-otsikko" id="mita-aivot-tekevat">Mitä aivot tekevät:</h2> Ensivaikutelma syntyy millisekunneissa. Aivot luovat kokonaiskuvan ihmisestä ennen kuin olet edes sanonut sanaakaan — ja se kokonaiskuva värittää kaiken myöhemmän tiedon tulkinnan. Hyvä ulkonäkö yhdistetään automaattisesti: ajattelevaisuuteen, ystävällisyyteen, luotettavuuteen, lämpöön, lojaalisuuteen, anteliaisuuteen, kyvykkyyteen, johtajuuteen ja älykkyyteen. Näillä ei ole ulkonäön kanssa mitään tekemistä — mutta aivoille sillä ei ole väliä.
     </div>
 <div class="mermaid">
 flowchart TD
@@ -909,10 +888,10 @@ flowchart TD
 <p>Etäopetukseen siirtyminen koronaviruspandemian aikana tarjosi luonnollisen koeasetelman halo-efektin tutkimiseen. Kun yliopisto-opetus siirtyi etäyhteyksiin, opettajat eivät enää nähneet opiskelijoita kasvokkain — vain kurssisuoritukset puhuivat puolestaan.</p>
 <p>Tulos: kauniimmiksi arvioidut opiskelijat saivat lähiopetuksessa parempia arvosanoja kuin heidän suoritustasonsa olisi edellyttänyt. Etäopetuksessa tämä etu katosi — ja vähemmän kauniiksi arvioidut opiskelijat saivat parempia arvosanoja kuin aiemmin. Halo-efekti toimii kasvokkain, mutta ei ruudun läpi. (<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4631535" target="_blank" rel="noopener">SSRN 4631535</a>)</p>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Käytännön seuraus:</h2> Halo-efekti ei ole tahallinen — se tapahtuu automaattisesti, ennen tietoista ajattelua. Rekrytoinnissa, arvioinnissa, oikeussaleissa ja lääkärin vastaanotolla ulkonäkö vaikuttaa lopputulokseen tavalla, jota kumpikaan osapuoli ei tunnista.
+<h2 class="laatikko-otsikko" id="kaytannon-seuraus">Käytännön seuraus:</h2> Halo-efekti ei ole tahallinen — se tapahtuu automaattisesti, ennen tietoista ajattelua. Rekrytoinnissa, arvioinnissa, oikeussaleissa ja lääkärin vastaanotolla ulkonäkö vaikuttaa lopputulokseen tavalla, jota kumpikaan osapuoli ei tunnista.
     </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Koska vinouma toimii ennen tietoista ajattelua, tiedostaminen ei yksin riitä — rakenteet ratkaisevat. Rekrytoinnissa ja arvioinnissa: lyö kriteerit ja niiden painoarvot lukkoon <em>ennen</em> kuin näet yhtään ehdokasta, käytä strukturoitua haastattelua (samat kysymykset kaikille, pisteytys heti) ja sokkoarviointia aina kun mahdollista — työnäyte ilman nimeä ja kasvokuvaa mittaa työtä, ei säteilyä. Arvioi ominaisuudet erikseen: anna arvosana osaamiselle, yhteistyökyvylle ja luotettavuudelle eri vaiheissa, älä yhtenä kokonaisvaikutelmana. Omissa päätöksissäsi tunnistat halon kysymällä: mihin havaintoon tämä arvio oikeasti perustuu — vai perustuuko se yhteen?
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Koska vinouma toimii ennen tietoista ajattelua, tiedostaminen ei yksin riitä — rakenteet ratkaisevat. Rekrytoinnissa ja arvioinnissa: lyö kriteerit ja niiden painoarvot lukkoon <em>ennen</em> kuin näet yhtään ehdokasta, käytä strukturoitua haastattelua (samat kysymykset kaikille, pisteytys heti) ja sokkoarviointia aina kun mahdollista — työnäyte ilman nimeä ja kasvokuvaa mittaa työtä, ei säteilyä. Arvioi ominaisuudet erikseen: anna arvosana osaamiselle, yhteistyökyvylle ja luotettavuudelle eri vaiheissa, älä yhtenä kokonaisvaikutelmana. Omissa päätöksissäsi tunnistat halon kysymällä: mihin havaintoon tämä arvio oikeasti perustuu — vai perustuuko se yhteen?
     </div>
 <p class="peli-harjoittele" style="margin:1.4rem 0 0;padding:.7rem .9rem;background:#FBF5E0;border-left:3px solid #C9A84C;font-size:.95em"><b>Harjoittele tämän tunnistamista.</b> <a href="peli.html">Vedätys</a> on päivittäinen peli, jossa halo-efekti ja stigma on yksi tunnistettavista ilmiöistä — mukana on aina myös tilanteita, joissa ei ole mitään vikaa.</p>
 <div class="lue-lisaa">
@@ -939,7 +918,7 @@ flowchart TD
     <a href="konsensus-fetissi.html" class="liittyvat-kortti" style="--c:#01579b">
       <span class="liittyvat-numero">25</span>
       <span class="liittyvat-teksti">
-        <span class="liittyvat-nimi">Konsensus fetissi</span>
+        <span class="liittyvat-nimi">Konsensusfetissi</span>
         <span class="liittyvat-kuvaus">Yksimielisyydestä tulee itseisarvo, ja erimielisyys aletaan nähdä ongelmana — ei tietona.</span>
       </span>
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
@@ -986,6 +965,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="darvo.html">← DARVO — uhrin ja syyttäjän roolien kääntäminen</a>
@@ -996,7 +976,7 @@ flowchart TD
         <span class="touch-vinkki">&nbsp;· swipe &#8592;&#8594; tai &#8595; random</span>
       </span>
     </div>
-    <a class="kortti-nav-btn" href="konsensus-fetissi.html">Konsensus fetissi — kun yksimielisyydestä tulee itseisarvo →</a>
+    <a class="kortti-nav-btn" href="konsensus-fetissi.html">Konsensusfetissi — kun yksimielisyydestä tulee itseisarvo →</a>
   </nav>
 
   

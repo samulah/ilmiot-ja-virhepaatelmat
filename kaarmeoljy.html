@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Käärmeöljy — ihmetuote joka parantaa kaiken | Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   
   
   
@@ -734,12 +736,12 @@
       "@id": "https://www.ilmiöt.fi/kaarmeoljy.html#article",
       "url": "https://www.ilmiöt.fi/kaarmeoljy.html",
       "headline": "Käärmeöljy — ihmetuote joka parantaa kaiken",
-      "description": "Käärmeöljy (engl. snake oil ) on yleisnimitys tuotteelle, jota myydään suurilla, todistamattomilla lupauksilla ja joka ei tee mitä lupaa.",
+      "description": "Käärmeöljy tarkoittaa ihmetuotetta, joka lupaa parantaa kaiken eikä paranna mitään. Näin tunnistat katteettomat teho- ja terveysväitteet.",
       "inLanguage": "fi",
       "articleSection": "Huijaukset ja petokset",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -748,19 +750,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Käärmeöljy — ihmetuote joka parantaa kaiken",
-        "description": "Käärmeöljy (engl. snake oil ) on yleisnimitys tuotteelle, jota myydään suurilla, todistamattomilla lupauksilla ja joka ei tee mitä lupaa.",
+        "name": "Käärmeöljy",
+        "description": "Käärmeöljy tarkoittaa ihmetuotetta, joka lupaa parantaa kaiken eikä paranna mitään. Näin tunnistat katteettomat teho- ja terveysväitteet.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -772,29 +774,6 @@
       },
       "datePublished": "2026-06-19",
       "dateModified": "2026-06-19"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.ilmiöt.fi/kaarmeoljy.html#faq",
-      "inLanguage": "fi",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Mitä käärmeöljy tarkoittaa?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Käärmeöljy tarkoittaa tuotetta tai palvelua, joka myydään vaikuttavilla väitteillä ilman näyttöä. Nimitys juontuu 1800-luvun Yhdysvaltain kiertokauppiaista, jotka myivät käärmeöljyksi kutsuttuja ihmerohtoja jokaiseen vaivaan samasta pullosta."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Miten käärmeöljyn tunnistaa?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Kolme merkkiä: lupaus kattaa epätavallisen monta erillistä ongelmaa, näyttönä esitetään kokemuskertomuksia eikä vertailukoetta, ja kritiikkiin vastataan vetoamalla vaiettuun totuuteen. Kysy, mikä tulos osoittaisi tuotteen tehottomaksi — jos vastausta ei ole, väite ei ole testattava."
-          }
-        }
-      ]
     }
   ]
 }
@@ -820,18 +799,19 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="kaarmeoljy">
 <div class="ilmio-tag">Ilmiö 68</div>
 <h1>Käärmeöljy — ihmetuote joka parantaa kaiken</h1>
 <p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 19.6.2026</p>
 <p>Käärmeöljy (engl. <em>snake oil</em>) on yleisnimitys tuotteelle, jota myydään <strong>suurilla, todistamattomilla lupauksilla</strong> ja joka ei tee mitä lupaa. Tunnusmerkki on lupausten laajuus: mitä useampaan vaivaan tuote väittää tehoavansa, sitä varmemmin se ei tehoa mihinkään.</p>
 <div class="infolaatikko vastauslohko">
-<h2 class="laatikko-otsikko">Mikä on snake oil suomeksi?</h2>
+<h2 class="laatikko-otsikko" id="mika-on-snake-oil-suomeksi">Mikä on snake oil suomeksi?</h2>
 <p style="margin:0.4em 0 0;"><strong>Snake oil</strong> on suomeksi <strong>käärmeöljy</strong>. Se on yleisnimitys tuotteelle, jota myydään suurilla, todistamattomilla lupauksilla ja joka ei tee mitä lupaa. Tunnusmerkki on lupausten laajuus: mitä useampaa vaivaa tuote väittää parantavansa, sitä epätodennäköisemmin se hoitaa yhtäkään.</p>
 </div>
 <p>Nimi juontaa 1800-luvun Yhdysvaltoihin, jossa kiertävät kauppiaat myivät "käärmeöljyä" kaikkien vaivojen parannukseksi. Myyntipuhe nojaa tieteen kieleen ilman tieteen sisältöä: hienoja termejä, anekdootteja ja kiireellisyyttä — ei vertaisarvioitua näyttöä.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Käärmeöljyn kielelliset tunnusmerkit:</h2>
+<h2 class="laatikko-otsikko" id="kaarmeoljyn-kielelliset-tunnusmerkit">Käärmeöljyn kielelliset tunnusmerkit:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>"Parantaa kaiken":</strong> yksi tuote moneen toisiinsa liittymättömään vaivaan.</li>
 <li><strong>Salaisuus tai läpimurto:</strong> "lääketeollisuus ei halua sinun tietävän tätä".</li>
@@ -841,10 +821,10 @@
 </ul>
 </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Moderni käärmeöljy:</h2> Ihmedieetit ja detox-tuotteet, "immuniteettia vahvistavat" lisäravinteet, vaihtoehtohoidot syöpään, kalliit "biohakkeri"-laitteet, sekä bisnespuolella kurssit ja valmennukset, jotka lupaavat taloudellisen vapauden. Sama rakenne toistuu: suuri lupaus, ohut näyttö, korkea hinta.
+<h2 class="laatikko-otsikko" id="moderni-kaarmeoljy">Moderni käärmeöljy:</h2> Ihmedieetit ja detox-tuotteet, "immuniteettia vahvistavat" lisäravinteet, vaihtoehtohoidot syöpään, kalliit "biohakkeri"-laitteet, sekä bisnespuolella kurssit ja valmennukset, jotka lupaavat taloudellisen vapauden. Sama rakenne toistuu: suuri lupaus, ohut näyttö, korkea hinta.
     </div>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Kysy <em>mikä on mekanismi ja missä on vertaisarvioitu näyttö?</em> Jos vastaus on anekdootti, salaliitto tai tieteeltä kuulostava sana ilman selitystä — kyseessä on käärmeöljy. Mitä laajempi lupaus ja mitä kovempi kiire, sitä suurempi syy kieltäytyä.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Kysy <em>mikä on mekanismi ja missä on vertaisarvioitu näyttö?</em> Jos vastaus on anekdootti, salaliitto tai tieteeltä kuulostava sana ilman selitystä — kyseessä on käärmeöljy. Mitä laajempi lupaus ja mitä kovempi kiire, sitä suurempi syy kieltäytyä.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -909,6 +889,7 @@
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="bait-and-switch.html">← Bait and switch — syötti ja vaihto</a>
