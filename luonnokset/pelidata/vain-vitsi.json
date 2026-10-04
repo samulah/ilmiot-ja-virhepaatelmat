@@ -1,0 +1,54 @@
+{
+ "ilmio": "vain-vitsi",
+ "laji": "taktiikka",
+ "kohdat": [
+  {
+   "id": "vain-vitsi-1",
+   "teksti": "Ai säkin sait sen paikan? Ne ottaa näköjään nykyään kenet vaan. …No älä nyt tuijota, sehän oli vitsi.",
+   "konteksti": "perhe",
+   "kanava": "puhe",
+   "harhauttajat": ["kunhan-kysyn", "tone-policing"],
+   "paljastus": {
+    "mita": "Piikki sanotaan tosissaan ja nimetään vitsiksi vasta, kun ilmeesi muuttuu.",
+    "miksi": "Jos loukkaannut, olet huumorintajuton. Jos naurat, piikki meni perille. Kumpikin käy hänelle.",
+    "sanot": "Selvä, vitsi. Mitä sä oikeesti ajattelet siitä, et mä sain sen paikan?"
+   }
+  },
+  {
+   "id": "vain-vitsi-2",
+   "teksti": "😂 Sannan tarjoilut taas, onneks söin kotona ennen ku tulin. No heh heh, leikki leikkinä, ei kai täällä tarvii kaikkee ottaa niin vakavasti.",
+   "konteksti": "some",
+   "kanava": "viesti",
+   "harhauttajat": ["kunhan-kysyn", "huolitrollaus"],
+   "paljastus": {
+    "mita": "\"Vitsi\" osuu taas samaan ihmiseen, ja suoja on rakennettu valmiiksi samaan viestiin.",
+    "miksi": "Kilven tunnistaa toistosta ja suunnasta. Yksi heitto on heitto; sama kohde joka kerta on viesti.",
+    "sanot": "Tää on taas vitsi Sannan ruuista. Onks sulla siitä jotain oikeeta sanottavaa?"
+   }
+  },
+  {
+   "id": "vain-vitsi-3",
+   "teksti": "Sun osuus oli kyllä niin ohut, et luulin sitä kansilehdeks. …Hei mä vaan heitin, ei tässä mitään.",
+   "konteksti": "opiskelu",
+   "kanava": "puhe",
+   "harhauttajat": ["tone-policing", "motte-and-bailey"],
+   "paljastus": {
+    "mita": "Arvostelu annetaan vitsin muodossa ja vedetään takaisin heti, kun siihen voisi vastata.",
+    "miksi": "Et voi puolustaa työtäsi vitsiä vastaan. Arvio jää silti voimaan kaikkien kuullen.",
+    "sanot": "Okei, heitto. Oliks mun osuudessa oikeesti jotain, mitä pitäis korjata?"
+   }
+  },
+  {
+   "id": "vain-vitsi-4",
+   "teksti": "Kiva et ehdit vastata jo samana päivänä 🙃 No vitsi vitsi, kai sitä nyt vähän saa heittää.",
+   "konteksti": "parisuhde",
+   "kanava": "viesti",
+   "harhauttajat": ["kunhan-kysyn", "kaksoissidos"],
+   "paljastus": {
+    "mita": "Moite sanotaan ironiana, jolloin sen voi kiistää, jos siihen tartutaan.",
+    "miksi": "Viesti menee perille, mutta siitä ei voi keskustella, koska virallisesti mitään ei sanottu.",
+    "sanot": "Jos sua harmittaa, et vastasin myöhään, sano se suoraan. Siitä voidaan puhua."
+   }
+  }
+ ]
+}

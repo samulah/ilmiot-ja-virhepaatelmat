@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Simple Sabotage Field Manual suomeksi | Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   
   
   
@@ -734,12 +736,12 @@
       "@id": "https://www.ilmiöt.fi/simple-sabotage.html#article",
       "url": "https://www.ilmiöt.fi/simple-sabotage.html",
       "headline": "Simple Sabotage Field Manual (1944)",
-      "description": "Yhdysvaltain tiedusteluvirasto OSS (Office of Strategic Services, nykyisen CIA:n edeltäjä) julkaisi vuonna 1944 käsikirjan, joka opetti siviileitä…",
+      "description": "OSS:n vuoden 1944 käsikirja opetti sabotoimaan organisaatiota sisältäpäin. Mitä ohjeet sanovat ja miksi ne kuvaavat monen nykyorganisaation arkea.",
       "inLanguage": "fi",
       "articleSection": "Byrokratia ja organisaatio",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -748,19 +750,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
         "name": "Simple Sabotage Field Manual (1944)",
-        "description": "Yhdysvaltain tiedusteluvirasto OSS (Office of Strategic Services, nykyisen CIA:n edeltäjä) julkaisi vuonna 1944 käsikirjan, joka opetti siviileitä…",
+        "description": "OSS:n vuoden 1944 käsikirja opetti sabotoimaan organisaatiota sisältäpäin. Mitä ohjeet sanovat ja miksi ne kuvaavat monen nykyorganisaation arkea.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -772,29 +774,6 @@
       },
       "datePublished": "2026-06-19",
       "dateModified": "2026-09-04"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.ilmiöt.fi/simple-sabotage.html#faq",
-      "inLanguage": "fi",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Mitä Simple Sabotage Field Manual neuvoo?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Byrokratiaosuus neuvoo vaatimaan asiat kirjallisina, viemään päätökset komiteoihin, palaamaan jo päätettyihin asioihin, pitämään pitkiä puheenvuoroja ja vaatimaan tarkkaa sääntöjen noudattamista. Ohjeiden teho perustuu siihen, että sabotoija näyttää tunnolliselta työntekijältä."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Onko Simple Sabotage Field Manual aito?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "On. Käsikirjan julkaisi Office of Strategic Services eli OSS, CIA:n edeltäjä, vuonna 1944, ja CIA on sittemmin julkaissut asiakirjan yleisesti saataville. Se ei ole nettihuhu vaan arkistoitu virastojulkaisu."
-          }
-        }
-      ]
     }
   ]
 }
@@ -820,13 +799,14 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="simple-sabotage">
 <div class="ilmio-tag">Ilmiö 36</div>
 <h1>Simple Sabotage Field Manual (1944)</h1>
 <p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 4.9.2026</p>
 <p>Yhdysvaltain tiedusteluvirasto OSS (Office of Strategic Services, nykyisen CIA:n edeltäjä) julkaisi vuonna 1944 käsikirjan, joka opetti siviileitä sabotoimaan vihollisen organisaatioita sisältäpäin. Asiakirja on nyt CIA:n toimesta julkisesti saatavilla.</p>
 <div class="infolaatikko vastauslohko">
-<h2 class="laatikko-otsikko">Mikä Simple Sabotage Field Manual on?</h2>
+<h2 class="laatikko-otsikko" id="mika-simple-sabotage-field-manual-on">Mikä Simple Sabotage Field Manual on?</h2>
 <p style="margin:0.4em 0 0;">OSS:n eli CIA:n edeltäjän vuonna 1944 julkaisema käsikirja. Kuuluisin osa on <strong>byrokratiasabotaasi</strong>: vaadi asiat kirjallisina, vie päätökset komiteoihin, palaa jo päätettyihin kysymyksiin, pidä pitkiä puheenvuoroja. Teho perustuu siihen, että sabotoija näyttää tunnolliselta.</p>
 </div>
 <p>Käsikirjan byrokratiasabotaasin ohjeet ovat silmiinpistävän tuttuja:</p>
@@ -842,12 +822,12 @@
       → Sovella sääntöjä orjallisesti — älä käytä harkintaa tai poikkeuksia.<br/>
 </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Huomio:</h2> Käsikirja oli tarkoitettu sabotoimaan <em>vihollisen</em> organisaatioita. Mutta samat tekniikat toimivat missä tahansa hierarkkisessa organisaatiossa — ja monet niistä esiintyvät täysin luonnollisina prosesseina täysin normaalisti toimivissa instituutioissa.
+<h2 class="laatikko-otsikko" id="huomio">Huomio:</h2> Käsikirja oli tarkoitettu sabotoimaan <em>vihollisen</em> organisaatioita. Mutta samat tekniikat toimivat missä tahansa hierarkkisessa organisaatiossa — ja monet niistä esiintyvät täysin luonnollisina prosesseina täysin normaalisti toimivissa instituutioissa.
     </div>
 <p>Käsikirja on kiinnostava siksi, että se kuvaa, miten tehokasta sabotaasia ei tarvitse tehdä dramaattisesti. Riittää, että noudattaa sääntöjä <em>liian tarkasti</em>, puhuu <em>liian paljon</em> ja päättää <em>liian hitaasti</em>. Tehoton organisaatio näyttää päällepäin täysin normaalilta.</p>
 <p>Alkuperäinen asiakirja: <em>Simple Sabotage Field Manual</em>, OSS, 1944. Declassifioitu ja julkaistu CIA:n toimesta.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Vastakeino — käännä käsikirja tarkistuslistaksi:</h2> Manuaali toimii peilinä: käy lista läpi ja kysy jokaisesta kohdasta, missä oma organisaatiosi tekee tätä "ihan normaalina prosessina". Löydöksiin tepsivät täsmäkorjaukset: päätökset komitealta yhdelle nimetylle omistajalle, kokouksiin päätösagenda ja aikaraja, "lisäselvitykseen" lähettäminen vaatii perustelun ja määräpäivän, ja sääntöjen tulkintaan lupa käyttää harkintaa. Käytäntöä ei tarvitse todistaa pahantahtoiseksi — riittää, että sen purkaa.
+<h2 class="laatikko-otsikko" id="vastakeino-kaanna-kasikirja-tarkistuslistaksi">Vastakeino — käännä käsikirja tarkistuslistaksi:</h2> Manuaali toimii peilinä: käy lista läpi ja kysy jokaisesta kohdasta, missä oma organisaatiosi tekee tätä "ihan normaalina prosessina". Löydöksiin tepsivät täsmäkorjaukset: päätökset komitealta yhdelle nimetylle omistajalle, kokouksiin päätösagenda ja aikaraja, "lisäselvitykseen" lähettäminen vaatii perustelun ja määräpäivän, ja sääntöjen tulkintaan lupa käyttää harkintaa. Käytäntöä ei tarvitse todistaa pahantahtoiseksi — riittää, että sen purkaa.
     </div>
 <p class="peli-harjoittele" style="margin:1.4rem 0 0;padding:.7rem .9rem;background:#FBF5E0;border-left:3px solid #C9A84C;font-size:.95em"><b>Harjoittele tämän tunnistamista.</b> <a href="peli.html">Vedätys</a> on päivittäinen peli, jossa simple Sabotage Field Manual (1944) on yksi tunnistettavista ilmiöistä — mukana on aina myös tilanteita, joissa ei ole mitään vikaa.</p>
 <div class="lue-lisaa">
@@ -863,7 +843,7 @@
 <span class="lue-lisaa-tyyppi">Verkossa</span>
 <ul class="lue-lisaa-lista">
 <li><a href="https://en.wikipedia.org/wiki/Simple_Sabotage_Field_Manual" target="_blank" rel="noopener">Wikipedia: Simple Sabotage Field Manual (englanniksi)</a></li>
-<li><a href="https://www.cia.gov/static/5c875f3ec660e092cf893f60b4a288df/SimpleSabotage.pdf" target="_blank" rel="noopener">Alkuperäinen CIA:n julkaisema asiakirja (englanniksi)</a></li>
+<li><a href="https://www.gutenberg.org/ebooks/26184" target="_blank" rel="noopener">Alkuperäinen käsikirja kokonaisuudessaan, Project Gutenberg (englanniksi)</a></li>
 </ul>
 </div>
 </div>
@@ -914,6 +894,7 @@
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="occamin-partaveitsi.html">← Occamin partaveitsi — älä oleta enempää kuin on pakko</a>

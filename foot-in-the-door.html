@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Foot-in-the-door — pieni myönnytys avaa oven suuremmalle — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/foot-in-the-door.html#article",
       "url": "https://www.ilmiöt.fi/foot-in-the-door.html",
       "headline": "Foot-in-the-door — pieni myönnytys avaa oven suuremmalle",
-      "description": "Foot-in-the-door (suom. \"jalka oven väliin\") on suostuttelutekniikka, jossa esitetään ensin pieni, helposti hyväksyttävä pyyntö ja vasta sen jälkeen…",
+      "description": "Foot-in-the-door: pieni myönnytys avaa oven suuremmille. Selitämme sitoutumisen psykologian käytännössä ja miten katkaiset pyyntöjen portaikon.",
       "inLanguage": "fi",
       "articleSection": "Myyntikikat ja painostus",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Foot-in-the-door — pieni myönnytys avaa oven suuremmalle",
-        "description": "Foot-in-the-door (suom. \"jalka oven väliin\") on suostuttelutekniikka, jossa esitetään ensin pieni, helposti hyväksyttävä pyyntö ja vasta sen jälkeen…",
+        "name": "Foot-in-the-door",
+        "description": "Foot-in-the-door: pieni myönnytys avaa oven suuremmille. Selitämme sitoutumisen psykologian käytännössä ja miten katkaiset pyyntöjen portaikon.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -824,6 +825,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="foot-in-the-door">
 <div class="ilmio-tag">Ilmiö 85</div>
 <h1>Foot-in-the-door — pieni myönnytys avaa oven suuremmalle</h1>
@@ -840,7 +842,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Ensimmäinen kyllä ei koske tuotetta vaan sinua — se rakentaa minäkuvan, jota toinen pyyntö hyödyntää.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Missä se esiintyy:</h2>
+<h2 class="laatikko-otsikko" id="missa-se-esiintyy">Missä se esiintyy:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Myynti:</strong> "ilmainen kokeilu" tai pieni tilaus, joka johtaa kestotilaukseen.</li>
 <li><strong>Keikkatyö:</strong> "tee vain tämä pieni juttu" laajenee jatkuviksi lisäpyynnöiksi.</li>
@@ -849,7 +851,7 @@ flowchart TD
 </ul>
 </div>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Huomaa, kun "pikkujuttuun" suostuminen muuttaa asetelmaa. Arvioi jokainen pyyntö <em>itsenäisesti</em> — kysymys ei ole "olenko jo sanonut kyllä", vaan "haluanko tämän nyt". Aiempi myönnytys ei velvoita seuraavaan. Vastapari on <a href="door-in-the-face.html">door-in-the-face</a>, jossa järjestys on käännetty.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Huomaa, kun "pikkujuttuun" suostuminen muuttaa asetelmaa. Arvioi jokainen pyyntö <em>itsenäisesti</em> — kysymys ei ole "olenko jo sanonut kyllä", vaan "haluanko tämän nyt". Aiempi myönnytys ei velvoita seuraavaan. Vastapari on <a href="door-in-the-face.html">door-in-the-face</a>, jossa järjestys on käännetty.
     </div>
 <p class="peli-harjoittele" style="margin:1.4rem 0 0;padding:.7rem .9rem;background:#FBF5E0;border-left:3px solid #C9A84C;font-size:.95em"><b>Harjoittele tämän tunnistamista.</b> <a href="peli.html">Vedätys</a> on päivittäinen peli, jossa foot-in-the-door on yksi tunnistettavista ilmiöistä — mukana on aina myös tilanteita, joissa ei ole mitään vikaa.</p>
 <div class="lue-lisaa">
@@ -915,6 +917,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="tilipuristus.html">← Tilipuristus — maksun viivytys aseena</a>

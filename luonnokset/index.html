@@ -224,6 +224,29 @@ julkaistaessa molemmat puretaan.</p>
 </section>
 
 <section class="hub-kategoria">
+  <div class="hub-kat-label">Trollaus somessa &middot; kolme luonnosta &middot; 3.10.2026</div>
+  <p class="hub-kat-desc">Kategorian 15 vastakeinot vietynä sivuston ulkopuolelle. Mikään näistä
+  ei ole julki. <strong>Someviestit:</strong> 72 viestiä ja 2 pohjaa, jokainen &le; 280 merkkiä.
+  <strong>Pikaopas:</strong> koostesivu, ei ilmiö &mdash; julkaisu vaatii <code>noindex</code>in ja
+  <code>../</code>-polkujen purun, oman vakion <code>build_sitemap.py</code>:hyn ja sisääntulevat
+  linkit (kategoriaessee ja <code>trollin-ruokkiminen.html</code>), tai sivu jää orvoksi.
+  <strong>Pelikohdat:</strong> 60 kohtaa (9 taktiikkaa, 2 vinoumaa, 16 rehellistä) kansiossa
+  <code>pelidata/</code>. <strong>Älä siirrä niitä juuren <code>pelidata/</code>:an ennen
+  päätöstä:</strong> <code>build_peli.py</code> kokoaa kaikki erät uudelleen, ja kokeessa 0/40
+  nykyisestä erästä säilyi samana &mdash; myös jo pelatut. Yhdistetty pankki on validoitu
+  erillisessä kopiossa (260 kohtaa, 52 erää, <code>testaa_peli.js</code> 84/84). Siirron jälkeen:
+  <code>build_peli.py</code> &rarr; <code>testaa_peli.js</code> &rarr;
+  <code>lisaa_pelilinkit.py --kirjoita</code> (11 uutta sivua).
+  <strong>Jakokuvat</strong> eivät ole luonnos: 20 kuvaa on jo <code>og/</code>:ssa ja sivujen
+  metat osoittavat niihin. Palvelimelle kuvat <em>ennen</em> HTML-sivuja.</p>
+  <div class="hub-kortit">
+    <a class="hub-kortti" style="--c:#00838f" href="SOME-TROLLAUS.md"><span class="hub-numero tyhja">md</span><span class="hub-nimi">SOME-TROLLAUS.md <em>· someviestit, X / Threads / Bluesky</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#00838f" href="mita-vastata-trollille.html"><span class="hub-numero tyhja">&mdash;</span><span class="hub-nimi">Mitä vastata trollille <em>· pikaopas, 7 kysymystä</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#00838f" href="pelidata/"><span class="hub-numero tyhja">json</span><span class="hub-nimi">pelidata/ <em>· 60 pelikohtaa, 12 tiedostoa</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+  </div>
+</section>
+
+<section class="hub-kategoria">
   <div class="hub-kat-label">Koostesivu &middot; ei ilmiö &middot; julkaisu joulukuu 2026</div>
   <p class="hub-kat-desc">Vaalierän kokoava opas. <strong>Ei ilmiösivu:</strong> ei numeroa, ei
   PREV/NEXT-ketjua, ei <code>lisaa_ilmiot.py</code>:tä. Vaatii oman rivin

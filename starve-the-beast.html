@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Starve the beast — näännytä peto rahoituksesta | Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -708,14 +709,14 @@
   <!-- SEO -->
   <meta name="description" content="Starve the beast: ensin veronalennus, sitten 'pakolliset' leikkaukset. Selitämme miten strategia toimii käytännössä ja mitä äänestäjän kannattaa kysyä.">
   <link rel="canonical" href="https://www.ilmiöt.fi/starve-the-beast.html">
-  <meta property="og:title" content="Starve the beast — Ilmiöitä">
+  <meta property="og:title" content="Starve the beast — näännytä peto rahoituksesta | Ilmiöitä">
   <meta property="og:description" content="Starve the beast: ensin veronalennus, sitten 'pakolliset' leikkaukset. Selitämme miten strategia toimii käytännössä ja mitä äänestäjän kannattaa kysyä.">
   <meta property="og:url" content="https://www.ilmiöt.fi/starve-the-beast.html">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="fi_FI">
   <meta property="og:site_name" content="Ilmiöitä — Miten valta toimii">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Starve the beast — Ilmiöitä">
+  <meta name="twitter:title" content="Starve the beast — näännytä peto rahoituksesta | Ilmiöitä">
   <meta name="twitter:description" content="Starve the beast: ensin veronalennus, sitten 'pakolliset' leikkaukset. Selitämme miten strategia toimii käytännössä ja mitä äänestäjän kannattaa kysyä.">
   <meta property="og:image" content="https://www.ilmiöt.fi/og/brand.png">
   <meta property="og:image:width" content="1200">
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/starve-the-beast.html#article",
       "url": "https://www.ilmiöt.fi/starve-the-beast.html",
       "headline": "Starve the beast",
-      "description": "Starve the beast (suom. \"nälkiinnytä peto\") on Yhdysvalloissa 1980-luvulla popularisoitu poliittinen strategia.",
+      "description": "Starve the beast: ensin veronalennus, sitten 'pakolliset' leikkaukset. Selitämme miten strategia toimii käytännössä ja mitä äänestäjän kannattaa kysyä.",
       "inLanguage": "fi",
       "articleSection": "Vallan rakenteet",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
         "name": "Starve the beast",
-        "description": "Starve the beast (suom. \"nälkiinnytä peto\") on Yhdysvalloissa 1980-luvulla popularisoitu poliittinen strategia.",
+        "description": "Starve the beast: ensin veronalennus, sitten 'pakolliset' leikkaukset. Selitämme miten strategia toimii käytännössä ja mitä äänestäjän kannattaa kysyä.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -824,6 +825,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="starve-the-beast">
 <div class="ilmio-tag">Ilmiö 2</div>
 <h1>Starve the beast</h1>
@@ -840,14 +842,14 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Starve the beast -kierre: veronalennus luo perustelun leikkauksille.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Historia:</h2> Termi on yleisesti liitetty Ronald Reaganin talouspolitiikkaan 1980-luvulla. Reagan itse totesi: <em>"Government is not the solution to our problem; government is the problem."</em> Strategian logiikan dokumentoi mm. ekonomisti Milton Friedman.
+<h2 class="laatikko-otsikko" id="historia">Historia:</h2> Termi on yleisesti liitetty Ronald Reaganin talouspolitiikkaan 1980-luvulla. Reagan itse totesi: <em>"Government is not the solution to our problem; government is the problem."</em> Strategian logiikan dokumentoi mm. ekonomisti Milton Friedman.
     </div>
 <p>Strategian viehätys on sen <strong>poliittinen vastustamisen vaikeus</strong>: veronalennuksia on helppo myydä äänestäjille, ja syntynyt vaje esitetään pakottavana ulkoisena todellisuutena — ei poliittisena valintana. Leikkaukset seuraavat "väistämättä", vaikka ne olivatkin alusta asti tavoite.</p>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnusmerkki:</h2> Kun veronalennusta perustellaan "talouden piristämisellä" mutta budjettivajetta samaan aikaan käytetään perusteena leikata koulutuksesta, terveydenhuollosta tai eläkkeistä — strategia saattaa olla käynnissä.
+<h2 class="laatikko-otsikko" id="tunnusmerkki">Tunnusmerkki:</h2> Kun veronalennusta perustellaan "talouden piristämisellä" mutta budjettivajetta samaan aikaan käytetään perusteena leikata koulutuksesta, terveydenhuollosta tai eläkkeistä — strategia saattaa olla käynnissä.
     </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Äänestäjän tärkein kysymys esitetään veronalennuksen yhteydessä, ei vasta leikkauslistan: <em>mistä tämä rahoitetaan?</em> Vaadi vastaus ennen päätöstä — jos sitä ei tule, vaje on suunnitelma eikä yllätys. Kun vaje sitten "yllättää", muista järjestys: leikkaustarve syntyi tulopäätöksestä, joten vaihtoehtoihin kuuluu myös tulopohjan palauttaminen, ei pelkkä menojen karsinta. Strategian tunnistaa siitä, että sama taho, joka ajoi veronalennuksen, esittelee vajeen luonnonvoimana.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Äänestäjän tärkein kysymys esitetään veronalennuksen yhteydessä, ei vasta leikkauslistan: <em>mistä tämä rahoitetaan?</em> Vaadi vastaus ennen päätöstä — jos sitä ei tule, vaje on suunnitelma eikä yllätys. Kun vaje sitten "yllättää", muista järjestys: leikkaustarve syntyi tulopäätöksestä, joten vaihtoehtoihin kuuluu myös tulopohjan palauttaminen, ei pelkkä menojen karsinta. Strategian tunnistaa siitä, että sama taho, joka ajoi veronalennuksen, esittelee vajeen luonnonvoimana.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -912,6 +914,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="paskuuttaminen.html">← Paskuuttaminen</a>

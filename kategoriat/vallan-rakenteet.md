@@ -1,10 +1,10 @@
 ---
 kat_id: vallan-rakenteet
 h1: Vallan rakenteet — miten valta keskittyy ja suojaa itseään
-otsikko: Vallan rakenteet — 7 tapaa, joilla valta keskittyy ja suojaa itseään
+otsikko: Vallan rakenteet — {n} tapaa, joilla valta keskittyy ja suojaa itseään
 kuvaus: Overton-ikkuna, sääntelijän kaappaus, paskuuttaminen. Kahdeksan mekanismia, joilla valta keskittyy ja suojautuu — ja miksi ne toimivat hitaudellaan.
 vari: "#8e44ad"
-paivitetty: 2026-08-14
+paivitetty: 2026-10-04
 naapurit:
   - kategoria-informaatio-ja-propaganda | Informaatio ja propaganda →
   - kategoria-byrokratia-ja-organisaatio | Byrokratia ja organisaatio →

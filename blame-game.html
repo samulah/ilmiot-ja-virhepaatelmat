@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>The Blame Game — syyttelyn kehä — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/blame-game.html#article",
       "url": "https://www.ilmiöt.fi/blame-game.html",
       "headline": "The Blame Game — syyttelyn kehä",
-      "description": "The Blame Game on organisaatio- ja ryhmäkäyttäytymisen ilmiö, jossa epäonnistumisen jälkeen resurssit suunnataan vastuullisen etsimiseen sen sijaan, että…",
+      "description": "The Blame Game: syyllisen etsintä korvaa ongelman ratkaisun. Selitämme syyttelykierteen mekanismin ja miten katkaiset sen työyhteisössä.",
       "inLanguage": "fi",
       "articleSection": "Psykologia ja kognitio",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "The Blame Game — syyttelyn kehä",
-        "description": "The Blame Game on organisaatio- ja ryhmäkäyttäytymisen ilmiö, jossa epäonnistumisen jälkeen resurssit suunnataan vastuullisen etsimiseen sen sijaan, että…",
+        "name": "The Blame Game",
+        "description": "The Blame Game: syyllisen etsintä korvaa ongelman ratkaisun. Selitämme syyttelykierteen mekanismin ja miten katkaiset sen työyhteisössä.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -824,6 +825,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="blame-game">
 <div class="ilmio-tag">Ilmiö 27</div>
 <h1>The Blame Game — syyttelyn kehä</h1>
@@ -845,7 +847,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Syyttelyn kehä: juurisyy jää koskematta, sama virhe toistuu.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Kehän kolme tasoa:</h2>
+<h2 class="laatikko-otsikko" id="kehan-kolme-tasoa">Kehän kolme tasoa:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Yksilötaso:</strong> "Projektipäällikkö epäonnistui" — henkilö vaihdetaan, prosessi säilyy ennallaan.</li>
 <li><strong>Tiimitaso:</strong> Osastot syyttävät toisiaan — myynti syyttää tuotantoa, tuotanto syyttää myyntiä. Kukaan ei omista kokonaisuutta.</li>
@@ -855,7 +857,7 @@ flowchart TD
 <p><strong>Ero DARVO:hon:</strong> DARVO on strateginen, tietoinen taktiikka: kiistä, hyökkää, käännä roolit. The Blame Game voi olla täysin tiedostamaton organisaatiorakenne — ei kenenkään tahallinen valinta vaan järjestelmän emergenttiä käyttäytymistä. Syyttely tapahtuu, koska kukaan ei ole rakentanut kulttuuria jossa virheistä opitaan. Tulos on silti sama: <a href="darvo.html">DARVO</a> hiljentää yksilön, blame game hiljentää koko organisaation.</p>
 <p><strong>Syntipukin mekaniikka:</strong> The Blame Gamessa tarvitaan syntipukki — René Girardin (1972) uhrausteorian mukainen rakenne, jossa yhteisön jännite puretaan kohdistamalla se yhteen henkilöön tai ryhmään. Syntipukki ei välttämättä ole todella syyllinen: hänet valitaan siksi, että hänet voidaan uhrata ilman liiallisia kustannuksia yhteisölle. Tämä tarkoittaa usein henkilöitä, joilla on vähiten valtaa tai suojeluverkostoja. Ks. <a href="rautainen-laki.html">Rautainen laki oligarkiasta</a>: ne joilla on valtaa, suojaavat toisiaan — ne joilla ei ole, kantavat taakan.</p>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Blame game -kulttuuri näkyy siinä, että post mortem -tilaisuudet muuttuvat kuulusteluiksi; raportit alkavat lauseilla "X:n virhe johti…"; organisaatio toistaa samoja virheitä; ja epäonnistumiset piilotetaan ylöspäin, jotta ne eivät "laske omaa arvoa". Vastakysymys: <em>Jos kukaan ei joutuisi vastuuseen, mitä kertoisit tapahtuneesta?</em> Jos vastaus muuttuu, kulttuuri on ongelma.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Blame game -kulttuuri näkyy siinä, että post mortem -tilaisuudet muuttuvat kuulusteluiksi; raportit alkavat lauseilla "X:n virhe johti…"; organisaatio toistaa samoja virheitä; ja epäonnistumiset piilotetaan ylöspäin, jotta ne eivät "laske omaa arvoa". Vastakysymys: <em>Jos kukaan ei joutuisi vastuuseen, mitä kertoisit tapahtuneesta?</em> Jos vastaus muuttuu, kulttuuri on ongelma.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -928,6 +930,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="omenoita-appelsiineja.html">← Omenoita ja appelsiineja — vertailun harha</a>

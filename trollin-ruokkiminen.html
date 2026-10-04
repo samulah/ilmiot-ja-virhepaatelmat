@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <title>DARVO — manipulaatiotaktiikka suomeksi | Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <title>Älä ruoki trollia — toimiiko neuvo oikeasti? | Ilmiöitä</title>
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -717,11 +718,11 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Älä ruoki trollia — toimiiko neuvo oikeasti? | Ilmiöitä">
   <meta name="twitter:description" content="Älä ruoki trollia on verkon vanhin neuvo: reaktio on trollin palkkio. Se toimii yksittäiseen provosoijaan, mutta ei maalittamiseen. Näin erotat ne.">
-  <meta property="og:image" content="https://www.ilmiöt.fi/og/brand.png">
+  <meta property="og:image" content="https://www.ilmiöt.fi/og/trollin-ruokkiminen.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Ilmiöitä — Miten valta toimii">
-  <meta name="twitter:image" content="https://www.ilmiöt.fi/og/brand.png">
+  <meta property="og:image:alt" content="Älä ruoki trollia — Reaktio on trollin palkkio. Neuvo toimii yksittäiseen provosoijaan — ei maalittamiseen.">
+  <meta name="twitter:image" content="https://www.ilmiöt.fi/og/trollin-ruokkiminen.png">
   <style>.ilmio h1{margin-top:0;font-family:'Spectral',Georgia,serif;}</style>
   <script type="application/ld+json">
 {
@@ -754,7 +755,7 @@
       "@type": "Article",
       "image": {
         "@type": "ImageObject",
-        "url": "https://www.ilmiöt.fi/og/brand.png",
+        "url": "https://www.ilmiöt.fi/og/trollin-ruokkiminen.png",
         "width": 1200,
         "height": 630
       },
@@ -765,8 +766,8 @@
       "inLanguage": "fi",
       "articleSection": "Trollaus ja keskustelun sabotointi",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Älä ruoki trollia — milloin hiljaisuus toimii ja milloin ei",
+        "name": "Älä ruoki trollia",
         "description": "Älä ruoki trollia on verkon vanhin neuvo: reaktio on trollin palkkio. Se toimii yksittäiseen provosoijaan, mutta ei maalittamiseen. Näin erotat ne.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -798,30 +799,7 @@
         "description": "Kirjoittajanimi, jonka takana on kiinnostus valtaan, vaikuttamiseen ja ihmisen päättelyn vinoumiin. Sisältö perustuu julkisiin lähteisiin ja vakiintuneeseen käsitteistöön."
       },
       "datePublished": "2026-10-03",
-      "dateModified": "2026-10-03"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.ilmiöt.fi/trollin-ruokkiminen.html#faq",
-      "inLanguage": "fi",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Mitä älä ruoki trollia tarkoittaa?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Älä ruoki trollia (engl. don't feed the trolls) on Usenet-ajoilta periytyvä neuvo: koska trollin palkkio on reaktio, sen saa loppumaan jättämällä reaktion antamatta. Jokainen vastine, suuttumus ja vastaväite on ruokaa, joka pitää provosoinnin käynnissä."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Milloin trollin sivuuttaminen ei toimi?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Sivuuttaminen toimii yksittäiseen provosoijaan, joka hakee huomiota. Se ei toimi, kun kyse on järjestelmällisestä häirinnästä tai maalittamisesta: silloin hiljaisuus ei vie palkkiota, koska tavoite ei ole reaktio vaan kohteen vetäytyminen. Tällöin tarvitaan moderointia, tallentamista ja tarvittaessa rikosilmoitus."
-          }
-        }
-      ]
+      "dateModified": "2026-10-04"
     }
   ]
 }
@@ -847,17 +825,18 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="trollin-ruokkiminen">
 <div class="ilmio-tag">Ilmiö 165</div>
 <h1>Älä ruoki trollia — milloin hiljaisuus toimii ja milloin ei</h1>
-<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 3.10.2026</p>
+<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 4.10.2026</p>
 <p><strong>Älä ruoki trollia</strong> (engl. <em>don't feed the trolls</em>) on verkon vanhimpia neuvoja. Logiikka on yksinkertainen: jos <a href="trollaus.html">trollin</a> palkkio on reaktio, provosointi loppuu kun reaktiota ei tule. Jokainen vastine, suuttumus ja vastaväite on ruokaa. Sama periaate on <a href="harmaa-kivi.html">harmaan kiven</a> taustalla ihmissuhteissa: tylsyys vie palkkion pois.</p>
 <div class="infolaatikko vastauslohko">
-<h2 class="laatikko-otsikko">Toimiiko trollin sivuuttaminen?</h2>
+<h2 class="laatikko-otsikko" id="toimiiko-trollin-sivuuttaminen">Toimiiko trollin sivuuttaminen?</h2>
 <p style="margin:0.4em 0 0;">Yksittäiseen huomionhakijaan usein toimii. Mutta neuvo olettaa, että trolli haluaa <em>reaktion</em>. Jos tavoite on saada joku lopettamaan kirjoittaminen, hiljaisuus on juuri se, mitä haetaan — ja silloin neuvo toimii häiritsijän eduksi.</p>
 </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Erota kaksi tilannetta:</h2>
+<h2 class="laatikko-otsikko" id="erota-kaksi-tilannetta">Erota kaksi tilannetta:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Provosoija:</strong> yksi tili, tavoite huomio, kiinnostus loppuu kun vastausta ei tule. <strong>Sivuuta.</strong></li>
 <li><strong>Häirintä tai <a href="maalittaminen.html">maalittaminen</a>:</strong> monta tiliä, tavoite kohteen vetäytyminen, jatkuu vaikka kukaan ei vastaa. <strong>Sivuuttaminen ei riitä</strong> — tarvitaan moderointia, estoja, tallentamista ja tarvittaessa rikosilmoitus.</li>
@@ -865,7 +844,7 @@
 </div>
 <p>Neuvolla on myös hiljainen sivuvaikutus: kun sitä toistetaan häirinnän kohteelle, vastuu siirtyy häirityn käytökseen. "Älä välitä" kuulostaa tuelta, mutta tarkoittaa usein "hoida itse".</p>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Jos haluat vastata, vastaa <strong>yleisölle, ei trollille</strong>: yksi lyhyt asiallinen oikaisu ilman lainausta, jota ei jatketa. Älä jaa provokaatiota kauhistellaksesi — kuvakaappaus levittää sen uusille lukijoille, kuten <a href="rage-bait.html">rage baitissa</a>. Käytä estoa ja ilmiantoa vapaasti: ne eivät ole sensuuria vaan sen päättämistä, kenen kanssa käytät aikaasi. Ja jos joku kertoo olevansa häirinnän kohteena, älä neuvo häntä vain olemaan välittämättä — kysy, mitä hän tarvitsee.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Jos haluat vastata, vastaa <strong>yleisölle, ei trollille</strong>: yksi lyhyt asiallinen oikaisu ilman lainausta, jota ei jatketa. Älä jaa provokaatiota kauhistellaksesi — kuvakaappaus levittää sen uusille lukijoille, kuten <a href="rage-bait.html">rage baitissa</a>. Käytä estoa ja ilmiantoa vapaasti: ne eivät ole sensuuria vaan sen päättämistä, kenen kanssa käytät aikaasi. Ja jos joku kertoo olevansa häirinnän kohteena, älä neuvo häntä vain olemaan välittämättä — kysy, mitä hän tarvitsee.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -928,6 +907,7 @@
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="doksaus.html">← Doksaus — verkon riita siirtyy kotiovelle</a>

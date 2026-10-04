@@ -1,5 +1,325 @@
 # Muutosloki — Ilmiöitä (www.ilmiöt.fi)
 
+## 4.10.2026 — SEO-auditin toinen kierros: fontit, ankkurit, schema ja linkit
+
+`ACTION-PLAN.md`:n kohdat 2, 12, 13, 14 (osin), 17 ja matalan prioriteetin
+kieli- ja kuvauskorjaukset. **Ei commitoitu eikä viety.** Jokainen juuren
+HTML-sivu paitsi `random.html` muuttui (184), joten tämä on koko sivuston
+julkaisu. `dateModified`-arvoihin ei koskettu: muutokset ovat rakennetta ja
+metatietoa, ei sisältöä. `muutokset.html`:ään ei merkintää.
+
+**Julkaisujärjestys:** `og/*.png` ensin (nyt myös `og/logo.png`, johon jokaisen
+sivun schema viittaa), sitten `style.css`, `fonts/fonts.css` ja HTML missä
+järjestyksessä tahansa — vanha `style.css` kelpaa uudelle HTML:lle ja päinvastoin.
+
+### 1. Fontit ja layout-siirtymä — `scripts/fontit_esilataus.py`
+
+Mitattu Playwrightilla samalla profiililla kuin auditissa (412×823, hidas 4G,
+4× CPU, 3 ajoa, mediaani):
+
+| Sivu | CLS ennen | CLS jälkeen | Fonttipyynnöt |
+|---|---|---|---|
+| `index.html` | 0,213 | 0,000 | 5 → 3 |
+| `dunkkaus.html` | 0,188 | 0,000 | 7 → 4 |
+| `darvo.html` | 0,098 | 0,000 | 7 → 4 |
+| `kategoria-vallan-rakenteet.html` | — | 0,000 | 5 |
+
+Kolme muutosta:
+
+- **Yksi fonttilähde per sivu.** 141 ilmiösivua linkitti sekä `style.css`:n
+  että `fonts/fonts.css`:n, ja molemmat määrittelivät samat perheet eri
+  tiedostonimillä. Nyt sivu linkittää vain toisen: `style.css` (ilmiöt ja
+  kategoriat) tai `fonts/fonts.css` (index, tietoa, muutokset, peli).
+  `fonts/spectral.css`:ää ei linkitä enää mikään sivu.
+- **12 `@font-face`a 20:n ja 16:n sijaan**, sama lohko molemmissa tiedostoissa.
+  DM Sansin 400/500/600 ja Source Sansin 300/400/600 olivat md5-identtisiä
+  muuttujafontteja kolmella nimellä → yksi määrittely painoalueella
+  (`400 600` ja `200 900`). Vanhat tiedostot jäivät levylle käyttämättöminä.
+- **`<link rel="preload">` kahdelle fontille** ennen tyylitiedostoa: ilmiö- ja
+  kategoriasivuilla Source Sans 3 + Spectral 700, muilla DM Sans + Spectral
+  700. Valinta on mitattu siitä, mitä ensimmäisen näkymän teksti käyttää.
+
+Varafontin mittasovitusta (`size-adjust`) ei tehty: siirtymä katosi ilmankin,
+eikä sovitusta olisi voinut varmentaa — koneella on varafonttina vain DejaVu,
+ei Arialia, Robotoa eikä Georgiaa.
+
+**Näkyvä sivuvaikutus:** 24 ilmiösivua ja 15 kategoriasivua, jotka linkittivät
+vain `style.css`:n, piirsivät lihavoinnin painolla 600. Nyt ne käyttävät aitoa
+700:aa kuten muut 141 sivua ovat tehneet koko ajan. Muut sivut ovat
+pikselilleen samat (kuvakaappausvertailu 412 ja 1280 px, 7 sivutyyppiä).
+
+Versio: `style.css?v=20261004` ja `fonts/fonts.css?v=20261004`; skriptin `VERSIO`
+ja `build_kategoriat.py`:n `CSS_VERSIO` pidetään samana.
+
+### 2. Ankkurit ja `<main>` — `scripts/seo_rakenne.py`
+
+433 `h2`:lle `id` otsikkotekstistä ja `<main>` 165 ilmiösivulle (sisältö +
+Liittyvät ilmiöt). Olemassa olevaa `id`:tä ei muuteta, joten ankkuri kestää
+otsikon uudelleenmuotoilun. Ulkoasu ei muuttunut (pikselivertailu HEADiin).
+
+Kaksi rajausta: `.ilmio`-säiliö on yhä `<div>` eikä `<article>`, koska kaikki
+`build_*_luonnokset.py`-skriptit korvaavat pohjasivun sisällön kuviolla
+`<div class="ilmio" id="…">.*?\n</div>\n\n  <aside`; ja "Liittyvät ilmiöt"
+-otsikolla ei ole `id`:tä, koska `build_liittyvat.py` kirjoittaa lohkon uusiksi.
+
+### 3. Schema — `scripts/seo_schema.py`
+
+Kaikki 165 Article-solmua: `description` ← metakuvaus (115 oli vanhentunut),
+`image` ← `og:image` (19 sivulla oma kuva), `isPartOf` → `WebSite #website`
+(osoitti solmuun, jota ei ole), `publisher.logo` → `og/logo.png` 512×512
+(oli `favicon.svg` 64×64), `about` → DefinedTerm kortin nimellä kaikille
+(26:lta puuttui; nimi oli koko otsikko) ja termistölle oma tunniste `#ilmiot`.
+
+**FAQPage poistettu 68 sivulta.** 136 vastauksesta yksikään ei ollut sivulla
+sanatarkasti, eikä Google näytä FAQ-tuloksia. Etusivun FAQPage jäi, koska sen
+kysymykset ovat sivulla näkyvissä. Luonnosskriptit tuottavat FAQPagen yhä;
+`seo_schema.py` poistaa sen julkaisun jälkeen.
+
+Logo vaihdettu myös `index.html`:ään, `tietoa.html`:ään ja
+`build_kategoriat.py`:n pohjaan. `og/logo.png` on renderöity `favicon.svg`:stä.
+
+`lisaa_ilmiot.py`:n ajolista alkaa nyt `seo_rakenne.py --kirjoita` ja
+`seo_schema.py --kirjoita`.
+
+### 4. Linkit
+
+- **Sisäiset:** `bait-and-switch` "uponneiden kustannusten" osoitti
+  `korkokierre`-sivulle → `sunk-cost-harha`. Viisi artikkelia, joihin ei
+  viitannut yksikään leipäteksti, sai linkin jo olemassa olevasta maininnasta:
+  `rug-pull` → `pump-and-dump`, `door-in-the-face` → `foot-in-the-door`,
+  `rage-bait` → `klikkiotsikko`, `klikkiotsikko` → `engagement-bait`,
+  `pinkkipesu` → `sinipesu`. Loput 58 vaativat uuden virkkeen; ei tehty.
+- **Ulkoiset (9):** viisi Wikipedia-osoitetta (yksi vaihdettu Loewensteinin
+  alkuperäisartikkelin DOI:hin), CIA:n PDF → Project Gutenberg, Amnesty →
+  joulukuun 2024 tiedote, Raitiotieallianssi → Wayback-kopio, Caltech →
+  kirjaston pysyvä osoite. Jokainen uusi osoite palautti 200 (DOI 302).
+  `bcaction.org` ei vastannut täältäkään; jätetty ennalleen.
+
+### 5. Otsikot, kuvaukset ja kieli
+
+- 13 vastakeino-osion otsikkoon sana "vastakeinot" (esim. "Työntekijälle:" →
+  "Vastakeinot työntekijälle:"). Kolme heikkoa osiota (`parasosiaalinen-suhde`,
+  `strateginen-osaamattomuus`, `yhdeksanyhdeksan`) vaativat sisältöä; ei tehty.
+- 7 metakuvausta lyhennetty ≤ 160 merkkiin (myös og- ja twitter-kuvaukset).
+- "Konsensus fetissi" → "Konsensusfetissi" 22 tiedostossa (h1, title, kortti,
+  liittyvät-kortit, `llms.txt`, kategoriateksti). `data/peli-pankki.js`
+  generoitiin uudelleen: ero HEADiin on vain tämä nimi, erät ovat samat.
+- `kafka-ilmio`: *Oikeudenkäynnistä* → *Oikeusjutusta* (sama nimi kuin
+  lähdeluettelossa). `hajota-hallitse`: "—divide" → "— divide" schemassa.
+
+## 4.10.2026 — SEO-auditin vaihe 1: väärät titlet, asiavirheet ja vanhentuneet luvut
+
+`ACTION-PLAN.md`:n kohdat 1, 6 (kolme asiavirhettä), 7 (ai-slop) ja 9 (luvut). **Mitään ei
+ole commitoitu eikä viety palvelimelle.** `muutokset.html`:ään ei tullut
+merkintää: korjaukset ovat teknisiä tai yhden sanan/luvun kokoisia.
+
+**Julkaisujärjestys:** 17 korjatuista sivuista (kategoria 15) kantaa samassa
+tiedostossa 3.10. tehdyn jakokuvamuutoksen, jota ei ole vielä viety. Niiden
+kanssa on siis vietävä `og/*.png` **ensin**, muuten `og:image` osoittaa 404:ään.
+Kaikki muut muuttuneet sivut voi viedä sellaisenaan.
+
+### 1. 26 väärää titleä — `scripts/korjaa_darvo_titlet.py`
+
+Roolit ja valtapelit (9) ja Trollaus (17) julkaistiin `darvo.html`:n titlellä,
+koska `build_valtapelit_luonnokset.py` ja `build_trollaus_luonnokset.py`
+vaihtavat SEO-lohkon (`seo_lohko()`) mutta eivät `<title>`:ä, joka on tiedoston
+rivillä 7 lohkon ulkopuolella.
+
+- Viisi kenttää per sivu: `<title>`, `og:title`, `twitter:title`, JSON-LD
+  `dateModified` ja bylinen "Päivitetty" → 4.10.2026. `og:title` on nyt sama
+  kuin title; yhdeksällä sivulla se oli peruttua muotoa "— mitä se tarkoittaa".
+- Titlet ovat `ACTION-PLAN.md`:n taulukosta, kaikki ≤ 60 merkkiä (skripti
+  kaatuu, jos ei). **Kaksi poikkeaa taulukosta:** `doksaus` (60) ja
+  `tone-policing` (55) saivat brändipäätteen, koska se mahtuu — sama sääntö
+  kuin muilla 24:llä.
+- Skripti ei ylikirjoita titleä, joka ei ole enää DARVO-title, ja on
+  idempotentti.
+
+**Toistumisen esto:** `lisaa_ilmiot.py` → `tarkista_title()`. Julkaisu kaatuu,
+jos luonnoksen title on sama kuin jollain julkaistulla sivulla tai toisella
+saman erän luonnoksella, tai jos title ei sisällä h1:n ensimmäistä sanaa.
+Kokeiltu: nykyiset 165 sivua läpäisevät ensimmäisen ehdon kaikki; toisen
+ehdon rikkoo vain `kuollut-internet` (h1 "Kuollut internet", title "Dead
+internet"), joka on jo julkaistu eikä kulje tarkistuksen läpi. Luonnosskriptejä
+ei korjattu — ne ovat kertakäyttöisiä, ja seuraava kopioidaan niistä joka
+tapauksessa.
+
+### 2. Asiavirheet ja rinnakkaistermit
+
+- `ponzi-pyramidi.html`: avainluku "6 tasoa" → "8 tasoa". Kuudella
+  värväyksellä kertymä on 6. tasolla 55 986 ja ylittää 2 miljoonaa vasta 8.
+  tasolla (2 015 538). "13 tasoa ylittää maapallon väkiluvun" pitää (6¹³ ≈ 13 mrd).
+- `ai-slop.html`: *tekoälytauhka* ja *tekoälymoska* ensimmäiseen virkkeeseen
+  ja vastauslohkoon; väite "ei vakiintunutta suomennosta" poistettu
+  molemmista. Tarkistettu fi.wikipediasta (artikkeli "Tekoälytauhka", alku
+  "Tekoälytauhka ja tekoälymoska (engl. AI slop)"). **`<title>`:ä ja
+  metakuvausta ei muutettu:** title vaihdettiin 13.8. eikä sen vaikutusta ole
+  mitattu, ja sivu on sivuston näytetyin.
+- `tekoalypsykoosi.html`: "eikä tekoäly aiheuta psykoosia" → "eikä ole
+  näyttöä siitä, että tekoäly yksin aiheuttaisi psykoosin" (leipäteksti ja
+  FAQ-schema). Kategorinen kiisto aiheesta, josta näyttö on kesken.
+- `houkutinvaihtoehto.html`: luvut esitettiin *The Economistin* tilaustuloksena.
+  Ne ovat Dan Arielyn kokeesta (100 opiskelijaa; houkuttimen kanssa 16/0/84,
+  ilman 68/32 — tarkistettu), jonka pohjana lehden ilmoitus oli. Kappale
+  nimeää nyt kokeen ja antaa luvut; "lähes kaikki" → 84.
+- Kaikilla neljällä `dateModified` ja byline → 4.10.2026.
+
+Kohdasta 6 tekemättä: "Jos olet jo maksanut" -kappale neljälle huijaussivulle.
+Se on sisällön laajennus, joka vaatii viranomaiskanavien tarkistuksen ja
+`muutokset.html`-merkinnän.
+
+Tekemättä kohdasta 7: sama tarkistus kymmenelle näytetyimmälle sivulle. Vaatii
+tuoreen Search Console -viennin; repossa oleva `data/suosio.js` on 15.8.
+
+### 3. Vanhentuneet luvut
+
+- **Kategoriaotsikot:** `kategoriat/*.md`:n `h1`, `otsikko` ja `kuvaus`
+  tukevat nyt paikkamerkkejä `{n}` ja `{n-1}`, jotka `build_kategoriat.py` →
+  `tayta_maarat()` täyttää korttimäärästä. Kaikki 12 numerona kirjoitettua
+  määrää vaihdettu paikkamerkiksi; näkyvä muutos on vain kolmessa: huijaukset
+  11 → 14, tilastot 8 → 9, vallan rakenteet 7 → 8 (näille `paivitetty` →
+  4.10.2026). Sanana kirjoitettua määrää ei voi taivuttaa koneellisesti, joten
+  `-toista`-lukusanat vain tarkistetaan: generointi kaatuu, jos sana ei vastaa
+  korttimäärää. Tarkistus löysi auditoinnilta jääneen: huijausten h1
+  "yhdestätoista eri kulmasta" → "neljästätoista". Esseen leipätekstiä ja alle
+  11:n lukusanoja ei tarkisteta. `build_og.py` käyttää samaa funktiota, koska
+  se lukee h1:n kuvaan.
+- **`index.html` `#random-vihje`:** "139 ilmiötä" → 165, ja `paivita_maarat.py`
+  hoitaa sen jatkossa (`maara=1`). Selain kirjoittaa saman tekstin
+  korttimäärästä, joten vanha luku näkyi vain ennen skriptin ajoa ja
+  hakukoneelle.
+- **`paivita_maarat.py`:** jokainen korvaus kaatuu nyt nollaan osumaan —
+  myös `tietoa.html`:n ja `llms.txt`:n kolme kuviota, joilla ei ollut mitään
+  tarkistusta. Nykytila läpäisee kaikki.
+- `og:title` ja `twitter:title` olivat pelkkä "X — Ilmiöitä" sivuilla
+  `overton-ikkuna`, `paskuuttaminen` ja `starve-the-beast` → samaksi kuin title.
+  `dateModified` ennallaan.
+
+Kohdan 9 brändipäätteen pudotus yli 60-merkkisistä titleistä (51 sivua) on
+tekemättä tarkoituksella: se on uusi otsikkoerä ennen kuin edellinen on mitattu.
+
+### Ajettu
+
+`build_kategoriat.py` (muuttui 3 sivua + ennestään muuttunut trollaus),
+`paivita_maarat.py` (vain `#random-vihje`), `build_search_index.py`,
+`build_sitemap.py` (33 `lastmod`-arvoa → 2026-10-04: 26 + 4 + 3),
+`node scripts/testaa_peli.js` (läpi).
+
+## 3.10.2026 — Trollaus somessa: someviestit, jakokuvat, pikaopas ja pelikohdat
+
+Kategorian 15 vastakeinot vietynä sivuston ulkopuolelle neljässä osassa. **Vain
+jakokuvat koskevat juuren sivuja; kolme muuta ovat luonnoksia.** Mitään ei ole
+commitoitu eikä viety palvelimelle. `muutokset.html`:ään ei tullut merkintää,
+koska lukijalle ei vielä näy mitään uutta luettavaa.
+
+### 1. Someviestit (luonnos) — `luonnokset/SOME-TROLLAUS.md`
+
+X:ään, Threadsiin ja Blueskyhin. Sivustolla ei ole sometilejä. 15 ketjua
+(aloitus, 10 × "Tunnista temppu" sivuille 153–162, kolme taustaketjua,
+ylläpitäjän ketju), 7 yksittäistä vastausfraasia ja 2 täytettävää
+prebunk-pohjaa — 72 viestiä + 2 pohjaa. Yksi koodilohko on yksi viesti.
+
+Kolme rajaa, tarkistettu kertaluonteisella skriptillä (ei repossa):
+
+- Jokainen viesti ≤ 280 merkkiä linkki mukaan luettuna, **myös
+  punycode-linkillä** (`www.xn--ilmit-mua.fi` on 7 merkkiä pidempi kuin
+  `www.ilmiöt.fi`). Pisin on 256. Ö-domainin linkittymistä alustoilla ei voi
+  varmistaa repossa; se on kokeiltava ensimmäisellä julkaisulla.
+- Jokainen temppuketju päättyy viestiin "Aito vastine: …". Kategoriasivun
+  huomiolaatikko vaatii tätä: tunnusmerkki on toisto ja suunta, ja pelkkä
+  tempun nimeäminen opettaa leimaamaan.
+- Ei oikeita tilejä, ei @-mainintoja, ei lukuja sivujen ulkopuolelta.
+
+Motte and bailey -ketjun aito vastine ("se, joka tarkentaa väitettään ja
+sitoutuu tarkennukseen") on johdettu sivun virkkeestä "jos keskustelija ei
+suostu sitoutumaan kumpaankaan" — sivu ei sano sitä suoraan. Maalittamista ja
+doksausta koskevat viestit perivät sivujen oikeudellisen muotoilun, joka on yhä
+tarkistamatta.
+
+### 2. Jakokuvat (juuressa) — `scripts/build_og.py`
+
+Jokainen jaettu linkki näytti saman `og/brand.png`:n. Nyt 20 sivulla on oma
+1200×630-kuva: kategorian 15 kaikki 17 ilmiötä, `aanekas-vahemmisto`,
+`inokulointiteoria` (someviestit linkittävät niihin) ja kategoriasivu.
+
+- Lähde on `index.html`:n korttilista (`build_kategoriat.lue_kategoriat()`),
+  joten kuvan teksti ei voi ajautua erilleen etusivun kortista.
+- **Kuvassa ei ole ilmiön numeroa eikä ilmiömäärää.** Uudelleennumerointi
+  vanhentaisi sen — `og/brand.png`:ssä lukee yhä "68 yhteiskunnallista ilmiötä".
+- `--kirjoita` vaihtaa ilmiösivulla kolme metariviä (`og:image`,
+  `twitter:image`, `og:image:alt`). Regex, joka ei osu täsmälleen kerran, kaataa
+  ajon. Idempotentti. `dateModified` ei noussut: sisältö ei muuttunut.
+- Kategoriasivua ei muokata käsin. `build_kategoriat.py` käyttää kuvaa
+  `og/kategoria-<slug>.png`, jos se on olemassa, muuten brändikuvaa. Koko
+  generaattorin ajo ennen kuvaa tuotti 0 muutosta, eli muutos on neutraali
+  14 muulle kategorialle.
+- `scripts/fonts/DMSans-Medium.ttf` ja `-Regular.ttf` ovat EOT-tiedostoja, joita
+  PIL ei lue; painot otetaan `DMSans-Variable.ttf`:stä.
+- `--kaikki` mahtuu: kaikki 165 korttia ja 15 kategoriaa asettuvat pohjaan ilman
+  katkaisua (kuivaharjoitus). Loput 146 sivua: `build_og.py --kaikki --kirjoita`
+  ja `build_kategoriat.py`.
+- Vanha `generate_og_images.py` on kendom.fi-ajalta eikä sitä pidä ajaa.
+
+**Palvelimelle kuvat ennen HTML-sivuja**, tai `og:image` osoittaa 404:ään.
+
+### 3. Pikaopas (luonnos) — `luonnokset/mita-vastata-trollille.html`
+
+Koostesivu `vaalikeskustelun-lukuohje.html`:n mallilla: seitsemän kysymystä
+kolmessa näytöksessä, vastausfraasit seitsemään temppuun (jokaisessa aito
+vastine), provosoija/häirintä-vertailu ja rooliohjeet. **Ei ilmiö:** ei
+numeroa, ei `const IDS`, ei PREV/NEXT, ei `hub-kortti`. `noindex`, polut `../`.
+Selaintesti 390 px ja 1100 px: ei konsolivirheitä, ei vaakavieritystä.
+
+Julkaisu vaatii: `noindex` ja `../` pois, oma vakio `build_sitemap.py`:hyn,
+sisääntulevat linkit (kategoriaessee `kategoriat/trollaus-…md` ja
+`trollin-ruokkiminen.html`), `datePublished`. Otsikko on kysymysmuotoinen
+("Mitä vastata trollille?"), ei "näin tunnistat trollin": sivu opettaa
+tunnistamaan tekniikan, ei ihmistä.
+
+### 4. Pelikohdat (luonnos) — `luonnokset/pelidata/`
+
+60 kohtaa: 9 taktiikkaa × 4 (`sealioning`, `kunhan-kysyn`, `vain-vitsi`,
+`huolitrollaus`, `motte-and-bailey`, `nutpicking`, `tone-policing`,
+`kafkatrapping`, `dunkkaus`), 2 vinoumaa × 4 (`verkon-estottomuus`,
+`kuka-tahansa-voi-trollata`) ja 16 rehellistä (`rehellinen-54…69`). Siemenet
+louhittu `pelidata/_siemen/`:iin 11 sivulle (`_kaikki.json` jätetty ennalleen).
+
+- **Verkon estottomuus ja kuka tahansa voi trollata ovat lajia `vinouma`**, ei
+  taktiikka: niissä ei ole tekijää, ja vastakeino on menetelmä. Ilman niitä 36
+  uutta taktiikkaa olisi pudottanut vinoumien osuuden alle 15 %:n portin.
+- Rehelliset ovat temppujen kaksosia: yksi lähdepyyntö, suora kysymys,
+  anteeksipyydetty vitsi, nimittelyyn puuttuva moderaattori. `rehellinen-62`
+  toistaa kysymyksen kolmannen kerran, koska vastausta ei ole tullut — toisto
+  yksin ei ole merileijonointia.
+- Kaksi taktiikkaa on ajatuskanavassa (`tone-policing-2`, `kafkatrapping-4`):
+  oma ajatus, joka on toisen tempun jälki. Neljä rehellistä samaan kanavaan,
+  jotta kanavan 25 %:n portti pitää (17/64).
+- Pois jätetty: `shitpostaus` (ei näy yhdessä viestissä), `maalittaminen` ja
+  `doksaus` (liian raskaita, ei sanottavaa `sanot`-lausetta), `trollaus` (liian
+  lähellä rage baitia nimettäväksi), `pimea-tetradi` ja `trollin-ruokkiminen`
+  (eivät ole tilanteita).
+- Konteksti `tyo` vain yhdessä kohdassa 60:stä.
+
+**Kohtia ei siirretty juuren `pelidata/`:an, eikä `data/peli-pankki.js`:ää
+koskettu.** Peli on livenä (live md5 = paikallinen, tarkistettu 3.10.), ja
+`kokoa_erat()` jakaa koko pankin alusta: yhdistetyllä pankilla 0/40 nykyisestä
+erästä säilyi samana, myös tämän päivän #1. Arkiston tulokset osoittaisivat eri
+eriin kuin pelattiin. Päätös tarvitaan: lukitaanko pelatut erät
+(`kokoa_erat()`:n muutos) vai hyväksytäänkö uudelleenkokoaminen.
+
+Yhdistetty pankki validoitu erillisessä kopiossa: 260 kohtaa (151 taktiikkaa,
+40 vinoumaa = 15,4 %, 69 rehellistä = 26,5 %), 52 erää, `testaa_peli.js`
+84/84. Vinoumien osuus on lähellä porttia: seuraava taktiikkaerä vaatii myös
+vinoumia. Siirron jälkeen `build_peli.py` → `testaa_peli.js` →
+`lisaa_pelilinkit.py --kirjoita` (11 uutta sivua).
+
+### Sivuhavainnot
+
+- `sivustakatsojan-efekti.html`:n vastakeino-osion otsikko on "Torjunta — nimeä
+  vastaanottaja", ei "Tunnistaminen ja vastakeinot" kuten muilla.
+- `og/brand.png`:n teksti "68 yhteiskunnallista ilmiötä" on vanhentunut
+  (`make_og_brand.py`:ssä kovakoodattu).
+
 ## 3.10.2026 — Julkaistu Trollaus ja keskustelun sabotointi: 148 → 165, 15. kategoria
 
 17 sivua (149–165) luonnoksista juureen samalla ajolla kuin valtapelit, nyt

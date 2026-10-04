@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Strateginen osaamattomuus — välineellistetty epäpätevyys — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/strateginen-osaamattomuus.html#article",
       "url": "https://www.ilmiöt.fi/strateginen-osaamattomuus.html",
       "headline": "Strateginen osaamattomuus — välineellistetty epäpätevyys",
-      "description": "Strateginen osaamattomuus (eng. weaponized incompetence ) on käyttäytymisstrategia, jossa tehtävä suoritetaan tahallisen huonosti — ei siitä syystä, ettei…",
+      "description": "Strateginen osaamattomuus: 'en osaa' on tehokas tapa välttää työ. Selitämme taktiikan tunnusmerkit käytännössä ja miten siihen puututaan reilusti.",
       "inLanguage": "fi",
       "articleSection": "Byrokratia ja organisaatio",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Strateginen osaamattomuus — välineellistetty epäpätevyys",
-        "description": "Strateginen osaamattomuus (eng. weaponized incompetence ) on käyttäytymisstrategia, jossa tehtävä suoritetaan tahallisen huonosti — ei siitä syystä, ettei…",
+        "name": "Strateginen osaamattomuus",
+        "description": "Strateginen osaamattomuus: 'en osaa' on tehokas tapa välttää työ. Selitämme taktiikan tunnusmerkit käytännössä ja miten siihen puututaan reilusti.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -824,6 +825,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="strateginen-osaamattomuus">
 <div class="ilmio-tag">Ilmiö 45</div>
 <h1>Strateginen osaamattomuus — välineellistetty epäpätevyys</h1>
@@ -844,7 +846,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Osaamattomuus tuottaa vapautuksen — ja sen tietää myös sen käyttäjä.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Kolme organisatorista muotoa:</h2>
+<h2 class="laatikko-otsikko" id="kolme-organisatorista-muotoa">Kolme organisatorista muotoa:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Tehtävän välttely:</strong> Raportit toimitetaan niin myöhässä tai puutteellisina, ettei niitä enää pyydetä. "Minulla on muita prioriteetteja" sanomatta suoraan.</li>
 <li><strong>Osaamisen piilottaminen:</strong> Henkilö tietää olevansa hyvä jossakin mutta ei näytä sitä, koska osaaminen johtaisi lisätehtäviin ilman lisäkorvausta.</li>
@@ -854,7 +856,7 @@ flowchart TD
 <p><strong>Ero aitoon osaamattomuuteen:</strong> Strateginen osaamattomuus on tunnistettavissa siitä, että osaamattomuus on selektiivistä: sama henkilö on erittäin pätevä asioissa, joista hän haluaa olla vastuussa. Epäpätevyys ei esiinny tasaisesti vaan siellä, missä vastuu on ei-toivottua. Toinen merkki: oppimishaluttomuus — jos henkilölle tarjotaan koulutusta tai tukea tehtävässä, johon hän väittää olevansa huono, kieltäytyminen paljastaa strategian.</p>
 <p>Organisaatiotasolla strateginen osaamattomuus liittyy <a href="performatiivinen-lasnaolo.html">performatiiviseen läsnäoloon</a> käänteisesti: siinä missä performatiivinen läsnäolo näyttää sitoutunutta olematta sitä, strateginen osaamattomuus näyttää kyvyttömältä olematta sitä. Molemmat ovat vastauksia ympäristöön, jossa läpinäkyvä kieltäytyminen on riskialtista.</p>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen johtajana:</h2> Selektiivinen epäpätevyys — hyvä jossakin, toistuvasti huono tietyssä kategoriassa — on varoitusmerkki. Kysymys: onko epäpätevyys tehtäväkohtaista vai yleistä? Jos koulutus- ja tukitarjoukset hylätään toistuvasti, kyse on valinnasta eikä kyvykkyydestä.
+<h2 class="laatikko-otsikko" id="tunnistaminen-johtajana">Tunnistaminen johtajana:</h2> Selektiivinen epäpätevyys — hyvä jossakin, toistuvasti huono tietyssä kategoriassa — on varoitusmerkki. Kysymys: onko epäpätevyys tehtäväkohtaista vai yleistä? Jos koulutus- ja tukitarjoukset hylätään toistuvasti, kyse on valinnasta eikä kyvykkyydestä.
     </div>
 <p class="peli-harjoittele" style="margin:1.4rem 0 0;padding:.7rem .9rem;background:#FBF5E0;border-left:3px solid #C9A84C;font-size:.95em"><b>Harjoittele tämän tunnistamista.</b> <a href="peli.html">Vedätys</a> on päivittäinen peli, jossa strateginen osaamattomuus on yksi tunnistettavista ilmiöistä — mukana on aina myös tilanteita, joissa ei ole mitään vikaa.</p>
 <div class="lue-lisaa">
@@ -937,6 +939,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="portinvartija-kulttuuri.html">← Portinvartija-kulttuuri — tieto suodattuu ennen johtajaa</a>

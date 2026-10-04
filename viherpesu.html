@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Viherpesun tunnistaminen — seitsemän merkkiä | Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/viherpesu.html#article",
       "url": "https://www.ilmiöt.fi/viherpesu.html",
       "headline": "Viherpesu — vihreää pintaa ilman tekoja",
-      "description": "Viherpesu (greenwashing) tarkoittaa markkinointia, joka saa yrityksen tai tuotteen näyttämään ympäristöystävällisemmältä kuin se todellisuudessa on.",
+      "description": "Viherpesu on vihreä mielikuva ilman tekoja. Seitsemän tunnusmerkkiä, joilla erotat todennetun ympäristöväitteen markkinointipuheesta.",
       "inLanguage": "fi",
       "articleSection": "Pesut ja maineenhallinta",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Viherpesu — vihreää pintaa ilman tekoja",
-        "description": "Viherpesu (greenwashing) tarkoittaa markkinointia, joka saa yrityksen tai tuotteen näyttämään ympäristöystävällisemmältä kuin se todellisuudessa on.",
+        "name": "Viherpesu",
+        "description": "Viherpesu on vihreä mielikuva ilman tekoja. Seitsemän tunnusmerkkiä, joilla erotat todennetun ympäristöväitteen markkinointipuheesta.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -799,29 +800,6 @@
       },
       "datePublished": "2026-07-06",
       "dateModified": "2026-09-04"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.ilmiöt.fi/viherpesu.html#faq",
-      "inLanguage": "fi",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Mitä viherpesu tarkoittaa?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Viherpesu eli greenwashing tarkoittaa markkinointia, joka saa yrityksen tai tuotteen näyttämään ympäristöystävällisemmältä kuin se on. Raha käytetään vihreän mielikuvan rakentamiseen, ei toiminnan muuttamiseen. Termin keksi Jay Westerveld 1986."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Onko viherpesu laitonta?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "EU:n kuluttajansuojadirektiivi 2024/825 kieltää yleiset ympäristöväitteet kuten ympäristöystävällinen, vihreä tai ilmastoneutraali ilman todennettua näyttöä, samoin pelkkään päästökompensaatioon perustuvat neutraaliusväitteet. Sääntöjä sovelletaan syyskuusta 2026. Suomessa valvoo kuluttaja-asiamies."
-          }
-        }
-      ]
     }
   ]
 }
@@ -847,13 +825,14 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="viherpesu">
 <div class="ilmio-tag">Ilmiö 112</div>
 <h1>Viherpesu — vihreää pintaa ilman tekoja</h1>
 <p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 4.9.2026</p>
 <p>Viherpesu (engl. <strong>greenwashing</strong>) tarkoittaa markkinointia ja viestintää, joka saa yrityksen, tuotteen tai palvelun näyttämään ympäristöystävällisemmältä kuin se todellisuudessa on. Raha käytetään vihreän mielikuvan rakentamiseen — ei toiminnan muuttamiseen.</p>
 <div class="infolaatikko vastauslohko">
-<h2 class="laatikko-otsikko">Miten viherpesun tunnistaa?</h2>
+<h2 class="laatikko-otsikko" id="miten-viherpesun-tunnistaa">Miten viherpesun tunnistaa?</h2>
 <p style="margin:0.4em 0 0;">Viherpesun tunnistaa <strong>väitteen tarkkuudesta</strong>. Todennettu väite kertoo, mitä mitattiin, millä menetelmällä ja kuka tarkasti. Viherpesu kertoo tunnelman: vihreä, luonnollinen, ilmastoystävällinen. EU-direktiivi 2024/825 kieltää juuri nämä yleisväitteet ilman näyttöä.</p>
 </div>
 <p>Termin keksi ympäristöaktivisti Jay Westerveld vuonna 1986 huomattuaan, että hotellit pyysivät asiakkaita käyttämään pyyhkeitä uudelleen "ympäristön vuoksi" — todellinen motiivi oli pesulakulujen säästö. Sama epäsuhta pyörittää ilmiötä yhä: ympäristöväite on halpa, todellinen muutos kallis. Niin kauan kuin kuluttaja ei pysty tarkistamaan väitteitä, maali on kannattavampi investointi kuin teko.</p>
@@ -870,7 +849,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Viherpesun logiikka: mielikuva muuttuu, toiminta ei.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Viherpesun seitsemän syntiä</h2> (TerraChoice-luokittelu, 2007):
+<h2 class="laatikko-otsikko" id="viherpesun-seitseman-syntia">Viherpesun seitsemän syntiä</h2> (TerraChoice-luokittelu, 2007):
 <ul style="margin:0.5em 0 0;">
 <li><strong>Piilotettu kompromissi:</strong> korostetaan yhtä vihreää ominaisuutta, vaietaan kokonaisuudesta.</li>
 <li><strong>Todisteettomuus:</strong> väitteelle ei ole näyttöä eikä riippumatonta varmennusta.</li>
@@ -882,7 +861,7 @@ flowchart TD
 </ul>
 </div>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Tunnettuja tapauksia:</h2>
+<h2 class="laatikko-otsikko" id="tunnettuja-tapauksia">Tunnettuja tapauksia:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Volkswagen "Clean Diesel" (2015):</strong> vähäpäästöiseksi markkinoitu diesel huijasi päästötesteissä. Skandaalin kustannukset nousivat kymmeniin miljardeihin.</li>
 <li><strong>KLM "Fly Responsibly" (2024):</strong> Amsterdamin tuomioistuin katsoi lentoyhtiön kompensaatiomainonnan harhaanjohtavaksi — lentäminen ei muutu kestäväksi puita istuttamalla.</li>
@@ -891,7 +870,7 @@ flowchart TD
 </div>
 <p>Sääntely on kiristymässä: EU:n kuluttajansuojadirektiivi (2024/825) kieltää yleiset ympäristöväitteet kuten "ympäristöystävällinen", "vihreä" tai "ilmastoneutraali" ilman todennettua näyttöä — samoin pelkkään päästökompensaatioon perustuvat neutraaliusväitteet. Sääntöjä sovelletaan jäsenmaissa syyskuusta 2026 alkaen, ja Suomessa markkinointia valvoo kuluttaja-asiamies.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Etsi täsmällisyyttä. Aito ympäristöväite kertoo mitä, kuinka paljon ja mihin verrattuna ("pakkauksen muovia vähennetty 40&nbsp;% vuodesta 2020") — viherpesu jää yleistasolle ("luontoystävällinen valinta"). Tarkista merkki: onko sertifikaatti riippumattoman tahon (Joutsenmerkki, EU-ympäristömerkki, Luomu) vai yrityksen oma keksintö? Katso kokonaisuutta: yksi vihreä tuote ei tee öljy-yhtiöstä vihreää. Ja jos ilmastoväite lepää pelkän kompensoinnin varassa, kyseessä on kirjanpitotemppu, ei päästövähennys.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Etsi täsmällisyyttä. Aito ympäristöväite kertoo mitä, kuinka paljon ja mihin verrattuna ("pakkauksen muovia vähennetty 40&nbsp;% vuodesta 2020") — viherpesu jää yleistasolle ("luontoystävällinen valinta"). Tarkista merkki: onko sertifikaatti riippumattoman tahon (Joutsenmerkki, EU-ympäristömerkki, Luomu) vai yrityksen oma keksintö? Katso kokonaisuutta: yksi vihreä tuote ei tee öljy-yhtiöstä vihreää. Ja jos ilmastoväite lepää pelkän kompensoinnin varassa, kyseessä on kirjanpitotemppu, ei päästövähennys.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -972,6 +951,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="oletusasetusansa.html">← Oletusasetusansa — valinta on tehty valmiiksi palvelun eduksi</a>

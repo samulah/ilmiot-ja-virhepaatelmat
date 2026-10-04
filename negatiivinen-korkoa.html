@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Negatiivinen korkoa korolle — eksponentiaalinen hajoaminen — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   
   
   <script src="js/chart.umd.min.js" defer></script>
@@ -734,12 +736,12 @@
       "@id": "https://www.ilmiöt.fi/negatiivinen-korkoa.html#article",
       "url": "https://www.ilmiöt.fi/negatiivinen-korkoa.html",
       "headline": "Negatiivinen korkoa korolle — eksponentiaalinen hajoaminen",
-      "description": "Korkoa korolle -efekti toimii myös vastaan . Kun tuotto on negatiivinen, tai kun laiminlyönti kumuloituu, kasautumislogiikka kiihdyttää huononemista samalla…",
+      "description": "Negatiivinen korkoa korolle: pienet laiminlyönnit kertautuvat eksponentiaalisesti. Selitämme hajoamisen logiikan ja miten kierre katkaistaan ajoissa.",
       "inLanguage": "fi",
       "articleSection": "Kasvun dynamiikka",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -748,19 +750,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Negatiivinen korkoa korolle — eksponentiaalinen hajoaminen",
-        "description": "Korkoa korolle -efekti toimii myös vastaan . Kun tuotto on negatiivinen, tai kun laiminlyönti kumuloituu, kasautumislogiikka kiihdyttää huononemista samalla…",
+        "name": "Negatiivinen korkoa korolle",
+        "description": "Negatiivinen korkoa korolle: pienet laiminlyönnit kertautuvat eksponentiaalisesti. Selitämme hajoamisen logiikan ja miten kierre katkaistaan ajoissa.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -797,6 +799,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="negatiivinen-korkoa">
 <div class="ilmio-tag">Ilmiö 64</div>
 <h1>Negatiivinen korkoa korolle — eksponentiaalinen hajoaminen</h1>
@@ -814,10 +817,10 @@
 </div>
 <p class="kaavio-selitys">Vasemmalla: Ebbinghaus'n unohtamiskäyrä — ilman kertausta muisti romahtaa eksponentiaalisesti. Oikealla: 100 000 €:n velka kasvaa 619 000 €:oon ilman lyhennyksiä; 40 000 €/v riittää maksamaan sen pois neljässä vuodessa.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Laiminlyönti ei ole neutraalia — se kumuloituu:</h2> Yksi ylilyöty ateria ei lihota. Yksi unohdettu treeni ei heikennä kuntoa. Mutta laiminlyönnin <em>tottumuksesta</em> tulee eksponentiaalinen: heikentynyt kunto vähentää motivaatiota liikkua, joka heikentää kuntoa lisää. Sama rakenne kuin velassa — vain hitaammin.
+<h2 class="laatikko-otsikko" id="laiminlyonti-ei-ole-neutraalia-se-kumuloituu">Laiminlyönti ei ole neutraalia — se kumuloituu:</h2> Yksi ylilyöty ateria ei lihota. Yksi unohdettu treeni ei heikennä kuntoa. Mutta laiminlyönnin <em>tottumuksesta</em> tulee eksponentiaalinen: heikentynyt kunto vähentää motivaatiota liikkua, joka heikentää kuntoa lisää. Sama rakenne kuin velassa — vain hitaammin.
     </div>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Vastatoimet — positiivinen kierre käännetään käyttöön:</h2>
+<h2 class="laatikko-otsikko" id="vastakeinot-positiivinen-kierre-kaannetaan-kayttoon">Vastakeinot — positiivinen kierre käännetään käyttöön:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Hajautettu kertaus (spaced repetition):</strong> Ebbinghaus'n unohtamiskäyrä kumotaan toistamalla juuri ennen kuin muisti hajoaa — Anki, Duolingo ja vastaavat hyödyntävät tätä. 5 toistoa oikeaan aikaan korvaa 50 satunnaista toistoa.</li>
 <li><strong>Pääoman lyhentäminen ensin:</strong> Velan minimikorkomaksu pitää velkakirjan hengissä — pääoman lyhennys katkaisee eksponentiaalisen kasvupohjan.</li>
@@ -825,7 +828,7 @@
 </ul>
 </div>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Palautumisen asymmetria:</h2> Eksponentiaalinen lasku on helpompi kuin palautuminen. 50 % lasku vaatii 100 % nousun palatakseen lähtötasoon. Terveyden, osaamisen tai varallisuuden menettäminen ottaa pitkään takaisin — ja usein tarvitaan <em>ylikompensaatiota</em>, ei pelkkää tasapainottamista. Tämä tekee ennaltaehkäisystä lähes aina halvempaa kuin korjaamisesta. Ks. myös <a href="korkoa-korolle.html">Korkoa korolle -efekti</a>: palautuminen vaatii positiivisen kiihtyvyyden pidemmältä ajalta kuin mitä menetys kesti.
+<h2 class="laatikko-otsikko" id="palautumisen-asymmetria">Palautumisen asymmetria:</h2> Eksponentiaalinen lasku on helpompi kuin palautuminen. 50 % lasku vaatii 100 % nousun palatakseen lähtötasoon. Terveyden, osaamisen tai varallisuuden menettäminen ottaa pitkään takaisin — ja usein tarvitaan <em>ylikompensaatiota</em>, ei pelkkää tasapainottamista. Tämä tekee ennaltaehkäisystä lähes aina halvempaa kuin korjaamisesta. Ks. myös <a href="korkoa-korolle.html">Korkoa korolle -efekti</a>: palautuminen vaatii positiivisen kiihtyvyyden pidemmältä ajalta kuin mitä menetys kesti.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -839,7 +842,7 @@
 <div class="lue-lisaa-rivi">
 <span class="lue-lisaa-tyyppi">Verkossa</span>
 <ul class="lue-lisaa-lista">
-<li><a href="https://en.wikipedia.org/wiki/Debt_spiral" target="_blank" rel="noopener">Wikipedia: Debt spiral (englanniksi)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Vicious_circle" target="_blank" rel="noopener">Wikipedia: Vicious circle (englanniksi)</a></li>
 </ul>
 </div>
 </div>
@@ -882,6 +885,7 @@
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="korkoa-korolle.html">← Korkoa korolle -efekti — eksponentiaalinen kasvu</a>

@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Valta suojelee valtaa — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/valta-suojelee-valtaa.html#article",
       "url": "https://www.ilmiöt.fi/valta-suojelee-valtaa.html",
       "headline": "Valta suojelee valtaa",
-      "description": "Vallan itsesuojelun mekanismi on yksinkertainen: ne jotka ovat vallassa asettavat pelisäännöt, valitsevat tuomarit ja määrittelevät mikä on laillista.",
+      "description": "Valta suojelee valtaa: miksi instituutiot tutkivat itseään armollisesti. Selitämme mekanismin, käytännön esimerkit ja kansalaisen vastakeinot.",
       "inLanguage": "fi",
       "articleSection": "Vallan rakenteet",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
         "name": "Valta suojelee valtaa",
-        "description": "Vallan itsesuojelun mekanismi on yksinkertainen: ne jotka ovat vallassa asettavat pelisäännöt, valitsevat tuomarit ja määrittelevät mikä on laillista.",
+        "description": "Valta suojelee valtaa: miksi instituutiot tutkivat itseään armollisesti. Selitämme mekanismin, käytännön esimerkit ja kansalaisen vastakeinot.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -824,6 +825,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="valta-suojelee-valtaa">
 <div class="ilmio-tag">Ilmiö 6</div>
 <h1>Valta suojelee valtaa</h1>
@@ -848,14 +850,14 @@ flowchart TD
 <li><strong>Verkostot:</strong> Samat henkilöt kiertävät hallitusten, yritysten ja järjestöjen johtoasemissa. Revolving door -ilmiö.</li>
 </ul>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Miksi tämä ei ole salaliittoteoria:</h2> Vallan itsesuojelu ei edellytä, että kukaan suunnittelee sitä tietoisesti. Riittää, että kukin toimija suojelee omaa asemaansa — tuloksena on järjestelmä, joka näyttää koordinoidulta vaikka se on emergenttiä.
+<h2 class="laatikko-otsikko" id="miksi-tama-ei-ole-salaliittoteoria">Miksi tämä ei ole salaliittoteoria:</h2> Vallan itsesuojelu ei edellytä, että kukaan suunnittelee sitä tietoisesti. Riittää, että kukin toimija suojelee omaa asemaansa — tuloksena on järjestelmä, joka näyttää koordinoidulta vaikka se on emergenttiä.
     </div>
 <p>C. Wright Mills kuvasi ilmiötä teoksessaan <em>The Power Elite</em> (1956): taloudellinen, poliittinen ja sotilaallinen eliitti kietoutuvat toisiinsa niin, että niiden erottaminen on vaikeaa. Myöhemmin Pierre Bourdieu käsitteli samaa ilmiötä sosiaalisen pääoman ja kentän käsitteillä: resurssit — raha, kontaktit, koulutus — kasautuvat ja siirtyvät sukupolvelta toiselle.</p>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Käytännön seuraus:</h2> Reformit, jotka uhkaavat olemassaolevia valtarakenteita, kohtaavat institutionaalista vastustusta vaikka ne olisivat enemmistön toivomia. Muutoksen tekeminen vaatii voittaa pelin säännöillä, jotka on suunniteltu estämään muutos.
+<h2 class="laatikko-otsikko" id="kaytannon-seuraus">Käytännön seuraus:</h2> Reformit, jotka uhkaavat olemassaolevia valtarakenteita, kohtaavat institutionaalista vastustusta vaikka ne olisivat enemmistön toivomia. Muutoksen tekeminen vaatii voittaa pelin säännöillä, jotka on suunniteltu estämään muutos.
     </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Rakenteen tunnistaa kehäpuolustuksesta: instituutio tutkii itse itsensä ja toteaa, ettei aihetta toimiin ole — tai uudistus "selvitetään" työryhmässä, jonka jäsenet hyötyvät nykytilasta. Yksilön vastakeinot ovat läpinäkyvyystyökaluja: julkisuuslain mukaiset tietopyynnöt, sidonnaisuus- ja lobbausrekisterien seuraaminen sekä riippumattoman tutkivan journalismin tukeminen. Ja tarkenna kysymystä: älä kysy vain "mitä päätettiin", vaan "ketkä olivat huoneessa, kun asia valmisteltiin".
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Rakenteen tunnistaa kehäpuolustuksesta: instituutio tutkii itse itsensä ja toteaa, ettei aihetta toimiin ole — tai uudistus "selvitetään" työryhmässä, jonka jäsenet hyötyvät nykytilasta. Yksilön vastakeinot ovat läpinäkyvyystyökaluja: julkisuuslain mukaiset tietopyynnöt, sidonnaisuus- ja lobbausrekisterien seuraaminen sekä riippumattoman tutkivan journalismin tukeminen. Ja tarkenna kysymystä: älä kysy vain "mitä päätettiin", vaan "ketkä olivat huoneessa, kun asia valmisteltiin".
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -921,6 +923,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="rautainen-laki.html">← Rautainen laki oligarkiasta — organisaatioiden väistämätön mätäneminen</a>

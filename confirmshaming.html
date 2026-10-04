@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Confirmshaming — kieltäytymisnappi, joka nolaa käyttäjän — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -392,8 +393,8 @@
       "inLanguage": "fi",
       "articleSection": "Alustatalous ja algoritmit",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -402,9 +403,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
+        }
+      },
+      "about": {
+        "@type": "DefinedTerm",
+        "name": "Confirmshaming",
+        "description": "Confirmshaming tarkoittaa kieltäytymisvaihtoehtoa, joka on kirjoitettu itseä alentavaksi: ”Ei kiitos, en halua säästää rahaa”. Nolaus on suunniteltu osa nappia.",
+        "inDefinedTermSet": {
+          "@type": "DefinedTermSet",
+          "name": "Ilmiöitä — Miten valta toimii",
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -416,29 +427,6 @@
       },
       "datePublished": "2026-08-14",
       "dateModified": "2026-08-14"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.ilmiöt.fi/confirmshaming.html#faq",
-      "inLanguage": "fi",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Mitä confirmshaming tarkoittaa suomeksi?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Vakiintunutta suomennosta ei ole. Sanasta sanaan kyse on vahvistuksen yhteydessä tapahtuvasta häpäisystä; suomeksi puhutaan syyllistävästä kieltäytymisestä tai nolaavasta ei-napista. Käytännössä kieltäytymisvaihtoehto on kirjoitettu käyttäjän suuhun itseä alentavana, esimerkiksi ”Ei kiitos, en halua säästää rahaa”."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Miksi confirmshaming toimii?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ihminen ei mielellään vahvista itsestään väitettä, jonka joku muu on kirjoittanut. Kieltäytyminen vaatii tällöin pienen myönnytyksen omasta järkevyydestä tai kunnianhimosta, ja hyväksyminen on nopeampi tapa päästä eroon ikkunasta. Vaikutus on kuitenkin lyhyt ja jättää jälkeensä ärsyyntyneen käyttäjän."
-          }
-        }
-      ]
     }
   ]
 }
@@ -464,13 +452,14 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="confirmshaming">
 <div class="ilmio-tag">Ilmiö 110</div>
 <h1>Confirmshaming — kieltäytymisnappi, joka nolaa käyttäjän</h1>
 <p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 14.8.2026</p>
 <p><strong>Confirmshaming</strong> tarkoittaa kieltäytymisvaihtoehtoa, joka on kirjoitettu käyttäjän suuhun itseä alentavana. Ponnahdusikkunan alalaidassa lukee <em>Ei kiitos, en halua säästää rahaa</em> tai <em>Jatkan mieluummin ilman parempaa työpaikkaa</em>. Nappi ei kerro mitään tuotteesta — se kertoo jotain lukijasta, ja juuri siinä on koko kikka.</p>
 <div class="infolaatikko vastauslohko">
-<h2 class="laatikko-otsikko">Mitä confirmshaming tarkoittaa suomeksi?</h2>
+<h2 class="laatikko-otsikko" id="mita-confirmshaming-tarkoittaa-suomeksi">Mitä confirmshaming tarkoittaa suomeksi?</h2>
 <p style="margin:0.4em 0 0;">Vakiintunutta suomennosta ei ole. Sanasta sanaan kyse on vahvistuksen yhteydessä tapahtuvasta häpäisystä; suomeksi ilmiöstä puhutaan <em>syyllistävänä kieltäytymisenä</em> tai <em>nolaavana ei-napina</em>. Termi vakiintui 2010-luvun puolivälissä, kun verkkoon alettiin kerätä esimerkkejä tällaisista napeista. Sivusto käyttää englanninkielistä muotoa samasta syystä kuin <a href="rage-bait.html">rage baitin</a> kohdalla: keksitty suomennos ei vastaisi sitä, mitä ihmiset todella sanovat.</p>
 </div>
 <div class="mermaid">
@@ -485,10 +474,10 @@ flowchart TD
 <p class="kaavio-selitys">Kumpikin nappi vie eteenpäin. Vain toisessa on hinta, jota ei mitata rahassa.</p>
 <p>Keino toimii, koska ihminen ei mielellään vahvista itsestään väitettä, jonka joku muu on kirjoittanut. Vaikutus on kuitenkin lyhyt: napin sävy jää mieleen silloinkin, kun tarjous unohtuu, ja sähköpostilistalle päätyy ihmisiä, jotka liittyivät ärsyyntyneinä. Tästä syystä confirmshaming on pimeistä kuvioista helpoimmin havaittava — se on ainoa, joka kertoo lukijalle suoraan, mitä mieltä sivusto on hänestä.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Miten confirmshaming eroaa läheisistä ilmiöistä?</h2> <a href="painostusclose.html">Painostusclose</a> käyttää aikarajaa ja <a href="vastavuoroisuuden-ansa.html">vastavuoroisuuden ansa</a> vastapalvelusta. Confirmshaming ei tarjoa mitään eikä uhkaa millään: se tekee kieltäytymisestä epämiellyttävän lauseen, joka on pakko lausua ääneen itselle.
+<h2 class="laatikko-otsikko" id="miten-confirmshaming-eroaa-laheisista-ilmioista">Miten confirmshaming eroaa läheisistä ilmiöistä?</h2> <a href="painostusclose.html">Painostusclose</a> käyttää aikarajaa ja <a href="vastavuoroisuuden-ansa.html">vastavuoroisuuden ansa</a> vastapalvelusta. Confirmshaming ei tarjoa mitään eikä uhkaa millään: se tekee kieltäytymisestä epämiellyttävän lauseen, joka on pakko lausua ääneen itselle.
     </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2>
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2>
 <ul style="margin:0.5em 0 0;">
 <li>Lue kieltäytymisnappi ääneen. Jos se kuvailee sinua eikä valintaasi, tekstin on kirjoittanut joku, jolla on asiassa etu.</li>
 <li>Sulje ikkuna ristillä tai Esc-näppäimellä — kumpikaan ei vaadi vastaamista kysymykseen.</li>
@@ -550,6 +539,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="pakotettu-jatkuvuus.html">← Pakotettu jatkuvuus — ilmainen kokeilu, joka muuttuu laskuksi ilman kysymystä</a>

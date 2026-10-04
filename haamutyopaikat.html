@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Haamutyöpaikat — ilmoitus ilman työpaikkaa — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/haamutyopaikat.html#article",
       "url": "https://www.ilmiöt.fi/haamutyopaikat.html",
       "headline": "Haamutyöpaikat — ilmoitus ilman työpaikkaa",
-      "description": "Haamutyöpaikka (ghost job) on työpaikkailmoitus, jonka takana ei ole aikomusta palkata ketään. Miksi niitä julkaistaan ja miten haamuilmoituksen tunnistaa?",
+      "description": "Haamutyöpaikat: työpaikkailmoitus ilman aikomusta palkata. Selitämme miksi valeilmoituksia julkaistaan ja miten hakija tunnistaa ne.",
       "inLanguage": "fi",
       "articleSection": "Työelämän ilmiöt",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Haamutyöpaikat — ilmoitus ilman työpaikkaa",
-        "description": "Haamutyöpaikka (ghost job) on työpaikkailmoitus, jonka takana ei ole aikomusta palkata ketään. Miksi niitä julkaistaan ja miten haamuilmoituksen tunnistaa?",
+        "name": "Haamutyöpaikat",
+        "description": "Haamutyöpaikat: työpaikkailmoitus ilman aikomusta palkata. Selitämme miksi valeilmoituksia julkaistaan ja miten hakija tunnistaa ne.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -824,6 +825,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="haamutyopaikat">
 <div class="ilmio-tag">Ilmiö 120</div>
 <h1>Haamutyöpaikat — ilmoitus ilman työpaikkaa</h1>
@@ -843,7 +845,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Haamuilmoituksen kierto: hakemuksia kerätään, ketään ei palkata, ilmoitus palaa syötteeseen.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Miksi valeilmoituksia julkaistaan:</h2>
+<h2 class="laatikko-otsikko" id="miksi-valeilmoituksia-julkaistaan">Miksi valeilmoituksia julkaistaan:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Kasvun kulissi:</strong> jatkuva rekrytointi näyttää sijoittajille, asiakkaille ja kilpailijoille laajenevalta yritykseltä — vaikka sisällä olisi palkkausjäädytys.</li>
 <li><strong>CV-pankki:</strong> hakemuksia kerätään varastoon tulevaa tarvetta varten ("pipeline") — hakijalle ei kerrota, että tarve on hypoteettinen.</li>
@@ -853,7 +855,7 @@ flowchart TD
 </ul>
 </div>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Haamun tuntomerkit:</h2>
+<h2 class="laatikko-otsikko" id="haamun-tuntomerkit">Haamun tuntomerkit:</h2>
 <ul style="margin:0.5em 0 0;">
 <li>Ilmoitus on roikkunut kuukausia tai ilmestyy uudelleen tasaisin välein lähes samalla tekstillä.</li>
 <li>Sisältö on ylimalkainen: ei palkkahaarukkaa, ei hakuaikaa, ei esihenkilöä, ei tiimiä.</li>
@@ -863,7 +865,7 @@ flowchart TD
 </ul>
 </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Hakijalle:</h2> Priorisoi tuoreet, yksilöidyt ilmoitukset ja ohita ikuisuusilmoitukset. Kysy prosessin aikataulua heti — oikealla haulla se on, haamulla ei. Etsi rekrytoija tai esihenkilö käsiisi (LinkedIn) ja varmista, että tehtävä on aktiivinen, ennen kuin räätälöit hakemuksen. Älä tee laajaa ennakkotehtävää ennen kuin prosessi on osoittautunut todelliseksi — ilmaiseksi tehty näytetyö on oma ilmiönsä. Ja jos hakemus katoaa tyhjyyteen, se kertoo ilmoituksesta, ei sinusta.
+<h2 class="laatikko-otsikko" id="vastakeinot-hakijalle">Vastakeinot hakijalle:</h2> Priorisoi tuoreet, yksilöidyt ilmoitukset ja ohita ikuisuusilmoitukset. Kysy prosessin aikataulua heti — oikealla haulla se on, haamulla ei. Etsi rekrytoija tai esihenkilö käsiisi (LinkedIn) ja varmista, että tehtävä on aktiivinen, ennen kuin räätälöit hakemuksen. Älä tee laajaa ennakkotehtävää ennen kuin prosessi on osoittautunut todelliseksi — ilmaiseksi tehty näytetyö on oma ilmiönsä. Ja jos hakemus katoaa tyhjyyteen, se kertoo ilmoituksesta, ei sinusta.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -905,6 +907,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="hiljainen-irtisanominen.html">← Hiljainen irtisanominen — savustus ilman papereita</a>

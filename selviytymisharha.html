@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Selviytymisharha — vain palanneet koneet lasketaan — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   
   
   
@@ -734,12 +736,12 @@
       "@id": "https://www.ilmiöt.fi/selviytymisharha.html#article",
       "url": "https://www.ilmiöt.fi/selviytymisharha.html",
       "headline": "Selviytymisharha — vain palanneet koneet lasketaan",
-      "description": "Abraham Wald huomasi, että palanneiden pommikoneiden osumakartta kertoo missä kone kestää osuman — panssari kuuluu sinne, missä reikiä ei näy.",
+      "description": "Selviytymisharha: vain palanneet koneet lasketaan. Selitämme miksi menestystarinat harhauttavat ja miten etsit puuttuvan datan.",
       "inLanguage": "fi",
       "articleSection": "Tilastoilla valehtelu",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -748,19 +750,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Selviytymisharha — vain palanneet koneet lasketaan",
-        "description": "Abraham Wald huomasi, että palanneiden pommikoneiden osumakartta kertoo missä kone kestää osuman — panssari kuuluu sinne, missä reikiä ei näy.",
+        "name": "Selviytymisharha",
+        "description": "Selviytymisharha: vain palanneet koneet lasketaan. Selitämme miksi menestystarinat harhauttavat ja miten etsit puuttuvan datan.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -798,6 +800,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="selviytymisharha">
 <div class="ilmio-tag">Ilmiö 126</div>
 <h1>Selviytymisharha — vain palanneet koneet lasketaan</h1>
@@ -835,7 +838,7 @@
 <li><strong>Yrittäjyyspuhe:</strong> ”koulupudokkaatkin onnistuvat, katso Jobs ja Zuckerberg” — otos on valikoitunut lopputuloksen perusteella.</li>
 </ul>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Kysy aina: keitä tästä aineistosta puuttuu, ja miksi? Jos otokseen pääsee vain onnistumalla (tai selviytymällä), data kertoo valikoitumisesta — ei syistä.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Kysy aina: keitä tästä aineistosta puuttuu, ja miksi? Jos otokseen pääsee vain onnistumalla (tai selviytymällä), data kertoo valikoitumisesta — ei syistä.
     </div>
 <p class="peli-harjoittele" style="margin:1.4rem 0 0;padding:.7rem .9rem;background:#FBF5E0;border-left:3px solid #C9A84C;font-size:.95em"><b>Harjoittele tämän tunnistamista.</b> <a href="peli.html">Vedätys</a> on päivittäinen peli, jossa selviytymisharha on yksi tunnistettavista ilmiöistä — mukana on aina myös tilanteita, joissa ei ole mitään vikaa.</p>
 <div class="lue-lisaa">
@@ -893,6 +896,7 @@
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="suhteellinen-riski.html">← Suhteellinen riski — ”riski kaksinkertaistui” yhdestä kahteen</a>

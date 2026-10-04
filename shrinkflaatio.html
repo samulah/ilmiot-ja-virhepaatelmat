@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Shrinkflaatio — sama hinta, pienempi paketti — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/shrinkflaatio.html#article",
       "url": "https://www.ilmiöt.fi/shrinkflaatio.html",
       "headline": "Shrinkflaatio — sama hinta, pienempi paketti",
-      "description": "Shrinkflaatio (shrinkflation) tarkoittaa tuotteen pienentämistä hinnan pysyessä samana — piilotettu hinnankorotus, jonka yksikköhinta paljastaa.",
+      "description": "Shrinkflaatio: sama hinta, pienempi paketti. Selitämme miten kutistaminen piilotetaan käytännössä ja miten vertaat kilohintoja kaupassa.",
       "inLanguage": "fi",
       "articleSection": "Myyntikikat ja painostus",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Shrinkflaatio — sama hinta, pienempi paketti",
-        "description": "Shrinkflaatio (shrinkflation) tarkoittaa tuotteen pienentämistä hinnan pysyessä samana — piilotettu hinnankorotus, jonka yksikköhinta paljastaa.",
+        "name": "Shrinkflaatio",
+        "description": "Shrinkflaatio: sama hinta, pienempi paketti. Selitämme miten kutistaminen piilotetaan käytännössä ja miten vertaat kilohintoja kaupassa.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -824,6 +825,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="shrinkflaatio">
 <div class="ilmio-tag">Ilmiö 92</div>
 <h1>Shrinkflaatio — sama hinta, pienempi paketti</h1>
@@ -841,7 +843,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Sama korotus kahdella tavalla — vain toinen näkyy kuluttajalle.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Kutistamisen muodot:</h2>
+<h2 class="laatikko-otsikko" id="kutistamisen-muodot">Kutistamisen muodot:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Pakkauskutistus:</strong> grammat vähenevät, hinta ennallaan — usein myös pakkaus pysyy samankokoisena, sisällä on vain enemmän ilmaa.</li>
 <li><strong>Laatukutistus (skimpflation):</strong> kallis raaka-aine korvataan halvemmalla — voi vaihtuu kasvirasvaan, kaakaon osuus laskee. "Uusi resepti!" tarkoittaa usein halvempaa reseptiä.</li>
@@ -850,7 +852,7 @@ flowchart TD
 </div>
 <p>Ilmiön klassikko on Toblerone (2016): patukan kolmioiden välejä harvennettiin niin näkyvästi, että kutistus päätyi maailmanuutisiin ja pilakuviin — ja yhtiö palautti lopulta vanhan muodon. Ranska meni pidemmälle: heinäkuusta 2024 isojen kauppojen on pitänyt ilmoittaa hyllymerkinnällä, jos tuotteen määrä on pienentynyt ja yksikköhinta noussut.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Katso yksikköhintaa (€/kg, €/l) — se on Suomessa pakollinen hyllymerkintä ja ainoa luku, jota kutistus ei voi huijata. Vertaa sitä, älä pakettihintaa. Suhtaudu "uusi pakkaus!" ja "uusi resepti!" -teksteihin tarkistuskehotuksina. Ja muista sama logiikka palveluissa: suoratoiston "päivitetty tilaus" tai lennon "kevytversio" ovat palvelukutistusta.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Katso yksikköhintaa (€/kg, €/l) — se on Suomessa pakollinen hyllymerkintä ja ainoa luku, jota kutistus ei voi huijata. Vertaa sitä, älä pakettihintaa. Suhtaudu "uusi pakkaus!" ja "uusi resepti!" -teksteihin tarkistuskehotuksina. Ja muista sama logiikka palveluissa: suoratoiston "päivitetty tilaus" tai lennon "kevytversio" ovat palvelukutistusta.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -906,6 +908,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="painostusclose.html">← Painostus-close — keinotekoinen niukkuus ja "nyt tai ei koskaan"</a>

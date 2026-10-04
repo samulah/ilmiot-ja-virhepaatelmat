@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Peterin periaate — ylennys epäpätevyyden tasolle | Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -775,12 +776,12 @@
       "@id": "https://www.ilmiöt.fi/peterin-periaate.html#article",
       "url": "https://www.ilmiöt.fi/peterin-periaate.html",
       "headline": "Peterin periaate — jokainen ylenee epäpätevyytensä tasolle",
-      "description": "\"Hierarkiassa jokainen työntekijä pyrkii ylenemään epäpätevyytensä tasolle.\" Laurence J. Peter muotoili periaatteen 1969 — ja tutkimus vahvisti sen…",
+      "description": "Peterin periaate tarkoittaa sitä, että jokainen ylenee epäpätevyytensä tasolle. Miksi hyvä tekijä voi olla huono esihenkilö — ja miten se korjataan.",
       "inLanguage": "fi",
       "articleSection": "Byrokratia ja organisaatio",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -789,19 +790,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Peterin periaate — jokainen ylenee epäpätevyytensä tasolle",
-        "description": "\"Hierarkiassa jokainen työntekijä pyrkii ylenemään epäpätevyytensä tasolle.\" Laurence J. Peter muotoili periaatteen 1969 — ja tutkimus vahvisti sen…",
+        "name": "Peterin periaate",
+        "description": "Peterin periaate tarkoittaa sitä, että jokainen ylenee epäpätevyytensä tasolle. Miksi hyvä tekijä voi olla huono esihenkilö — ja miten se korjataan.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -813,29 +814,6 @@
       },
       "datePublished": "2026-07-10",
       "dateModified": "2026-07-10"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.ilmiöt.fi/peterin-periaate.html#faq",
-      "inLanguage": "fi",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Mitä Peterin periaate tarkoittaa?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Peterin periaate tarkoittaa, että hyvästä suoriutumisesta palkitaan ylennyksellä, kunnes vastaan tulee tehtävä, johon osaaminen ei riitä. Koska ylennys perustuu edellisen tehtävän tuloksiin eikä seuraavan vaatimuksiin, järjestelmä siirtää ihmisiä ennustettavasti liian pitkälle."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Miten Peterin periaatteen vaikutusta voi välttää?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Erota urapolut johtamisesta: asiantuntijan on voitava edetä palkassa ja arvostuksessa ilman esihenkilötehtävää. Arvioi ylennyksessä seuraavan tehtävän taitoja, älä edellisen tuloksia, ja tee paluu entiseen rooliin mahdolliseksi ilman leimaa epäonnistumisesta."
-          }
-        }
-      ]
     }
   ]
 }
@@ -861,13 +839,14 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="peterin-periaate">
 <div class="ilmio-tag">Ilmiö 49</div>
 <h1>Peterin periaate — jokainen ylenee epäpätevyytensä tasolle</h1>
 <p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 10.7.2026</p>
 <p><em>"Hierarkiassa jokainen työntekijä pyrkii ylenemään epäpätevyytensä tasolle."</em> Kanadalainen kasvatustieteilijä Laurence J. Peter ja käsikirjoittaja Raymond Hull esittivät periaatteen kirjassaan <cite>The Peter Principle: Why Things Always Go Wrong</cite> (1969). Siitä seuraa väite, joka on periaatetta itseään kiusallisempi: ajan mittaan jokaista tehtävää hoitaa henkilö, joka on kykenemätön hoitamaan sitä.</p>
 <div class="infolaatikko vastauslohko">
-<h2 class="laatikko-otsikko">Mitä Peterin periaate tarkoittaa?</h2>
+<h2 class="laatikko-otsikko" id="mita-peterin-periaate-tarkoittaa">Mitä Peterin periaate tarkoittaa?</h2>
 <p style="margin:0.4em 0 0;"><strong>Peterin periaate</strong> kuuluu: <em>"hierarkiassa jokainen työntekijä pyrkii ylenemään epäpätevyytensä tasolle."</em> Ylennys myönnetään nykyisessä työssä onnistumisesta, vaikka uusi tehtävä vaatii eri taitoja. Ylennykset loppuvat siihen tehtävään, jossa onnistuminen lakkaa — ja sinne jäädään.</p>
 </div>
 <div class="mermaid">
@@ -882,14 +861,14 @@ flowchart TD
 <p class="kaavio-selitys">Ylennys palkitsee suoriutumista nykyisessä tehtävässä. Uusi tehtävä vaatii eri taidot. Silmukka pysähtyy vasta epäonnistumiseen.</p>
 <p>Mekanismi ei edellytä tyhmyyttä keneltäkään. Se seuraa suoraan siitä, mitä ylennyksellä palkitaan: nykyisessä työssä onnistumista. Paras myyjä ylennetään myyntipäälliköksi, paras koodari tiiminvetäjäksi, paras opettaja rehtoriksi — vaikka uusi tehtävä koostuu taidoista, joita vanha ei mitannut. Kun ihminen saavuttaa tason, jolla hän ei enää onnistu, ylennykset loppuvat. Hän jää siihen. Ja koska vain onnistujat liikkuvat eteenpäin, jokainen porras täyttyy vähitellen niistä, jotka eivät päässeet pidemmälle.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Tutkimusnäyttö:</h2> Alan Benson, Danielle Li ja Kelly Shue tutkivat 131 yhdysvaltalaisen yrityksen myyntihenkilöstöä (<cite>Promotions and the Peter Principle</cite>, <em>Quarterly Journal of Economics</em>, 2019). Parhaat myyjät ylennettiin selvästi todennäköisimmin esihenkilöiksi — ja mitä parempi myyjä oli ollut, sitä heikommin hänen tiiminsä myöhemmin suoriutui. Yritykset painottivat ylennyspäätöksissä nykyistä myyntisuoritusta, vaikka käytettävissä oli havaittavia piirteitä, jotka ennustivat esihenkilönä onnistumista paremmin.
+<h2 class="laatikko-otsikko" id="tutkimusnaytto">Tutkimusnäyttö:</h2> Alan Benson, Danielle Li ja Kelly Shue tutkivat 131 yhdysvaltalaisen yrityksen myyntihenkilöstöä (<cite>Promotions and the Peter Principle</cite>, <em>Quarterly Journal of Economics</em>, 2019). Parhaat myyjät ylennettiin selvästi todennäköisimmin esihenkilöiksi — ja mitä parempi myyjä oli ollut, sitä heikommin hänen tiiminsä myöhemmin suoriutui. Yritykset painottivat ylennyspäätöksissä nykyistä myyntisuoritusta, vaikka käytettävissä oli havaittavia piirteitä, jotka ennustivat esihenkilönä onnistumista paremmin.
     </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Miksi hierarkia ei korjaa itseään:</h2> Epäpätevä ei putoa takaisin. Alentaminen on kallista, se nolaa myös ylentäjän, ja se tunnustaa virheen, jota kukaan ei halua tunnustaa. Peter nimesi näennäisratkaisut osuvasti: <em>lateraalinen arabeski</em> on siirto sivusuunnassa merkityksettömään tehtävään, jolla on vaikuttava titteli, ja <em>perkussiivinen sublimaatio</em> on potku ylöspäin — ongelma siirretään portaan verran korkeammalle.
+<h2 class="laatikko-otsikko" id="miksi-hierarkia-ei-korjaa-itseaan">Miksi hierarkia ei korjaa itseään:</h2> Epäpätevä ei putoa takaisin. Alentaminen on kallista, se nolaa myös ylentäjän, ja se tunnustaa virheen, jota kukaan ei halua tunnustaa. Peter nimesi näennäisratkaisut osuvasti: <em>lateraalinen arabeski</em> on siirto sivusuunnassa merkityksettömään tehtävään, jolla on vaikuttava titteli, ja <em>perkussiivinen sublimaatio</em> on potku ylöspäin — ongelma siirretään portaan verran korkeammalle.
     </div>
 <p>Peterin periaate kytkeytyy suoraan siihen, miksi kokouksissa kuunnellaan väärää ihmistä. <a href="hippo-efekti.html">HiPPO-efektissä</a> painavin mielipide on korkeimmin palkatun mielipide, ja Peterin mukaan juuri se henkilö on todennäköisimmin osaamisensa rajalla. <a href="dunning-kruger.html">Dunning–Kruger-ilmiö</a> selittää, miksi hän ei sitä huomaa, ja <a href="strateginen-osaamattomuus.html">strateginen osaamattomuus</a> sen, miksi asemasta voi olla hyötyä. <a href="rautainen-laki.html">Oligarkian rautainen laki</a> kuvaa saman ilmiön organisaatiotasolla: rakenne suojelee niitä, jotka sen huipulle päätyivät.</p>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Erota urapolut. Asiantuntijalle on oltava reitti, jolla palkka ja arvostus nousevat ilman että hänestä tehdään esihenkilöä. Arvioi ylennyksissä sitä, mitä uusi tehtävä vaatii, älä sitä mitä vanha mittasi. Ja tee alentamisesta mahdollista ilman häpeää: jos paluu takaisin omaan työhön on sallittu ja tavallinen, kukaan ei jää loukkuun tehtävään, jota ei osaa. Niin kauan kuin ylennys on ainoa tapa palkita, organisaatio muuttaa parhaat tekijänsä keskinkertaisiksi johtajiksi ja menettää molemmat.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Erota urapolut. Asiantuntijalle on oltava reitti, jolla palkka ja arvostus nousevat ilman että hänestä tehdään esihenkilöä. Arvioi ylennyksissä sitä, mitä uusi tehtävä vaatii, älä sitä mitä vanha mittasi. Ja tee alentamisesta mahdollista ilman häpeää: jos paluu takaisin omaan työhön on sallittu ja tavallinen, kukaan ei jää loukkuun tehtävään, jota ei osaa. Niin kauan kuin ylennys on ainoa tapa palkita, organisaatio muuttaa parhaat tekijänsä keskinkertaisiksi johtajiksi ja menettää molemmat.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -959,6 +938,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="parkinsonin-laki.html">← Parkinsonin laki — työ laajenee täyttämään sille varatun ajan</a>

@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Keskiarvoharha — keskiarvo vs. mediaani — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   
   
   
@@ -734,12 +736,12 @@
       "@id": "https://www.ilmiöt.fi/keskiarvo-vs-mediaani.html#article",
       "url": "https://www.ilmiöt.fi/keskiarvo-vs-mediaani.html",
       "headline": "Keskiarvoharha — keskiarvo vs. mediaani",
-      "description": "Vinossa jakaumassa keskiarvo ja mediaani kertovat eri tarinan: yksi miljonääri baarissa nostaa keskitulot kattoon, vaikka kenenkään palkka ei muutu.",
+      "description": "Keskiarvoharha: keskiarvo kertoo eri tarinan kuin mediaani. Selitämme milloin kumpaakin käytetään harhauttamiseen ja mitä lukua kannattaa kysyä.",
       "inLanguage": "fi",
       "articleSection": "Tilastoilla valehtelu",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -748,19 +750,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Keskiarvoharha — keskiarvo vs. mediaani",
-        "description": "Vinossa jakaumassa keskiarvo ja mediaani kertovat eri tarinan: yksi miljonääri baarissa nostaa keskitulot kattoon, vaikka kenenkään palkka ei muutu.",
+        "name": "Keskiarvoharha",
+        "description": "Keskiarvoharha: keskiarvo kertoo eri tarinan kuin mediaani. Selitämme milloin kumpaakin käytetään harhauttamiseen ja mitä lukua kannattaa kysyä.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -798,6 +800,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="keskiarvo-vs-mediaani">
 <div class="ilmio-tag">Ilmiö 124</div>
 <h1>Keskiarvoharha — keskiarvo vs. mediaani</h1>
@@ -843,7 +846,7 @@
 </ul>
 <p>Toinen puoli samaa harhaa on <strong>keskiarvo ilman hajontaa</strong>: ”keskilämpötila 20 °C” kuvaa yhtä hyvin tasaista kevätpäivää kuin vuorokautta, jossa paahtaa +35 ja paleltaa +5.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Kun kuulet sanan ”keskimäärin”, kysy: keskiarvo vai mediaani — ja millainen hajonta? Jos jakauma on vino (tulot, hinnat, ajat), vaadi mediaani. Jos vain toinen luku kerrotaan, syy on yleensä se, että toinen kertoisi eri tarinan.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Kun kuulet sanan ”keskimäärin”, kysy: keskiarvo vai mediaani — ja millainen hajonta? Jos jakauma on vino (tulot, hinnat, ajat), vaadi mediaani. Jos vain toinen luku kerrotaan, syy on yleensä se, että toinen kertoisi eri tarinan.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -900,6 +903,7 @@
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="cherry-picking-aikavali.html">← Cherry-picking — valittu aikaväli kertoo halutun tarinan</a>

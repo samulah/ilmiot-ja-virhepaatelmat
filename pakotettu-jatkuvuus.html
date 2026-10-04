@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Pakotettu jatkuvuus — ilmainen kokeilu, joka muuttuu laskuksi ilman kysymystä — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -333,17 +334,17 @@
 </style>
 
   <!-- SEO -->
-  <meta name="description" content="Pakotettu jatkuvuus eli forced continuity: ilmainen kokeilu vaatii korttitiedot etukäteen ja muuttuu maksulliseksi automaattisesti, ilman muistutusta ja ilman uutta hyväksyntää.">
+  <meta name="description" content="Pakotettu jatkuvuus (forced continuity): ilmainen kokeilu vaatii korttitiedot ja muuttuu maksulliseksi automaattisesti, ilman muistutusta tai uutta hyväksyntää.">
   <link rel="canonical" href="https://www.ilmiöt.fi/pakotettu-jatkuvuus.html">
   <meta property="og:title" content="Pakotettu jatkuvuus — ilmainen kokeilu, joka muuttuu laskuksi ilman kysymystä — Ilmiöitä">
-  <meta property="og:description" content="Pakotettu jatkuvuus eli forced continuity: ilmainen kokeilu vaatii korttitiedot etukäteen ja muuttuu maksulliseksi automaattisesti, ilman muistutusta ja ilman uutta hyväksyntää.">
+  <meta property="og:description" content="Pakotettu jatkuvuus (forced continuity): ilmainen kokeilu vaatii korttitiedot ja muuttuu maksulliseksi automaattisesti, ilman muistutusta tai uutta hyväksyntää.">
   <meta property="og:url" content="https://www.ilmiöt.fi/pakotettu-jatkuvuus.html">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="fi_FI">
   <meta property="og:site_name" content="Ilmiöitä — Miten valta toimii">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Pakotettu jatkuvuus — ilmainen kokeilu, joka muuttuu laskuksi ilman kysymystä — Ilmiöitä">
-  <meta name="twitter:description" content="Pakotettu jatkuvuus eli forced continuity: ilmainen kokeilu vaatii korttitiedot etukäteen ja muuttuu maksulliseksi automaattisesti, ilman muistutusta ja ilman uutta hyväksyntää.">
+  <meta name="twitter:description" content="Pakotettu jatkuvuus (forced continuity): ilmainen kokeilu vaatii korttitiedot ja muuttuu maksulliseksi automaattisesti, ilman muistutusta tai uutta hyväksyntää.">
   <meta property="og:image" content="https://www.ilmiöt.fi/og/brand.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -388,12 +389,12 @@
       "@id": "https://www.ilmiöt.fi/pakotettu-jatkuvuus.html#article",
       "url": "https://www.ilmiöt.fi/pakotettu-jatkuvuus.html",
       "headline": "Pakotettu jatkuvuus — ilmainen kokeilu, joka muuttuu laskuksi ilman kysymystä",
-      "description": "Pakotettu jatkuvuus eli forced continuity: ilmainen kokeilu vaatii korttitiedot etukäteen ja muuttuu maksulliseksi automaattisesti, ilman muistutusta ja ilman uutta hyväksyntää.",
+      "description": "Pakotettu jatkuvuus (forced continuity): ilmainen kokeilu vaatii korttitiedot ja muuttuu maksulliseksi automaattisesti, ilman muistutusta tai uutta hyväksyntää.",
       "inLanguage": "fi",
       "articleSection": "Alustatalous ja algoritmit",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -402,9 +403,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
+        }
+      },
+      "about": {
+        "@type": "DefinedTerm",
+        "name": "Pakotettu jatkuvuus",
+        "description": "Pakotettu jatkuvuus (forced continuity): ilmainen kokeilu vaatii korttitiedot ja muuttuu maksulliseksi automaattisesti, ilman muistutusta tai uutta hyväksyntää.",
+        "inDefinedTermSet": {
+          "@type": "DefinedTermSet",
+          "name": "Ilmiöitä — Miten valta toimii",
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -416,29 +427,6 @@
       },
       "datePublished": "2026-08-14",
       "dateModified": "2026-08-14"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.ilmiöt.fi/pakotettu-jatkuvuus.html#faq",
-      "inLanguage": "fi",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Mitä forced continuity tarkoittaa suomeksi?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Vakiintunutta suomennosta ei ole. Käytössä ovat pakotettu jatkuvuus ja automaattinen jatkuminen; sopimusehdoissa puhutaan jatkuvasta sopimuksesta. Kyse on järjestelystä, jossa ilmainen kokeilu vaatii korttitiedot etukäteen ja muuttuu maksulliseksi tilaukseksi ilman erillistä hyväksyntää."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Miten pakotetulta jatkuvuudelta välttyy?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Merkitse veloituspäivä kalenteriin heti tilauksen jälkeen tai peruuta tilaus samana päivänä kun aloitat kokeilun — useimmat palvelut antavat käyttöoikeuden kokeilujakson loppuun asti. Etämyynnissä kuluttajalla on lisäksi 14 vuorokauden peruuttamisoikeus, joka lasketaan sopimuksen tekemisestä."
-          }
-        }
-      ]
     }
   ]
 }
@@ -464,13 +452,14 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="pakotettu-jatkuvuus">
 <div class="ilmio-tag">Ilmiö 109</div>
 <h1>Pakotettu jatkuvuus — ilmainen kokeilu, joka muuttuu laskuksi ilman kysymystä</h1>
 <p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 14.8.2026</p>
 <p><strong>Pakotettu jatkuvuus</strong> (englanniksi <em>forced continuity</em>) tarkoittaa järjestelyä, jossa ilmainen kokeilu vaatii korttitiedot etukäteen ja muuttuu maksulliseksi tilaukseksi itsestään. Käyttäjä ei tee toista päätöstä: hän tekee ensimmäisen päätöksen ilmaisesta ja saa laskun siitä, ettei tehnyt kolmatta. Muistutus jää tulematta juuri silloin, kun se olisi hyödyllisin.</p>
 <div class="infolaatikko vastauslohko">
-<h2 class="laatikko-otsikko">Mitä forced continuity tarkoittaa suomeksi?</h2>
+<h2 class="laatikko-otsikko" id="mita-forced-continuity-tarkoittaa-suomeksi">Mitä forced continuity tarkoittaa suomeksi?</h2>
 <p style="margin:0.4em 0 0;">Vakiintunutta suomennosta ei ole. Käytössä ovat <strong>pakotettu jatkuvuus</strong> ja <em>automaattinen jatkuminen</em>; sopimusehdoissa puhutaan jatkuvasta sopimuksesta ja kuluttajaviranomaiset toistuvasta veloituksesta. Etämyynnissä kuluttajalla on kuluttajansuojalain mukaan 14 vuorokauden peruuttamisoikeus, mutta se lasketaan sopimuksen tekemisestä — ei siitä päivästä, jona veloitus alkaa.</p>
 </div>
 <div class="mermaid">
@@ -486,10 +475,10 @@ flowchart TD
 <p class="kaavio-selitys">Tilaus alkaa yhdellä klikkauksella etusivulta; sen lopettaminen alkaa asetuksista, joita ei mainita missään.</p>
 <p>Järjestely on laillinen, kun ehdot kerrotaan selvästi ennen tilausta. Raja ylittyy siinä, mitä jätetään tekemättä: veloituspäivää ei muistuteta, kuittia ei lähetetä ennakkoon, ja irtisanominen sijoitetaan valikkoon, johon ei pääse samalta sivulta kuin tilaamiseen. Jokainen näistä on erikseen pieni, ja yhdessä ne ratkaisevat, kuinka moni kokeilija maksaa vuoden.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Miten pakotettu jatkuvuus eroaa tilausansasta?</h2> <a href="tilausansa.html">Tilausansa</a> koskee ulospääsyä: peruuttaminen on tehty tahallaan hankalaksi. Pakotettu jatkuvuus koskee ajoitusta — sisäänkäynti on ilmainen ja päätös maksamisesta tehdään puolestasi hiljaisuudella. <a href="lowball-hinnoittelu.html">Lowball-hinnoittelussa</a> taas aloitushinta on tosi mutta väliaikainen.
+<h2 class="laatikko-otsikko" id="miten-pakotettu-jatkuvuus-eroaa-tilausansasta">Miten pakotettu jatkuvuus eroaa tilausansasta?</h2> <a href="tilausansa.html">Tilausansa</a> koskee ulospääsyä: peruuttaminen on tehty tahallaan hankalaksi. Pakotettu jatkuvuus koskee ajoitusta — sisäänkäynti on ilmainen ja päätös maksamisesta tehdään puolestasi hiljaisuudella. <a href="lowball-hinnoittelu.html">Lowball-hinnoittelussa</a> taas aloitushinta on tosi mutta väliaikainen.
     </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2>
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2>
 <ul style="margin:0.5em 0 0;">
 <li>Merkitse veloituspäivä kalenteriin heti tilauksen jälkeen — kahta päivää aikaisemmaksi.</li>
 <li>Peruuta tilaus samana päivänä kun aloitat kokeilun. Useimmat palvelut antavat käyttöoikeuden kokeilujakson loppuun asti.</li>
@@ -551,6 +540,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="piilokulut.html">← Piilokulut — hinta paljastuu erissä vasta kassalla</a>

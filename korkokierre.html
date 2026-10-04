@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Negatiivinen korkokierre — velkaeksponentti 30 vuodessa — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   
   
   <script src="js/chart.umd.min.js" defer></script>
@@ -734,12 +736,12 @@
       "@id": "https://www.ilmiöt.fi/korkokierre.html#article",
       "url": "https://www.ilmiöt.fi/korkokierre.html",
       "headline": "Negatiivinen korkokierre — velkaeksponentti 30 vuodessa",
-      "description": "Velka käyttäytyy täsmälleen kuten sijoitus — mutta vastakkaiseen suuntaan. Sama eksponentiaalinen logiikka, joka kasvattaa 100 000 € sijoituksen 761 000…",
+      "description": "Negatiivinen korkokierre: velka kasvaa nopeammin kuin maksukyky. Selitämme lukujen avulla, miten kierre syntyy ja miten suojaudut siltä.",
       "inLanguage": "fi",
       "articleSection": "Kasvun dynamiikka",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -748,19 +750,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Negatiivinen korkokierre — velkaeksponentti 30 vuodessa",
-        "description": "Velka käyttäytyy täsmälleen kuten sijoitus — mutta vastakkaiseen suuntaan. Sama eksponentiaalinen logiikka, joka kasvattaa 100 000 € sijoituksen 761 000…",
+        "name": "Negatiivinen korkokierre",
+        "description": "Negatiivinen korkokierre: velka kasvaa nopeammin kuin maksukyky. Selitämme lukujen avulla, miten kierre syntyy ja miten suojaudut siltä.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -797,6 +799,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="korkokierre">
 <div class="ilmio-tag">Ilmiö 65</div>
 <h1>Negatiivinen korkokierre — velkaeksponentti 30 vuodessa</h1>
@@ -827,10 +830,10 @@
 </tbody>
 </table>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Kuukausierän harha:</h2> Kuluttajaluoton myyntiargumentti on aina kuukausierä — ei kokonaiskustannus. 100 000 € luotto 20 %:n korolla ja 10 vuoden maksuajalla maksaa kuussa noin 1 940 €, mutta yhteensä 232 000 € — eli 132 000 € pelkkää korkoa. Pitkittämällä maksuaikaa 20 vuoteen kuukausierä laskee 1 670 €:oon, mutta kokonaishinta nousee 400 000 €:oon. <strong>Pidempi maksuaika on myyjän etu, ei ostajan.</strong>
+<h2 class="laatikko-otsikko" id="kuukausieran-harha">Kuukausierän harha:</h2> Kuluttajaluoton myyntiargumentti on aina kuukausierä — ei kokonaiskustannus. 100 000 € luotto 20 %:n korolla ja 10 vuoden maksuajalla maksaa kuussa noin 1 940 €, mutta yhteensä 232 000 € — eli 132 000 € pelkkää korkoa. Pitkittämällä maksuaikaa 20 vuoteen kuukausierä laskee 1 670 €:oon, mutta kokonaishinta nousee 400 000 €:oon. <strong>Pidempi maksuaika on myyjän etu, ei ostajan.</strong>
 </div>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Tyypilliset korkotasot Suomessa:</h2>
+<h2 class="laatikko-otsikko" id="tyypilliset-korkotasot-suomessa">Tyypilliset korkotasot Suomessa:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Asuntolaina:</strong> 3–5 % — matalin luokka, pitkä maksuaika silti riskitekijä</li>
 <li><strong>Autolaina / henkilöluotto:</strong> 7–15 % — markkinoidaan "kohtuullisena"</li>
@@ -839,10 +842,10 @@
 </ul>
 </div>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Minimisuorituksen loukku:</h2> Luottokorttiyhtiöt asettavat minimisuorituksen tahallisen pieneksi. Jos maksat vain minimisuorituksen 25 000 €:n luottokorttivelasta (20 % korko, min. 2 % saldosta / kk), velan maksaminen kokonaan kestää yli 30 vuotta ja kokonaishinta on yli 60 000 € — enemmän kuin alkuperäinen velka. Ks. <a href="korkoa-korolle.html">Korkoa korolle -efekti</a>: sama logiikka, vain suunta on väärä.
+<h2 class="laatikko-otsikko" id="minimisuorituksen-loukku">Minimisuorituksen loukku:</h2> Luottokorttiyhtiöt asettavat minimisuorituksen tahallisen pieneksi. Jos maksat vain minimisuorituksen 25 000 €:n luottokorttivelasta (20 % korko, min. 2 % saldosta / kk), velan maksaminen kokonaan kestää yli 30 vuotta ja kokonaishinta on yli 60 000 € — enemmän kuin alkuperäinen velka. Ks. <a href="korkoa-korolle.html">Korkoa korolle -efekti</a>: sama logiikka, vain suunta on väärä.
     </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Maksa aina enemmän kuin minimilyhennys — jo pienikin ylitys lyhentää maksuaikaa vuosilla, koska se kohdistuu suoraan pääomaan. Katso aina kokonaiskustannus, älä kuukausierää: pyydä luotonantajalta todellinen vuosikorko ja koko takaisinmaksusumma kirjallisena ennen allekirjoitusta. Jos kalliita luottoja on useita, kilpailuta ja yhdistä ne yhdeksi halvemmaksi lainaksi — 30 %:n pikavipin vaihtaminen 10 %:n pankkilainaan on tuottoisin "sijoitus", jonka voi tehdä. Ja jos velat kasvavat maksukykyä nopeammin, hakeudu Talous- ja velkaneuvontaan (oikeusapu.fi) heti eikä vasta pakkoperinnässä — palvelu on maksuton, ja mitä aiemmin kierteeseen puututaan, sitä enemmän vaihtoehtoja on jäljellä.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Maksa aina enemmän kuin minimilyhennys — jo pienikin ylitys lyhentää maksuaikaa vuosilla, koska se kohdistuu suoraan pääomaan. Katso aina kokonaiskustannus, älä kuukausierää: pyydä luotonantajalta todellinen vuosikorko ja koko takaisinmaksusumma kirjallisena ennen allekirjoitusta. Jos kalliita luottoja on useita, kilpailuta ja yhdistä ne yhdeksi halvemmaksi lainaksi — 30 %:n pikavipin vaihtaminen 10 %:n pankkilainaan on tuottoisin "sijoitus", jonka voi tehdä. Ja jos velat kasvavat maksukykyä nopeammin, hakeudu Talous- ja velkaneuvontaan (oikeusapu.fi) heti eikä vasta pakkoperinnässä — palvelu on maksuton, ja mitä aiemmin kierteeseen puututaan, sitä enemmän vaihtoehtoja on jäljellä.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -899,6 +902,7 @@
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="negatiivinen-korkoa.html">← Negatiivinen korkoa korolle — eksponentiaalinen hajoaminen</a>

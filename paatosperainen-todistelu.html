@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Päätösperäinen todistelu — selvitys tilataan vastaus valmiina — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -706,17 +708,17 @@
 </style>
 
   <!-- SEO -->
-  <meta name="description" content="Päätösperäinen todistelu: ensin päätös, sitten selvitys joka tukee sitä. Selitämme policy-based evidence makingin tunnusmerkit ja miten lukitset mittarin etukäteen.">
+  <meta name="description" content="Päätösperäinen todistelu: ensin päätös, sitten selvitys joka tukee sitä. Policy-based evidence makingin tunnusmerkit ja miten lukitset mittarin etukäteen.">
   <link rel="canonical" href="https://www.ilmiöt.fi/paatosperainen-todistelu.html">
   <meta property="og:title" content="Päätösperäinen todistelu — selvitys tilataan vastaus valmiina — Ilmiöitä">
-  <meta property="og:description" content="Päätösperäinen todistelu: ensin päätös, sitten selvitys joka tukee sitä. Selitämme policy-based evidence makingin tunnusmerkit ja miten lukitset mittarin etukäteen.">
+  <meta property="og:description" content="Päätösperäinen todistelu: ensin päätös, sitten selvitys joka tukee sitä. Policy-based evidence makingin tunnusmerkit ja miten lukitset mittarin etukäteen.">
   <meta property="og:url" content="https://www.ilmiöt.fi/paatosperainen-todistelu.html">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="fi_FI">
   <meta property="og:site_name" content="Ilmiöitä — Miten valta toimii">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Päätösperäinen todistelu — selvitys tilataan vastaus valmiina — Ilmiöitä">
-  <meta name="twitter:description" content="Päätösperäinen todistelu: ensin päätös, sitten selvitys joka tukee sitä. Selitämme policy-based evidence makingin tunnusmerkit ja miten lukitset mittarin etukäteen.">
+  <meta name="twitter:description" content="Päätösperäinen todistelu: ensin päätös, sitten selvitys joka tukee sitä. Policy-based evidence makingin tunnusmerkit ja miten lukitset mittarin etukäteen.">
   <meta property="og:image" content="https://www.ilmiöt.fi/og/brand.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -761,12 +763,12 @@
       "@id": "https://www.ilmiöt.fi/paatosperainen-todistelu.html#article",
       "url": "https://www.ilmiöt.fi/paatosperainen-todistelu.html",
       "headline": "Päätösperäinen todistelu — selvitys tilataan vastaus valmiina",
-      "description": "Tietoon perustuva päätöksenteko kääntyy ympäri: ensin tehdään päätös, sitten tilataan selvitys, joka tukee sitä. Englanniksi ilmiöllä on osuva nimi — po…",
+      "description": "Päätösperäinen todistelu: ensin päätös, sitten selvitys joka tukee sitä. Policy-based evidence makingin tunnusmerkit ja miten lukitset mittarin etukäteen.",
       "inLanguage": "fi",
       "articleSection": "Projekti- ja ohjelmistokehitys",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +777,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Päätösperäinen todistelu — selvitys tilataan vastaus valmiina",
-        "description": "Tietoon perustuva päätöksenteko kääntyy ympäri: ensin tehdään päätös, sitten tilataan selvitys, joka tukee sitä. Englanniksi ilmiöllä on osuva nimi — po…",
+        "name": "Päätösperäinen todistelu",
+        "description": "Päätösperäinen todistelu: ensin päätös, sitten selvitys joka tukee sitä. Policy-based evidence makingin tunnusmerkit ja miten lukitset mittarin etukäteen.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -824,6 +826,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="paatosperainen-todistelu">
 <div class="ilmio-tag">Ilmiö 57</div>
 <h1>Päätösperäinen todistelu — selvitys tilataan vastaus valmiina</h1>
@@ -842,7 +845,7 @@ flowchart TD
 <p class="kaavio-selitys">Silmukka ei pääty vastaukseen vaan oikeaan vastaukseen — siksi se päättyy aina.</p>
 <p>Termi vakiintui Britanniassa, kun parlamentin tiede- ja teknologiavaliokunta käytti sitä vuoden 2006 raportissaan tieteellisestä neuvonannosta. Kyse ei ole valehtelusta. Kyse on siitä, että kysymyksenasettelu, rajaus ja mittari valitaan niin, että vastaus on käytännössä tiedossa ennen kuin selvitys alkaa.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnusmerkit:</h2>
+<h2 class="laatikko-otsikko" id="tunnusmerkit">Tunnusmerkit:</h2>
 <ul style="margin:0.5em 0 0;">
 <li>Toimeksianto rajaa pois juuri sen vaihtoehdon, joka olisi kiinnostavin.</li>
 <li>Vertailukohta on valittu jälkikäteen, ei etukäteen.</li>
@@ -853,7 +856,7 @@ flowchart TD
 <p>Apotti-potilastietojärjestelmän luvattiin nostavan tuottavuutta noin 25 prosentilla. Kun se ei toteutunut, keskustelu siirtyi käyttöönoton laajuuteen ja käyttäjämääriin — lukuihin, jotka ovat kiistatta toteutuneet. Alkuperäistä lupausta ei kumottu missään vaiheessa; se vain lakkasi esiintymästä aineistossa. Kustannusarvio oli hankkeen alkaessa 575 miljoonaa euroa kymmenelle vuodelle ja tarkentui 804,5 miljoonaan.</p>
 <p>Tämä on <a href="maalitolppien-siirtaminen.html">maalitolppien siirtämisen</a> institutionaalinen versio: kun onnistumisen määritelmä laaditaan jälkikäteen, hanke on määritelmällisesti onnistunut.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> <strong>Lukitse mittari ennen hanketta</strong> ja kirjaa se samaan päätökseen kuin rahoitus: mikä luku, mihin mennessä, mihin verrattuna. Etukäteen sovittua mittaria on vaikea vaihtaa huomaamatta, jälkikäteen valittua ei tarvitse vaihtaa lainkaan. <strong>Lue toimeksianto, älä vain tuloksia</strong> — rajaus kertoo enemmän kuin johtopäätös. <strong>Kysy mitä lopputulosta selvitys ei tue:</strong> jos selvitys ei olisi voinut päätyä mihinkään epämiellyttävään, se ei ollut selvitys. Ja <strong>kysy montako selvitystä samasta asiasta on tilattu</strong> — sarja on eri asia kuin tulos.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> <strong>Lukitse mittari ennen hanketta</strong> ja kirjaa se samaan päätökseen kuin rahoitus: mikä luku, mihin mennessä, mihin verrattuna. Etukäteen sovittua mittaria on vaikea vaihtaa huomaamatta, jälkikäteen valittua ei tarvitse vaihtaa lainkaan. <strong>Lue toimeksianto, älä vain tuloksia</strong> — rajaus kertoo enemmän kuin johtopäätös. <strong>Kysy mitä lopputulosta selvitys ei tue:</strong> jos selvitys ei olisi voinut päätyä mihinkään epämiellyttävään, se ei ollut selvitys. Ja <strong>kysy montako selvitystä samasta asiasta on tilattu</strong> — sarja on eri asia kuin tulos.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -912,6 +915,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="strateginen-aliarviointi.html">← Strateginen aliarviointi — hinta portin kokoiseksi</a>

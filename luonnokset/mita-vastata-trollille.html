@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <title>Mitä vastata trollille? Seitsemän kysymystä — Ilmiöitä</title>
+  <link rel="stylesheet" href="../style.css?v=20260727">
+  <link rel="stylesheet" href="../fonts/fonts.css">
+
+  <style>
+    body {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+    .ilmio {
+      margin-bottom: 0;
+      border-radius: 0;
+      border: 1px solid #e0e4e8;
+      border-top: 5px solid #00838f;
+      padding: 1.8rem 2rem 2rem;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+    .ilmio h1 { margin-top: 0; font-family: 'Spectral', Georgia, serif; }
+    .ilmio-tag {
+      display: inline-block;
+      font-size: 0.75em;
+      background: #00838f;
+      color: #fff;
+      border-radius: 0;
+      padding: 0.2em 0.6em;
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .huomiolaatikko { background: #fdf6ec; }
+    .infolaatikko h2.laatikko-otsikko, .huomiolaatikko h2.laatikko-otsikko {
+      display: inline; font: inherit; font-weight: 700; color: inherit;
+      margin: 0; padding: 0; letter-spacing: inherit;
+    }
+
+    /* Murupolku (sama kuin lukuohjeessa) */
+    .kortti-breadcrumb {
+      font-size: 0.85em; color: #888; margin-bottom: 1.2rem;
+      display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;
+    }
+    .kortti-breadcrumb a { color: #8B6914; text-decoration: none; }
+    .kortti-breadcrumb a:hover { text-decoration: underline; }
+    .kortti-breadcrumb-sep { color: #ccc; }
+    .kortti-breadcrumb-kat { color: #666; }
+
+    /* Katselukortti: sivun kärjessä, seitsemän ankkuririviä */
+    .katselukortti {
+      background: #FBF5E0;
+      border: 1px solid #C9A84C;
+      border-left: 5px solid #8B6914;
+      padding: 1.2rem 1.5rem 1.3rem;
+      margin: 1.8rem 0 2.2rem;
+    }
+    .katselukortti h2 {
+      font-family: 'Spectral', Georgia, serif;
+      font-size: 1.05rem;
+      margin: 0 0 0.25rem;
+      color: #3A2000;
+    }
+    .katselukortti p.kortti-alaotsikko {
+      margin: 0 0 0.9rem;
+      font-size: 0.85em;
+      color: #8B6914;
+      font-style: italic;
+    }
+    .katselukortti ol { margin: 0; padding-left: 1.4rem; }
+    .katselukortti li { margin-bottom: 0.5rem; line-height: 1.45; }
+    .katselukortti li:last-child { margin-bottom: 0; }
+    .katselukortti a { color: #1C1400; text-decoration: none; border-bottom: 1px solid rgba(139,105,20,.35); }
+    .katselukortti a:hover { border-bottom-color: #8B6914; }
+    .katselukortti .kortti-luku {
+      display: block;
+      font-size: 0.78em;
+      color: #8B6914;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-top: 0.1rem;
+    }
+
+    /* Näytösotsikko */
+    .naytos {
+      margin: 2.6rem 0 0.4rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 2px solid #C9A84C;
+      font-family: 'Spectral', Georgia, serif;
+      font-size: 1.15rem;
+      color: #3A2000;
+    }
+    .naytos-johdanto {
+      font-size: 0.9em;
+      color: #6b5a3a;
+      font-style: italic;
+      margin: 0.5rem 0 1.4rem;
+    }
+
+    .ilmio h3 {
+      font-family: 'Spectral', Georgia, serif;
+      font-size: 1.08rem;
+      margin: 1.8rem 0 0.5rem;
+      scroll-margin-top: 1rem;
+    }
+    .ilmio h3 .luku-nro { color: #C9A84C; font-size: 0.9em; margin-right: 0.35rem; }
+
+    /* Luvun päättävä kysymys */
+    .lukukysymys {
+      margin: 0.9rem 0 0;
+      padding: 0.55rem 0 0.55rem 0.9rem;
+      border-left: 3px solid #C9A84C;
+      font-family: 'Spectral', Georgia, serif;
+      font-size: 1.02rem;
+      color: #3A2000;
+    }
+
+    /* Vastausfraasit: temppu, lause jonka voi sanoa, ja aito vastine.
+       Aito vastine on jokaisessa rivissä tarkoituksella — ilman sitä lista
+       olisi leimakirves. */
+    .fraasit { margin: 1.1rem 0 0; padding: 0; list-style: none; }
+    .fraasit li {
+      background: #FDFAF2;
+      border: 1px solid rgba(139,105,20,.28);
+      border-left: 4px solid #00838f;
+      padding: 0.75rem 1rem 0.8rem;
+      margin-bottom: 0.6rem;
+    }
+    .fraasi-nimi { margin: 0; font-size: 0.9em; color: #6b5a3a; }
+    .fraasi-nimi a { color: #8B6914; font-weight: 700; }
+    .fraasi-sanot {
+      margin: 0.3rem 0 0.35rem;
+      font-family: 'Spectral', Georgia, serif;
+      font-size: 1.08rem;
+      color: #1C1400;
+    }
+    .fraasi-aito { margin: 0; font-size: 0.86em; color: #555; line-height: 1.5; }
+    .fraasi-aito strong { color: #3A2000; }
+
+    /* Provosointi vai häirintä: kaksi saraketta, kapealla allekkain */
+    .kaksi {
+      display: grid; gap: 0.7rem; margin: 1.1rem 0 0;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+    .kaksi > div {
+      background: #FDFAF2;
+      border: 1px solid rgba(139,105,20,.28);
+      border-top: 4px solid var(--k, #8B6914);
+      padding: 0.8rem 1rem 0.9rem;
+      font-size: 0.93em; line-height: 1.55;
+    }
+    .kaksi h4 { margin: 0 0 0.4rem; font-family: 'Spectral', Georgia, serif; font-size: 1.02rem; }
+    .kaksi p { margin: 0 0 0.45rem; }
+    .kaksi p:last-child { margin-bottom: 0; }
+
+    /* Rooliohjeet */
+    .termit {
+      background: #FDFAF2;
+      border: 1px dashed rgba(139,105,20,.4);
+      padding: 0.8rem 1rem;
+      margin: 1rem 0 0;
+      font-size: 0.93em;
+      line-height: 1.6;
+    }
+    .termit .termit-otsikko {
+      display: block;
+      font-size: 0.78em;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #8B6914;
+      margin-bottom: 0.4rem;
+    }
+    .termit dl { margin: 0; }
+    .termit dt { font-weight: 700; display: inline; }
+    .termit dd { display: inline; margin: 0; }
+    .termit dd::after { content: ""; display: block; margin-bottom: 0.4rem; }
+
+    .ilmio-byline{font-size:.82rem;color:#8B6914;font-style:italic;margin:.15rem 0 1.3rem;}
+    .ilmio-byline a{color:#8B6914;}
+    .ilmio-footer{max-width:860px;margin:2.5rem auto 1.5rem;padding:1.3rem 1.5rem 0;
+      border-top:1px solid rgba(139,105,20,.28);text-align:center;
+      font-size:.8rem;color:#8B6914;line-height:1.6;}
+    .ilmio-footer a{color:#8B6914;}
+
+    @media (max-width: 480px) {
+      .kortti-breadcrumb-sep, .kortti-breadcrumb-kat { display: none; }
+      .ilmio { padding: 1.4rem 1.2rem 1.6rem; }
+      .katselukortti { padding: 1rem 1.1rem; }
+    }
+    @media print {
+      .kortti-breadcrumb, .ilmio-footer, .ilmio > p, .ilmio > h3,
+      .naytos, .naytos-johdanto, .termit, .kaksi, .lukukysymys, .huomiolaatikko { display: none; }
+      .katselukortti { display: block; border: none; padding: 0; }
+      .ilmio { border: none; box-shadow: none; padding: 0; }
+    }
+  </style>
+
+  <!-- SEO -->
+  <meta name="description" content="Useimmiten ei mitään — mutta se ei riitä häirintään. Seitsemän kysymystä, valmiit vastauslauseet seitsemään temppuun ja raja, jonka jälkeen sivuuttaminen ei enää auta.">
+  <meta name="robots" content="noindex"><!-- POISTA-JULKAISTAESSA -->
+  <link rel="canonical" href="https://www.ilmiöt.fi/mita-vastata-trollille.html">
+  <meta property="og:title" content="Mitä vastata trollille? Seitsemän kysymystä — Ilmiöitä">
+  <meta property="og:description" content="Useimmiten ei mitään — mutta se ei riitä häirintään. Seitsemän kysymystä, valmiit vastauslauseet ja raja, jonka jälkeen sivuuttaminen ei enää auta.">
+  <meta property="og:url" content="https://www.ilmiöt.fi/mita-vastata-trollille.html">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="fi_FI">
+  <meta property="og:site_name" content="Ilmiöitä — Miten valta toimii">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mitä vastata trollille? Seitsemän kysymystä — Ilmiöitä">
+  <meta name="twitter:description" content="Useimmiten ei mitään — mutta se ei riitä häirintään. Seitsemän kysymystä, valmiit vastauslauseet ja raja, jonka jälkeen sivuuttaminen ei enää auta.">
+  <meta property="og:image" content="https://www.ilmiöt.fi/og/brand.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Ilmiöitä — Miten valta toimii">
+  <meta name="twitter:image" content="https://www.ilmiöt.fi/og/brand.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Ilmiöitä",
+          "item": "https://www.ilmiöt.fi/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Trollaus ja keskustelun sabotointi",
+          "item": "https://www.ilmiöt.fi/kategoria-trollaus-ja-keskustelun-sabotointi.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Mitä vastata trollille",
+          "item": "https://www.ilmiöt.fi/mita-vastata-trollille.html"
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "@id": "https://www.ilmiöt.fi/mita-vastata-trollille.html#article",
+      "url": "https://www.ilmiöt.fi/mita-vastata-trollille.html",
+      "headline": "Mitä vastata trollille — seitsemän kysymystä",
+      "description": "Useimmiten ei mitään — mutta se ei riitä häirintään. Seitsemän kysymystä, valmiit vastauslauseet ja raja, jonka jälkeen sivuuttaminen ei enää auta.",
+      "inLanguage": "fi",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.ilmiöt.fi/og/brand.png",
+        "width": 1200,
+        "height": 630
+      },
+      "isPartOf": {
+        "@type": "CollectionPage",
+        "@id": "https://www.ilmiöt.fi/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Ilmiöitä",
+        "url": "https://www.ilmiöt.fi/",
+        "@id": "https://www.ilmiöt.fi/#organization",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.ilmiöt.fi/favicon.svg",
+          "width": 64,
+          "height": 64
+        }
+      },
+      "author": {
+        "@type": "Person",
+        "@id": "https://www.ilmiöt.fi/#ilmiomies",
+        "name": "Ilmiömies",
+        "url": "https://www.ilmiöt.fi/tietoa.html"
+      },
+      "datePublished": "2026-10-03",
+      "dateModified": "2026-10-03"
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <div class="kortti-breadcrumb">
+    <a href="../index.html" class="kortti-logo" aria-label="Ilmiöitä — etusivu"><img src="../favicon.svg" alt="Ilmiöitä"></a>
+    <a href="../index.html">← Kaikki ilmiöt</a>
+    <span class="kortti-breadcrumb-sep">›</span><a href="../kategoria-trollaus-ja-keskustelun-sabotointi.html" class="kortti-breadcrumb-kat">Trollaus ja keskustelun sabotointi</a>
+  </div>
+
+  <div class="ilmio" id="mita-vastata-trollille">
+    <div class="ilmio-tag">Pikaopas</div>
+    <h1>Mitä vastata trollille — seitsemän kysymystä</h1>
+    <p class="ilmio-byline">Kirjoittanut <a href="../tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 3.10.2026</p>
+
+    <p>Useimmiten ei mitään. Mutta "älä ruoki trollia" on puolikas neuvo: se toimii provosoijaan ja pahentaa häirintää, eikä se auta tunnistamaan tekniikoita, jotka näyttävät hyvältä keskustelulta — kohteliasta lähdepyyntöä, viatonta kysymystä tai huolestunutta ystävää.</p>
+
+    <p>Tämä sivu kokoaa <a href="../kategoria-trollaus-ja-keskustelun-sabotointi.html">Trollaus ja keskustelun sabotointi</a> -kategorian vastakeinot seitsemäksi kysymykseksi siinä järjestyksessä, jossa niitä tarvitaan: ennen kuin kirjoitat, kesken ketjun ja silloin, kun kyse ei ole enää keskustelusta. Kysymykset ovat sivun tärkein osa, koska ne pysyvät käytössä silloinkin, kun tekniikan nimeä ei muista.</p>
+
+    <div class="katselukortti">
+      <h2>Lyhyt versio — seitsemän riviä</h2>
+      <p class="kortti-alaotsikko">Riittää yksinään. Klikkaa riviä, jos haluat perustelun.</p>
+      <ol>
+        <li><a href="#luku1">Sanoisinko tämän, jos hän istuisi vastapäätä?<span class="kortti-luku">Oma tila</span></a></li>
+        <li><a href="#luku2">Mitä kirjoittaja voittaa, jos vastaan?<span class="kortti-luku">Syötti</span></a></li>
+        <li><a href="#luku3">Onko hän reagoinut yhteenkään vastaukseen?<span class="kortti-luku">Toisto</span></a></li>
+        <li><a href="#luku4">Mikä muuttaisi kantasi?<span class="kortti-luku">Testikysymys</span></a></li>
+        <li><a href="#luku5">Kenelle tämä vastaus on?<span class="kortti-luku">Yleisö</span></a></li>
+        <li><a href="#luku6">Haluaako hän reaktion — vai sen, että lopetan?<span class="kortti-luku">Provosointi vai häirintä</span></a></li>
+        <li><a href="#luku7">Mitä hän tarvitsee?<span class="kortti-luku">Kun kohde on joku muu</span></a></li>
+      </ol>
+    </div>
+
+    <h2 class="naytos">I · Ennen kuin kirjoitat</h2>
+    <p class="naytos-johdanto">Kaksi ensimmäistä kysymystä esitetään itselle, ja ne ratkaisevat useimmat tilanteet.</p>
+
+    <h3 id="luku1"><span class="luku-nro">1.</span> Oma tila</h3>
+    <p>On houkuttelevaa ajatella, että trollit ovat erillinen joukko ihmisiä. Chengin ym. (2017) kokeessa <a href="../kuka-tahansa-voi-trollata.html">kuka tahansa voi trollata</a>: huono mieliala ja valmiiksi myrkyllinen ketju lähes kaksinkertaistivat trollikommentit. <a href="../verkon-estottomuus.html">Verkon estottomuus</a> selittää loput — ruudulta puuttuu ilme ja äänensävy, jotka kasvokkain kertovat heti, meneekö jokin liian pitkälle.</p>
+    <p>Jos olet väsynyt tai ärtynyt ja ketju jo kiehuu, älä kommentoi nyt. Kirjoita kiukkuinen vastaus luonnokseksi ja lue se tunnin päästä.</p>
+    <p class="lukukysymys">Sanoisinko tämän ääneen, jos hän istuisi vastapäätä?</p>
+
+    <h3 id="luku2"><span class="luku-nro">2.</span> Syötti</h3>
+    <p><a href="../trollaus.html">Trollin</a> ei tarvitse olla oikeassa. Hän tarvitsee jonkun, joka suuttuu. Merkkejä ovat liioiteltu varmuus, kohteen valinta suurimman tunnelatauksen mukaan ja se, ettei mikään vastaus kelpaa. Epäsuhta on sama kuin <a href="../brandolinin-laki.html">Brandolinin laissa</a>: provokaatio syntyy sekunnissa, sen oikaiseminen vie tunnin — ja alustalla suuttumus nostaa viestiä syötteessä, kuten <a href="../rage-bait.html">rage baitissa</a>.</p>
+    <p>Osalle toisen ahdistus on itse palkkio (ks. <a href="../pimea-tetradi.html">pimeä tetradi</a>). Silloin perustelu ei auta, koska hän ei ole keskustelemassa. Älä silti diagnosoi ketään kommentin perusteella: "psykopaatti" on haukkumasana, ei havainto.</p>
+    <p class="lukukysymys">Mitä kirjoittaja voittaa, jos vastaan — muuta kuin sen, että joku vastasi?</p>
+
+    <h2 class="naytos">II · Kesken ketjun</h2>
+    <p class="naytos-johdanto">Vaikeimmat tapaukset eivät näytä trollaukselta. Ne näyttävät hyvältä keskustelulta.</p>
+
+    <h3 id="luku3"><span class="luku-nro">3.</span> Toisto</h3>
+    <p>Yksittäinen kysymys, vitsi tai huolenilmaus ei kerro mitään. Tunnusmerkki on aina toisto ja suunta: lähteen kysyminen on hyve, kahdeskymmenes lähdepyyntö ilman yhtäkään myönnytystä on taktiikka. Alla on seitsemän temppua ja lause, jonka kuhunkin voi sanoa. Jokaisen alla on myös sen aito vastine — se, miltä sama näyttää silloin, kun kaikki on kunnossa.</p>
+
+    <ul class="fraasit">
+      <li>
+        <p class="fraasi-nimi"><a href="../sealioning.html">Sealioning</a> — kohtelias lähdepyyntö, joka ei lopu koskaan</p>
+        <p class="fraasi-sanot">"Mikä näyttö muuttaisi kantasi?"</p>
+        <p class="fraasi-aito"><strong>Aito vastine:</strong> useimmat lähdepyynnöt ovat aitoja. Merileijonan tunnistaa toistosta, ei yksittäisestä kysymyksestä.</p>
+      </li>
+      <li>
+        <p class="fraasi-nimi"><a href="../kunhan-kysyn.html">Kunhan kysyn</a> — väite kysymyksen muodossa</p>
+        <p class="fraasi-sanot">"Kysytkö vai väitätkö? Jos väität, mihin perustat sen?"</p>
+        <p class="fraasi-aito"><strong>Aito vastine:</strong> aito kysyjä hyväksyy vastauksen. Taktikko toistaa saman kysymyksen toisin sanoin.</p>
+      </li>
+      <li>
+        <p class="fraasi-nimi"><a href="../vain-vitsi.html">Se oli vain vitsi</a> — ironia suojakilpenä</p>
+        <p class="fraasi-sanot">"Selvä, vitsi. Mitä mieltä olet asiasta tosissasi?"</p>
+        <p class="fraasi-aito"><strong>Aito vastine:</strong> huumori ja satiiri ovat arvokkaita. Kilven tunnistaa siitä, että "vitsit" osuvat aina samaan kohteeseen ja selitys ilmestyy vasta kritiikin jälkeen.</p>
+      </li>
+      <li>
+        <p class="fraasi-nimi"><a href="../tone-policing.html">Tone policing</a> — sävystä puhutaan, ettei tarvitse puhua asiasta</p>
+        <p class="fraasi-sanot">"Voin sanoa sen rauhallisemmin. Mitä mieltä olet itse asiasta?"</p>
+        <p class="fraasi-aito"><strong>Aito vastine:</strong> uhkailu, nimittely ja henkilöön käyvä loukkaaminen ovat aiheellisia syitä puuttua viestiin.</p>
+      </li>
+      <li>
+        <p class="fraasi-nimi"><a href="../huolitrollaus.html">Huolitrollaus</a> — vastustaja esiintyy huolestuneena ystävänä</p>
+        <p class="fraasi-sanot">"Mikä olisi sinusta oikea tapa ajaa tätä asiaa?"</p>
+        <p class="fraasi-aito"><strong>Aito vastine:</strong> kannattajien oma kritiikki ehdottaa parempaa tapaa päästä samaan tavoitteeseen. Huolitrollaus ehdottaa aina vähemmän.</p>
+      </li>
+      <li>
+        <p class="fraasi-nimi"><a href="../motte-and-bailey.html">Motte and bailey</a> — rohkea väite vaihtuu haastettaessa itsestäänselvyyteen</p>
+        <p class="fraasi-sanot">"Tuosta olen samaa mieltä. Väitätkö myös sitä alkuperäistä?"</p>
+        <p class="fraasi-aito"><strong>Aito vastine:</strong> se, joka tarkentaa väitettään ja sitoutuu tarkennukseen. Tempussa rohkea versio palaa, kun kriitikko lähtee.</p>
+      </li>
+      <li>
+        <p class="fraasi-nimi"><a href="../kafkatrapping.html">Kafkatrapping</a> — kiistäminen todistaa syyllisyyden</p>
+        <p class="fraasi-sanot">"Mikä voisi osoittaa, että olet väärässä?"</p>
+        <p class="fraasi-aito"><strong>Aito vastine:</strong> syytös, joka perustuu johonkin muuhun kuin kiistämiseen — nimettyyn tekoon, aikaan ja paikkaan.</p>
+      </li>
+    </ul>
+    <p class="lukukysymys">Onko hän reagoinut yhteenkään jo annettuun vastaukseen?</p>
+
+    <h3 id="luku4"><span class="luku-nro">4.</span> Testikysymys</h3>
+    <p>Jos muistat tältä sivulta vain yhden lauseen, muista tämä: <strong>mikä muuttaisi kantasi?</strong> Aito keskustelija osaa vastata. Jos mikään näyttö ei riitä, keskustelu ei koske näyttöä, eikä sitä kannata jatkaa näytöllä.</p>
+    <p>Sama kysymys toimii kolmeen suuntaan. Merileijonalle se kääntää pyynnön takaisin. Kafkatrappingissa se paljastaa, että kaikki vastaukset on lukittu. Ja kun vastapuolen joukosta nostetaan esiin yksi hölmö kommentti (<a href="../nutpicking.html">nutpicking</a>), sen sisarkysymys on: kuka sanoi ja kuinka moni?</p>
+    <p class="lukukysymys">Mikä muuttaisi kantasi — ja jos ei mikään, mistä tässä keskustellaan?</p>
+
+    <h3 id="luku5"><span class="luku-nro">5.</span> Yleisö</h3>
+    <p>Trolli ei kirjoita vastaajalle vaan kaikille muille, ja siksi vastauskin kannattaa kirjoittaa muille. Yksi lyhyt, asiallinen oikaisu ilman lainausta riittää, eikä sitä tarvitse puolustaa loputtomiin — perustelu jää muiden luettavaksi. Kerro ensin, mikä pitää paikkansa: vihjauksen toistaminen oikaisun alussa painaa sen muistiin.</p>
+    <p>Kolme asiaa kannattaa jättää tekemättä. Älä jaa provokaatiota kauhistellaksesi, koska kuvakaappaus vie sen uusille lukijoille. Älä vastaa roskaan roskalla (<a href="../shitpostaus.html">shitpostaus</a>); jos asia on tärkeä, kirjoita se omaksi viestikseen. Äläkä lainaa toisen viestiä omalle yleisöllesi pilkattavaksi: <a href="../dunkkaus.html">dunkkaus</a> on esitys, ei keskustelu, ja usein maalittamisen ensimmäinen askel. Estoa ja ilmiantoa saa käyttää vapaasti — ne eivät ole sensuuria vaan sen päättämistä, kenen kanssa käytät aikaasi.</p>
+    <p class="lukukysymys">Kenelle tämä vastaus on: hänelle, muille lukijoille vai omille seuraajilleni?</p>
+
+    <h2 class="naytos">III · Kun kyse ei ole enää keskustelusta</h2>
+    <p class="naytos-johdanto">Tässä kohtaa vanhin neuvo lakkaa toimimasta, ja sen toistaminen tekee vahinkoa.</p>
+
+    <h3 id="luku6"><span class="luku-nro">6.</span> Provosointi vai häirintä</h3>
+    <p><a href="../trollin-ruokkiminen.html">Älä ruoki trollia</a> olettaa, että trolli haluaa reaktion. Jos tavoite on saada joku lopettamaan kirjoittaminen, hiljaisuus on juuri se, mitä haetaan.</p>
+    <div class="kaksi">
+      <div style="--k:#2e7d32">
+        <h4>Provosoija</h4>
+        <p>Yksi tili. Tavoite on huomio. Kiinnostus loppuu, kun vastausta ei tule.</p>
+        <p><strong>Sivuuta.</strong> Jos vastaat, vastaa kerran ja yleisölle.</p>
+      </div>
+      <div style="--k:#c62828">
+        <h4>Häirintä tai maalittaminen</h4>
+        <p>Monta tiliä. Tavoite on kohteen vetäytyminen. Jatkuu, vaikka kukaan ei vastaa.</p>
+        <p><strong>Sivuuttaminen ei riitä.</strong> Tallenna kaikki kuvakaappauksina päivämäärineen, käytä moderointia ja estoja, kerro työnantajalle ja tee rikosilmoitus uhkauksista. Älä vastaa parvelle — yksi vastaus on uusi maali.</p>
+      </div>
+    </div>
+    <p>Jos henkilötietojasi on julkaistu, toimi samoin ja ilmoita lisäksi alustalle; ennakointi on kuvattu sivulla <a href="../doksaus.html">doksaus</a>. Vaiheet, joilla joukko kohdistetaan yhteen ihmiseen, ovat sivulla <a href="../maalittaminen.html">maalittaminen</a>.</p>
+    <p class="lukukysymys">Haluaako hän reaktion — vai sen, että lopetan?</p>
+
+    <h3 id="luku7"><span class="luku-nro">7.</span> Kun kohde on joku muu</h3>
+    <p>Useimmiten olet sivullinen, eikä sivullisen hiljaisuus ole neutraalia. Maalittamisen tarkoitus on, että kohde jättää aiheen ja muut näkevät, mitä siitä seuraa.</p>
+    <div class="termit">
+      <span class="termit-otsikko">Kolme roolia, kolme ohjetta</span>
+      <dl>
+        <dt>Sivullinen.</dt> <dd>Älä jaa maalitus- tai doksausviestiä edes paheksuaksesi: jokainen jako vie nimen tai osoitteen uusille silmille. Tukiviesti kohteelle yksityisesti auttaa enemmän kuin julkinen väittely maalittajan kanssa. Älä neuvo häntä olemaan välittämättä — se kuulostaa tuelta, mutta tarkoittaa usein "hoida itse".</dd>
+        <dt>Ylläpitäjä.</dt> <dd>Poista tai piilota ensimmäinen myrkyllinen kommentti nopeasti, koska se määrää ketjun normin. Siirrä aiheen ohi menevä sisältö, nosta rakentava vastaus ylös, äläkä muuta linjaa kommenttivyöryn perusteella ennen kuin tiedät, edustaako se muita kuin <a href="../aanekas-vahemmisto.html">äänekästä vähemmistöä</a>.</dd>
+        <dt>Työnantaja.</dt> <dd>Kohtele maalittamista työturvallisuusasiana, älä kohteen imago-ongelmana.</dd>
+      </dl>
+    </div>
+    <p class="lukukysymys">Mitä hän tarvitsee?</p>
+
+    <div class="huomiolaatikko">
+      <h2 class="laatikko-otsikko">Mitä tämä sivu ei tee:</h2> Se ei anna valmista leimaa, jolla kenen tahansa kysymyksen voi ohittaa. Jokainen tässä kuvattu tekniikka on vääristymä jostain, mikä on hyvässä keskustelussa arvokasta: kysymisestä, epäilystä, sävyn huomioimisesta ja kritiikistä. Jos leimaat jokaisen lähdepyynnön merileijonoinniksi, teet itse sitä, mitä sivu kuvaa. Sivu ei myöskään ole oikeudellinen neuvo — häirinnän ja maalittamisen kohdalla se kertoo, mistä aloittaa, ei sitä, miten yksittäinen tapaus ratkeaa.
+    </div>
+  </div>
+
+  <footer class="ilmio-footer">
+    <a href="../index.html">Kaikki ilmiöt</a> ·
+    <a href="../kategoria-trollaus-ja-keskustelun-sabotointi.html">Trollaus ja keskustelun sabotointi</a> ·
+    <a href="../kategoria-informaatio-ja-propaganda.html">Informaatio ja propaganda</a> ·
+    <a href="../tietoa.html">Tietoa sivustosta</a>
+  </footer>
+
+</body>
+</html>

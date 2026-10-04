@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <title>DARVO — manipulaatiotaktiikka suomeksi | Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <title>Voittajakolmio — Choyn vastine draamakolmiolle | Ilmiöitä</title>
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -765,8 +766,8 @@
       "inLanguage": "fi",
       "articleSection": "Roolit ja valtapelit",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Voittajakolmio — sama kolmio ilman peliä",
+        "name": "Voittajakolmio",
         "description": "Voittajakolmio korvaa uhrin, pelastajan ja vainoojan haavoittuvalla, välittävällä ja jämäkällä. Acey Choyn 1990 malli draamakolmiosta ulos.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -798,30 +799,7 @@
         "description": "Kirjoittajanimi, jonka takana on kiinnostus valtaan, vaikuttamiseen ja ihmisen päättelyn vinoumiin. Sisältö perustuu julkisiin lähteisiin ja vakiintuneeseen käsitteistöön."
       },
       "datePublished": "2026-10-03",
-      "dateModified": "2026-10-03"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.ilmiöt.fi/voittajakolmio.html#faq",
-      "inLanguage": "fi",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Mikä on voittajakolmio?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Voittajakolmio on Acey Choyn vuonna 1990 esittämä vastine draamakolmiolle. Siinä jokaiselle kolmelle roolille on rakentava vastine: uhrin tilalla on haavoittuva, pelastajan tilalla välittävä ja vainoojan tilalla jämäkkä. Asemat säilyvät, mutta jokaiseen palautetaan vastuu ja toimintakyky."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Miten voittajakolmiota käytetään?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Se on tarkistuslista omalle puheenvuorolle. Haavoittuva kertoo ongelman ja pyytää konkreettista apua. Välittävä kysyy mitä tarvitaan sen sijaan että ratkaisisi toisen puolesta. Jämäkkä kertoo oman rajansa ilman että arvioi toisen luonnetta. Yhden osapuolen siirtymä riittää muuttamaan keskustelun suunnan."
-          }
-        }
-      ]
+      "dateModified": "2026-10-04"
     }
   ]
 }
@@ -847,13 +825,14 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="voittajakolmio">
 <div class="ilmio-tag">Ilmiö 142</div>
 <h1>Voittajakolmio — sama kolmio ilman peliä</h1>
-<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 3.10.2026</p>
+<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 4.10.2026</p>
 <p><strong>Voittajakolmio</strong> (engl. <em>the winner's triangle</em>) on transaktioanalyytikko Acey Choyn vuonna 1990 esittämä vastine <a href="draamakolmio.html">draamakolmiolle</a>. Ajatus on, että kolme asemaa eivät ole itsessään ongelma — ongelma on se, mitä kussakin asemassa tehdään. Choy antoi jokaiselle roolille rakentavan vastineen: <strong>haavoittuva</strong>, <strong>välittävä</strong> ja <strong>jämäkkä</strong>.</p>
 <div class="infolaatikko vastauslohko">
-<h2 class="laatikko-otsikko">Mitä voittajakolmio tarkoittaa suomeksi?</h2>
+<h2 class="laatikko-otsikko" id="mita-voittajakolmio-tarkoittaa-suomeksi">Mitä voittajakolmio tarkoittaa suomeksi?</h2>
 <p style="margin:0.4em 0 0;"><strong>Voittajakolmio</strong> on suomennos termistä <em>the winner's triangle</em>, jonka Acey Choy julkaisi <cite>Transactional Analysis Journal</cite> -lehdessä vuonna 1990. Roolien englanninkieliset nimet ovat <em>Vulnerable</em> (haavoittuva), <em>Caring</em> (välittävä) ja <em>Assertive</em> (jämäkkä). Stephen Karpman käytti myöhemmin samasta ajatuksesta nimitystä <em>triangles of liberation</em>.</p>
 </div>
 <div class="mermaid">
@@ -867,7 +846,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Sama kolme asemaa — mutta jokaisessa on vastuu ja liikkumavara.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Mikä kussakin roolissa muuttuu:</h2>
+<h2 class="laatikko-otsikko" id="mika-kussakin-roolissa-muuttuu">Mikä kussakin roolissa muuttuu:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Uhrista haavoittuva:</strong> ongelma myönnetään, mutta myös se, että jotain on tehtävissä. Pyyntö on konkreettinen: mitä, keneltä, mihin mennessä.</li>
 <li><strong>Pelastajasta välittävä:</strong> autetaan pyydettäessä ja pyydetyn verran. Kysymys "mitä tarvitset?" korvaa oletuksen siitä, mitä toinen tarvitsee.</li>
@@ -876,7 +855,7 @@ flowchart TD
 </div>
 <p>Käytännössä voittajakolmio on tarkistuslista omalle puheenvuorolle, ei toisen korjaamiseen tarkoitettu työkalu. Työpaikalla siirtymä kuuluu siinä, että palaveri lakkaa käsittelemästä sitä kuka mokasi ja alkaa käsitellä sitä mitä kukin tekee seuraavaksi. Läheissuhteessa se kuuluu siinä, että "sinä et koskaan" vaihtuu muotoon "minä tarvitsen". Yhden osapuolen siirtymä riittää yllättävän usein, koska peli vaatii vähintään kaksi pelaajaa — mutta se ei riitä aina, eikä malli tee mitään tilanteelle, jossa toinen käyttää valtaa väärin.</p>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Testaa oma puheenvuorosi kolmella kysymyksellä. <strong>Onko pyyntö konkreettinen?</strong> "Minulla on rankkaa" kutsuu pelastajaa; "voitko ottaa perjantain raportin" ei. <strong>Autanko pyytämättä?</strong> Jos et tiedä, oletko avuksi, kysy — arvaaminen on pelastajan liike. <strong>Puhunko teosta vai luonteesta?</strong> Raja kohdistuu tekoon ja on siksi neuvoteltavissa; luonnearvio ei ole. Huomaa, että jämäkkä asema tulkitaan usein aluksi vainoojaksi: kun joku lakkaa pelastamasta, häntä syytetään kylmyydestä. Se on merkki kuvion olemassaolosta, ei virheestä.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Testaa oma puheenvuorosi kolmella kysymyksellä. <strong>Onko pyyntö konkreettinen?</strong> "Minulla on rankkaa" kutsuu pelastajaa; "voitko ottaa perjantain raportin" ei. <strong>Autanko pyytämättä?</strong> Jos et tiedä, oletko avuksi, kysy — arvaaminen on pelastajan liike. <strong>Puhunko teosta vai luonteesta?</strong> Raja kohdistuu tekoon ja on siksi neuvoteltavissa; luonnearvio ei ole. Huomaa, että jämäkkä asema tulkitaan usein aluksi vainoojaksi: kun joku lakkaa pelastamasta, häntä syytetään kylmyydestä. Se on merkki kuvion olemassaolosta, ei virheestä.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -941,6 +920,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="roolinvaihto.html">← Roolinvaihto — hetki, jossa auttajasta tulee syyttäjä</a>

@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Toimitusjohtajahuijaus — kiireellinen ja salainen maksu — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/toimitusjohtajahuijaus.html#article",
       "url": "https://www.ilmiöt.fi/toimitusjohtajahuijaus.html",
       "headline": "Toimitusjohtajahuijaus — kiireellinen ja salainen maksu",
-      "description": "Toimitusjohtajahuijauksessa (CEO fraud, BEC) rikollinen esiintyy johtajana tai laskuttajana ja vaatii kiireellistä maksua. Kiire ja salailu ovat tuntomerkit.",
+      "description": "Toimitusjohtajahuijaus: kiireellinen ja salainen maksupyyntö 'johdolta'. Selitämme miten huijaus etenee ja mitkä prosessit pysäyttävät sen.",
       "inLanguage": "fi",
       "articleSection": "Huijaukset ja petokset",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Toimitusjohtajahuijaus — kiireellinen ja salainen maksu",
-        "description": "Toimitusjohtajahuijauksessa (CEO fraud, BEC) rikollinen esiintyy johtajana tai laskuttajana ja vaatii kiireellistä maksua. Kiire ja salailu ovat tuntomerkit.",
+        "name": "Toimitusjohtajahuijaus",
+        "description": "Toimitusjohtajahuijaus: kiireellinen ja salainen maksupyyntö 'johdolta'. Selitämme miten huijaus etenee ja mitkä prosessit pysäyttävät sen.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -824,6 +825,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="toimitusjohtajahuijaus">
 <div class="ilmio-tag">Ilmiö 75</div>
 <h1>Toimitusjohtajahuijaus — kiireellinen ja salainen maksu</h1>
@@ -843,7 +845,7 @@ flowchart TD
 <p class="kaavio-selitys">BEC-huijauksen kulku: tutkittu kohde, uskottava lähettäjä ja käsikirjoitettu kiire.</p>
 <p>Tekoäly vei huijauksen uudelle tasolle. Hongkongissa 2024 suunnitteluyhtiö Arupin työntekijä siirsi noin 25 miljoonaa dollaria videopalaverin jälkeen, jossa "talousjohtaja" ja koko muu kokousväki olivat deepfake-videota. Jo 2019 brittiläisen energiayhtiön johtaja siirsi 220&nbsp;000 euroa kuultuaan puhelimessa "konsernijohtajansa" äänen — kloonatun. Kun ääni ja kasvot eivät enää todista mitään, ainoa suoja on prosessi.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Saman perheen muunnelmat:</h2>
+<h2 class="laatikko-otsikko" id="saman-perheen-muunnelmat">Saman perheen muunnelmat:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Laskutushuijaus:</strong> aito toimittaja, aidon näköinen lasku — mutta "päivitetty tilinumero". Usein jatkona kaapattuun sähköpostiketjuun, jolloin viesti tulee oikeasta osoitteesta.</li>
 <li><strong>Palkanmaksuhuijaus:</strong> "työntekijä" ilmoittaa HR:lle uuden tilinumeron ennen palkkapäivää.</li>
@@ -853,7 +855,7 @@ flowchart TD
 Suomessakin yritykset ja kunnat ovat menettäneet miljoonia laskutus- ja toimitusjohtajahuijauksiin, ja poliisi ja Kyberturvallisuuskeskus varoittavat aallosta säännöllisesti.
 </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Sopikaa takaisinsoittosääntö: jokainen tilinumeron muutos ja jokainen kiireellinen poikkeava maksu varmistetaan soittamalla tunnettuun numeroon — ei viestissä annettuun. Vaadi kahden ihmisen hyväksyntä isoille maksuille poikkeuksetta — myös ja erityisesti "toimitusjohtajan" pyynnöille; oikea johtaja kiittää prosessista. Tehkää säännöstä julkinen: kun huijari tietää, ettei ohituskaistaa ole, hän siirtyy seuraavaan kohteeseen. Ja jos maksu ehti lähteä: soita heti omaan pankkiin ja poliisille — takaisinperintä on minuuttipeli.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Sopikaa takaisinsoittosääntö: jokainen tilinumeron muutos ja jokainen kiireellinen poikkeava maksu varmistetaan soittamalla tunnettuun numeroon — ei viestissä annettuun. Vaadi kahden ihmisen hyväksyntä isoille maksuille poikkeuksetta — myös ja erityisesti "toimitusjohtajan" pyynnöille; oikea johtaja kiittää prosessista. Tehkää säännöstä julkinen: kun huijari tietää, ettei ohituskaistaa ole, hän siirtyy seuraavaan kohteeseen. Ja jos maksu ehti lähteä: soita heti omaan pankkiin ja poliisille — takaisinperintä on minuuttipeli.
     </div>
 <p class="peli-harjoittele" style="margin:1.4rem 0 0;padding:.7rem .9rem;background:#FBF5E0;border-left:3px solid #C9A84C;font-size:.95em"><b>Harjoittele tämän tunnistamista.</b> <a href="peli.html">Vedätys</a> on päivittäinen peli, jossa toimitusjohtajahuijaus on yksi tunnistettavista ilmiöistä — mukana on aina myös tilanteita, joissa ei ole mitään vikaa.</p>
 <div class="lue-lisaa">
@@ -903,6 +905,7 @@ Suomessakin yritykset ja kunnat ovat menettäneet miljoonia laskutus- ja toimitu
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="qr-koodihuijaus.html">← QR-koodihuijaus — väärä koodi, oikea lasku</a>

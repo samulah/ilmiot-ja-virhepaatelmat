@@ -1,10 +1,10 @@
 ---
 kat_id: huijaukset-ja-petokset
-h1: Huijaukset ja petokset — sama kaava yhdestätoista eri kulmasta
-otsikko: Huijaustyypit — 11 klassista petosmallia ja miten ne tunnistaa
+h1: Huijaukset ja petokset — sama kaava neljästätoista eri kulmasta
+otsikko: Huijaustyypit — {n} klassista petosmallia ja miten ne tunnistaa
 kuvaus: Ponzi, pig butchering, rug pull, toimitusjohtajahuijaus. Neljätoista huijaustyyppiä ja se neljän vaiheen kaava, joka toistuu lähes jokaisessa.
 vari: "#c62828"
-paivitetty: 2026-08-14
+paivitetty: 2026-10-04
 naapurit:
   - kategoria-myyntikikat-ja-painostus | Myyntikikat ja painostus →
   - kategoria-psykologia-ja-kognitio | Psykologia ja kognitio →

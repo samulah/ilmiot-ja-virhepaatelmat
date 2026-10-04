@@ -1,0 +1,54 @@
+{
+ "ilmio": "verkon-estottomuus",
+ "laji": "vinouma",
+ "kohdat": [
+  {
+   "id": "verkon-estottomuus-1",
+   "teksti": "Kirjotan tälle nyt suoraan, et se on idiootti. Emmä sille kasvotusten sanois, mut eihän se täällä nää mun naamaa enkä mä sen.",
+   "konteksti": "some",
+   "kanava": "ajatus",
+   "harhauttajat": ["kuka-tahansa-voi-trollata", "pimea-tetradi"],
+   "paljastus": {
+    "mita": "Sanot ruudulle sen, minkä jättäisit sanomatta, jos näkisit hänen ilmeensä.",
+    "miksi": "Kasvokkain ilme ja äänensävy jarruttavat. Ruudulla se palaute puuttuu, joten mikään ei kerro, että menit liian pitkälle.",
+    "sanot": "Kysy: sanoisinko tämän ääneen, jos hän istuisi vastapäätä?"
+   }
+  },
+  {
+   "id": "verkon-estottomuus-2",
+   "teksti": "Laitan tän taloyhtiön palstalle nimimerkillä, ni voin sanoo puheenjohtajasta ihan mitä ajattelen. Eihän se oo ees mun nimellä, ni ei se oikeestaan oo mun sanomaa.",
+   "konteksti": "koti",
+   "kanava": "ajatus",
+   "harhauttajat": ["pimea-tetradi", "backfire-effect"],
+   "paljastus": {
+    "mita": "Nimimerkki saa teon tuntumaan jonkun muun teolta.",
+    "miksi": "Kun viesti ei kulje omalla nimellä, se ei tunnu omalta. Puheenjohtaja lukee sen silti.",
+    "sanot": "Kirjoita se niin, että voisit allekirjoittaa sen omalla nimelläsi."
+   }
+  },
+  {
+   "id": "verkon-estottomuus-3",
+   "teksti": "Heitän tän kommentin kurssin keskusteluun ja suljen koneen. Ei mun tarvii olla näkemässä, mitä se siitä tuumaa.",
+   "konteksti": "opiskelu",
+   "kanava": "ajatus",
+   "harhauttajat": ["kuka-tahansa-voi-trollata", "doomscrolling"],
+   "paljastus": {
+    "mita": "Viestin voi heittää ja lähteä, koska vastaus tulee myöhemmin tai ei ollenkaan.",
+    "miksi": "Viive katkaisee yhteyden sanomisen ja sen seurauksen väliltä. Kasvokkain reaktio tulisi heti.",
+    "sanot": "Kirjoita se luonnokseksi ja lue tunnin päästä, ennen kuin lähetät."
+   }
+  },
+  {
+   "id": "verkon-estottomuus-4",
+   "teksti": "Tekstarilla tää on helpompi. Jos soittaisin, kuulisin sen äänestä et se pahottaa mielensä, enkä kehtais haukkuu sitä puoliakaan näin.",
+   "konteksti": "perhe",
+   "kanava": "ajatus",
+   "harhauttajat": ["kuka-tahansa-voi-trollata", "pimea-tetradi"],
+   "paljastus": {
+    "mita": "Valitset välineen, jossa et kuule, miltä sanasi tuntuvat.",
+    "miksi": "Juuri se palaute, jota väistät, pitäisi viestin kohtuullisena. Ilman sitä sanot enemmän kuin tarkoitat.",
+    "sanot": "Kysy: jos en kehtaa sanoa tätä puhelimessa, pitääkö se sanoa näin?"
+   }
+  }
+ ]
+}

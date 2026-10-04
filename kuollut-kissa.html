@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Kuollut kissa -strategia — skandaali pöydälle — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/kuollut-kissa.html#article",
       "url": "https://www.ilmiöt.fi/kuollut-kissa.html",
       "headline": "Kuollut kissa -strategia — skandaali pöydälle",
-      "description": "Kuollut kissa -strategia tarkoittaa shokeeraavan sivuaiheen heittämistä julkisuuteen, jotta media ja yleisö unohtavat vahingollisemman puheenaiheen.",
+      "description": "Kuollut kissa -strategia: skandaali pöydälle, kun keskustelu on epäedullinen. Selitämme miten huomionsiirto toimii ja miten tunnistat sen uutisista.",
       "inLanguage": "fi",
       "articleSection": "Informaatio ja propaganda",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Kuollut kissa -strategia — skandaali pöydälle",
-        "description": "Kuollut kissa -strategia tarkoittaa shokeeraavan sivuaiheen heittämistä julkisuuteen, jotta media ja yleisö unohtavat vahingollisemman puheenaiheen.",
+        "name": "Kuollut kissa -strategia",
+        "description": "Kuollut kissa -strategia: skandaali pöydälle, kun keskustelu on epäedullinen. Selitämme miten huomionsiirto toimii ja miten tunnistat sen uutisista.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -824,6 +825,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="kuollut-kissa">
 <div class="ilmio-tag">Ilmiö 18</div>
 <h1>Kuollut kissa -strategia — skandaali pöydälle</h1>
@@ -844,7 +846,7 @@ flowchart TD
 <p class="kaavio-selitys">Huomio on nollasummapeli: kissa ei voita väittelyä — se varastaa näyttämön.</p>
 <p>Strategia toimii, koska huomio on nollasummapeli. Uutissykli ja somesyöte nostavat tuoreen ja tunteita herättävän, ja skandaali voittaa hitaan asiakysymyksen aina. Siksi poliitikon "käsittämätön möläytys" voi olla laskettu siirto: raivo möläytyksestä on halvempaa kuin keskustelu leikkauslistasta, tuomiosta tai tutkinnasta. Ero lähikäsitteisiin: <strong>whataboutismi</strong> on puolustava vastasyytös samassa keskustelussa — kuollut kissa on ennakoiva aiheenvaihto koko julkisuudessa. Ja siinä missä sensuuri yrittää pienentää huomiota (ja epäonnistuu usein <a href="streisand-ilmio.html">Streisand-ilmiöön</a>), kissa tekee päinvastoin: se tuottaa huomiota tarkoituksella, väärään paikkaan.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Kissan tuntomerkit:</h2>
+<h2 class="laatikko-otsikko" id="kissan-tuntomerkit">Kissan tuntomerkit:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Ajoitus:</strong> kohu ilmestyy juuri, kun hankala uutinen julkaistaan — budjetti, oikeudenkäynti, tutkintaraportti, huono talousdata.</li>
 <li><strong>Heittäjä ei kärsi:</strong> kohun "uhri" porskuttaa tyytyväisenä ja pitää aihetta itse esillä.</li>
@@ -853,7 +855,7 @@ flowchart TD
 </ul>
 </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Kun kaikki puhuvat kohusta, kysy kaksi kysymystä: mitä muuta tänään tapahtui — ja mikä kysymys jäi vastaamatta? Toimitukselle sama kurinalaisuus: kohun voi uutisoida lyhyesti ja palata aiheeseen, joka oli kesken. Huomio on ainoa valuutta, jolla kissoja ostetaan, ja sen jakamisesta päättää lopulta lukija. Kissa kuolee toisenkin kerran, kun siitä kieltäydytään puhumasta.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Kun kaikki puhuvat kohusta, kysy kaksi kysymystä: mitä muuta tänään tapahtui — ja mikä kysymys jäi vastaamatta? Toimitukselle sama kurinalaisuus: kohun voi uutisoida lyhyesti ja palata aiheeseen, joka oli kesken. Huomio on ainoa valuutta, jolla kissoja ostetaan, ja sen jakamisesta päättää lopulta lukija. Kissa kuolee toisenkin kerran, kun siitä kieltäydytään puhumasta.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -911,6 +913,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="trollitehdas.html">← Trollitehdas — mielipiteitä liukuhihnalta</a>

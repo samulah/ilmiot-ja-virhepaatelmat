@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Occamin partaveitsi — älä oleta enempää kuin on pakko — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -775,12 +776,12 @@
       "@id": "https://www.ilmiöt.fi/occamin-partaveitsi.html#article",
       "url": "https://www.ilmiöt.fi/occamin-partaveitsi.html",
       "headline": "Occamin partaveitsi — älä oleta enempää kuin on pakko",
-      "description": "Occamin partaveitsi ei sano, että yksinkertaisin selitys on oikea. Se sanoo: kun selitykset sopivat havaintoihin yhtä hyvin, valitse vähemmän olettava…",
+      "description": "Occamin partaveitsi: yksinkertaisin riittävä selitys voittaa. Selitämme periaatteen oikean käytön, yleiset väärinkäytöt ja käytännön esimerkit.",
       "inLanguage": "fi",
       "articleSection": "Psykologia ja kognitio",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -789,19 +790,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Occamin partaveitsi — älä oleta enempää kuin on pakko",
-        "description": "Occamin partaveitsi ei sano, että yksinkertaisin selitys on oikea. Se sanoo: kun selitykset sopivat havaintoihin yhtä hyvin, valitse vähemmän olettava…",
+        "name": "Occamin partaveitsi",
+        "description": "Occamin partaveitsi: yksinkertaisin riittävä selitys voittaa. Selitämme periaatteen oikean käytön, yleiset väärinkäytöt ja käytännön esimerkit.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -813,29 +814,6 @@
       },
       "datePublished": "2026-07-10",
       "dateModified": "2026-08-04"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.ilmiöt.fi/occamin-partaveitsi.html#faq",
-      "inLanguage": "fi",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Kuka oli Vilhelm Occamilainen?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Englantilainen fransiskaanimunkki (n. 1287–1347), jonka mukaan sääntö on nimetty. Kuuluisinta latinankielistä muotoilua entia non sunt multiplicanda praeter necessitatem ei kuitenkaan löydy hänen omista teksteistään."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Mikä ero on Occamin ja Hanlonin partaveitsellä?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Occamin partaveitsi koskee selityksiä yleisesti: valitse se, joka olettaa vähiten. Hanlonin partaveitsi on sen sovellus ihmisten aikeisiin: älä oleta pahantahtoisuutta, jos huolimattomuus riittää selitykseksi."
-          }
-        }
-      ]
     }
   ]
 }
@@ -861,13 +839,14 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="occamin-partaveitsi">
 <div class="ilmio-tag">Ilmiö 35</div>
 <h1>Occamin partaveitsi — älä oleta enempää kuin on pakko</h1>
 <p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 4.8.2026</p>
 <p>Occamin partaveitsi ei sano, että yksinkertaisin selitys on oikea. Se sanoo jotain paljon rajatumpaa: <em>kun kaksi selitystä selittää havainnot yhtä hyvin, valitse se, joka olettaa vähemmän.</em> Sääntö on nimetty englantilaisen fransiskaanimunkin Vilhelm Occamilaisen (n. 1287–1347) mukaan; nimi kirjoitetaan myös <em>Ockham</em>, jolloin puhutaan <em>Ockhamin partaveitsestä</em>. Kuuluisinta latinankielistä muotoilua — <em>entia non sunt multiplicanda praeter necessitatem</em>, "olioita ei pidä lisätä yli tarpeen" — ei kuitenkaan löydy hänen teksteistään: se on peräisin 1600-luvulta, irlantilaiselta John Punchilta. Occam itse kirjoitti: <em>numquam ponenda est pluralitas sine necessitate</em>.</p>
 <div class="infolaatikko vastauslohko">
-<h2 class="laatikko-otsikko">Mitä Occamin partaveitsi tarkoittaa?</h2>
+<h2 class="laatikko-otsikko" id="mita-occamin-partaveitsi-tarkoittaa">Mitä Occamin partaveitsi tarkoittaa?</h2>
 <p style="margin:0.4em 0 0;"><strong>Occamin partaveitsi</strong> on valintasääntö, ei totuuden mittari. Ehto sen käytölle on tiukka: selitysten on selitettävä havainnot yhtä hyvin, ja vasta silloin vähemmän olettava voittaa. Useimmiten ehto ei täyty — ja silloin partaveitsi ei sano mitään.</p>
 </div>
 <div class="mermaid">
@@ -882,7 +861,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Ehto "yhtä hyvin" on koko sääntö. Ilman sitä partaveitsi on vain kehotus olla ajattelematta.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Kolme yleistä väärinymmärrystä:</h2>
+<h2 class="laatikko-otsikko" id="kolme-yleista-vaarinymmarrysta">Kolme yleistä väärinymmärrystä:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>"Yksinkertaisin" ei tarkoita "helpoin ymmärtää".</strong> Suhteellisuusteoria olettaa vähemmän kuin sitä edeltäneet eetteriteoriat, vaikka se on vaikeampi.</li>
 <li><strong>Oletuksia lasketaan, ei sanoja.</strong> Lyhyt selitys voi sisältää valtavan oletuksen; pitkä selitys voi rakentua tunnetuista tosiasioista.</li>
@@ -891,11 +870,11 @@ flowchart TD
     </div>
 <p>Juuri se unohdettu ehto tekee partaveitsestä käyttökelpoisen aseen. Sillä torjutaan monimutkainen mutta tosi selitys "ylimonimutkaisena", vaikka yksinkertaisempi vaihtoehto ei selitä havaintoja lainkaan yhtä hyvin. Käänteinen väärinkäyttö on yhtä tavallinen: salaliittoteoria esitetään usein <em>yksinkertaisimpana</em> selityksenä — "kaikki vain valehtelevat" — vaikka se todellisuudessa olettaa tuhansien ihmisten virheettömän ja vuosikymmeniä kestävän koordinaation. Oletusten määrä on siinä käänteinen sille, miltä selitys kuulostaa.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Suhde toiseen partaveitseen:</h2> <a href="hanlonin-partaveitsi.html">Hanlonin partaveitsi</a> on Occamin partaveitsi sovellettuna ihmisten aikeisiin. Pahantahtoisuus vaatii motiivin, koordinaation ja salailun; huolimattomuus ei vaadi mitään niistä. Kun molemmat selittävät tapahtuneen yhtä hyvin, huolimattomuus olettaa vähemmän — ja Occam valitsee sen.
+<h2 class="laatikko-otsikko" id="suhde-toiseen-partaveitseen">Suhde toiseen partaveitseen:</h2> <a href="hanlonin-partaveitsi.html">Hanlonin partaveitsi</a> on Occamin partaveitsi sovellettuna ihmisten aikeisiin. Pahantahtoisuus vaatii motiivin, koordinaation ja salailun; huolimattomuus ei vaadi mitään niistä. Kun molemmat selittävät tapahtuneen yhtä hyvin, huolimattomuus olettaa vähemmän — ja Occam valitsee sen.
     </div>
 <p>Partaveitsi ei kuitenkaan ratkaise kysymystä siitä, kuka saa määritellä "yhtä hyvin". Sen määrittelee useimmiten se, jolla on valta nimetä, mikä on havainto ja mikä on kohinaa — mistä syystä <a href="konsensus-fetissi.html">konsensus</a> muuttuu helposti todisteeksi itsestään. Ja koska oletusten laskeminen edellyttää aiheen tuntemusta, partaveitsi on kaikkein epäluotettavin juuri niiden käsissä, jotka tuntevat aiheen huonoiten: <a href="dunning-kruger.html">Dunning–Kruger-ilmiön</a> mukaisesti oletusten määrä näyttää pieneltä, kun ei tiedä mitä on olettamassa.</p>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Kysy ensin, selittävätkö vaihtoehdot todella havainnot yhtä hyvin. Useimmiten eivät — ja silloin partaveitsi ei ole vielä käytössä lainkaan, vaan kyse on siitä, kumpi selitys on parempi. Vasta jos selitysvoima on tasan, laske oletukset. Ja jos joku vetoaa Occamiin ennen kuin on tarkistanut ensimmäisen ehdon, hän ei käytä partaveistä vaan sen nimeä.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Kysy ensin, selittävätkö vaihtoehdot todella havainnot yhtä hyvin. Useimmiten eivät — ja silloin partaveitsi ei ole vielä käytössä lainkaan, vaan kyse on siitä, kumpi selitys on parempi. Vasta jos selitysvoima on tasan, laske oletukset. Ja jos joku vetoaa Occamiin ennen kuin on tarkistanut ensimmäisen ehdon, hän ei käytä partaveistä vaan sen nimeä.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -920,7 +899,7 @@ flowchart TD
     <a href="konsensus-fetissi.html" class="liittyvat-kortti" style="--c:#01579b">
       <span class="liittyvat-numero">25</span>
       <span class="liittyvat-teksti">
-        <span class="liittyvat-nimi">Konsensus fetissi</span>
+        <span class="liittyvat-nimi">Konsensusfetissi</span>
         <span class="liittyvat-kuvaus">Yksimielisyydestä tulee itseisarvo, ja erimielisyys aletaan nähdä ongelmana — ei tietona.</span>
       </span>
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
@@ -959,6 +938,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="hanlonin-partaveitsi.html">← Hanlonin partaveitsi — älä oleta pahuutta, jos tyhmyys riittää</a>

@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Badger game — lavastettu tilanne, kiristys vaikenemisesta — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/badger-game.html#article",
       "url": "https://www.ilmiöt.fi/badger-game.html",
       "headline": "Badger game — houkuttele kiusalliseen tilanteeseen, kiristä vaikenemisesta",
-      "description": "Badger game on klassinen kiristyshuijaus, jossa uhri houkutellaan kiusalliseen tai mainetta vaarantavaan tilanteeseen — tyypillisesti seksuaaliseen…",
+      "description": "Badger game: houkutellaan kiusalliseen tilanteeseen, kiristetään vaikenemisesta. Selitämme kaavan käytännössä ja miten toimit, jos joudut kohteeksi.",
       "inLanguage": "fi",
       "articleSection": "Huijaukset ja petokset",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Badger game — houkuttele kiusalliseen tilanteeseen, kiristä vaikenemisesta",
-        "description": "Badger game on klassinen kiristyshuijaus, jossa uhri houkutellaan kiusalliseen tai mainetta vaarantavaan tilanteeseen — tyypillisesti seksuaaliseen…",
+        "name": "Badger game",
+        "description": "Badger game: houkutellaan kiusalliseen tilanteeseen, kiristetään vaikenemisesta. Selitämme kaavan käytännössä ja miten toimit, jos joudut kohteeksi.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -824,6 +825,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="badger-game">
 <div class="ilmio-tag">Ilmiö 73</div>
 <h1>Badger game — houkuttele kiusalliseen tilanteeseen, kiristä vaikenemisesta</h1>
@@ -845,7 +847,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Maksu ei sulje ansaa vaan avaa sen uudelleen: todiste on yhä kiristäjällä.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Miksi hallitusten jäsenet ja johtajat ovat ihanteellisia kohteita:</h2>
+<h2 class="laatikko-otsikko" id="miksi-hallitusten-jasenet-ja-johtajat-ovat-ihanteellisia-koh">Miksi hallitusten jäsenet ja johtajat ovat ihanteellisia kohteita:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Menetettävää on paljon:</strong> maine, ura, perhe ja pörssiyhtiön luottamus ovat arvokkaampia kuin kiristyssumma — juuri se tekee maksamisesta "järkevää".</li>
 <li><strong>Näkyvyys ja ennakoitavuus:</strong> johtajien matkat, konferenssit, hotellit ja kalenterit ovat osin julkisia. Kohde on helppo paikantaa ja lähestyä vieraalla paikkakunnalla, poissa tutusta ympäristöstä.</li>
@@ -855,10 +857,10 @@ flowchart TD
 </ul>
 </div>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Moderni, digitaalinen muoto:</h2> Klassinen "puoliso astuu ovesta" on muuttunut etäkiristykseksi. Kohde houkutellaan videopuheluun tai lähettämään arkaluontoista materiaalia (sextortion), tilanne tallennetaan, ja joskus käytetään <strong>deepfake-väärennöksiä</strong>, joissa uhri esitetään tilanteessa, jota ei koskaan tapahtunut. Lähestyminen tulee usein LinkedInin, treffisovelluksen tai konferenssikontaktin kautta — ja sulautuu <a href="pig-butchering.html">pig butchering</a>- ja <a href="honeypot-huijaus.html">honeypot</a>-kuvioihin.
+<h2 class="laatikko-otsikko" id="moderni-digitaalinen-muoto">Moderni, digitaalinen muoto:</h2> Klassinen "puoliso astuu ovesta" on muuttunut etäkiristykseksi. Kohde houkutellaan videopuheluun tai lähettämään arkaluontoista materiaalia (sextortion), tilanne tallennetaan, ja joskus käytetään <strong>deepfake-väärennöksiä</strong>, joissa uhri esitetään tilanteessa, jota ei koskaan tapahtunut. Lähestyminen tulee usein LinkedInin, treffisovelluksen tai konferenssikontaktin kautta — ja sulautuu <a href="pig-butchering.html">pig butchering</a>- ja <a href="honeypot-huijaus.html">honeypot</a>-kuvioihin.
     </div>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Epäilyttävän nopea, imarteleva kiinnostus tuntemattomalta — erityisesti matkalla tai valta-aseman ympärillä — on varoitusmerkki. Tärkein sääntö: <em>kiristäjälle ei makseta.</em> Maksaminen ei lopeta kiristystä vaan todistaa kohteen maksukykyiseksi ja -haluiseksi. Ainoa voittava siirto on katkaista häpeän valta: ilmoittaa heti yhtiön turvallisuusjohdolle, hallitukselle ja poliisille. Organisaatiotasolla suojaa antaa selkeä ohjeistus siitä, että kiristysyrityksestä raportoidaan eikä siitä rangaista — koska salailu on juuri se mekanismi, jolla huijaus elää.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Epäilyttävän nopea, imarteleva kiinnostus tuntemattomalta — erityisesti matkalla tai valta-aseman ympärillä — on varoitusmerkki. Tärkein sääntö: <em>kiristäjälle ei makseta.</em> Maksaminen ei lopeta kiristystä vaan todistaa kohteen maksukykyiseksi ja -haluiseksi. Ainoa voittava siirto on katkaista häpeän valta: ilmoittaa heti yhtiön turvallisuusjohdolle, hallitukselle ja poliisille. Organisaatiotasolla suojaa antaa selkeä ohjeistus siitä, että kiristysyrityksestä raportoidaan eikä siitä rangaista — koska salailu on juuri se mekanismi, jolla huijaus elää.
     </div>
 <p class="peli-harjoittele" style="margin:1.4rem 0 0;padding:.7rem .9rem;background:#FBF5E0;border-left:3px solid #C9A84C;font-size:.95em"><b>Harjoittele tämän tunnistamista.</b> <a href="peli.html">Vedätys</a> on päivittäinen peli, jossa badger game on yksi tunnistettavista ilmiöistä — mukana on aina myös tilanteita, joissa ei ole mitään vikaa.</p>
 <div class="lue-lisaa">
@@ -924,6 +926,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="ennakkomaksuhuijaus.html">← Ennakkomaksuhuijaus (419) — maksa vähän saadaksesi paljon</a>

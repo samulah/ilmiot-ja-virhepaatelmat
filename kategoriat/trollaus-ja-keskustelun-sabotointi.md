@@ -1,8 +1,8 @@
 ---
 kat_id: trollaus-ja-keskustelun-sabotointi
 h1: Trollaus ja keskustelun sabotointi — miten keskustelu kaadetaan niin, ettei kukaan näytä kaatavan sitä
-otsikko: Trollaus — miksi ihmiset trollaavat ja 16 muuta ilmiötä
-kuvaus: Miksi ihmiset trollaavat, ja miten keskustelu kaadetaan: sealioning, kunhan kysyn, huolitrollaus, maalittaminen ja doksaus. 17 ilmiötä ja vastakeinot.
+otsikko: Trollaus — miksi ihmiset trollaavat ja {n-1} muuta ilmiötä
+kuvaus: Miksi ihmiset trollaavat, ja miten keskustelu kaadetaan: sealioning, kunhan kysyn, huolitrollaus, maalittaminen ja doksaus. {n} ilmiötä ja vastakeinot.
 vari: "#00838f"
 paivitetty: 2026-10-03
 naapurit:

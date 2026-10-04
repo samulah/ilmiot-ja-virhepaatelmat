@@ -1,0 +1,183 @@
+{
+ "ilmio": null,
+ "laji": "rehellinen",
+ "huom": "Trollauskategorian aidot vastineet. Jokainen näyttää jonkin tempun kaksoselta ja on silti kunnossa: toisto ja suunta ratkaisevat, ei yksittäinen repliikki. Testi on sama kuin _rehelliset.json:issa.",
+ "kohdat": [
+  {
+   "id": "rehellinen-54",
+   "teksti": "Mielenkiintoinen väite. Onks sulla siihen lähdettä? Luen mielelläni — ja jos se pitää, mun pitää päivittää käsitystäni.",
+   "konteksti": "some",
+   "kanava": "viesti",
+   "paljastus": {
+    "mita": "Yksi lähdepyyntö, ja kysyjä kertoo etukäteen, mikä muuttaisi hänen kantansa.",
+    "miksi": "Lähteen pyytäminen kuulostaa merileijonoinnilta. Ero on toistossa: tämä on ensimmäinen kysymys, ei kahdeskymmenes.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-55",
+   "teksti": "Hei kysyn ihan suoraan, ku en tiedä: mistä se raha siihen autoon tuli? Jos se ei kuulu mulle, sano vaan.",
+   "konteksti": "perhe",
+   "kanava": "puhe",
+   "paljastus": {
+    "mita": "Suora kysymys, johon kelpaa mikä tahansa vastaus — myös se, ettei asia kuulu kysyjälle.",
+    "miksi": "Rahasta kysyminen kuulostaa vihjaukselta. Tässä ei vihjata mitään: kysyjä sanoo ääneen, mitä haluaa tietää.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-56",
+   "teksti": "Sori, toi mun heitto sun kakusta oli huono. Tarkotin sen vitsiks, mut se kuulosti ilkeeltä. Kakku oli oikeesti hyvää.",
+   "konteksti": "koti",
+   "kanava": "viesti",
+   "paljastus": {
+    "mita": "Vitsi myönnetään epäonnistuneeksi, ja siitä pyydetään anteeksi ilman mutta-osaa.",
+    "miksi": "\"Se oli vitsi\" on tuttu suojakilpi. Tässä sillä ei suojauduta, vaan vastuu otetaan.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-57",
+   "teksti": "Poistin kommenttisi, koska siinä nimiteltiin toista keskustelijaa. Itse asiasta saa olla eri mieltä — kirjoita se uudestaan ilman nimittelyä, niin se jää.",
+   "konteksti": "some",
+   "kanava": "viesti",
+   "paljastus": {
+    "mita": "Sävyyn puututaan nimittelyn takia, ja itse asialle luvataan tila.",
+    "miksi": "Sävystä huomauttaminen näyttää tone policingilta. Tässä huomautus ei korvaa vastausta: asia saa jäädä pöydälle.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-58",
+   "teksti": "Mä kannatan sitä aloitetta ja allekirjotan sen. Mut jos viedään se kevätkokoukseen eikä ylimääräseen, saadaan enemmän osakkaita paikalle. Mä voin soittaa isännöitsijälle huomenna.",
+   "konteksti": "koti",
+   "kanava": "puhe",
+   "paljastus": {
+    "mita": "Kritiikki ehdottaa parempaa tapaa päästä samaan tavoitteeseen ja tarjoaa apua.",
+    "miksi": "\"Kannatan, mutta\" kuulostaa huolitrollaukselta. Suunta on kuitenkin eteenpäin: ei vähemmän, vaan toisin.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-59",
+   "teksti": "Sä oot oikeessa, mä liiottelin. Ei kaikki kurssit oo huonoja — tarkotin, et tää yks oli. Siinä mä pysyn.",
+   "konteksti": "opiskelu",
+   "kanava": "puhe",
+   "paljastus": {
+    "mita": "Väitettä tarkennetaan kritiikin jälkeen, ja tarkennukseen sitoudutaan.",
+    "miksi": "Perääntyminen rohkeasta väitteestä näyttää motte and baileylta. Tässä rohkea versio ei palaa.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-60",
+   "teksti": "Tämä ei ole satunnainen kommentti: sen kirjoitti yhdistyksen puheenjohtaja järjestön omassa tiedotteessa. Siksi käsittelen sitä yhdistyksen kantana.",
+   "konteksti": "media",
+   "kanava": "viesti",
+   "paljastus": {
+    "mita": "Lainattu on ryhmän edustaja, ja lähde on ryhmän oma tiedote.",
+    "miksi": "Yhden lainauksen nostaminen näyttää nutpickingilta. Kun sanoja on puheenjohtaja, lainaus kertoo ryhmästä.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-61",
+   "teksti": "Vastaan suoraan sulle enkä lainaa tätä eteenpäin: sun laskelmassa on mun mielestä virhe kolmannella rivillä. Katotko, oonko ymmärtäny oikein?",
+   "konteksti": "some",
+   "kanava": "viesti",
+   "paljastus": {
+    "mita": "Kritiikki osoitetaan kirjoittajalle itselleen, eikä sitä viedä oman yleisön eteen.",
+    "miksi": "Korjatuksi tuleminen tuntuu nolaamiselta. Dunkkauksessa puhutaan kirjoittajasta muille, tässä hänelle.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-62",
+   "teksti": "Kysyn tätä nyt kolmannen kerran, koska en ole saanut vastausta: millä päätöksellä tuki lakkautettiin? Riittää, että lähetätte päätöksen numeron.",
+   "konteksti": "viranomainen",
+   "kanava": "sahkoposti",
+   "paljastus": {
+    "mita": "Kysymys toistuu, koska siihen ei ole vastattu. Pyyntö on tarkka, ja siihen voi vastata yhdellä rivillä.",
+    "miksi": "Toisto kuulostaa merileijonoinnilta. Merileijona saa vastauksia eikä hyväksy niitä; tässä vastausta ei ole tullut lainkaan.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-63",
+   "teksti": "Mä oon huolissani susta. En sano, et älä mee — sano vaan, miten mä voin auttaa, et se reissu onnistuu.",
+   "konteksti": "perhe",
+   "kanava": "puhe",
+   "paljastus": {
+    "mita": "Huoli sanotaan omana tunteena, ja sen perässä tulee tarjous auttaa.",
+    "miksi": "Huoli kuulostaa jarrulta. Tässä se ei pyydä luopumaan mistään.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-64",
+   "teksti": "Mä näin eilen sun viestin Sannalle, ja se loukkas mua. Voi olla, et luin sen väärin — haluisitko kertoo, mitä sä tarkotit?",
+   "konteksti": "parisuhde",
+   "kanava": "puhe",
+   "paljastus": {
+    "mita": "Syytös nojaa nimettyyn tekoon, ja selitykselle jätetään tilaa.",
+    "miksi": "Syytetyksi joutuminen tuntuu ansalta. Kafkatrappingissa kiistäminen on todiste; tässä selitys otettaisiin vastaan.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-65",
+   "teksti": "Lopetan tän keskustelun omalta osaltani tähän. Sanoin kantani ja sä sanoit omas, enkä usko, et päästään pidemmälle. Hyvää illanjatkoo.",
+   "konteksti": "some",
+   "kanava": "viesti",
+   "paljastus": {
+    "mita": "Keskustelusta poistutaan avoimesti ja ilman viimeistä piikkiä.",
+    "miksi": "Lähteminen kesken väittelyn näyttää välttelyltä. Kenelläkään ei ole velvollisuutta jatkaa loputtomiin.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-66",
+   "teksti": "Tää ketju saa mut kiehumaan, ja mulla on ollu huono päivä. En kirjota nyt mitään. Katon huomenna, onks mulla siihen vielä jotain sanottavaa.",
+   "konteksti": "some",
+   "kanava": "ajatus",
+   "paljastus": {
+    "mita": "Huomaat oman tilasi ja lykkäät vastaamista.",
+    "miksi": "Kiukku ja kiehuva ketju ovat juuri se yhdistelmä, joka tuottaa trollikommentteja. Tässä yhdistelmä tunnistetaan, eikä sen varassa toimita.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-67",
+   "teksti": "Kirjotan tän sille viestillä, ku kasvotusten mä jäädyn enkä saa sanottuu, et mua on alkanu pelottaa meidän raha-asiat. Luen sen vielä aamulla ennen ku lähetän.",
+   "konteksti": "parisuhde",
+   "kanava": "ajatus",
+   "paljastus": {
+    "mita": "Ruutua käytetään vaikean asian kertomiseen, ei toisen satuttamiseen, ja viesti luetaan vielä uudestaan.",
+    "miksi": "\"Viestillä on helpompi\" on myös estottomuuden lause. Estojen höltyminen toimii kumpaankin suuntaan: se auttaa myös puhumaan avoimesti.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-68",
+   "teksti": "Mä kirjotan tän palautteen omalla nimellä ja just niin ku sanoisin sen sille kahvipöydässä. Jos en kehtais sanoo jotain kohtaa ääneen, jätän sen pois.",
+   "konteksti": "koti",
+   "kanava": "ajatus",
+   "paljastus": {
+    "mita": "Viesti mitataan samalla mitalla kuin kasvokkain sanottu.",
+    "miksi": "Kriittinen viesti ruudun takaa näyttää estottomuudelta. Tässä testi on tehty ennen lähettämistä.",
+    "sanot": ""
+   }
+  },
+  {
+   "id": "rehellinen-69",
+   "teksti": "Tän uutisen kommentit on täynnä haukkumista. Mun kysymys liittyy kuitenki itse juttuun, joten kirjotan sen sinne omana kommenttina enkä vastaa noille.",
+   "konteksti": "media",
+   "kanava": "ajatus",
+   "paljastus": {
+    "mita": "Kirjoitat oman asiasi etkä lähde ketjun sävyyn mukaan.",
+    "miksi": "Myrkyllinen ketju tekee seuraavistakin kommenteista helposti myrkyllisiä. Yksi asiallinen viesti aikaisin voi kääntää sävyn.",
+    "sanot": ""
+   }
+  }
+ ]
+}

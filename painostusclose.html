@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Painostus-close — keinotekoinen niukkuus ja "nyt tai ei koskaan" — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/painostusclose.html#article",
       "url": "https://www.ilmiöt.fi/painostusclose.html",
       "headline": "Painostus-close — keinotekoinen niukkuus ja \"nyt tai ei koskaan\"",
-      "description": "Painostus-close on myyntipuheen päätösvaihe, jossa ostajalle luodaan keinotekoinen kiire ja niukkuus , jotta hän päättäisi ennen kuin ehtii harkita tai…",
+      "description": "Painostus-close: keinotekoinen niukkuus ja 'nyt tai ei koskaan'. Selitämme painostusmyynnin tekniikat käytännössä ja miten otat aikalisän.",
       "inLanguage": "fi",
       "articleSection": "Myyntikikat ja painostus",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Painostus-close — keinotekoinen niukkuus ja \"nyt tai ei koskaan\"",
-        "description": "Painostus-close on myyntipuheen päätösvaihe, jossa ostajalle luodaan keinotekoinen kiire ja niukkuus , jotta hän päättäisi ennen kuin ehtii harkita tai…",
+        "name": "Painostus-close",
+        "description": "Painostus-close: keinotekoinen niukkuus ja 'nyt tai ei koskaan'. Selitämme painostusmyynnin tekniikat käytännössä ja miten otat aikalisän.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -824,6 +825,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="painostusclose">
 <div class="ilmio-tag">Ilmiö 91</div>
 <h1>Painostus-close — keinotekoinen niukkuus ja "nyt tai ei koskaan"</h1>
@@ -840,7 +842,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Kiireen ainoa tehtävä on poistaa se aika, jonka kuluessa huomaisit syyt olla ostamatta.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Painostuksen vakiofraasit:</h2>
+<h2 class="laatikko-otsikko" id="painostuksen-vakiofraasit">Painostuksen vakiofraasit:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Aikaraja:</strong> "vain tänään", "tarjous voimassa 15 minuuttia", takaa laskeva kello.</li>
 <li><strong>Määräniukkuus:</strong> "viimeiset kappaleet", "vain 3 paikkaa".</li>
@@ -850,7 +852,7 @@ flowchart TD
 </ul>
 </div>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Tee kiireestä itsessään varoitusmerkki: <em>mitä kovempi paine päättää heti, sitä suurempi syy ottaa aikalisä.</em> Aito hyvä diili kestää yön yli nukkumisen. Pyydä tarjous kirjallisena ja voimassaoloaika perusteltuna — keksitty määräaika harvoin kestää tätä. Sama kiireen logiikka esiintyy <a href="bait-and-switch.html">bait and switchissä</a> ja <a href="kaarmeoljy.html">käärmeöljyssä</a>; tunnistettuna se menettää tehonsa.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Tee kiireestä itsessään varoitusmerkki: <em>mitä kovempi paine päättää heti, sitä suurempi syy ottaa aikalisä.</em> Aito hyvä diili kestää yön yli nukkumisen. Pyydä tarjous kirjallisena ja voimassaoloaika perusteltuna — keksitty määräaika harvoin kestää tätä. Sama kiireen logiikka esiintyy <a href="bait-and-switch.html">bait and switchissä</a> ja <a href="kaarmeoljy.html">käärmeöljyssä</a>; tunnistettuna se menettää tehonsa.
     </div>
 <p class="peli-harjoittele" style="margin:1.4rem 0 0;padding:.7rem .9rem;background:#FBF5E0;border-left:3px solid #C9A84C;font-size:.95em"><b>Harjoittele tämän tunnistamista.</b> <a href="peli.html">Vedätys</a> on päivittäinen peli, jossa painostus-close on yksi tunnistettavista ilmiöistä — mukana on aina myös tilanteita, joissa ei ole mitään vikaa.</p>
 <div class="lue-lisaa">
@@ -916,6 +918,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="sosiaalinen-todiste.html">← Sosiaalinen todiste -manipulaatio — "muutkin jo ostivat"</a>

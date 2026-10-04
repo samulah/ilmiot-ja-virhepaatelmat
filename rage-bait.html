@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Rage bait suomeksi — mitä raivosyötti tarkoittaa | Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/rage-bait.html#article",
       "url": "https://www.ilmiöt.fi/rage-bait.html",
       "headline": "Rage bait — raivo on rahaa",
-      "description": "Rage bait eli raivosyötti on sisältöä, joka on suunniteltu suututtamaan, koska vihainen kommentti ja jako ovat algoritmille yhtä arvokkaita kuin tykkäys.",
+      "description": "Rage bait eli raivosyötti tarkoittaa sisältöä, joka ärsyttää tahallaan. Näin tunnistat koneiston ja lakkaat ruokkimasta sitä.",
       "inLanguage": "fi",
       "articleSection": "Alustatalous ja algoritmit",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Rage bait — raivo on rahaa",
-        "description": "Rage bait eli raivosyötti on sisältöä, joka on suunniteltu suututtamaan, koska vihainen kommentti ja jako ovat algoritmille yhtä arvokkaita kuin tykkäys.",
+        "name": "Rage bait",
+        "description": "Rage bait eli raivosyötti tarkoittaa sisältöä, joka ärsyttää tahallaan. Näin tunnistat koneiston ja lakkaat ruokkimasta sitä.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -799,29 +800,6 @@
       },
       "datePublished": "2026-07-06",
       "dateModified": "2026-07-06"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.ilmiöt.fi/rage-bait.html#faq",
-      "inLanguage": "fi",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Mitä rage bait tarkoittaa?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Rage bait eli raivosyötti tarkoittaa sisältöä, jonka ensisijainen tavoite on herättää suuttumusta. Suuttumus saa jakamaan, kommentoimaan ja kiistelemään, ja jokainen reaktio kasvattaa sisällön näkyvyyttä algoritmissa. Virhe tai typerä väite on tällöin syötti, ei vahinko."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Miten raivosyöttiin kannattaa reagoida?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Tehokkain vastaus on olla antamatta reaktiota: älä kommentoi, jaa tai lainaa sisältöä edes kritisoidaksesi sitä. Myös vihainen sitaatti on näkyvyyttä. Jos haluat vastata, tee se kuvakaappauksella ilman linkkiä, jolloin reaktio ei valu alkuperäisen julkaisijan hyväksi."
-          }
-        }
-      ]
     }
   ]
 }
@@ -847,16 +825,17 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="rage-bait">
 <div class="ilmio-tag">Ilmiö 100</div>
 <h1>Rage bait — raivo on rahaa</h1>
 <p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 6.7.2026</p>
 <p><strong>Rage bait</strong> (suomeksi myös <strong>raivosyötti</strong>) tarkoittaa sisältöä, joka on tarkoituksella suunniteltu suututtamaan katsojansa — koska raivo tuottaa reaktioita, reaktiot näkyvyyttä ja näkyvyys rahaa. Termi vakiintui niin nopeasti, että Oxfordin sanakirjatoimitus valitsi sen vuoden sanaksi 2025: sanan käyttö kolminkertaistui vuodessa.</p>
 <div class="infolaatikko vastauslohko">
-<h2 class="laatikko-otsikko">Mikä on rage bait suomeksi?</h2>
+<h2 class="laatikko-otsikko" id="mika-on-rage-bait-suomeksi">Mikä on rage bait suomeksi?</h2>
 <p style="margin:0.4em 0 0;"><strong>Rage bait</strong> on suomeksi <strong>raivosyötti</strong>. Se tarkoittaa sisältöä, joka on tarkoituksella suunniteltu suututtamaan katsojansa — koska raivo tuottaa reaktioita, reaktiot näkyvyyttä ja näkyvyys rahaa. Ärsyttävyys ei ole tekijän epäonnistuminen vaan sen tarkoitus.</p>
 </div>
-<p>Mekanismi on alustatalouden vino kannustin puhtaimmillaan. Suosittelualgoritmit mittaavat sitoutumista — eivät sen sävyä. Vihainen kommentti, riitely ketjussa ja "katsokaa tätä idiotiaa" -jako nostavat sisältöä siinä missä tykkäyskin. Ja raivo on tunteista tehokkain: tutkimuksissa korkean vireystilan tunteet, erityisesti suuttumus, leviävät verkossa nopeimmin, ja Facebookin vuotaneista dokumenteista tiedetään, että vihareaktio painoi algoritmissa vuosia tavallista tykkäystä enemmän. Klikkiotsikko kalastaa uteliaisuutta — raivosyötti kalastaa oikeutettua suuttumusta, ja se on koukuista vahvin.</p>
+<p>Mekanismi on alustatalouden vino kannustin puhtaimmillaan. Suosittelualgoritmit mittaavat sitoutumista — eivät sen sävyä. Vihainen kommentti, riitely ketjussa ja "katsokaa tätä idiotiaa" -jako nostavat sisältöä siinä missä tykkäyskin. Ja raivo on tunteista tehokkain: tutkimuksissa korkean vireystilan tunteet, erityisesti suuttumus, leviävät verkossa nopeimmin, ja Facebookin vuotaneista dokumenteista tiedetään, että vihareaktio painoi algoritmissa vuosia tavallista tykkäystä enemmän. <a href="klikkiotsikko.html">Klikkiotsikko</a> kalastaa uteliaisuutta — raivosyötti kalastaa oikeutettua suuttumusta, ja se on koukuista vahvin.</p>
 <div class="mermaid">
 flowchart TD
   S["Tahallisen ärsyttävä\nsisältö julkaistaan"] --&gt; R["Raivoreaktiot: kommentit,\nkorjaukset, vihajaot"]
@@ -869,7 +848,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Raivosyötin ansainta: vihainen kommenttisi on ilmaista mainostyötä julkaisijalle.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Raivosyötin muotoja:</h2>
+<h2 class="laatikko-otsikko" id="raivosyotin-muotoja">Raivosyötin muotoja:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Tahallaan väärin tehdyt videot:</strong> ruoanlaitto, "life hackit" ja remontit, joiden virheet on käsikirjoitettu — kommenttikenttä täyttyy korjaajista, ja juuri se oli tavoite.</li>
 <li><strong>Keksityt tarinat:</strong> "olenko väärässä?" -kertomukset ja LinkedInin opettavaiset sadut, jotka on viritetty maksimaalisen tuohtumuksen mittaan.</li>
@@ -879,7 +858,7 @@ flowchart TD
 </ul>
 </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Ennen kuin kommentoit, kysy: hyötyykö julkaisija raivostani? Jos sisältö tuntuu räätälöidyn typerältä, se todennäköisesti on räätälöity — ja "korjaava" kommenttisi on täsmälleen se sitoutuminen, jota kalastettiin. Piilota, estä ja jatka matkaa: algoritmi lukee senkin, ja se on ainoa palaute, joka pienentää jakelua. Opeta itsellesi kolmen sekunnin sääntö: raivo, joka syttyy sekunneissa tuntemattoman julkaisusta, on todennäköisesti jonkun ansaintamalli. Ja säästä suuttumuksesi asioille, joissa siitä on hyötyä — se on rajallinen luonnonvara.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Ennen kuin kommentoit, kysy: hyötyykö julkaisija raivostani? Jos sisältö tuntuu räätälöidyn typerältä, se todennäköisesti on räätälöity — ja "korjaava" kommenttisi on täsmälleen se sitoutuminen, jota kalastettiin. Piilota, estä ja jatka matkaa: algoritmi lukee senkin, ja se on ainoa palaute, joka pienentää jakelua. Opeta itsellesi kolmen sekunnin sääntö: raivo, joka syttyy sekunneissa tuntemattoman julkaisusta, on todennäköisesti jonkun ansaintamalli. Ja säästä suuttumuksesi asioille, joissa siitä on hyötyä — se on rajallinen luonnonvara.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -959,6 +938,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="kuollut-internet.html">← Kuollut internet -teoria — botit puhuvat boteille</a>

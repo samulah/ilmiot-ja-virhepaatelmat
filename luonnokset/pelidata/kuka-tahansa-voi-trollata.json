@@ -1,0 +1,54 @@
+{
+ "ilmio": "kuka-tahansa-voi-trollata",
+ "laji": "vinouma",
+ "kohdat": [
+  {
+   "id": "kuka-tahansa-voi-trollata-1",
+   "teksti": "Koko ketju on jo haukkunu sitä kirjottajaa, ni yks piikki lisää ei tunnu missään. Ja mulla on muutenki ollu ihan paska päivä.",
+   "konteksti": "some",
+   "kanava": "ajatus",
+   "harhauttajat": ["verkon-estottomuus", "kaikukammio"],
+   "paljastus": {
+    "mita": "Huono päivä ja valmiiksi myrkyllinen ketju tekevät piikistä helpon.",
+    "miksi": "Ketju näyttää, mikä on sallittua, ja mieliala antaa syyn. Kokeessa tämä yhdistelmä lähes kaksinkertaisti trollikommentit.",
+    "sanot": "Jos olet väsynyt tai ärtynyt ja ketju jo kiehuu, älä kommentoi nyt."
+   }
+  },
+  {
+   "id": "kuka-tahansa-voi-trollata-2",
+   "teksti": "Kello on yli yksitoista, mä oon ihan poikki ja taloyhtiön ryhmässä riidellään taas parkkipaikoista. Nyt mä kyllä sanon niille suorat sanat.",
+   "konteksti": "koti",
+   "kanava": "ajatus",
+   "harhauttajat": ["verkon-estottomuus", "doomscrolling"],
+   "paljastus": {
+    "mita": "Väsymys ja käynnissä oleva riita päättävät puolestasi, että nyt on hyvä hetki.",
+    "miksi": "Myöhään illalla kirjoitetut viestit ovat niitä, joita aamulla kaduttaa. Riita on paikalla vielä huomennakin.",
+    "sanot": "Kirjoita vastaus luonnokseksi ja lue se aamulla."
+   }
+  },
+  {
+   "id": "kuka-tahansa-voi-trollata-3",
+   "teksti": "Sukuryhmässä väännetään taas siitä samasta ja kaikki on jo ilkeillä. Mua ärsyttää tänään muutenki kaikki, ni heitetään nyt sinne joku kunnon näpäytys perään.",
+   "konteksti": "perhe",
+   "kanava": "ajatus",
+   "harhauttajat": ["verkon-estottomuus", "pimea-tetradi"],
+   "paljastus": {
+    "mita": "Ärtymys on peräisin muualta, ja ketju tarjoaa sille paikan.",
+    "miksi": "Kun muut ovat jo ilkeitä, oma näpäytys ei tunnu rajan ylittämiseltä. Se on silti yksi lisää.",
+    "sanot": "Kysy: kirjoittaisinko tämän, jos päivä olisi mennyt hyvin?"
+   }
+  },
+  {
+   "id": "kuka-tahansa-voi-trollata-4",
+   "teksti": "Eka kommentti tän uutisen alla on jo ihan törkee, ja sille on satanen tykkäystä. No, tänne saa näköjään sanoo mitä vaan — annas ku mäkin.",
+   "konteksti": "media",
+   "kanava": "ajatus",
+   "harhauttajat": ["verkon-estottomuus", "kaikukammio"],
+   "paljastus": {
+    "mita": "Ensimmäinen kommentti kertoo, mitä tässä ketjussa saa sanoa, ja seuraat sitä.",
+    "miksi": "Trollaus tarttuu: ensimmäinen myrkyllinen viesti tekee seuraavista todennäköisempiä.",
+    "sanot": "Lue ensimmäisen kommentin ohi ja kysy, mitä itse ajattelet uutisesta."
+   }
+  }
+ ]
+}

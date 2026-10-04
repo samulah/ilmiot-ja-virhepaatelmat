@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Sääntelijän kaappaus — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/saantelijan-kaappaus.html#article",
       "url": "https://www.ilmiöt.fi/saantelijan-kaappaus.html",
       "headline": "Sääntelijän kaappaus",
-      "description": "Regulatory capture tarkoittaa ilmiötä, jossa säännelty teollisuudenala ottaa ajan myötä haltuunsa sen valvontaan tarkoitetun viranomaisen.",
+      "description": "Sääntelijän kaappaus: valvoja alkaa ajaa valvottavien etua. Selitämme mistä on kyse, miltä kaappaus näyttää käytännössä ja miten sen tunnistaa.",
       "inLanguage": "fi",
       "articleSection": "Vallan rakenteet",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
         "name": "Sääntelijän kaappaus",
-        "description": "Regulatory capture tarkoittaa ilmiötä, jossa säännelty teollisuudenala ottaa ajan myötä haltuunsa sen valvontaan tarkoitetun viranomaisen.",
+        "description": "Sääntelijän kaappaus: valvoja alkaa ajaa valvottavien etua. Selitämme mistä on kyse, miltä kaappaus näyttää käytännössä ja miten sen tunnistaa.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -824,6 +825,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="saantelijan-kaappaus">
 <div class="ilmio-tag">Ilmiö 4</div>
 <h1>Sääntelijän kaappaus</h1>
@@ -844,7 +846,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Sääntelijän kaappauksen kolme mekanismia toimivat samanaikaisesti.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Dokumentoituja tapauksia:</h2>
+<h2 class="laatikko-otsikko" id="dokumentoituja-tapauksia">Dokumentoituja tapauksia:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Talvivaara ja ympäristöviranomaiset (2010-luku):</strong> Sotkamon nikkelikaivos sai toistuvasti jatkoaikoja ympäristöluvilleen katastrofaalisista vuodoista huolimatta. ELY-keskus myönsi poikkeuslupia, joita ympäristöjärjestöt riitauttivat — ja voittivat hallinto-oikeudessa useammin kuin kerran. Taloudellinen intressi (kaivos työllistää, valtio on osaomistaja) väistyi ympäristövelvoitteiden edelle: viranomainen punnitsi luvitusta osittain kaivoksen jatkuvuuden ehdoilla. Korkein hallinto-oikeus kumosi useita myönteisiä lupa-ratkaisuja.
           <div class="mermaid" style="margin:0.8em 0 0.2em;">
@@ -866,7 +868,7 @@ flowchart TD
 </ul>
 </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Spekuloituja tapauksia — rakenne täsmää, näyttö puuttuu:</h2>
+<h2 class="laatikko-otsikko" id="spekuloituja-tapauksia-rakenne-tasmaa-naytto-puuttuu">Spekuloituja tapauksia — rakenne täsmää, näyttö puuttuu:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Rakennusteollisuus ja kaavoitusviranomaiset:</strong> Suurten kaupunkien kaavoitusprosesseissa samat henkilöt kiertävät kaupungin virastoista asuntokehittäjille ja takaisin. Poikkeuslupia myönnetään, vihreitä alueita kaavoitetaan rakentamiseen, kilpailutukset jäävät lyhyiksi. Systemaattinen tutkimus puuttuu — mutta rakenteet ovat identtiset kaappauksen kanssa.</li>
 <li><strong>Yksityiset sote-yhtiöt ja valvontaviranomaiset:</strong> Mehiläinen, Pihlajalinna ja Terveystalo ovat kasvaneet suuriksi samaan aikaan kun Valvira ja aluehallintovirastot ovat reagoineet hoivaongelmakohuihin pääosin vasta median paljastettua ne — ei omatoimisen valvonnan tuloksena. Valvontavirasto ja toimiala jakavat asiantuntijoita, konferensseja ja viitekehyksiä.</li>
@@ -876,7 +878,7 @@ flowchart TD
 </div>
 <p>George Stigler kuvasi ilmiön taloustieteellisesti 1971: sääntely ei päädy yleisen edun palvelukseen, koska organisoidut erityisintressit ovat tehokkaampia lobbaamaan kuin hajanainen suuri yleisö. Pitkällä aikavälillä viranomainen muistuttaa enemmän toimialayhdistystä kuin valvojaa.</p>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Kun viranomainen vastustaa tiukempaa sääntelyä samoin argumentein kuin toimiala itse — tai kun virastojen johtajat kiertävät säännöllisesti teollisuuden palveluksessa — kaappaus on todennäköisesti tapahtunut.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Kun viranomainen vastustaa tiukempaa sääntelyä samoin argumentein kuin toimiala itse — tai kun virastojen johtajat kiertävät säännöllisesti teollisuuden palveluksessa — kaappaus on todennäköisesti tapahtunut.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -941,6 +943,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="overton-ikkuna.html">← Overton-ikkuna</a>

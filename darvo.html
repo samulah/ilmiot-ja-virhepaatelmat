@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>DARVO — manipulaatiotaktiikka suomeksi | Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/darvo.html#article",
       "url": "https://www.ilmiöt.fi/darvo.html",
       "headline": "DARVO — uhrin ja syyttäjän roolien kääntäminen",
-      "description": "DARVO (Deny, Attack, Reverse Victim and Offender) on psykologi Jennifer Freydin vuonna 1997 kuvaama reaktiostrategia, jota käyttävät henkilöt tai…",
+      "description": "DARVO tarkoittaa manipulaatiotaktiikkaa: kiistä, hyökkää, käännä roolit. Näin tunnistat sen, kun tekijä tekee itsestään uhrin.",
       "inLanguage": "fi",
       "articleSection": "Psykologia ja kognitio",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "DARVO — uhrin ja syyttäjän roolien kääntäminen",
-        "description": "DARVO (Deny, Attack, Reverse Victim and Offender) on psykologi Jennifer Freydin vuonna 1997 kuvaama reaktiostrategia, jota käyttävät henkilöt tai…",
+        "name": "DARVO",
+        "description": "DARVO tarkoittaa manipulaatiotaktiikkaa: kiistä, hyökkää, käännä roolit. Näin tunnistat sen, kun tekijä tekee itsestään uhrin.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -799,29 +800,6 @@
       },
       "datePublished": "2026-06-19",
       "dateModified": "2026-06-19"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.ilmiöt.fi/darvo.html#faq",
-      "inLanguage": "fi",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Mitä DARVO tarkoittaa?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "DARVO on reaktiostrategia, jota väärinkäytöksestä vastuulliseksi epäilty käyttää kolmessa vaiheessa: hän kiistää tapahtuneen, hyökkää syytöksen esittäjää vastaan ja esittää lopulta itsensä todellisena uhrina. Lopputulos on, että alkuperäinen kysymys jää käsittelemättä."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Miten DARVOn tunnistaa?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Tunnusmerkki on roolien vaihtuminen kesken keskustelun: aihe siirtyy siitä, mitä tapahtui, siihen, miten epäoikeudenmukaisesti asian esiin nostanut on toiminut. Kun huomaat puolustavasi omaa oikeuttasi kysyä, roolit on jo käännetty."
-          }
-        }
-      ]
     }
   ]
 }
@@ -847,13 +825,14 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="darvo">
 <div class="ilmio-tag">Ilmiö 23</div>
 <h1>DARVO — uhrin ja syyttäjän roolien kääntäminen</h1>
 <p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 19.6.2026</p>
 <p>DARVO (Deny, Attack, Reverse Victim and Offender) on psykologi Jennifer Freydin vuonna 1997 kuvaama reaktiostrategia, jota käyttävät henkilöt tai instituutiot joita pidetään vastuullisina väärinkäytöksestä. Strategia koostuu kolmesta vaiheesta: kiistä, hyökkää, käännä roolit.</p>
 <div class="infolaatikko vastauslohko">
-<h2 class="laatikko-otsikko">Mitä DARVO tarkoittaa suomeksi?</h2>
+<h2 class="laatikko-otsikko" id="mita-darvo-tarkoittaa-suomeksi">Mitä DARVO tarkoittaa suomeksi?</h2>
 <p style="margin:0.4em 0 0;"><strong>DARVO</strong> on lyhenne sanoista <em>Deny, Attack, Reverse Victim and Offender</em> — suomeksi <strong>kiistä, hyökkää, käännä uhrin ja syyttäjän roolit</strong>. Vakiintunutta suomenkielistä lyhennettä ei ole, joten termi esiintyy suomeksikin muodossa DARVO. Psykologi Jennifer Freyd kuvasi mallin vuonna 1997.</p>
 </div>
 <div class="mermaid">
@@ -868,7 +847,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">DARVO: strategia siirtää huomion teosta tekijän kärsimykseen.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Kolme vaihetta käytännössä:</h2>
+<h2 class="laatikko-otsikko" id="kolme-vaihetta-kaytannossa">Kolme vaihetta käytännössä:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Deny (kiistä):</strong> Tapahtuma rekonstruoidaan. "En uhannut, annoin neuvon." "En syrjinyt, sovelsin sääntöjä."</li>
 <li><strong>Attack (hyökkää):</strong> Syyttäjän motiivit, luonne tai uskottavuus kyseenalaistetaan. Huomio siirtyy teosta tekijään.</li>
@@ -877,7 +856,7 @@ flowchart TD
 </div>
 <p>DARVO toimii sekä yksilö- että institutionaalisella tasolla. Korporaatiot, jotka haastetaan oikeuteen ympäristövahingoista, voivat esittää itsensä "sääntelybyrokratian uhreina". Poliitikot, jotka joutuvat eettisten kysymysten kohteeksi, kääntyvät "poliittisen vainon" uhreiksi. Rakenne on sama.</p>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> DARVO onnistuu, koska jokainen vaihe erikseen kuulostaa oikeutetulta — on laillista kiistää syytös, on sallittua kyseenalaistaa syyttäjä, on inhimillistä kertoa miten syytös vaikuttaa itseen. Strategian tunnistaa siitä, että nämä tapahtuvat nopeasti peräkkäin ja alkuperäinen kysymys jää vastaamatta.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> DARVO onnistuu, koska jokainen vaihe erikseen kuulostaa oikeutetulta — on laillista kiistää syytös, on sallittua kyseenalaistaa syyttäjä, on inhimillistä kertoa miten syytös vaikuttaa itseen. Strategian tunnistaa siitä, että nämä tapahtuvat nopeasti peräkkäin ja alkuperäinen kysymys jää vastaamatta.
     </div>
 <p class="peli-harjoittele" style="margin:1.4rem 0 0;padding:.7rem .9rem;background:#FBF5E0;border-left:3px solid #C9A84C;font-size:.95em"><b>Harjoittele tämän tunnistamista.</b> <a href="peli.html">Vedätys</a> on päivittäinen peli, jossa DARVO on yksi tunnistettavista ilmiöistä — mukana on aina myös tilanteita, joissa ei ole mitään vikaa.</p>
 <div class="lue-lisaa">
@@ -913,7 +892,7 @@ flowchart TD
     <a href="konsensus-fetissi.html" class="liittyvat-kortti" style="--c:#01579b">
       <span class="liittyvat-numero">25</span>
       <span class="liittyvat-teksti">
-        <span class="liittyvat-nimi">Konsensus fetissi</span>
+        <span class="liittyvat-nimi">Konsensusfetissi</span>
         <span class="liittyvat-kuvaus">Yksimielisyydestä tulee itseisarvo, ja erimielisyys aletaan nähdä ongelmana — ei tietona.</span>
       </span>
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
@@ -952,6 +931,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="backfire-effect.html">← Backfire effect — väärinkäsityksen vahvistuminen</a>

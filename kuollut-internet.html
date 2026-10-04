@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Dead internet -teoria — pitääkö se paikkansa | Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/kuollut-internet.html#article",
       "url": "https://www.ilmiöt.fi/kuollut-internet.html",
       "headline": "Kuollut internet -teoria — botit puhuvat boteille",
-      "description": "Kuollut internet -teoria (dead internet theory) väittää, että valtaosa verkon sisällöstä ja liikenteestä on botteja — salaliittona väärin, metaforana osuva.",
+      "description": "Kuollut internet -teoria väittää verkon täyttyneen boteista. Mikä väitteessä on mitattua ja mikä salaliittoteoriaa — ja mitä luvut oikeasti sanovat.",
       "inLanguage": "fi",
       "articleSection": "Alustatalous ja algoritmit",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Kuollut internet -teoria — botit puhuvat boteille",
-        "description": "Kuollut internet -teoria (dead internet theory) väittää, että valtaosa verkon sisällöstä ja liikenteestä on botteja — salaliittona väärin, metaforana osuva.",
+        "name": "Kuollut internet -teoria",
+        "description": "Kuollut internet -teoria väittää verkon täyttyneen boteista. Mikä väitteessä on mitattua ja mikä salaliittoteoriaa — ja mitä luvut oikeasti sanovat.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -799,29 +800,6 @@
       },
       "datePublished": "2026-07-06",
       "dateModified": "2026-09-04"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.ilmiöt.fi/kuollut-internet.html#faq",
-      "inLanguage": "fi",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Mikä on dead internet -teoria?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Dead internet theory eli kuollut internet -teoria väittää, että internet kuoli 2010-luvun puolivälissä: valtaosa verkon sisällöstä ja vuorovaikutuksesta olisi sen jälkeen ollut botteja ja koneellisesti tuotettua. Teoria sai nimensä Agora Road -foorumin postauksesta vuonna 2021."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Kuinka suuri osa verkkoliikenteestä on botteja?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Tietoturvayhtiö Impervan mittauksissa bottien osuus verkkoliikenteestä on ylittänyt ihmisten osuuden rajan tuntumassa: noin puolet liikenteestä on automaattista. Luku koskee liikennettä, ei sisältöä tai käyttäjätilejä, joten se ei vielä todista teorian vahvaa muotoa."
-          }
-        }
-      ]
     }
   ]
 }
@@ -847,13 +825,14 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="kuollut-internet">
 <div class="ilmio-tag">Ilmiö 99</div>
 <h1>Kuollut internet -teoria — botit puhuvat boteille</h1>
 <p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 4.9.2026</p>
 <p><strong>Kuollut internet -teoria</strong> (engl. <strong>dead internet theory</strong>) väittää, että internet "kuoli" 2010-luvun puolivälissä: valtaosa verkon sisällöstä, käyttäjistä ja vuorovaikutuksesta olisi sen jälkeen ollut botteja ja koneellisesti tuotettua — ja aidot ihmiset ovat vähemmistö omassa verkossaan, katsomassa esitystä, jota koneet esittävät toisilleen.</p>
 <div class="infolaatikko vastauslohko">
-<h2 class="laatikko-otsikko">Pitääkö kuollut internet -teoria paikkansa?</h2>
+<h2 class="laatikko-otsikko" id="pitaako-kuollut-internet-teoria-paikkansa">Pitääkö kuollut internet -teoria paikkansa?</h2>
 <p style="margin:0.4em 0 0;">Vahva muoto ei: väitteelle keskitetystä operaatiosta, jossa internet vaihdettiin koneelliseksi, ei ole näyttöä. <strong>Heikko muoto on mitattavissa</strong> — tietoturvayhtiö Impervan mittauksissa bottien osuus verkkoliikenteestä on noin puolet, ja generoitu halpasisältö täyttää haun.</p>
 </div>
 <p>Teoria sai nimensä nimimerkin <em>IlluminatiPirate</em> foorumipostauksesta "Dead Internet Theory: Most of the Internet Is Fake" (Agora Road -foorumi, 2021), ja laajaan tietoisuuteen sen nosti The Atlanticin artikkeli samana vuonna. <strong>Vahvassa muodossaan se on salaliittoteoria</strong> — väite keskitetystä operaatiosta, jossa "internet vaihdettiin" tarkoituksella, eikä sellaisesta ole näyttöä. Mutta teoria jäi elämään, koska sen kuvaama tuntuma osui hermoon: miksi mikään täällä ei enää tunnu ihmiseltä?</p>
@@ -871,7 +850,7 @@ flowchart TD
 <p class="kaavio-selitys">Itseään ruokkiva kierre: mitä enemmän koneita julkisessa verkossa, sitä vähemmän syitä ihmisen jäädä.</p>
 <p>Heikko muoto teoriasta muuttuu nimittäin vuosi vuodelta todemmaksi. Tietoturvayhtiö Impervan mittauksissa bottien osuus verkkoliikenteestä ylitti ihmisten osuuden rajan tuntumassa — noin puolet liikenteestä on automaattista. Generoitu halpasisältö täyttää haun ja syötteet, kommenttikentissä botit vastaavat boteille, ja sitoutumisluvuilla käytävä kauppa pitää kuolleetkin syötteet liikkeessä. Internet ei kuollut — mutta kasvava osa siitä on esitystä ilman yleisöä.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Mikä teoriassa pitää paikkansa — ja mikä ei:</h2>
+<h2 class="laatikko-otsikko" id="mika-teoriassa-pitaa-paikkansa-ja-mika-ei">Mikä teoriassa pitää paikkansa — ja mikä ei:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Ei pidä:</strong> keskitetty salaliitto, tietoinen "korvausoperaatio", tarkka kuolinvuosi — näille ei ole näyttöä.</li>
 <li><strong>Pitää:</strong> bottiliikenne on noin puolet verkkoliikenteestä; valetilit ja sukkanuket ovat teollista toimintaa; generoitu sisältö ohittaa määrässä ihmisen tekemän.</li>
@@ -879,7 +858,7 @@ flowchart TD
 </ul>
 </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Siirrä painoa varmennettuihin ihmisiin: uutiskirjeet, RSS, pienet yhteisöt ja nimelliset tekijät, joiden olemassaolon voi todentaa. Lue viraalit luvut mittaustuloksena bottien ja ihmisten seoksesta — "miljoona katselua" ei kerro, montako katsojaa oli. Ja huomaa teorian ironia: lohduton "kaikki on botteja" -kyynisyys on juuri se lopputulos, jota informaatiovaikuttaja tavoittelee — jos et usko kehenkään, et usko myöskään niitä, jotka puhuvat totta.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Siirrä painoa varmennettuihin ihmisiin: uutiskirjeet, RSS, pienet yhteisöt ja nimelliset tekijät, joiden olemassaolon voi todentaa. Lue viraalit luvut mittaustuloksena bottien ja ihmisten seoksesta — "miljoona katselua" ei kerro, montako katsojaa oli. Ja huomaa teorian ironia: lohduton "kaikki on botteja" -kyynisyys on juuri se lopputulos, jota informaatiovaikuttaja tavoittelee — jos et usko kehenkään, et usko myöskään niitä, jotka puhuvat totta.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -946,6 +925,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="parasosiaalinen-suhde.html">← Parasosiaalinen suhde — yksipuolinen ystävyys</a>

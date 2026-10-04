@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Suunniteltu vanheneminen — tehty hajoamaan — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/suunniteltu-vanheneminen.html#article",
       "url": "https://www.ilmiöt.fi/suunniteltu-vanheneminen.html",
       "headline": "Suunniteltu vanheneminen — tehty hajoamaan",
-      "description": "Suunniteltu vanheneminen (planned obsolescence) tarkoittaa tuotteen suunnittelua vanhenemaan ennenaikaisesti, jotta tilalle on ostettava uusi.",
+      "description": "Suunniteltu vanheneminen: tuote on tehty hajoamaan. Selitämme tekniikat, kuuluisat esimerkit ja miten ostat kestävämpää.",
       "inLanguage": "fi",
       "articleSection": "Myyntikikat ja painostus",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Suunniteltu vanheneminen — tehty hajoamaan",
-        "description": "Suunniteltu vanheneminen (planned obsolescence) tarkoittaa tuotteen suunnittelua vanhenemaan ennenaikaisesti, jotta tilalle on ostettava uusi.",
+        "name": "Suunniteltu vanheneminen",
+        "description": "Suunniteltu vanheneminen: tuote on tehty hajoamaan. Selitämme tekniikat, kuuluisat esimerkit ja miten ostat kestävämpää.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -824,6 +825,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="suunniteltu-vanheneminen">
 <div class="ilmio-tag">Ilmiö 93</div>
 <h1>Suunniteltu vanheneminen — tehty hajoamaan</h1>
@@ -843,7 +845,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Kylläisen markkinan ratkaisu: jos tuote ei kulu loppuun itsestään, se suunnitellaan kulumaan.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Vanhentamisen muodot:</h2>
+<h2 class="laatikko-otsikko" id="vanhentamisen-muodot">Vanhentamisen muodot:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Tekninen:</strong> heikoin lenkki tehdään muovista, akku liimataan kiinni, laakeri on juuri takuun mittainen.</li>
 <li><strong>Ohjelmallinen:</strong> päivitys hidastaa laitetta tai tuki loppuu — fyysisesti ehjä laite muuttuu käyttökelvottomaksi.</li>
@@ -853,7 +855,7 @@ flowchart TD
 </div>
 <p>Tunnetuin oikeustapaus on Applen "batterygate": vuonna 2017 paljastui, että käyttöjärjestelmä hidasti vanhoja iPhoneja akun heiketessä kertomatta siitä käyttäjille. Ranskan kuluttajaviranomainen määräsi 25 miljoonan euron sakot tiedottamatta jättämisestä (2020), ja Italia sakotti sekä Applea että Samsungia päivityksiin liittyneistä käytännöistä (2018). Sääntely on herännyt laajemminkin: Ranska kriminalisoi suunnitellun vanhenemisen 2015 ja otti käyttöön korjattavuusindeksin 2021, ja EU:n korjauttamisoikeusdirektiivi (2024) velvoittaa valmistajat korjauksiin ja varaosiin — samaan suuntaan vievät ekosuunnitteluasetus ja yleislaturipakko.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Kuluttajalle:</h2> Katso ennen ostoa korjattavuutta, älä vain hintaa: onko akku vaihdettavissa, saako varaosia ja mihin hintaan, montako vuotta ohjelmistotukea luvataan — softalaitteessa tukiaika <em>on</em> osa tuotetta, ja laite ilman päivityslupausta on määräaikainen. Laske omistamisen hinta vuotta kohden, ei ostohintaa: kestävä ja korjattava voittaa halvan lähes aina. Ja muista sukulaisilmiö palveluissa: tilaus tai alusta voi rapautua tahallaan siinä missä laite.
+<h2 class="laatikko-otsikko" id="vastakeinot-kuluttajalle">Vastakeinot kuluttajalle:</h2> Katso ennen ostoa korjattavuutta, älä vain hintaa: onko akku vaihdettavissa, saako varaosia ja mihin hintaan, montako vuotta ohjelmistotukea luvataan — softalaitteessa tukiaika <em>on</em> osa tuotetta, ja laite ilman päivityslupausta on määräaikainen. Laske omistamisen hinta vuotta kohden, ei ostohintaa: kestävä ja korjattava voittaa halvan lähes aina. Ja muista sukulaisilmiö palveluissa: tilaus tai alusta voi rapautua tahallaan siinä missä laite.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -909,6 +911,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="shrinkflaatio.html">← Shrinkflaatio — sama hinta, pienempi paketti</a>

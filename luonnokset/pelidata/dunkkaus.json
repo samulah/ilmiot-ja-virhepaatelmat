@@ -1,0 +1,54 @@
+{
+ "ilmio": "dunkkaus",
+ "laji": "taktiikka",
+ "kohdat": [
+  {
+   "id": "dunkkaus-1",
+   "teksti": "Tili, jolla on 14 000 seuraajaa, lainasi viestiäsi: \"Joku kysyy ihan tosissaan, mistä saa gluteenitonta pullaa 😂 Tää on se taso.\"",
+   "konteksti": "some",
+   "kanava": "kayttoliittyma",
+   "harhauttajat": ["maalittaminen", "rage-bait"],
+   "paljastus": {
+    "mita": "Viestisi on viety toisen yleisön eteen naurettavaksi. Vastaus ei ole sinulle vaan hänen seuraajilleen.",
+    "miksi": "Nolaava lainaus antaa omalle yleisölle yhteisen kohteen. Tykkäysten määrä kertoo yleisön koon, ei sitä, kuka on oikeassa.",
+    "sanot": "En vastaa tähän. Jos sulla on asiaa, kirjota mulle suoraan."
+   }
+  },
+  {
+   "id": "dunkkaus-2",
+   "teksti": "Välitän tähän ryhmään B-rapun Annin viestin, koska tää on liian hyvä 😅: \"Voisiko pyykkituvan vuorot varata jatkossa netissä?\" Jotkut meistä osaa vielä käyttää kynää.",
+   "konteksti": "koti",
+   "kanava": "viesti",
+   "harhauttajat": ["vain-vitsi", "maalittaminen"],
+   "paljastus": {
+    "mita": "Annin ehdotukseen ei vastata Annille. Se näytetään muille pilkan kera.",
+    "miksi": "Kritiikki puhuu kirjoittajalle, dunkkaus hänestä muille. Ehdotus jää käsittelemättä, ja Anni oppii olemaan ehdottamatta.",
+    "sanot": "Jos sulla on mielipide varausasiasta, vastaa Annin viestiin. Mä luen sen sieltä."
+   }
+  },
+  {
+   "id": "dunkkaus-3",
+   "teksti": "Kuvakaappaus Jussin palautuksesta koko kurssille 💀 \"Johtopäätös: tulokset ovat tuloksia.\" En kestä.",
+   "konteksti": "opiskelu",
+   "kanava": "viesti",
+   "harhauttajat": ["vain-vitsi", "engagement-bait"],
+   "paljastus": {
+    "mita": "Yhden opiskelijan työ irrotetaan yhteydestään ja jaetaan yleisölle, jota hän ei valinnut.",
+    "miksi": "Yhteinen naurun kohde tuntuu hetken yhteenkuuluvuudelta. Hinnan maksaa se, jota ei kysytty.",
+    "sanot": "Jos palautuksessa on vikaa, sano se Jussille. Ei tänne."
+   }
+  },
+  {
+   "id": "dunkkaus-4",
+   "teksti": "Laitan tän tänne kaikkien iloks: serkku kysy multa yksityisviestillä, saako häihin tulla ilman lahjaa 😂 Mitäs sanotte?",
+   "konteksti": "perhe",
+   "kanava": "viesti",
+   "harhauttajat": ["vain-vitsi", "maalittaminen"],
+   "paljastus": {
+    "mita": "Kahdenkeskinen kysymys viedään koko suvun eteen arvosteltavaksi.",
+    "miksi": "\"Mitäs sanotte\" kutsuu muut mukaan. Vastaus on esitys yleisölle, ei vastaus kysyjälle.",
+    "sanot": "Se kysy sulta kahden kesken. Vastaa sille, älä meille."
+   }
+  }
+ ]
+}

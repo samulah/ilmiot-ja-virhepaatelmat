@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Pinta-alaharha — kun kaksinkertainen näyttää nelinkertaiselta — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   
   
   
@@ -734,12 +736,12 @@
       "@id": "https://www.ilmiöt.fi/pinta-alaharha.html#article",
       "url": "https://www.ilmiöt.fi/pinta-alaharha.html",
       "headline": "Pinta-alaharha — kun kaksinkertainen näyttää nelinkertaiselta",
-      "description": "Kun luku kuvataan symbolin korkeutena mutta katsoja näkee pinta-alan, kaksinkertainen arvo näyttää nelinkertaiselta — ja 3D-kaavio vääristää vielä enemmän.",
+      "description": "Pinta-alaharha: kaksinkertainen näyttää nelinkertaiselta. Selitämme miten kuvion koko harhauttaa ja mihin kiinnität huomion kaaviossa.",
       "inLanguage": "fi",
       "articleSection": "Tilastoilla valehtelu",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -748,19 +750,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Pinta-alaharha — kun kaksinkertainen näyttää nelinkertaiselta",
-        "description": "Kun luku kuvataan symbolin korkeutena mutta katsoja näkee pinta-alan, kaksinkertainen arvo näyttää nelinkertaiselta — ja 3D-kaavio vääristää vielä enemmän.",
+        "name": "Pinta-alaharha",
+        "description": "Pinta-alaharha: kaksinkertainen näyttää nelinkertaiselta. Selitämme miten kuvion koko harhauttaa ja mihin kiinnität huomion kaaviossa.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -798,6 +800,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="pinta-alaharha">
 <div class="ilmio-tag">Ilmiö 122</div>
 <h1>Pinta-alaharha — kun kaksinkertainen näyttää nelinkertaiselta</h1>
@@ -836,7 +839,7 @@
 <li><strong>Kuplakaaviot:</strong> jos arvo koodataan säteeseen eikä pinta-alaan, erot paisuvat neliöllisesti.</li>
 </ul>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Kun näet symboleilla tai ympyröillä esitetyn vertailun, etsi luvut ja laske suhde itse. Jos kuvio on 3D tai perspektiivissä, kysy miksi — syvyysulottuvuus ei koskaan lisää informaatiota, mutta lähes aina vääristää sitä.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Kun näet symboleilla tai ympyröillä esitetyn vertailun, etsi luvut ja laske suhde itse. Jos kuvio on 3D tai perspektiivissä, kysy miksi — syvyysulottuvuus ei koskaan lisää informaatiota, mutta lähes aina vääristää sitä.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -893,6 +896,7 @@
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="kaksois-y-akseli.html">← Kaksois-y-akseli — kaksi asteikkoa, valmis korrelaatio</a>

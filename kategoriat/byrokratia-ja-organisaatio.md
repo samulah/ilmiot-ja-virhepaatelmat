@@ -1,7 +1,7 @@
 ---
 kat_id: byrokratia-ja-organisaatio
 h1: Byrokratia ja organisaatio — miksi järkevät ihmiset tekevät yhdessä järjettömiä päätöksiä
-otsikko: Byrokratia ja organisaatio — 15 ilmiötä, jotka jumittavat työpaikan
+otsikko: Byrokratia ja organisaatio — {n} ilmiötä, jotka jumittavat työpaikan
 kuvaus: Goodhartin laki, Parkinsonin laki, Peterin periaate, HIPPO. Viisitoista organisaatioilmiötä, joissa jokainen yksittäinen valinta on rationaalinen.
 vari: "#00695c"
 paivitetty: 2026-07-25

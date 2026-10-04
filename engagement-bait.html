@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Engagement bait — reaktiota pyydetään suoraan — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -392,8 +393,8 @@
       "inLanguage": "fi",
       "articleSection": "Alustatalous ja algoritmit",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -402,9 +403,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
+        }
+      },
+      "about": {
+        "@type": "DefinedTerm",
+        "name": "Engagement bait",
+        "description": "Engagement bait tarkoittaa sisältöä, joka pyytää tykkäystä, jakoa tai kommenttia suoraan, koska algoritmi palkitsee vuorovaikutuksesta riippumatta sen syystä.",
+        "inDefinedTermSet": {
+          "@type": "DefinedTermSet",
+          "name": "Ilmiöitä — Miten valta toimii",
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -441,6 +452,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="engagement-bait">
 <div class="ilmio-tag">Ilmiö 102</div>
 <h1>Engagement bait — reaktiota pyydetään suoraan</h1>
@@ -459,7 +471,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Kun mittarin voi pyytää, se lakkaa mittaamasta kiinnostusta.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Viisi vakiomuotoa</h2>
+<h2 class="laatikko-otsikko" id="viisi-vakiomuotoa">Viisi vakiomuotoa</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Äänestyssyötti:</strong> "Kumpi näistä? Tykkää A:sta, sydän B:stä."</li>
 <li><strong>Reaktiosyötti:</strong> "Reagoi, jos olet samaa mieltä."</li>
@@ -470,7 +482,7 @@ flowchart TD
 </div>
 <p>Sama tekniikka on nykyään myös huijausten esivaihe. Tili kerää sitoutumista harmittomilla syöteillä, kasvattaa tavoittavuutta ja vaihtaa vasta sen jälkeen sisältönsä — mainostukseen, tilin myyntiin tai suoraan huijaukseen. Kerätty näkyvyys on vaihdettavissa rahaksi, joten sen rakentaminen kannattaa jo ennen kuin käyttötarkoitus on päätetty.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Ajattele reaktiota maksuvälineenä: se on ainoa asia, jonka annat ilmaiseksi ja jolla on alustalla hinta. <strong>Älä anna sitä pyynnöstä.</strong> Käytännössä: jos julkaisu kertoo sinulle mitä sinun pitäisi tehdä sille, se on syötti eikä sisältö. Tarkista tilin historia ennen kuin jaat — vaihtuiko aihe äskettäin täysin? Ja huomaa ero omaan käytökseesi: ärsyttävän julkaisun kommentointi on <strong>rage baitin</strong> palkkio, tyhjän kysymyksen vastaaminen engagement baitin. Kummassakin maksat samalla valuutalla.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Ajattele reaktiota maksuvälineenä: se on ainoa asia, jonka annat ilmaiseksi ja jolla on alustalla hinta. <strong>Älä anna sitä pyynnöstä.</strong> Käytännössä: jos julkaisu kertoo sinulle mitä sinun pitäisi tehdä sille, se on syötti eikä sisältö. Tarkista tilin historia ennen kuin jaat — vaihtuiko aihe äskettäin täysin? Ja huomaa ero omaan käytökseesi: ärsyttävän julkaisun kommentointi on <strong>rage baitin</strong> palkkio, tyhjän kysymyksen vastaaminen engagement baitin. Kummassakin maksat samalla valuutalla.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -536,6 +548,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="klikkiotsikko.html">← Klikkiotsikko — lupaus, jota juttu ei lunasta</a>

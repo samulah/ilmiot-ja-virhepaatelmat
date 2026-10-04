@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <title>DARVO — manipulaatiotaktiikka suomeksi | Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <title>Syntipukki-rooli — miksi ryhmä tarvitsee yhden | Ilmiöitä</title>
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -765,8 +766,8 @@
       "inLanguage": "fi",
       "articleSection": "Roolit ja valtapelit",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Syntipukki-rooli — ryhmän nimetty kantaja",
+        "name": "Syntipukki-rooli",
         "description": "Syntipukki ei ole se joka mokasi vaan se jonka nimiin moka kirjataan. Rooli on rakenteellinen: kun kantaja lähtee, tilalle valitaan uusi.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -798,30 +799,7 @@
         "description": "Kirjoittajanimi, jonka takana on kiinnostus valtaan, vaikuttamiseen ja ihmisen päättelyn vinoumiin. Sisältö perustuu julkisiin lähteisiin ja vakiintuneeseen käsitteistöön."
       },
       "datePublished": "2026-10-03",
-      "dateModified": "2026-10-03"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.ilmiöt.fi/syntipukki.html#faq",
-      "inLanguage": "fi",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Mitä syntipukki-rooli tarkoittaa?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Syntipukki on ryhmän jäsen, jonka nimiin ongelmat kirjataan riippumatta siitä, kuka ne aiheutti. Kyse ei ole yksittäisestä syytöksestä vaan pysyvästä asemasta: ryhmä säilyttää yhtenäisyytensä sillä, että syy on aina samalla ihmisellä. Rooli tunnetaan sekä perhetutkimuksessa että työyhteisöjen dynamiikassa."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Mistä tietää, että kyse on roolista eikä syystä?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ratkaiseva testi on lähtö. Jos syntipukki lähtee ja ongelmat loppuvat, syy oli hänessä. Jos ongelmat jatkuvat ja tilalle nimetään muutamassa kuukaudessa uusi kantaja, kyse oli rakenteesta — ja se rakenne jäi paikalleen."
-          }
-        }
-      ]
+      "dateModified": "2026-10-04"
     }
   ]
 }
@@ -847,13 +825,14 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="syntipukki">
 <div class="ilmio-tag">Ilmiö 145</div>
 <h1>Syntipukki-rooli — ryhmän nimetty kantaja</h1>
-<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 3.10.2026</p>
+<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 4.10.2026</p>
 <p><strong>Syntipukki</strong> (engl. <em>scapegoat</em>) ei ole ryhmässä se, joka mokasi, vaan se, jonka nimiin mokat kirjataan. Kyse ei ole yksittäisestä syytöksestä vaan pysyvästä asemasta. Ryhmä saa siitä jotain arvokasta: niin kauan kuin syy on yhdellä ihmisellä, kenenkään muun ei tarvitse tarkastella omaa osuuttaan eikä ryhmän toimintatapoja.</p>
 <div class="infolaatikko vastauslohko">
-<h2 class="laatikko-otsikko">Mitä syntipukki tarkoittaa suomeksi?</h2>
+<h2 class="laatikko-otsikko" id="mita-syntipukki-tarkoittaa-suomeksi">Mitä syntipukki tarkoittaa suomeksi?</h2>
 <p style="margin:0.4em 0 0;"><strong>Syntipukki</strong> on vakiintunut suomen sana, englanniksi <em>scapegoat</em>; ilmiöstä puhutaan myös nimellä <em>scapegoating</em>. Perhetutkimuksessa samasta asemasta käytetään nimitystä <em>identified patient</em> — perheenjäsen, jonka oireet selittävät koko perheen ongelmat. Ero <a href="blame-game.html">syyllisen etsintään</a> on pysyvyys: syyllisen etsintä koskee yhtä tapahtumaa, syntipukki on rooli.</p>
 </div>
 <div class="mermaid">
@@ -869,7 +848,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Seuraajan ilmestyminen on todiste siitä, että kyse oli asemasta eikä ihmisestä.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Kolme tunnusmerkkiä:</h2>
+<h2 class="laatikko-otsikko" id="kolme-tunnusmerkkia">Kolme tunnusmerkkiä:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Syy löytyy ennen selvitystä:</strong> nimi mainitaan jo silloin, kun kukaan ei vielä tiedä mitä tapahtui.</li>
 <li><strong>Sama teko arvioidaan eri tavoin:</strong> muilta se on kiireestä johtuva lipsahdus, häneltä osoitus luonteesta — sama vinouma kuin <a href="halo-efekti.html">halo-efektissä</a> käänteisenä.</li>
@@ -878,7 +857,7 @@ flowchart TD
 </div>
 <p>Perheessä rooli lankeaa usein sille lapselle, joka sanoo ääneen sen mistä muut vaikenevat. Työpaikalla se osuu tyypillisesti uusimmalle, eri tavalla ajattelevalle tai sille, jolla on vähiten liittolaisia. Rooli on rakenteellisesti hyödyllinen ryhmälle, ja siksi se harvoin katoaa itsestään. Kantajalle lasku on kuitenkin epäsymmetrinen: hän maksaa maineessa, terveydessä ja urassa siitä, että muut välttyvät epämukavalta keskustelulta. Juuri tämä epäsymmetria tekee <a href="valirikko.html">irtautumisesta</a> usein ainoan siirron, joka muuttaa jotain — ja samalla se paljastaa rakenteen, koska tilalle nimetään seuraava.</p>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Erota <strong>palaute ja rooli</strong>. Palaute koskee tekoa, on ajallisesti rajattu ja kertoo mitä pitäisi tehdä toisin; rooli koskee sinua, laajenee kaikkeen eikä sisällä tietä ulos. Jos tunnistat roolin, kirjaa tosiasiat sitä mukaa kun ne tapahtuvat — päivämäärät, päätökset, kuka pyysi mitäkin — koska jälkikäteen kertomus on jo kirjoitettu. Älä ota vastaan kollektiivisia syytöksiä, vaan pyydä yksilöity tapaus: "mikä konkreettinen asia, milloin". Ryhmän sisällä roolia voi purkaa vain joku, jolla on asemaa: se tarkoittaa kysymystä siitä, mitä muuta tapahtui kuin yhden ihmisen virhe. Jos rooli ei murru, lähtemisen arviointi ei ole antautumista vaan kustannuslaskentaa.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Erota <strong>palaute ja rooli</strong>. Palaute koskee tekoa, on ajallisesti rajattu ja kertoo mitä pitäisi tehdä toisin; rooli koskee sinua, laajenee kaikkeen eikä sisällä tietä ulos. Jos tunnistat roolin, kirjaa tosiasiat sitä mukaa kun ne tapahtuvat — päivämäärät, päätökset, kuka pyysi mitäkin — koska jälkikäteen kertomus on jo kirjoitettu. Älä ota vastaan kollektiivisia syytöksiä, vaan pyydä yksilöity tapaus: "mikä konkreettinen asia, milloin". Ryhmän sisällä roolia voi purkaa vain joku, jolla on asemaa: se tarkoittaa kysymystä siitä, mitä muuta tapahtui kuin yhden ihmisen virhe. Jos rooli ei murru, lähtemisen arviointi ei ole antautumista vaan kustannuslaskentaa.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -943,6 +922,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="mahdollistaja.html">← Mahdollistaja — apu, joka pitää ongelman käynnissä</a>

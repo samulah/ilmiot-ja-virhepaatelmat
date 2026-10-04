@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <title>DARVO — manipulaatiotaktiikka suomeksi | Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <title>Roolinvaihto draamakolmiossa — mikä on switch | Ilmiöitä</title>
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -765,8 +766,8 @@
       "inLanguage": "fi",
       "articleSection": "Roolit ja valtapelit",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Roolinvaihto — hetki, jossa auttajasta tulee syyttäjä",
+        "name": "Roolinvaihto",
         "description": "Roolinvaihto on hetki, jossa pelastajasta tulee vainooja ja auttajasta uhri. Se on draamakolmion moottori — ilman sitä kuvio ei toistuisi.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -798,30 +799,7 @@
         "description": "Kirjoittajanimi, jonka takana on kiinnostus valtaan, vaikuttamiseen ja ihmisen päättelyn vinoumiin. Sisältö perustuu julkisiin lähteisiin ja vakiintuneeseen käsitteistöön."
       },
       "datePublished": "2026-10-03",
-      "dateModified": "2026-10-03"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.ilmiöt.fi/roolinvaihto.html#faq",
-      "inLanguage": "fi",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Mitä roolinvaihto tarkoittaa draamakolmiossa?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Roolinvaihto tarkoittaa hetkeä, jossa osapuolten asemat kääntyvät kesken keskustelun: pelastaja alkaa syyttää, autettava alkaa puolustautua ja auttaja esittää itsensä uhrina. Stephen Karpman kutsui tätä käännettä nimellä switch, ja juuri se erottaa pelin tavallisesta erimielisyydestä."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Miksi roolinvaihto toistuu?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Koska käänne tuottaa jotain, jota kumpikaan ei saisi suoraan pyytämällä: auttaja saa tunnustuksen tekemästään työstä ja autettava vapautuu vastuusta. Kun molemmat saavat jotain, kuvio ei pääty vaikka se tuntuu kummastakin pahalta."
-          }
-        }
-      ]
+      "dateModified": "2026-10-04"
     }
   ]
 }
@@ -847,13 +825,14 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="roolinvaihto">
 <div class="ilmio-tag">Ilmiö 141</div>
 <h1>Roolinvaihto — hetki, jossa auttajasta tulee syyttäjä</h1>
-<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 3.10.2026</p>
+<p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 4.10.2026</p>
 <p><strong>Roolinvaihto</strong> (engl. <em>the switch</em>) on hetki, jossa <a href="draamakolmio.html">draamakolmion</a> asemat kääntyvät kesken keskustelun. Pelastaja alkaa syyttää, autettava puolustautuu ja auttaja esittää lopulta itsensä uhrina. Stephen Karpman piti tätä käännettä mallin ytimenä: ilman sitä kolmio olisi pelkkä roolilista, käänteen kanssa siitä tulee peli, joka toistuu.</p>
 <div class="infolaatikko vastauslohko">
-<h2 class="laatikko-otsikko">Mitä roolinvaihto tarkoittaa suomeksi?</h2>
+<h2 class="laatikko-otsikko" id="mita-roolinvaihto-tarkoittaa-suomeksi">Mitä roolinvaihto tarkoittaa suomeksi?</h2>
 <p style="margin:0.4em 0 0;">Englanninkielinen termi on <em>the switch</em> tai <em>switching in the drama triangle</em>; suomeksi puhutaan <strong>roolinvaihdosta</strong> tai <strong>vaihdosta</strong>. Käsite on osa Eric Bernen (1964) pelianalyysiä, jossa vaihto on se kohta, joka tuottaa pelin lopputuloksen — kaikki sitä edeltävä on vain asetelman rakentamista.</p>
 </div>
 <div class="mermaid">
@@ -867,7 +846,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Vaihto tulee aina yllätyksenä — se on koko kuvion maksuhetki.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Kolme tavallista käännettä:</h2>
+<h2 class="laatikko-otsikko" id="kolme-tavallista-kaannetta">Kolme tavallista käännettä:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Pelastajasta vainooja:</strong> "minä olen tehnyt tämän puolestasi kuukausia" — apu muuttuu laskuksi, jota ei koskaan sovittu.</li>
 <li><strong>Pelastajasta uhri:</strong> "kukaan ei arvosta sitä mitä teen." Auttaja siirtyy kolmion pohjalle ja odottaa nyt itse pelastajaa.</li>
@@ -876,7 +855,7 @@ flowchart TD
 </div>
 <p>Työpaikalla vaihto tapahtuu tyypillisesti kehityskeskustelussa tai sen jälkeisessä sähköpostissa: kollega, joka on vuoden ajan paikannut toisen jälkiä, luettelee yhtäkkiä kaiken tekemänsä. Lista on useimmiten tosi — mutta se esitetään vasta kun se toimii syytöksenä, ei silloin kun työnjaosta olisi voinut sopia. Läheissuhteessa sama käänne kuuluu lauseessa "kaiken sen jälkeen mitä olen tehnyt sinun vuoksesi". Käänteen jälkeen keskustelu koskee velkaa, ei alkuperäistä asiaa — samalla tavalla kuin <a href="maalitolppien-siirtaminen.html">maalitolppien siirtämisessä</a> kohde vaihtuu kesken pelin.</p>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Vaihdon tunnistaa <strong>yllätyksestä ja aikahypystä</strong>: syytös koskee asioita, joista ei ole puhuttu silloin kun ne tapahtuivat. Tyypillinen sanamuoto on "aina", "en koskaan" ja "kaiken sen jälkeen". Vastakeino on tylsä mutta toimiva: sovi apu etukäteen ääneen — mitä, kuinka paljon ja mihin asti — jolloin siitä ei voi myöhemmin tulla laskua. Jos käänne on jo tapahtunut, erottele kaksi asiaa: velkalista käsitellään omana keskusteluna ja alkuperäinen kysymys omanaan. Älä vastaa syytökseen vastasyytöksellä; se vain siirtää sinut kolmion seuraavaan kulmaan.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Vaihdon tunnistaa <strong>yllätyksestä ja aikahypystä</strong>: syytös koskee asioita, joista ei ole puhuttu silloin kun ne tapahtuivat. Tyypillinen sanamuoto on "aina", "en koskaan" ja "kaiken sen jälkeen". Vastakeino on tylsä mutta toimiva: sovi apu etukäteen ääneen — mitä, kuinka paljon ja mihin asti — jolloin siitä ei voi myöhemmin tulla laskua. Jos käänne on jo tapahtunut, erottele kaksi asiaa: velkalista käsitellään omana keskusteluna ja alkuperäinen kysymys omanaan. Älä vastaa syytökseen vastasyytöksellä; se vain siirtää sinut kolmion seuraavaan kulmaan.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -941,6 +920,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="draamakolmio.html">← Draamakolmio — uhri, pelastaja ja vainooja</a>

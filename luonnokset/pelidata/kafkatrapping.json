@@ -1,0 +1,54 @@
+{
+ "ilmio": "kafkatrapping",
+ "laji": "taktiikka",
+ "kohdat": [
+  {
+   "id": "kafkatrapping-1",
+   "teksti": "Jos sulla ei olis mitään salattavaa, et sä suuttuis tosta kysymyksestä. Se, et sä puolustaudut noin kovaa, kertoo jo kaiken.",
+   "konteksti": "parisuhde",
+   "kanava": "puhe",
+   "harhauttajat": ["gaslighting", "darvo"],
+   "paljastus": {
+    "mita": "Puolustautuminen lasketaan todisteeksi siitä, mistä sinua syytetään.",
+    "miksi": "Kaikki vaihtoehdot on lukittu: kiistäminen on todiste, myöntäminen tunnustus ja vaikeneminen myöntymistä.",
+    "sanot": "Mitä mä sun mielestä tein, millon ja missä? Puhutaan siitä."
+   }
+  },
+  {
+   "id": "kafkatrapping-2",
+   "teksti": "Sä oot kateellinen siskolles. Ja se, et sä kiellät sen heti, on just se merkki — kateelliset kieltää aina.",
+   "konteksti": "perhe",
+   "kanava": "puhe",
+   "harhauttajat": ["gaslighting", "kaksoissidos"],
+   "paljastus": {
+    "mita": "Kiistäminen on rakennettu väitteen sisään todisteeksi.",
+    "miksi": "Väite, jota mikään ei voi kumota, ei kerro sinusta mitään. Se kertoo, että päätös on tehty etukäteen.",
+    "sanot": "Mikä vois osoittaa, etten oo? Jos ei mikään, tästä ei kannata puhua."
+   }
+  },
+  {
+   "id": "kafkatrapping-3",
+   "teksti": "Tietysti sä sanot, ettet oo palkattu kirjottamaan noita kommentteja. Niinhän palkattu just sanois.",
+   "konteksti": "some",
+   "kanava": "viesti",
+   "harhauttajat": ["kunhan-kysyn", "gaslighting"],
+   "paljastus": {
+    "mita": "Kiistäminen ja myöntäminen johtavat samaan johtopäätökseen.",
+    "miksi": "Et voi todistaa, mitä et ole. Jokainen yritys näyttää siltä, mitä syyllinen tekisi.",
+    "sanot": "Mikä osoittais sulle, etten oo? Jos ei mikään, en ala todistella."
+   }
+  },
+  {
+   "id": "kafkatrapping-4",
+   "teksti": "Se sano, et se kuinka kovaa mä kiistän, todistaa et oon mustasukkanen. Ja nyt mä mietin, et ehkä oonki, ku kerran puolustaudun näin. En mä enää tiiä, miten tän vois todistaa.",
+   "konteksti": "parisuhde",
+   "kanava": "ajatus",
+   "harhauttajat": ["gaslighting", "kaksoissidos"],
+   "paljastus": {
+    "mita": "Ajatus ei ole sinun: se on jälki ansasta, jossa kiistäminen laskettiin todisteeksi.",
+    "miksi": "Kun mikään vastaus ei kelpaa, alat etsiä vikaa itsestäsi. Sisäistä tilaa ei voi todistaa, eikä sitä tarvitse.",
+    "sanot": "Mitä mä tein, millon ja miten? Siitä mä voin puhua."
+   }
+  }
+ ]
+}

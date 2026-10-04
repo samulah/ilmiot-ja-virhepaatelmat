@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Uutisautiomaa — kunta, jossa kukaan ei enää seuraa päätöksiä — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -392,8 +393,8 @@
       "inLanguage": "fi",
       "articleSection": "Media ja julkisuus",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -402,9 +403,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
+        }
+      },
+      "about": {
+        "@type": "DefinedTerm",
+        "name": "Uutisautiomaa",
+        "description": "Uutisautiomaa syntyy, kun paikallislehti lakkaa: valtuuston kokouksissa ei istu ketään, virheet jäävät huomaamatta ja päätöksenteon hinta nousee.",
+        "inDefinedTermSet": {
+          "@type": "DefinedTermSet",
+          "name": "Ilmiöitä — Miten valta toimii",
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -441,6 +452,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="uutisautiomaa">
 <div class="ilmio-tag">Ilmiö 131</div>
 <h1>Uutisautiomaa — kunta, jossa kukaan ei enää seuraa päätöksiä</h1>
@@ -459,10 +471,10 @@ flowchart TD
 <p>Vaikutus ei jää symboliseksi. Yhdysvaltalaisessa tutkimuksessa <em>Financing Dies in Darkness?</em> (Gao, Lee &amp; Murphy, 2020) havaittiin, että kun kunnan paikallislehti lakkasi, kunnan lainanoton kustannukset nousivat mitattavasti — sijoittajat hinnoittelivat sen, ettei kukaan enää valvonut rahankäyttöä. Muissa tutkimuksissa on havaittu äänestysaktiivisuuden laskua, valtuustopaikkojen jäämistä ilman vastaehdokkaita ja puoluepolitiikan valtakunnallistumista: kun paikallisia asioita ei uutisoida, äänestäjä äänestää valtakunnan politiikan perusteella.</p>
 <p>Autiomaa syntyy myös hiljaa, ilman lakkautusta. Lehti voi ilmestyä edelleen, mutta sisältö tulee maakuntakeskuksesta ja kunnasta kirjoitetaan vain silloin, kun sattuu jotain poikkeuksellista. Tätä kutsutaan aavelehdeksi (<em>ghost newspaper</em>).</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Ero läheisiin käsitteisiin:</h2> <a href="uutiskynnys.html">Uutiskynnyksessä</a> joku arvioi aiheen ja jättää sen tekemättä; uutisautiomaassa ei ole ketään, joka edes arvioisi. Tyhjiö ei jää tyhjäksi: se täyttyy sosiaalisen median huhuilla ja joskus poliittisesti rahoitetuilla valeverkkolehdillä, jotka jäljittelevät paikallislehden ulkoasua.
+<h2 class="laatikko-otsikko" id="ero-laheisiin-kasitteisiin">Ero läheisiin käsitteisiin:</h2> <a href="uutiskynnys.html">Uutiskynnyksessä</a> joku arvioi aiheen ja jättää sen tekemättä; uutisautiomaassa ei ole ketään, joka edes arvioisi. Tyhjiö ei jää tyhjäksi: se täyttyy sosiaalisen median huhuilla ja joskus poliittisesti rahoitetuilla valeverkkolehdillä, jotka jäljittelevät paikallislehden ulkoasua.
     </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2>
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2>
 <ul style="margin:0.5em 0 0;">
 <li>Tarkista, kuka kirjoittaa oman kuntasi päätöksistä. Jos jutuissa ei ole nimeä eikä paikallista haastateltavaa, sisältö tulee muualta.</li>
 <li>Lue esityslistat ja pöytäkirjat suoraan kunnan sivuilta — ne julkaistaan, vaikka niistä ei uutisoitaisi.</li>
@@ -526,6 +538,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="uutiskynnys.html">← Uutiskynnys — miksi tärkeä asia ei koskaan päädy uutisiin</a>

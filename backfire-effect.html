@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Backfire effect — väärinkäsityksen vahvistuminen — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/backfire-effect.html#article",
       "url": "https://www.ilmiöt.fi/backfire-effect.html",
       "headline": "Backfire effect — väärinkäsityksen vahvistuminen",
-      "description": "Backfire effect kuvaa ilmiötä, jossa henkilölle esitetty korjaus hänen virheelliseen uskomukseensa voi vahvistaa alkuperäistä uskomusta sen sijaan, että…",
+      "description": "Backfire effect: faktakorjaus voi vahvistaa väärää uskomusta. Selitämme miksi näin käy ja miten keskustelet niin, ettei korjaus kimpoa takaisin.",
       "inLanguage": "fi",
       "articleSection": "Psykologia ja kognitio",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Backfire effect — väärinkäsityksen vahvistuminen",
-        "description": "Backfire effect kuvaa ilmiötä, jossa henkilölle esitetty korjaus hänen virheelliseen uskomukseensa voi vahvistaa alkuperäistä uskomusta sen sijaan, että…",
+        "name": "Backfire effect",
+        "description": "Backfire effect: faktakorjaus voi vahvistaa väärää uskomusta. Selitämme miksi näin käy ja miten keskustelet niin, ettei korjaus kimpoa takaisin.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -824,6 +825,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="backfire-effect">
 <div class="ilmio-tag">Ilmiö 22</div>
 <h1>Backfire effect — väärinkäsityksen vahvistuminen</h1>
@@ -841,14 +843,14 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Backfire effect: korjaus aktivoi puolustusmekanismin, joka vahvistaa alkuperäistä uskomusta.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Miksi näin tapahtuu:</h2> Uskomukset — erityisesti poliittiset ja identiteettiin kytkeytyvät — eivät ole pelkkiä tietopisteitä. Ne ovat osa sitä, kuka ihminen on ja mihin ryhmään hän kuuluu. Korjaus ei tunnu tietovirheeltä — se tuntuu hyökkäykseltä identiteettiä vastaan.
+<h2 class="laatikko-otsikko" id="miksi-nain-tapahtuu">Miksi näin tapahtuu:</h2> Uskomukset — erityisesti poliittiset ja identiteettiin kytkeytyvät — eivät ole pelkkiä tietopisteitä. Ne ovat osa sitä, kuka ihminen on ja mihin ryhmään hän kuuluu. Korjaus ei tunnu tietovirheeltä — se tuntuu hyökkäykseltä identiteettiä vastaan.
     </div>
 <p>Myöhemmät replikaatiotutkimukset ovat osittain kyseenalaistaneet efektin vahvuuden. Meta-analyysit viittaavat siihen, että varsinainen taaksepäin sinkoutuminen on harvinaisempaa kuin alkuperäiset tutkimukset antoivat ymmärtää — mutta uskomusten vastustuskyky korjauksille on silti dokumentoitu ilmiö, erityisesti vahvasti identiteettiin kytkeytyvissä aiheissa.</p>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Käytännön seuraus:</h2> Faktojen toistaminen ei aina riitä — ja väärinkäsityksen suora vastustaminen voi pahentaa tilannetta. Mitä julkisemmin ja painokkaammin korjaus esitetään, sitä suurempi on identiteettipuolustuksen riski.
+<h2 class="laatikko-otsikko" id="kaytannon-seuraus">Käytännön seuraus:</h2> Faktojen toistaminen ei aina riitä — ja väärinkäsityksen suora vastustaminen voi pahentaa tilannetta. Mitä julkisemmin ja painokkaammin korjaus esitetään, sitä suurempi on identiteettipuolustuksen riski.
     </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> RAND-tutkijoiden suositus on <em>inokulointi</em>: kerro etukäteen, millaisia manipulaatiotekniikoita on olemassa, ennen kuin ne iskevät — ennakkovaroitus rakentaa vastustuskykyä paremmin kuin jälkikäteen korjaaminen (ks. <a href="inokulointiteoria.html">Inokulointiteoria</a> ja <a href="firehose-of-falsehood.html">Firehose of Falsehood</a>). Arjen keskustelussa: älä pommita faktoilla identiteettiä vasten, vaan kysy kysymyksiä — "mistä tietäisit, että tämä ei pidä paikkaansa?" siirtää arvioinnin toisen omaan päähän. Anna perääntymistilaa: ihminen luopuu uskomuksesta helpommin, kun se ei tarkoita kasvojen menetystä, joten kahdenkeskinen keskustelu voittaa julkisen väittelyn. Ja korjaa tarina tarinalla — pelkkä "tuo on väärin" jättää aukon, jonka vanha uskomus täyttää uudelleen.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> RAND-tutkijoiden suositus on <em>inokulointi</em>: kerro etukäteen, millaisia manipulaatiotekniikoita on olemassa, ennen kuin ne iskevät — ennakkovaroitus rakentaa vastustuskykyä paremmin kuin jälkikäteen korjaaminen (ks. <a href="inokulointiteoria.html">Inokulointiteoria</a> ja <a href="firehose-of-falsehood.html">Firehose of Falsehood</a>). Arjen keskustelussa: älä pommita faktoilla identiteettiä vasten, vaan kysy kysymyksiä — "mistä tietäisit, että tämä ei pidä paikkaansa?" siirtää arvioinnin toisen omaan päähän. Anna perääntymistilaa: ihminen luopuu uskomuksesta helpommin, kun se ei tarkoita kasvojen menetystä, joten kahdenkeskinen keskustelu voittaa julkisen väittelyn. Ja korjaa tarina tarinalla — pelkkä "tuo on väärin" jättää aukon, jonka vanha uskomus täyttää uudelleen.
     </div>
 <p class="peli-harjoittele" style="margin:1.4rem 0 0;padding:.7rem .9rem;background:#FBF5E0;border-left:3px solid #C9A84C;font-size:.95em"><b>Harjoittele tämän tunnistamista.</b> <a href="peli.html">Vedätys</a> on päivittäinen peli, jossa backfire effect on yksi tunnistettavista ilmiöistä — mukana on aina myös tilanteita, joissa ei ole mitään vikaa.</p>
 <div class="lue-lisaa">
@@ -892,7 +894,7 @@ flowchart TD
     <a href="konsensus-fetissi.html" class="liittyvat-kortti" style="--c:#01579b">
       <span class="liittyvat-numero">25</span>
       <span class="liittyvat-teksti">
-        <span class="liittyvat-nimi">Konsensus fetissi</span>
+        <span class="liittyvat-nimi">Konsensusfetissi</span>
         <span class="liittyvat-kuvaus">Yksimielisyydestä tulee itseisarvo, ja erimielisyys aletaan nähdä ongelmana — ei tietona.</span>
       </span>
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
@@ -915,6 +917,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="godwinin-laki.html">← Godwinin laki — natsivertaus saapuu ennen pitkää</a>

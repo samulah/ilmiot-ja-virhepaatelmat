@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Cherry-picking — valittu aikaväli kertoo halutun tarinan — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   
   
   
@@ -734,12 +736,12 @@
       "@id": "https://www.ilmiöt.fi/cherry-picking-aikavali.html#article",
       "url": "https://www.ilmiöt.fi/cherry-picking-aikavali.html",
       "headline": "Cherry-picking — valittu aikaväli kertoo halutun tarinan",
-      "description": "Kun tarkastelujakson alku- ja loppupiste valitaan sopivasti, sama aikasarja todistaa mitä tahansa: kasvua, romahdusta tai käännettä.",
+      "description": "Cherry-picking: aikaväli valitaan kertomaan haluttu tarina. Selitämme miten rajaus vääristää trendin ja miten tarkistat koko aikasarjan.",
       "inLanguage": "fi",
       "articleSection": "Tilastoilla valehtelu",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -748,19 +750,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Cherry-picking — valittu aikaväli kertoo halutun tarinan",
-        "description": "Kun tarkastelujakson alku- ja loppupiste valitaan sopivasti, sama aikasarja todistaa mitä tahansa: kasvua, romahdusta tai käännettä.",
+        "name": "Cherry-picking",
+        "description": "Cherry-picking: aikaväli valitaan kertomaan haluttu tarina. Selitämme miten rajaus vääristää trendin ja miten tarkistat koko aikasarjan.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -798,6 +800,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="cherry-picking-aikavali">
 <div class="ilmio-tag">Ilmiö 123</div>
 <h1>Cherry-picking — valittu aikaväli kertoo halutun tarinan</h1>
@@ -835,7 +838,7 @@
 <li><strong>Ilmastokeskustelu:</strong> ”lämpeneminen pysähtyi” — kun alkupisteeksi valitaan poikkeuksellisen lämmin El Niño -vuosi.</li>
 </ul>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Kysy aina: miksi juuri tämä aikaväli? Mitä käy, jos alkupistettä siirtää kaksi vuotta kumpaankin suuntaan? Jos johtopäätös kaatuu siihen, se ei ollut trendi vaan valinta.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Kysy aina: miksi juuri tämä aikaväli? Mitä käy, jos alkupistettä siirtää kaksi vuotta kumpaankin suuntaan? Jos johtopäätös kaatuu siihen, se ei ollut trendi vaan valinta.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -892,6 +895,7 @@
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="pinta-alaharha.html">← Pinta-alaharha — kun kaksinkertainen näyttää nelinkertaiselta</a>

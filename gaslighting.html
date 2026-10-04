@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Gaslightingin tunnistaminen — merkit ja esimerkit | Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/gaslighting.html#article",
       "url": "https://www.ilmiöt.fi/gaslighting.html",
       "headline": "Gaslighting — todellisuuden järjestelmällinen kiistäminen",
-      "description": "Gaslighting on psykologinen manipulaatiostrategia, jossa toisen ihmisen havaintoja, muistia ja todellisuuden tulkintaa kyseenalaistetaan tai kumotaan…",
+      "description": "Gaslighting eli kaasuvalotus saa toisen epäilemään omaa muistiaan ja havaintojaan. Tyypilliset lauseet, kolme tasoa ja se mikä ei ole gaslightingia.",
       "inLanguage": "fi",
       "articleSection": "Psykologia ja kognitio",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Gaslighting — todellisuuden järjestelmällinen kiistäminen",
-        "description": "Gaslighting on psykologinen manipulaatiostrategia, jossa toisen ihmisen havaintoja, muistia ja todellisuuden tulkintaa kyseenalaistetaan tai kumotaan…",
+        "name": "Gaslighting",
+        "description": "Gaslighting eli kaasuvalotus saa toisen epäilemään omaa muistiaan ja havaintojaan. Tyypilliset lauseet, kolme tasoa ja se mikä ei ole gaslightingia.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -799,29 +800,6 @@
       },
       "datePublished": "2026-06-19",
       "dateModified": "2026-09-04"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.ilmiöt.fi/gaslighting.html#faq",
-      "inLanguage": "fi",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Miten gaslightingin tunnistaa?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Tunnusmerkki on se, että keskustelu siirtyy tapahtuneesta sinun havaintokykyysi: et muista oikein, olet ylireagoiva, kuvittelet. Yksittäinen erimielisyys muistista ei ole gaslightingia — toistuva kaava, jossa oma muistikuvasi asetetaan kysymyksenalaiseksi, on."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Mitä gaslighting on suomeksi?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Suomeksi käytetään sanoja kaasuvalotus ja kaasuvalottaminen. Molemmat ovat käännöslainoja Patrick Hamiltonin näytelmästä Gas Light (1938), jossa aviomies himmentää kaasuvaloja ja kiistää vaimon havainnon. Vakiintunein muoto on yhä gaslighting."
-          }
-        }
-      ]
     }
   ]
 }
@@ -847,13 +825,14 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="gaslighting">
 <div class="ilmio-tag">Ilmiö 28</div>
 <h1>Gaslighting — todellisuuden järjestelmällinen kiistäminen</h1>
 <p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 4.9.2026</p>
 <p>Gaslighting on psykologinen manipulaatiostrategia, jossa toisen ihmisen havaintoja, muistia ja todellisuuden tulkintaa kyseenalaistetaan tai kumotaan järjestelmällisesti. Termi tulee George Cukorin vuoden 1944 elokuvasta <em>Gaslight</em>, jossa mies manipuloi vaimoaan uskomaan tämän menettävän järkensä — sammuttamalla kaasuvalot ja kiistämällä niiden himmenemisen.</p>
 <div class="infolaatikko vastauslohko">
-<h2 class="laatikko-otsikko">Mikä on gaslighting suomeksi?</h2>
+<h2 class="laatikko-otsikko" id="mika-on-gaslighting-suomeksi">Mikä on gaslighting suomeksi?</h2>
 <p style="margin:0.4em 0 0;"><strong>Gaslighting</strong> on suomeksi <strong>kaasuvalotus</strong>. Se tarkoittaa manipulaatiota, jossa toisen havainnot ja muisti kiistetään järjestelmällisesti, kunnes hän alkaa epäillä omaa arvostelukykyään. Nimi tulee näytelmästä <cite>Gas Light</cite> (1938), jossa aviomies himmentää kaasuvaloja ja kiistää vaimonsa havainnon.</p>
 </div>
 <p>Rakenne on aina sama: manipulaattori asettaa kohteen havaintokyvyn epäluotettavaksi. "Noin ei tapahtunut." "Sinä loit riidan tyhjästä." "Olet yliherkkä." Toistettuna tämä saa kohteen epäilemään omia reaktioitaan, muistiaan ja arviointikykyään — kunnes hän alkaa hakea vahvistusta todellisuudelleen juuri manipulaattorilta. Riippuvuussuhde syntyy: manipulaattori on ainoa luotettava tietolähde.</p>
@@ -870,7 +849,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Gaslighting luo silmukan: epäily ohjaa kohteen tarkistamaan todellisuutensa manipulaattorilta.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Kolme tasoa:</h2>
+<h2 class="laatikko-otsikko" id="kolme-tasoa">Kolme tasoa:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Yksittäinen tilanne:</strong> Tapahtuma rekonstruoidaan jälkikäteen. "Et sanonut niin" vaikka sanoit. Toimii yksittäisenä tapauksena — kehittyy ajan myötä rakenteeksi.</li>
 <li><strong>Tunteiden mitätöinti:</strong> "Sinulla ei ole syytä olla loukkaantunut." "Olet liian herkkä." Kohde oppii, ettei hänen tunnereaktion validiteettiin voi luottaa.</li>
@@ -880,7 +859,7 @@ flowchart TD
 <p><strong>Ero suoraan valehteluun:</strong> Tavallinen vale kertoo väärää tietoa. Gaslighting tekee kohteesta epäluotettavan todistajan omasta elämästään. Se ei korvaa faktoja faktoilla — se korvaa kohteen kykyä arvioida faktoja lainkaan. Tämä on syy, miksi se on erityisen vaikea tunnistaa ja sietää.</p>
 <p>Gaslighting kytkeytyy <a href="darvo.html">DARVO</a>:on: kun kohde yrittää nostaa havaitun ongelman esiin, DARVO kääntää syyttäjän uhriksi. Yhdessä ne muodostavat suljetun systeemin, jossa kohde ei voi voittaa. Ks. myös <a href="blame-game.html">The Blame Game</a>: kun gaslighting tapahtuu organisaatiotasolla, "havainnon omistajuus" siirretään yksilöltä pois — ongelma on kohteen ylitulkinta, ei rakenteen vika.</p>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Jatkuva epäily omista muistoista, tunteista ja reaktioista — etenkin kun epäily kohdistuu tiettyihin ihmisiin tai tilanteisiin — on varoitusmerkki. Käytännön testi: kirjaa tapahtumat heti niiden jälkeen. Gaslighting onnistuu manipulaattorin muistiyksinoikeudella — dokumentaatio rikkoo sen.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Jatkuva epäily omista muistoista, tunteista ja reaktioista — etenkin kun epäily kohdistuu tiettyihin ihmisiin tai tilanteisiin — on varoitusmerkki. Käytännön testi: kirjaa tapahtumat heti niiden jälkeen. Gaslighting onnistuu manipulaattorin muistiyksinoikeudella — dokumentaatio rikkoo sen.
     </div>
 <p class="peli-harjoittele" style="margin:1.4rem 0 0;padding:.7rem .9rem;background:#FBF5E0;border-left:3px solid #C9A84C;font-size:.95em"><b>Harjoittele tämän tunnistamista.</b> <a href="peli.html">Vedätys</a> on päivittäinen peli, jossa gaslighting on yksi tunnistettavista ilmiöistä — mukana on aina myös tilanteita, joissa ei ole mitään vikaa.</p>
 <div class="lue-lisaa">
@@ -947,6 +926,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="blame-game.html">← The Blame Game — syyttelyn kehä</a>

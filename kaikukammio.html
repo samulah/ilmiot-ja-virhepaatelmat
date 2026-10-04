@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Kaikukammio — samanmielisyyden vahvistin — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/kaikukammio.html#article",
       "url": "https://www.ilmiöt.fi/kaikukammio.html",
       "headline": "Kaikukammio — samanmielisyyden vahvistin",
-      "description": "Kaikukammio on ympäristö, jossa kohtaat vain omia näkemyksiäsi vahvistavaa sisältöä. Miten kupla syntyy, mitä se aiheuttaa ja miten siitä pääsee ulos?",
+      "description": "Kaikukammio: kuulet vain samanmielisiä. Selitämme miten kupla rakentuu, miksi se vahvistuu algoritmien aikana ja miten pääset siitä ulos.",
       "inLanguage": "fi",
       "articleSection": "Alustatalous ja algoritmit",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Kaikukammio — samanmielisyyden vahvistin",
-        "description": "Kaikukammio on ympäristö, jossa kohtaat vain omia näkemyksiäsi vahvistavaa sisältöä. Miten kupla syntyy, mitä se aiheuttaa ja miten siitä pääsee ulos?",
+        "name": "Kaikukammio",
+        "description": "Kaikukammio: kuulet vain samanmielisiä. Selitämme miten kupla rakentuu, miksi se vahvistuu algoritmien aikana ja miten pääset siitä ulos.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -799,29 +800,6 @@
       },
       "datePublished": "2026-07-06",
       "dateModified": "2026-08-04"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.ilmiöt.fi/kaikukammio.html#faq",
-      "inLanguage": "fi",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Mikä ero on kaikukammiolla ja kuplalla?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Kupla tarkoittaa, ettei eriävää tietoa tule vastaan. Kaikukammiossa sitä tulee, mutta se on ennalta mitätöity: vastapuoli esitellään pilkan kohteena, joten sen argumentteja ei tarvitse käsitellä."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Miten kaikukammiosta pääsee ulos?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Testaa itsesi: osaatko selittää vastapuolen parhaan argumentin niin, että hän tunnistaisi sen omakseen? Jos et, olet kuullut vain sen karikatyyrin. Hae lähde, joka on eri mieltä mutta jota pidät rehellisenä."
-          }
-        }
-      ]
     }
   ]
 }
@@ -847,13 +825,14 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="kaikukammio">
 <div class="ilmio-tag">Ilmiö 96</div>
 <h1>Kaikukammio — samanmielisyyden vahvistin</h1>
 <p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 4.8.2026</p>
 <p>Kaikukammio (engl. <strong>echo chamber</strong>) on ympäristö, jossa kohtaat lähes pelkästään omia näkemyksiäsi vahvistavaa sisältöä ja samanmielisiä ihmisiä. Eriävät näkemykset eivät joko saavu perille lainkaan — tai ne saapuvat valmiiksi kehystettyinä: vastapuolen typerimpinä edustajina, pilkan kohteina.</p>
 <div class="infolaatikko vastauslohko">
-<h2 class="laatikko-otsikko">Mitä kaikukammio tarkoittaa?</h2>
+<h2 class="laatikko-otsikko" id="mita-kaikukammio-tarkoittaa">Mitä kaikukammio tarkoittaa?</h2>
 <p style="margin:0.4em 0 0;"><strong>Kaikukammio</strong> tarkoittaa ympäristöä, jossa eriävä näkemys on mitätöity jo ennen kuin se kuullaan. Olennaista ei ole vastapuolen puuttuminen vaan se, että vastapuoli esitellään epäluotettavana — jolloin sen perusteluja ei tarvitse käsitellä lainkaan.</p>
 </div>
 <p>Lähikäsitteet kannattaa erottaa. <strong>Filtterikupla</strong> (filter bubble, Eli Pariser 2011) on algoritmin tekemää personointia: kaksi ihmistä näkee samalla haulla eri maailman. Filosofi C. Thi Nguyen erottaa lisäksi <strong>tietokuplan</strong> ja kaikukammion: kuplasta toiset äänet puuttuvat vahingossa, kaikukammiossa ne on aktiivisesti leimattu epäluotettaviksi. Ero ratkaisee vaikeusasteen — kupla puhkeaa tiedolla, kaikukammio ei, koska ulkopuolinen tieto on selitetty pahantahtoiseksi jo etukäteen.</p>
@@ -871,7 +850,7 @@ flowchart TD
 <p class="kaavio-selitys">Kaikukammio ruokkii itseään: mitä tiiviimpi kammio, sitä epäilyttävämmältä ulkopuoli näyttää.</p>
 <p>Seuraukset näkyvät sekä yksilössä että yhteiskunnassa. Syntyy väärä konsensuskäsitys ("kaikkihan tätä mieltä ovat") ja aito hämmästys, kun vaalitulos tai mielipidemittaus kertoo muuta. Cass Sunsteinin kuvaama <strong>ryhmäpolarisaatio</strong> tekee lopun: kun samanmieliset keskustelevat keskenään, ryhmän keskikanta ei pysy paikallaan vaan jyrkkenee — kammio ei siis vain säilö mielipiteitä, se kärjistää niitä.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Missä kaikukammioita syntyy nykyään:</h2>
+<h2 class="laatikko-otsikko" id="missa-kaikukammioita-syntyy-nykyaan">Missä kaikukammioita syntyy nykyään:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>X (Twitter):</strong> seuraaminen ja algoritmi rakentavat "poliittisen Twitterin", jossa oma laita näkee lähinnä omia ääniään — ja vastapuolesta vain sen typerimmät sitaatit pilkattavaksi.</li>
 <li><strong>Facebook:</strong> ryhmät ovat kaikukammion perusyksikkö: suljetussa ryhmässä sisältö kiertää ilman ulkopuolista korjausta, ja suositukset ohjaavat yhä tiiviimpiin ryhmiin.</li>
@@ -882,10 +861,10 @@ flowchart TD
 </ul>
 </div>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Kaikukammio rakennetaan myös tahallaan.</h2> Poliittiselle vaikuttajalle valmis kammio on jakelukanava: ensin yleisö eristetään muista lähteistä ("valtamedia valehtelee — vain me kerromme totuuden"), ja sen jälkeen eristetylle yleisölle voi syöttää lähes mitä tahansa, koska korjaavaa tietoa ei enää uskota. Työkalut ovat tuttuja: mikrokohdennettu mainonta näyttää eri kuplille eri viestit (Cambridge Analytica -skandaali 2016 paljasti mittakaavan), trollitehtaat perustavat ja ruokkivat ryhmiä poliittisen kentän molemmilla laidoilla — Venäjän Internet Research Agency pyöritti Yhdysvalloissa kummankin laidan "kansanliikkeitä" — ja kammion sisälle istutettu "oma media" pitää huolen, ettei kukaan lähde. Jyrkkä kupla on myös liiketoimintaa: sitoutunut kammio klikkaa, lahjoittaa ja ostaa.
+<h2 class="laatikko-otsikko" id="kaikukammio-rakennetaan-myos-tahallaan">Kaikukammio rakennetaan myös tahallaan.</h2> Poliittiselle vaikuttajalle valmis kammio on jakelukanava: ensin yleisö eristetään muista lähteistä ("valtamedia valehtelee — vain me kerromme totuuden"), ja sen jälkeen eristetylle yleisölle voi syöttää lähes mitä tahansa, koska korjaavaa tietoa ei enää uskota. Työkalut ovat tuttuja: mikrokohdennettu mainonta näyttää eri kuplille eri viestit (Cambridge Analytica -skandaali 2016 paljasti mittakaavan), trollitehtaat perustavat ja ruokkivat ryhmiä poliittisen kentän molemmilla laidoilla — Venäjän Internet Research Agency pyöritti Yhdysvalloissa kummankin laidan "kansanliikkeitä" — ja kammion sisälle istutettu "oma media" pitää huolen, ettei kukaan lähde. Jyrkkä kupla on myös liiketoimintaa: sitoutunut kammio klikkaa, lahjoittaa ja ostaa.
 </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2>
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2>
 <ul style="margin:0.5em 0 0;">
 <li>Testaa itsesi: osaatko selittää vastapuolen parhaan argumentin niin, että he tunnistaisivat sen omakseen? Jos et, tunnet kannan vain kammiosi kertomana.</li>
 <li>Seuraa tietoisesti muutamaa laatulähdettä, jotka ovat kanssasi eri mieltä. "Eri mieltä" ja "epäluotettava" ovat eri asioita.</li>
@@ -926,7 +905,7 @@ flowchart TD
     <a href="konsensus-fetissi.html" class="liittyvat-kortti" style="--c:#01579b">
       <span class="liittyvat-numero">25</span>
       <span class="liittyvat-teksti">
-        <span class="liittyvat-nimi">Konsensus fetissi</span>
+        <span class="liittyvat-nimi">Konsensusfetissi</span>
         <span class="liittyvat-kuvaus">Yksimielisyydestä tulee itseisarvo, ja erimielisyys aletaan nähdä ongelmana — ei tietona.</span>
       </span>
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
@@ -973,6 +952,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="doomscrolling.html">← Doomscrolling — kurjuusselauksen kierre</a>

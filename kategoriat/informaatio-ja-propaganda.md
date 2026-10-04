@@ -1,7 +1,7 @@
 ---
 kat_id: informaatio-ja-propaganda
 h1: Informaatio ja propaganda — miksi nykypropaganda ei vakuuta vaan väsyttää
-otsikko: Informaatio ja propaganda — 13 vaikuttamisen tekniikkaa selitettynä
+otsikko: Informaatio ja propaganda — {n} vaikuttamisen tekniikkaa selitettynä
 kuvaus: Astroturf, firehose of falsehood, kuollut kissa. Kolmetoista informaatiovaikuttamisen tekniikkaa, joiden tavoite ei ole vakuuttaa vaan uuvuttaa.
 vari: "#27ae60"
 paivitetty: 2026-07-25

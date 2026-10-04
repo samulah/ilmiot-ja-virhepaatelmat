@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Vihamielisen median harha — sama juttu on molempien mielestä puolueellinen — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -392,8 +393,8 @@
       "inLanguage": "fi",
       "articleSection": "Media ja julkisuus",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -402,9 +403,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
+        }
+      },
+      "about": {
+        "@type": "DefinedTerm",
+        "name": "Vihamielisen median harha",
+        "description": "Vihamielisen median harha: kaksi vastakkaista leiriä lukee saman jutun ja kumpikin kokee sen puolueelliseksi itseään vastaan.",
+        "inDefinedTermSet": {
+          "@type": "DefinedTermSet",
+          "name": "Ilmiöitä — Miten valta toimii",
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -441,6 +452,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="vihamielisen-median-harha">
 <div class="ilmio-tag">Ilmiö 139</div>
 <h1>Vihamielisen median harha — sama juttu on molempien mielestä puolueellinen</h1>
@@ -458,10 +470,10 @@ flowchart TD
 <p>Mekanismi on kaksiosainen. Ensinnäkin oma kanta tuntuu neutraalilta lähtöpisteeltä, jolloin jokainen poikkeama siitä näyttää vinoumalta. Toiseksi muisti on valikoiva: omaa kantaa vastaan sanotut kohdat rekisteröityvät voimakkaammin kuin sitä tukevat, koska ne vaativat vastaväitteen. Lopputulos on julkisuuden kannalta epämiellyttävä — mitä tasapainoisempi juttu on, sitä useampi kokee sen vihamieliseksi.</p>
 <p>Harha ei tarkoita, ettei puolueellisuutta olisi olemassa. Se tarkoittaa, ettei oma kokemus puolueellisuudesta ole luotettava mittari sen olemassaolosta.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Ero läheisiin käsitteisiin:</h2> <a href="kaikukammio.html">Kaikukammiossa</a> et kohtaa vastakkaista näkemystä lainkaan; tässä kohtaat sen ja tulkitset sen hyökkäykseksi. <a href="backfire-effect.html">Backfire effect</a> kertoo, mitä siitä seuraa: vastakkaisen tiedon kohtaaminen voi vahvistaa alkuperäistä kantaa. <a href="aanekas-vahemmisto.html">Äänekäs vähemmistö</a> selittää, miksi palaute näyttää yksipuoliselta myös toimituksen suunnasta.
+<h2 class="laatikko-otsikko" id="ero-laheisiin-kasitteisiin">Ero läheisiin käsitteisiin:</h2> <a href="kaikukammio.html">Kaikukammiossa</a> et kohtaa vastakkaista näkemystä lainkaan; tässä kohtaat sen ja tulkitset sen hyökkäykseksi. <a href="backfire-effect.html">Backfire effect</a> kertoo, mitä siitä seuraa: vastakkaisen tiedon kohtaaminen voi vahvistaa alkuperäistä kantaa. <a href="aanekas-vahemmisto.html">Äänekäs vähemmistö</a> selittää, miksi palaute näyttää yksipuoliselta myös toimituksen suunnasta.
     </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2>
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2>
 <ul style="margin:0.5em 0 0;">
 <li>Älä luota muistikuvaan — laske. Montako kriittistä lausetta juttu esittää kumpaakin osapuolta kohtaan?</li>
 <li>Kysy itseltäsi: kokisiko vastapuolen edustaja tämän jutun puolueettomaksi? Jos ei, kumpi teistä on oikeassa ja millä perusteella?</li>
@@ -525,6 +537,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="gell-mannin-amnesia.html">← Gell-Mannin amnesia — luet oman alasi jutun ja unohdat sen heti</a>

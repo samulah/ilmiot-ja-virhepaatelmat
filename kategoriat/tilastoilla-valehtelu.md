@@ -1,10 +1,10 @@
 ---
 kat_id: tilastoilla-valehtelu-kategoria
 h1: Tilastoilla valehtelu — miten luvuilla johdetaan harhaan valehtelematta
-otsikko: Tilastoilla valehtelu — 8 tekniikkaa, joilla luvut johtavat harhaan
+otsikko: Tilastoilla valehtelu — {n} tekniikkaa, joilla luvut johtavat harhaan
 kuvaus: Katkaistu akseli, valikoitu aikaväli, väärä keskiluku. Yhdeksän tapaa johtaa harhaan tilastolla, joka on teknisesti oikein — ja viisi paljastavaa kysymystä.
 vari: "#1565c0"
-paivitetty: 2026-08-14
+paivitetty: 2026-10-04
 naapurit:
   - kategoria-informaatio-ja-propaganda | Informaatio ja propaganda →
   - kategoria-psykologia-ja-kognitio | Psykologia ja kognitio →

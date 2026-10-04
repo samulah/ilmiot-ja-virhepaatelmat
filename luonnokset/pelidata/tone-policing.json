@@ -1,0 +1,54 @@
+{
+ "ilmio": "tone-policing",
+ "laji": "taktiikka",
+ "kohdat": [
+  {
+   "id": "tone-policing-1",
+   "teksti": "— Sä lupasit hoitaa sen laskun kaks viikkoo sitten. — Mä en keskustele sun kanssa, ku sä puhut tolla äänellä. Rauhotu ensin, sit voidaan jutella.",
+   "konteksti": "parisuhde",
+   "kanava": "puhe",
+   "harhauttajat": ["darvo", "gaslighting"],
+   "paljastus": {
+    "mita": "Laskuun ei vastata. Vastaus koskee äänensävyäsi.",
+    "miksi": "Sävy on tulkinnanvarainen, joten et voi todistaa puhuneesi rauhallisesti. Epäkohdan esiin ottanut joutuu puolustamaan käytöstään.",
+    "sanot": "Mä voin sanoo sen rauhallisemmin. Millon sä hoidat sen laskun?"
+   }
+  },
+  {
+   "id": "tone-policing-2",
+   "teksti": "Vuokranantaja vastas, et se käsittelee homeasian sit, ku mä opin kirjottamaan asiallisesti. Ehkä mun viesti oli oikeesti liian kärkäs. Pitäiskö vaan pyytää anteeks ja odottaa?",
+   "konteksti": "vuokra",
+   "kanava": "ajatus",
+   "harhauttajat": ["gaslighting", "huolitrollaus"],
+   "paljastus": {
+    "mita": "Epäilet omaa sävyäsi, koska vastaus tuli sävyyn eikä homeeseen.",
+    "miksi": "Sävyä voi arvostella loputtomiin, joten ehto ei täyty koskaan. Home on seinässä viestin muotoilusta riippumatta.",
+    "sanot": "Kirjoitan asian uudestaan neutraalisti. Milloin tarkastus tehdään?"
+   }
+  },
+  {
+   "id": "tone-policing-3",
+   "teksti": "Kiitos viestistänne koskien virheellistä laskua. Viestinne sävy on kuitenkin syyttävä, emmekä voi käsitellä asiaa ennen kuin yhteydenotto on asiallinen.",
+   "konteksti": "kauppa",
+   "kanava": "sahkoposti",
+   "harhauttajat": ["darvo", "huolitrollaus"],
+   "paljastus": {
+    "mita": "Laskun virhe jää käsittelemättä, koska viestin sävy ei kelvannut.",
+    "miksi": "Sävystä tulee ehto, jonka täyttymisestä päättää se, jota valitus koskee.",
+    "sanot": "Tässä sama asia ilman adjektiiveja: lasku on väärin ja oikea summa on tämä. Milloin se korjataan?"
+   }
+  },
+  {
+   "id": "tone-policing-4",
+   "teksti": "— Suojatiellä jäi taas lapsi melkein auton alle!! Koska tähän saadaan valot? — Tällainen kiihkoilu ei auta ketään. Opettele ensin kirjoittamaan ilman huutomerkkejä.",
+   "konteksti": "some",
+   "kanava": "viesti",
+   "harhauttajat": ["huolitrollaus", "whataboutismi"],
+   "paljastus": {
+    "mita": "Kysymykseen liikennevaloista vastataan huomautuksella huutomerkeistä.",
+    "miksi": "Mitä enemmän asia koskee kirjoittajaa itseään, sitä helpommin tunne näkyy — ja sitä helpommin sen voi ohittaa tunteiluna.",
+    "sanot": "Ilman huutomerkkejä: milloin siihen risteykseen saadaan liikennevalot?"
+   }
+  }
+ ]
+}

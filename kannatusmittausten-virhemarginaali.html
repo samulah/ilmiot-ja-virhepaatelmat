@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Kannatusmittausten virhemarginaali — kahden luvun ero on epätarkempi kuin luvut — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260727">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -392,8 +393,8 @@
       "inLanguage": "fi",
       "articleSection": "Tilastoilla valehtelu",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -402,9 +403,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
+        }
+      },
+      "about": {
+        "@type": "DefinedTerm",
+        "name": "Kannatusmittausten virhemarginaali",
+        "description": "Gallupin virhemarginaali koskee yhtä lukua. Kahden puolueen eron marginaali on noin kaksinkertainen — siksi useimmat ohitukset ovat otsikoita ilman havaintoa.",
+        "inDefinedTermSet": {
+          "@type": "DefinedTermSet",
+          "name": "Ilmiöitä — Miten valta toimii",
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -441,6 +452,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="kannatusmittausten-virhemarginaali">
 <div class="ilmio-tag">Ilmiö 129</div>
 <h1>Kannatusmittausten virhemarginaali — kahden luvun ero on epätarkempi kuin luvut</h1>
@@ -461,10 +473,10 @@ flowchart TD
 <p>Toinen vinouma syntyy toistosta. Kun yhdeksän puolueen kannatusta mitataan kuukausittain, jokin luku poikkeaa aina edellisestä satunnaisesti — ja juuri se päätyy otsikkoon. Muuttumattomuus ei ylitä uutiskynnystä, joten julkisuuteen valikoituu järjestelmällisesti kohina.</p>
 <p>Tästä ei seuraa, että mittaukset olisivat hyödyttömiä. Yksittäinen mittaus on epätarkka; useamman peräkkäisen mittauksen suunta on huomattavasti luotettavampi kuin kumpikaan yksittäinen luku.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Ero läheisiin käsitteisiin:</h2> <a href="cherry-picking-aikavali.html">Cherry picking aikavälillä</a> valitsee alkupisteen, tässä valitaan yksittäinen mittaus. <a href="p-hakkerointi.html">P-hakkerointi</a> kuvaa saman monivertailuongelman tutkimuksessa: kun vertailuja on tarpeeksi, jokin näyttää aina merkitsevältä. <a href="kaksois-y-akseli.html">Kaksois-y-akseli</a> on visuaalinen sukulainen — sekin suurentaa eron, jota ei ole.
+<h2 class="laatikko-otsikko" id="ero-laheisiin-kasitteisiin">Ero läheisiin käsitteisiin:</h2> <a href="cherry-picking-aikavali.html">Cherry picking aikavälillä</a> valitsee alkupisteen, tässä valitaan yksittäinen mittaus. <a href="p-hakkerointi.html">P-hakkerointi</a> kuvaa saman monivertailuongelman tutkimuksessa: kun vertailuja on tarpeeksi, jokin näyttää aina merkitsevältä. <a href="kaksois-y-akseli.html">Kaksois-y-akseli</a> on visuaalinen sukulainen — sekin suurentaa eron, jota ei ole.
     </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2>
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2>
 <ul style="margin:0.5em 0 0;">
 <li>Katso otoskoko ja tiedonkeruutapa ennen lukua. Ilman niitä marginaalia ei voi arvioida.</li>
 <li>Kerro erosta puhuessasi eron marginaali, älä yksittäisen luvun. Nyrkkisääntö on kaksinkertainen; mitä suurempi osuus äänistä on muilla puolueilla, sitä lähempänä kerroin on puoltatoista.</li>
@@ -530,6 +542,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="p-hakkerointi.html">← P-hakkerointi</a>

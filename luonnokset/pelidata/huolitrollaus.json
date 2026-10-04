@@ -1,0 +1,54 @@
+{
+ "ilmio": "huolitrollaus",
+ "laji": "taktiikka",
+ "kohdat": [
+  {
+   "id": "huolitrollaus-1",
+   "teksti": "Kannatan kyllä itsekin pyöräteitä, mutta tämä adressi vain ärsyttää autoilijoita ja kääntää koko kaupunginosan teitä vastaan. Sanon tämän ystävänä: jättäkää se nyt tekemättä.",
+   "konteksti": "some",
+   "kanava": "viesti",
+   "harhauttajat": ["tone-policing", "astroturf"],
+   "paljastus": {
+    "mita": "Kirjoittaja esiintyy kannattajana, mutta ainoa neuvo on luopua koko hankkeesta.",
+    "miksi": "Suora vastustaja saisi vastaansa perustelut. Huolestunut ystävä saa sinut epäröimään, koska näyttää olevan samalla puolella.",
+    "sanot": "Mikä olis sun mielestä parempi tapa ajaa samaa asiaa?"
+   }
+  },
+  {
+   "id": "huolitrollaus-2",
+   "teksti": "Mä oon ihan teidän puolella tässä ruokala-asiassa. Mut jos te viette sen valituksen rehtorille, koko juttu kääntyy teitä vastaan. Kannattais ehkä odottaa ens syksyyn.",
+   "konteksti": "opiskelu",
+   "kanava": "puhe",
+   "harhauttajat": ["tone-policing", "whataboutismi"],
+   "paljastus": {
+    "mita": "Tuki sanotaan ääneen, ja sen perään tulee neuvo olla tekemättä mitään.",
+    "miksi": "Neuvo kuulostaa strategialta. Se johtaa silti aina samaan suuntaan: myöhemmin, hiljempaa, ei nyt.",
+    "sanot": "Jos oot meidän puolella, miten sä hoitaisit tän niin, et se etenee?"
+   }
+  },
+  {
+   "id": "huolitrollaus-3",
+   "teksti": "Mä oon aina sanonu, et sun kannattaa opiskella lisää, tiiät sen. Mut tää iltakoulu nyt ei vaan oo se juttu, eikä ens vuonnakaan kannata, ku on se remontti. Katotaan sit joskus rauhassa.",
+   "konteksti": "perhe",
+   "kanava": "puhe",
+   "harhauttajat": ["tone-policing", "kaksoissidos"],
+   "paljastus": {
+    "mita": "Periaatteessa kannatetaan, käytännössä jokainen konkreettinen vaihtoehto torjutaan.",
+    "miksi": "\"Olen aina kannattanut\" tekee vastaan väittämisestä vaikeaa. Sopivaa hetkeä ei silti tule koskaan.",
+    "sanot": "Millon sit olis sun mielestä hyvä hetki? Sano joku vuosi."
+   }
+  },
+  {
+   "id": "huolitrollaus-4",
+   "teksti": "Olen itsekin ehdottomasti aurinkopaneelien kannalla. Pelkään vain, että tällainen aloite juuri nyt karkottaa maltilliset osakkaat ja koko hanke kaatuu vuosiksi. Asian vuoksi toivon, että vedätte sen pois.",
+   "konteksti": "koti",
+   "kanava": "viesti",
+   "harhauttajat": ["astroturf", "tone-policing"],
+   "paljastus": {
+    "mita": "Hanketta pyydetään perumaan hankkeen omalla edulla.",
+    "miksi": "Aito sisäinen kritiikki ehdottaa parempaa tapaa päästä samaan tavoitteeseen. Tämä ehdottaa vain vähemmän.",
+    "sanot": "Mikä olisi sinusta oikea tapa viedä tätä eteenpäin — ja milloin?"
+   }
+  }
+ ]
+}

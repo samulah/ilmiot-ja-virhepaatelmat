@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Omenoita ja appelsiineja — vertailun harha — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/omenoita-appelsiineja.html#article",
       "url": "https://www.ilmiöt.fi/omenoita-appelsiineja.html",
       "headline": "Omenoita ja appelsiineja — vertailun harha",
-      "description": "Vertailuharha syntyy, kun rinnastetaan kaksi asiaa, jotka näyttävät samanlaisilta mutta eroavat juuri niissä ominaisuuksissa, jotka tekevät vertailusta…",
+      "description": "Omenoita ja appelsiineja: vertailu näyttää reilulta, mutta metriikka on valittu. Selitämme harhan käytännössä ja neljän kysymyksen tarkistuslistan.",
       "inLanguage": "fi",
       "articleSection": "Psykologia ja kognitio",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Omenoita ja appelsiineja — vertailun harha",
-        "description": "Vertailuharha syntyy, kun rinnastetaan kaksi asiaa, jotka näyttävät samanlaisilta mutta eroavat juuri niissä ominaisuuksissa, jotka tekevät vertailusta…",
+        "name": "Omenoita ja appelsiineja",
+        "description": "Omenoita ja appelsiineja: vertailu näyttää reilulta, mutta metriikka on valittu. Selitämme harhan käytännössä ja neljän kysymyksen tarkistuslistan.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -824,6 +825,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="omenoita-appelsiineja">
 <div class="ilmio-tag">Ilmiö 26</div>
 <h1>Omenoita ja appelsiineja — vertailun harha</h1>
@@ -841,7 +843,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Vertailuharha: metriikka on oikein valittu siihen tarkoitukseen, mutta väärä kysymykseen — ja tämä ero hämärtyy.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Konkreettisia esimerkkejä:</h2>
+<h2 class="laatikko-otsikko" id="konkreettisia-esimerkkeja">Konkreettisia esimerkkejä:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Julkinen vs. yksityinen terveydenhuolto:</strong> "Yksityinen on nopeampaa" — vertaillaan yksityisen sektorin parhaita palveluja julkisen sektorin pahimpaan ruuhkaan. Oikea vertailu olisi sama potilasryhmä, sama vaiva, samalla kiireellisyydellä.</li>
 <li><strong>Sotilasmenot:</strong> "Suomi käyttää puolustukseen enemmän kuin Norja" (absoluuttisina euroina) — mutta Norjan BKT on suurempi. Oikea metriikka on BKT-prosentti. Tai päinvastoin: BKT-prosentti voi piilottaa absoluuttisen resurssieron.</li>
@@ -852,11 +854,11 @@ flowchart TD
 </div>
 <p>Vertailuharha on erityisen tehokas poliittisessa viestinnässä, koska se antaa väitteelle faktuaalisen kuoren. Luvut ovat oikeita — vain niiden valinta on harhaanjohtava. Tämä tekee harhan kumoamisesta hankalaa: pitää ensin selittää, <em>miksi</em> vertailu on epäreilu, ennen kuin voi osoittaa, että johtopäätös on väärä.</p>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Poliittinen käyttö:</h2> Vertailuharhaa käytetään systemaattisesti silloin, kun halutaan tehdä epäsuotuisasta asiasta suotuisa tai päinvastoin. Tunnusmerkki: metriikka vaihtuu aina kun se alkaa osoittaa väärään suuntaan. "Emme vertaa BKT:tä vaan asukasta kohden" — ja kun sekin on epäsuotuisa, siirrytään ostovoimapariteettiin. Oikea vertailu on se, joka pysyy samana riippumatta siitä, kumpi osapuoli näyttää paremmalta.
+<h2 class="laatikko-otsikko" id="poliittinen-kaytto">Poliittinen käyttö:</h2> Vertailuharhaa käytetään systemaattisesti silloin, kun halutaan tehdä epäsuotuisasta asiasta suotuisa tai päinvastoin. Tunnusmerkki: metriikka vaihtuu aina kun se alkaa osoittaa väärään suuntaan. "Emme vertaa BKT:tä vaan asukasta kohden" — ja kun sekin on epäsuotuisa, siirrytään ostovoimapariteettiin. Oikea vertailu on se, joka pysyy samana riippumatta siitä, kumpi osapuoli näyttää paremmalta.
     </div>
 <p>Vertailuharha kätkeytyy näennäisesti neutraalin luvun taakse — harha on metriikan valinnassa, ei laskutoimituksessa.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Kolme tyypillistä muotoa:</h2>
+<h2 class="laatikko-otsikko" id="kolme-tyypillista-muotoa">Kolme tyypillistä muotoa:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Kontekstiton absoluuttiluku:</strong> "Ruotsi käyttää puolustukseen 10 miljardia, Suomi 6 miljardia" — ei mainita, että Ruotsin väestö on lähes kaksinkertainen.</li>
 <li><strong>Eri mittarit samaan lauseeseen:</strong> "Suomessa sairaalapaikkoja on vähemmän kuin Saksassa" — mainitsematta, että Saksa laskee hoivakodit ja Suomi ei.</li>
@@ -865,7 +867,7 @@ flowchart TD
 </div>
 <p>Harha esiintyy erityisen usein tilastoja hyödyntävässä retoriikassa (ks. <a href="kategoria-tilastoilla-valehtelu.html">Tilastoilla valehtelu</a>) ja BKT-vertailuissa (ks. <a href="bkt-harha.html">BKT-harha</a>). Propagandassa sitä käytetään tietoisesti: valitaan metriikka, jossa oma puoli voittaa, ja pidetään huoli, että konteksti jää mainitsematta.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Suomalaisia esimerkkejä:</h2>
+<h2 class="laatikko-otsikko" id="suomalaisia-esimerkkeja">Suomalaisia esimerkkejä:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Veroaste:</strong> "Suomen veroaste on Euroopan korkein" — ilman mainintaa, mitä verorahoilla saa (ilmainen koulutus, terveydenhuolto, lastenhoidon tuki). Vertailu USA:han ilman palveluerojen huomiointia on omenoita ja appelsiineja.</li>
 <li><strong>Rikostilastot:</strong> Maahanmuuttajien rikollisuusluvut eri maissa eivät ole vertailukelpoisia, koska rikosten kirjaamistavat, laillisuusmääritelmät ja demografiat vaihtelevat.</li>
@@ -873,7 +875,7 @@ flowchart TD
 </ul>
 </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen — vertailun tarkistuslista:</h2> Kun kuulet vertailun, käy läpi neljä kysymystä: <em>Sama mittari?</em> (bruttopalkka vai nettopalkka, eurot vai BKT-prosentti) <em>Sama ajanjakso?</em> (noususuhdanne vai kriisivuosi, päivä vai vuosikymmenten trendi) <em>Sama populaatio?</em> (koko väestö vai valikoitunut ryhmä, sama potilasryhmä vai paras vs. pahin) <em>Sama kirjaamistapa?</em> (lasketaanko molemmissa maissa sama asia samalla tavalla). Yksikin "ei" tekee vertailusta omenoita ja appelsiineja. Ja kysy lopuksi: kuka valitsi juuri tämän metriikan ja miksi — reilu vertailu pysyy samana riippumatta siitä, kumpi osapuoli näyttää paremmalta.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot-vertailun-tarkistuslista">Tunnistaminen ja vastakeinot — vertailun tarkistuslista:</h2> Kun kuulet vertailun, käy läpi neljä kysymystä: <em>Sama mittari?</em> (bruttopalkka vai nettopalkka, eurot vai BKT-prosentti) <em>Sama ajanjakso?</em> (noususuhdanne vai kriisivuosi, päivä vai vuosikymmenten trendi) <em>Sama populaatio?</em> (koko väestö vai valikoitunut ryhmä, sama potilasryhmä vai paras vs. pahin) <em>Sama kirjaamistapa?</em> (lasketaanko molemmissa maissa sama asia samalla tavalla). Yksikin "ei" tekee vertailusta omenoita ja appelsiineja. Ja kysy lopuksi: kuka valitsi juuri tämän metriikan ja miksi — reilu vertailu pysyy samana riippumatta siitä, kumpi osapuoli näyttää paremmalta.
     </div>
 <p class="peli-harjoittele" style="margin:1.4rem 0 0;padding:.7rem .9rem;background:#FBF5E0;border-left:3px solid #C9A84C;font-size:.95em"><b>Harjoittele tämän tunnistamista.</b> <a href="peli.html">Vedätys</a> on päivittäinen peli, jossa omenoita ja appelsiineja on yksi tunnistettavista ilmiöistä — mukana on aina myös tilanteita, joissa ei ole mitään vikaa.</p>
 <div class="lue-lisaa">
@@ -955,9 +957,10 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
-    <a class="kortti-nav-btn" href="konsensus-fetissi.html">← Konsensus fetissi — kun yksimielisyydestä tulee itseisarvo</a>
+    <a class="kortti-nav-btn" href="konsensus-fetissi.html">← Konsensusfetissi — kun yksimielisyydestä tulee itseisarvo</a>
     <div class="kortti-nav-center">
       <span class="kortti-nav-laskuri">26 / 165</span>
       <span class="kortti-nav-vinkki">

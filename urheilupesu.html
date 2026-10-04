@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Urheilupesu — maine ostetaan otteluiden varjolla — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -392,8 +393,8 @@
       "inLanguage": "fi",
       "articleSection": "Pesut ja maineenhallinta",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -402,9 +403,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
+        }
+      },
+      "about": {
+        "@type": "DefinedTerm",
+        "name": "Urheilupesu",
+        "description": "Urheilupesu (sportswashing) tarkoittaa myönteisen huomion ostamista urheilun kautta, jotta katse siirtyy pois maine- tai ihmisoikeusongelmasta.",
+        "inDefinedTermSet": {
+          "@type": "DefinedTermSet",
+          "name": "Ilmiöitä — Miten valta toimii",
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -441,6 +452,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="urheilupesu">
 <div class="ilmio-tag">Ilmiö 114</div>
 <h1>Urheilupesu — maine ostetaan otteluiden varjolla</h1>
@@ -460,7 +472,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Urheilupesun teho perustuu huomion siirtymään, ei väitteeseen.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Miksi juuri urheilu toimii</h2>
+<h2 class="laatikko-otsikko" id="miksi-juuri-urheilu-toimii">Miksi juuri urheilu toimii</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Toistuva näkyvyys:</strong> seura esiintyy mediassa viikoittain vuosikymmeniä — mainoskampanja loppuu, sarjataulukko ei.</li>
 <li><strong>Tunneside siirtyy:</strong> fani kiintyy joukkueeseen, ja omistaja tulee kaupan päälle.</li>
@@ -470,7 +482,7 @@ flowchart TD
 </ul>
 </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Erota tapahtuma ja isäntä. Otteluiden seuraaminen ei ole kannanotto, mutta isännän valinta on aina ollut jonkun päätös — ja sen päätöksen perustelut ovat julkista tietoa. <strong>Seuraa rahaa:</strong> onko omistaja yksityinen sijoittaja vai valtiollinen rahasto, ja mitä samalla rahalla tehdään muualla? <strong>Huomaa retoriikka:</strong> kun kritiikki torjutaan "politisoinnin" leimalla, kyse on aiheen sulkemisesta, ei vastaväitteestä. <strong>Katso ajoitusta:</strong> suurhankinnat osuvat usein juuri raportin, oikeudenkäynnin tai kansainvälisen huomion kanssa samaan hetkeen.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Erota tapahtuma ja isäntä. Otteluiden seuraaminen ei ole kannanotto, mutta isännän valinta on aina ollut jonkun päätös — ja sen päätöksen perustelut ovat julkista tietoa. <strong>Seuraa rahaa:</strong> onko omistaja yksityinen sijoittaja vai valtiollinen rahasto, ja mitä samalla rahalla tehdään muualla? <strong>Huomaa retoriikka:</strong> kun kritiikki torjutaan "politisoinnin" leimalla, kyse on aiheen sulkemisesta, ei vastaväitteestä. <strong>Katso ajoitusta:</strong> suurhankinnat osuvat usein juuri raportin, oikeudenkäynnin tai kansainvälisen huomion kanssa samaan hetkeen.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -478,7 +490,7 @@ flowchart TD
 <span class="lue-lisaa-tyyppi">Verkossa</span>
 <ul class="lue-lisaa-lista">
 <li><a href="https://en.wikipedia.org/wiki/Sportswashing" target="_blank" rel="noopener">Wikipedia: Sportswashing (englanniksi)</a></li>
-<li><a href="https://www.amnesty.org/en/latest/news/2024/11/saudi-arabia-2034-world-cup-bid-evaluation-an-astonishing-whitewash/" target="_blank" rel="noopener">Amnesty International: 2034 World Cup bid evaluation (englanniksi)</a></li>
+<li><a href="https://www.amnesty.org/en/latest/news/2024/12/global-confirmation-of-saudi-arabia-as-2034-fifa-world-cup-host-puts-many-lives-at-risk/" target="_blank" rel="noopener">Amnesty International: Saudi-Arabian valinta vuoden 2034 MM-kisojen isännäksi (englanniksi)</a></li>
 </ul>
 </div>
 </div></div>
@@ -536,6 +548,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="sinipesu.html">← Sinipesu — vastuullisuus ilman valvontaa</a>

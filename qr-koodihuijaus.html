@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>QR-koodihuijaus — väärä koodi, oikea lasku — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/qr-koodihuijaus.html#article",
       "url": "https://www.ilmiöt.fi/qr-koodihuijaus.html",
       "headline": "QR-koodihuijaus — väärä koodi, oikea lasku",
-      "description": "QR-koodihuijaus eli quishing ohjaa uhrin väärennetyllä QR-koodilla valesivulle maksamaan tai antamaan korttitietonsa. Parkkimittarit ovat tyypillinen kohde.",
+      "description": "QR-koodihuijaus: väärä tarra, oikea lasku. Selitämme miten koodinvaihtohuijaus toimii käytännössä ja millä rutiineilla suojaudut skannatessa.",
       "inLanguage": "fi",
       "articleSection": "Huijaukset ja petokset",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "QR-koodihuijaus — väärä koodi, oikea lasku",
-        "description": "QR-koodihuijaus eli quishing ohjaa uhrin väärennetyllä QR-koodilla valesivulle maksamaan tai antamaan korttitietonsa. Parkkimittarit ovat tyypillinen kohde.",
+        "name": "QR-koodihuijaus",
+        "description": "QR-koodihuijaus: väärä tarra, oikea lasku. Selitämme miten koodinvaihtohuijaus toimii käytännössä ja millä rutiineilla suojaudut skannatessa.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -824,6 +825,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="qr-koodihuijaus">
 <div class="ilmio-tag">Ilmiö 74</div>
 <h1>QR-koodihuijaus — väärä koodi, oikea lasku</h1>
@@ -841,7 +843,7 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Quishingin ydin: koodi on linkki, jota et voi lukea — mutta jonka avaat silti.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Missä quishing iskee:</h2>
+<h2 class="laatikko-otsikko" id="missa-quishing-iskee">Missä quishing iskee:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Parkkimittarit:</strong> tarra aidon koodin päällä ohjaa valemaksusivulle — muoto levisi Euroopassa 2023 alkaen, ja poliisi on varoittanut siitä Suomessakin.</li>
 <li><strong>Sähköautojen latausasemat:</strong> sama temppu, isommat summat.</li>
@@ -851,7 +853,7 @@ flowchart TD
 </ul>
 </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Maksa pysäköinti sovelluksella, jonka asennat itse sovelluskaupasta — älä koodin ohjaamana. Katso koodia: onko se tarra tarran päällä, eri materiaalia kuin ympäristönsä? Lue avautuva osoite ennen jatkamista, ja jos "parkkimaksusivu" kysyy verkkopankkitunnuksia tai kortin kaikkia tietoja, sulje selain. Älä koskaan asenna sovellusta QR-koodin kehotuksesta. Nyrkkisääntö: tuntemattoman QR-koodi on tuntemattoman lähettämä linkki — kohtele sitä samoin. Organisaatiolle: tarkastakaa omat mittarit, asemat ja tarrapinnat säännöllisesti — teidän pintanne on jonkun toisen kalasteluväline.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Maksa pysäköinti sovelluksella, jonka asennat itse sovelluskaupasta — älä koodin ohjaamana. Katso koodia: onko se tarra tarran päällä, eri materiaalia kuin ympäristönsä? Lue avautuva osoite ennen jatkamista, ja jos "parkkimaksusivu" kysyy verkkopankkitunnuksia tai kortin kaikkia tietoja, sulje selain. Älä koskaan asenna sovellusta QR-koodin kehotuksesta. Nyrkkisääntö: tuntemattoman QR-koodi on tuntemattoman lähettämä linkki — kohtele sitä samoin. Organisaatiolle: tarkastakaa omat mittarit, asemat ja tarrapinnat säännöllisesti — teidän pintanne on jonkun toisen kalasteluväline.
     </div>
 <div class="lue-lisaa">
 <div class="lue-lisaa-otsikko">Lue lisää</div>
@@ -902,6 +904,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="badger-game.html">← Badger game — houkuttele kiusalliseen tilanteeseen, kiristä vaikenemisesta</a>

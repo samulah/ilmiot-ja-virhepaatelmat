@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Evästeansa — hyväksyminen yhdellä klikkauksella, kieltäytyminen viidellä — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -333,17 +334,17 @@
 </style>
 
   <!-- SEO -->
-  <meta name="description" content="Evästeansa on evästebanneri, jossa suostumus on yksi klikkaus ja kieltäytyminen viisi. Sääntely vaatii yhtä helppoa hylkäämistä — käytännössä epäsymmetria on sääntö.">
+  <meta name="description" content="Evästeansa on evästebanneri, jossa suostumus on yksi klikkaus ja kieltäytyminen viisi. Sääntely vaatii yhtä helppoa hylkäämistä — käytäntö on toinen.">
   <link rel="canonical" href="https://www.ilmiöt.fi/evasteansa.html">
   <meta property="og:title" content="Evästeansa — hyväksyminen yhdellä klikkauksella, kieltäytyminen viidellä — Ilmiöitä">
-  <meta property="og:description" content="Evästeansa on evästebanneri, jossa suostumus on yksi klikkaus ja kieltäytyminen viisi. Sääntely vaatii yhtä helppoa hylkäämistä — käytännössä epäsymmetria on sääntö.">
+  <meta property="og:description" content="Evästeansa on evästebanneri, jossa suostumus on yksi klikkaus ja kieltäytyminen viisi. Sääntely vaatii yhtä helppoa hylkäämistä — käytäntö on toinen.">
   <meta property="og:url" content="https://www.ilmiöt.fi/evasteansa.html">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="fi_FI">
   <meta property="og:site_name" content="Ilmiöitä — Miten valta toimii">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Evästeansa — hyväksyminen yhdellä klikkauksella, kieltäytyminen viidellä — Ilmiöitä">
-  <meta name="twitter:description" content="Evästeansa on evästebanneri, jossa suostumus on yksi klikkaus ja kieltäytyminen viisi. Sääntely vaatii yhtä helppoa hylkäämistä — käytännössä epäsymmetria on sääntö.">
+  <meta name="twitter:description" content="Evästeansa on evästebanneri, jossa suostumus on yksi klikkaus ja kieltäytyminen viisi. Sääntely vaatii yhtä helppoa hylkäämistä — käytäntö on toinen.">
   <meta property="og:image" content="https://www.ilmiöt.fi/og/brand.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -388,12 +389,12 @@
       "@id": "https://www.ilmiöt.fi/evasteansa.html#article",
       "url": "https://www.ilmiöt.fi/evasteansa.html",
       "headline": "Evästeansa — hyväksyminen yhdellä klikkauksella, kieltäytyminen viidellä",
-      "description": "Evästeansa on evästebanneri, jossa suostumus on yksi klikkaus ja kieltäytyminen viisi. Sääntely vaatii yhtä helppoa hylkäämistä — käytännössä epäsymmetria on sääntö.",
+      "description": "Evästeansa on evästebanneri, jossa suostumus on yksi klikkaus ja kieltäytyminen viisi. Sääntely vaatii yhtä helppoa hylkäämistä — käytäntö on toinen.",
       "inLanguage": "fi",
       "articleSection": "Alustatalous ja algoritmit",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -402,9 +403,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
+        }
+      },
+      "about": {
+        "@type": "DefinedTerm",
+        "name": "Evästeansa",
+        "description": "Evästeansa on evästebanneri, jossa suostumus on yksi klikkaus ja kieltäytyminen viisi. Sääntely vaatii yhtä helppoa hylkäämistä — käytäntö on toinen.",
+        "inDefinedTermSet": {
+          "@type": "DefinedTermSet",
+          "name": "Ilmiöitä — Miten valta toimii",
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -416,29 +427,6 @@
       },
       "datePublished": "2026-08-14",
       "dateModified": "2026-08-14"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.ilmiöt.fi/evasteansa.html#faq",
-      "inLanguage": "fi",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Mikä on evästeansa?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Evästeansa on evästebanneri, jossa suostumuksen antaminen on tehty selvästi helpommaksi kuin sen epääminen: hyväksyminen on yksi värillinen nappi, kieltäytyminen vaatii asetusvalikon, kytkinlistan ja erillisen tallennuksen. Suostumus syntyy tällöin bannerin muodosta eikä käyttäjän tahdosta."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Saako evästeiden hylkäämisen tehdä vaikeammaksi kuin hyväksymisen?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ei. Tietosuoja-asetus edellyttää, että suostumus on vapaaehtoinen ja yhtä helppo perua kuin antaa. Ranskan tietosuojaviranomainen CNIL sakotti vuodenvaihteessa 2021–2022 Googlea 150 ja Facebookia 60 miljoonalla eurolla siitä, että kieltäytyminen vaati useamman klikkauksen kuin hyväksyminen."
-          }
-        }
-      ]
     }
   ]
 }
@@ -464,13 +452,14 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="evasteansa">
 <div class="ilmio-tag">Ilmiö 107</div>
 <h1>Evästeansa — hyväksyminen yhdellä klikkauksella, kieltäytyminen viidellä</h1>
 <p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 14.8.2026</p>
 <p><strong>Evästeansa</strong> (englanniksi <em>cookie consent dark pattern</em>) on evästebanneri, joka on rakennettu tuottamaan suostumus riippumatta siitä, mitä käyttäjä haluaisi. Kikka ei ole valheessa vaan epäsymmetriassa: <em>Hyväksy kaikki</em> on värillinen nappi heti ensimmäisellä näytöllä, kieltäytyminen taas vaatii asetusvalikon, kytkinlistan ja erillisen tallennuksen. Valinta on sama, hinta ei.</p>
 <div class="infolaatikko vastauslohko">
-<h2 class="laatikko-otsikko">Saako evästeiden hylkäämisen tehdä vaikeammaksi kuin hyväksymisen?</h2>
+<h2 class="laatikko-otsikko" id="saako-evasteiden-hylkaamisen-tehda-vaikeammaksi-kuin-hyvaksy">Saako evästeiden hylkäämisen tehdä vaikeammaksi kuin hyväksymisen?</h2>
 <p style="margin:0.4em 0 0;">Ei. Tietosuoja-asetus edellyttää, että suostumus on vapaaehtoinen ja yhtä helppo perua kuin antaa. Ranskan tietosuojaviranomainen CNIL sakotti vuodenvaihteessa 2021–2022 Googlea 150 ja Facebookia 60 miljoonalla eurolla nimenomaan siitä, että kieltäytyminen vaati useamman klikkauksen kuin hyväksyminen. Suomessa evästeitä valvoo Traficomin Kyberturvallisuuskeskus ja henkilötietojen käsittelyä tietosuojavaltuutettu.</p>
 </div>
 <div class="mermaid">
@@ -488,10 +477,10 @@ flowchart TD
 <p class="kaavio-selitys">Molemmat polut päätyvät valintaan. Toinen on yksi klikkaus, toinen viisi — ja vain toinen muistetaan.</p>
 <p>Epäsymmetria toimii, koska banneri on este halutun asian edessä. Käyttäjä ei ole tekemässä tietosuojavalintaa vaan lukemassa uutista, ja nopein ulospääsy voittaa. Euroopan komission vuonna 2022 julkaisema selvitys löysi vähintään yhden pimeän kuvion 97 prosentilta suosituimmista EU-sivustoista ja -sovelluksista. Evästebanneri on niistä näkyvin, koska se kohdataan uudelleen joka kerta.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Miten evästeansa eroaa läheisistä ilmiöistä?</h2> Kyse on käyttöliittymän muodosta, ei suostuttelusta: mitään ei luvata eikä kiistetä, vaan toinen polku tehdään pidemmäksi. <a href="tilausansa.html">Tilausansa</a> käyttää samaa keinoa peruuttamiseen, <a href="houkutinvaihtoehto.html">houkutinvaihtoehto</a> taas ohjaa valintaa lisäämällä vaihtoehdon eikä piilottamalla sitä.
+<h2 class="laatikko-otsikko" id="miten-evasteansa-eroaa-laheisista-ilmioista">Miten evästeansa eroaa läheisistä ilmiöistä?</h2> Kyse on käyttöliittymän muodosta, ei suostuttelusta: mitään ei luvata eikä kiistetä, vaan toinen polku tehdään pidemmäksi. <a href="tilausansa.html">Tilausansa</a> käyttää samaa keinoa peruuttamiseen, <a href="houkutinvaihtoehto.html">houkutinvaihtoehto</a> taas ohjaa valintaa lisäämällä vaihtoehdon eikä piilottamalla sitä.
     </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2>
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2>
 <ul style="margin:0.5em 0 0;">
 <li>Etsi <em>Hylkää kaikki</em> ensimmäiseltä näytöltä. Jos sitä ei ole, banneri ei täytä vaatimusta yhtä helposta kieltäytymisestä.</li>
 <li>Avaa <em>oikeutettu etu</em> -välilehti erikseen: kytkimet ovat siellä usein päällä, vaikka olisit hylännyt kaiken muun.</li>
@@ -555,6 +544,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="tekoalypsykoosi.html">← Tekoälypsykoosi — chatbot, joka ei ole koskaan eri mieltä</a>

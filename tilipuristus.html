@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Tilipuristus — maksun viivytys aseena — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   
   
   
@@ -734,12 +736,12 @@
       "@id": "https://www.ilmiöt.fi/tilipuristus.html#article",
       "url": "https://www.ilmiöt.fi/tilipuristus.html",
       "headline": "Tilipuristus — maksun viivytys aseena",
-      "description": "Tilipuristuksessa työ vastaanotetaan mutta maksua venytetään — pitkillä maksuehdoilla, jatkuvilla \"hyväksyntäkierroksilla\", katoavilla laskuilla tai ehdolla…",
+      "description": "Tilipuristus: maksun viivyttäminen on neuvotteluase. Selitämme miten isot ostajat rahoittavat itseään toimittajillaan ja miten suojaudut siltä.",
       "inLanguage": "fi",
       "articleSection": "Myyntikikat ja painostus",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -748,19 +750,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Tilipuristus — maksun viivytys aseena",
-        "description": "Tilipuristuksessa työ vastaanotetaan mutta maksua venytetään — pitkillä maksuehdoilla, jatkuvilla \"hyväksyntäkierroksilla\", katoavilla laskuilla tai ehdolla…",
+        "name": "Tilipuristus",
+        "description": "Tilipuristus: maksun viivyttäminen on neuvotteluase. Selitämme miten isot ostajat rahoittavat itseään toimittajillaan ja miten suojaudut siltä.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -797,6 +799,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="tilipuristus">
 <div class="ilmio-tag">Ilmiö 84</div>
 <h1>Tilipuristus — maksun viivytys aseena</h1>
@@ -804,7 +807,7 @@
 <p>Tilipuristuksessa työ vastaanotetaan mutta <strong>maksua venytetään</strong> — pitkillä maksuehdoilla, jatkuvilla "hyväksyntäkierroksilla", katoavilla laskuilla tai ehdolla "maksamme kun asiakas maksaa meille". Tekijä on jo tehnyt työn, joten neuvotteluvoima on kääntynyt: hän tarvitsee rahansa kipeämmin kuin maksaja tarvitsee häntä. Viivytys muuttuu painostusvälineeksi, jolla saadaan alennuksia, lisätöitä tai myöntyvyyttä.</p>
 <p>Mekanismi on kassavirran epäsymmetria. Suurella tilaajalla on varaa odottaa; yksittäisellä freelancerilla ei. Mitä pidemmäksi maksu venyy, sitä halvemmalla tekijä on valmis "sopimaan", jotta saisi edes osan rahoistaan.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Tyypilliset muodot:</h2>
+<h2 class="laatikko-otsikko" id="tyypilliset-muodot">Tyypilliset muodot:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>"Maksamme kun asiakas maksaa":</strong> tekijälle siirretään riski, johon hän ei voi vaikuttaa.</li>
 <li><strong>Venyvät maksuehdot:</strong> 60, 90 tai 120 päivää netto — koroton laina tilaajalle.</li>
@@ -814,7 +817,7 @@
 </ul>
 </div>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Rakenna suoja sopimukseen <em>ennen</em> työtä: ennakkomaksu tai osalaskutus virstanpylväittäin, selkeät maksuehdot, viivästyskorko ja omistusoikeuden siirtyminen vasta maksun jälkeen. Älä luovuta lopullisia tiedostoja ennen maksua. "Maksamme kun saamme itse maksun" ei ole sinun riskisi kannettavaksi. Mitä isompi ja hitaampi maksaja, sitä tärkeämpää on, ettei koko korvaus ole loppuerän varassa.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Rakenna suoja sopimukseen <em>ennen</em> työtä: ennakkomaksu tai osalaskutus virstanpylväittäin, selkeät maksuehdot, viivästyskorko ja omistusoikeuden siirtyminen vasta maksun jälkeen. Älä luovuta lopullisia tiedostoja ennen maksua. "Maksamme kun saamme itse maksun" ei ole sinun riskisi kannettavaksi. Mitä isompi ja hitaampi maksaja, sitä tärkeämpää on, ettei koko korvaus ole loppuerän varassa.
     </div>
 <p class="peli-harjoittele" style="margin:1.4rem 0 0;padding:.7rem .9rem;background:#FBF5E0;border-left:3px solid #C9A84C;font-size:.95em"><b>Harjoittele tämän tunnistamista.</b> <a href="peli.html">Vedätys</a> on päivittäinen peli, jossa tilipuristus on yksi tunnistettavista ilmiöistä — mukana on aina myös tilanteita, joissa ei ole mitään vikaa.</p>
 <div class="lue-lisaa">
@@ -829,7 +832,7 @@
 <div class="lue-lisaa-rivi">
 <span class="lue-lisaa-tyyppi">Verkossa</span>
 <ul class="lue-lisaa-lista">
-<li><a href="https://en.wikipedia.org/wiki/Pay_compression" target="_blank" rel="noopener">Wikipedia: Pay compression (englanniksi)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Wage_compression" target="_blank" rel="noopener">Wikipedia: Wage compression (englanniksi)</a></li>
 </ul>
 </div>
 </div>
@@ -880,6 +883,7 @@
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="valittajan-skimmaus.html">← Välittäjän skimmaus — siivu molemmilta, marginaali piilossa</a>

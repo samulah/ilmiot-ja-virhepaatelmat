@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Hofstadterin laki — rekursiivinen aikataululaki — Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/hofstadterin-laki.html#article",
       "url": "https://www.ilmiöt.fi/hofstadterin-laki.html",
       "headline": "Hofstadterin laki — rekursiivinen aikataululaki",
-      "description": "Douglas Hofstadter muotoili rekursiivisen totuuden teoksessaan Gödel, Escher, Bach (1979): \"Kaikki kestää aina odotettua kauemmin — jopa kun otat…",
+      "description": "Hofstadterin laki: kaikki kestää kauemmin, vaikka ottaisit lain huomioon. Selitämme suunnitteluharhan ja referenssiluokan käytön arvioinnissa.",
       "inLanguage": "fi",
       "articleSection": "Projekti- ja ohjelmistokehitys",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Hofstadterin laki — rekursiivinen aikataululaki",
-        "description": "Douglas Hofstadter muotoili rekursiivisen totuuden teoksessaan Gödel, Escher, Bach (1979): \"Kaikki kestää aina odotettua kauemmin — jopa kun otat…",
+        "name": "Hofstadterin laki",
+        "description": "Hofstadterin laki: kaikki kestää kauemmin, vaikka ottaisit lain huomioon. Selitämme suunnitteluharhan ja referenssiluokan käytön arvioinnissa.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -824,6 +825,7 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="hofstadterin-laki">
 <div class="ilmio-tag">Ilmiö 53</div>
 <h1>Hofstadterin laki — rekursiivinen aikataululaki</h1>
@@ -839,13 +841,13 @@ flowchart TD
     </div>
 <p class="kaavio-selitys">Hofstadterin laki on rekursiivinen: koska sama vinouma vaikuttaa myös puskuriin, puskuri on aina liian pieni.</p>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Miksi puskuri ei riitä:</h2> Ilmiö kytkeytyy Kahnemanin ja Tverskyn <em>suunnitteluharhaukseen</em> (planning fallacy): ihmiset arvioivat omaa projektiaan sisältä käsin — parhaiden skenaarioiden mukaan — eivätkä ulkoa käsin vertaamalla vastaaviin aiempiin projekteihin. Rakennusprojekti arvioidaan sen mukaan miten <em>tämä</em> projekti sujuu, ei sen mukaan miten vastaavat projektit yleensä sujuvat.
+<h2 class="laatikko-otsikko" id="miksi-puskuri-ei-riita">Miksi puskuri ei riitä:</h2> Ilmiö kytkeytyy Kahnemanin ja Tverskyn <em>suunnitteluharhaukseen</em> (planning fallacy): ihmiset arvioivat omaa projektiaan sisältä käsin — parhaiden skenaarioiden mukaan — eivätkä ulkoa käsin vertaamalla vastaaviin aiempiin projekteihin. Rakennusprojekti arvioidaan sen mukaan miten <em>tämä</em> projekti sujuu, ei sen mukaan miten vastaavat projektit yleensä sujuvat.
 </div>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Ilmiö arjessa:</h2> Kylpyhuoneremontin urakoitsija arvioi kolme viikkoa, ja tilaaja varaa varmuuden vuoksi neljä. Purkuvaiheessa paljastuu vesivaurio, laattatoimitus myöhästyy ja LVI-asentajan aikataulu siirtyy — remontti valmistuu seitsemännellä viikolla. Sama toistuu it-projekteissa: kolmen kuukauden migraatioarvio venyy puoleen vuoteen, vaikka arvioon "lisättiin jo puskuria". Puskuri ei auttanut, koska se mitoitettiin saman sisäisen optimismin varassa kuin itse arvio — juuri tämä on lain rekursiivinen ydin.
+<h2 class="laatikko-otsikko" id="ilmio-arjessa">Ilmiö arjessa:</h2> Kylpyhuoneremontin urakoitsija arvioi kolme viikkoa, ja tilaaja varaa varmuuden vuoksi neljä. Purkuvaiheessa paljastuu vesivaurio, laattatoimitus myöhästyy ja LVI-asentajan aikataulu siirtyy — remontti valmistuu seitsemännellä viikolla. Sama toistuu it-projekteissa: kolmen kuukauden migraatioarvio venyy puoleen vuoteen, vaikka arvioon "lisättiin jo puskuria". Puskuri ei auttanut, koska se mitoitettiin saman sisäisen optimismin varassa kuin itse arvio — juuri tämä on lain rekursiivinen ydin.
 </div>
 <div class="vaaralatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Käytä ulkoista referenssiluokkaa — kysy montako vastaavaa projektia on aikataulussa ja budjetissa valmistunut, ja anna sen ohjata arviota. Sisäinen optimismi on lähes aina virheellisempi kuin historiallinen keskiarvo. Miniohje: kerää 5–10 vastaavaa jo valmistunutta projektia, laske kunkin toteuman ja arvion suhde ja käytä mediaania kertoimena omalle arviollesi. Tyypillinen kerroin it- ja rakennusprojekteissa on 1,4–2,0 — kolmen kuukauden arvio tarkoittaa siis realistisesti 4–6 kuukautta. Kerroin tuntuu etukäteen aina liioittelulta; juuri se tunne on Hofstadterin laki työssään.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Käytä ulkoista referenssiluokkaa — kysy montako vastaavaa projektia on aikataulussa ja budjetissa valmistunut, ja anna sen ohjata arviota. Sisäinen optimismi on lähes aina virheellisempi kuin historiallinen keskiarvo. Miniohje: kerää 5–10 vastaavaa jo valmistunutta projektia, laske kunkin toteuman ja arvion suhde ja käytä mediaania kertoimena omalle arviollesi. Tyypillinen kerroin it- ja rakennusprojekteissa on 1,4–2,0 — kolmen kuukauden arvio tarkoittaa siis realistisesti 4–6 kuukautta. Kerroin tuntuu etukäteen aina liioittelulta; juuri se tunne on Hofstadterin laki työssään.
     </div>
 <p class="peli-harjoittele" style="margin:1.4rem 0 0;padding:.7rem .9rem;background:#FBF5E0;border-left:3px solid #C9A84C;font-size:.95em"><b>Harjoittele tämän tunnistamista.</b> <a href="peli.html">Vedätys</a> on päivittäinen peli, jossa hofstadterin laki on yksi tunnistettavista ilmiöistä — mukana on aina myös tilanteita, joissa ei ole mitään vikaa.</p>
 <div class="lue-lisaa">
@@ -919,6 +921,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="yhdeksanyhdeksan.html">← Yhdeksän-yhdeksän-sääntö — "melkein valmis" -illuusio</a>

@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Dunning–Kruger-ilmiö — itsevarmuus ilman taitoa | Ilmiöitä</title>
-  <link rel="stylesheet" href="style.css?v=20260725">
-  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="preload" href="fonts/sourcesans3-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/spectral-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261004">
   <script>
   window.addEventListener('DOMContentLoaded', function () {
     var nodes = document.querySelectorAll('.mermaid');
@@ -761,12 +762,12 @@
       "@id": "https://www.ilmiöt.fi/dunning-kruger.html#article",
       "url": "https://www.ilmiöt.fi/dunning-kruger.html",
       "headline": "Dunning–Kruger-ilmiö — itsevarmuus ilman taitoa",
-      "description": "Dunning–Kruger-ilmiö tarkoittaa, että heikoimmat osaajat yliarvioivat osaamisensa eniten — taidon arviointi vaatii samaa osaamista kuin itse taito.",
+      "description": "Dunning–Kruger-ilmiö tarkoittaa sitä, että vähäinen taito tuottaa suurta itsevarmuutta. Mistä ilmiössä on kyse — ja vastalääkkeet.",
       "inLanguage": "fi",
       "articleSection": "Psykologia ja kognitio",
       "isPartOf": {
-        "@type": "CollectionPage",
-        "@id": "https://www.ilmiöt.fi/"
+        "@type": "WebSite",
+        "@id": "https://www.ilmiöt.fi/#website"
       },
       "publisher": {
         "@type": "Organization",
@@ -775,19 +776,19 @@
         "@id": "https://www.ilmiöt.fi/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.ilmiöt.fi/favicon.svg",
-          "width": 64,
-          "height": 64
+          "url": "https://www.ilmiöt.fi/og/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "about": {
         "@type": "DefinedTerm",
-        "name": "Dunning–Kruger-ilmiö — itsevarmuus ilman taitoa",
-        "description": "Dunning–Kruger-ilmiö tarkoittaa, että heikoimmat osaajat yliarvioivat osaamisensa eniten — taidon arviointi vaatii samaa osaamista kuin itse taito.",
+        "name": "Dunning–Kruger-ilmiö",
+        "description": "Dunning–Kruger-ilmiö tarkoittaa sitä, että vähäinen taito tuottaa suurta itsevarmuutta. Mistä ilmiössä on kyse — ja vastalääkkeet.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": "Ilmiöitä — Miten valta toimii",
-          "@id": "https://www.ilmiöt.fi/"
+          "@id": "https://www.ilmiöt.fi/#ilmiot"
         }
       },
       "author": {
@@ -799,29 +800,6 @@
       },
       "datePublished": "2026-07-06",
       "dateModified": "2026-07-06"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.ilmiöt.fi/dunning-kruger.html#faq",
-      "inLanguage": "fi",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Mitä Dunning–Kruger-ilmiö tarkoittaa?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Dunning–Kruger-ilmiö tarkoittaa, että heikoimmin osaavat arvioivat oman osaamisensa selvästi todellista paremmaksi. Arviointi vaatii samaa taitoa kuin suorittaminen, joten se jolta taito puuttuu ei myöskään näe puutetta. Osaamisen karttuessa itsearvio usein ensin laskee."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Kuinka Dunning–Kruger-ilmiötä voi torjua?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Korvaa itsearvio ulkoisella mittarilla: pyydä palautetta, vertaa työtäsi alan parhaisiin esimerkkeihin ja testaa osaamista tilanteessa, jossa tulos on yksiselitteinen. Epävarmuuden tunne osaamisen karttuessa on merkki edistymisestä, ei taantumisesta."
-          }
-        }
-      ]
     }
   ]
 }
@@ -847,13 +825,14 @@
     </button>
   </div>
 
+  <main>
   <div class="ilmio" id="dunning-kruger">
 <div class="ilmio-tag">Ilmiö 33</div>
 <h1>Dunning–Kruger-ilmiö — itsevarmuus ilman taitoa</h1>
 <p class="ilmio-byline">Kirjoittanut <a href="tietoa.html" rel="author">Ilmiömies</a> · Päivitetty 6.7.2026</p>
 <p><strong>Dunning–Kruger-ilmiö</strong> (suomeksi myös <strong>ylivertaisuusharha</strong> tai <em>ylivertaisuusvinouma</em>) tarkoittaa, että heikoimmin osaavat yliarvioivat osaamisensa eniten — ja usein juuri he esiintyvät varmimpina. Justin Kruger ja David Dunning osoittivat vuonna 1999 klassikkotutkimuksessaan <em>Unskilled and Unaware of It</em>, että testien heikoin neljännes arvioi itsensä selvästi keskitasoa paremmaksi. Parhaat puolestaan aliarvioivat itsensä lievästi — he olettivat, että helpolta tuntuva on helppoa muillekin.</p>
 <div class="infolaatikko vastauslohko">
-<h2 class="laatikko-otsikko">Mitä Dunning–Kruger-ilmiö tarkoittaa?</h2>
+<h2 class="laatikko-otsikko" id="mita-dunningkruger-ilmio-tarkoittaa">Mitä Dunning–Kruger-ilmiö tarkoittaa?</h2>
 <p style="margin:0.4em 0 0;"><strong>Dunning–Kruger-ilmiö</strong> tarkoittaa, että heikoimmin osaavat yliarvioivat osaamisensa eniten. Sama tietämättömyys, joka estää suoriutumasta hyvin, estää myös huomaamasta omaa heikkoutta. Suomeksi ilmiöstä puhutaan myös nimellä <strong>osaamisharha</strong>. Justin Kruger ja David Dunning osoittivat sen vuonna 1999.</p>
 </div>
 <p>Mekanismi on ilmiön ydin, ja se on julmempi kuin pelkkä itsekehu: <strong>taidon arviointi vaatii samaa taitoa kuin suoritus</strong>. Aloittelija ei näe virheitään, koska virheiden näkeminen on täsmälleen se kyky, joka häneltä puuttuu. Tätä Dunning kutsuu kaksoistaakaksi: osaamattomuus vie sekä suorituksen että kyvyn huomata sen puutteet. Siksi sisäinen varmuuden tunne ei kerro osaamisesta mitään — se tuntuu samalta oikeassa ja väärässä ollessa.</p>
@@ -872,7 +851,7 @@ flowchart TD
 <p class="kaavio-selitys">Kaksoistaakka: sama puute estää sekä osaamisen että sen puutteen huomaamisen.</p>
 <p>Kaksi tarkennusta erottaa ilmiön nettiversiostaan. Meemikäyrä "Mount Stupid" huippuineen ja "epätoivon laaksoineen" <strong>ei ole tutkimuksesta</strong> — alkuperäisessä paperissa ei ole sellaista käyrää, vaan neljä ryhmää ja maltillinen, tilastollinen efekti. Ja tutkijat ovat myöhemmin osoittaneet, että osa efektistä selittyy tilastollisilla ilmiöillä, kuten regressiolla keskiarvoon ja taipumuksella pitää itseään keskivertoa parempana. Ydinhavainto on silti toistunut: heikoimmat kalibroivat itsearvionsa huonoiten — eivät siksi, että olisivat tyhmiä, vaan koska palaute puuttuu.</p>
 <div class="infolaatikko">
-<h2 class="laatikko-otsikko">Ilmiö arjessa:</h2>
+<h2 class="laatikko-otsikko" id="ilmio-arjessa">Ilmiö arjessa:</h2>
 <ul style="margin:0.5em 0 0;">
 <li><strong>Uusi tulokas</strong> korjaisi koko järjestelmän ensimmäisellä viikolla — kolmen kuukauden päästä hän ymmärtää, miksi järjestelmä on sellainen kuin on.</li>
 <li><strong>Rekrytointi ja kokoukset:</strong> itsevarmuus voittaa osaamisen, kun arvioija ei itse hallitse aihetta — ja johto arvioi usein osaamista, jota sillä ei ole.</li>
@@ -881,7 +860,7 @@ flowchart TD
 </ul>
 </div>
 <div class="huomiolaatikko">
-<h2 class="laatikko-otsikko">Tunnistaminen ja vastakeinot:</h2> Mittaa, älä fiilistele: testi, katselmointi ja data kertovat kalibraatiosta, varmuuden tunne ei. Hae palautetta, joka ei kierrä kohteliaisuuden kautta — ja anna sitä itse. Opettele sanomaan "en tiedä vielä"; se on kalibroinnin alku, ei heikkous. Ja kun tunnet suurinta varmuutta alueella, jota olet opiskellut viikon, muista: juuri tältä varmuus tuntuu myös silloin, kun se on väärässä.
+<h2 class="laatikko-otsikko" id="tunnistaminen-ja-vastakeinot">Tunnistaminen ja vastakeinot:</h2> Mittaa, älä fiilistele: testi, katselmointi ja data kertovat kalibraatiosta, varmuuden tunne ei. Hae palautetta, joka ei kierrä kohteliaisuuden kautta — ja anna sitä itse. Opettele sanomaan "en tiedä vielä"; se on kalibroinnin alku, ei heikkous. Ja kun tunnet suurinta varmuutta alueella, jota olet opiskellut viikon, muista: juuri tältä varmuus tuntuu myös silloin, kun se on väärässä.
     </div>
 <p class="peli-harjoittele" style="margin:1.4rem 0 0;padding:.7rem .9rem;background:#FBF5E0;border-left:3px solid #C9A84C;font-size:.95em"><b>Harjoittele tämän tunnistamista.</b> <a href="peli.html">Vedätys</a> on päivittäinen peli, jossa dunning–Kruger-ilmiö on yksi tunnistettavista ilmiöistä — mukana on aina myös tilanteita, joissa ei ole mitään vikaa.</p>
 <div class="lue-lisaa">
@@ -932,7 +911,7 @@ flowchart TD
     <a href="konsensus-fetissi.html" class="liittyvat-kortti" style="--c:#01579b">
       <span class="liittyvat-numero">25</span>
       <span class="liittyvat-teksti">
-        <span class="liittyvat-nimi">Konsensus fetissi</span>
+        <span class="liittyvat-nimi">Konsensusfetissi</span>
         <span class="liittyvat-kuvaus">Yksimielisyydestä tulee itseisarvo, ja erimielisyys aletaan nähdä ongelmana — ei tietona.</span>
       </span>
       <span class="liittyvat-nuoli" aria-hidden="true">›</span>
@@ -963,6 +942,7 @@ flowchart TD
     </a>
     </div>
   </aside>
+  </main>
 
   <nav class="kortti-nav">
     <a class="kortti-nav-btn" href="jarjestelman-puolustelu.html">← Järjestelmän puolustelu — menestyneen puolesta taisteleva häviäjä</a>

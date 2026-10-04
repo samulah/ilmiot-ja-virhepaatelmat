@@ -1,7 +1,7 @@
 ---
 kat_id: alustatalous-ja-algoritmit
 h1: Alustatalous ja algoritmit — miksi syöte näyttää siltä kuin näyttää
-otsikko: Alustatalouden ilmiöt — 17 syytä siihen, miksi syöte on tällainen
+otsikko: Alustatalouden ilmiöt — {n} syytä siihen, miksi syöte on tällainen
 kuvaus: Rage bait, klikkiotsikko, kaikukammio, dark patterns. Seitsemäntoista alustatalouden ilmiötä ja se, mikä niitä yhdistää: mikään näistä ei ole vahinko.
 vari: "#1565c0"
 paivitetty: 2026-08-14
