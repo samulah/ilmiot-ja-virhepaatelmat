@@ -1,0 +1,55 @@
+{
+  "luukku": 5,
+  "pvm": "2026-12-05",
+  "slug": "dunning-kruger",
+  "nimi": "Dunning–Kruger-ilmiö",
+  "kansi": "Varmuuden tunne tuntuu samalta, olit oikeassa tai väärässä.",
+  "sivut": [
+    {
+      "otsikko": "Tunnistat sen tästä",
+      "lohkot": [
+        {
+          "kohta": "**Uusi tulokas korjaisi koko järjestelmän** ensimmäisellä viikollaan."
+        },
+        {
+          "kohta": "**Viikon perehtyminen** tuottaa varmuuden, johon asiantuntijalta menisi vuosikymmen."
+        },
+        {
+          "kohta": "**Kokenut osaaja vaikenee,** koska näkee aiheen mutkat."
+        }
+      ]
+    },
+    {
+      "otsikko": "Kaksoistaakka",
+      "lohkot": [
+        {
+          "kappale": "Taidon arviointi vaatii samaa taitoa kuin suoritus. Aloittelija ei näe virheitään, koska juuri se kyky häneltä puuttuu."
+        },
+        {
+          "kohta": "**Meemikäyrä ”Mount Stupid”** ei ole tutkimuksesta. Kruger ja Dunning (1999) mittasivat neljä ryhmää ja maltillisen efektin."
+        }
+      ]
+    },
+    {
+      "otsikko": "Kalibroi itsesi",
+      "lohkot": [
+        {
+          "kohta": "**Mittaa, älä fiilistele.** Testi, katselmointi ja data kertovat kalibraatiosta."
+        },
+        {
+          "kohta": "**Hae suoraa palautetta** ja anna sitä itse."
+        },
+        {
+          "kohta": "**Opettele sanomaan ”en tiedä vielä”.** Se on kalibroinnin alku, ei heikkous."
+        }
+      ]
+    }
+  ],
+  "teksti": "Uusi tulokas korjaisi koko järjestelmän ensimmäisellä viikollaan. Kolmen kuukauden päästä hän ymmärtää, miksi järjestelmä on sellainen kuin on. Tuttu kaari jokaiselle, joka on perehdyttänyt uusia tai ollut itse uusi.\n\nJustin Kruger ja David Dunning osoittivat 1999, että heikoimmin osaavat yliarvioivat osaamisensa eniten. Syy on julmempi kuin itsekehu: taidon arviointi vaatii samaa taitoa kuin suoritus.\n\nYksi tarkennus. Somen ”Mount Stupid” -käyrä ei ole tutkimuksesta. Alkuperäisessä paperissa on neljä ryhmää ja maltillinen efekti.\n\nVarmuuden tunne ei kerro osaamisesta mitään, koska se tuntuu samalta oikeassa ja väärässä ollessa. Siksi testi ja katselmointi voittavat fiiliksen.",
+  "kysymys": "Missä asiassa olit varmimmillasi juuri ennen kuin opit, kuinka paljon et tiennyt?",
+  "tagit": [
+    "#osaaminen",
+    "#oppiminen",
+    "#työelämä"
+  ]
+}

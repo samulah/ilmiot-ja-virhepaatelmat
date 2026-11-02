@@ -1,0 +1,59 @@
+{
+  "luukku": 1,
+  "pvm": "2026-12-01",
+  "slug": "rituaalinen-raportointi",
+  "nimi": "Rituaalinen raportointi",
+  "kansi": "Viikkoraportti, jota kukaan ei lue. Paitsi silloin, kun se jää tekemättä.",
+  "sivut": [
+    {
+      "otsikko": "Tunnistat sen tästä",
+      "lohkot": [
+        {
+          "kohta": "**Raportti lähtee perjantaina 15.55.** Vastausta ei tule koskaan."
+        },
+        {
+          "kohta": "**Sama teksti kopioidaan viikosta toiseen.** Kukaan ei huomaa."
+        },
+        {
+          "kohta": "**Vanhoja raportteja ei avaa kukaan.** Silti ne arkistoidaan huolella."
+        },
+        {
+          "kohta": "**Puuttuva raportti huomataan heti.** Sisältöä ei kommentoi kukaan."
+        }
+      ]
+    },
+    {
+      "otsikko": "Miksi se jatkuu",
+      "lohkot": [
+        {
+          "kappale": "Raportilla oli joskus tarkoitus. Tilanne muuttui, rituaali jäi. Sen kyseenalaistaminen kuulostaa epälojaalilta, joten kukaan ei kysy."
+        },
+        {
+          "luku": "260 h",
+          "selite": "Viisi henkeä, tunti viikossa. Kuuden viikon työpanos vuodessa, joka ei näy yhdelläkään budjettirivillä."
+        }
+      ]
+    },
+    {
+      "otsikko": "Kaksi kysymystä",
+      "lohkot": [
+        {
+          "kohta": "**1.** Muuttuisiko yksikään päätös, jos raporttia ei olisi?"
+        },
+        {
+          "kohta": "**2.** Katsooko kukaan vanhoja raportteja uudelleen?"
+        },
+        {
+          "kappale": "Jos molempiin vastaus on ei, kyseessä on rituaali. Ehdota kuukauden kokeilua ilman raporttia. Jos kukaan ei huomaa, se on tulos, ei loukkaus."
+        }
+      ]
+    }
+  ],
+  "teksti": "Jokainen asiantuntija tuntee viikkoraportin, joka lähtee perjantaina iltapäivällä eikä palaa koskaan. Ei kysymyksiä, ei kommentteja, ei päätöksiä. Ensi viikolla sama uudestaan.\n\nRaportti ei silloin välitä tietoa. Se osoittaa, että olet järjestelmän piirissä. Molemmat osapuolet tietävät sen, mutta rituaali jatkuu, koska sen kyseenalaistaminen kuulostaa epälojaalilta.\n\nHinta on silti todellinen. Viisihenkinen tiimi ja tunti viikossa tekee 260 tuntia vuodessa, eli kuuden viikon työn, joka ei näy missään.\n\nTestiksi riittää yksi kysymys: muuttuisiko yksikään päätös, jos raporttia ei olisi?\n\nAvaan joulukuussa joka aamu yhden työelämän ilmiön, jonka jokainen on kohdannut. Kevyestä aloitetaan.",
+  "kysymys": "Mikä on teidän organisaationne rituaalisin raportti?",
+  "tagit": [
+    "#työelämä",
+    "#johtaminen",
+    "#raportointi"
+  ]
+}

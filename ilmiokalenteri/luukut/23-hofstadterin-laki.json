@@ -1,0 +1,53 @@
+{
+  "luukku": 23,
+  "pvm": "2026-12-23",
+  "slug": "hofstadterin-laki",
+  "nimi": "Hofstadterin laki",
+  "kansi": "Kaikki kestää odotettua kauemmin. Myös silloin, kun otat tämän lain huomioon.",
+  "sivut": [
+    {
+      "otsikko": "Tunnistat sen tästä",
+      "lohkot": [
+        {
+          "kohta": "**Kolmen kuukauden migraatio** venyy puoleen vuoteen."
+        },
+        {
+          "kohta": "**Arvioon lisättiin jo puskuria.** Ei auttanut."
+        },
+        {
+          "kohta": "**Joululahjat ostetaan** viimeisenä päivänä, vaikka tänä vuonna piti olla toisin."
+        }
+      ]
+    },
+    {
+      "otsikko": "Miksi puskuri ei riitä",
+      "lohkot": [
+        {
+          "kappale": "Douglas Hofstadter, 1979. Laki on rekursiivinen: sama optimismi, joka vääristää arvion, mitoittaa myös puskurin."
+        },
+        {
+          "kappale": "Arvioimme omaa projektiamme sisältä käsin emmekä vertaa sitä vastaaviin aiempiin."
+        }
+      ]
+    },
+    {
+      "otsikko": "Ulkoinen kerroin",
+      "lohkot": [
+        {
+          "luku": "1,4–2,0",
+          "selite": "Tyypillinen toteuman ja arvion suhde it- ja rakennusprojekteissa."
+        },
+        {
+          "kappale": "Kerää 5–10 vastaavaa valmista projektia, laske suhde ja käytä mediaania kertoimena."
+        }
+      ]
+    }
+  ],
+  "teksti": "Aattoaattona moni seisoo kaupassa ja ihmettelee, miten joululahjat jäivät taas viimeiseen päivään, vaikka tänä vuonna piti olla toisin.\n\nDouglas Hofstadter muotoili tämän 1979: kaikki kestää odotettua kauemmin, myös silloin kun otat Hofstadterin lain huomioon. IT-projekteissa se kuulostaa tältä: kolmen kuukauden migraatio venyy puoleen vuoteen, vaikka arvioon lisättiin jo puskuria.\n\nPuskuri ei auta, koska se mitoitetaan samalla optimismilla kuin itse arvio. Arvioimme projektiamme sisältä käsin emmekä vertaa sitä vastaaviin aiempiin.\n\nKorjaus tulee ulkoa. Kerää 5–10 vastaavaa valmista projektia, laske toteuman ja arvion suhde ja käytä mediaania kertoimena. Tyypillinen kerroin on 1,4–2,0. Se tuntuu aina liioittelulta, ja juuri se tunne on Hofstadterin laki työssään.",
+  "kysymys": "Paljonko teidän viimeisin projektinne ylitti arvionsa?",
+  "tagit": [
+    "#projektinhallinta",
+    "#arviointi",
+    "#data"
+  ]
+}

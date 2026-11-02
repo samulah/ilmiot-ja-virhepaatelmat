@@ -16,3 +16,6 @@ luonnokset/suosio.html
 luonnokset/etusivu-nostot.html
 .suosio.log
 suosio_kooste.md
+
+# Ilmiökalenterin generoidut karusellit (python3 ilmiokalenteri/build_kalenteri.py)
+ilmiokalenteri/valmis/

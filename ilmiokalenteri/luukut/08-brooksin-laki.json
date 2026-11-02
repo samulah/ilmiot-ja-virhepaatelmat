@@ -1,0 +1,53 @@
+{
+  "luukku": 8,
+  "pvm": "2026-12-08",
+  "slug": "brooksin-laki",
+  "nimi": "Brooksin laki",
+  "kansi": "Myöhässä olevaan projektiin lisätty ihminen myöhästyttää sitä lisää.",
+  "sivut": [
+    {
+      "otsikko": "Kommunikaatio räjähtää",
+      "lohkot": [
+        {
+          "luku": "190",
+          "selite": "kommunikaatiokanavaa 20 hengen tiimissä. Viidellä hengellä niitä on 10, kymmenellä 45."
+        },
+        {
+          "kappale": "Uusi jäsen ei lisää yhtä kanavaa. Hän lisää niitä yhtä monta kuin tiimissä on jo ihmisiä."
+        }
+      ]
+    },
+    {
+      "otsikko": "Miksi se toistuu",
+      "lohkot": [
+        {
+          "kappale": "Fred Brooks kirjasi lain 1975. Silti sama tapahtuu joka sukupolvessa."
+        },
+        {
+          "kappale": "Kun projekti on myöhässä, resurssien lisääminen on ainoa näkyvä toimenpide. Organisaatio palkitsee näkyvästä, ei oikeasta."
+        }
+      ]
+    },
+    {
+      "otsikko": "Projektijohdolle",
+      "lohkot": [
+        {
+          "kohta": "**Vaihtoehdot ovat lisäaika tai karsittu laajuus.** Myönnä ne ääneen."
+        },
+        {
+          "kohta": "**Jos väkeä on pakko lisätä,** anna uusille oma osatehtävä ja yksi rajapinta vanhaan tiimiin."
+        },
+        {
+          "kohta": "**Laske perehdytyksen hinta etukäteen** vanhan tiimin työviikkoina."
+        }
+      ]
+    }
+  ],
+  "teksti": "Kun projekti on myöhässä, ensimmäinen ehdotus on lähes aina sama: lisää tekijöitä. Moni projektipäällikkö tietää jo, miten siinä käy.\n\nFred Brooks kirjasi lain teokseen The Mythical Man-Month 1975: myöhässä olevaan ohjelmistoprojektiin lisätty ihminen myöhästyttää sitä lisää.\n\nSyy on matematiikkaa. Kommunikaatiokanavien määrä kasvaa kaavalla n × (n − 1) / 2. Viidellä hengellä kanavia on 10, kymmenellä 45 ja kahdellakymmenellä 190. Lisäksi uusi tekijä syö ensin vanhan tiimin aikaa perehdytykseen.\n\nLaki tunnetaan, ja silti se toistuu, koska resurssien lisääminen on ainoa toimenpide, joka näkyy ohjausryhmälle. Rehelliset vaihtoehdot ovat lisäaika tai karsittu laajuus.",
+  "kysymys": "Oletko nähnyt projektin, joka oikeasti nopeutui loppuvaiheen lisäväellä?",
+  "tagit": [
+    "#projektinhallinta",
+    "#ohjelmistokehitys",
+    "#it"
+  ]
+}

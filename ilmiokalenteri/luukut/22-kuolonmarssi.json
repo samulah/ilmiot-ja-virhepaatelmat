@@ -1,0 +1,61 @@
+{
+  "luukku": 22,
+  "pvm": "2026-12-22",
+  "slug": "kuolonmarssi",
+  "nimi": "Kuolonmarssi",
+  "kansi": "Kaikki tietävät, että projekti epäonnistuu. Kukaan ei sano sitä ääneen.",
+  "sivut": [
+    {
+      "otsikko": "Tunnusmerkit",
+      "lohkot": [
+        {
+          "kohta": "**Aikataulu on puolet** asiantuntijoiden arviosta."
+        },
+        {
+          "kohta": "**Vaatimukset muuttuvat,** aikataulu ei."
+        },
+        {
+          "kohta": "**Projekti on ”strategisesti tärkeä”,** joten sitä ei voi perua."
+        },
+        {
+          "kohta": "**Lopussa testataan vähemmän,** ei enemmän."
+        },
+        {
+          "kohta": "**Parhaat tekijät lähtevät ensin.**"
+        }
+      ]
+    },
+    {
+      "otsikko": "Miksi se jatkuu",
+      "lohkot": [
+        {
+          "kappale": "Edward Yourdon kuvasi ilmiön kirjassaan Death March (1997)."
+        },
+        {
+          "kappale": "Jatkaminen on järkevää jokaiselle yksilölle, koska kukaan ei halua olla se, joka lopetti projektin. Lopettaminen olisi järkevää organisaatiolle."
+        }
+      ]
+    },
+    {
+      "otsikko": "Ennen ja aikana",
+      "lohkot": [
+        {
+          "kohta": "**Kirjaa exit-kriteerit alussa.** Myöhemmin niistä ei voi sopia, kun kasvot ovat pelissä."
+        },
+        {
+          "kohta": "**Kysy säännöllisesti:** aloittaisimmeko tämän tänään, tällä tiedolla ja hinnalla?"
+        },
+        {
+          "kohta": "**Tuo arvioon ulkopuolinen,** jonka ura ei riipu projektista."
+        }
+      ]
+    }
+  ],
+  "teksti": "Kaksi päivää ennen aattoa avataan kalenterin kovin luukku.\n\nKuolonmarssi on projekti, jonka kaikki tietävät jo varhain epäonnistuvan, mutta kukaan ei pysty tai uskalla sanoa sitä ääneen. Edward Yourdon kuvasi ilmiön kirjassaan Death March 1997, ja jokainen IT-alalla pidempään ollut tunnistaa tunnusmerkit: aikataulu on puolet asiantuntijoiden arviosta, vaatimukset muuttuvat mutta aikataulu ei, ja projekti on ”strategisesti tärkeä”.\n\nLoppuvaiheessa testataan vähemmän, ei enemmän. Parhaat tekijät lähtevät ensimmäisinä.\n\nKuolonmarssi jatkuu, koska jatkaminen on järkevää jokaiselle yksilölle. Kukaan ei halua olla se, joka lopetti projektin, vaikka lopettaminen olisi järkevää organisaatiolle.\n\nParas suoja rakennetaan ennen marssia: kirjaa projektin alussa ylös, millä mittarilukemilla se keskeytetään. Myöhemmin siitä ei enää pysty sopimaan.",
+  "kysymys": "Mikä oli se hetki, jolloin tiesit projektin olevan kuolonmarssi?",
+  "tagit": [
+    "#projektinhallinta",
+    "#it",
+    "#johtaminen"
+  ]
+}

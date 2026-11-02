@@ -1,0 +1,56 @@
+{
+  "luukku": 13,
+  "pvm": "2026-12-13",
+  "slug": "peterin-periaate",
+  "nimi": "Peterin periaate",
+  "kansi": "Hierarkiassa jokainen ylenee epäpätevyytensä tasolle. Ja jää sinne.",
+  "sivut": [
+    {
+      "otsikko": "Miten se toimii",
+      "lohkot": [
+        {
+          "kohta": "**Paras myyjä** ylennetään myyntipäälliköksi."
+        },
+        {
+          "kohta": "**Paras koodari** ylennetään tiiminvetäjäksi."
+        },
+        {
+          "kappale": "Ylennys palkitsee nykyisestä työstä, mutta uusi tehtävä vaatii eri taidot. Ylennykset loppuvat vasta siihen, missä onnistuminen loppuu."
+        }
+      ]
+    },
+    {
+      "otsikko": "Tutkimusnäyttö",
+      "lohkot": [
+        {
+          "luku": "131",
+          "selite": "yritystä. Mitä parempi myyjä oli ollut, sitä heikommin hänen tiiminsä myöhemmin suoriutui (Benson, Li & Shue 2019)."
+        },
+        {
+          "kappale": "Laurence J. Peter esitti periaatteen 1969 satiirina. Data on antanut sille tukea."
+        }
+      ]
+    },
+    {
+      "otsikko": "Mitä tehdä",
+      "lohkot": [
+        {
+          "kohta": "**Erota urapolut.** Asiantuntija voi edetä ilman, että hänestä tehdään esihenkilö."
+        },
+        {
+          "kohta": "**Arvioi uuden tehtävän taidot,** älä vanhan tuloksia."
+        },
+        {
+          "kohta": "**Salli paluu ilman häpeää.** Silloin kukaan ei jää loukkuun."
+        }
+      ]
+    }
+  ],
+  "teksti": "Paras myyjä ylennetään myyntipäälliköksi ja paras koodari tiiminvetäjäksi. Moni on nähnyt, miten käy: organisaatio menettää erinomaisen tekijän ja saa keskinkertaisen esihenkilön.\n\nLaurence J. Peter muotoili sen 1969: hierarkiassa jokainen pyrkii ylenemään epäpätevyytensä tasolle. Ylennys palkitsee nykyisestä työstä, vaikka uusi tehtävä vaatii eri taidot. Ylennykset loppuvat vasta siihen, missä onnistuminen loppuu, ja sinne jäädään.\n\nAlun perin satiiri sai myöhemmin tukea datasta. Bensonin, Lin ja Shuen tutkimuksessa 131 yrityksen parhaat myyjät ylennettiin todennäköisimmin, ja mitä parempi myyjä oli ollut, sitä heikommin hänen tiiminsä suoriutui.\n\nKorjaus on rakenteellinen: asiantuntijalle oma urapolku, ylennyksiin uuden tehtävän kriteerit ja lupa palata entiseen työhön ilman häpeää.\n\nKarusellin lopussa on viikon kooste: 13 luukkua auki.",
+  "kysymys": "Onko teillä asiantuntijalle uraa, joka ei kulje esihenkilötehtävän kautta?",
+  "tagit": [
+    "#johtaminen",
+    "#urakehitys",
+    "#organisaatio"
+  ]
+}

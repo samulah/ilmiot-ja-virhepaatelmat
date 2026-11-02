@@ -1,0 +1,62 @@
+{
+  "luukku": 11,
+  "pvm": "2026-12-11",
+  "slug": "yhdeksanyhdeksan",
+  "nimi": "Yhdeksän-yhdeksän-sääntö",
+  "kansi": "Ensimmäinen 90 % vie 90 % ajasta. Viimeinen 10 % vie toiset 90 %.",
+  "sivut": [
+    {
+      "otsikko": "Melkein valmis",
+      "lohkot": [
+        {
+          "kappale": "Pipeline liikkuu, malli toimii testissä ja dashboard näyttää demossa hyvältä. Sitten alkaa todellinen työ:"
+        },
+        {
+          "kohta": "**reunatapaukset ja datan laatu**"
+        },
+        {
+          "kohta": "**integraatiot ja käyttöoikeudet**"
+        },
+        {
+          "kohta": "**tuotantoonvienti ja ylläpito**"
+        }
+      ]
+    },
+    {
+      "otsikko": "Esimerkki",
+      "lohkot": [
+        {
+          "luku": "6 → 9 kk",
+          "selite": "Raportointiuudistus. Demo näytti valmiilta neljän kuukauden kohdalla, viimeistely kesti viisi kuukautta."
+        },
+        {
+          "kappale": "Demo mittaa vain onnellista polkua. Loppuosa ei näy, ennen kuin siihen törmää."
+        }
+      ]
+    },
+    {
+      "otsikko": "Kun kuulet ”90 % valmis”",
+      "lohkot": [
+        {
+          "kohta": "**Onko tuotantoonvienti tehty?**"
+        },
+        {
+          "kohta": "**Onko reunatapaukset käyty läpi?**"
+        },
+        {
+          "kohta": "**Ovatko käyttäjät testanneet oikealla datalla?**"
+        },
+        {
+          "kappale": "Jos ei, projekti ei ole 90 % valmis."
+        }
+      ]
+    }
+  ],
+  "teksti": "Perjantain luukku on omistettu kaikille, joiden tehtävä on ”melkein valmis, maanantaina loppuun”.\n\nTom Cargill muotoili ohjelmoijien kansanviisauden: ensimmäinen 90 % koodista vie 90 % ajasta, ja viimeinen 10 % vie toiset 90 %.\n\nData-projekteissa tämä on erityisen terävää. Pipeline liikkuu nopeasti, malli toimii testiympäristössä ja dashboard näyttää demossa valmiilta. Sitten alkavat reunatapaukset, datan laatu, integraatiot, käyttöoikeudet ja tuotantoonvienti.\n\nDemo mittaa vain onnellista polkua. Siksi ”90 % valmis” kannattaa purkaa kolmeksi kysymykseksi: onko tuotantoonvienti tehty, onko reunatapaukset käyty läpi ja ovatko käyttäjät testanneet oikealla datalla?",
+  "kysymys": "Mikä on teidän ennätyksenne ”melkein valmiin” kestossa?",
+  "tagit": [
+    "#projektinhallinta",
+    "#data",
+    "#ohjelmistokehitys"
+  ]
+}

@@ -268,6 +268,17 @@ ilmiösivuilta (`scripts/build_peli_siemen.py`), jotta pelin ääni on sivuston
 ääni. Rehelliset kohdat ovat pankin vaikeimmat: niiden on oltava uskottavan
 epäilyttäviä mutta oikeasti kunnossa.
 
+## Ilmiökalenteri (`ilmiokalenteri/`) — LinkedIn, ei sivustoa
+
+Dataneuvoksen ilmiökalenteri: 24 työelämän ilmiötä LinkedIn-karuselleina
+1.–24.12.2026, ennakkopostaus 30.11. Lähde on `ilmiokalenteri/luukut/NN-slug.json`
+(slug = juuren ilmiösivu), ja `python3 ilmiokalenteri/build_kalenteri.py`
+tuottaa gitignoratun `valmis/`-kansion: PDF-karuselli, kansikuva ja postausteksti
+UTM-linkkeineen. Sunnuntain luukuissa ja aattona viimeinen sivu on koosteruudukko.
+Järjestys kulkee kevyestä kovaan (kuolonmarssi 22.12.) ja päättyy joulurauhaan.
+Kansio ei kuulu sitemapiin eikä hakuindeksiin. Palvelin näyttää repokansion
+sellaisenaan, joten luukut ovat luettavissa etukäteen, jos kansio viedään sinne.
+
 ## Sivujen tyyli
 
 - `index.html`, `tietoa.html` ja `muutokset.html` kantavat CSS:nsä `<style>`-lohkossa

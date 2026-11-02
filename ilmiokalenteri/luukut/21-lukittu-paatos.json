@@ -1,0 +1,61 @@
+{
+  "luukku": 21,
+  "pvm": "2026-12-21",
+  "slug": "lukittu-paatos",
+  "nimi": "Lukittu päätös",
+  "kansi": "Kokous päätti asian. Todellinen päätös tehtiin jo kauan sitten.",
+  "sivut": [
+    {
+      "otsikko": "Tunnusmerkit",
+      "lohkot": [
+        {
+          "kohta": "**Vaihtoehtoja vertailtiin,** mutta vain yksi oli koskaan elossa."
+        },
+        {
+          "kohta": "**Selvitys tilattiin** vasta, kun suunta oli jo kerrottu."
+        },
+        {
+          "kohta": "**”Emme voi enää palata alkuun”** kuullaan ennen kuin mitään on tehty."
+        },
+        {
+          "kohta": "**Kukaan ei osaa nimetä hetkeä,** jolloin päätös tehtiin."
+        }
+      ]
+    },
+    {
+      "otsikko": "Hintalappu",
+      "lohkot": [
+        {
+          "kappale": "Kun todellinen päätös syntyy aikaisin, hanke sidotaan sen hetken kustannusarvioon. Se on lähes aina matalampi kuin myöhempi, tarkempi arvio."
+        },
+        {
+          "kappale": "Ylitys ei synny toteutuksessa. Se syntyy hetkellä, jota kukaan ei kirjannut ylös."
+        }
+      ]
+    },
+    {
+      "otsikko": "Vastakeinot",
+      "lohkot": [
+        {
+          "kohta": "**Kirjaa päätöshetki:** päivä, arvio ja mihin arvio perustui."
+        },
+        {
+          "kohta": "**Nollavaihtoehto mukaan.** Jos yhtäkään vaihtoehtoa ei ole varauduttu valitsemaan, vertailu on kulissi."
+        },
+        {
+          "kohta": "**Kysy tarkasti:** mikä konkreettinen asia estää perumisen juuri nyt?"
+        },
+        {
+          "kappale": "Usein vastaus on sitoumus, ei betoni."
+        }
+      ]
+    }
+  ],
+  "teksti": "Esityslista, esittelijä, keskustelu ja pöytäkirja. Moni on silti istunut kokouksessa, jossa kaikki tiesivät asian olleen päätetty jo kauan sitten.\n\nLukittu päätös tarkoittaa tilannetta, jossa virallinen päätös vain vahvistaa todellisen, joka tehtiin aiemmin käytävällä, sitoumuksessa tai strategian rivillä. Suurhankkeiden tutkimuksessa ilmiöstä käytetään nimeä lock-in.\n\nErolla on hintalappu. Kun todellinen päätös syntyy aikaisin, hanke sidotaan sen hetken kustannusarvioon, ja se on lähes aina myöhempää arviota matalampi. Ylitys ei synny toteutuksessa vaan hetkellä, jota kukaan ei kirjannut ylös.\n\nKun seuraavan kerran kuulet, että on liian myöhäistä perua, kysy: mikä konkreettinen asia tekee perumisesta mahdotonta juuri nyt? Usein vastaus on sitoumus, ei betoni.",
+  "kysymys": "Oletko ollut vaihtoehtovertailussa, jossa vain yksi vaihtoehto oli oikeasti elossa?",
+  "tagit": [
+    "#päätöksenteko",
+    "#projektinhallinta",
+    "#johtaminen"
+  ]
+}

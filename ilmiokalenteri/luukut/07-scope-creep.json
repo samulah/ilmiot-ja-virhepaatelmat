@@ -1,0 +1,61 @@
+{
+  "luukku": 7,
+  "pvm": "2026-12-07",
+  "slug": "scope-creep",
+  "nimi": "Scope creep",
+  "kansi": "Jokainen lisäys tuntui pieneltä. Yhdessä ne tuplasivat projektin.",
+  "sivut": [
+    {
+      "otsikko": "Raporttipyyntö kasvaa",
+      "lohkot": [
+        {
+          "kohta": "**Ensin yksi mittari.**"
+        },
+        {
+          "kohta": "**Sitten segmentointi.**"
+        },
+        {
+          "kohta": "**Sitten vertailukausi.**"
+        },
+        {
+          "kohta": "**Sitten poikkeus yhdelle toimialalle.**"
+        },
+        {
+          "kohta": "**Sitten erikoislogiikka yhdelle asiakkaalle.**"
+        },
+        {
+          "kappale": "Lopulta raportti on erikoistapausten kokoelma, jota kukaan ei ymmärrä kokonaan."
+        }
+      ]
+    },
+    {
+      "otsikko": "Kaikki ei tule asiakkaalta",
+      "lohkot": [
+        {
+          "kappale": "Sisäinen scope creep syntyy, kun tekijät lisäävät pyytämättä: ”kun kerran ollaan tässä, tehdään tämäkin kunnolla.”"
+        },
+        {
+          "kappale": "Ja kun tiimi ei osaa sanoa ei, koska jokainen pyyntö erikseen tuntuu kohtuulliselta."
+        }
+      ]
+    },
+    {
+      "otsikko": "Vastakeino",
+      "lohkot": [
+        {
+          "kohta": "**Laajuus kirjallisena.** Sen muuttaminen vaatii päätöksen myös aikataulusta tai budjetista."
+        },
+        {
+          "kohta": "**Pienetkin muutokset kirjataan.** Kokonaisvaikutus näkyy ennen kuin se on jo tapahtunut."
+        }
+      ]
+    }
+  ],
+  "teksti": "Raporttipyyntö alkaa yhdestä mittarista. Sitten lisätään segmentointi. Sitten vertailukausi. Sitten poikkeus yhdelle toimialalle ja erikoislogiikka yhdelle asiakkaalle. Jokainen raportointia tehnyt tietää, miten tarina päättyy.\n\nScope creep on projektin laajuuden hiljaista kasvua ilman, että aikataulu tai budjetti muuttuu. Yksittäinen muutos tuntuu pieneltä ja kohtuulliselta. Kokonaisuus ei ole kumpaakaan.\n\nKaikki ei tule asiakkaalta. Sisäinen versio kuulostaa tältä: ”kun kerran ollaan tässä, tehdään tämäkin kunnolla.”\n\nVastalääke on tylsä mutta toimii. Laajuus kirjallisena, ja jokainen muutos kirjataan, myös suullisesti hyväksytyt pienet.",
+  "kysymys": "Kuinka pitkän matkan yksi ”pieni lisäys” on teillä kulkenut?",
+  "tagit": [
+    "#projektinhallinta",
+    "#raportointi",
+    "#data"
+  ]
+}

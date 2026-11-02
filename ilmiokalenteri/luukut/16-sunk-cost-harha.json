@@ -1,0 +1,53 @@
+{
+  "luukku": 16,
+  "pvm": "2026-12-16",
+  "slug": "sunk-cost-harha",
+  "nimi": "Sunk cost -harha",
+  "kansi": "Olemme jo käyttäneet tähän kolme miljoonaa. Ei voida lopettaa nyt.",
+  "sivut": [
+    {
+      "otsikko": "Tunnistat sen tästä",
+      "lohkot": [
+        {
+          "kohta": "**”Olemme jo käyttäneet 3 miljoonaa.”**"
+        },
+        {
+          "kohta": "**”Lippu on jo maksettu”,** joten huono elokuva katsotaan loppuun."
+        },
+        {
+          "kohta": "**Concorde** rahoitettiin vuosia sen jälkeen, kun kannattamattomuus oli selvää."
+        }
+      ]
+    },
+    {
+      "otsikko": "Miksi se on niin vahva",
+      "lohkot": [
+        {
+          "luku": "2×",
+          "selite": "Tappio tuntuu noin kaksi kertaa voimakkaammalta kuin yhtä suuri voitto (Kahneman & Tversky 1979)."
+        },
+        {
+          "kappale": "Organisaatiossa lopettaminen myös myöntää, että alkuperäinen päätös oli virhe."
+        }
+      ]
+    },
+    {
+      "otsikko": "Yksi kysymys",
+      "lohkot": [
+        {
+          "kappale": "Jos emme olisi vielä sijoittaneet tähän mitään, aloittaisimmeko sen nyt?"
+        },
+        {
+          "kappale": "Jos vastaus on ei, jatkaminen tarvitsee perustelun. Mennyt raha on mennyt joka tapauksessa."
+        }
+      ]
+    }
+  ],
+  "teksti": "”Olemme jo käyttäneet tähän kolme miljoonaa, ei voida lopettaa nyt.” Moni on kuullut lauseen ohjausryhmässä.\n\nSunk cost -harha eli uponneiden kustannusten harha tarkoittaa, että menneet ja peruuttamattomat panostukset ohjaavat tulevia päätöksiä. Rationaalisesti niillä ei pitäisi olla merkitystä: raha on mennyt, jatkoi tai ei.\n\nHarha on vahva, koska tappio tuntuu noin kaksi kertaa voimakkaammalta kuin yhtä suuri voitto. Organisaatiossa mukana on lisäksi vastuu: lopettaminen myöntää, että aloituspäätös oli virhe.\n\nParas kysymys mahtuu yhdelle riville: jos emme olisi vielä sijoittaneet tähän mitään, aloittaisimmeko sen nyt?",
+  "kysymys": "Mikä on kallein ”ei voida enää lopettaa”, jonka olet nähnyt?",
+  "tagit": [
+    "#päätöksenteko",
+    "#projektinhallinta",
+    "#johtaminen"
+  ]
+}
