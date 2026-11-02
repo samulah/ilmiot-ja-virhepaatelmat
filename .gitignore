@@ -19,3 +19,4 @@ suosio_kooste.md
 
 # Ilmiökalenterin generoidut karusellit (python3 ilmiokalenteri/build_kalenteri.py)
 ilmiokalenteri/valmis/
+__pycache__/
