@@ -2,9 +2,9 @@
 kat_id: myyntikikat-ja-painostus
 h1: Myyntikikat ja painostus — {n} keinoa, jotka tehoavat vaikka tunnistat ne
 otsikko: Myynnin painostuskeinot — {n} tekniikkaa ja miten tunnistat ne
-kuvaus: Hintaankkurointi, foot-in-the-door, painostus-close, shrinkflaatio. Viisitoista myynnin painostuskeinoa — ja miksi tunnistaminen ei riitä, mutta auttaa.
+kuvaus: Hintaankkurointi, foot-in-the-door, painostus-close, shrinkflaatio, greedflation. {n} myynnin painostuskeinoa — ja miksi tunnistaminen ei riitä, mutta auttaa.
 vari: "#ef6c00"
-paivitetty: 2026-07-25
+paivitetty: 2026-11-02
 naapurit:
   - kategoria-huijaukset-ja-petokset | Huijaukset ja petokset →
   - kategoria-psykologia-ja-kognitio | Psykologia ja kognitio →
@@ -23,11 +23,11 @@ Tunnistaminen ei siis tee immuuniksi. Se tekee jotain muuta ja käytännössä t
 
 **Kiire ja niukkuus.** [Painostus-close](painostusclose.html) on kategorian suorin tekniikka: keinotekoinen määräaika pakottaa päättämään ennen harkintaa. Se on myös helpoin torjua, koska vastakeino on yksi lause: ”palaan asiaan huomenna.”
 
-**Piilotettu hinta.** [Shrinkflaatio](shrinkflaatio.html) nostaa hintaa pienentämällä pakkausta, jolloin muutos ei näy siinä luvussa jota katsotaan. [Suunniteltu vanheneminen](suunniteltu-vanheneminen.html) siirtää kustannuksen tulevaisuuteen, [tilausansa](tilausansa.html) tekee lopettamisesta työlästä ja [välittäjän skimmaus](valittajan-skimmaus.html) piilottaa marginaalin molemmilta osapuolilta.
+**Piilotettu hinta.** [Shrinkflaatio](shrinkflaatio.html) nostaa hintaa pienentämällä pakkausta, jolloin muutos ei näy siinä luvussa jota katsotaan. [Greedflation](greedflation.html) on sen sukulainen: hinta nousee kustannusten mukana mutta ei laske niiden mukana, ja kate kasvaa kenenkään huomaamatta. [Suunniteltu vanheneminen](suunniteltu-vanheneminen.html) siirtää kustannuksen tulevaisuuteen, [tilausansa](tilausansa.html) tekee lopettamisesta työlästä ja [välittäjän skimmaus](valittajan-skimmaus.html) piilottaa marginaalin molemmilta osapuolilta.
 
 Oma alaryhmänsä on työn hinnoittelu: [ilmainen näytetyö](ilmainen-naytetyo.html), [maksu näkyvyydellä](exposure-maksu.html) ja [tilipuristus](tilipuristus.html) siirtävät kaikki riskin ja rahoituksen tekijälle. Ne kuuluvat tähän kategoriaan siksi, että kyse on neuvotteluasetelmasta — mutta niiden kohde on toimeksiantosuhde, ei ostotapahtuma.
 
-## Viisitoista tekniikkaa
+## Kuusitoista tekniikkaa
 
 [[ILMIOT]]
 

@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.ilmiöt.fi/</loc>
-    <lastmod>2026-10-03</lastmod>
+    <lastmod>2026-11-02</lastmod>
     <priority>1.0</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -50,7 +50,7 @@
   </url>
   <url>
     <loc>https://www.ilmiöt.fi/kategoria-myyntikikat-ja-painostus.html</loc>
-    <lastmod>2026-07-25</lastmod>
+    <lastmod>2026-11-02</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -93,6 +93,12 @@
   <url>
     <loc>https://www.ilmiöt.fi/kategoria-trollaus-ja-keskustelun-sabotointi.html</loc>
     <lastmod>2026-10-03</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.ilmiöt.fi/kategoria-kannustimet-ja-sivuvaikutukset.html</loc>
+    <lastmod>2026-11-02</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -649,6 +655,12 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://www.ilmiöt.fi/greedflation.html</loc>
+    <lastmod>2026-11-02</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://www.ilmiöt.fi/suunniteltu-vanheneminen.html</loc>
     <lastmod>2026-07-06</lastmod>
     <priority>0.8</priority>
@@ -1087,6 +1099,60 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://www.ilmiöt.fi/kobravaikutus.html</loc>
+    <lastmod>2026-11-02</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.ilmiöt.fi/kannustinloukku.html</loc>
+    <lastmod>2026-11-02</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.ilmiöt.fi/kynnysefekti.html</loc>
+    <lastmod>2026-11-02</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.ilmiöt.fi/moraalikato.html</loc>
+    <lastmod>2026-11-02</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.ilmiöt.fi/riskikompensaatio.html</loc>
+    <lastmod>2026-11-02</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.ilmiöt.fi/jevonsin-paradoksi.html</loc>
+    <lastmod>2026-11-02</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.ilmiöt.fi/yhteismaan-tragedia.html</loc>
+    <lastmod>2026-11-02</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.ilmiöt.fi/kiellon-rautainen-laki.html</loc>
+    <lastmod>2026-11-02</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.ilmiöt.fi/chestertonin-aita.html</loc>
+    <lastmod>2026-11-02</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://www.ilmiöt.fi/peli.html</loc>
     <lastmod>2026-10-03</lastmod>
     <priority>0.6</priority>
@@ -1094,13 +1160,13 @@
   </url>
   <url>
     <loc>https://www.ilmiöt.fi/tietoa.html</loc>
-    <lastmod>2026-10-03</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <priority>0.5</priority>
     <changefreq>yearly</changefreq>
   </url>
   <url>
     <loc>https://www.ilmiöt.fi/muutokset.html</loc>
-    <lastmod>2026-10-03</lastmod>
+    <lastmod>2026-11-02</lastmod>
     <priority>0.4</priority>
     <changefreq>monthly</changefreq>
   </url>

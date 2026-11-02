@@ -4,7 +4,7 @@ h1: Kannustimet ja sivuvaikutukset — kun hyvä sääntö tuottaa huonon lopput
 otsikko: Kannustimet ja sivuvaikutukset — kobravaikutus ja {n-1} muuta ilmiötä
 kuvaus: Kobravaikutus, kannustinloukku, moraalikato ja yhteismaan tragedia: {n} ilmiötä, joissa hyvää tarkoittava sääntö muuttaa käytöstä väärään suuntaan.
 vari: "#a04000"
-paivitetty: 2026-10-22
+paivitetty: 2026-11-02
 naapurit:
   - kategoria-byrokratia-ja-organisaatio | Byrokratia ja organisaatio →
   - kategoria-vallan-rakenteet | Vallan rakenteet →

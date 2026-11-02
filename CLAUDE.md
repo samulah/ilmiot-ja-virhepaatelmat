@@ -1,6 +1,6 @@
 # Ilmiöitä — www.ilmiöt.fi
 
-Suomenkielinen tietopankki: 165 yhteiskunnallista ilmiötä, 15 aihepiiriä. Staattinen
+Suomenkielinen tietopankki: 175 yhteiskunnallista ilmiötä, 16 aihepiiriä. Staattinen
 HTML, ei build-vaihetta — jokainen sivu on itsenäinen tiedosto repon juuressa. Osa
 tiedostoista on kuitenkin **generoituja**, eikä niitä muokata käsin (ks. alla).
 

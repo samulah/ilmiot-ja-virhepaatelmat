@@ -1,6 +1,6 @@
 # Ilmiöitä — Miten valta toimii
 
-> Suomenkielinen sivusto, joka selittää 165 yhteiskunnallista ilmiötä:
+> Suomenkielinen sivusto, joka selittää 175 yhteiskunnallista ilmiötä:
 > valtarakenteet, propaganda ja informaatiovaikuttaminen, kognitiiviset harhat,
 > byrokratia ja organisaatiodynamiikka, projektihallinnan lait,
 > talouden kasvuilmiöt, huijaukset ja petokset, myynti- ja painostustaktiikat,
@@ -160,6 +160,7 @@ Kategoriasivu: https://www.ilmiöt.fi/kategoria-myyntikikat-ja-painostus.html
 - [Sosiaalinen todiste -manipulaatio](https://www.ilmiöt.fi/sosiaalinen-todiste.html): "Muutkin jo ostivat" — epävarma ihminen matkii muita, ja kysyntä voidaan lavastaa.
 - [Painostus-close](https://www.ilmiöt.fi/painostusclose.html): Keinotekoinen kiire ja niukkuus pakottavat päättämään ennen kuin ehdit harkita.
 - [Shrinkflaatio](https://www.ilmiöt.fi/shrinkflaatio.html): Paketti pienenee, hinta pysyy — piilotettu hinnankorotus, jonka yksikköhinta paljastaa.
+- [Greedflation](https://www.ilmiöt.fi/greedflation.html): Kustannus laskee, hinta ei: suklaa paljastaa, milloin korotus on katetta eikä kulua.
 - [Suunniteltu vanheneminen](https://www.ilmiöt.fi/suunniteltu-vanheneminen.html): Tuote suunnitellaan hajoamaan tai vanhenemaan ennenaikaisesti, jotta ostaisit uuden.
 - [Tilausansa](https://www.ilmiöt.fi/tilausansa.html): Tilaaminen on yhden klikkauksen helppoa, peruminen tahallaan vaikeaa.
 
@@ -282,3 +283,19 @@ Kategoriasivu: https://www.ilmiöt.fi/kategoria-trollaus-ja-keskustelun-sabotoin
 - [Maalittaminen](https://www.ilmiöt.fi/maalittaminen.html): Yksi osoittaa kohteen, joukko hoitaa loput: painostus, joka ei näytä kenenkään yksittäisen teolta.
 - [Doksaus](https://www.ilmiöt.fi/doksaus.html): Henkilötiedot kaivetaan esiin ja julkaistaan: verkon riita siirtyy kotiovelle.
 - [Älä ruoki trollia](https://www.ilmiöt.fi/trollin-ruokkiminen.html): Reaktio on trollin palkkio. Neuvo toimii yksittäiseen provosoijaan — ei maalittamiseen.
+
+### Kannustimet ja sivuvaikutukset
+
+Hyvää tarkoittava sääntö muuttaa käytöstä tavalla, jota sen laatija ei ennakoinut.
+
+Kategoriasivu: https://www.ilmiöt.fi/kategoria-kannustimet-ja-sivuvaikutukset.html
+
+- [Kobravaikutus](https://www.ilmiöt.fi/kobravaikutus.html): Palkkio ongelman korjaamisesta tekee ongelmasta kannattavan — ja pahemman.
+- [Kannustinloukku](https://www.ilmiöt.fi/kannustinloukku.html): Verot ja leikkautuvat tuet vievät lisätulosta lähes kaiken: työ ei kannata, vaikka sitä olisi.
+- [Kynnysefekti](https://www.ilmiöt.fi/kynnysefekti.html): Kun sääntö muuttuu jyrkästi rajan kohdalla, ihmiset ja yritykset asettuvat juuri rajan alle.
+- [Moraalikato](https://www.ilmiöt.fi/moraalikato.html): Kun joku muu maksaa tappiot, riskiä otetaan enemmän — Suomen pankkikriisi oppikirjaesimerkkinä.
+- [Riskikompensaatio](https://www.ilmiöt.fi/riskikompensaatio.html): Turvallisuuden tunne lisää riskinottoa, ja osa turvatoimen hyödystä kuluu kovempaan menoon.
+- [Jevonsin paradoksi](https://www.ilmiöt.fi/jevonsin-paradoksi.html): Kun käyttö tehostuu, sitä käytetään enemmän: säästö kuluu osin tai kokonaan lisäkulutukseen.
+- [Yhteismaan tragedia](https://www.ilmiöt.fi/yhteismaan-tragedia.html): Jokaisen kannattaa ottaa yhteisestä vähän lisää, kunnes yhteistä ei enää ole.
+- [Kiellon rautainen laki](https://www.ilmiöt.fi/kiellon-rautainen-laki.html): Kun päihde kielletään, markkinoille jää sen väkevin muoto: kieltolain Suomessa pirtu, ei olut.
+- [Chestertonin aita](https://www.ilmiöt.fi/chestertonin-aita.html): Älä pura sääntöä ennen kuin tiedät, miksi se on olemassa — ongelma voi olla piilossa, koska sääntö toimii.

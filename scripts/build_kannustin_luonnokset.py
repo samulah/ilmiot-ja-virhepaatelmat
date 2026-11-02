@@ -8,11 +8,11 @@ tavalla, jota laatija ei ennakoinut. Kobravaikutus siirtyy siksi tähän erään
 eikä sitä enää julkaista Goodhartin lain perään.
 
 Erän rakenne:
-  166-168  kannustin kääntyy itseään vastaan: kobravaikutus, kannustinloukku,
+  167-169  kannustin kääntyy itseään vastaan: kobravaikutus, kannustinloukku,
            kynnysefekti
-  169-171  joku muu kantaa riskin tai hyöty kuluu: moraalikato,
+  170-172  joku muu kantaa riskin tai hyöty kuluu: moraalikato,
            riskikompensaatio, Jevonsin paradoksi
-  172-174  yhteinen resurssi, kielto ja purkaminen: yhteismaan tragedia,
+  173-175  yhteinen resurssi, kielto ja purkaminen: yhteismaan tragedia,
            kiellon rautainen laki, Chestertonin aita
 
 Jokaisessa on vähintään yksi suomalainen tapaus; lähteet tarkistettiin
@@ -20,7 +20,8 @@ Jokaisessa on vähintään yksi suomalainen tapaus; lähteet tarkistettiin
 "kynnysefekti" (notch / bunching) ja "kiellon rautainen laki" (iron law of
 prohibition).
 
-Numerot 166-174 olettavat, että sivustolla on julkaisuhetkellä 165 ilmiötä.
+Numerot 167-175 olettavat, että sivustolla on julkaisuhetkellä 166 ilmiötä
+(greedflation julkaistiin 2.11.2026 numeroksi 93).
 index.html:ään ei kirjoiteta mitään: hub-lohko kirjoitetaan tiedostoon
 luonnokset/kannustin-hub-lohko.html, josta build_kategoriat.py --luonnos lukee
 sen kategoriasivun esikatselua varten.
@@ -64,33 +65,33 @@ KAT_KUVAUS = ("Hyvää tarkoittava sääntö muuttaa käytöstä tavalla, jota s
               "ennakoinut. Kobravaikutus, kannustinloukku, moraalikato ja yhteismaan "
               "tragedia — ja Chestertonin aita, joka muistuttaa, että purkaminenkin on päätös.")
 
-# edellinen erä (149-165) — uuden kategorian PREV-ketju kiinnittyy sen viimeiseen
+# edellinen erä (150-166, greedflation 93 julkaistiin 2.11.2026) — uuden kategorian PREV-ketju kiinnittyy sen viimeiseen
 EDELTAJA = ("trollin-ruokkiminen", "Älä ruoki trollia — milloin hiljaisuus toimii ja milloin ei")
 
-YHTEENSA = 174
+YHTEENSA = 175
 
 # slug -> (numero, väri, nimi, kortin kuvaus)
 OMAT_KORTIT = {
     # kannustin kääntyy itseään vastaan
-    "kobravaikutus": (166, "#a04000", "Kobravaikutus",
+    "kobravaikutus": (167, "#a04000", "Kobravaikutus",
         "Palkkio ongelman korjaamisesta tekee ongelmasta kannattavan — ja pahemman."),
-    "kannustinloukku": (167, "#8d6e63", "Kannustinloukku",
+    "kannustinloukku": (168, "#8d6e63", "Kannustinloukku",
         "Verot ja leikkautuvat tuet vievät lisätulosta lähes kaiken: työ ei kannata, vaikka sitä olisi."),
-    "kynnysefekti": (168, "#6d4c41", "Kynnysefekti",
+    "kynnysefekti": (169, "#6d4c41", "Kynnysefekti",
         "Kun sääntö muuttuu jyrkästi rajan kohdalla, ihmiset ja yritykset asettuvat juuri rajan alle."),
     # joku muu kantaa riskin tai hyöty kuluu
-    "moraalikato": (169, "#5d4037", "Moraalikato",
+    "moraalikato": (170, "#5d4037", "Moraalikato",
         "Kun joku muu maksaa tappiot, riskiä otetaan enemmän — Suomen pankkikriisi oppikirjaesimerkkinä."),
-    "riskikompensaatio": (170, "#e65100", "Riskikompensaatio",
+    "riskikompensaatio": (171, "#e65100", "Riskikompensaatio",
         "Turvallisuuden tunne lisää riskinottoa, ja osa turvatoimen hyödystä kuluu kovempaan menoon."),
-    "jevonsin-paradoksi": (171, "#2e7d32", "Jevonsin paradoksi",
+    "jevonsin-paradoksi": (172, "#2e7d32", "Jevonsin paradoksi",
         "Kun käyttö tehostuu, sitä käytetään enemmän: säästö kuluu osin tai kokonaan lisäkulutukseen."),
     # yhteinen resurssi, kielto ja purkaminen
-    "yhteismaan-tragedia": (172, "#558b2f", "Yhteismaan tragedia",
+    "yhteismaan-tragedia": (173, "#558b2f", "Yhteismaan tragedia",
         "Jokaisen kannattaa ottaa yhteisestä vähän lisää, kunnes yhteistä ei enää ole."),
-    "kiellon-rautainen-laki": (173, "#37474f", "Kiellon rautainen laki",
+    "kiellon-rautainen-laki": (174, "#37474f", "Kiellon rautainen laki",
         "Kun päihde kielletään, markkinoille jää sen väkevin muoto: kieltolain Suomessa pirtu, ei olut."),
-    "chestertonin-aita": (174, "#455a64", "Chestertonin aita",
+    "chestertonin-aita": (175, "#455a64", "Chestertonin aita",
         "Älä pura sääntöä ennen kuin tiedät, miksi se on olemassa — ongelma voi olla piilossa, koska sääntö toimii."),
 }
 
@@ -104,7 +105,7 @@ def julkaistut_kortit():
         r'<span class="hub-nimi">([^<]*)</span>\s*<span class="hub-kuvaus">([^<]*)</span>')
     for m in hub.finditer((ROOT / "index.html").read_text(encoding="utf-8")):
         kortit[m.group(1)] = (int(m.group(3)), m.group(2), m.group(4), m.group(5))
-    assert len(kortit) == 165, f"kortteja {len(kortit)}, odotettiin 165"
+    assert len(kortit) == 166, f"kortteja {len(kortit)}, odotettiin 166"
     assert not set(kortit) & set(OMAT_KORTIT), "erän slug on jo julkaistu"
     return kortit
 
@@ -222,7 +223,7 @@ def lue_lisaa(kirjat, linkit):
     return "\n".join(osat)
 
 
-# ────────────────────────── 166 · Kobravaikutus ──────────────────────────
+# ────────────────────────── 167 · Kobravaikutus ──────────────────────────
 # Teksti siirretty luonnoksesta 21.10.2026; tapaukset tarkennettu 22.10.
 page("kobravaikutus",
      "Kobravaikutus — kun palkkio pahentaa ongelmaa",
@@ -271,7 +272,7 @@ flowchart TD
      ["goodhartin-laki", "kannustinloukku", "kynnysefekti", "moraalikato", "streisand-ilmio"])
 
 
-# ────────────────────────── 167 · Kannustinloukku ──────────────────────────
+# ────────────────────────── 168 · Kannustinloukku ──────────────────────────
 page("kannustinloukku",
      "Kannustinloukku — kun työ ei kannata",
      "Kannustinloukku — miksi lisätyö ei aina kannata? | Ilmiöitä",
@@ -305,7 +306,7 @@ page("kannustinloukku",
      ["kynnysefekti", "kobravaikutus", "moraalikato", "catch-22", "kafka-ilmio"])
 
 
-# ────────────────────────── 168 · Kynnysefekti ──────────────────────────
+# ────────────────────────── 169 · Kynnysefekti ──────────────────────────
 page("kynnysefekti",
      "Kynnysefekti — kun raja ohjaa enemmän kuin sääntö",
      "Kynnysefekti — miksi kaikki asettuvat juuri rajan alle? | Ilmiöitä",
@@ -340,7 +341,7 @@ page("kynnysefekti",
      ["kannustinloukku", "kobravaikutus", "goodhartin-laki", "moraalikato", "chestertonin-aita"])
 
 
-# ────────────────────────── 169 · Moraalikato ──────────────────────────
+# ────────────────────────── 170 · Moraalikato ──────────────────────────
 page("moraalikato",
      "Moraalikato — kun joku muu maksaa riskin",
      "Moraalikato (moral hazard) — mitä se tarkoittaa? | Ilmiöitä",
@@ -376,7 +377,7 @@ page("moraalikato",
      ["riskikompensaatio", "yhteismaan-tragedia", "kobravaikutus", "saantelijan-kaappaus", "kannustinloukku"])
 
 
-# ────────────────────────── 170 · Riskikompensaatio ──────────────────────────
+# ────────────────────────── 171 · Riskikompensaatio ──────────────────────────
 page("riskikompensaatio",
      "Riskikompensaatio — turvallisuus, joka syö itseään",
      "Riskikompensaatio — miksi turvavarusteet lisäävät riskinottoa? | Ilmiöitä",
@@ -407,7 +408,7 @@ page("riskikompensaatio",
      ["moraalikato", "jevonsin-paradoksi", "kobravaikutus", "backfire-effect", "dunning-kruger"])
 
 
-# ────────────────────────── 171 · Jevonsin paradoksi ──────────────────────────
+# ────────────────────────── 172 · Jevonsin paradoksi ──────────────────────────
 page("jevonsin-paradoksi",
      "Jevonsin paradoksi — tehokkuus, joka lisää kulutusta",
      "Jevonsin paradoksi ja rebound — miksi säästö ei aina säästä? | Ilmiöitä",
@@ -438,7 +439,7 @@ page("jevonsin-paradoksi",
      ["riskikompensaatio", "yhteismaan-tragedia", "kobravaikutus", "viherpesu", "goodhartin-laki"])
 
 
-# ────────────────────────── 172 · Yhteismaan tragedia ──────────────────────────
+# ────────────────────────── 173 · Yhteismaan tragedia ──────────────────────────
 page("yhteismaan-tragedia",
      "Yhteismaan tragedia — kun kaikkien on ei-kenenkään",
      "Yhteismaan tragedia — miksi yhteinen resurssi kuluu loppuun? | Ilmiöitä",
@@ -468,7 +469,7 @@ page("yhteismaan-tragedia",
      ["moraalikato", "sivustakatsojan-efekti", "jevonsin-paradoksi", "kobravaikutus", "kannustinloukku"])
 
 
-# ────────────────────────── 173 · Kiellon rautainen laki ──────────────────────────
+# ────────────────────────── 174 · Kiellon rautainen laki ──────────────────────────
 page("kiellon-rautainen-laki",
      "Kiellon rautainen laki — kielletty päihde väkevöityy",
      "Kiellon rautainen laki — miksi kielto tekee päihteistä vahvempia? | Ilmiöitä",
@@ -501,7 +502,7 @@ page("kiellon-rautainen-laki",
      ["kobravaikutus", "chestertonin-aita", "streisand-ilmio", "backfire-effect", "riskikompensaatio"])
 
 
-# ────────────────────────── 174 · Chestertonin aita ──────────────────────────
+# ────────────────────────── 175 · Chestertonin aita ──────────────────────────
 page("chestertonin-aita",
      "Chestertonin aita — selvitä ensin, miksi aita on siinä",
      "Chestertonin aita — älä pura sääntöä, jonka syytä et tiedä | Ilmiöitä",
