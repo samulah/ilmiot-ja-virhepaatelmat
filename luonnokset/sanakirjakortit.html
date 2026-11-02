@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <title>Sanakirjakortit — luonnokset — Ilmiöitä</title>
+  <link rel="stylesheet" href="../fonts/fonts.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --c-primary:      #C9A84C;
+      --c-primary-dark: #1C1400;
+      --c-primary-mid:  #8B6914;
+      --c-bg:           #F5F0E5;
+    }
+    body {
+      font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+      background: var(--c-bg);
+      color: #1A1100;
+      min-height: 100vh;
+      -webkit-text-size-adjust: 100%;
+    }
+    .hub-header {
+      position: sticky; top: 0; z-index: 20;
+      background: var(--c-primary-dark);
+      padding: 0.85rem 1.5rem;
+      display: flex; align-items: center; gap: 0.75rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.28);
+    }
+    .hub-logo { width: 36px; height: 36px; flex-shrink: 0; }
+    .hub-header-left { flex: 1; min-width: 0; }
+    .hub-header-left h1 {
+      font-size: 1rem; font-weight: 700; color: #fff; line-height: 1.2;
+      letter-spacing: -0.01em; font-family: 'Spectral', Georgia, serif;
+    }
+    .hub-header-left p {
+      font-size: 0.72em; color: rgba(255,255,255,0.48);
+      margin-top: 0.1em; letter-spacing: 0.01em;
+    }
+    .paluu-btn {
+      flex-shrink: 0; display: inline-flex; align-items: center; gap: 0.4rem;
+      background: rgba(201,168,76,0.18); color: #fff;
+      border: 1px solid rgba(201,168,76,0.4);
+      padding: 0.5rem 1rem; font-size: 0.82em; font-weight: 500;
+      font-family: inherit; text-decoration: none; white-space: nowrap;
+    }
+    .paluu-btn:hover { background: rgba(201,168,76,0.3); }
+    .hub-main { max-width: 1240px; margin: 0 auto; padding: 1.5rem 1.5rem 4rem; }
+    .hub-intro {
+      max-width: 740px; margin: 0.3rem auto 1.2rem; text-align: center;
+      font-size: 0.9em; line-height: 1.55; color: #5a4712;
+    }
+    .hub-huomio {
+      max-width: 740px; margin: 0 auto 2rem;
+      background: #FDF6DC; border: 1.5px solid #D4C090;
+      border-left: 4px solid #C9A84C;
+      padding: 0.75rem 1.1rem; font-size: 0.82em; line-height: 1.55; color: #3d3008;
+    }
+    .hub-huomio label { display: block; padding: 0.15rem 0; cursor: pointer; }
+    .hub-huomio input { margin-right: 0.5em; accent-color: #8B6914; }
+    .hub-intro code, .hub-huomio code, .hub-kat-desc code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.92em; background: rgba(201,168,76,0.16); padding: 0.05em 0.3em;
+    }
+    .hub-kategoria { margin-bottom: 2.4rem; }
+    .hub-kat-label {
+      font-size: 0.67em; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.11em; color: var(--c-primary-mid);
+      margin-bottom: 0.15rem; padding-left: 0.15rem;
+    }
+    .hub-kat-desc {
+      font-size: 0.76em; color: #8B6914; margin: 0 0 0.8rem; padding-left: 0.15rem;
+      line-height: 1.5;
+    }
+    .sk-kortti {
+      background: #FDFAF2; border: 1.5px solid #D4C090;
+      border-left: 4px solid var(--c, #2c3e50);
+      padding: 1rem 1.1rem 1.2rem; margin-bottom: 0.9rem;
+    }
+    .sk-kortti h2 {
+      font-family: 'Spectral', Georgia, serif; font-size: 1.15rem; line-height: 1.25;
+    }
+    .sk-kortti h2 a { color: inherit; }
+    .sk-meta { font-size: 0.76em; color: #8B6914; margin: 0.1rem 0 0.8rem; }
+    .sk-kuvat { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 1.4rem; }
+    .sk-kuvat figure { flex: 0 0 auto; max-width: 100%; }
+    .sk-pienet { display: flex; flex-direction: column; gap: 0.9rem; }
+    .sk-kuvat img { display: block; max-width: 100%; height: auto; border: 1px solid #D4C090; }
+    .sk-kuvat figcaption {
+      font-size: 0.7em; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.09em; color: var(--c-primary-mid); margin-bottom: 0.3rem;
+    }
+    .sk-tila {
+      display: inline-block; font-size: 0.86em; font-weight: 700; padding: 0.05em 0.5em;
+      border: 1.5px solid #D4C090; color: #5a4712; background: #FDF6DC;
+    }
+    .sk-tila.ei-vahvistunut { background: #b71c1c; border-color: #b71c1c; color: #fff; }
+    .sk-taulu-kehys { overflow-x: auto; background: #FDFAF2; border: 1.5px solid #D4C090; }
+    table { border-collapse: collapse; width: 100%; font-size: 0.82em; line-height: 1.4; }
+    th, td { text-align: left; vertical-align: top; padding: 0.5rem 0.7rem;
+             border-bottom: 1px solid #E6DBB8; }
+    th { font-size: 0.82em; font-weight: 600; text-transform: uppercase;
+         letter-spacing: 0.08em; color: var(--c-primary-mid); white-space: nowrap; }
+    td a { color: #6B5020; }
+    td a.sk-lahde { word-break: break-all; }
+    td em { font-style: normal; font-weight: 600; color: #8B6914; }
+    tr.ei-vahvistunut td { background: #FBE4E0; }
+    tr.ei-vahvistunut td:first-child { box-shadow: inset 4px 0 0 #b71c1c; }
+    .sk-og { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 0.9rem; }
+    .sk-og img { display: block; width: 100%; height: auto; border: 1px solid #D4C090; }
+    @media (max-width: 640px) {
+      .hub-header { padding: 0.75rem 1rem; }
+      .hub-main { padding: 1.2rem 1rem 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="hub-header">
+  <img class="hub-logo" src="../favicon.svg" alt="Ilmiöitä-logo: punainen varoituslippu" width="36" height="36">
+  <div class="hub-header-left">
+    <h1>Ilmiöitä &middot; sanakirjakortit</h1>
+    <p>18 korttia tarkistettavana (17 sivukorttia + 1 irtokortti) &middot; generoitu, älä muokkaa käsin</p>
+  </div>
+  <a class="paluu-btn" href="index.html">&larr; Luonnokset</a>
+</header>
+
+<main class="hub-main">
+<p class="hub-intro">Sanakirjakortit kategoriaan Trollaus ja keskustelun sabotointi. Sivun kirjoittaa
+<code>scripts/build_sanakirja.py --kirjoita</code> tiedostosta <code>sanakirja/*.json</code>.
+Tämän sivun kirjoittaminen ei muuta ilmiösivuja: kortit viedään niille erikseen lipulla
+<code>--sivut</code>. <strong>3 kortin lähde on merkitty &rdquo;ei vahvistunut&rdquo;</strong> &mdash; ne on korostettu punaisella.</p>
+
+<div class="hub-huomio">
+  <strong>Tarkistuslista ennen kuin sivuihin kosketaan</strong>
+  <label><input type="checkbox">Kortteja on 18 (17 sivukorttia + 1 irtokortti).</label>
+  <label><input type="checkbox">Jokaisessa on hakusana, hakasulkurivi ja täsmälleen kaksi numeroitua merkitystä.</label>
+  <label><input type="checkbox">Mikään teksti ei katkea eikä kosketa reunaa.</label>
+  <label><input type="checkbox">246 px:n versiot ovat luettavissa zoomaamatta.</label>
+</div>
+
+<section class="hub-kategoria">
+  <div class="hub-kat-label">Sivukortit &middot; 17 kpl &middot; 1200&times;1200</div>
+  <p class="hub-kat-desc">Jokainen kortti kolmessa koossa: tarkistuskoko sekä samat kaksi
+  leveyttä, joilla kuva näkyy puhelimessa. Pienissä kuvissa ratkaisee merkitysten teksti.</p>
+  <article class="sk-kortti" style="--c:#00838f" id="trollaus">
+    <h2><a href="../trollaus.html">Trollaus</a></h2>
+    <p class="sk-meta"><code>trollaus</code> &middot; [trol·la·us] substantiivi · verbi: trollata &middot; <span class="sk-tila ">tarkistettu</span></p>
+    <div class="sk-kuvat">
+      <figure><figcaption>600 px &middot; tarkistuskoko</figcaption><img src="../sanakirja/trollaus.png" width="600" height="600" alt="Trollaus [trol·la·us], substantiivi, verbi trollata. 1. Kalastus: Syöttiä vedetään veneen perässä, kunnes jokin tarttuu. 2. Netti: Tahallista provosointia, jonka palkkio on reaktio."></figure>
+      <div class="sk-pienet">
+        <figure><figcaption>276 px</figcaption><img src="../sanakirja/trollaus.png" width="276" height="276" alt=""></figure>
+        <figure><figcaption>246 px &middot; puhelimen palsta</figcaption><img src="../sanakirja/trollaus.png" width="246" height="246" alt=""></figure>
+      </div>
+    </div>
+  </article>
+  <article class="sk-kortti" style="--c:#00695c" id="verkon-estottomuus">
+    <h2><a href="../verkon-estottomuus.html">Verkon estottomuus</a></h2>
+    <p class="sk-meta"><code>verkon-estottomuus</code> &middot; [ver·kon es·tot·to·muus] substantiivi &middot; <span class="sk-tila ">tarkistettu</span></p>
+    <div class="sk-kuvat">
+      <figure><figcaption>600 px &middot; tarkistuskoko</figcaption><img src="../sanakirja/verkon-estottomuus.png" width="600" height="600" alt="Verkon estottomuus [ver·kon es·tot·to·muus], substantiivi. 1. Psykologia: Estojen puute: normit eivät hillitse käytöstä. 2. Netti: Ruudun takaa sanotaan, mitä ei sanottaisi kasvokkain."></figure>
+      <div class="sk-pienet">
+        <figure><figcaption>276 px</figcaption><img src="../sanakirja/verkon-estottomuus.png" width="276" height="276" alt=""></figure>
+        <figure><figcaption>246 px &middot; puhelimen palsta</figcaption><img src="../sanakirja/verkon-estottomuus.png" width="246" height="246" alt=""></figure>
+      </div>
+    </div>
+  </article>
+  <article class="sk-kortti" style="--c:#37474f" id="pimea-tetradi">
+    <h2><a href="../pimea-tetradi.html">Pimeä tetradi</a></h2>
+    <p class="sk-meta"><code>pimea-tetradi</code> &middot; [pi·me·ä tet·ra·di] substantiivi &middot; <span class="sk-tila ">tarkistettu</span></p>
+    <div class="sk-kuvat">
+      <figure><figcaption>600 px &middot; tarkistuskoko</figcaption><img src="../sanakirja/pimea-tetradi.png" width="600" height="600" alt="Pimeä tetradi [pi·me·ä tet·ra·di], substantiivi. 1. Kreikka: Tetras: neljän ryhmä, neljikkö. 2. Psykologia: Narsismi, machiavellismi, psykopatia ja sadismi."></figure>
+      <div class="sk-pienet">
+        <figure><figcaption>276 px</figcaption><img src="../sanakirja/pimea-tetradi.png" width="276" height="276" alt=""></figure>
+        <figure><figcaption>246 px &middot; puhelimen palsta</figcaption><img src="../sanakirja/pimea-tetradi.png" width="246" height="246" alt=""></figure>
+      </div>
+    </div>
+  </article>
+  <article class="sk-kortti" style="--c:#546e7a" id="kuka-tahansa-voi-trollata">
+    <h2><a href="../kuka-tahansa-voi-trollata.html">Kuka tahansa voi trollata</a></h2>
+    <p class="sk-meta"><code>kuka-tahansa-voi-trollata</code> &middot; fraasi &middot; <span class="sk-tila ">sivulla</span></p>
+    <div class="sk-kuvat">
+      <figure><figcaption>600 px &middot; tarkistuskoko</figcaption><img src="../sanakirja/kuka-tahansa-voi-trollata.png" width="600" height="600" alt="Kuka tahansa voi trollata, fraasi. 1. Tutkimus: Anyone Can Become a Troll, tutkimus vuodelta 2017. 2. Netti: Huono mieliala ja huono ketju riittävät."></figure>
+      <div class="sk-pienet">
+        <figure><figcaption>276 px</figcaption><img src="../sanakirja/kuka-tahansa-voi-trollata.png" width="276" height="276" alt=""></figure>
+        <figure><figcaption>246 px &middot; puhelimen palsta</figcaption><img src="../sanakirja/kuka-tahansa-voi-trollata.png" width="246" height="246" alt=""></figure>
+      </div>
+    </div>
+  </article>
+  <article class="sk-kortti" style="--c:#8d6e63" id="vain-vitsi">
+    <h2><a href="../vain-vitsi.html">Se oli vain vitsi</a></h2>
+    <p class="sk-meta"><code>vain-vitsi</code> &middot; fraasi &middot; <span class="sk-tila ">tarkistettu</span></p>
+    <div class="sk-kuvat">
+      <figure><figcaption>600 px &middot; tarkistuskoko</figcaption><img src="../sanakirja/vain-vitsi.png" width="600" height="600" alt="Se oli vain vitsi, fraasi. 1. Yleiskieli: Vitsi: lyhyt huvittava juttu. 2. Netti: Suojakilpi: vitsi vasta, kun tulee seurauksia."></figure>
+      <div class="sk-pienet">
+        <figure><figcaption>276 px</figcaption><img src="../sanakirja/vain-vitsi.png" width="276" height="276" alt=""></figure>
+        <figure><figcaption>246 px &middot; puhelimen palsta</figcaption><img src="../sanakirja/vain-vitsi.png" width="246" height="246" alt=""></figure>
+      </div>
+    </div>
+  </article>
+  <article class="sk-kortti" style="--c:#006064" id="sealioning">
+    <h2><a href="../sealioning.html">Sealioning</a></h2>
+    <p class="sk-meta"><code>sealioning</code> &middot; [sii·lai·ö·ning] substantiivi &middot; <span class="sk-tila ">tarkistettu</span></p>
+    <div class="sk-kuvat">
+      <figure><figcaption>600 px &middot; tarkistuskoko</figcaption><img src="../sanakirja/sealioning.png" width="600" height="600" alt="Sealioning [sii·lai·ö·ning], substantiivi. 1. Sarjakuva: Merileijona seuraa paria kotiin, kohteliaasti kysellen. 2. Netti: Kohtelias kysely, joka ei lopu koskaan."></figure>
+      <div class="sk-pienet">
+        <figure><figcaption>276 px</figcaption><img src="../sanakirja/sealioning.png" width="276" height="276" alt=""></figure>
+        <figure><figcaption>246 px &middot; puhelimen palsta</figcaption><img src="../sanakirja/sealioning.png" width="246" height="246" alt=""></figure>
+      </div>
+    </div>
+  </article>
+  <article class="sk-kortti" style="--c:#0277bd" id="kunhan-kysyn">
+    <h2><a href="../kunhan-kysyn.html">Kunhan kysyn</a></h2>
+    <p class="sk-meta"><code>kunhan-kysyn</code> &middot; fraasi &middot; <span class="sk-tila ">tarkistettu</span></p>
+    <div class="sk-kuvat">
+      <figure><figcaption>600 px &middot; tarkistuskoko</figcaption><img src="../sanakirja/kunhan-kysyn.png" width="600" height="600" alt="Kunhan kysyn, fraasi. 1. Yleiskieli: Kysyä: yrittää saada jotakin selville. 2. Netti: Väite puetaan kysymykseksi, eikä perusteluja tarvita."></figure>
+      <div class="sk-pienet">
+        <figure><figcaption>276 px</figcaption><img src="../sanakirja/kunhan-kysyn.png" width="276" height="276" alt=""></figure>
+        <figure><figcaption>246 px &middot; puhelimen palsta</figcaption><img src="../sanakirja/kunhan-kysyn.png" width="246" height="246" alt=""></figure>
+      </div>
+    </div>
+  </article>
+  <article class="sk-kortti" style="--c:#5d4037" id="huolitrollaus">
+    <h2><a href="../huolitrollaus.html">Huolitrollaus</a></h2>
+    <p class="sk-meta"><code>huolitrollaus</code> &middot; [huo·li·trol·la·us] substantiivi &middot; <span class="sk-tila ">tarkistettu</span></p>
+    <div class="sk-kuvat">
+      <figure><figcaption>600 px &middot; tarkistuskoko</figcaption><img src="../sanakirja/huolitrollaus.png" width="600" height="600" alt="Huolitrollaus [huo·li·trol·la·us], substantiivi. 1. Yleiskieli: Huoli: levoton ajatus jostakin asiasta. 2. Netti: Vastustaja esiintyy huolestuneena kannattajana."></figure>
+      <div class="sk-pienet">
+        <figure><figcaption>276 px</figcaption><img src="../sanakirja/huolitrollaus.png" width="276" height="276" alt=""></figure>
+        <figure><figcaption>246 px &middot; puhelimen palsta</figcaption><img src="../sanakirja/huolitrollaus.png" width="246" height="246" alt=""></figure>
+      </div>
+    </div>
+  </article>
+  <article class="sk-kortti" style="--c:#455a64" id="motte-and-bailey">
+    <h2><a href="../motte-and-bailey.html">Motte and bailey</a></h2>
+    <p class="sk-meta"><code>motte-and-bailey</code> &middot; [mot änd bei·li] substantiivi &middot; <span class="sk-tila ">tarkistettu</span></p>
+    <div class="sk-kuvat">
+      <figure><figcaption>600 px &middot; tarkistuskoko</figcaption><img src="../sanakirja/motte-and-bailey.png" width="600" height="600" alt="Motte and bailey [mot änd bei·li], substantiivi. 1. Linna: Piha, jolla eletään, ja torni, johon vetäydytään. 2. Väittely: Rohkea väite, josta peräännytään vaatimattomaan."></figure>
+      <div class="sk-pienet">
+        <figure><figcaption>276 px</figcaption><img src="../sanakirja/motte-and-bailey.png" width="276" height="276" alt=""></figure>
+        <figure><figcaption>246 px &middot; puhelimen palsta</figcaption><img src="../sanakirja/motte-and-bailey.png" width="246" height="246" alt=""></figure>
+      </div>
+    </div>
+  </article>
+  <article class="sk-kortti" style="--c:#6a1b9a" id="nutpicking">
+    <h2><a href="../nutpicking.html">Nutpicking</a></h2>
+    <p class="sk-meta"><code>nutpicking</code> &middot; [nat·pi·king] substantiivi &middot; <span class="sk-tila ">sivulla</span></p>
+    <div class="sk-kuvat">
+      <figure><figcaption>600 px &middot; tarkistuskoko</figcaption><img src="../sanakirja/nutpicking.png" width="600" height="600" alt="Nutpicking [nat·pi·king], substantiivi. 1. Sanaleikki: Nut (hörhö) ja cherry-picking (rusinoiden poiminta). 2. Netti: Hölmöin kommentti esitetään koko joukon kantana."></figure>
+      <div class="sk-pienet">
+        <figure><figcaption>276 px</figcaption><img src="../sanakirja/nutpicking.png" width="276" height="276" alt=""></figure>
+        <figure><figcaption>246 px &middot; puhelimen palsta</figcaption><img src="../sanakirja/nutpicking.png" width="246" height="246" alt=""></figure>
+      </div>
+    </div>
+  </article>
+  <article class="sk-kortti" style="--c:#ad1457" id="tone-policing">
+    <h2><a href="../tone-policing.html">Tone policing</a></h2>
+    <p class="sk-meta"><code>tone-policing</code> &middot; [toun pö·lii·sing] substantiivi &middot; <span class="sk-tila ei-vahvistunut">ei vahvistunut</span></p>
+    <div class="sk-kuvat">
+      <figure><figcaption>600 px &middot; tarkistuskoko</figcaption><img src="../sanakirja/tone-policing.png" width="600" height="600" alt="Tone policing [toun pö·lii·sing], substantiivi. 1. Sanatarkasti: Sävyn valvontaa: poliisi vahtii, miten asia sanotaan. 2. Netti: Sisältöön ei vastata, sävystä tehdään pääasia."></figure>
+      <div class="sk-pienet">
+        <figure><figcaption>276 px</figcaption><img src="../sanakirja/tone-policing.png" width="276" height="276" alt=""></figure>
+        <figure><figcaption>246 px &middot; puhelimen palsta</figcaption><img src="../sanakirja/tone-policing.png" width="246" height="246" alt=""></figure>
+      </div>
+    </div>
+  </article>
+  <article class="sk-kortti" style="--c:#4e342e" id="kafkatrapping">
+    <h2><a href="../kafkatrapping.html">Kafkatrapping</a></h2>
+    <p class="sk-meta"><code>kafkatrapping</code> &middot; [kaf·ka·trä·ping] substantiivi &middot; <span class="sk-tila ">sivulla</span></p>
+    <div class="sk-kuvat">
+      <figure><figcaption>600 px &middot; tarkistuskoko</figcaption><img src="../sanakirja/kafkatrapping.png" width="600" height="600" alt="Kafkatrapping [kaf·ka·trä·ping], substantiivi. 1. Romaani: Kafkan Oikeusjuttu: puolustautuminen syventää epäilyä. 2. Netti: Syytöksen kiistäminen todistaa syyllisyyden."></figure>
+      <div class="sk-pienet">
+        <figure><figcaption>276 px</figcaption><img src="../sanakirja/kafkatrapping.png" width="276" height="276" alt=""></figure>
+        <figure><figcaption>246 px &middot; puhelimen palsta</figcaption><img src="../sanakirja/kafkatrapping.png" width="246" height="246" alt=""></figure>
+      </div>
+    </div>
+  </article>
+  <article class="sk-kortti" style="--c:#795548" id="shitpostaus">
+    <h2><a href="../shitpostaus.html">Shitpostaus</a></h2>
+    <p class="sk-meta"><code>shitpostaus</code> &middot; [shit·pos·ta·us] substantiivi · verbi: shitpostata &middot; <span class="sk-tila ">tarkistettu</span></p>
+    <div class="sk-kuvat">
+      <figure><figcaption>600 px &middot; tarkistuskoko</figcaption><img src="../sanakirja/shitpostaus.png" width="600" height="600" alt="Shitpostaus [shit·pos·ta·us], substantiivi, verbi shitpostata. 1. Englanti: Shit ja post: arvoton viesti keskustelupalstalla. 2. Netti: Tahallista roskaa: huumoria, joskus tapa hukuttaa asia."></figure>
+      <div class="sk-pienet">
+        <figure><figcaption>276 px</figcaption><img src="../sanakirja/shitpostaus.png" width="276" height="276" alt=""></figure>
+        <figure><figcaption>246 px &middot; puhelimen palsta</figcaption><img src="../sanakirja/shitpostaus.png" width="246" height="246" alt=""></figure>
+      </div>
+    </div>
+  </article>
+  <article class="sk-kortti" style="--c:#d84315" id="dunkkaus">
+    <h2><a href="../dunkkaus.html">Dunkkaus</a></h2>
+    <p class="sk-meta"><code>dunkkaus</code> &middot; [dunk·ka·us] substantiivi · verbi: dunkata &middot; <span class="sk-tila ">tarkistettu</span></p>
+    <div class="sk-kuvat">
+      <figure><figcaption>600 px &middot; tarkistuskoko</figcaption><img src="../sanakirja/dunkkaus.png" width="600" height="600" alt="Dunkkaus [dunk·ka·us], substantiivi, verbi dunkata. 1. Koripallo: Pallo isketään ylhäältä koriin, näyttävästi. 2. Some: Toisen viesti jaetaan omalle yleisölle pilkaten."></figure>
+      <div class="sk-pienet">
+        <figure><figcaption>276 px</figcaption><img src="../sanakirja/dunkkaus.png" width="276" height="276" alt=""></figure>
+        <figure><figcaption>246 px &middot; puhelimen palsta</figcaption><img src="../sanakirja/dunkkaus.png" width="246" height="246" alt=""></figure>
+      </div>
+    </div>
+  </article>
+  <article class="sk-kortti" style="--c:#c62828" id="maalittaminen">
+    <h2><a href="../maalittaminen.html">Maalittaminen</a></h2>
+    <p class="sk-meta"><code>maalittaminen</code> &middot; [maa·lit·ta·mi·nen] substantiivi · verbi: maalittaa &middot; <span class="sk-tila ">tarkistettu</span></p>
+    <div class="sk-kuvat">
+      <figure><figcaption>600 px &middot; tarkistuskoko</figcaption><img src="../sanakirja/maalittaminen.png" width="600" height="600" alt="Maalittaminen [maa·lit·ta·mi·nen], substantiivi, verbi maalittaa. 1. Sotilaskieli: Kartoitetaan mahdolliset sotatoimien kohteet. 2. Some: Yksi osoittaa kohteen, joukko hoitaa loput."></figure>
+      <div class="sk-pienet">
+        <figure><figcaption>276 px</figcaption><img src="../sanakirja/maalittaminen.png" width="276" height="276" alt=""></figure>
+        <figure><figcaption>246 px &middot; puhelimen palsta</figcaption><img src="../sanakirja/maalittaminen.png" width="246" height="246" alt=""></figure>
+      </div>
+    </div>
+  </article>
+  <article class="sk-kortti" style="--c:#b71c1c" id="doksaus">
+    <h2><a href="../doksaus.html">Doksaus</a></h2>
+    <p class="sk-meta"><code>doksaus</code> &middot; [dok·sa·us] substantiivi · verbi: doksata &middot; <span class="sk-tila ">tarkistettu</span></p>
+    <div class="sk-kuvat">
+      <figure><figcaption>600 px &middot; tarkistuskoko</figcaption><img src="../sanakirja/doksaus.png" width="600" height="600" alt="Doksaus [dok·sa·us], substantiivi, verbi doksata. 1. Hakkerislangi: Dropping dox: vastapuolen dokumentit tuodaan julki. 2. Netti: Henkilötiedot kaivetaan ja julkaistaan luvatta."></figure>
+      <div class="sk-pienet">
+        <figure><figcaption>276 px</figcaption><img src="../sanakirja/doksaus.png" width="276" height="276" alt=""></figure>
+        <figure><figcaption>246 px &middot; puhelimen palsta</figcaption><img src="../sanakirja/doksaus.png" width="246" height="246" alt=""></figure>
+      </div>
+    </div>
+  </article>
+  <article class="sk-kortti" style="--c:#2e7d32" id="trollin-ruokkiminen">
+    <h2><a href="../trollin-ruokkiminen.html">Älä ruoki trollia</a></h2>
+    <p class="sk-meta"><code>trollin-ruokkiminen</code> &middot; fraasi &middot; <span class="sk-tila ei-vahvistunut">ei vahvistunut</span></p>
+    <div class="sk-kuvat">
+      <figure><figcaption>600 px &middot; tarkistuskoko</figcaption><img src="../sanakirja/trollin-ruokkiminen.png" width="600" height="600" alt="Älä ruoki trollia, fraasi. 1. Eläintarha: Kyltti aitauksessa: eläimiä ei saa ruokkia. 2. Netti: Vanha neuvo: reaktio on ruokaa, älä anna sitä."></figure>
+      <div class="sk-pienet">
+        <figure><figcaption>276 px</figcaption><img src="../sanakirja/trollin-ruokkiminen.png" width="276" height="276" alt=""></figure>
+        <figure><figcaption>246 px &middot; puhelimen palsta</figcaption><img src="../sanakirja/trollin-ruokkiminen.png" width="246" height="246" alt=""></figure>
+      </div>
+    </div>
+  </article>
+</section>
+
+<section class="hub-kategoria">
+  <div class="hub-kat-label">Irtokortit &mdash; ei omaa sivua &middot; 1 kpl &middot; 1200&times;1200</div>
+  <p class="hub-kat-desc">Näillä aiheilla ei ole ilmiösivua: kuva kirjoitetaan kansioon
+  <code>sanakirja/</code> kuten muutkin, mutta <code>--sivut</code> ei injektoi sitä millekään sivulle.</p>
+  <article class="sk-kortti" style="--c:#00838f" id="kysymyksen-vaistaminen">
+    <h2>Kysymyksen väistäminen</h2>
+    <p class="sk-meta"><code>kysymyksen-vaistaminen</code> &middot; [ky·sy·myk·sen väis·tä·mi·nen] substantiivi · verbi: väistää &middot; <span class="sk-tila ei-vahvistunut">ei vahvistunut</span></p>
+    <div class="sk-kuvat">
+      <figure><figcaption>600 px &middot; tarkistuskoko</figcaption><img src="../sanakirja/kysymyksen-vaistaminen.png" width="600" height="600" alt="Kysymyksen väistäminen [ky·sy·myk·sen väis·tä·mi·nen], substantiivi, verbi väistää. 1. Nyrkkeily: Siirrytään sivuun, ja isku menee ohi. 2. Väittely: Vastataan johonkin muuhun kuin siihen, mitä kysyttiin."></figure>
+      <div class="sk-pienet">
+        <figure><figcaption>276 px</figcaption><img src="../sanakirja/kysymyksen-vaistaminen.png" width="276" height="276" alt=""></figure>
+        <figure><figcaption>246 px &middot; puhelimen palsta</figcaption><img src="../sanakirja/kysymyksen-vaistaminen.png" width="246" height="246" alt=""></figure>
+      </div>
+    </div>
+  </article>
+</section>
+
+<section class="hub-kategoria">
+  <div class="hub-kat-label">Sisältö ja lähteet</div>
+  <p class="hub-kat-desc">Sama data taulukkona, tila kentästä <code>lahde_tila</code>. Rivit,
+  joiden tila on <code>ei vahvistunut</code>, on korostettu: niiden merkitykset kannattaa
+  tarkistaa ennen kuin kortti viedään sivulle.</p>
+  <div class="sk-taulu-kehys">
+    <table>
+      <thead><tr><th>Sana</th><th>Hakasulkurivi</th><th>1. merkitys</th><th>2. merkitys</th><th>Lähde</th><th>Tila</th></tr></thead>
+      <tbody>
+      <tr class="">
+        <td><a href="#trollaus">Trollaus</a></td>
+        <td>[trol·la·us] substantiivi · verbi: trollata</td>
+        <td><em>kalastus</em> Syöttiä vedetään veneen perässä, kunnes jokin tarttuu.</td>
+        <td><em>netti</em> Tahallista provosointia, jonka palkkio on reaktio.</td>
+        <td><a class="sk-lahde" href="https://en.wikipedia.org/wiki/Trolling" rel="noopener">https://en.wikipedia.org/wiki/Trolling</a></td>
+        <td><span class="sk-tila ">tarkistettu</span></td>
+      </tr>
+      <tr class="">
+        <td><a href="#verkon-estottomuus">Verkon estottomuus</a></td>
+        <td>[ver·kon es·tot·to·muus] substantiivi</td>
+        <td><em>psykologia</em> Estojen puute: normit eivät hillitse käytöstä.</td>
+        <td><em>netti</em> Ruudun takaa sanotaan, mitä ei sanottaisi kasvokkain.</td>
+        <td><a class="sk-lahde" href="https://en.wikipedia.org/wiki/Disinhibition" rel="noopener">https://en.wikipedia.org/wiki/Disinhibition</a></td>
+        <td><span class="sk-tila ">tarkistettu</span></td>
+      </tr>
+      <tr class="">
+        <td><a href="#pimea-tetradi">Pimeä tetradi</a></td>
+        <td>[pi·me·ä tet·ra·di] substantiivi</td>
+        <td><em>kreikka</em> Tetras: neljän ryhmä, neljikkö.</td>
+        <td><em>psykologia</em> Narsismi, machiavellismi, psykopatia ja sadismi.</td>
+        <td><a class="sk-lahde" href="https://en.wiktionary.org/wiki/tetrad" rel="noopener">https://en.wiktionary.org/wiki/tetrad</a></td>
+        <td><span class="sk-tila ">tarkistettu</span></td>
+      </tr>
+      <tr class="">
+        <td><a href="#kuka-tahansa-voi-trollata">Kuka tahansa voi trollata</a></td>
+        <td>fraasi</td>
+        <td><em>tutkimus</em> Anyone Can Become a Troll, tutkimus vuodelta 2017.</td>
+        <td><em>netti</em> Huono mieliala ja huono ketju riittävät.</td>
+        <td>sivun ingressi</td>
+        <td><span class="sk-tila ">sivulla</span></td>
+      </tr>
+      <tr class="">
+        <td><a href="#vain-vitsi">Se oli vain vitsi</a></td>
+        <td>fraasi</td>
+        <td><em>yleiskieli</em> Vitsi: lyhyt huvittava juttu.</td>
+        <td><em>netti</em> Suojakilpi: vitsi vasta, kun tulee seurauksia.</td>
+        <td><a class="sk-lahde" href="https://www.kielitoimistonsanakirja.fi/#/vitsi" rel="noopener">https://www.kielitoimistonsanakirja.fi/#/vitsi</a></td>
+        <td><span class="sk-tila ">tarkistettu</span></td>
+      </tr>
+      <tr class="">
+        <td><a href="#sealioning">Sealioning</a></td>
+        <td>[sii·lai·ö·ning] substantiivi</td>
+        <td><em>sarjakuva</em> Merileijona seuraa paria kotiin, kohteliaasti kysellen.</td>
+        <td><em>netti</em> Kohtelias kysely, joka ei lopu koskaan.</td>
+        <td><a class="sk-lahde" href="https://en.wikipedia.org/wiki/Sealioning" rel="noopener">https://en.wikipedia.org/wiki/Sealioning</a></td>
+        <td><span class="sk-tila ">tarkistettu</span></td>
+      </tr>
+      <tr class="">
+        <td><a href="#kunhan-kysyn">Kunhan kysyn</a></td>
+        <td>fraasi</td>
+        <td><em>yleiskieli</em> Kysyä: yrittää saada jotakin selville.</td>
+        <td><em>netti</em> Väite puetaan kysymykseksi, eikä perusteluja tarvita.</td>
+        <td><a class="sk-lahde" href="https://www.kielitoimistonsanakirja.fi/#/kysyä" rel="noopener">https://www.kielitoimistonsanakirja.fi/#/kysyä</a></td>
+        <td><span class="sk-tila ">tarkistettu</span></td>
+      </tr>
+      <tr class="">
+        <td><a href="#huolitrollaus">Huolitrollaus</a></td>
+        <td>[huo·li·trol·la·us] substantiivi</td>
+        <td><em>yleiskieli</em> Huoli: levoton ajatus jostakin asiasta.</td>
+        <td><em>netti</em> Vastustaja esiintyy huolestuneena kannattajana.</td>
+        <td><a class="sk-lahde" href="https://www.kielitoimistonsanakirja.fi/#/huoli" rel="noopener">https://www.kielitoimistonsanakirja.fi/#/huoli</a></td>
+        <td><span class="sk-tila ">tarkistettu</span></td>
+      </tr>
+      <tr class="">
+        <td><a href="#motte-and-bailey">Motte and bailey</a></td>
+        <td>[mot änd bei·li] substantiivi</td>
+        <td><em>linna</em> Piha, jolla eletään, ja torni, johon vetäydytään.</td>
+        <td><em>väittely</em> Rohkea väite, josta peräännytään vaatimattomaan.</td>
+        <td><a class="sk-lahde" href="https://en.wikipedia.org/wiki/Motte-and-bailey_fallacy" rel="noopener">https://en.wikipedia.org/wiki/Motte-and-bailey_fallacy</a></td>
+        <td><span class="sk-tila ">tarkistettu</span></td>
+      </tr>
+      <tr class="">
+        <td><a href="#nutpicking">Nutpicking</a></td>
+        <td>[nat·pi·king] substantiivi</td>
+        <td><em>sanaleikki</em> Nut (hörhö) ja cherry-picking (rusinoiden poiminta).</td>
+        <td><em>netti</em> Hölmöin kommentti esitetään koko joukon kantana.</td>
+        <td>sivun ingressi</td>
+        <td><span class="sk-tila ">sivulla</span></td>
+      </tr>
+      <tr class="ei-vahvistunut">
+        <td><a href="#tone-policing">Tone policing</a></td>
+        <td>[toun pö·lii·sing] substantiivi</td>
+        <td><em>sanatarkasti</em> Sävyn valvontaa: poliisi vahtii, miten asia sanotaan.</td>
+        <td><em>netti</em> Sisältöön ei vastata, sävystä tehdään pääasia.</td>
+        <td>ei lähdettä</td>
+        <td><span class="sk-tila ei-vahvistunut">ei vahvistunut</span></td>
+      </tr>
+      <tr class="">
+        <td><a href="#kafkatrapping">Kafkatrapping</a></td>
+        <td>[kaf·ka·trä·ping] substantiivi</td>
+        <td><em>romaani</em> Kafkan Oikeusjuttu: puolustautuminen syventää epäilyä.</td>
+        <td><em>netti</em> Syytöksen kiistäminen todistaa syyllisyyden.</td>
+        <td>sivun ingressi</td>
+        <td><span class="sk-tila ">sivulla</span></td>
+      </tr>
+      <tr class="">
+        <td><a href="#shitpostaus">Shitpostaus</a></td>
+        <td>[shit·pos·ta·us] substantiivi · verbi: shitpostata</td>
+        <td><em>englanti</em> Shit ja post: arvoton viesti keskustelupalstalla.</td>
+        <td><em>netti</em> Tahallista roskaa: huumoria, joskus tapa hukuttaa asia.</td>
+        <td><a class="sk-lahde" href="https://en.wiktionary.org/wiki/shitpost" rel="noopener">https://en.wiktionary.org/wiki/shitpost</a></td>
+        <td><span class="sk-tila ">tarkistettu</span></td>
+      </tr>
+      <tr class="">
+        <td><a href="#dunkkaus">Dunkkaus</a></td>
+        <td>[dunk·ka·us] substantiivi · verbi: dunkata</td>
+        <td><em>koripallo</em> Pallo isketään ylhäältä koriin, näyttävästi.</td>
+        <td><em>some</em> Toisen viesti jaetaan omalle yleisölle pilkaten.</td>
+        <td><a class="sk-lahde" href="https://en.wiktionary.org/wiki/dunk" rel="noopener">https://en.wiktionary.org/wiki/dunk</a></td>
+        <td><span class="sk-tila ">tarkistettu</span></td>
+      </tr>
+      <tr class="">
+        <td><a href="#maalittaminen">Maalittaminen</a></td>
+        <td>[maa·lit·ta·mi·nen] substantiivi · verbi: maalittaa</td>
+        <td><em>sotilaskieli</em> Kartoitetaan mahdolliset sotatoimien kohteet.</td>
+        <td><em>some</em> Yksi osoittaa kohteen, joukko hoitaa loput.</td>
+        <td><a class="sk-lahde" href="https://www.kielitoimistonsanakirja.fi/#/maalittaa" rel="noopener">https://www.kielitoimistonsanakirja.fi/#/maalittaa</a></td>
+        <td><span class="sk-tila ">tarkistettu</span></td>
+      </tr>
+      <tr class="">
+        <td><a href="#doksaus">Doksaus</a></td>
+        <td>[dok·sa·us] substantiivi · verbi: doksata</td>
+        <td><em>hakkerislangi</em> Dropping dox: vastapuolen dokumentit tuodaan julki.</td>
+        <td><em>netti</em> Henkilötiedot kaivetaan ja julkaistaan luvatta.</td>
+        <td><a class="sk-lahde" href="https://en.wikipedia.org/wiki/Doxing" rel="noopener">https://en.wikipedia.org/wiki/Doxing</a></td>
+        <td><span class="sk-tila ">tarkistettu</span></td>
+      </tr>
+      <tr class="ei-vahvistunut">
+        <td><a href="#trollin-ruokkiminen">Älä ruoki trollia</a></td>
+        <td>fraasi</td>
+        <td><em>eläintarha</em> Kyltti aitauksessa: eläimiä ei saa ruokkia.</td>
+        <td><em>netti</em> Vanha neuvo: reaktio on ruokaa, älä anna sitä.</td>
+        <td>ei lähdettä</td>
+        <td><span class="sk-tila ei-vahvistunut">ei vahvistunut</span></td>
+      </tr>
+      <tr class="ei-vahvistunut">
+        <td><a href="#kysymyksen-vaistaminen">Kysymyksen väistäminen</a> <em>irtokortti</em></td>
+        <td>[ky·sy·myk·sen väis·tä·mi·nen] substantiivi · verbi: väistää</td>
+        <td><em>nyrkkeily</em> Siirrytään sivuun, ja isku menee ohi.</td>
+        <td><em>väittely</em> Vastataan johonkin muuhun kuin siihen, mitä kysyttiin.</td>
+        <td>ei lähdettä</td>
+        <td><span class="sk-tila ei-vahvistunut">ei vahvistunut</span></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="hub-kategoria">
+  <div class="hub-kat-label">Jakokuvanäytteet &middot; 1200&times;630 &middot; 3 kpl</div>
+  <p class="hub-kat-desc">Sama kortti jakokuvan mitoissa. Näytteet on upotettu tähän sivuun:
+  skripti ei kirjoita <code>og/</code>-kansioon eikä muuta yhdenkään sivun
+  <code>og:image</code>-riviä.</p>
+  <div class="sk-og">
+    <figure><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABLAAAAJ2CAMAAAB4notuAAAAwFBMVEUaEQD9+vKqkVHYQxXAvLFXT0GNaxd5c2adl4zn3sY4MCDEsYOAaD5rUCCcfjS3oWqLhXnazq6vqp6TflloYVTs6eDPv5iikG9HQDApIRDTz8WxooV1XC+Jc0zAs5uUdSajiEPi39bJxbu+qXapmXqbh2Tg1rqxmV6UjoKCfG+moJX38ua5q5C4s6hfWEpwalzIvKXUxqPt5tNPSDnb187JuI3PxK8iGQk/NygwKBjVzLl6YjZwVifd1cSOeVKFbkXGFCV2AAA7oUlEQVR42u2da2OaSBtAdV+Nxm1S60pXTdtU2241NNpNbNFNuvv//9XLTRjgGRgM3pJzPmy2iHN5GA7DMIy1/6WoAwAcKTWEBQAICwAAYQEAwkJYAICwAAAQFgAgLAAAhAUAgLAAAGEBACAsAACEBQAICwAAYQEAICwAQFgAAAgLAABhAQDCAgBAWAAACAsAEBYAAMICAEBYAICwAAAQFgAAwgIAhAUAgLAAAGEhLABAWAAACAsAEBbCAgCEBQCAsAAAYQEAICwAAIQFAAgLAABhAQAgLABAWAAACAsAAGEBAMICAEBYAAAICwAQFgAAwgIAQFgAgLAAABAWAADCAgCEBQCAsAAAEBYAICwAAIQFAAgLYQEAwgIAQFgAgLAQFgAgLAAAhAUACAsAAGEBACAsAEBYAAAICwAAYQEAwgIAQFgAAAgLABAWAADCAgBAWACAsAAAEBYAAMICAIQFAICwAAAQFgAgLAAAhAUAgLAAAGEBACAsAEBYCAsAEBYAAMICAISFsAAAYQEAICwAQFgAAAgLAABhAQDCAgBAWAAACAsAEBYAAMICADgCYVlF2PYziWGG0QGTAUBY1ZyAGZz16r4/azcshIWwAI5dWBHr5nRysv0thAXwsoTld7fmvdPsaSEsgJcnLM9Z/QbCQlgApyEsl1UPYSEsgBMR1gkqC2EBvFxh1WrN0zpTERbASxZWzZkiLIQFcCLCqtXuxwgLYQGciLBq6wnCQlgAJyKsmnMyY+8IC+DFC6tWu0FYAHAqwjoVYyEsAITlcouwAOBUhOUsERYAHEZYiRPQtq3lpDdt3Tt5s95PYQkHhAXw7IUVM5kOtMZaICwAOCZhuSxnun7WCSzfgLAAXpaw6nVrJgurc/w3hQgL4KUJy70z7IjGOv7XChEWwMsTVt1eSMIaHv0ypAgL4AUKq16fnWQXC2EBvEhhicZaH/soFsICeJnCqvdP8A0dhAXwQoVlrYW1sQ4RGOt22h901k5t2FnNZ70lwgJAWBkmQhdr7y/ojKf3mekVs8mpCsu6bbeaq87QqTnrzmDeat8e6DmGexFYNFdrryDDzv18doOR4dSFVZ9nv9fdNtG8vVMfzBRdLeRZrPeNp1TU6hS83l1RMikaLek1glWrZ1dz3Iz3brRWwiPg+Y3FSQinLCyhizXYg7Dmm+32LGfh5uXWFbXvpQTb1SejspyttXUZLib7E5bV7WgL0p9wGsLpCqvezH5xvHthrcLNo1Xu8hE321ZUnGM220EyMaN+wWIYg8Z+hGXNnOf0K0mAsFR6ec8JdyYsJ9h66xSc5K3tKjoV+xa7SCayRJGudKqoXFi9YWE5ZjanIpyosGwnZ82GnQkrGNnvFZ/ji20qeivawt5FMuaW8D3d3rWwbBNx1lZjzkU4TWEJw+6dPQjrVieEwj5WcZlGjsFaXxUlE1hiYbxI4tzaqbCsgeGvJHFbCCcqrHb2m9buhTXVCCFLr2xFx9LQ93q8m2R8S9yXWNZ1YO1QWOOVaTGGGAtOU1ij7DcnuxfWom53DE+tcbmK2lInY7gsGy/DZDxfrWq17Y1VpbDsgXkx1twVwkkKq+7on9vvTlj39ZnpqdUsV1FpEMeZlI6XYTK6qQ/G9alSWIsyxbjndISTFNa9ftxod8IajsxPrUaZis5MbiurS0aceltAd0fCui1XjCnnI5yisFrZkeHdC6vUTVSJit6YnpoVJSPvWcBkJ8Kyy92a1hxuCuEUhTXVG+I4hJXsYuWWaeKYzvSsKJnx8IkGri7EpdXZ4oSEExRWdjbU+siE1TfNRdRHv3RhSyTT36pCvV0IayC9ENRbWrZtTdrSQJvD/FE4QWFlXyd09iusZvd2NB4vG+2+ZqKDY5nlIj6vu7fLFrZEMkvNi4M3k7Fdt5a3LflR6GoHwhKK0lXKPLrPe6UB4GSEJbR0e3/CcmaKjey2fId1Y5ZLU3KDVbqwJZKRnst1blS39Tr5o1iVhbhdtKhEq+j5K8ApCGusf/1598JKz/y2muJeRrm0ykw3qiQZ4b2mWivVFbObucNHlYW4XzjmNueeEJ6BsKwDCiv74M2WpgmsTXJpl5rQXUkywkSC7NuC0kStdfXCWomvayauTE7e40qA0xCWnf3qck/CklaWsqVXYpbFuUizkJxG6cKWSmZh8LK2JAolMpWFeK27r8/pYrU5JeHkhFU/mLAWYjK9/EEsTS7im4m90oUtl0wn9/FAxCwnycpC7BSnM2qnoIcF9LCMhdXRDKEMcudAybmIaxlPSxe2XDK22Vwt6bHGbPfCmnO+AWNYFQpL13Fp506CEnMRX+hrlY5XyWRGBW8R1bXjS/EDut3dEtb6LOAOz1BYwlNCax/CWmkN6uTNDRdz6Rc8WjQsbMlkltM0mj5jaw8vE0jzRqcoC56dsA41D0s/4pudCDDMz6VrPmG04mTMyPYZO5ULS1yqweF3cuC5CetQM93H2oSEmVC5ufRKTBitOBkzbvUGrizE2vWmB10W64NnJKwDvUu40id0o+/zSSndOCUmjFaczLbXhFrlIbZzFnBdL3pjzj54HsI60GoNi1Lnt5XXVxNuhUbl47VVMmaM9iAscYa+eoFo3TKxHZ6BsFr6Z3K7FNa01KjauJRpciaMVpxMgvHttDUfdLxfhy+k+hBbhSvdOM02HS04dWHd72GSkPCZ/vfepYkWy1KmualXIqwyqxlYN/11mRVmqg+x2Yqj9zgLTltYjv5E3aWwcnov9hNX1mrVKxFWiQXuGnOnVo4dCEv+4VdhOZ8e94ZwssI6zK/m7HQpwIFdibAGpuf17aBWml0Iy9RYtXUXZcGJCivvkdyJCstkoaeKkvFuBsv/DMWuhFW/NV2xec17z3CawprnTDg4VWHlPYKsNpkSjtiHsOpj4zWb7xnLghMUljB9p3Viwuo55d57rjKZrX41Z4fCcm/xTZU1bHBCwskJq5f3UnKpRO1DCUucot4rH69tkmnX9iks22jvZcus0+f0OCPh1ITVLDdJM2cFJetgwpLmTDqT8vEqn0yjVr2wtg2xKrae2VNL1sOCExOW8IzwPi/RnNuI5eGEJS0LM1yWjlfpZKz1DoS1bYhTRev1i/tZa96MhtMS1jx3FQWnzHTPxuGEVR8L5uhYpeNVNplW7cnCqi7EWSazovkWM85JOCVhCW/tKXeE9WGZyd/tAwpL/K3m3JVhqkhG+6uEI8suGHqqVR9ikfFNbkfLoYsFJyQsaUVgdcG6dZlLcv+QwhJHv+flsyiVjNTBGgqL+E1yhFVdiPVXpe6gkrePAGEdWFjSE3D1jmRVZi7l8KDCEusyK59FiWRsocadpVnHqFZ9iHM7WuJv1RvONAOEdRzC6gotuKPukG3lwzLjK3sVli39wHy7dBYlkhFq7CwNBwpr1Ye4gKU44NbhpIRTEdasVnRu9ks8w+ofWFj15bBWYk2ICpLpGr4vLS6tV32ICxmtcsoBcNzCssVFwNd2wSmpu4cQB6D3Kiz5N1BHpbMwTqZpOLHpJu8pYXUhNhiyXOc+YgE4XmFNOgaDsMKpNtS08ObhhSXe4uoWOa4gmVXOa+MqnTxhVRTibppbQ3UuOSvh+IU11swgGqSsVjO869G8orJnYYmDRZqfkaggmaHZDdZN7jysikLcMRqcEn7RbcxZCccurNFC9+LGyGD0RUp34hyFsMQfbm7aZbMwTMYxOv3Hw1xhVRTiudGwm23YJwQ4FmHZjdnKfOKz9DC8kz0rG07tKIRVHzmmj+4rSMYxeVfaHuTPdK8oxNnb2JVt1MPipIQjEVbDUhiPl5Pb9qy/yl0iKdPGxQeJnbRrurXakQhL/nW+bmnBGyUjDGFn5lDZ84JXcyoK8cho9li7aAwA4GDCKs0we12fyHu2lD3tnl6C+xeW/HrfTekeqUkyq2KpWYOidwmrCnHHYPaY8JSwxUkJJyoscSWVjq4z1r0deb229iLvVbUDCEtacUH6va4KkhFXypspvVR7Oix8+bmqEEtdsNTK7VKdWBILTlVYppMjS3AAYclLvgxHZcf8DJKRYzPsBuK3J7O1wWoNVYXYksa4VqphG4IZh4y5w2kKy5HnhC9PTljy47TMIjEVJKNfvW+4WhWtlFV5iGfyPJVuY2zX7XGjK95VckcIpyks7Y8c909OWPKEpfRvdlWRzPAJoak8xNssJugwbRROUlgdrT5KXP/7zeMQlmyAeVlhFSezMA7NfZ6wKgrxFss1s34fnKSw5lWsqrm2ZkciLHnuU6ussAqTGZmGZpBdA6L6EGtuCvMuU4xgwQkKy8ldxc3uGCbTy76EciBhaWaXT0sKqziZufGd1yJPWNWEuPS9pTPijITTE1Z/nJ/yxOgHWLyex+RYhCWuuJB8hl9JMkvH0DPZAbHqQ+yKr1nqwDOlAU5PWIPin9M0+u09b2zHOhphyXMF1Jlm1SQzNQmN14Gd5L8SU0WIPWOV6WPxY/VwcsK6N/r1X4PTKXg1eHg0wpLv1pTf7KoomYWhGOyCd/gqCLG5QX3r0r+CExPWsGU6iFF4OvWD4dvB8QhLXHFBWSSmomTsomGsYTi/bZUvrApCHN5droyO/YrxKzgpYa0XjRLPiCa5k3yctmbU94DCkldciN/vriiZomdzg6UmNNWHeKPQrsGAWIvng3AywnJWi5uyMwatnHuf+6VuyOeQwpJXXKj1q03GG5nXP+MbtrX3atWHOE5oVqCsPvNF4diF5TjD9ep+3pr2RttdXZeaAd3Brf7kPqiwNNObZpUmE/Rp5Cnv664yva1RKKynhlhV1nRQwUAAIKzdCWsPjLOnQac14ai6yrpppjs1w35yVNueJtl1iEfdptDP6ix63AzCCxGWd0LddueDztDtrnVW81mPW4tYSI3p4r6zdmrOetVstUdHEGJ7cjPrDzrrYc3tXXfuF93emOMEL0pYAICwAAAQFgAAwgIAhAUAgLAAABAWACAsAACEBQCAsAAAYQEAICwAAIQFAAgLAABhAQAgLABAWAAACAsAAGEBAMICAEBYAAA7E9aFz9UJBOAqKKpFUwBAWAgLAE5AWB++fz8/gQCcf//+HWEBvHRhWeabyyVSr9wvpRPcg+F+Pjz8o/7V7rDDEJhkUc0hBUBYJy2sh4uLB/WvdocdhsAkC4QFCAthISwAhLVfYX0pXdD4Gy/3lvALUgOEdQhh/Vu6oP8e6mTdOqbVC+tfhAUI6xDCelW6oK8Q1uFiAAjrZQvrsXRBHxHW4WIACMvj7ur9u4uH99+saHOi2Ubb3tfrlrvr46svP1OJ/OO24Q9C4sr2n3++evf48O+3O+3pEf3D+vbvw+O791d32tMosYdcWPeP/SHYayx/8SLmSipitsKJb1juf/0kvb/fLi6+RJmMg6HwzQ4S0v71uv3tj3ePj6/+/KeulODu83+PV5oaBVn8fHj4mUo/c0gNj6h06JJhKYoaIKwdC+vbY9gAH7/nC+uh/n2z6xdbTeSXu/mbkHi8/dd/m1b++K1IWD/fbXb9oBFWcg+dsKK94gn9iS+mTr1MEbMV1gvL/c+jvcnl6uLic4GwpP3jzMLw+iX4511QPrFGQRbZZ4XZQ2p4RLOHLh2WoqgBwtqtsP50//fd528fPrvt/luusB6/X1z8e/Xhymujfyqf/HqXeskns91r/o9/fgu++i1fWN6+/7m5/Ov++7sorNQeGmF9i6u16c0kvxjMoP/g/vm+lIqYrXDiGwlheQPR35UxnmWBsKT9vXeQXl19+PCnG7ZXVlgC691FJKxsjTTCEg6p4RHNHLpMWIqiBghrp8Lymt9ne3OlzxXWxePjz2jHf6JPxmlfZbbb7in5p725F7oY5wrrj8258y0+D5PCSu2hKWxULS/LD9IX1a8KRRQqrH4jKSw3jH+ERTh3rVgvElZ2/59+f8gviyucf8PMPl/8+92q62oUZPFPanKDdEgNj2j60IlHLjdqgLB2KSxbtc23AmFd/Ewqw//k7iG8o0klrmz/7o+WBHxR7Sbl8y5q+K82lkgJK7WHrrBRNh+8nkpdSjr+qlBEocJ6YdmP0T3eVdjXyBVWZn/vQPxUlPwzLMHnuGLZGolZiIfU8IimD5145HKjBghrl8Jym/6reOv7fGH9EY0FBT0U7xPrVXxSbUZ/09u///lndC7+4/cnwj01wgp3/vXz551GWOoemsK+Stx/XdWlpJVTL1NEqcJ6YXnn6/dIhndZYaVHxtP7f1CH4X8FWV+EfbW6rkaisMRDanhE04dOCEtB1ABh7VJYfySuix/yhfVdHTMONo3/2/Q96vFgSnq7yvji4l20p5TPF2/81tI+IsjuoRvDSlTrfV1KWn6IHxRRqnCOsH5uzv7z8H4uZZP0QFN6/z+UDlbdjkqgPnfI1kgUlnhIDY9o3qELw1IQNUBYuxSWex79SjS6PGH9UrfZ/n8f1MatCOsh1eh/Xb1/iB6C5QrL8saUL95fnWvFktqjsLBetR7rUtKJr6aKKFU4R1hu9y24x7vaWCZfWOn9Hy5S2MkSiDUShSUeUsMjKhy6dFgKogYIa5fCegzvX6Ire56w0hOjglb6PXPbk95et/5InIu5t4R1+3Pw9P7VlaXpCSX3KCysXy1bSlr5aqaIUoXzhPU5rPGrzeBU/i1hev/HtLCsZAnEGonCEg+p4RHNHLpsWAqiBgjrsMLKkZg3aPt48fiPkHhiu/cw6eKPK/9Z+De1XUv5eP/7/c+HxESszE2IuoemsJKw0kknn3eliijaVC+scNzpVzQWZeWfwan93QNx9V0lVYIKhVVwWVIPnXjkcqMGCGv/t4Tqyxd3ucKyvrsn/y8hcXW7e9fzahyfpxfquZXJJ+T86iG+1IujJps9NIUVbgkzScfpCkUsKazwFburaCyqQFip/ZMHIlvtJ94SGh7R9KETj1xu1ABh7X/QXW3zP/OF5TXad2MhcWX7K2VAOXEhlvKJ+wZfoudOmjfcgj00hRUG3TNJx+kKRSwrrGAw6lU09FwkrOT+fyRebhKF9ZRBd8Mjmj504pHLjRogrP1Pa3ivnD1fCoTlzat+ZQmJx9vVm5RXarsW8vn8/v1mBOU86hgl8k7voSlsdhJANuk4XaGIZYV1593j/YpHrIuEldw/IdUPX778zArrKdMaDI9o+tCJRy43aoCw9jZx9MNm4uhVfPb8uigSlnf2/GcLiUfbH6IZoMHUa7WTkc7HvVC/siOrvBKEld5DU9jsNMts0vFMUqGIorDib2SE5UnBuop7MkXCSu7vHYiNUqxQBClhbTNxdHNIDY9o+tCJRy43aoCwdv5qztXm7YrHh2DzOJpi7b97WyAsb+j1XzubeLT9z8hoVxePj0q7FvLxXp4LX8T9Es1fTOSd3kMurFuVq/ilkW/SF/3zMrzPEoooCiv+RlZYrhw+PMSTFwqFldz/Z3TTd/cqNE5SWFKNxNUapENqeETTh048crlRA4S1j5efP/hvyv78I9zsXS//u/rwzf33t4ciYdXv3qnTtLPbx49KFv+p7VrI52dYniv3nHmwpDGs9B5iYV/9esy8/JxJ2jvz//zw/bslFVEUVvyNrLDcjtGD0rkpFFZqfy/ph88fvnl3bH/YWWEJNcp9+Tl5SM2OaPrQiUcuN2qAsHa9vMxmFs3DP15TDzZ/jhcNeV8oLP+l/c9C4pvt/2ymRb776Y0JK+XI5hPvfPHfuC4Ouqf3kAr7vv7rVWZ5mUzS/wb/+iUVUV6sK/pGVlj+4FD8BnChsFL7x4vfbF5dTgpLqJF2eRnhkBod0cyhE49cXtQAYe16Ab/x5//ca/cfH2y/VYeb//nz1eO7/7yl4v4oFpZ/F/JNSHyz3V847+Ff772YL8l2ncnHmyv15dXj48OX72JppT2EwnpdkO9fHh4f//t8rv9i/dv7d+GEgUwRZWFF3xCE5fXg4pHzYmEl9/cW8Pv33cW7uMBJYQk1kldr0BxSkyOaPXTikcuJGiCsPS6RfKTw41MACAthAcCJCOvD9+/nJxCA82CNS4QF8KKFdXEaK65dRe8CAwDCQlgAcNzCAgBAWACAsBAWACAsAACEBQAIC2EBAMICAEBYAICwAAAQFgAAwgIAhAUAgLAAABAWACAsAACEBQCAsAAAYQEAICwAAIQFAAgLAABhAQDsS1j/ewIcEgBAWACAsBAWACAsAACEBQAICwAAYQEAICwAQFgAAAgLABAWwgIAhAUAgLAAAGEhLABAWAAACAsAEBYAAMICAEBYAICwAAAQFgAAwgIAhAUAgLAAABAWACAsAACEBQCAsAAAYQEAICwAAIQFAAgLAABhAQDsRVjWp7OzN+InZ2dnd97fH+7/vN1s/Ov15dnZ5dc3yf08Ll+fp76Y/cTjo7vFFrKR/6nJEwBeoLA8XRUI64379/dwk/06dNDZb3ZaWLHW0sJy+RHtfXem+s9AWGKeAPAChfX7WZGwzt0/rzfu+Oh3mIL/Wsp+Hz9+vPQ2nmeEtfnkr83eXn/t7KO5sOQ8AQBhZYV1d+32bDZbvO7Y7243x357pmwNFXPniulrRlje/1gfN5+4+Po6s4yFJecJAC9QWH+9sXOFZbt++bi5EzuPb+b+Ur61UYx773gtCiv+xL8jvP6q3iIWCEuTJwC8QGEFhtAK6/w39T7sk3Iv9zru7mwU47lFFlb0id+le/134p4wX1iaPAEAYaU/+JjQx0f1aWHsoM0+7j3bpSys6BP/jvAvO5FqvrA0eQIAwkp/4PF3tOFaGTu34oGoQDH23+7HnyRh2W+iT7y+lntz+DV+7lgkLE2eAICwJGFd2+o9oiCWePLC9V1GWMlPvDu81/X633GPq0hYmjwBAGFlhOXNgfpU3MMKrfRXXSOszSdhEraqIXpYAAirEmG99ga6I4Hox7A+flTnKqTmYf32+q0df8t/XPhV0SBjWAAIqxJh3dUtZR5W3lNCW5nOnhl0ryvf2nBpJiyeEgIgLGNh+TPTw89z52F9ike79MK6joV1dm4kLOZhASAsc2F5ExEu7ai7o53pbsVdLK2wvNcSf/goQ2PMdAdAWJUJ66/45Wftu4R3wQ1b2MXSCut19Fri3/Hcd89dgcWkf/IuIQDCKiEsb4R84x3dag3+u4TRzZtOWHb8yM+O34eObxKlf7JaAwDCKiMsz0TRu8vyelh3Yf/pMldYyiuFngVfmwmL9bAAEBYAAMICAEBYAICwAAAQFgAgLIQFAAgLAABhAQDCIiQAgLAAABAWACAsAACEBQCAsAAAYQEAICwAAIQFAAjrqBhNRxy9Y4j/Sz4QNMLnIqxajLMeLHp20d5O8n8KuXV3vS1M73jDHpawmpJumcpTMo/in3sgnjkvue7PV1g+w6ldrbBW7q4DhHUwYUXxzz0Qz5yXXPdnLiz3wI4rFZaTt+vTNDBuOk2vsKNVZ1S8eWfCKlEMfSq5hX5KmKL4O1VeHaqMcam0tsvYOf4rI8IyPyGtgPHopu8Za2VV3cNa7UZYTffrzeDvoHjzzoRVohj6VHIL/dQe1qrwQFQU+t2ntV3GldYdDi0s5Z+jjrthUaWwehWOYbWSu2+um0OjzTsTVoliKKm0ShT6KcKK4t+rchynXIxTdW094XiZ76zm0mMM65kKq770WsSyQmHVJ9NJVYMz/eTu9+HV9j55tdVs3pmwShRDScWsLhV0RKP45x2IspSLcaquZaq+fcaJXKqsOxyTsLwLU61bpbBK5V54P6DuPr6PxjMmxZt3N4ZlXgwlFbO61KuMdoWUi3GqrmWqvn3GTYatXoSwGu6W+yMV1mD/bXBnTwnL1OXUh4xTdd3PYRwgrBchLMvdsj5SYa2fkbDWL0hYqbru5zCuEdaLEJbtTcba/GPUa0+nvWWhsMa37Wm7Nza4lfB2vB0bnImjm6m7Z/KBpZPZPV3A/M1u7SZusjeT8vGJSrqUEjAthlJf47oU3I9qI283bvIHboxjIe+oL24GJzPK7mydlm7nVMuScoHn3cOyZp1walanbecIy26vwv1WbTs3h94g3PH+Npu79ySn1g4LMVun9kxPGNMUULfZ/cfMLelsGHyw7iYLOnO39euZW+NmRlg3q2wC5YrhlKpLfpjEyG+q6oSDkZljVhCLRLa6HTPF1UawlotcdW8cdaom5W3o5QU71bIyuTAP6/mPYd0MlUO+GmuF1ego++WNGNtNZcdFOplbJ26lN46y59zSCEsqoG6zfzpNOtL+/uXZuxwnuynz4El4QljWXEigZDGcMnXJHiQ1THLk3f9v1e17f6NOWHmxSGSr2TFbXG0EC4UlVH2SHkf1bu9sfbAzLQthvRxhtYLran0aXLAWrbnfRtaWRlg3wekyb839lu3caHPwW9Vg0eqvI2PFyTSUE3EWzLjvt/qduF1m2mBQQDe9+TouoG6zV5WRd07dLxZNX4edxN1mP/1sdBlONVSFZXuX8fv+Yq4mULYYTom6ZA+SGiZN5H3NtGq5wsqNhZqtvKNUXF0Ei4QlVt2r0Dh5Ee3nBDvTshDWixGWPw9rFLwuWlv4jcb2OzxzWVj+fs1G0K78hnOryaHttbBJ3IO6VZOZOHF791tlKxijmHiOGHgXV28uvjItP8i4P47Tm8flyW72Bubc1tz1W7jln86txLiIt4Od8vZNSlhu9VpBRLpRAqWL4ZjXJXuQ1DDpIu9rxqvOvNVtaISVGws1W3FHsbi6CKbqalb1WXzbu0mqoY9qtmWlc0FYz1VY/kx3rxms1GEE7wrnWSzb+MfDsEMW942Gmu7BIGx1m85BU/lspCTjtXwnsp6tXrnVwq7UjKMC6jYHy1HcquV0EuVshoLajNG4DX9tJ89y9/96m8+nmwRKF8Mxr0smhGqYtJH3OjbNWqenfVBSGIu6Omwo7CgXVxfBbCMrrvoyeU+4DodVNXGSWlYqU4T1DIVlj28X3gVqPQ5GEZSZxIuwpWQafz811trPXq7Vl2+jjcNgUCL8bDlUvtZMXl3tVXw+KYX1CtjJFlCzOTj3lHHcTjKToPkrb5tNN7snznLllmcVJFC+GIKwdHunQ5gIkzbywa28Xc8XVl4sEsLK7qgpri6CucLSVd1zUCTRSVg13c5Sy0JYz1dYKTrLVHNTRuLTjX+cvjp719XU5VoVVjQu0Z7NZlFPfblWTsRlesD1Jj6flGY3TZ7VmwJqNvvVVN9+nWYeaq2Uy3TdXm+qoZ7lnWwC5YshCEu3dyqEiTDpI+93i8b1fGHlx0JpGyvjOusimCssXVpTVaLeHeEkZ2epZSGsFyIsp+Vfnmz3zl99RB9Ozko3/namQ7VI3hikbgmb0u3iOPHC9TSdwDjq5Ce6g3IBNZvrqf6Rf7FOvr5/ow4d3UT1Us9yIYHyxRCEpds7L0z6yKfHpERh5cdCaRvmddZFMFdYurSUg+7fEXbydpZaFsJ6CcLqzNvp427H46RC459nBtl7mcu1Ouju+rCR/sxKLhAxz7x8HU+9l5pdsoC6zelxoex8fq9LEGU8iK7ZagKTnASMi+HUS9dFFyY58jW1o6MTVn4slLYxMq+zJoL5Y1i6qjfje8JJ5u3W1M5Sy0JYz3gMK3yWkp4/OG7PO05yzky68aceP4d3dAO54YSTmIaLRvKmI6m4jvT02xGbnVBA3eaaOiZST83nj7t2rfhmo1/PnOVWqlrDbYqhEZYmkdwwyZFPl1QUVkEs4mw1O4rFlSNYKCwxrZu4o91SL2HizkLLQljPf9A9idVyspP80o3fSZ9afqNea3KYbmb9rWejZP9OOS0c7YzoVGHFAuo2Sw5I1VsZfpvHXQv1LBcTKFsMUViaRNLd4FSY5Minvy0Ky6gNlK6zGMECYeWk1YzuCAcFccq2LIT1woQ17kjSSDd+4dvyAEx4TkWvktTmy81n88xDLaMellxA3WbxLitV8uiFkKUygKJ9+Xnz2GHbYhjUJZHXXPPsLxP59CeSsBxTYZWpsyaC+cLSptXfCHoSj7/r45RpWQjrZQnL9pqGs7gd24mL7dN6WH5Tnt7X4vk90fzxeaLrYGXIuk8uoGaz0Uk63jwIbCnjQwVn+fbFKK5LMi8hTNoe1m6FpS+uGMH8QXdtWrebe8JZ1LXMj1OyZSGslyUsbzhiOEoMtz55DCtKLLwajjZv6CWGkzvpwSI5KU0BNZvNTtJ+8IqtdzeyqpsJa/tiFNcllVc2TNoxrN0KK6e4UgTrRdMa5LTsYdhJW0edtcI4KS0LYb0sYd1Hr8dHlztJWGWeEib2coLdwglGQ+U50Dz1OE6TlKaAms1mJ+komNiTmFhRcJZvX4ziuqTzyoRJ+5Rwt8LKKa4UwVxh5aS1CAbEJnFahXFSWhbCelnC8s4N5anhQiOsaWY2UF83D6vhEm+8Ce5fNp858TjFNGeJZqWwmgJqNhuepN4ZMfKezq9tQ2FtX4ziumRDmAqTHPmdCyuvuEIEc4WVk1YjqM9sM3Ndu7PYshDWyxJWcojEcjTCysy3HmtnuncSPadw0t8mPX/hgV50Z5No7U3HcbLjqJoCajYbnqTeNbvfS0zyLzjLty9GcV2yhVXCpI/8zoWVV1whgrnCyktr7Y/ZdeIeu2ZnsWUhrJclrE5i+mZf95TQ/6SZ6qPI7xIuEveKVrT2SJCet/yB04hudpQfGlNfVBnG41uaAmo2m56k3nuLnYQJCs7y7YtRXBehsEqYtJHfubByi5uNYLKuJaru960myq2vZmexZaUyRVjPXFiJl5i72mkN/nU93tFe6FdrGNXUEYhu8LU490U0oLp01Au0/wJdQzkp27kF1Gw2PUmDJaZU5Rac5dsXo7guUmHjMGkjv72wpt1u1y4WVm5xsxFM1rVE1b0W05spi9ZodhZbVirTqL02nfsxMnl+wvLX7pj5LWXstpNOUyOsoIHeBz3yxiBvPSx/yCE8IabqU8LgjGuG60SEb1rMg6dBt+oLv8GiLt2RNytfU0DNZlNh2cHKzGNjYW1fjOK6SIVVwqSL/NbCGqf6bCXrrItgsq5lqu721ry1CVsFjVJsWalMN1W5z/tNKDhdYQUd7uG8tfBOBWcy0wkr0EttFa172dPlEKxj6zQ3a5i2k7lb/s+JW/HFc9UPV5CcR1d9qxOvgysXULfZ9DZo2U095Sw6y7cuhkFdpMIqYdJEfmth3SQfwpWusyaCqbqWqHqwvqgyPqXZWWpZqUzVJUO4N3yOwrLV5ctHftuRhRV0gozWdF+oc9en6dzH683iosmVu9WloUadqA3KBdRtNh63uU+98Ft0lm9fjOK6iIVVwiRHfmth9VNLhpatsyaCqbqWqPq4llrUR7ez0LJSmW6q0kz3IuGZCCv+gZiO19nu6YVVt6ebljEo+NWcUT98FczpL7O5++v/Bq0p+tUcp59s+3Z7vnbChi8VULfZVFiZnz8oHqneuhgGdZEKq4RJjPzWwlonHnZsU2cxgpm6mlf9Pn3B0u6caVmpXJQxrCZjWKcsrDy8H4BrG/2G37I37U5vDVqC3ehNpzcN2yDzm+IdNQU0L3eGuTAIt22cyhVjy0IbR744pZwZuyWKu0UES1Vdt7N5y4LnKqyXx1K3lt0LoF1J1V9yBAFh7Znseqkvh35qticRBIR13Iyd1Cz7l8Ra/9I5EQSEdYTMapX0Mk71bnhOBAFhnQ7CT/68HNpbPG0ggoCwDsdU+xvIQAQBYR0X/lslY+JABAFhnQA3uh8UBSIICAsAEBYAAMICAEBYAICwAAAQFgAAwgIAhAUAgLAAABAWACAsAACEBQCAsAAAYQEAICwAAIQFAAgLAABhAQDCQlgAgLAAABAWACAshAUACAsAAGEBAMICAEBYAAAICwAQ1pacv748u/7tjfDJm9+u3U/+Vjf95e58dvlV2fvs7Oza3vzjo/uvu2h7yO8cOwCEVU2yb0OtvM588jX85Ldoi/16I6HfbEVYZ283OjtDWACwO2H5jrn2/vN36pMf3gcfvY8+bXzldaDOLoP/WoqwLsP//y0prI8Bbzl2AAirklS9btR53XJv9D6mPnE3fXX7UW6n6jrc8snrLrmb7LdKv+sslt35WVJYdxw0AIRVpbDcHtSP4MbwOvWJbzLXTpeXl3bko7dxv+yNIqxAdq8RFgDsUlifXr/2tPS36xdZZcquSi/sddTFCsap/nL/zzpDWACwS2EJMoqddPb1L2XDx3h03e9iRWL6FNjrk/9/CAsAdissO9Odcrf5Q+jXn+6ULlfkL683ZUV3jtfe3aOXxp006M6hA0BYVQrrqzqZKuLtZTCFIVbQefRZZCbvf364fTHvqeLrujStgUMHgLAqFNanM6XzpPLXJ29aw/Vdfg/rzu9cXXquQlgAsFth/X6WvSGM+Pva6z55aMew7jzjXfq7MYYFADsV1idlbqjCmzdv/LvEN5sZD9qnhHfhA8JzhAUAOxWW/VXz9sx1ONXqfNOZ0s7DugseKf5WR1gAsEthWR+VdwETuCK7PA8eFn6Mu2LSTHdXTHehwRAWAOxOWP5rhJc+qU/Og0/O4s6U7l1CT0w/Pv1eTwuLdwkBEFalwjrTP837O7Pcgma1hrtEcqzWAAD7F1b97tPl9dnl13Nlk7geFsICgL0ICwAAYQEAwkJYAICwAAAQFgAgLIQFAAgLAABhAQDCAgBAWAAACAsAEBYAAMICAEBYAICwAAAQFgAAwgIAhLULRtPRSeWVTWOfNXhBHD6sHNgXIKyajHb/W/fD2z3VuIq8smnsswaHbzS1mqP+fXJCFR+sysqnlqDKROHEhbVyPxzsqcZV5JVNY581eEHC2i6sVbolKgHCQlgRzh5bQRV5ZdNwXlI73p+wCsM6bjrNsXfjtuqMdiIsJ50YwnqGwrIivMMb/SP3MrbaYw9rVXka+6zBC+th5Ya16e7QDP4OdtbDWiGsZy6sEk3Sp7fHEaBt82opNcmm8YQatE7uDNifsArDuukADdWUqnRL72ljWC309hyFVZ9MJ3ur8pZ59dWaZNPYvgZ9hLX9wboPe1j3u+phRSXYLtE+wnqWwjoBmruqSRNhbc/4PhzD6nQmuxHW0xJtIiyEdRgGu6rJAGEda/menugAYSGsw7DeVU3WCOv5CmuNsE5fWOPb9rTdG+u7+d7nt+nPRzdTd6vwpNGeuJ/cbD0GJqebLYNTqumNeu3ptLc0yS2bsObLujQLI6APuH3rFqdhJ4s3KcpXc+5qj5Bp6yhKQG4Y2do9oXxhKO2thCUcIKHV7KohI6ydCMtur8JZWau2Le3WG4Sf3yuPh6zZOrPV/cfMTW82DD5Yd5OtrOVum6Y39FJFktIVypCZT5ZttclUO+GenbZaqGxuwkQ1zZelzQURyAl48M3xwvE/cBbB6d4OsxgqCWnydepmkfSYuRv7yU2NYKy8OIGihqGrXZnyBXt6TWMZBqQ2bI11idVST4trbV2gpFmIWzRkOKSwGh3lEMbjpNFudlP5fLH5+MZRts6t6Dv9+kRJb5W49k68RpHundvJIonpCmUoJ6ybYU0slJBbtk1rvixuLohATsD9bzbiNIcN91y6FxLS5Zs+d+VIhl0gr5uRLNk8mCxQnEBBw9DWrkz5gj1d73SVnZybYmHdOvFFUQiUIKxtGjIcUFg3Qcuat+YdsVX4EwFrg0Wrv1Ya5sz/1qDf6neU4+kJaeSdC/eLRdNvCJ1EQ/T2HScv6v1kkeR0hTKUEtY0uIAuWnO/Da+tuj63TMKaL8ubiyKgD7jXwZm43xjOwxSdpe11YO774b9Xdn6+jlEkQ/rupq66YRnOxixOIL9h6GtXqnz+nl3bs+h63mrNg05Qt0hYDcVXUqCywtquIcPBhOW9SVprNoLD7TfB2+Rube9gT+Jr4m3UGFrB0MDEO60Gdvidodu0uv7BtVr+Tuk7kXbyjrCRKJImXaEMqTn7ucLy6xjcY9n+9+d1fW7phDVf1mwuioA+4F4VOzVnakcla7pf7wc5TKOE9Pk6JpGMRm28gtqpu/MbowRyG0ZO7UqVz99zsXANEjbHW/8+8yZfWJ7wN1YTA5VpNVs2ZDiUsMbD4HZdMcowec0ebKwSXj6bYXN3oht+O7pcBz33WzU1x0pdxu8Td4TrRF66dKUypGuSI6yVOnbmdetqo7zckmlpvqzZXBQBfcCDb25q2Q66AC21W+YnpM/XMYlkRDM6/YOBHPeUXttGCeQ1jLzalSufv6drmUhj/g2oM84T1kjNXROo5MHdtiHDoYTVT42+9qOzZLObo74iPQwGnZrJnpK9Co+nf5ynyVvAtpq318gtdUgrmZcuXakM5sKaJNcXWGxatS63RFqaL+vSLIyANuCpb/rD2R078e92br6OSSQTt+PKK4HTTebFCeQ1jLzalStfEA91WQhvn2j8UhLWcqgoXheoZEPZuiHDYYQ1Tl86vCutY6XbZTS+0J7NZla6oxRcYNvhcVZfjJ2mH0ZN1QPv9bQT71ho0xXKUEJY02Tja4S5aHNLpKX5smZzYQT0AfcFFW9v15KdjnaQUE6+jkkkY1ZKB6lur1OH3SA4wkHJrV3J8tWUTpHSHbK0wlqu1S6pLlCJg7t9Q4bDCKuduTlfbG4V1J5/M3nxmyZvJ4LTsBke527qseBK2nFzR9hJFEmbrlCGEsKyLctSZyN49yl5uSXS0nxZs7kwAvqAp745SZ2vYUI5+TomkUyem3P1H626WQI5DSO3diXLV1PLF3AvJxb8HXfUZ5XaQGWuRts1ZDiMsObiGgf99NhqzWk1lH28by3Taa7D46xeFK3aZpRK7YNbcSNIDoto0xXKUGYMS23E4ahrXm7yTMTkl3WbiyKgD3gt6m9GX6xZ+oSy+TomkVQSWCv7DKLeknlwNA1DW7uS5aulZRL1MkVhWUlf5Rw35Qg+oSHDQYSVmmcQ9pITyzn6R9W7Pi0a6rcyOOFxVq+5dnxdUy7lN/Ed4TJRJG26QhlKCmvcnnec5ANtfW7ptIQv6zYXRUAf8PQ30/WJE9Lk6xhFMtlPbsU3TH3DQ1HUMLS1K1m+WkYm/j3hQBZWbSXctMnHTcnpCQ0ZDiIsJ7PoqL25liizmDYT8NazUfQtcfHSzBqmmWboDWo0ozvCQXI3R78oaqYMpYRltZxsojm5JdISv6zbXBQBfcDT3xSE5eTm65hFUhiu9NUzMj0UBQ1DW7uS5fM2pGY6jOXEotlVyftTzXFTA/uEhgwHEZZwHNKjInX1ZYvafFnXLLfsSMll0+9vGtZEGWZVrmu66266DGWENe7oGqVBD0v+sm5zUQT0AdcJKvXvgnwNIllXH3pMN92gpvGhyG8YBbUzL5+Qli0n5v/1nHuvCk4TqETCT2nIcLQ9LL9NT8O3RLzJKd63rAxmx/l2c084Uy6JynVXTFcoQ5lB947/ct7tOJ75WMvPTT0n5S9rNhdGoLgPki+sonzNIhl3WDobc90aH4qChmHcwyooX7keluO/FaAM0usClelhbduQ4VjHsKIudng5HfnfsoqS1hxnexhezdfKYyFlZCN/el5chhLC8gZrhqPkcHZ+bqkHScKXNZsLI1A8ypMvrKJ8jSO56e32gnvDlfmhKGgYxmNYVmEzLTGG5dRTo+66QGXGsLZtyHCkTwkTHzr+p/PkA61yx3kRjJxM1IdAyrOjwqU8wjKUENZ9+OK/0ser5eempKX5smZzYQSKn6PlC6so3zKR9AVwn3q4X5xAQcMwfko4KRZWiaeE4bzRaC6CLlCZp4QThHVCwppmJs70U/OwGi7Jh3xr/1vdbY9zI8hgFs1Xrydm50jpSmUoIaxh8uZioXSSuoUh0nxZs7kwAvqAmwmrKN+CSKbwzuqRN79hbXooihtGfu3MyyfMw2rmzcMK33xu5x+3bPe5i7BOSFiZqcnj9Ez3TuIiFMy/8/r5a3V8oek4ztL0OK/9hthRn0Ir85+ldKUylBBWcmTFcsK2q61FZphD+LJmc2EE9AE3E1ZRvgWRrGcHFPu9xJzw4gRyGkZx7czL54+LlZnpHq4U0cs9bvXMTPftGzLsX1j+FbCZuuYmpjwvEvNbrGDG7zw5SS/zgkjucfb7VpPEzYM63UpIVyxDeBW1ioXVSYyG9KMHRrpaJBLWfFmXZmEEtAE3E1ZRvgWRTOO9O9dJSKY4gbyGUVg78/Jl3yUcpEcrMqs1dOP3x3WBSraaJzVkOICwvEtg3Iu3F5nVGkY1dTCgG+y9dNSrsv8SV8P4OHsp9maJ1U02u2nSFcsQng7tYmH11Sp24yfculokEtZ8WZdmYQS0ATcTVlG+BZFMc5NaFMIkgbyGUVg78/KFsyXKrNYQWDQYatcFKtlqyjbkcdO5H6OoAworaLL3Qd++MRDWw/Lv/rvK4nGjcPizNg867LfrzKoL+Rcm97Lure4mnCW6dMUyBP/rdEfBW2N6Yflri8z8b4/ddtxpbtquJrdEwpov69IsjoAu4GbCKsq3KJIp7GBhvLH5oShoGEW1My9fLej8lVoPK7Daepx30JOtpmRDvtf0VBHW/lYcDVZeWkVLRPZSuwUL4TrNzcqNbeWateqHy03O7RLCCpaCVB/PxLvJ6cplCJ5kbxbozZk46t8QDOethXcGOZNZ1Hbl3JIJa76s2WwQAU3ADSeOFuRbFMk0y27qlZbiBPIbRkHtzMvnr7k6LLniaN3yf8feyjvoiVZTsiE73BoeXFjBhSVvTfeFOg14039OLJg9K/VwZVxLLaWiXX19lri5yJShPuoYCcueK4tzj3xh5uaWSFjzZc1mkwjIATcUVkG+hZEUHxSWORRFDSO/dublC5ZgUBa1rw179UJh1cfrcNlQ/UFXW03JhtzMLCoBB/jVnOnmCA7kX80Z9cOXrpx+PI4Z/diI0x/VSwnLP0kSTVT8LRUlXV0Z6nZ7vnYKheW2yvAVko53C9NTHiBpclMT1n1Z3GwUATHghsIqyNcgkgkyvwtSnEBRw8itnXn5wj03PxtUW8+suoGwgmWSm7kHXT245RryuBn8qjXsUVjinUFv2p3e6g+F3ehNpzeNVLfd+zm3zMYKkNOVy2BqZu8H6toT89ySu8hf1qf55IDXtyjONnXLTvUsl4B8UIxrl5N8dPT8xHqjXQZqVw0ZYcFTupKQ8ebxLkzH0UNYCAuSLLLvv3D0AGEdAis1sg8Zxk5qpjfCAoR1IHrMmSlilvylBoQFCOswvStr3Fsf8dl4JFFyjvjn9hAWwnpBMQwfhfPjl3lMj/kHjREWwnppwhpOiEQO/ns5Y4QFCOsIWvv6vkv/Kpebo/51UISFsAAAEBYAICyEBQAICwAAYQEAwgIAQFgAAAgLABAWAADCAgBAWACAsAAAEBYAAMICAIQFAICwAAAQFgAgLAAAhAUAgLAAAGEBACAsAACEBQAICwAAYQEAICwAQFgAAAgLABAWwgIAhAUAgLAAAGEhLABAWAAACAsAEBYAAMICAEBYAICwAAAQFgAAwgIAhAUAgLAAABAWACAsAACEBQCAsAAAYQEAICwAAIQFAAgLAABhAQAgLABAWAAACAsAAGEBAMICAEBYAICwEBYAICwAAIQFAAgLYQEAwgIAQFgAgLAAABAWAADCAgCEBQCAsAAAEBYAICwAAIQFAICwAABhAQAgLAAAhAUACAsAAGEBACAsAEBYAAAICwAAYQEAwgIAQFgAAAgLABAWAADCAgCEhbAAAGEBACAsAEBYCAsAEBYAAMICAIQFAICwAAAQFgAgLAAAhAUAgLAAoDw/rq9/uH/Ozq6Ldql/Ontdr78++yTvdHl2ZtXfXF+/QVgAsCOuA1XlCSvcpX7p/bk+uxR9dXbmCes6Lx2EBQBP7mG9Le5hebvU797ehf/x+C3xDbd/9fWHjbAAYA+UF81l4htu/8r7wy0hAByjsK5TwrrebQERFgB4N3GxcNz7OvvT5dnlJ7t+9/ra/xvvUrd/fLy+/vjDDntUPkEiv5/FcEsIAHsS1sePvnU+nl/7fy/teJe7y8BIl3cICwCOQVhnZ7/9/jpwlv/392gX2/XV5e+/XwYW++E9Fvzx40eQyHn4L28rwgKAfQnraz2Yo/Cb+/ftmT+HIdjF3fibayr7N1dN8Tc2bP6FsABgf8Ly7vds9+95sPUs2uVjuO3c7XwhLAA4BmFtNvpD65f+32tFW7GTEBYAHFhY1+pGhAUApyksbgkB4GSE9SMYiK/Hg+5nCAsAjlNYyWkNfo/r69u3m7UcEBYAHJGwkhNH6/W/w4mjwfvOCAsAjklYiVdzPGN99IVFDwsAAGEBAMICAEBYAAAICwAQFgAAwgIAhIWwAABhAQAgLABAWAgLABAWAADCAgCEBQCAsAAAEBYAICwAAIQFAICwAABhAQAgLAAAhAUACAsAAGEBACAsAEBYAAAICwAAYQEAwgIAQFgAAAgLABAWAMBO+T+36+T5rG3MLQAAAABJRU5ErkJggg==" width="1200" height="630" alt="Jakokuvanäyte: dunkkaus"></figure>
+    <figure><img src="data:image/png;base64,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" width="1200" height="630" alt="Jakokuvanäyte: trollaus"></figure>
+    <figure><img src="data:image/png;base64,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" width="1200" height="630" alt="Jakokuvanäyte: vain-vitsi"></figure>
+  </div>
+</section>
+</main>
+</body>
+</html>

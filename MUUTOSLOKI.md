@@ -1,5 +1,37 @@
 # Muutosloki — Ilmiöitä (www.ilmiöt.fi)
 
+## 2.11.2026 — Greedflation-luonnos ja moraalikadon uudet tapaukset
+
+Luonnoksia, mitään ei julkaistu. `muutokset.html`:ään ei merkintää.
+
+- **`luonnokset/greedflation.html`** (uusi, 93 / 166, Myyntikikat ja painostus,
+  shrinkflaation perään). Generaattori `scripts/build_greedflation_luonnos.py`
+  lainaa pohjan ja apufunktiot `build_kannustin_luonnokset.py`:stä, joten sivu
+  on rakenteeltaan sama kuin kannustin-erässä. Sivulla ovat ensimmäiset
+  sisältökuvaajat (inline-SVG, ei kirjastoa): kaakao vs. suklaa (indeksi
+  1/2023 = 100) ja joulukuun notkahdus. Data on upotettu skriptiin: Tilastokeskus
+  KHI 15b5 hyödyke 01185 ja Maailmanpankin Pink Sheet "Cocoa" ($/kg), haettu
+  2.11.2026. Tekstin prosentit lasketaan samasta datasta, ja `assert` kaataa
+  ajon, jos ne muuttuvat. Pylväskuvaaja alkaa nollasta.
+- **Numerointi:** 93 / 166 olettaa, että greedflation julkaistaan ennen
+  kannustin-erää. Jos järjestys kääntyy, molempien generaattoreiden
+  kokonaismäärät ja `build_kannustin_luonnokset.py`:n `len(kortit) == 165` on
+  päivitettävä.
+- **Moraalikato** (`build_kannustin_luonnokset.py`): kaksi uutta tapausta,
+  hyvinvointialueiden lisärahoitus ja arviointimenettely sekä "you build it,
+  you run it" (Vogels 2006) IT-projektin omavastuuna. 399 sanaa. Muut kahdeksan
+  kannustinluonnosta todettiin tavu tavulta ennallaan ennen ajoa.
+- `luonnokset/GREEDFLATION-EHDOTUKSET.md`: neljä vaihtoehtoista kulmaa
+  (ruokakori, teoriakiista, eläkeläiset/indeksit, peli).
+- **Versio B, ruokakori** (`luonnokset/greedflation-ruokakori.html`): sama
+  generaattori, rakenteena `VERSIOT`-sanakirja ja `JULKAISTAVA`-vakio (nyt
+  "suklaa"). Valittu versio kirjoitetaan nimelle `greedflation.html`, muut
+  nimelle `greedflation-<versio>.html`. Canonical on kaikissa sama. Uusi data:
+  KHI 011/SSS 2021–2026 ja viisi raaka-aine/hylly-paria (Maailmanpankki: kaakao,
+  arabica, rypsiöljy, raakasokeri, HRW-vehnä). Pari-muutokset ovat `assert`issa.
+  WB:n "Sugar, EU" -sarja hylättiin, koska se on lähes vakio eikä vastaa EU:n
+  sokerin tunnettua hintapiikkiä 2023.
+
 ## 4.10.2026 — SEO-auditin toinen kierros: fontit, ankkurit, schema ja linkit
 
 `ACTION-PLAN.md`:n kohdat 2, 12, 13, 14 (osin), 17 ja matalan prioriteetin

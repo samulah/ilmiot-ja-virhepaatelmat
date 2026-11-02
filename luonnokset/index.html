@@ -224,12 +224,64 @@ julkaistaessa molemmat puretaan.</p>
 </section>
 
 <section class="hub-kategoria">
-  <div class="hub-kat-label">Trollaus somessa &middot; kolme luonnosta &middot; 3.10.2026</div>
+  <div class="hub-kat-label">Myyntikikat ja painostus &middot; yksi ilmiö, kaksi versiota &middot; 2.11.2026</div>
+  <p class="hub-kat-desc">Greedflation kahtena versiona, joista julkaistaan toinen.
+  <strong>A, suklaa:</strong> kaakao vs. suklaa, joulukuun notkahdus ja rockets and
+  feathers -kaavio. <strong>B, ruokakori:</strong> ruoka vs. kaikki hinnat, viiden raaka-aineen
+  ja hyllyhinnan vertailu (suklaa on korin poikkeus) sekä Suomen Pankin ja PTT:n tulokset. Kuvaajat
+  on piirretty itse; data (Tilastokeskuksen KHI ja Maailmanpankki) on upotettu generaattoriin.
+  Generaattorin <code>JULKAISTAVA</code> määrää, kumpi kirjoitetaan nimelle
+  <code>greedflation.html</code>, jonka <code>lisaa_ilmiot.py</code> julkaisee. Paikka shrinkflaation perässä, numero 93 / 166 olettaa, että
+  tämä julkaistaan <strong>ennen</strong> kannustin-erää. Generaattori
+  <code>scripts/build_greedflation_luonnos.py</code>, <strong>korjaukset skriptiin</strong>.
+  Kummassakin versiossa noin 490 sanaa, eli lähes kaksi kertaa normi. <strong>Tarkistettava suomennos:</strong>
+  <em>ahneusinflaatio</em> (greedflation) ja <em>myyjien inflaatio</em> (sellers' inflation).
+  Vaihtoehtoiset kulmat, myös eläkeläisnäkökulma:
+  <a href="GREEDFLATION-EHDOTUKSET.md">GREEDFLATION-EHDOTUKSET.md</a>.
+  <strong>Julkaisu:</strong> <code>lisaa_ilmiot.py</code>:n <code>UUDET</code>-taulukkoon rivi,
+  jonka generaattori tulostaa, ja ajo ilman <code>--kortit-valmiina</code>-lippua.</p>
+  <div class="hub-kortit">
+    <a class="hub-kortti" style="--c:#7b3f00" href="greedflation.html"><span class="hub-numero">93</span><span class="hub-nimi">Greedflation A <em>· miksi suklaa ei halpene, vaikka kaakao halpeni</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#7b3f00" href="greedflation-ruokakori.html"><span class="hub-numero">93</span><span class="hub-nimi">Greedflation B <em>· mitä ruokakori kertoo ahneudesta</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+  </div>
+</section>
+
+<section class="hub-kategoria">
+  <div class="hub-kat-label">16. kategoria: Kannustimet ja sivuvaikutukset &middot; yhdeksän luonnosta &middot; 22.10.2026</div>
+  <p class="hub-kat-desc">Hyvää tarkoittava sääntö, joka muuttaa käytöstä väärään suuntaan. Numerot
+  166&ndash;174 olettavat 165 julkaistua ilmiötä. <strong>Kobravaikutus siirtyi tähän erään</strong>:
+  sitä ei enää julkaista Goodhartin lain perään numeroksi 40. Sivut generoi
+  <code>scripts/build_kannustin_luonnokset.py</code>, joten <strong>korjaukset tehdään skriptiin,
+  ei näihin tiedostoihin</strong>. Jokaisessa on vähintään yksi suomalainen tapaus, ja lähteet on
+  tarkistettu 22.10.2026. <strong>Tarkistettavat omat suomennokset:</strong> <em>kynnysefekti</em>
+  (notch / bunching) ja <em>kiellon rautainen laki</em> (iron law of prohibition).
+  <strong>Julkaisu:</strong> <code>kannustin-hub-lohko.html</code> index.html:ään trollaus-lohkon
+  perään ja katnav-linkki käsin, <code>lisaa_ilmiot.py</code>:n <code>UUDET</code>-taulukko tällä
+  erällä ja ajo lipulla <code>--kortit-valmiina</code>. Kategoriasivun esikatselu:
+  <code>build_kategoriat.py --luonnos kannustimet-ja-sivuvaikutukset</code>.</p>
+  <div class="hub-kortit">
+    <a class="hub-kortti" style="--c:#a04000" href="kategoria-kannustimet-ja-sivuvaikutukset.html"><span class="hub-numero tyhja">16</span><span class="hub-nimi">Kategoriasivu <em>· essee ja yhdeksän korttia</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#a04000" href="kobravaikutus.html"><span class="hub-numero">166</span><span class="hub-nimi">Kobravaikutus <em>· kun palkkio pahentaa ongelmaa</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#8d6e63" href="kannustinloukku.html"><span class="hub-numero">167</span><span class="hub-nimi">Kannustinloukku <em>· kun työ ei kannata</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#6d4c41" href="kynnysefekti.html"><span class="hub-numero">168</span><span class="hub-nimi">Kynnysefekti <em>· kun raja ohjaa enemmän kuin sääntö</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#5d4037" href="moraalikato.html"><span class="hub-numero">169</span><span class="hub-nimi">Moraalikato <em>· kun joku muu maksaa riskin</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#e65100" href="riskikompensaatio.html"><span class="hub-numero">170</span><span class="hub-nimi">Riskikompensaatio <em>· turvallisuus, joka syö itseään</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#2e7d32" href="jevonsin-paradoksi.html"><span class="hub-numero">171</span><span class="hub-nimi">Jevonsin paradoksi <em>· tehokkuus, joka lisää kulutusta</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#558b2f" href="yhteismaan-tragedia.html"><span class="hub-numero">172</span><span class="hub-nimi">Yhteismaan tragedia <em>· kun kaikkien on ei-kenenkään</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#37474f" href="kiellon-rautainen-laki.html"><span class="hub-numero">173</span><span class="hub-nimi">Kiellon rautainen laki <em>· kielletty päihde väkevöityy</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#455a64" href="chestertonin-aita.html"><span class="hub-numero">174</span><span class="hub-nimi">Chestertonin aita <em>· selvitä ensin, miksi aita on siinä</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+  </div>
+</section>
+
+<section class="hub-kategoria">
+  <div class="hub-kat-label">Trollaus somessa &middot; neljä luonnosta &middot; 3.10.2026</div>
   <p class="hub-kat-desc">Kategorian 15 vastakeinot vietynä sivuston ulkopuolelle. Mikään näistä
   ei ole julki. <strong>Someviestit:</strong> 72 viestiä ja 2 pohjaa, jokainen &le; 280 merkkiä.
   <strong>Pikaopas:</strong> koostesivu, ei ilmiö &mdash; julkaisu vaatii <code>noindex</code>in ja
   <code>../</code>-polkujen purun, oman vakion <code>build_sitemap.py</code>:hyn ja sisääntulevat
   linkit (kategoriaessee ja <code>trollin-ruokkiminen.html</code>), tai sivu jää orvoksi.
+  <strong>Sanakirjakortit:</strong> 17 kuvaa, yksi kategorian jokaiselle sivulle; sivuille ne vie
+  vasta <code>build_sanakirja.py --sivut</code>, kun kortit on tarkistettu.
   <strong>Pelikohdat:</strong> 60 kohtaa (9 taktiikkaa, 2 vinoumaa, 16 rehellistä) kansiossa
   <code>pelidata/</code>. <strong>Älä siirrä niitä juuren <code>pelidata/</code>:an ennen
   päätöstä:</strong> <code>build_peli.py</code> kokoaa kaikki erät uudelleen, ja kokeessa 0/40
@@ -242,6 +294,7 @@ julkaistaessa molemmat puretaan.</p>
   <div class="hub-kortit">
     <a class="hub-kortti" style="--c:#00838f" href="SOME-TROLLAUS.md"><span class="hub-numero tyhja">md</span><span class="hub-nimi">SOME-TROLLAUS.md <em>· someviestit, X / Threads / Bluesky</em></span><span class="hub-nuoli">&rsaquo;</span></a>
     <a class="hub-kortti" style="--c:#00838f" href="mita-vastata-trollille.html"><span class="hub-numero tyhja">&mdash;</span><span class="hub-nimi">Mitä vastata trollille <em>· pikaopas, 7 kysymystä</em></span><span class="hub-nuoli">&rsaquo;</span></a>
+    <a class="hub-kortti" style="--c:#00838f" href="sanakirjakortit.html"><span class="hub-numero tyhja">&mdash;</span><span class="hub-nimi">Sanakirjakortit <em>· 18 korttia tarkistettavaksi</em></span><span class="hub-nuoli">&rsaquo;</span></a>
     <a class="hub-kortti" style="--c:#00838f" href="pelidata/"><span class="hub-numero tyhja">json</span><span class="hub-nimi">pelidata/ <em>· 60 pelikohtaa, 12 tiedostoa</em></span><span class="hub-nuoli">&rsaquo;</span></a>
   </div>
 </section>
