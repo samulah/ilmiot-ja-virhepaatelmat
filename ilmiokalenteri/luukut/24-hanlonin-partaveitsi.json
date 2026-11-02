@@ -1,0 +1,55 @@
+{
+  "luukku": 24,
+  "pvm": "2026-12-24",
+  "slug": "hanlonin-partaveitsi",
+  "nimi": "Hanlonin partaveitsi",
+  "kansi": "Älä oleta pahuutta, jos huolimattomuus riittää selitykseksi. Hyvää joulua.",
+  "sivut": [
+    {
+      "otsikko": "Joulurauhan sääntö",
+      "lohkot": [
+        {
+          "kappale": "Kun kollega ei vastaa viestiin, hän on ylimielinen. Kun itse et vastaa, oli kiire."
+        },
+        {
+          "kappale": "Hanlonin partaveitsi korjaa tämän vinouman. Useimmiten vahinko syntyy ilman, että kukaan tarkoitti sitä."
+        }
+      ]
+    },
+    {
+      "otsikko": "Miksi se kannattaa",
+      "lohkot": [
+        {
+          "kappale": "Pahantahtoisuus vaatii aikomuksen, koordinaation ja salailun. Huolimattomuus ei vaadi mitään niistä."
+        },
+        {
+          "kohta": "**Pahuusoletus** johtaa kostoon, joka on kallis silloinkin, kun oletus on väärä."
+        },
+        {
+          "kohta": "**Huolimattomuusoletus** johtaa kysymykseen: mikä prosessissa tuotti tämän?"
+        }
+      ]
+    },
+    {
+      "otsikko": "Milloin se ei enää riitä",
+      "lohkot": [
+        {
+          "kohta": "**Kuka hyötyy?** Aito huolimattomuus osuu kaikkiin suuntiin."
+        },
+        {
+          "kohta": "**Toistuuko se?** Kerran on erehdys, kolmesti menetelmä."
+        },
+        {
+          "kohta": "**Korjattiinko se,** kun siitä kerrottiin?"
+        }
+      ]
+    }
+  ],
+  "teksti": "Kalenterin viimeinen luukku on joulurauhan sääntö.\n\nKun kollega ei vastaa viestiin, hän on ylimielinen. Kun itse jätät vastaamatta, oli kiire. Sosiaalipsykologia kutsuu tätä perusattribuutiovirheeksi, ja jokainen työyhteisö tuntee sen.\n\nHanlonin partaveitsi kääntää oletuksen takaisin: älä oleta pahantahtoisuutta, jos huolimattomuus riittää selitykseksi. Pahantahtoisuus vaatii aikomuksen, koordinaation ja salailun. Huolimattomuus ei vaadi mitään niistä. Ja kysymys ”mikä prosessissa tuotti tämän?” johtaa korjaukseen riippumatta siitä, kumpi selitys oli oikea.\n\nSääntö on silti lähtöoletus, ei immuniteetti. Jos virhe toistuu, hyödyttää aina samaa tahoa eikä korjaannu, kun siitä kerrotaan, huolimattomuus ei enää riitä selitykseksi.\n\nKiitos, että avasit luukkuja kanssani. Hyvää joulua!",
+  "kysymys": "Mikä 24 luukusta osui lähimmäs omaa työtäsi?",
+  "tagit": [
+    "#työyhteisö",
+    "#johtaminen",
+    "#joulu"
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "luukku": 18,
+  "pvm": "2026-12-18",
+  "slug": "huonojen-uutisten-hautaaminen",
+  "nimi": "Huonojen uutisten hautaaminen",
+  "kansi": "Perjantai klo 16.30 on hyvä hetki julkaista asia, jota kukaan ei saa huomata.",
+  "sivut": [
+    {
+      "otsikko": "Hautauskohteet",
+      "lohkot": [
+        {
+          "kohta": "**Tappiolliset tulokset**"
+        },
+        {
+          "kohta": "**Muutosneuvottelut ja irtisanomiset**"
+        },
+        {
+          "kohta": "**Kustannusylitykset**"
+        },
+        {
+          "kohta": "**Sisäisten selvitysten loppuraportit**"
+        },
+        {
+          "kappale": "Mitään ei salata. Huomioarvo vain lähestyy nollaa."
+        }
+      ]
+    },
+    {
+      "otsikko": "Nimi tuli sähköpostista",
+      "lohkot": [
+        {
+          "kappale": "11.9.2001 brittiläinen erityisavustaja Jo Moore kirjoitti: nyt on erittäin hyvä päivä haudata mitä tahansa, mitä haluamme haudata."
+        },
+        {
+          "kappale": "Viesti vuoti, ja se maksoi hänen työpaikkansa. Käytäntö jatkuu."
+        }
+      ]
+    },
+    {
+      "otsikko": "Tunnistaminen",
+      "lohkot": [
+        {
+          "kohta": "**Katso kellonaika ja viikonpäivä.** Perjantai 15–17 ja pyhien aatot ovat poikkeavia."
+        },
+        {
+          "kohta": "**Yksittäistapaus ei todista mitään.** Kuvio näkyy vasta vuoden tiedotteista."
+        },
+        {
+          "kappale": "Organisaatiossa julkaisuhetki on valinta, jonka voi kysyä ääneen."
+        }
+      ]
+    }
+  ],
+  "teksti": "Joulukuu on muutosneuvottelujen ja kustannusylitysten sesonkia, ja moni on huomannut, että ne julkaistaan usein perjantaina iltapäivällä tai juuri ennen pyhiä.\n\nIlmiön nimi on huonojen uutisten hautaaminen. Sen antoi brittiläinen erityisavustaja Jo Moore, joka kirjoitti 11.9.2001 kollegoilleen: nyt on erittäin hyvä päivä haudata mitä tahansa, mitä haluamme haudata. Viesti vuoti, ja se maksoi hänen työpaikkansa.\n\nTekniikassa mitään ei salata. Julkisuusvelvoite täyttyy, mutta huomioarvo lähestyy nollaa: perjantai-iltana toimitukset ovat pienimmillään, ja maanantaina aihe on jo vanha.\n\nYksittäistä tapausta ei voi todistaa, koska kaikki on julkaistava jonain päivänä. Kuvio näkyy vasta, kun samaa organisaatiota seuraa vuoden. Ja kyllä, tämäkin luukku avataan perjantaina.",
+  "kysymys": "Oletko huomannut saman kuvion omassa organisaatiossasi?",
+  "tagit": [
+    "#viestintä",
+    "#johtaminen",
+    "#työelämä"
+  ]
+}

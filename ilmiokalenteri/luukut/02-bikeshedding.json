@@ -1,0 +1,61 @@
+{
+  "luukku": 2,
+  "pvm": "2026-12-02",
+  "slug": "bikeshedding",
+  "nimi": "Bikeshedding",
+  "kansi": "Ydinvoimala hyväksytään 2,5 minuutissa. Pyörävajan katosta väitellään 45.",
+  "sivut": [
+    {
+      "otsikko": "Parkinsonin kokous, 1957",
+      "lohkot": [
+        {
+          "kohta": "**Ydinreaktori, 10 milj. £.** 2,5 minuuttia."
+        },
+        {
+          "kohta": "**Pyörävaja, 350 £.** 45 minuuttia."
+        },
+        {
+          "kohta": "**Kahvibudjetti, 21 £.** Tunti ja vartti."
+        },
+        {
+          "kappale": "Mitä pienempi ja arkisempi asia, sitä pidempi keskustelu."
+        }
+      ]
+    },
+    {
+      "otsikko": "Miksi näin käy",
+      "lohkot": [
+        {
+          "kappale": "Reaktorista uskaltaa sanoa jotain vain, jos osaa reaktoritekniikkaa. Väärä lausunto paljastuu heti."
+        },
+        {
+          "kappale": "Pyörävajan väristä kukaan ei voi olla teknisesti väärässä. Siksi jokainen osallistuu."
+        },
+        {
+          "kohta": "**Työpaikalla:** dashboardin väripaletti kerää enemmän kommentteja kuin mittarilogiikka sen takana."
+        }
+      ]
+    },
+    {
+      "otsikko": "Kolme vastakeinoa",
+      "lohkot": [
+        {
+          "kohta": "**Aikaboksi per aihe.** Kun aika loppuu, päätetään tai siirretään pienemmälle ryhmälle."
+        },
+        {
+          "kohta": "**Kahden minuutin sääntö.** Jos kantaa ei voi perustella osaamisella, asia ei kuulu koko ryhmälle."
+        },
+        {
+          "kohta": "**Triviaalit asynkronisesti.** Väri ja fontti päätetään kommenttiketjussa, ei kokouksessa."
+        }
+      ]
+    }
+  ],
+  "teksti": "Pikkujoulujen teemasta väännetään 40 minuuttia, budjetista viisi. Jokainen palaverikonkari tuntee ilmiön: mitä pienempi asia, sitä pidempi keskustelu.\n\nC. Northcote Parkinson kuvasi sen jo 1957. Komitea hyväksyi 10 miljoonan punnan ydinreaktorin kahdessa ja puolessa minuutissa, väitteli 350 punnan pyörävajasta 45 minuuttia ja käytti 21 punnan kahvibudjettiin yli tunnin.\n\nSyy ei ole tyhmyys. Reaktorista uskaltaa sanoa jotain vain asiantuntija. Pyörävajan väristä ei voi olla väärässä, joten kaikki osallistuvat.\n\nSama näkyy koodikatselmoinnissa ja raporttipalavereissa: väripaletti kerää enemmän kommentteja kuin mittarilogiikka sen takana.",
+  "kysymys": "Mikä on pisin pyörävajakeskustelu, jossa olet istunut?",
+  "tagit": [
+    "#kokoukset",
+    "#päätöksenteko",
+    "#johtaminen"
+  ]
+}

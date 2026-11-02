@@ -1,0 +1,52 @@
+{
+  "luukku": 12,
+  "pvm": "2026-12-12",
+  "slug": "selviytymisharha",
+  "nimi": "Selviytymisharha",
+  "kansi": "Palanneiden koneiden luodinreiät kertovat, mihin panssari ei kuulu.",
+  "sivut": [
+    {
+      "otsikko": "Abraham Waldin oivallus",
+      "lohkot": [
+        {
+          "kappale": "Toisessa maailmansodassa palanneissa pommikoneissa oli eniten osumia siivissä ja rungossa. Panssari sinne?"
+        },
+        {
+          "kappale": "Wald käänsi päättelyn. Moottoriin osuneet eivät palanneet, joten ne puuttuivat aineistosta. Panssari kuuluu sinne, missä reikiä ei näy."
+        }
+      ]
+    },
+    {
+      "otsikko": "Työelämässä",
+      "lohkot": [
+        {
+          "kohta": "**Menestystarinat:** samat asiat tehneitä epäonnistujia ei haastatella."
+        },
+        {
+          "kohta": "**Asiakaskysely:** vastaajina vain ne, jotka eivät vielä lähteneet."
+        },
+        {
+          "kohta": "**”Ennen tehtiin kestävää”:** roju hajosi pois otoksesta."
+        }
+      ]
+    },
+    {
+      "otsikko": "Yksi kysymys",
+      "lohkot": [
+        {
+          "kappale": "Keitä tästä aineistosta puuttuu, ja miksi?"
+        },
+        {
+          "kappale": "Jos otokseen pääsee vain onnistumalla, data kertoo valikoitumisesta, ei syistä."
+        }
+      ]
+    }
+  ],
+  "teksti": "Toisen maailmansodan aikana Yhdysvaltain armeija tutki palanneiden pommikoneiden luodinreikiä. Eniten osumia oli siivissä ja rungossa, joten ne haluttiin panssaroida.\n\nTilastotieteilijä Abraham Wald huomasi, mitä aineistosta puuttui. Moottoriin osuneet koneet eivät palanneet. Panssari kuului sinne, missä palanneissa koneissa ei ollut reikiä.\n\nSama harha on kaikessa työelämän datassa, johon pääsee vain selviytymällä. Asiakaskyselyyn vastaavat ne, jotka eivät vielä lähteneet. Menestystarinoissa ei haastatella niitä, jotka tekivät samat asiat ja epäonnistuivat.\n\nJokaisen analyysin alkuun kuuluu yksi kysymys: keitä tästä aineistosta puuttuu, ja miksi?",
+  "kysymys": "Missä teidän datassanne on näkymättömiä moottoriosumia?",
+  "tagit": [
+    "#data",
+    "#analytiikka",
+    "#tilastot"
+  ]
+}

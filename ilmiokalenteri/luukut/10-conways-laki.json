@@ -1,0 +1,55 @@
+{
+  "luukku": 10,
+  "pvm": "2026-12-10",
+  "slug": "conways-laki",
+  "nimi": "Conwayn laki",
+  "kansi": "Järjestelmä näyttää siltä, miltä organisaatiokaavio näyttää.",
+  "sivut": [
+    {
+      "otsikko": "Mistä on kyse",
+      "lohkot": [
+        {
+          "kappale": "Melvin Conway, 1967: järjestelmiä suunnittelevat organisaatiot tuottavat järjestelmiä, jotka heijastavat niiden kommunikaatiorakennetta."
+        },
+        {
+          "kohta": "**Datassa:** myynnillä, markkinoinnilla ja tuotannolla on kullakin oma tietovarastonsa ilman yhteistä mallia. Syy on organisaatiossa, ei tekniikassa."
+        }
+      ]
+    },
+    {
+      "otsikko": "Varoitusmerkki",
+      "lohkot": [
+        {
+          "kappale": "Jos jokainen arkkitehtuurimuutos vaatii kolmen tiimin yhteiskokouksen, organisaatiokaavio on jo arkkitehtuurisi."
+        },
+        {
+          "kohta": "**Mikropalvelut siiloutuneilla tiimeillä** tuottavat hajautetun monoliitin: haitat ilman hyötyjä."
+        }
+      ]
+    },
+    {
+      "otsikko": "Käänteinen manööveri",
+      "lohkot": [
+        {
+          "kappale": "Laki toimii joka tapauksessa, joten käytä sitä tietoisesti."
+        },
+        {
+          "kohta": "**1.** Piirrä tavoitearkkitehtuurin moduulit ja rajapinnat."
+        },
+        {
+          "kohta": "**2.** Anna jokaiselle moduulille yksi omistava tiimi."
+        },
+        {
+          "kohta": "**3.** Varmista, että tiimien väliset kanavat vastaavat haluttuja rajapintoja."
+        }
+      ]
+    }
+  ],
+  "teksti": "Jos haluat tietää, miltä yrityksen tietoarkkitehtuuri näyttää, katso organisaatiokaaviota. Moni data-arkkitehti huomaa tämän viimeistään toisessa projektissaan.\n\nMelvin Conway muotoili sen 1967: järjestelmiä suunnittelevat organisaatiot tuottavat järjestelmiä, jotka heijastavat niiden omaa kommunikaatiorakennetta.\n\nKun myynnillä, markkinoinnilla ja tuotannolla on kullakin oma tietovarasto ilman yhteistä mallia, vika ei yleensä ole teknisessä päätöksessä. Se on siinä, kuka puhuu kenenkin kanssa.\n\nLakia ei kannata vastustaa vaan käyttää. Suunnittele ensin tavoitearkkitehtuuri ja järjestä tiimit sen mukaan, ei toisin päin.",
+  "kysymys": "Näkyykö teidän organisaatiokaavionne järjestelmissä?",
+  "tagit": [
+    "#arkkitehtuuri",
+    "#data",
+    "#organisaatio"
+  ]
+}

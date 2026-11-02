@@ -1,0 +1,59 @@
+{
+  "luukku": 4,
+  "pvm": "2026-12-04",
+  "slug": "pareto-periaate",
+  "nimi": "Pareto-periaate",
+  "kansi": "20 % syistä tuottaa 80 % seurauksista. Jos olet oikeasti mitannut.",
+  "sivut": [
+    {
+      "otsikko": "Missä sen näkee",
+      "lohkot": [
+        {
+          "kohta": "**20 % asiakkaista** tuo 80 % liikevaihdosta."
+        },
+        {
+          "kohta": "**20 % koodista** aiheuttaa 80 % virheistä."
+        },
+        {
+          "kohta": "**20 % tehtävistä** tuottaa 80 % arvosta."
+        },
+        {
+          "kappale": "Vilfredo Pareto huomasi saman jakauman Italian maanomistuksessa 1896."
+        }
+      ]
+    },
+    {
+      "otsikko": "Ei luonnonlaki",
+      "lohkot": [
+        {
+          "luku": "80/20",
+          "selite": "Nyrkkisääntö epätasaiselle jakaumalle. Todellisuudessa se voi olla 70/30 tai 90/10."
+        },
+        {
+          "kappale": "Tasaisesti jakautuviin asioihin sääntö ei päde lainkaan."
+        }
+      ]
+    },
+    {
+      "otsikko": "Käytä oikein",
+      "lohkot": [
+        {
+          "kohta": "**Mittaa ensin.** ”Tämä on 80 % työstä” ilman dataa on korulause."
+        },
+        {
+          "kohta": "**Keskitä huomio** siihen osaan, joka selittää valtaosan."
+        },
+        {
+          "kohta": "**Älä hylkää häntää sokeasti.** Harvinainen virhe syrjäisessä kolkassa voi olla katastrofaalinen."
+        }
+      ]
+    }
+  ],
+  "teksti": "80/20-sääntö on varmaan palaverien käytetyin numeropari. Harvempi on nähnyt sen takana dataa.\n\nVilfredo Pareto huomasi 1896, että noin 80 % Italian maasta oli 20 %:lla väestöstä. Sama epäsuhta toistuu asiakkaissa, virheissä ja tehtävissä: pieni osa syistä selittää suurimman osan seurauksista.\n\nAjatus on arvokas, kun sitä käyttää oikein. Ennen kuin parannat kaikkea yhtä paljon, etsi se osa, joka selittää valtaosan.\n\nSudenkuoppia on kaksi. 80/20 heitetään usein korulauseena ilman mittausta, ja ”vähäpätöisen” 80 %:n joukossa voi olla se yksi harvinainen mutta katastrofaalinen poikkeus.",
+  "kysymys": "Missä teidän työssänne 80/20 pitää oikeasti paikkansa?",
+  "tagit": [
+    "#data",
+    "#priorisointi",
+    "#analytiikka"
+  ]
+}

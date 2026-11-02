@@ -1,0 +1,53 @@
+{
+  "luukku": 3,
+  "pvm": "2026-12-03",
+  "slug": "parkinsonin-laki",
+  "nimi": "Parkinsonin laki",
+  "kansi": "Työ laajenee täyttämään sille varatun ajan. Myös joulukuussa.",
+  "sivut": [
+    {
+      "otsikko": "Tunnistat sen tästä",
+      "lohkot": [
+        {
+          "kohta": "**Tunnin kokous kestää tunnin,** vaikka asia olisi selvä vartissa."
+        },
+        {
+          "kohta": "**Viikon määräaika tuottaa viikon työn,** vaikka päivä olisi riittänyt."
+        },
+        {
+          "kohta": "**Kolmen viikon raportti** on harvoin kolme kertaa parempi kuin kolmen päivän."
+        }
+      ]
+    },
+    {
+      "otsikko": "Parkinsonin aineisto",
+      "lohkot": [
+        {
+          "luku": "+78 %",
+          "selite": "Amiraliteetin virkamiehet 1914–1928. Samaan aikaan taistelulaivoja oli 68 % vähemmän."
+        },
+        {
+          "kappale": "Hallinto kasvoi, vaikka hallittavaa oli vähemmän. Kaikilla oli silti aidosti kiire."
+        }
+      ]
+    },
+    {
+      "otsikko": "Kokeile tätä",
+      "lohkot": [
+        {
+          "kappale": "Aikaraja ei ole arvio. Anna tehtävälle tiukempi aika kuin uskot tarvitsevasi ja katso jälkikäteen, mitä jäi tekemättä."
+        },
+        {
+          "kohta": "**Kokouksiin:** lyhennä oletuskesto tunnista 25 minuuttiin. Yleensä katoaa se, mitä ei olisi tarvinnut sanoa."
+        }
+      ]
+    }
+  ],
+  "teksti": "Tunnin palaveri kestää tunnin. Viikon määräaika tuottaa viikon työn. Tämän tietää jokainen, joka on joskus saanut tehtävään ”reilusti aikaa”.\n\nC. Northcote Parkinson kirjoitti sen auki The Economistissa 1955: työ laajenee täyttämään sille varatun ajan. Hänellä oli myös lukuja. Britannian laivaston taistelulaivat vähenivät 1914–1928 kahdella kolmasosalla, mutta Amiraliteetin virkamiesten määrä kasvoi 78 %.\n\nSyy ei ole laiskuus. Väljä aikataulu sallii hiomisen ja uudelleenmuotoilun, eikä mikään pakota priorisoimaan ennen kuin määräaika alkaa painaa.\n\nHalvin koe löytyy kalenterista: lyhennä oletuspalaveri tunnista 25 minuuttiin ja katso, mitä katoaa.",
+  "kysymys": "Mikä on teillä se kokous, joka täyttäisi minkä tahansa varatun ajan?",
+  "tagit": [
+    "#ajanhallinta",
+    "#kokoukset",
+    "#työelämä"
+  ]
+}

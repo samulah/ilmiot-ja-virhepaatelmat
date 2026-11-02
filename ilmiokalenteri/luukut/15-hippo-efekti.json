@@ -1,0 +1,61 @@
+{
+  "luukku": 15,
+  "pvm": "2026-12-15",
+  "slug": "hippo-efekti",
+  "nimi": "HIPPO-efekti",
+  "kansi": "Data esitellään, asiantuntijat puhuvat. Sitten johtaja avaa suunsa.",
+  "sivut": [
+    {
+      "otsikko": "Miten se toimii",
+      "lohkot": [
+        {
+          "kappale": "Kukaan ei sano ”tehdään niin kuin pomo sanoo”."
+        },
+        {
+          "kohta": "**Data esitellään.**"
+        },
+        {
+          "kohta": "**Asiantuntijat puhuvat.**"
+        },
+        {
+          "kohta": "**Johtaja kertoo kantansa.**"
+        },
+        {
+          "kohta": "**Hiljaisuus, nyökkäys, päätös.**"
+        }
+      ]
+    },
+    {
+      "otsikko": "Käskyä ei tarvita",
+      "lohkot": [
+        {
+          "kappale": "Highest Paid Person’s Opinion. Riittää, että kaikki tietävät, kenen mielipide ratkaisee."
+        },
+        {
+          "kappale": "Eriävä mielipide ylöspäin on sosiaalinen riski, jonka useimmat välttävät. Psykologisen turvallisuuden puute tekee loput."
+        }
+      ]
+    },
+    {
+      "otsikko": "Tunnista ja testaa",
+      "lohkot": [
+        {
+          "kohta": "**Seuraa kantojen muutosta.** Kenen puheenvuoron jälkeen muut alkavat sovittaa omiaan?"
+        },
+        {
+          "kohta": "**Kysy:** miten päätös syntyisi, jos johtaja ei olisi paikalla?"
+        },
+        {
+          "kohta": "**Johtajalle:** puhu viimeisenä."
+        }
+      ]
+    }
+  ],
+  "teksti": "Data esitellään. Asiantuntijat puhuvat. Sitten korkeimmin palkattu henkilö kertoo oman näkemyksensä, ja huoneeseen laskeutuu hiljaisuus. Muutama nyökkäys, ja päätös on syntynyt.\n\nDatan parissa työskentelevät tuntevat ilmiön nimellä HIPPO, Highest Paid Person’s Opinion. Kuukausien analyysi häviää yhdelle mielipiteelle.\n\nIlmiö ei vaadi autoritaarista johtajaa. Riittää, että kaikki tietävät, kenen mielipide ratkaisee. Eriävä kanta ylöspäin on sosiaalinen riski, ja useimmat välttävät sen.\n\nTestiksi riittää kysymys: miten päätös syntyisi, jos johtaja ei olisi huoneessa? Ja johtajalle on yhtä yksinkertainen vastalääke: puhu viimeisenä.",
+  "kysymys": "Oletko nähnyt johtajan, joka pyytää tarkoituksella eriäviä näkemyksiä ennen omaansa?",
+  "tagit": [
+    "#johtaminen",
+    "#päätöksenteko",
+    "#data"
+  ]
+}

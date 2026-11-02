@@ -1,0 +1,58 @@
+{
+  "luukku": 9,
+  "pvm": "2026-12-09",
+  "slug": "tekninen-velka",
+  "nimi": "Tekninen velka",
+  "kansi": "Oikotie säästi kaksi päivää. Nyt se maksaa kuukausia joka vuosi.",
+  "sivut": [
+    {
+      "otsikko": "Tunnistat sen tästä",
+      "lohkot": [
+        {
+          "kohta": "**”Väliaikainen” SQL-skripti** on ollut tuotannossa kolme vuotta."
+        },
+        {
+          "kohta": "**Dashboardin laskuihin ei uskalla koskea.** Se vaan toimii."
+        },
+        {
+          "kohta": "**Manuaalisesta korjausajosta** tuli viikkorutiini."
+        },
+        {
+          "kohta": "**Transformaatiota ei ymmärrä kukaan,** koska tekijä vaihtoi työpaikkaa."
+        }
+      ]
+    },
+    {
+      "otsikko": "Korko kasvaa",
+      "lohkot": [
+        {
+          "kappale": "Ward Cunningham loi metaforan 1992: jokainen ”tehdään nyt nopeasti, korjataan myöhemmin” on lainaa tulevaisuuden kehityskapasiteetista."
+        },
+        {
+          "kappale": "Vuoden päästä skriptejä on kolmekymmentä, ne riippuvat toisistaan, ja yksi sarakemuutos kaataa raportoinnin viikoksi."
+        }
+      ]
+    },
+    {
+      "otsikko": "Velanmaksu käytännössä",
+      "lohkot": [
+        {
+          "kohta": "**Kiinteä lyhennys,** 15–20 % jokaisesta sprintistä."
+        },
+        {
+          "kohta": "**Kirjaa oikotie syntyhetkellä.** Näkymätön velka ei pääse koskaan priorisointiin."
+        },
+        {
+          "kohta": "**Hinnoittele ääneen:** säästämme nyt kaksi päivää, otetaanko laina?"
+        }
+      ]
+    }
+  ],
+  "teksti": "Jokaisessa dataympäristössä on se ”väliaikainen” SQL-skripti, joka on ollut tuotannossa kolme vuotta. Ja se dashboard, jonka laskuihin kukaan ei uskalla koskea, koska se vaan toimii.\n\nWard Cunningham kutsui tätä tekniseksi velaksi jo 1992. Oikotie nopeuttaa nyt, mutta lainalla on korko. Kiireessä kuukausiraporttia varten tehty skripti on vuoden päästä kolmekymmentä toisistaan riippuvaa skriptiä, ja yksi sarakemuutos lähdejärjestelmässä kaataa raportoinnin viikoksi.\n\nVelka ei katoa erillisellä siivousprojektilla, joka siirtyy aina seuraavaan kvartaaliin. Se lyhenee kuin asuntolaina: kiinteällä erällä, esimerkiksi 15–20 % jokaisesta sprintistä.\n\nJa kun seuraava oikotie ehdotetaan, sen voi hinnoitella ääneen: säästämme nyt kaksi päivää ja maksamme myöhemmin enemmän. Otetaanko laina?",
+  "kysymys": "Kuinka vanha on teidän vanhin ”väliaikainen” ratkaisunne?",
+  "tagit": [
+    "#tekninenvelka",
+    "#data",
+    "#ohjelmistokehitys"
+  ]
+}

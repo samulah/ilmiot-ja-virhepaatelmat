@@ -1,0 +1,55 @@
+{
+  "luukku": 14,
+  "pvm": "2026-12-14",
+  "slug": "goodhartin-laki",
+  "nimi": "Goodhartin laki",
+  "kansi": "Kun mittarista tulee tavoite, se lakkaa olemasta hyvä mittari.",
+  "sivut": [
+    {
+      "otsikko": "Dokumentoituja tapauksia",
+      "lohkot": [
+        {
+          "kohta": "**Naulatehdas, Neuvostoliitto.** Kappalekiintiö tuotti miljoonia pikkunauloja, painokiintiö yhden jättinaulan."
+        },
+        {
+          "kohta": "**Ambulanssit, Iso-Britannia.** Potilasta ajettiin ympäri kaupunkia, jotta jonotusajan kello käynnistyisi ”oikeaan” aikaan."
+        },
+        {
+          "kohta": "**Tikettijono, kuka tahansa.** Suljetut tiketit lisääntyvät, ongelmat eivät vähene."
+        }
+      ]
+    },
+    {
+      "otsikko": "Testikysymys",
+      "lohkot": [
+        {
+          "kappale": "Mitä tämä mittari ei mittaa?"
+        },
+        {
+          "kappale": "Jos tekijällä on kannustin parantaa lukua eikä asiaa luvun takana, laki on jo käynnissä."
+        }
+      ]
+    },
+    {
+      "otsikko": "Vastakeinot",
+      "lohkot": [
+        {
+          "kohta": "**Mittaripari:** määrä ja laatu rinnakkain, ei kumpaakaan yksin."
+        },
+        {
+          "kohta": "**Pistokoe:** katso muutama tapaus luvun takaa."
+        },
+        {
+          "kohta": "**Vaihda mittareita määräajoin.** Jokainen mittari kuluu optimoinnissa."
+        }
+      ]
+    }
+  ],
+  "teksti": "Maanantai ja uusi KPI-kalvo. Hyvä hetki muistaa Goodhartin laki: kun mittarista tulee tavoite, se lakkaa olemasta hyvä mittari.\n\nTaloustieteilijä Charles Goodhart muotoili sen 1975 rahapolitiikasta, mutta jokainen mittaristoa rakentanut on nähnyt sen käytännössä. Neuvostoliiton naulatehdas tuotti kappalekiintiöllä miljoonia pikkunauloja ja painokiintiöllä yhden jättinaulan.\n\nTyöelämän versio on arkisempi. Suljettujen tikettien määrä kasvaa, mutta ongelmat eivät vähene. Ihmiset optimoivat lukua, eivät asiaa sen takana. Siihen ei tarvita pahantahtoisuutta, pelkkä kannustin riittää.\n\nMittaamista ei kannata lopettaa. Kannattaa kysyä jokaisesta mittarista, mitä se ei mittaa, ja pitää rinnalla toinen mittari, joka paljastaa oikotiet.",
+  "kysymys": "Mikä mittari on teillä alkanut elää omaa elämäänsä?",
+  "tagit": [
+    "#data",
+    "#mittarit",
+    "#johtaminen"
+  ]
+}

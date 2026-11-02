@@ -1,0 +1,61 @@
+{
+  "luukku": 20,
+  "pvm": "2026-12-20",
+  "slug": "portinvartija-kulttuuri",
+  "nimi": "Portinvartija-kulttuuri",
+  "kansi": "Varoitus oli olemassa. Se ei vain koskaan päässyt sinne, missä päätetään.",
+  "sivut": [
+    {
+      "otsikko": "Kukaan ei valehtele",
+      "lohkot": [
+        {
+          "kohta": "”En halua häiritä johtoa turhalla.”"
+        },
+        {
+          "kohta": "”Kyllä tämä hoituu itse.”"
+        },
+        {
+          "kohta": "”Tämä ei kuulu minulle.”"
+        },
+        {
+          "kohta": "”Jos tämä olisi vakavaa, joku olisi jo sanonut.”"
+        },
+        {
+          "kappale": "Jokainen askel on erikseen järkevä. Ketjuna ne tappavat tiedon."
+        }
+      ]
+    },
+    {
+      "otsikko": "Tunnistat sen tästä",
+      "lohkot": [
+        {
+          "kappale": "Jokin menee pieleen, ja käy ilmi, että kaikki tiesivät. Paitsi johto."
+        },
+        {
+          "kappale": "Jos sama kaava toistuu, portinvartijuus on rakenteellista eikä yksittäisten ihmisten vika."
+        }
+      ]
+    },
+    {
+      "otsikko": "Rakenna tiedonkulku",
+      "lohkot": [
+        {
+          "kohta": "**Kysy ”mitä minulle ei kerrota?”** Se avaa enemmän kuin ”onko kaikki hyvin?”"
+        },
+        {
+          "kohta": "**Viestintuojaa ei rangaista,** vaikka viesti olisi epämiellyttävä."
+        },
+        {
+          "kohta": "**Red team:** jonkun virallinen tehtävä on etsiä ongelmia."
+        }
+      ]
+    }
+  ],
+  "teksti": "Kun jokin menee pieleen, käy usein ilmi, että kaikki tiesivät. Paitsi johto. Moni asiantuntija on ollut tässä ketjussa jommassakummassa päässä.\n\nPortinvartija-kulttuurissa tieto suodattuu jokaisella hierarkiatasolla ennen kuin se nousee ylöspäin. Kukaan ei valehtele. Jokainen vain tekee yksinään järkevän päätöksen: en halua häiritä johtoa turhalla, kyllä tämä hoituu, tämä ei kuulu minulle.\n\nKetjuna nämä tuottavat kuolleen tiedon. Varoitus on olemassa, mutta ei siellä, missä sillä olisi merkitystä.\n\nJohtajan vahvin työkalu on yksi kysymys: mitä minulle ei kerrota? Se avaa enemmän kuin ”onko kaikki hyvin?”. Toinen on vielä tärkeämpi: huonojen uutisten tuojaa ei rangaista.\n\nKarusellin lopussa viikon kooste: 20 luukkua auki, neljä jäljellä.",
+  "kysymys": "Milloin viimeksi toit johdolle tiedon, joka oli heille epämiellyttävä, ja mitä sitten tapahtui?",
+  "tagit": [
+    "#johtaminen",
+    "#viestintä",
+    "#organisaatio"
+  ]
+}

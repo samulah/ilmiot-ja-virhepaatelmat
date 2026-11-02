@@ -1,5 +1,90 @@
 # Muutosloki — Ilmiöitä (www.ilmiöt.fi)
 
+## 2.11.2026 — Julkaisu: greedflation (93) ja 16. kategoria Kannustimet ja sivuvaikutukset (167–175)
+
+Sivusto kasvoi 165 → 175 ilmiötä ja 15 → 16 kategoriaa. Käyttäjä hyväksyi
+suomennokset (*ahneusinflaatio*, *myyjien inflaatio*, *kynnysefekti*, *kiellon
+rautainen laki*) ja normia pidemmät sivut (greedflation 491, moraalikato 399
+sanaa). `muutokset.html`:ään kaksi merkintää.
+
+**Järjestys** (kaksi `lisaa_ilmiot.py`-ajoa, koska greedflation tarvitsee kortin
+pujotuksen ja kannustin-erä valmiin lohkon):
+
+1. `build_greedflation_luonnos.py` (`JULKAISTAVA = "suklaa"`), `UUDET` =
+   greedflation shrinkflaation perään, `lisaa_ilmiot.py --paiva 2026-11-02
+   --kirjoita` → 93 / 166, 73 vanhaa sivua siirtyi yhdellä.
+2. `build_kannustin_luonnokset.py`: numerot 166–174 → 167–175, `YHTEENSA` 175,
+   `len(kortit) == 166`. Diff vanhoihin luonnoksiin: vain numerot ja IDS.
+   `kannustin-hub-lohko.html` index.html:ään trollaus-lohkon perään ja
+   katnav-linkki käsin, sitten `lisaa_ilmiot.py --kortit-valmiina --kirjoita`.
+3. `kategoriat/myyntikikat-ja-painostus.md`: `build_kategoriat.py` kaatui
+   kuvauksen lukusanaan "Viisitoista" → `{n}`, väliotsikko "Kuusitoista
+   tekniikkaa", greedflation-virke Piilotettu hinta -kappaleeseen,
+   `paivitetty` 2026-11-02. Kannustin-esseen `paivitetty` 2026-11-02
+   (julkaisupäivä, ei kirjoituspäivä).
+4. Jakokuvat `build_og.py`: `og/kategoria-kannustimet-ja-sivuvaikutukset.png`,
+   kategorian 9 ilmiötä (kuten trollaus-kategoriassa) ja `og/greedflation.png`
+   → 11 uutta kuvaa, joten jakokuvallisia sivuja on nyt 30.
+5. Ajolista: `seo_rakenne`, `seo_schema` (10 sivua: image og-kuvista),
+   `build_kategoriat`, `paivita_maarat` (myyntikikat 15 → 16, ItemList 175,
+   tietoa.html, llms.txt +10), `build_liittyvat` (88 sivua), `build_sitemap`
+   (195 URLia), `build_search_index` (191 sivua).
+6. `muutokset.html` + `index.html`: päiväys 2.11.2026 ja `dateModified`.
+   `CLAUDE.md`: 175 / 16.
+
+**Generaattoreita ei ajeta enää julkaisua varten:** molemmat kirjoittaisivat
+sivut takaisin `luonnokset/`-kansioon vanhoilla oletuksilla. Korjaukset tehdään
+juuren sivuihin. Greedflationin ruokakoriversio (B) jää `luonnokset/`:iin
+arkistoksi. `luonnokset/kannustin-hub-lohko.html` ja kategoriasivun esikatselu
+poistettiin.
+
+**Tarkistukset** (skripti scratchpadissa, ei repossa): 196 juuren sivua, kaikki
+sisäiset `href`/`src` ja `#ankkurit` osuvat; ei `noindex`iä eikä `../`-polkuja;
+titlet uniikkeja; canonical = og:url; JSON-LD jäsentyy; og-kuvat olemassa; IDS
+sama kaikilla 175 sivulla ja = etusivun järjestys; ilmio-tag, laskuri N / 175 ja
+PREV/NEXT oikein; 875 liittyvä-korttia oikeilla numeroilla; sitemap ja
+hakuindeksi ja llms.txt kattavat kaikki. Playwright 1280 ja 390 px: ei
+vaakavieritystä, ei ulkoisia pyyntöjä, ei JS-virheitä. `testaa_peli.js` läpi.
+Huomio, ei korjattu: 20 vanhaa sivua (esim. `tekninen-velka`, `catch-22`)
+käyttää vastakeino-otsikkona muotoa "Vastakeinot — …" eikä "Tunnistaminen ja
+vastakeinot".
+
+**Palvelimelle:** `og/`-kuvat ensin (11 uutta), sitten HTML, `sitemap.xml`,
+`search-index.js`, `llms.txt`. Muuttuneita juuren tiedostoja on ~190, koska
+uudelleennumerointi koskee jokaista ilmiösivua (IDS).
+
+## 2.11.2026 — Greedflation-luonnos ja moraalikadon uudet tapaukset
+
+Luonnoksia, mitään ei julkaistu. `muutokset.html`:ään ei merkintää.
+
+- **`luonnokset/greedflation.html`** (uusi, 93 / 166, Myyntikikat ja painostus,
+  shrinkflaation perään). Generaattori `scripts/build_greedflation_luonnos.py`
+  lainaa pohjan ja apufunktiot `build_kannustin_luonnokset.py`:stä, joten sivu
+  on rakenteeltaan sama kuin kannustin-erässä. Sivulla ovat ensimmäiset
+  sisältökuvaajat (inline-SVG, ei kirjastoa): kaakao vs. suklaa (indeksi
+  1/2023 = 100) ja joulukuun notkahdus. Data on upotettu skriptiin: Tilastokeskus
+  KHI 15b5 hyödyke 01185 ja Maailmanpankin Pink Sheet "Cocoa" ($/kg), haettu
+  2.11.2026. Tekstin prosentit lasketaan samasta datasta, ja `assert` kaataa
+  ajon, jos ne muuttuvat. Pylväskuvaaja alkaa nollasta.
+- **Numerointi:** 93 / 166 olettaa, että greedflation julkaistaan ennen
+  kannustin-erää. Jos järjestys kääntyy, molempien generaattoreiden
+  kokonaismäärät ja `build_kannustin_luonnokset.py`:n `len(kortit) == 165` on
+  päivitettävä.
+- **Moraalikato** (`build_kannustin_luonnokset.py`): kaksi uutta tapausta,
+  hyvinvointialueiden lisärahoitus ja arviointimenettely sekä "you build it,
+  you run it" (Vogels 2006) IT-projektin omavastuuna. 399 sanaa. Muut kahdeksan
+  kannustinluonnosta todettiin tavu tavulta ennallaan ennen ajoa.
+- `luonnokset/GREEDFLATION-EHDOTUKSET.md`: neljä vaihtoehtoista kulmaa
+  (ruokakori, teoriakiista, eläkeläiset/indeksit, peli).
+- **Versio B, ruokakori** (`luonnokset/greedflation-ruokakori.html`): sama
+  generaattori, rakenteena `VERSIOT`-sanakirja ja `JULKAISTAVA`-vakio (nyt
+  "suklaa"). Valittu versio kirjoitetaan nimelle `greedflation.html`, muut
+  nimelle `greedflation-<versio>.html`. Canonical on kaikissa sama. Uusi data:
+  KHI 011/SSS 2021–2026 ja viisi raaka-aine/hylly-paria (Maailmanpankki: kaakao,
+  arabica, rypsiöljy, raakasokeri, HRW-vehnä). Pari-muutokset ovat `assert`issa.
+  WB:n "Sugar, EU" -sarja hylättiin, koska se on lähes vakio eikä vastaa EU:n
+  sokerin tunnettua hintapiikkiä 2023.
+
 ## 4.10.2026 — SEO-auditin toinen kierros: fontit, ankkurit, schema ja linkit
 
 `ACTION-PLAN.md`:n kohdat 2, 12, 13, 14 (osin), 17 ja matalan prioriteetin

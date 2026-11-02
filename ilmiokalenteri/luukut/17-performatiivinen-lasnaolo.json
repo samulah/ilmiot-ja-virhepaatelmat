@@ -1,0 +1,52 @@
+{
+  "luukku": 17,
+  "pvm": "2026-12-17",
+  "slug": "performatiivinen-lasnaolo",
+  "nimi": "Performatiivinen läsnäolo",
+  "kansi": "Myöhään palavat valot ja vihreä Teams-pallo eivät ole tulos.",
+  "sivut": [
+    {
+      "otsikko": "Tunnistat sen tästä",
+      "lohkot": [
+        {
+          "kohta": "**Sähköposti lähtee klo 23.12.** Ajoitus on viesti."
+        },
+        {
+          "kohta": "**Chat-status on aina vihreä.**"
+        },
+        {
+          "kohta": "**Viimeisenä toimistolta lähtevä** näyttää sitoutuneimmalta."
+        }
+      ]
+    },
+    {
+      "otsikko": "Goodhartin erikoistapaus",
+      "lohkot": [
+        {
+          "kappale": "Kun sitoutumista mitataan näkymisellä, näkymisestä tulee tavoite."
+        },
+        {
+          "kappale": "Pitkiä päiviä tekevä keskinkertainen näyttää sitoutuneemmalta kuin lyhyempää päivää tekevä erinomainen. Parhaat itsenäiset tekijät lähtevät."
+        }
+      ]
+    },
+    {
+      "otsikko": "Vastakeinot",
+      "lohkot": [
+        {
+          "kohta": "**Organisaatiolle:** sovitaan tulokset ja arvioidaan niitä, ei kellonaikoja."
+        },
+        {
+          "kohta": "**Työntekijälle:** lyhyt yhteenveto valmistuneesta voittaa myöhään palavat valot."
+        }
+      ]
+    }
+  ],
+  "teksti": "Joulukuussa vihreä Teams-pallo palaa kirkkaimmin. Moni tietää, ettei pallo kerro työstä mitään, mutta sitä seurataan silti.\n\nPerformatiivinen läsnäolo tarkoittaa sitoutumisen osoittamista näkymällä, ei tuloksilla. Ennen se oli toimistolla viimeisenä istumista. Etätyö siirsi näytelmän sähköpostien kellonaikoihin ja chat-statuksiin.\n\nIlmiö on Goodhartin lain erikoistapaus: kun sitoutumista mitataan läsnäololla, läsnäolosta tulee tavoite. Hinta on kova. Ne, jotka eivät tarvitse valvontaa eivätkä halua näytellä, lähtevät ensimmäisinä.\n\nKorjaus on mittarin vaihto. Sovitaan, mitä tuloksia odotetaan, ja arvioidaan niitä. Lyhyt yhteenveto siitä, mitä valmistui, on parempi todiste kuin myöhään palavat valot.",
+  "kysymys": "Mikä on teidän työpaikkanne näkyvin sitoutumisen signaali?",
+  "tagit": [
+    "#työelämä",
+    "#etätyö",
+    "#johtaminen"
+  ]
+}

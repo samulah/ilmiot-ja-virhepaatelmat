@@ -1,0 +1,64 @@
+{
+  "luukku": 6,
+  "pvm": "2026-12-06",
+  "slug": "simple-sabotage",
+  "nimi": "Simple Sabotage Field Manual",
+  "kansi": "CIA:n edeltäjän ohje vihollisen sabotointiin. Kuulostaa epäilyttävän tutulta.",
+  "sivut": [
+    {
+      "otsikko": "Ohjeita vuodelta 1944",
+      "lohkot": [
+        {
+          "kohta": "**Vaadi kaikki kirjallisena.**"
+        },
+        {
+          "kohta": "**Vie päätökset komiteaan.** Pidä komitea mahdollisimman suurena."
+        },
+        {
+          "kohta": "**Palaa jo päätettyihin asioihin.**"
+        },
+        {
+          "kohta": "**Lähetä asia lisäselvitykseen** aina kun voit."
+        },
+        {
+          "kohta": "**Sovella sääntöjä orjallisesti.**"
+        }
+      ]
+    },
+    {
+      "otsikko": "Miksi se toimii",
+      "lohkot": [
+        {
+          "kappale": "OSS kirjoitti käsikirjan siviileille, jotka sabotoivat vihollisen organisaatioita sisältäpäin."
+        },
+        {
+          "kappale": "Teho perustuu siihen, että sabotoija näyttää tunnolliselta. Tehoton organisaatio näyttää päältä täysin normaalilta."
+        }
+      ]
+    },
+    {
+      "otsikko": "Käännä tarkistuslistaksi",
+      "lohkot": [
+        {
+          "kappale": "Käy lista läpi ja kysy jokaisesta kohdasta: missä me teemme tätä ihan normaalina prosessina?"
+        },
+        {
+          "kohta": "**Päätös** yhdelle nimetylle omistajalle, ei komitealle."
+        },
+        {
+          "kohta": "**Lisäselvitys** vaatii perustelun ja määräpäivän."
+        },
+        {
+          "kappale": "Käytäntöä ei tarvitse todistaa pahantahtoiseksi. Riittää, että sen purkaa."
+        }
+      ]
+    }
+  ],
+  "teksti": "Itsenäisyyspäivän luukussa on sota-ajan asiakirja, joka on yllättävän ajankohtainen.\n\nYhdysvaltain tiedustelupalvelu OSS, CIA:n edeltäjä, julkaisi 1944 käsikirjan siviileille, jotka halusivat sabotoida vihollisen organisaatioita sisältäpäin. Byrokratiaosion ohjeet: vaadi kaikki kirjallisena, vie päätökset komiteaan, pidä komitea suurena, palaa jo päätettyihin asioihin ja lähetä asiat lisäselvitykseen.\n\nJokainen isossa organisaatiossa työskennellyt tunnistaa listan. Sen teho perustuu siihen, että sabotoija näyttää tunnolliselta.\n\nKäsikirja toimii parhaiten peilinä. Käy lista läpi ja kysy jokaisesta kohdasta, missä teidän organisaationne tekee tätä ihan normaalina prosessina.\n\nKarusellin viimeisellä sivulla on viikon kooste: kuusi luukkua auki, 18 jäljellä.",
+  "kysymys": "Mikä listan kohdista on teillä virallinen prosessi?",
+  "tagit": [
+    "#byrokratia",
+    "#organisaatio",
+    "#johtaminen"
+  ]
+}

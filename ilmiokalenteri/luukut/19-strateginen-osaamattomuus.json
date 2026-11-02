@@ -1,0 +1,52 @@
+{
+  "luukku": 19,
+  "pvm": "2026-12-19",
+  "slug": "strateginen-osaamattomuus",
+  "nimi": "Strateginen osaamattomuus",
+  "kansi": "”En ole kauhean hyvä Excelin kanssa.” Kaikessa muussa kyllä on.",
+  "sivut": [
+    {
+      "otsikko": "Klassinen esimerkki",
+      "lohkot": [
+        {
+          "kappale": "Astiat pestään niin huolimattomasti, että toinen alkaa pestä ne itse. Kukaan ei kieltäytynyt, mutta lopputulos on sama."
+        },
+        {
+          "kappale": "Työpaikalla ilmiö on hienovaraisempi, ja siksi tehokkaampi."
+        }
+      ]
+    },
+    {
+      "otsikko": "Kolme muotoa työssä",
+      "lohkot": [
+        {
+          "kohta": "**Tehtävän välttely.** Raportit tulevat niin myöhään, ettei niitä enää pyydetä."
+        },
+        {
+          "kohta": "**Osaamisen piilottaminen.** Taito toisi lisätöitä ilman lisäpalkkaa."
+        },
+        {
+          "kohta": "**Vastuu ylöspäin.** Työ on niin puutteellinen, että esihenkilö tekee sen."
+        }
+      ]
+    },
+    {
+      "otsikko": "Erota aidosta",
+      "lohkot": [
+        {
+          "kohta": "**Osaamattomuus on valikoivaa.** Sama ihminen on taitava kaikessa, mistä haluaa vastata."
+        },
+        {
+          "kohta": "**Tukea ei oteta vastaan.** Hylätty koulutustarjous paljastaa valinnan."
+        }
+      ]
+    }
+  ],
+  "teksti": "Joulun alla moni kodin työnjako paljastuu: joku ei vain ”osaa” kääriä lahjoja, pestä astioita tai tilata kinkkua. Sama ilmiö löytyy työpaikoilta, vain hienovaraisempana.\n\nStrateginen osaamattomuus (weaponized incompetence) tarkoittaa tehtävän tekemistä tahallaan huonosti, jotta sitä ei pyydettäisi uudestaan. Kukaan ei kieltäydy, mutta vastuu siirtyy silti.\n\nTyöpaikalla se näkyy raportteina, jotka tulevat niin myöhään, ettei niitä enää pyydetä, tai lauseena ”en ole kauhean hyvä Excelin kanssa” ihmiseltä, joka kyllä oppisi halutessaan.\n\nAidosta osaamattomuudesta sen erottaa yksi merkki: strateginen versio on valikoivaa. Sama ihminen on taitava kaikessa, mistä haluaa vastata, eikä koulutustarjous kelpaa.",
+  "kysymys": "Mikä on teidän työpaikkanne yleisin ”en osaa”?",
+  "tagit": [
+    "#työelämä",
+    "#tiimityö",
+    "#johtaminen"
+  ]
+}
