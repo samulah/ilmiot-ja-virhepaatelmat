@@ -488,7 +488,7 @@
       "name": "Manipulointi, propaganda ja huijaukset — 175 ilmiötä",
       "description": "Ilmiöt selitettynä suomeksi: 175 ilmiötä vallankäytöstä, propagandasta, harhoista, byrokratiasta ja huijauksista — esimerkit ja vastakeinot.",
       "inLanguage": "fi",
-      "dateModified": "2026-11-02",
+      "dateModified": "2026-11-08",
       "isPartOf": {
         "@id": "https://www.ilmiöt.fi/#website"
       },
@@ -1784,6 +1784,36 @@
   .nosto-kuvaus { font-size: 0.86em; }
 }
 </style><!-- NOSTOT-LOPPU -->
+<!-- UUSIMMAT-ALKU --><style>
+/* Uusimmat ilmiöt — scripts/build_uusimmat.py injektoi, älä muokkaa käsin. */
+.uusimmat { max-width: 1100px; margin: 0 auto 1.8rem; }
+.uusimmat-otsikko {
+  font-family: 'Spectral', Georgia, serif; font-size: 1.15em; font-weight: 600;
+  color: var(--c-primary-dark); margin: 0 0 0.6rem;
+}
+.uusimmat-erat { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; }
+.uusimmat-era { background: #fff; border: 1px solid #E8DFC8; border-radius: 8px; padding: 0.85rem 1rem 0.7rem; }
+.uusimmat-pvm { font-size: 0.78em; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--c-primary-mid); margin: 0; }
+.uusimmat-saate { font-size: 0.86em; color: #5a4a20; margin: 0.15rem 0 0.5rem; line-height: 1.45; }
+.uusimmat-saate a { color: var(--c-primary-mid); font-weight: 600; }
+.uusimmat-lista { list-style: none; margin: 0; padding: 0; }
+.uusimmat-lista a {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 0.8rem;
+  padding: 0.42rem 0 0.42rem 0.65rem; border-left: 3px solid var(--c, var(--c-primary));
+  margin: 0.2rem 0; text-decoration: none; color: inherit; transition: background 0.15s;
+}
+.uusimmat-lista a:hover { background: #FBF3DC; }
+.uusimmat-nimi { font-weight: 600; color: var(--c-primary-dark); }
+.uusimmat-kat { font-size: 0.78em; color: #8a7a50; text-align: right; flex-shrink: 0; max-width: 45%; }
+.uusimmat-lisaa { margin: 0.45rem 0 0; font-size: 0.85em; }
+.uusimmat-lisaa a { color: var(--c-primary-mid); font-weight: 600; text-decoration: none; }
+@media (max-width: 600px) {
+  .uusimmat-erat { grid-template-columns: 1fr; gap: 0.7rem; }
+  .uusimmat-kat { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .uusimmat-lista a { transition: none; } }
+</style><!-- UUSIMMAT-LOPPU -->
 </head>
 <body>
 
@@ -1791,7 +1821,7 @@
   <img class="hub-logo" src="favicon.svg" alt="Ilmiöitä-logo: punainen varoituslippu" width="36" height="36">
   <div class="hub-header-left">
     <h1>Ilmiöitä</h1>
-    <p>175 ilmiötä &middot; Miten valta toimii &middot; <a class="paivitetty-btn" href="muutokset.html" title="Mitä sivustolle on tehty">Päivitetty 2.11.2026 &rsaquo;</a></p>
+    <p>175 ilmiötä &middot; Miten valta toimii &middot; <a class="paivitetty-btn" href="muutokset.html" title="Mitä sivustolle on tehty">Päivitetty 8.11.2026 &rsaquo;</a></p>
   </div>
   <input class="hub-haku" type="search" id="haku" placeholder="Etsi ilmiötä&hellip;" autocomplete="off" spellcheck="false">
   <a class="peli-btn" href="peli.html" title="Vedätys — päivän peli" aria-label="Vedätys — päivän peli">
@@ -1807,6 +1837,35 @@
 <main class="hub-main" id="hub-main">
 <p class="hub-intro"><strong>Ilmiöitä</strong> on suomenkielinen tietopankki, joka selittää 175 yhteiskunnallista ilmiötä, kognitiivista harhaa ja manipulointitaktiikkaa: miten valta keskittyy, propaganda uppoaa, byrokratia jumiutuu ja huijaukset sekä myyntikikat vetoavat. Jokainen artikkeli kertoo, mistä ilmiössä on kyse, miten se toimii käytännössä ja miten siltä suojaudutaan — jokaisen ilmiön lopussa on konkreettiset vastakeinot. Sivusto on kirjoitettu tavalliselle lukijalle ilman psykologian tai taloustieteen taustaa, ja se sopii yhtä lailla työelämän päätöksentekijälle, opiskelijalle kuin uutisvirran kriittiselle seuraajalle. Kun ilmiöllä on nimi, sen tunnistaa nopeammin — ja siihen osaa varautua.</p>
 <p class="peli-nosto"><strong>Uutta: Vedätys.</strong> Päivän peli, jossa tunnistat viidestä tilanteesta, missä joku ohjaa sinua, missä oma pää tekee tepposet ja mikä on ihan kunnossa. Puolitoista minuuttia. <a href="peli.html">Pelaa päivän erä &rarr;</a></p>
+<!-- UUSIMMAT-ALKU — scripts/build_uusimmat.py, älä muokkaa käsin -->
+<section class="uusimmat" aria-labelledby="uusimmat-otsikko">
+  <h2 class="uusimmat-otsikko" id="uusimmat-otsikko">Uusimmat ilmiöt</h2>
+  <div class="uusimmat-erat">
+  <article class="uusimmat-era">
+    <h3 class="uusimmat-pvm"><time datetime="2026-11-02">2.11.2026</time></h3>
+    <p class="uusimmat-saate">10 uutta ilmiötä · uusi aihepiiri <a href="kategoria-kannustimet-ja-sivuvaikutukset.html">Kannustimet ja sivuvaikutukset</a></p>
+    <ul class="uusimmat-lista">
+      <li><a href="greedflation.html" style="--c:#7b3f00"><span class="uusimmat-nimi">Greedflation</span><span class="uusimmat-kat">Myyntikikat ja painostus</span></a></li>
+      <li><a href="kobravaikutus.html" style="--c:#a04000"><span class="uusimmat-nimi">Kobravaikutus</span><span class="uusimmat-kat">Kannustimet ja sivuvaikutukset</span></a></li>
+      <li><a href="kannustinloukku.html" style="--c:#8d6e63"><span class="uusimmat-nimi">Kannustinloukku</span><span class="uusimmat-kat">Kannustimet ja sivuvaikutukset</span></a></li>
+      <li><a href="kynnysefekti.html" style="--c:#6d4c41"><span class="uusimmat-nimi">Kynnysefekti</span><span class="uusimmat-kat">Kannustimet ja sivuvaikutukset</span></a></li>
+    </ul>
+    <p class="uusimmat-lisaa"><a href="muutokset.html">+6 muuta &rarr;</a></p>
+  </article>
+  <article class="uusimmat-era">
+    <h3 class="uusimmat-pvm"><time datetime="2026-10-03">3.10.2026</time></h3>
+    <p class="uusimmat-saate">26 uutta ilmiötä · uudet aihepiirit <a href="kategoria-roolit-ja-valtapelit.html">Roolit ja valtapelit</a>, <a href="kategoria-trollaus-ja-keskustelun-sabotointi.html">Trollaus ja keskustelun sabotointi</a></p>
+    <ul class="uusimmat-lista">
+      <li><a href="draamakolmio.html" style="--c:#ad1457"><span class="uusimmat-nimi">Draamakolmio</span><span class="uusimmat-kat">Roolit ja valtapelit</span></a></li>
+      <li><a href="roolinvaihto.html" style="--c:#880e4f"><span class="uusimmat-nimi">Roolinvaihto</span><span class="uusimmat-kat">Roolit ja valtapelit</span></a></li>
+      <li><a href="trollaus.html" style="--c:#00838f"><span class="uusimmat-nimi">Trollaus</span><span class="uusimmat-kat">Trollaus ja keskustelun sabotointi</span></a></li>
+      <li><a href="verkon-estottomuus.html" style="--c:#00695c"><span class="uusimmat-nimi">Verkon estottomuus</span><span class="uusimmat-kat">Trollaus ja keskustelun sabotointi</span></a></li>
+    </ul>
+    <p class="uusimmat-lisaa"><a href="muutokset.html">+22 muuta &rarr;</a></p>
+  </article>
+  </div>
+</section>
+<!-- UUSIMMAT-LOPPU -->
 <nav class="hub-katnav" aria-label="Aihepiirit">
   <a href="#vallan-rakenteet">Vallan rakenteet<span>8</span></a>
   <a href="#informaatio-ja-propaganda">Informaatio ja propaganda<span>13</span></a>

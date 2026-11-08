@@ -389,7 +389,7 @@ def main():
         print("\n  Aja seuraavaksi:")
         for k in ("seo_rakenne.py --kirjoita", "seo_schema.py --kirjoita",
                   "build_kategoriat.py", "paivita_maarat.py", "build_liittyvat.py",
-                  "build_sitemap.py", "build_search_index.py"):
+                  "build_uusimmat.py --kirjoita", "build_sitemap.py", "build_search_index.py"):
             print(f"    python3 scripts/{k}")
     else:
         print("\n  Aja uudelleen --kirjoita-lipulla kun tarkistus on tehty.")

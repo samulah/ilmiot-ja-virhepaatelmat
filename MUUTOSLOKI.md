@@ -1,5 +1,38 @@
 # Muutosloki — Ilmiöitä (www.ilmiöt.fi)
 
+## 8.11.2026 — Etusivun Uusimmat ilmiöt -lohko (`build_uusimmat.py`)
+
+Uusi generaattori `scripts/build_uusimmat.py` (kuivaharjoitus oletuksena,
+`--kirjoita`). Näyttää kaksi viimeisintä julkaisuerää rinnakkain, kummastakin
+neljä nostoa ja "+N muuta → muutokset.html". Erä = sivujen JSON-LD:n
+`datePublished`. Uusi aihepiiri tunnistetaan siitä, että erä toi sen kaikki
+kortit, ja se nimetään saatteessa linkkinä kategoriasivulle. Nostot valitaan
+vuorotellen aihepiireittäin pienin osuus ensin, jottei sekaerän yksittäinen sivu
+(greedflation) huku yhdeksän sivun aihepiirin alle.
+
+Miksi staattinen eikä `data/suosio.js`:ssä: lista muuttuu vain julkaisussa.
+Staattinen lohko ei riipu NAS-ajosta eikä piiloudu tuoreustarkistukseen, ja
+Google näkee etusivulta linkin uusiin sivuihin heti. Sijainti on peli-noston ja
+`.hub-katnav`in välissä `UUSIMMAT-ALKU/-LOPPU`-merkeissä (CSS headissa), **ei**
+NOSTOT-lohkossa, koska `paivita_suosio.py` pyyhkii sen. Tarkistettu, että
+`paivita_suosio.injektoi()` osuu yhä ankkuriinsa. Ei `hub-kortti`-luokkaa.
+
+`lisaa_ilmiot.py` ja `poista_ilmio.py` tulostavat skriptin ajolistaan.
+`muutokset.html`, `index.html` (nappi + JSON-LD) ja sitemap päivitetty 8.11.
+
+## 8.11.2026 — Yöajon lähetyspolku uuteen dokumenttijuureen
+
+Sivuston juuri siirtyi palvelimella: `/home/inflaati/public_html/kendom/ilmiöt`
+→ `/home/inflaati/public_html/kendom/xn--ilmit-mua`. `paivita_suosio.py --laheta`
+lähetti yhä vanhaan kansioon, joten live-etusivu luki vanhentunutta
+`data/suosio.js`:ää (tai ei mitään), ja lohkot piiloutuivat tuoreustarkistuksen takia.
+
+`SFTP_POLKU=public_html/kendom/xn--ilmit-mua/data` sekä `.suosio.env`:ssä että
+`.suosio.env.malli`:ssa. Polku on nyt **ilman alkukauttaviivaa**, eli suhteessa
+SFTP-kotihakemistoon: se toimii, olipa SFTP chrootattu `/home/inflaati`:in tai ei.
+Yöajon oikea `.suosio.env` on NAS:illa (ei versionhallinnassa), joten rivi on
+vaihdettava sinne käsin.
+
 ## 2.11.2026 — Julkaisu: greedflation (93) ja 16. kategoria Kannustimet ja sivuvaikutukset (167–175)
 
 Sivusto kasvoi 165 → 175 ilmiötä ja 15 → 16 kategoriaa. Käyttäjä hyväksyi

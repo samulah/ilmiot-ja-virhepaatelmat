@@ -67,6 +67,7 @@ nappi on säilytettävä — muuten sivu jää orvoksi.
 | `luonnokset/suosio.html` | `scripts/paivita_suosio.py` | samalla ajolla |
 | `luonnokset/etusivu-nostot.html` | `scripts/paivita_suosio.py` | samalla ajolla |
 | `data/peli-pankki.js` | `scripts/build_peli.py` | kun `pelidata/*.json` muuttuu |
+| `index.html`:n Uusimmat-lohko (`UUSIMMAT-ALKU`) | `scripts/build_uusimmat.py --kirjoita` | kun ilmiöitä julkaistaan tai poistetaan |
 | `og/<slug>.png`, `og/kategoria-<slug>.png` | `scripts/build_og.py` | kun etusivun kortin nimi tai kuvaus muuttuu |
 
 `llms.txt`:n **otsikkolohko** (rivit 1–10) on käsin ylläpidetty; vain
